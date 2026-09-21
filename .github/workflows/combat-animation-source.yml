@@ -1,0 +1,32 @@
+name: Combat animation source
+on:
+  push:
+    branches: [feature/mythic-elemental-combat]
+    paths: [.github/workflows/combat-animation-source.yml]
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Read official author download metadata
+        shell: python
+        run: |
+          import pathlib,urllib.request,urllib.parse,json,re,hashlib
+          root=pathlib.Path('animation_source');root.mkdir()
+          rows=[]
+          for name,url in [('quaternius','https://quaternius.com/packs/universalanimationlibrary.html'),('itch','https://quaternius.itch.io/universal-animation-library/purchase'),('quaternius2','https://quaternius.com/packs/universalanimationlibrary2.html')]:
+            try:
+              with urllib.request.urlopen(url,timeout=45) as r:data=r.read(4000000)
+              (root/(name+'.html')).write_bytes(data)
+              text=data.decode('utf-8','replace')
+              print(name,'\n'.join(line for line in text.splitlines() if any(k in line.lower() for k in ['download','viewer','iframe','drive.google','.glb','.zip','csrf'])))
+              rows.append(dict(name=name,url=url,bytes=len(data),sha256=hashlib.sha256(data).hexdigest()))
+            except Exception as e: print(name,str(e))
+          (root/'receipts.json').write_text(json.dumps(rows,indent=2))
+      - uses: actions/upload-artifact@v4
+        with:
+          name: combat-official-animation-source
+          path: animation_source/
+          retention-days: 3
