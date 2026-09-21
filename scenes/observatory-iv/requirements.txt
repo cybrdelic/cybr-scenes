@@ -1,0 +1,4 @@
+# Use the exact dependency set exercised by the original scene delivery.
+# The OpenCV 5.0.0 wheel installed during publication lacks the EXR writer
+# needed by finish.py and verify.py; the tested 4.13.0.92 wheel provides it.
+-r requirements-tested.txt

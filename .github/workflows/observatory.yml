@@ -1,0 +1,88 @@
+name: Observatory native build and smoke render
+on:
+  push:
+    branches: [master, add-observatory-iv]
+    paths:
+      - 'scenes/observatory-iv/**'
+      - 'docs/observatory-iv-import.json'
+      - '.github/workflows/observatory.yml'
+  pull_request:
+    paths:
+      - 'scenes/observatory-iv/**'
+      - 'docs/observatory-iv-import.json'
+      - '.github/workflows/observatory.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: observatory-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  native-scene:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      OPENCV_IO_ENABLE_OPENEXR: '1'
+      OMP_NUM_THREADS: '2'
+      OPENBLAS_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Check immutable import archive and provenance
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, zipfile
+          from pathlib import Path
+          manifest = json.loads(Path('docs/observatory-iv-import.json').read_text())
+          archive = Path('downloads/CYBR_Observatory_IV_Source.zip')
+          if hashlib.sha256(archive.read_bytes()).hexdigest() != manifest['source_archive_sha256']:
+              raise SystemExit('Original archive checksum mismatch')
+          with zipfile.ZipFile(archive) as z:
+              if z.testzip() is not None:
+                  raise SystemExit('Original archive CRC mismatch')
+              for item in manifest['imported_files']:
+                  data = z.read('CYBR_Observatory_IV/' + item['path'])
+                  if len(data) != item['bytes'] or hashlib.sha256(data).hexdigest() != item['sha256']:
+                      raise SystemExit('Archived file differs from its recorded import: ' + item['path'])
+          print('Verified', len(manifest['imported_files']), 'archived file hashes and original source ZIP.')
+          print('Current working source is tested below; this provenance check does not forbid future source edits.')
+          PY
+      - name: Remove historical reports from this disposable checkout
+        run: |
+          rm -f scenes/observatory-iv/verification/geometry_and_transport.json scenes/observatory-iv/verification/delivery_verification.json
+      - name: Install Python dependencies
+        run: |
+          python3 -m venv .venv
+          .venv/bin/python -m pip install --disable-pip-version-check -r scenes/observatory-iv/requirements.txt
+          echo "$PWD/.venv/bin" >> "$GITHUB_PATH"
+      - name: Compile and run native numerical checks
+        working-directory: scenes/observatory-iv
+        run: |
+          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+          cmake --build build -j2
+          ctest --test-dir build --output-on-failure
+          python -m compileall -q src build_scene.py finish.py verify.py
+      - name: Rebuild geometry and materials from included input
+        working-directory: scenes/observatory-iv
+        run: |
+          python build_scene.py
+          python verify.py --geometry-only
+      - name: Render and validate a new small frame
+        working-directory: scenes/observatory-iv
+        run: |
+          mkdir -p renders
+          ./build/observatory --mesh scene/observatory.cvr2 --out renders/ci_smoke --width 64 --height 48 --spp 4 --depth 6 --threads 2
+          ./build/observatory --mesh scene/observatory.cvr2 --out renders/ci_smoke --width 64 --height 48 --threads 2 --guides-only
+          # Full finishing exports the raw EXR required by verify.py; --preview skips it.
+          python finish.py renders/ci_smoke
+          python verify.py --stem renders/ci_smoke
+      - name: Preserve this run's smoke images and evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: observatory-iv-smoke-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            scenes/observatory-iv/renders/ci_smoke*
+            scenes/observatory-iv/verification/geometry_and_transport.json
+            scenes/observatory-iv/verification/delivery_verification.json
+          if-no-files-found: warn
+          retention-days: 14

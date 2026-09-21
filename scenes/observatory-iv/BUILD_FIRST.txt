@@ -1,0 +1,1 @@
+This compact archive contains the full renderer source, authoring recipe, retained source geometry, material previews, and finished image. Run python build_scene.py first to generate the large ready-to-render mesh and float material maps. The larger Ready_to_Render archive already includes those assets.
