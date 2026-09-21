@@ -1,0 +1,43 @@
+name: Combat mesh source assets
+on:
+  push:
+    branches: [feature/mythic-elemental-combat]
+    paths: [.github/workflows/combat-mesh-assets.yml]
+permissions:
+  contents: read
+jobs:
+  assets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Download public source assets with receipts
+        shell: python
+        run: |
+          import urllib.request, pathlib, hashlib, json
+          root=pathlib.Path('source-assets'); root.mkdir()
+          base='https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/'
+          sources={
+            'BrainStem.glb':base+'Models/BrainStem/glTF-Binary/BrainStem.glb',
+            'BrainStem_README.md':base+'Models/BrainStem/README.md',
+            'BrainStem_preview.gif':base+'Models/BrainStem/screenshot/screenshot.gif',
+            'Poser_EULA.txt':base+'LICENSES/LicenseRef-Poser-EULA.txt',
+            'Xbot.glb':'https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/models/gltf/Xbot.glb',
+            'Soldier.glb':'https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/models/gltf/Soldier.glb',
+            'three_model_README.md':'https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/models/gltf/README.md',
+            'makehuman_base.obj':'https://raw.githubusercontent.com/makehumancommunity/makehuman/master/makehuman/data/3dobjs/base.obj',
+            'makehuman_LICENSE.md':'https://raw.githubusercontent.com/makehumancommunity/makehuman/master/LICENSE.md',
+          }
+          receipts=[]
+          for name,url in sources.items():
+            try:
+              with urllib.request.urlopen(url,timeout=40) as response: data=response.read(40000000)
+              (root/name).write_bytes(data)
+              receipts.append(dict(file=name,url=url,bytes=len(data),sha256=hashlib.sha256(data).hexdigest()))
+            except Exception as e: receipts.append(dict(file=name,url=url,error=str(e)))
+          (root/'download_receipts.json').write_text(json.dumps(receipts,indent=2))
+          print(json.dumps(receipts,indent=2))
+      - uses: actions/upload-artifact@v4
+        with:
+          name: combat-mesh-source-assets
+          path: source-assets/
+          retention-days: 3
