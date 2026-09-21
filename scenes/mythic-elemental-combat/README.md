@@ -34,6 +34,10 @@ workspace/
   cybr-elements/
 ```
 
+For this unmerged integration, check out `feature/mythic-elemental-combat` in CYBR SCENES and
+`feature/avatar-combat-vfx` in CYBR ELEMENTS. CYBR LIGHT stays on its existing branch; the
+integration uses its public Python scene API rather than modifying the renderer.
+
 Build CYBR LIGHT first using its normal native build instructions. On Windows, its repository currently recommends WSL for the tested native workflow.
 
 Blender 4.x and Python 3.10+ are expected. Set these only if autodetection cannot find the repos/tools:
