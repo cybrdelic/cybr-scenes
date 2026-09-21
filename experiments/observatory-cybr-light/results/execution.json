@@ -1,0 +1,66 @@
+{
+  "scope": "Two completed native camera-matched renders; not an equal-work, convergence, or ground-truth benchmark",
+  "scene_source": "Observatory IV",
+  "preserved_scene_tree": "632f7633d0780f593cd679f9a7c4c993c888d347",
+  "preserved_original_image_sha256": "f5a74ce6dcbe905d587c302f36d4339332f93ea4c5976bdb39f4e3b5be18b25d",
+  "baseline": {
+    "renderer": "CYBR Observatory IV native CPU spectral tracer",
+    "width": 720,
+    "height": 480,
+    "camera_samples_per_pixel": 48,
+    "fixed_spectral_bands": 16,
+    "threads": 1,
+    "max_depth": 12,
+    "render_seconds": 303.471039,
+    "triangles": 1510737,
+    "nonfinite_paths": 0,
+    "clamped_path_contributions": 0,
+    "raw_pfm_sha256": "538071013ac22c900f535c9f44e3a2c7ceb0157b342fe623c835adaa0c4c5c65"
+  },
+  "cybr_light": {
+    "repository_commit": "1ad19a8fe77ae865a8cedd5123d291b1280ff1a0",
+    "renderer": "CYBR LIGHT 0.2",
+    "backend": "C++17 OpenMP CPU",
+    "width": 720,
+    "height": 480,
+    "packets_per_pixel": 48,
+    "wavelengths_per_packet": 8,
+    "spectral_paths_per_pixel": 384,
+    "threads": 4,
+    "max_depth": 12,
+    "rr_depth": 5,
+    "integrator": "volpath",
+    "render_seconds": 877.776971439,
+    "primitives": 1510715,
+    "volumes": 1,
+    "invalid_path_samples": 0,
+    "engine_denoising": false,
+    "clamping": false,
+    "raw_pfm_sha256": "37969c086c07f19d7e9cf370929bb419ad5edbf45440982cf1a8af0bef658b46"
+  },
+  "common_finish": {
+    "exposure": 1.70000005,
+    "white_rgb": [1.04491019, 0.984612525, 1.02078438],
+    "filter": "Identical four-pass normal/depth/variance-guided a-trous filter on total radiance",
+    "neural": false,
+    "upscaling": false,
+    "outlier_replacement": false,
+    "raw_radiance_clamping": false,
+    "known_limit": "First-surface center-sampled guides do not follow internal refraction or depth-of-field integration"
+  },
+  "comparison_boundaries": [
+    "Different native spectral authoring and material models",
+    "Mean roughness replaces spatial roughness",
+    "UV-aligned native anisotropy replaces group-axis machining tangents",
+    "Native normal-map handling and bilinear texture lookup differ",
+    "Cauchy-fitted quartz differs slightly from source Sellmeier expression",
+    "Float32 degeneracy-filter rounding differs for 23 near-zero-area faces",
+    "Different CPU thread counts and spectral sampling work; render times must not be ranked directly"
+  ],
+  "independent_tests": {
+    "full_local_runner": "96x64, 2 packets, 4 wavelengths; completed with baseline unchanged",
+    "actual_source_zip_extraction_test": "64x48, 2 packets, 4 wavelengths; rebuilt both native executables and completed both renders with baseline unchanged",
+    "scene_adapter_ci": "https://github.com/cybrdelic/cybr-scenes/actions/runs/35561087317",
+    "engine_native_and_python_ci": "https://github.com/cybrdelic/cybr-light/actions/runs/35559997668"
+  }
+}
