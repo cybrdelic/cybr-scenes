@@ -16,20 +16,28 @@ jobs:
           import urllib.request, pathlib, hashlib, json
           root=pathlib.Path('surfaces'); root.mkdir()
           def get(url):
-            with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'CYBR mesh preview / asset source attribution'}),timeout=50) as r:return r.read()
+            with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'CYBR source attribution'}),timeout=50) as r:return r.read()
           asset='rock_09'
           data=json.loads(get('https://api.polyhaven.com/files/'+asset))
           (root/'polyhaven_files.json').write_text(json.dumps(data,indent=2))
           (root/'polyhaven_info.json').write_bytes(get('https://api.polyhaven.com/info/'+asset))
-          rows=[]
+          urls=[]
+          def walk(value):
+            if isinstance(value,dict):
+              for v in value.values():walk(v)
+            elif isinstance(value,list):
+              for v in value:walk(v)
+            elif isinstance(value,str) and value.startswith('https://'):urls.append(value)
+          walk(data); rows=[]
           for key in ['diff','nor_gl','rough','disp']:
-            entry=data[key].get('2k',data[key].get('1k'))
-            fmt='jpg' if 'jpg' in entry else 'png'
-            url=entry[fmt]['url']; content=get(url); name=asset+'_'+key+'.'+fmt
+            options=sorted(set(u for u in urls if key+'_2k.' in u and u.endswith(('.jpg','.png'))))
+            if not options:rows.append(dict(key=key,error='No matching 2k URL'));continue
+            url=options[0];content=get(url);name=asset+'_'+key+'.'+url.rsplit('.',1)[1]
             (root/name).write_bytes(content)
             rows.append(dict(file=name,url=url,bytes=len(content),sha256=hashlib.sha256(content).hexdigest(),license='CC0',source='Poly Haven'))
-          (root/'receipts.json').write_text(json.dumps(rows,indent=2))
+          (root/'receipts.json').write_text(json.dumps(rows,indent=2));print(json.dumps(rows))
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: combat-scanned-surface-inputs
           path: surfaces/
