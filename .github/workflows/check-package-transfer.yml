@@ -1,0 +1,27 @@
+name: Check source package transfer
+on:
+  push:
+    branches: [add-observatory-iv]
+    paths: [.github/workflows/check-package-transfer.yml]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 2
+    steps:
+      - name: Read the transfer response
+        env:
+          PACKAGE_URL: 'https://sdmntprcentralus.oaiusercontent.com/files/00000000-8ab4-81f5-9729-7a50d6b8210f/raw?se=2026-09-21T02%3A36%3A04Z&sp=r&sv=2026-02-06&sr=b&scid=84526112-287f-571e-9261-1f3ec8939398&skoid=2757bbe4-5137-4324-975b-acedc0bad279&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-20T04%3A32%3A20Z&ske=2026-09-21T04%3A32%3A20Z&sks=b&skv=2026-02-06&sig=Sg/bNFugZtyKuXX7y43N/4bru49oCHLv5089x3GfYgY%3D'
+        run: |
+          python3 - <<'PY'
+          import os, urllib.request, urllib.error
+          try:
+              with urllib.request.urlopen(os.environ['PACKAGE_URL'], timeout=30) as response:
+                  print('HTTP', response.status, 'Content-Type', response.headers.get('Content-Type'))
+                  print('First bytes:', response.read(12).hex())
+          except urllib.error.HTTPError as exc:
+              print('HTTP', exc.code)
+              print(exc.read(3000).decode('utf-8', 'replace'))
+              raise SystemExit(1)
+          PY
