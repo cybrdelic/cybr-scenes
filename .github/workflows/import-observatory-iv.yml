@@ -13,23 +13,22 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           ref: add-observatory-iv
-      - name: Download and verify the exact source delivery
+      - name: Download the exact source delivery
         env:
-          PACKAGE_URL: 'https://sdmntprcentralus.oaiusercontent.com/files/00000000-8ab4-81f5-9729-7a50d6b8210f/raw?se=2026-09-21T02%3A36%3A04Z&sp=r&sv=2026-02-06&sr=b&scid=84526112-287f-571e-9261-1f3ec8939398&skoid=2757bbe4-5137-4324-975b-acedc0bad279&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-20T04%3A32%3A20Z&ske=2026-09-21T04%3A32%3A20Z&sks=b&skv=2026-02-06&sig=Sg/bNFugZtyKuXX7y43N/4bru49oCHLv5089x3GfYgY%3D'
+          PACKAGE_URL: 'https://sdmntprcentralus.oaiusercontent.com/files/00000000-a588-81f5-ba3c-fc42a7b9fb97/raw?se=2026-09-21T02%3A41%3A18Z&sp=r&sv=2026-02-06&sr=b&scid=a8ddc9f3-9586-59ee-90dc-a3f4e326fd41&skoid=2757bbe4-5137-4324-975b-acedc0bad279&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-20T06%3A17%3A06Z&ske=2026-09-21T06%3A17%3A06Z&sks=b&skv=2026-02-06&sig=NIETiv8zlBgyrf2d1ViI%2B20CNNzLMPD8gLjoy0fg0Ho%3D'
+        run: |
+          mkdir -p downloads
+          curl --fail-with-body --location --max-time 120 --user-agent 'Mozilla/5.0' "$PACKAGE_URL" --output downloads/CYBR_Observatory_IV_Source.zip
+      - name: Verify and extract the complete package
         run: |
           python3 - <<'PY'
-          import hashlib, json, os, pathlib, shutil, stat, urllib.request, zipfile
+          import hashlib, json, pathlib, shutil, stat, zipfile
           root = pathlib.Path.cwd()
-          downloads = root / 'downloads'
-          downloads.mkdir(exist_ok=True)
-          archive = downloads / 'CYBR_Observatory_IV_Source.zip'
-          with urllib.request.urlopen(os.environ['PACKAGE_URL'], timeout=120) as response, archive.open('wb') as out:
-              shutil.copyfileobj(response, out)
-          expected = 'ebf85d46b54a510915cf48e15f14944cac33e81be3f7a9e9618f29a38f549a0a'
+          archive = root / 'downloads/CYBR_Observatory_IV_Source.zip'
           actual = hashlib.sha256(archive.read_bytes()).hexdigest()
-          if actual != expected:
+          if actual != 'ebf85d46b54a510915cf48e15f14944cac33e81be3f7a9e9618f29a38f549a0a':
               raise RuntimeError('Source archive checksum mismatch')
-          scene = root / 'scenes' / 'observatory-iv'
+          scene = root / 'scenes/observatory-iv'
           if scene.exists():
               raise RuntimeError('Refusing to replace an existing scene')
           scene.mkdir(parents=True)
@@ -39,10 +38,8 @@ jobs:
                   raise RuntimeError('Archive CRC verification failed')
               for entry in z.infolist():
                   path = pathlib.PurePosixPath(entry.filename)
-                  if not path.parts or path.parts[0] != 'CYBR_Observatory_IV' or '..' in path.parts or path.is_absolute():
-                      raise RuntimeError('Unexpected archive path')
-                  if stat.S_ISLNK(entry.external_attr >> 16):
-                      raise RuntimeError('Symlinks are not allowed in this import')
+                  if not path.parts or path.parts[0] != 'CYBR_Observatory_IV' or '..' in path.parts or path.is_absolute() or stat.S_ISLNK(entry.external_attr >> 16):
+                      raise RuntimeError('Unsafe or unexpected archive path')
                   relative = pathlib.Path(*path.parts[1:])
                   dest = scene / relative
                   if not dest.resolve().is_relative_to(scene.resolve()):
@@ -50,83 +47,34 @@ jobs:
                   if entry.is_dir():
                       dest.mkdir(parents=True, exist_ok=True)
                       continue
+                  if dest.suffix.lower() in ('.ttf','.otf','.woff','.woff2'):
+                      raise RuntimeError('Font binaries must not be published')
                   dest.parent.mkdir(parents=True, exist_ok=True)
                   data = z.read(entry)
                   dest.write_bytes(data)
                   if relative.name == 'render.sh':
                       dest.chmod(0o755)
                   files.append({'path':str(relative), 'bytes':len(data), 'sha256':hashlib.sha256(data).hexdigest()})
-          for required in ['src/observatory.cpp', 'build_scene.py', 'assets/observatory_interior_source.glb', 'renders/Observatory_IV.png', 'LICENSE']:
+          for required in ['src/observatory.cpp','build_scene.py','assets/observatory_interior_source.glb','renders/Observatory_IV.png','LICENSE']:
               if not (scene / required).is_file():
                   raise RuntimeError('Required scene file missing: ' + required)
           shutil.copy2(scene / 'LICENSE', root / 'LICENSE')
           (root / '.gitignore').write_text('__pycache__/\n*.py[cod]\n.venv/\nbuild/\nbuild_*/\nscenes/*/scene/*.cvr2\nscenes/*/scene/*.groups\nscenes/*/scene/*.glb\nscenes/*/scene/textures/\nscenes/*/renders/reproduction*\nscenes/*/renders/smoke*\n')
           docs = root / 'docs'
           docs.mkdir(exist_ok=True)
-          (docs / 'observatory-iv-import.json').write_text(json.dumps({'source_archive_sha256':actual, 'source_archive_bytes':archive.stat().st_size, 'imported_files':files, 'scope':'Exact source delivery imported; generated transport meshes must be rebuilt before rendering. Production images and historical verification records are retained, not regenerated by this import.'}, indent=2)+'\n')
-          (root / 'README.md').write_text('''# CYBR Scenes
-
-          Reproducible native-rendered 3D scenes, with source code, scene-building recipes, input geometry, material assets, rendered images, and verification records.
-
-          ## Quiet Observatory IV
-
-          ![Quiet Observatory IV — native 1800 × 1200 render](scenes/observatory-iv/renders/Observatory_IV.png)
-
-          A vaulted observatory containing a brass armillary, dispersive quartz globe, optical bench, telescope, books, and authored cloth. The offline renderer is native C++ with sixteen spectral bins and a retained CYBR GEO geometry kernel.
-
-          [Scene documentation](scenes/observatory-iv/README.md) · [Full-resolution PNG](scenes/observatory-iv/renders/Observatory_IV.png) · [Unfiltered PNG](scenes/observatory-iv/renders/Observatory_IV_unfiltered.png) · [Source ZIP](downloads/CYBR_Observatory_IV_Source.zip)
-
-          ### Build and render
-
-          The executed target is Linux on an AVX2-capable x86-64 CPU. Install a C++17 compiler, OpenMP, CMake, and Python 3. Rendering is CPU-only.
-
-          ```bash
-          git clone https://github.com/cybrdelic/cybr-scenes.git
-          cd cybr-scenes
-          git checkout add-observatory-iv
-          cd scenes/observatory-iv
-          python3 -m venv .venv
-          source .venv/bin/activate
-          python -m pip install -r requirements.txt
-          python build_scene.py
-          bash render.sh
-          ```
-
-          `build_scene.py` is required on a fresh checkout: it builds the larger transport mesh and mipmapped material binaries from the included source geometry and recipes. No original ChatGPT ZIP or external geometry download is needed. `render.sh` builds the renderer, runs its numerical test, renders the delivered camera settings, generates refraction-aware guides, and finishes the image.
-
-          ### Quick numerical check
-
-          ```bash
-          cmake -S scenes/observatory-iv -B scenes/observatory-iv/build -DCMAKE_BUILD_TYPE=Release
-          cmake --build scenes/observatory-iv/build -j2
-          ctest --test-dir scenes/observatory-iv/build --output-on-failure
-          ```
-
-          ### Contents and scope
-
-          `scenes/observatory-iv/` contains the complete compact source delivery, including the retained binary GLB input and all eleven material preview maps. `downloads/` retains the original verified source ZIP. `docs/observatory-iv-import.json` records the imported file hashes. The scene's `verification/` directory contains historical delivery checks; repository CI results are separate.
-
-          The hero image is the delivered 1800 × 1200 native render, not a new render made during publication. It uses non-neural reconstruction. The unfiltered image is retained for comparison. No image generation or upscaling is introduced by this repository import.
-
-          This source checkout does not include the optional sixteen-band raw framebuffer or the large prebuilt transport mesh. The mesh is generated by the included builder. The scene is an authored visualization, not a validated historical instrument or a calibrated physical observatory; polarization and quartz birefringence are not modeled. See the scene README for the full boundaries.
-
-          ## License
-
-          GPL-2.0-only. Existing source notices are retained. See [LICENSE](LICENSE) and [provenance and dependency notices](scenes/observatory-iv/THIRD_PARTY_NOTICES.md). No font binaries are bundled.
-          '''.replace('\n          ', '\n'))
-          print('Imported', len(files), 'verified source files, including binary geometry and images.')
+          (docs / 'observatory-iv-import.json').write_text(json.dumps({'source_archive_sha256':actual,'source_archive_bytes':archive.stat().st_size,'imported_files':files,'scope':'Exact source delivery imported. Generated transport meshes must be rebuilt before rendering. Production images and historical verification records are retained, not regenerated by this import.'},indent=2)+'\n')
+          print('Imported',len(files),'verified files including binary geometry and images.')
           PY
-      - name: Compile the imported native renderer
+      - name: Compile and test the imported native renderer
         run: |
           cmake -S scenes/observatory-iv -B scenes/observatory-iv/build -DCMAKE_BUILD_TYPE=Release
           cmake --build scenes/observatory-iv/build -j2
           ctest --test-dir scenes/observatory-iv/build --output-on-failure
           python3 -m compileall -q scenes/observatory-iv
-      - name: Publish the source and assets to the import branch
+      - name: Publish source and assets to the import branch
         run: |
-          rm .github/workflows/import-observatory-iv.yml
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add README.md LICENSE .gitignore scenes downloads docs .github/workflows/import-observatory-iv.yml
-          git commit -m 'Add complete Observatory IV source, geometry, materials, renders, and build documentation'
+          git add LICENSE .gitignore scenes downloads docs
+          git commit -m 'Add complete Observatory IV source, geometry, materials, renders, and verification records'
           git push origin HEAD:add-observatory-iv
