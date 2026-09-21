@@ -64,6 +64,10 @@ def main():
              "--cues",HERE/"build"/"element_cues.json",
              "--out",HERE/"build"/"elements"])
 
+    validate=[sys.executable,HERE/"validate_pipeline.py"]
+    if a.step!=1:validate.append("--allow-sparse")
+    run(validate)
+
     if not a.skip_render:
         cmd=[sys.executable,HERE/"render_cybrlight.py","--preset",a.preset,"--step",str(a.step)]
         if a.start is not None:cmd+=["--start",str(a.start)]
