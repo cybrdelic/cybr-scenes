@@ -17,7 +17,7 @@ jobs:
           root=pathlib.Path('surfaces'); root.mkdir()
           def get(url):
             with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'CYBR source attribution'}),timeout=50) as r:return r.read()
-          asset='rock_09'
+          asset='rock_boulder_dry'
           data=json.loads(get('https://api.polyhaven.com/files/'+asset))
           (root/'polyhaven_files.json').write_text(json.dumps(data,indent=2))
           (root/'polyhaven_info.json').write_bytes(get('https://api.polyhaven.com/info/'+asset))
