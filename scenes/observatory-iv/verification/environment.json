@@ -1,0 +1,16 @@
+{
+  "python": "3.13.5",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "Pillow": "12.3.0",
+    "trimesh": "4.11.1",
+    "opencv-python-headless": "4.13.0.92",
+    "opencv-python": "4.13.0.92"
+  },
+  "compiler": "g++ (Debian 14.2.0-19) 14.2.0",
+  "cmake": "cmake version 3.31.6",
+  "native_execution": "CPU / GCC / AVX2 / OpenMP",
+  "gpu_execution_tested": false
+}

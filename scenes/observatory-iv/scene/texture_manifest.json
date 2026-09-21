@@ -1,0 +1,112 @@
+[
+  {
+    "index": 0,
+    "name": "oiled_walnut",
+    "resolution": 1024,
+    "physical_size_m": [
+      3.6,
+      1.25
+    ],
+    "sha256": "ff6aba0bbbc45deefec47e1bc1f953f3e8047527cde146c96f9d143637e34b7d"
+  },
+  {
+    "index": 1,
+    "name": "lime_plaster",
+    "resolution": 1024,
+    "physical_size_m": [
+      2.8,
+      2.8
+    ],
+    "sha256": "094b086af3ca2154b461d0d1439e8c0b895abceb0583ae38611e3bbbdfff850e"
+  },
+  {
+    "index": 2,
+    "name": "cut_limestone",
+    "resolution": 1024,
+    "physical_size_m": [
+      1.6,
+      1.6
+    ],
+    "sha256": "4b80672dd4a0d89d1f3f63398cc217776f8e1a59f94eb06b0c898fdd974c3aa1"
+  },
+  {
+    "index": 3,
+    "name": "rubbed_brass",
+    "resolution": 1024,
+    "physical_size_m": [
+      0.6,
+      0.6
+    ],
+    "sha256": "35dab9dc76e90dd24112c03de0af645947155f67600d31e5e9292dcc447d20c2"
+  },
+  {
+    "index": 4,
+    "name": "woven_teal_linen",
+    "resolution": 1024,
+    "physical_size_m": [
+      0.85,
+      0.85
+    ],
+    "sha256": "9cca1be51209dc47610aa7aca0c75626085aa3fbc002b926984f42289f2b852e"
+  },
+  {
+    "index": 5,
+    "name": "laid_vellum",
+    "resolution": 1024,
+    "physical_size_m": [
+      0.55,
+      0.55
+    ],
+    "sha256": "85d53de4b46833249a3084e78128d58cbe7f5054dc363748d98df119490c7d69"
+  },
+  {
+    "index": 6,
+    "name": "celestial_chart",
+    "resolution": 2048,
+    "physical_size_m": [
+      0.62,
+      0.8
+    ],
+    "sha256": "fc74c39b9896b097011d81936d458092c2a9abc5ce58b41ae1c73a520468ba87"
+  },
+  {
+    "index": 7,
+    "name": "folio_chart",
+    "resolution": 2048,
+    "physical_size_m": [
+      0.62,
+      0.8
+    ],
+    "sha256": "0665a81cb0f7065f17c3de0ec331638f720ae9c5469b90b73a9b9b989f8372d4"
+  },
+  {
+    "index": 8,
+    "name": "leather_grain",
+    "resolution": 1024,
+    "physical_size_m": [
+      0.38,
+      0.38
+    ],
+    "sha256": "4e657ccbaa6b362541877ff4d85be8cd537e97a4d0a21f747eb1c615e123a54b"
+  },
+  {
+    "index": 9,
+    "name": "flagstone",
+    "resolution": 1024,
+    "physical_size_m": [
+      1.1,
+      1.1
+    ],
+    "sha256": "1e5df882cd7bf6133c983dcbb85c853bc97d05552048cc20bc0a9a3713ad0950"
+  },
+  {
+    "index": 10,
+    "name": "window_linen",
+    "resolution": 1024,
+    "physical_size_m": [
+      0.85,
+      0.85
+    ],
+    "sha256": "7fa98b792e1881a1a4919d6430aef905a7d1c606d2c2728e56d7ed3db40141f2"
+  }
+]

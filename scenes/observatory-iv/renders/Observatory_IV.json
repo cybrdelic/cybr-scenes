@@ -1,0 +1,77 @@
+{
+  "renderer": "CYBR Observatory IV native CPU spectral tracer",
+  "width": 1800,
+  "height": 1200,
+  "max_depth": 12,
+  "threads": 5,
+  "seed": 71833,
+  "view": "hero",
+  "seconds": 973.268188,
+  "triangles": 1510737,
+  "spectral_bands": 16,
+  "dispersion": true,
+  "fog_density_m_inverse": 0.00600000005,
+  "camera": [
+    -0.949999988,
+    -3.27999997,
+    2.38000011
+  ],
+  "target": [
+    -0.200000003,
+    0.430000007,
+    1.50999999
+  ],
+  "horizontal_fov_degrees": 62,
+  "aperture_radius_m": 0.00400000019,
+  "exposure": 1.70000005,
+  "film_white_rgb": [
+    1.04491019,
+    0.984612525,
+    1.02078438
+  ],
+  "nonfinite_paths": 0,
+  "clamped_path_contributions": 0,
+  "image_generation": false,
+  "texture_synthesis": "deterministic mathematical material maps, no learned model",
+  "spectral_method": "16 fixed midpoint bins; common-random-number splitting at first quartz interface",
+  "polarization_and_birefringence": false,
+  "raw_outputs_modified": false,
+  "bvh_equivalence_rays_passed": 3000,
+  "sampling": {
+    "minimum_spp": 16,
+    "mean_spp": 89.0226074074074,
+    "maximum_spp": 768,
+    "camera_samples": 192288832,
+    "allocation": "fixed primary-material allocation, not noisy adaptive stopping",
+    "histogram": {
+      "16": 16804,
+      "72": 2002560,
+      "288": 125360,
+      "768": 15276
+    }
+  },
+  "requested_base_spp": 96,
+  "finishing": {
+    "method": "Direct / indirect / volume separation with normal-depth-material-variance-guided a-trous reconstruction",
+    "neural": false,
+    "generative": false,
+    "outlier_replacement": false,
+    "path_radiance_clamping": false,
+    "upscaling": false,
+    "raw_changed": false,
+    "dominant_transmitted_geometry_guides": true,
+    "iterations": {
+      "direct_diffuse": 2,
+      "direct_glossy": 3,
+      "indirect_diffuse": 6,
+      "indirect_glossy": 3,
+      "volume": 5
+    },
+    "display": "ACES fitted shoulder followed by exact sRGB transfer",
+    "exposure": 1.70000005,
+    "seconds": 84.23809146881104
+  },
+  "aov_sum_max_abs_error": 0.0006849810015410185,
+  "raw_rgb_negative_component_fraction": 4.567901234567901e-05,
+  "png_sha256": "f5a74ce6dcbe905d587c302f36d4339332f93ea4c5976bdb39f4e3b5be18b25d"
+}

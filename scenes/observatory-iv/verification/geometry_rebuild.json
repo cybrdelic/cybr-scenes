@@ -1,0 +1,21 @@
+{
+  "scope": "Fresh copy of authoring script and retained source GLB, run --geometry-only in separate directory. Material maps reused by the production renderer are tested separately.",
+  "files": {
+    "scene/observatory.cvr2": {
+      "original_sha256": "1cad20e08992074214b9006066139ac4217aa10f4773cf591f0315d5f64d8726",
+      "rebuilt_sha256": "1cad20e08992074214b9006066139ac4217aa10f4773cf591f0315d5f64d8726",
+      "identical": true
+    },
+    "scene/observatory.groups": {
+      "original_sha256": "5e8c69fd79f0f64c41202efc184e739b2cdd3c57ea290bda5ec0599138587210",
+      "rebuilt_sha256": "5e8c69fd79f0f64c41202efc184e739b2cdd3c57ea290bda5ec0599138587210",
+      "identical": true
+    },
+    "scene/observatory_v4_inspection.glb": {
+      "original_sha256": "0b860e0db9bb4e9ade81e2483e56c44992ee87806522751f411b68c34fa55080",
+      "rebuilt_sha256": "0b860e0db9bb4e9ade81e2483e56c44992ee87806522751f411b68c34fa55080",
+      "identical": true
+    }
+  },
+  "passed": true
+}

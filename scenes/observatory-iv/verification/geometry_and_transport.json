@@ -1,0 +1,131 @@
+{
+  "geometry": {
+    "passed": true,
+    "triangles_authored": 1511194,
+    "degenerate_triangles_skipped_by_renderer": 480,
+    "parts": 1072,
+    "mesh_sha256": "1cad20e08992074214b9006066139ac4217aa10f4773cf591f0315d5f64d8726",
+    "finite_geometry": true,
+    "nonunit_corner_normals": 0,
+    "closed_quartz_components": [
+      {
+        "name": "Retained_Polished_quartz_globe",
+        "triangles": 54144,
+        "welded_vertices": 27074,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "winding_consistent": true,
+        "signed_volume_m3": 0.018160906028291315,
+        "passed": true
+      },
+      {
+        "name": "Retained_Loose_biconvex_quartz_lens",
+        "triangles": 40320,
+        "welded_vertices": 20160,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "winding_consistent": true,
+        "signed_volume_m3": 0.0006729553397364973,
+        "passed": true
+      },
+      {
+        "name": "Telescope_quartz_objective",
+        "triangles": 40320,
+        "welded_vertices": 20160,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "winding_consistent": true,
+        "signed_volume_m3": 0.0001993941708382773,
+        "passed": true
+      },
+      {
+        "name": "Bench_quartz_lens",
+        "triangles": 11776,
+        "welded_vertices": 5890,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "winding_consistent": true,
+        "signed_volume_m3": 0.00021079458862861486,
+        "passed": true
+      },
+      {
+        "name": "Bench_quartz_lens",
+        "triangles": 11776,
+        "welded_vertices": 5890,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "winding_consistent": true,
+        "signed_volume_m3": 0.00021079460897690158,
+        "passed": true
+      }
+    ],
+    "texture_checks": [
+      {
+        "name": "oiled_walnut",
+        "size": 1024,
+        "passed": true
+      },
+      {
+        "name": "lime_plaster",
+        "size": 1024,
+        "passed": true
+      },
+      {
+        "name": "cut_limestone",
+        "size": 1024,
+        "passed": true
+      },
+      {
+        "name": "rubbed_brass",
+        "size": 1024,
+        "passed": true
+      },
+      {
+        "name": "woven_teal_linen",
+        "size": 1024,
+        "passed": true
+      },
+      {
+        "name": "laid_vellum",
+        "size": 1024,
+        "passed": true
+      },
+      {
+        "name": "celestial_chart",
+        "size": 2048,
+        "passed": true
+      },
+      {
+        "name": "folio_chart",
+        "size": 2048,
+        "passed": true
+      },
+      {
+        "name": "leather_grain",
+        "size": 1024,
+        "passed": true
+      },
+      {
+        "name": "flagstone",
+        "size": 1024,
+        "passed": true
+      },
+      {
+        "name": "window_linen",
+        "size": 1024,
+        "passed": true
+      }
+    ],
+    "continuous_machining_axis_groups": 378
+  },
+  "numeric_transport": {
+    "passed": true,
+    "white_furnace_maximum": 0.828570664,
+    "portal_pdf_integral": 0.998319126,
+    "fresnel_normal": 0.0400000028,
+    "quartz_ior_400": 1.55773079,
+    "quartz_ior_700": 1.54061353
+  },
+  "passed": true,
+  "scope": "Explicit geometry/material/numerical/raw-output tests; not a photorealism or convergence certification"
+}

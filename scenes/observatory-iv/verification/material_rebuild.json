@@ -1,0 +1,83 @@
+{
+  "scope": "All eleven float material maps regenerated from the delivered authoring script in a separate directory; same installed Python libraries and local font rasterizer. Not a cross-platform typography guarantee.",
+  "maps": [
+    {
+      "index": 0,
+      "name": "oiled_walnut",
+      "original_sha256": "ff6aba0bbbc45deefec47e1bc1f953f3e8047527cde146c96f9d143637e34b7d",
+      "rebuilt_sha256": "ff6aba0bbbc45deefec47e1bc1f953f3e8047527cde146c96f9d143637e34b7d",
+      "identical": true
+    },
+    {
+      "index": 1,
+      "name": "lime_plaster",
+      "original_sha256": "094b086af3ca2154b461d0d1439e8c0b895abceb0583ae38611e3bbbdfff850e",
+      "rebuilt_sha256": "094b086af3ca2154b461d0d1439e8c0b895abceb0583ae38611e3bbbdfff850e",
+      "identical": true
+    },
+    {
+      "index": 2,
+      "name": "cut_limestone",
+      "original_sha256": "4b80672dd4a0d89d1f3f63398cc217776f8e1a59f94eb06b0c898fdd974c3aa1",
+      "rebuilt_sha256": "4b80672dd4a0d89d1f3f63398cc217776f8e1a59f94eb06b0c898fdd974c3aa1",
+      "identical": true
+    },
+    {
+      "index": 3,
+      "name": "rubbed_brass",
+      "original_sha256": "35dab9dc76e90dd24112c03de0af645947155f67600d31e5e9292dcc447d20c2",
+      "rebuilt_sha256": "35dab9dc76e90dd24112c03de0af645947155f67600d31e5e9292dcc447d20c2",
+      "identical": true
+    },
+    {
+      "index": 4,
+      "name": "woven_teal_linen",
+      "original_sha256": "9cca1be51209dc47610aa7aca0c75626085aa3fbc002b926984f42289f2b852e",
+      "rebuilt_sha256": "9cca1be51209dc47610aa7aca0c75626085aa3fbc002b926984f42289f2b852e",
+      "identical": true
+    },
+    {
+      "index": 5,
+      "name": "laid_vellum",
+      "original_sha256": "85d53de4b46833249a3084e78128d58cbe7f5054dc363748d98df119490c7d69",
+      "rebuilt_sha256": "85d53de4b46833249a3084e78128d58cbe7f5054dc363748d98df119490c7d69",
+      "identical": true
+    },
+    {
+      "index": 6,
+      "name": "celestial_chart",
+      "original_sha256": "fc74c39b9896b097011d81936d458092c2a9abc5ce58b41ae1c73a520468ba87",
+      "rebuilt_sha256": "fc74c39b9896b097011d81936d458092c2a9abc5ce58b41ae1c73a520468ba87",
+      "identical": true
+    },
+    {
+      "index": 7,
+      "name": "folio_chart",
+      "original_sha256": "0665a81cb0f7065f17c3de0ec331638f720ae9c5469b90b73a9b9b989f8372d4",
+      "rebuilt_sha256": "0665a81cb0f7065f17c3de0ec331638f720ae9c5469b90b73a9b9b989f8372d4",
+      "identical": true
+    },
+    {
+      "index": 8,
+      "name": "leather_grain",
+      "original_sha256": "4e657ccbaa6b362541877ff4d85be8cd537e97a4d0a21f747eb1c615e123a54b",
+      "rebuilt_sha256": "4e657ccbaa6b362541877ff4d85be8cd537e97a4d0a21f747eb1c615e123a54b",
+      "identical": true
+    },
+    {
+      "index": 9,
+      "name": "flagstone",
+      "original_sha256": "1e5df882cd7bf6133c983dcbb85c853bc97d05552048cc20bc0a9a3713ad0950",
+      "rebuilt_sha256": "1e5df882cd7bf6133c983dcbb85c853bc97d05552048cc20bc0a9a3713ad0950",
+      "identical": true
+    },
+    {
+      "index": 10,
+      "name": "window_linen",
+      "original_sha256": "7fa98b792e1881a1a4919d6430aef905a7d1c606d2c2728e56d7ed3db40141f2",
+      "rebuilt_sha256": "7fa98b792e1881a1a4919d6430aef905a7d1c606d2c2728e56d7ed3db40141f2",
+      "identical": true
+    }
+  ],
+  "passed": true
+}

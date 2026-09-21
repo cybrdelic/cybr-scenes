@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+build/
+build_*/
+scenes/*/scene/*.cvr2
+scenes/*/scene/*.groups
+scenes/*/scene/*.glb
+scenes/*/scene/textures/
+scenes/*/renders/reproduction*
+scenes/*/renders/smoke*
