@@ -1,0 +1,36 @@
+name: Combat scanned surface inputs
+on:
+  push:
+    branches: [feature/mythic-elemental-combat]
+    paths: [.github/workflows/combat-surface-assets.yml]
+permissions:
+  contents: read
+jobs:
+  assets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Fetch source maps and author metadata
+        shell: python
+        run: |
+          import urllib.request, pathlib, hashlib, json
+          root=pathlib.Path('surfaces'); root.mkdir()
+          def get(url):
+            with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'CYBR mesh preview / asset source attribution'}),timeout=50) as r:return r.read()
+          asset='rock_09'
+          data=json.loads(get('https://api.polyhaven.com/files/'+asset))
+          (root/'polyhaven_files.json').write_text(json.dumps(data,indent=2))
+          (root/'polyhaven_info.json').write_bytes(get('https://api.polyhaven.com/info/'+asset))
+          rows=[]
+          for key in ['diff','nor_gl','rough','disp']:
+            entry=data[key].get('2k',data[key].get('1k'))
+            fmt='jpg' if 'jpg' in entry else 'png'
+            url=entry[fmt]['url']; content=get(url); name=asset+'_'+key+'.'+fmt
+            (root/name).write_bytes(content)
+            rows.append(dict(file=name,url=url,bytes=len(content),sha256=hashlib.sha256(content).hexdigest(),license='CC0',source='Poly Haven'))
+          (root/'receipts.json').write_text(json.dumps(rows,indent=2))
+      - uses: actions/upload-artifact@v4
+        with:
+          name: combat-scanned-surface-inputs
+          path: surfaces/
+          retention-days: 3
