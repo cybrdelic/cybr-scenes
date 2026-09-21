@@ -50,9 +50,11 @@ python verify.py --geometry-only
   --width 64 --height 48 --spp 4 --depth 6 --threads 2
 ./build/observatory --mesh scene/observatory.cvr2 --out renders/ci_smoke \
   --width 64 --height 48 --threads 2 --guides-only
-python finish.py renders/ci_smoke --preview
+python finish.py renders/ci_smoke
 python verify.py --stem renders/ci_smoke
 ```
+
+Use full finishing for this validation command: `finish.py --preview` deliberately skips the raw EXR export that `verify.py` checks.
 
 The [native-scene workflow](.github/workflows/observatory.yml) checks the imported files, rebuilds assets, compiles the renderer, runs numerical and geometry tests, and renders a 64 × 48 smoke image. Its artifact contains the new smoke output and checks. **A passing smoke test is not a new production render, a convergence test, or a photorealism score.**
 
