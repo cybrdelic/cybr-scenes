@@ -1,0 +1,59 @@
+name: Combat motion V3 source conversion
+on:
+  push:
+    branches: [feature/mythic-elemental-combat]
+    paths: [.github/workflows/combat-human-motion-v3.yml]
+permissions:
+  contents: read
+jobs:
+  motion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install pinned FBX parser
+        run: npm install --ignore-scripts --no-audit --no-fund three@0.180.0
+      - name: Acquire pinned source animation and convert skeletal tracks
+        shell: bash
+        run: |
+          cat > convert.mjs <<'JS'
+          import fs from 'node:fs';
+          import crypto from 'node:crypto';
+          import {AnimationMixer, LoopOnce} from 'three';
+          import {FBXLoader} from 'three/addons/loaders/FBXLoader.js';
+          const root='motion';fs.mkdirSync(root,{recursive:true});
+          const base='https://raw.githubusercontent.com/simondevyoutube/Quick_3D_RPG/bfeef5ccd670a1adc1d8d77da94900492e28f471/resources/guard/';
+          const kinds=['Idle','Slash','Kick','Impact','Walk']; const receipts=[];
+          for(const k of kinds){
+            const name='Sword And Shield '+k+'.fbx'; const url=base+encodeURIComponent(name);
+            const response=await fetch(url);if(!response.ok)throw Error(`${response.status} ${name}`);
+            const raw=await response.arrayBuffer();if(raw.byteLength>4000000)throw Error('Unexpected asset size');
+            const scene=new FBXLoader().parse(raw,'');scene.updateMatrixWorld(true);
+            const nodes=[];scene.traverse(o=>{if(o.isBone)nodes.push(o)});
+            const rest=nodes.map(o=>({name:o.name,parent:o.parent?.name,position:o.position.toArray(),quaternion:o.quaternion.toArray(),scale:o.scale.toArray(),world:o.matrixWorld.toArray()}));
+            const clip=scene.animations[0];if(!clip)throw Error('No animation');
+            const mixer=new AnimationMixer(scene);const action=mixer.clipAction(clip);action.setLoop(LoopOnce,1);action.clampWhenFinished=true;action.play();
+            const fps=60;const frames=[];
+            for(let f=0;f<=Math.ceil(clip.duration*fps);f++){
+              const t=Math.min(f/fps,clip.duration);mixer.setTime(t);scene.updateMatrixWorld(true);
+              frames.push({time:t,position:nodes.map(o=>o.position.toArray()),quaternion:nodes.map(o=>o.quaternion.toArray()),world:nodes.map(o=>o.matrixWorld.toArray())});
+            }
+            const output={source:url,name:k,duration:clip.duration,fps,rest,frames,tracks:clip.tracks.map(t=>({name:t.name,type:t.ValueTypeName,times:Array.from(t.times),values:Array.from(t.values)}))};
+            fs.writeFileSync(`${root}/${k}.json`,JSON.stringify(output));
+            receipts.push({name:k,url,sha256:crypto.createHash('sha256').update(Buffer.from(raw)).digest('hex'),bytes:raw.byteLength,frames:frames.length,duration:clip.duration,joints:nodes.length});
+            console.log(receipts.at(-1));
+          }
+          const readme=await (await fetch(base+'readme.txt')).text();fs.writeFileSync(root+'/SOURCE_README.txt',readme);
+          fs.writeFileSync(root+'/receipts.json',JSON.stringify(receipts,null,2));
+          fs.copyFileSync('convert.mjs',root+'/convert.mjs');
+          fs.copyFileSync('node_modules/three/LICENSE',root+'/THREE_LICENSE.txt');
+          JS
+          node convert.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: combat-motion-v3-tracks
+          path: motion/
+          retention-days: 3
