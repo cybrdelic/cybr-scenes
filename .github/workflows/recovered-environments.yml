@@ -1,7 +1,7 @@
 name: Recovered environment verification
 on: [push, workflow_dispatch]
 permissions:
-  contents: read
+  contents: write
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -34,12 +34,14 @@ jobs:
           python-version: '3.13'
       - run: pip install -r requirements.txt
       - run: python cybr_scenes.py render ${{ matrix.scene }} --width 480 --spp 24 --water-spp 48 --threads 2 --output demo-output
-      - uses: actions/upload-artifact@v4
+      - name: Save fresh proof without Actions artifact storage
         if: always()
-        with:
-          name: ${{ matrix.scene }}-fresh-render
-          path: |
-            environments/demo-output/**/*.png
-            environments/demo-output/**/*.json
-            environments/demo-output/**/*.log
-            environments/evidence/render-batch.json
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          if [ -d demo-output ]; then
+            find demo-output -type f \( -name '*.png' -o -name '*.json' -o -name '*.log' \) -exec git add -f {} +
+          fi
+          git add evidence/render-batch.json
+          git diff --cached --quiet || git commit -m "Fresh ${{ matrix.scene }} proof for ${{ github.sha }}"
+          git push origin HEAD:proof/${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.scene }}
