@@ -2,6 +2,23 @@
 
 Native-rendered 3D scenes with the code, input geometry, material recipes, images, and evidence needed to inspect and reproduce them.
 
+## Recovered environments
+
+The original six-scene codebase is in [environments](environments/README.md), alongside—not replacing—Quiet Observatory IV: Sandstone Passage, Basalt Tide, Fernwater, Desert Hot Springs, Obsidian Reach and Drowned Geode, with original builders, native renderers, assets and provenance.
+
+Source: `CYBR_Scenes_Execution_Repaired.zip`, SHA-256 `a43df56f326a2b83baac51152f1b7556508a4f51f49af6744e0c85344da87c62`. Packaged images/evidence are historical. The **Recovered environment verification** workflow separately tests and generates fresh 480-pixel renders from full geometry for all six scenes, with images, logs and receipts. These are smoke-test renders, not production-quality replacements.
+
+On Linux/WSL with AVX2, g++ and OpenMP:
+
+```sh
+cd environments
+python -m pip install -r requirements.txt
+python -m unittest discover -s tests -v
+python cybr_scenes.py render sandstone-passage --width 480 --spp 24 --water-spp 48 --threads 2 --output demo-output
+```
+
+Full geometry preparation needs several GB of disk and substantial RAM. Read the environment execution documentation before production renders.
+
 ## Quiet Observatory IV
 
 [![Quiet Observatory IV — native 1800 × 1200 render](scenes/observatory-iv/renders/Observatory_IV.png)](scenes/observatory-iv/renders/Observatory_IV.png)
