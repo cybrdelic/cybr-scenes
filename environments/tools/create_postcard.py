@@ -4,8 +4,7 @@ from argparse import Namespace
 import json
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from cybr_scenes import ROOT, SCENES, prepare_scene, render_scene
-from execution_runtime import exclusive
+from cybr_scenes import ROOT, SCENES, prepare_scene, render_scene, exclusive
 
 def main():
     output = ROOT / 'demo-output/amber-passage'
