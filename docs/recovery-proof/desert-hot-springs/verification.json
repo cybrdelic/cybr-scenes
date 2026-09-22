@@ -1,0 +1,126 @@
+{
+  "passed": true,
+  "tests": {
+    "finite_radiance": true,
+    "nonnegative_transport_radiance": true,
+    "dimensions_match": true,
+    "nonblank_image": true,
+    "no_invalid_reported_paths": true,
+    "positive_triangle_count": true,
+    "image_generation_disabled": true
+  },
+  "dimensions": [
+    480,
+    320
+  ],
+  "radiance_min": -0.019592121243476868,
+  "radiance_max": 19.979351043701172,
+  "spectral_film": {
+    "bands": 16,
+    "minimum": 5.2279920055298135e-06,
+    "maximum": 16.390907287597656,
+    "sha256": "0cb60a469bea1fedd50d13dca36ef8708a2b9f5e6873c6cdd2c9f80526ee63c0"
+  },
+  "negative_linear_rgb_components": 1,
+  "rgb_note": "Spectral-to-XYZ-to-display-RGB conversion may produce negative out-of-gamut RGB components. Positivity is checked in the transported spectral bands when present, not in display RGB.",
+  "mean_linear_rgb": [
+    0.19600287079811096,
+    0.1708223968744278,
+    0.13043212890625
+  ],
+  "png_sha256": "f25831eefcb7d76e22d3cef93fb7c79ff6cf759aa5fe186d59a1d98872604976",
+  "raw_pfm_sha256": "22b62bcd5110a61c7a950f70ea451a52b38045cf1f6e75a1bb8c9e024864336e",
+  "native_metadata_sha256": "6497ad5bc59782a239879257a5788f25ecf9b447ef42a7dcbdc4749a048ebf84",
+  "renderer_metadata": {
+    "renderer": "CYBR SCENES R2 / Hot Springs: stochastic sinter/mineral surfaces and sky MIS",
+    "geometry_accelerator": "CYBR GEO native SAH BVH",
+    "view": "hero",
+    "width": 480,
+    "height": 320,
+    "spp": 24,
+    "max_depth": 12,
+    "seed": 20260914,
+    "threads": 2,
+    "triangles": 23690858,
+    "bvh_nodes": 13664143,
+    "spectral_bands": 16,
+    "wavelength_range_nm": [
+      380,
+      780
+    ],
+    "spectral_method": "Jointly transported fixed midpoint wavelength quadrature, 25 nm bins",
+    "water_ior": 1.33399999,
+    "dispersion": false,
+    "steam": true,
+    "steam_model": "Authored heterogeneous trilinear density grid; grid-bounded delta and ratio tracking; HG phase",
+    "water_absorption_scale": 1,
+    "finite_difference_water_connection_step_radians": 0.0001,
+    "nonfinite_path_samples": 0,
+    "exposure": 1.89999998,
+    "film_white_rgb": [
+      1.04491019,
+      0.984612525,
+      1.02078438
+    ],
+    "seconds": 60.7156029,
+    "band_means": [
+      0.099484399,
+      0.12549521,
+      0.145121694,
+      0.158039153,
+      0.168027148,
+      0.1760405,
+      0.179560527,
+      0.176657841,
+      0.171233892,
+      0.165886983,
+      0.159229666,
+      0.150951833,
+      0.142501384,
+      0.133873969,
+      0.124849133,
+      0.11729297
+    ],
+    "water_scattering_coefficient_per_m": 0.0250000004,
+    "water_scattering_HG_g": 0.74000001,
+    "ripple_modes": 128,
+    "camera_origin_m": [
+      2.0999999,
+      -5.6500001,
+      1.51999998
+    ],
+    "camera_target_m": [
+      -0.150000006,
+      3.1500001,
+      0.150000006
+    ],
+    "horizontal_fov_degrees": 72,
+    "aperture_radius_m": 0.00100000005,
+    "sun_direction": [
+      -0.853579164,
+      0.426789582,
+      0.298752695
+    ],
+    "photographic_grayscale_albedo_detail": true,
+    "photographic_backplate": false,
+    "image_generation": false,
+    "sky_model": "Single-scattering spherical Rayleigh/aerosol spectral LUT, not reference-validated",
+    "material_spectra": "Reference-illuminant-calibrated RGB-anchor reflectance, not measured mineral spectra",
+    "clouds": false,
+    "cloud_model": "Bounded 3D extinction grid; conservative column-majorant DDA; delta-tracked scattering and ratio-tracked shadows",
+    "cloud_grid": [
+      640,
+      512,
+      48
+    ],
+    "water_spp": 48,
+    "total_camera_samples": 4687104,
+    "indirect_contribution_clamp_Y": 0,
+    "clamped_indirect_contributions": 0,
+    "water_microfacet_alpha": 0.00499999989,
+    "water_reflection_estimator": "Primary: GGX VNDF and solar-disc MIS; indirect: one-root macro reflection manifold with exclusive path ownership",
+    "underwater_direct_light_approximation": "One-root macro-surface manifolds approximate indirect reflected and transmitted caustics; primary reflection uses GGX"
+  },
+  "scope": "Execution, finite radiance, dimensions, traceable geometry; not an aesthetic or physical-reference validation.",
+  "checked_at": "2026-09-22T00:19:27.398399+00:00"
+}
