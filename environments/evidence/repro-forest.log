@@ -1,0 +1,52 @@
+fernwater: 0/20400257 triangles
+fernwater: 960000/20400257 triangles
+fernwater: 1920000/20400257 triangles
+fernwater: 2880000/20400257 triangles
+fernwater: 3840000/20400257 triangles
+fernwater: 4800000/20400257 triangles
+fernwater: 5760000/20400257 triangles
+fernwater: 6720000/20400257 triangles
+fernwater: 7680000/20400257 triangles
+fernwater: 8640000/20400257 triangles
+fernwater: 9600000/20400257 triangles
+fernwater: 10560000/20400257 triangles
+fernwater: 11520000/20400257 triangles
+fernwater: 12480000/20400257 triangles
+fernwater: 13440000/20400257 triangles
+fernwater: 14400000/20400257 triangles
+fernwater: 15360000/20400257 triangles
+fernwater: 16320000/20400257 triangles
+fernwater: 17280000/20400257 triangles
+fernwater: 18240000/20400257 triangles
+fernwater: 19200000/20400257 triangles
+fernwater: 20160000/20400257 triangles
+{
+  "scene": "fernwater",
+  "source_sha256": "564d95583336529ddb5ba00d9978ed6a44b76fe765c6d034b1966a6a14ed8d57",
+  "result_sha256": "d59afa214380c3a2d30763e5f3593111c76346919c95d9570953affaa44e380a",
+  "tool_sha256": "58e4475a8231b0ab4f31bc2960ddf055d8baa82a107c24658ab83b338bd7438c",
+  "triangles": 20400257,
+  "changed_vertex_records": 10368972,
+  "curled_litter_triangles": 2054644,
+  "max_displacement_m": 0.01124533824622631,
+  "minimum_jacobian_determinant": 0.9326808452606201,
+  "water_records_unchanged": true,
+  "bounds_min": [
+    -23.219911575317383,
+    -15.0,
+    -3.0
+  ],
+  "bounds_max": [
+    22.651113510131836,
+    71.0,
+    20.93863296508789
+  ],
+  "primitive_order_preserved": true,
+  "material_ids_and_uvs_preserved": true,
+  "finite": true,
+  "new_normal_method": "Exact inverse-transpose of continuous deformation Jacobian; normalized",
+  "source": "geometry/forest/scene.meshbin",
+  "result": "geometry-r2/forest/scene.meshbin",
+  "seconds": 23.867632552000032,
+  "image_generation": false
+}

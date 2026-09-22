@@ -1,0 +1,12 @@
+{
+  "schema": 2,
+  "revision": "R2",
+  "scenes": [
+    {"id":"sandstone-passage","title":"Sandstone Passage","engine":"geo","member":"canyon","mesh":"geometry/canyon/scene.meshbin","upgraded_mesh":"geometry-r2/canyon/scene.meshbin","camera":"geometry/canyon/camera.json","aspect":[3,2],"spp":96,"water_spp":96,"depth":12,"reference":"references/sandstone-passage.png","baseline_note":"Recovered three-scene builder; exact historical native still revision is unresolved."},
+    {"id":"basalt-tide","title":"Basalt Tide","engine":"geo","member":"coast","mesh":"geometry/coast/scene.meshbin","upgraded_mesh":"geometry-r2/coast/scene.meshbin","camera":"geometry/coast/camera.json","aspect":[3,2],"spp":96,"water_spp":192,"depth":12,"reference":"references/basalt-tide.png"},
+    {"id":"fernwater","title":"Fernwater","engine":"geo","member":"forest","mesh":"geometry/forest/scene.meshbin","upgraded_mesh":"geometry-r2/forest/scene.meshbin","camera":"geometry/forest/camera.json","aspect":[3,2],"spp":128,"water_spp":256,"depth":12,"reference":"references/fernwater.png"},
+    {"id":"desert-hot-springs","title":"Desert Hot Springs","engine":"hot","mesh":"geometry/hot/scene.meshbin","upgraded_mesh":"geometry-r2/hot/scene.meshbin","aspect":[3,2],"spp":96,"water_spp":192,"depth":12,"exposure":1.9,"reference":"references/desert-hot-springs.png"},
+    {"id":"obsidian-reach","title":"Obsidian Reach","engine":"obsidian","mesh":"engines/obsidian/assets/scene.bin","upgraded_mesh":"geometry-r2/obsidian/scene.bin","aspect":[16,7],"spp":96,"water_spp":96,"depth":7,"exposure":5.5,"reference":"references/obsidian-reach.png","simulation":false},
+    {"id":"drowned-geode","title":"Drowned Geode","engine":"geode","mesh":"engines/geode/assets/built_v3/scene.meshbin","upgraded_mesh":"geometry-r2/geode/scene.meshbin","aspect":[3,2],"spp":64,"water_spp":64,"depth":24,"exposure":1.4,"reference":"references/drowned-geode.png"}
+  ]
+}

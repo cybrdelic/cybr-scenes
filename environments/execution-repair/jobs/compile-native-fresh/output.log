@@ -1,0 +1,14 @@
+[2026-09-21T21:30:25.731036+00:00] STEP_START compile-geo: /usr/bin/g++ -std=c++17 -O3 -march=native -fno-math-errno -fopenmp -Ishared engines/geo/cybr-geo/native/spectral_scenes.cpp -o /mnt/data/execution_repair/CYBR_SCENES_R2/build/geo_r2
+[2026-09-21T21:30:32.511945+00:00] STEP_END compile-geo: succeeded (6.78s)
+[2026-09-21T21:30:32.515015+00:00] STEP_START self-test-geo: /mnt/data/execution_repair/CYBR_SCENES_R2/build/geo_r2 --self-test
+[2026-09-21T21:30:35.538954+00:00] STEP_END self-test-geo: succeeded (3.02s)
+[2026-09-21T21:30:35.548151+00:00] STEP_START compile-hot: /usr/bin/g++ -std=c++17 -O3 -march=native -fno-math-errno -fopenmp -Ishared engines/hot/cybr-geo/native/spectral_desert.cpp -o /mnt/data/execution_repair/CYBR_SCENES_R2/build/hot_r2
+[2026-09-21T21:30:40.815007+00:00] STEP_END compile-hot: succeeded (5.27s)
+[2026-09-21T21:30:40.817381+00:00] STEP_START self-test-hot: /mnt/data/execution_repair/CYBR_SCENES_R2/build/hot_r2 --self-test
+[2026-09-21T21:30:43.830200+00:00] STEP_END self-test-hot: succeeded (3.01s)
+[2026-09-21T21:30:43.836014+00:00] STEP_START compile-geode: /usr/bin/g++ -std=c++17 -O3 -march=native -fno-math-errno -fopenmp -Ishared -mavx2 -ffp-contract=off engines/geode/src/cathedral_v3.cpp -o /mnt/data/execution_repair/CYBR_SCENES_R2/build/geode_r2
+[2026-09-21T21:30:49.102761+00:00] STEP_END compile-geode: succeeded (5.27s)
+[2026-09-21T21:30:49.105690+00:00] STEP_START self-test-geode: /mnt/data/execution_repair/CYBR_SCENES_R2/build/geode_r2 --self-test
+[2026-09-21T21:30:49.859872+00:00] STEP_END self-test-geode: succeeded (0.75s)
+[2026-09-21T21:30:49.864858+00:00] STEP_START compile-obsidian: /usr/bin/g++ -std=c++17 -O3 -march=native -fno-math-errno -fopenmp -Ishared -Iengines/obsidian/include engines/obsidian/src/render.cpp -o /mnt/data/execution_repair/CYBR_SCENES_R2/build/obsidian_r2
+[2026-09-21T21:30:53.629543+00:00] STEP_END compile-obsidian: succeeded (3.76s)

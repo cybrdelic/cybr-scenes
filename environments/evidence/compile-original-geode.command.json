@@ -1,0 +1,44 @@
+{
+  "command": [
+    "/usr/bin/g++",
+    "-std=c++17",
+    "-O3",
+    "-march=native",
+    "-fno-math-errno",
+    "-fopenmp",
+    "-mavx2",
+    "-ffp-contract=off",
+    "/mnt/data/CYBR_SCENES_R2/build/original-engines/geode/src/cathedral_v3.cpp",
+    "-o",
+    "/mnt/data/CYBR_SCENES_R2/build/geode_original"
+  ],
+  "cwd": ".",
+  "started_at": "2026-09-21T17:16:26.066298+00:00",
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "4",
+    "NUMBA_NUM_THREADS": "4",
+    "CYBR_SURFACE_ATLAS": "/mnt/data/CYBR_SCENES_R2/assets/mineral_detail.cdt"
+  },
+  "executed_command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/mnt/data/CYBR_SCENES_R2/evidence/compile-original-geode.resources.txt",
+    "/usr/bin/g++",
+    "-std=c++17",
+    "-O3",
+    "-march=native",
+    "-fno-math-errno",
+    "-fopenmp",
+    "-mavx2",
+    "-ffp-contract=off",
+    "/mnt/data/CYBR_SCENES_R2/build/original-engines/geode/src/cathedral_v3.cpp",
+    "-o",
+    "/mnt/data/CYBR_SCENES_R2/build/geode_original"
+  ],
+  "returncode": 0,
+  "seconds": 10.283990867000284,
+  "finished_at": "2026-09-21T17:16:36.350204+00:00",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

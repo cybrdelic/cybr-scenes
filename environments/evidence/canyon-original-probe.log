@@ -1,0 +1,23 @@
+CYBR GEO BVH: 8108728 actual triangles; 4711451 nodes
+4% 17.2937 s
+9% 17.4273 s
+14% 17.5596 s
+18% 17.6984 s
+23% 17.8296 s
+28% 17.965 s
+32% 18.1086 s
+37% 18.2651 s
+42% 18.396 s
+46% 18.55 s
+51% 18.7095 s
+56% 18.8478 s
+60% 18.9942 s
+65% 19.1181 s
+70% 19.2799 s
+74% 19.4008 s
+79% 19.5457 s
+84% 19.6766 s
+88% 19.7894 s
+93% 19.9074 s
+98% 20.004 s
+WROTE /mnt/data/CYBR_SCENES_R2/renders/canyon-original-probe; 20.1059 seconds; invalid paths 0

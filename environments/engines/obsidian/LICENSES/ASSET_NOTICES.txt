@@ -1,0 +1,4 @@
+Source: user-provided CYBR_Desert_Hot_Springs_V3_Source_and_Raw.zip.
+Scan assets boulder_01 and namaqualand_boulder_03, and the overcast_soil_puresky panorama, are retained from its documented Poly Haven CC0 asset set. See assets/download_manifest.json and assets/scan_provenance.json.
+The rock_boulder_dry reflectance/displacement/roughness maps are retained V2 terrain-material inputs in that same CYBR GEO archive. They are used to derive the charcoal triplanar optical map, not as a generated backdrop.
+Render geometry is transformed and composed; neither the outcrops nor the site are asserted to be physically reconstructed volcanic geology.

@@ -1,0 +1,67 @@
+{
+  "scope": "Quadrature convergence for the same reduced single-scattering sky, not measured atmosphere validation",
+  "sun_elevation_deg": 17.382703987116223,
+  "solar_path": {
+    "12_power_1": {
+      "rayleigh": 25421.42516987378,
+      "aerosol": 1013.8588575823838,
+      "rayleigh_relative_error": 0.03868772536351046,
+      "aerosol_relative_error": 0.7468936335015811
+    },
+    "32_power_2": {
+      "rayleigh": 26393.86627117986,
+      "aerosol": 3955.5502913796086,
+      "rayleigh_relative_error": 0.0019148237342819392,
+      "aerosol_relative_error": 0.012510514392283912
+    },
+    "48_power_2": {
+      "rayleigh": 26421.983217764362,
+      "aerosol": 3983.255161057829,
+      "rayleigh_relative_error": 0.0008515802026403204,
+      "aerosol_relative_error": 0.005594089244815325
+    },
+    "64_power_2": {
+      "rayleigh": 26431.83676395675,
+      "aerosol": 3993.0360556807373,
+      "rayleigh_relative_error": 0.0004789679340462328,
+      "aerosol_relative_error": 0.0031523226413144065
+    }
+  },
+  "sky": [
+    {
+      "view_elevation_deg": 2.0,
+      "legacy_max_band_relative_error": 0.014536220198845061,
+      "refined_max_band_relative_error": 0.0012484080784516982,
+      "legacy_mean_ratio": 1.0073340064374374,
+      "refined_mean_ratio": 1.0003934499130527
+    },
+    {
+      "view_elevation_deg": 8.0,
+      "legacy_max_band_relative_error": 0.04600242976878129,
+      "refined_max_band_relative_error": 0.0018481025020361441,
+      "legacy_mean_ratio": 1.0106881904710034,
+      "refined_mean_ratio": 1.0002918137366597
+    },
+    {
+      "view_elevation_deg": 20.0,
+      "legacy_max_band_relative_error": 0.038672622817528916,
+      "refined_max_band_relative_error": 0.001420088621051884,
+      "legacy_mean_ratio": 1.0057805101758082,
+      "refined_mean_ratio": 1.0000921922947568
+    },
+    {
+      "view_elevation_deg": 50.0,
+      "legacy_max_band_relative_error": 0.029764786592029673,
+      "refined_max_band_relative_error": 0.001065379173041769,
+      "legacy_mean_ratio": 1.0027727936183828,
+      "refined_mean_ratio": 0.9999830638749907
+    },
+    {
+      "view_elevation_deg": 90.0,
+      "legacy_max_band_relative_error": 0.02799423845712765,
+      "refined_max_band_relative_error": 0.000989412380187691,
+      "legacy_mean_ratio": 1.0034339478756964,
+      "refined_mean_ratio": 0.9999764766116686
+    }
+  ]
+}

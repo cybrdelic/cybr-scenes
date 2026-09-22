@@ -1,0 +1,862 @@
+{
+  "scope": "Newly executed render/geometry/buffer integrity and explicitly named component checks. Not a photorealism, measured-geometry, or reference-integrator certificate.",
+  "geometry": {
+    "schema": "cybrgeo.validation/1",
+    "name": "CYBR_HOT_SPRINGS_V11",
+    "part_count": 11,
+    "triangles": 23690858,
+    "bounds_mm": [
+      [
+        -7500000.0,
+        -80000.0,
+        -3000.0
+      ],
+      [
+        7500000.0,
+        12000000.0,
+        1940143.1552224797
+      ]
+    ],
+    "analytic_brep_parts": 0,
+    "unique_names": true,
+    "finite_vertices": true,
+    "valid_indices": true,
+    "note": "Structural data checks only. No load, tolerance, interference or thermal certification.",
+    "counts": {
+      "large_rocks": 156,
+      "small_rocks": 8814,
+      "gravel": 32640,
+      "mineral_nodules": 629,
+      "shrubs": 407,
+      "grass_tufts": 410
+    },
+    "seconds": 233.055344581604,
+    "mesh_sha256": "3bb30342fed34aa78a1a090df966ccf1ac3437aab521437c4b87d689bdb80264",
+    "actual_cybrgeo_save_load_roundtrip": true,
+    "image_generation": false
+  },
+  "water_boundaries": [
+    {
+      "name": "Closed_water_0",
+      "watertight": true,
+      "consistent_winding": true,
+      "positive_signed_volume": true,
+      "boundary": {
+        "pool": 0,
+        "optical_enclosure_not_storage_volume": true,
+        "boundary_q": 1.13,
+        "boundary_samples": 1024,
+        "minimum_bank_cover_m": 0.07572207371439865,
+        "maximum_boundary_q_error": 1.2414382855041595e-09,
+        "boundary_contained": true
+      }
+    },
+    {
+      "name": "Closed_water_1",
+      "watertight": true,
+      "consistent_winding": true,
+      "positive_signed_volume": true,
+      "boundary": {
+        "pool": 1,
+        "optical_enclosure_not_storage_volume": true,
+        "boundary_q": 1.13,
+        "boundary_samples": 512,
+        "minimum_bank_cover_m": 0.08577985183322051,
+        "maximum_boundary_q_error": 9.840495085455814e-10,
+        "boundary_contained": true
+      }
+    }
+  ],
+  "scene_inputs_match": true,
+  "mode_table_matches": true,
+  "views": {
+    "final": {
+      "render": {
+        "renderer": "CYBR GEO native V11 scale-separated microgeometry and jointed ridge terrain",
+        "geometry_accelerator": "CYBR GEO native SAH BVH",
+        "view": "hero",
+        "width": 1920,
+        "height": 1280,
+        "spp": 128,
+        "max_depth": 12,
+        "seed": 20260914,
+        "threads": 5,
+        "triangles": 23690858,
+        "bvh_nodes": 13672423,
+        "spectral_bands": 16,
+        "wavelength_range_nm": [
+          380,
+          780
+        ],
+        "spectral_method": "Jointly transported fixed midpoint wavelength quadrature, 25 nm bins",
+        "water_ior": 1.33399999,
+        "dispersion": false,
+        "steam": true,
+        "steam_model": "Authored heterogeneous trilinear density grid; grid-bounded delta and ratio tracking; HG phase",
+        "water_absorption_scale": 1,
+        "finite_difference_water_connection_step_radians": 0.0001,
+        "nonfinite_path_samples": 0,
+        "exposure": 1.89999998,
+        "film_white_rgb": [
+          1.04491019,
+          0.984612525,
+          1.02078438
+        ],
+        "seconds": 1240.1615,
+        "band_means": [
+          0.100050837,
+          0.126219764,
+          0.145938709,
+          0.159000307,
+          0.169122398,
+          0.177196428,
+          0.180772737,
+          0.177871197,
+          0.172475755,
+          0.167167515,
+          0.16050005,
+          0.1521741,
+          0.143685669,
+          0.135014862,
+          0.125936493,
+          0.118326575
+        ],
+        "water_scattering_coefficient_per_m": 0.0250000004,
+        "water_scattering_HG_g": 0.74000001,
+        "ripple_modes": 128,
+        "camera_origin_m": [
+          2.0999999,
+          -5.6500001,
+          1.51999998
+        ],
+        "camera_target_m": [
+          -0.150000006,
+          3.1500001,
+          0.150000006
+        ],
+        "horizontal_fov_degrees": 72,
+        "aperture_radius_m": 0.00100000005,
+        "sun_direction": [
+          -0.853579164,
+          0.426789582,
+          0.298752695
+        ],
+        "photographic_grayscale_albedo_detail": true,
+        "photographic_backplate": false,
+        "image_generation": false,
+        "sky_model": "Single-scattering spherical Rayleigh/aerosol spectral LUT, not reference-validated",
+        "material_spectra": "Reference-illuminant-calibrated RGB-anchor reflectance, not measured mineral spectra",
+        "clouds": false,
+        "cloud_model": "Bounded 3D extinction grid; conservative column-majorant DDA; delta-tracked scattering and ratio-tracked shadows",
+        "cloud_grid": [
+          640,
+          512,
+          48
+        ],
+        "water_spp": 320,
+        "total_camera_samples": 443005632,
+        "indirect_contribution_clamp_Y": 0,
+        "clamped_indirect_contributions": 0,
+        "water_microfacet_alpha": 0.00499999989,
+        "water_reflection_estimator": "Primary: GGX VNDF and solar-disc MIS; indirect: one-root macro reflection manifold with exclusive path ownership",
+        "underwater_direct_light_approximation": "One-root macro-surface manifolds approximate indirect reflected and transmitted caustics; primary reflection uses GGX"
+      },
+      "execution": {
+        "source_hash": "0a01ac2f3df04c41395cfd3289bdd9c02f377bab8a705accbc1a043f062b0f25",
+        "compile_command": [
+          "/usr/bin/g++",
+          "-std=c++17",
+          "-O3",
+          "-march=native",
+          "-fopenmp",
+          "/mnt/data/CYBR_Hot_Springs_V11/cybr-geo/native/spectral_desert.cpp",
+          "-o",
+          "/mnt/data/CYBR_Hot_Springs_V11/work/spectral_desert_0a01ac2f3df04c41"
+        ],
+        "compiler_version": "g++ (Debian 14.2.0-19) 14.2.0",
+        "binary_sha256": "3a856e38080a755553bcf9c8871e2a3a46d21b04140295fd2c986449d28bf978",
+        "render_command": [
+          "/mnt/data/CYBR_Hot_Springs_V11/work/spectral_desert_0a01ac2f3df04c41",
+          "/mnt/data/CYBR_Hot_Springs_V11/work/scene.meshbin",
+          "/mnt/data/CYBR_Hot_Springs_V11/work/final",
+          "--w",
+          "1920",
+          "--h",
+          "1280",
+          "--spp",
+          "128",
+          "--depth",
+          "12",
+          "--water-spp",
+          "320",
+          "--indirect-clamp",
+          "0.0",
+          "--threads",
+          "5",
+          "--view",
+          "hero",
+          "--seed",
+          "20260914",
+          "--exposure",
+          "1.9",
+          "--aperture",
+          "0.001",
+          "--water-absorption",
+          "1.0",
+          "--grain",
+          "/mnt/data/CYBR_Hot_Springs_V11/cybr-geo/examples/desert_hot_springs/assets/gravel_periodic.pgm",
+          "--relief",
+          "/mnt/data/CYBR_Hot_Springs_V11/cybr-geo/examples/desert_hot_springs/assets/granular_relief.bin",
+          "--no-clouds",
+          "--sun",
+          "-0.80,0.40,0.28"
+        ],
+        "elapsed_total_seconds": 1256.7381951270002,
+        "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+        "packages": {
+          "numpy": "2.3.5",
+          "scipy": "1.17.0",
+          "trimesh": "4.11.1",
+          "Pillow": "12.3.0",
+          "numba": "0.65.1",
+          "scikit-image": "0.26.0"
+        },
+        "upstream_defaults_modified": false,
+        "pushed_to_github": false,
+        "scene_inputs_fingerprint": "67f5d8ccbaf1b4fb09dd015978bda84ef2042ee1888a8a5d007d50b32142009a",
+        "mesh_sha256": "3bb30342fed34aa78a1a090df966ccf1ac3437aab521437c4b87d689bdb80264"
+      },
+      "image": {
+        "source": "Native spectral radiance, not an image-generation model",
+        "resolution": [
+          1920,
+          1280
+        ],
+        "guided_filter_steps": [
+          1,
+          2
+        ],
+        "sky_only_filter_steps": [
+          2,
+          4,
+          8
+        ],
+        "sky_filter_pixel_count": 375045,
+        "sky_filter_mask": "Negative first-opaque-surface material guide only; no landscape pixel changes in sky-only passes",
+        "filter_space": "Linear scene-referred RGB after 16-band CIE integration",
+        "opaque_filter_strength": 0.5,
+        "opaque_residual_preserved_fraction": 0.5,
+        "opaque_policy_pixel_count": 667089,
+        "opaque_mask": "Center-ray budget equals ordinary spp and sediment/crust material 0 or 4; disabled if water budget is not higher",
+        "opaque_policy": "Sediment/crust only: convex native/filtered radiance blend, not sharpening or detail synthesis; other materials retain full filtering",
+        "postprocess_source_sha256": "25841de9e92f92792fe4fe99bb19bf29b2fc160219797a3cfe054e14f4711650",
+        "raw_radiance_finite": true,
+        "raw_radiance_min": 0.0009005297324620187,
+        "raw_radiance_max": 82.71952056884766,
+        "mean_linear_rgb": [
+          0.19748355448246002,
+          0.17197668552398682,
+          0.13116523623466492
+        ],
+        "png_round_trip_exact": true,
+        "png_sha256": "1a2fba20de75ca540562b631b4275820c11622bf7f160775de64f664b706a9d4",
+        "exposure": 1.89999998,
+        "camera_white_balance_K": 5750.0,
+        "display_white_rgb": [
+          1.1147017919323665,
+          0.9763938573539243,
+          0.8966954151524217
+        ],
+        "toe_parameter": 0.035,
+        "added_grain": false,
+        "upscaling": false,
+        "photo_compositing": false,
+        "mean_linear_filter_change": 0.009214495308697224
+      },
+      "spectral_reintegration": {
+        "finite": true,
+        "max_normalized_error": 5.303400726968721e-07,
+        "mean_absolute_error": 2.4201519478263597e-08,
+        "passed": true
+      },
+      "sample_budget_consistent": true,
+      "renderer_source_matches_receipt": true,
+      "passed": true
+    },
+    "previous_lighting": {
+      "render": {
+        "renderer": "CYBR GEO native V11 scale-separated microgeometry and jointed ridge terrain",
+        "geometry_accelerator": "CYBR GEO native SAH BVH",
+        "view": "hero",
+        "width": 1200,
+        "height": 800,
+        "spp": 80,
+        "max_depth": 12,
+        "seed": 20260914,
+        "threads": 5,
+        "triangles": 23690858,
+        "bvh_nodes": 13672423,
+        "spectral_bands": 16,
+        "wavelength_range_nm": [
+          380,
+          780
+        ],
+        "spectral_method": "Jointly transported fixed midpoint wavelength quadrature, 25 nm bins",
+        "water_ior": 1.33399999,
+        "dispersion": false,
+        "steam": true,
+        "steam_model": "Authored heterogeneous trilinear density grid; grid-bounded delta and ratio tracking; HG phase",
+        "water_absorption_scale": 1,
+        "finite_difference_water_connection_step_radians": 0.0001,
+        "nonfinite_path_samples": 0,
+        "exposure": 1.16999996,
+        "film_white_rgb": [
+          1.04491019,
+          0.984612525,
+          1.02078438
+        ],
+        "seconds": 312.491974,
+        "band_means": [
+          0.1070446,
+          0.132685021,
+          0.151542515,
+          0.163610131,
+          0.173411846,
+          0.18189086,
+          0.185802788,
+          0.182674929,
+          0.177009523,
+          0.171725273,
+          0.164983392,
+          0.156350508,
+          0.147540241,
+          0.138523474,
+          0.129007414,
+          0.121189609
+        ],
+        "water_scattering_coefficient_per_m": 0.0250000004,
+        "water_scattering_HG_g": 0.74000001,
+        "ripple_modes": 128,
+        "camera_origin_m": [
+          2.0999999,
+          -5.6500001,
+          1.51999998
+        ],
+        "camera_target_m": [
+          -0.150000006,
+          3.1500001,
+          0.150000006
+        ],
+        "horizontal_fov_degrees": 72,
+        "aperture_radius_m": 0.00100000005,
+        "sun_direction": [
+          -0.895043492,
+          0.295069277,
+          0.33441186
+        ],
+        "photographic_grayscale_albedo_detail": true,
+        "photographic_backplate": false,
+        "image_generation": false,
+        "sky_model": "Single-scattering spherical Rayleigh/aerosol spectral LUT, not reference-validated",
+        "material_spectra": "Reference-illuminant-calibrated RGB-anchor reflectance, not measured mineral spectra",
+        "clouds": false,
+        "cloud_model": "Bounded 3D extinction grid; conservative column-majorant DDA; delta-tracked scattering and ratio-tracked shadows",
+        "cloud_grid": [
+          640,
+          512,
+          48
+        ],
+        "water_spp": 192,
+        "total_camera_samples": 106064704,
+        "indirect_contribution_clamp_Y": 0,
+        "clamped_indirect_contributions": 0,
+        "water_microfacet_alpha": 0.00499999989,
+        "water_reflection_estimator": "Primary: GGX VNDF and solar-disc MIS; indirect: one-root macro reflection manifold with exclusive path ownership",
+        "underwater_direct_light_approximation": "One-root macro-surface manifolds approximate indirect reflected and transmitted caustics; primary reflection uses GGX"
+      },
+      "execution": {
+        "source_hash": "0a01ac2f3df04c41395cfd3289bdd9c02f377bab8a705accbc1a043f062b0f25",
+        "compile_command": [
+          "/usr/bin/g++",
+          "-std=c++17",
+          "-O3",
+          "-march=native",
+          "-fopenmp",
+          "/mnt/data/CYBR_Hot_Springs_V11/cybr-geo/native/spectral_desert.cpp",
+          "-o",
+          "/mnt/data/CYBR_Hot_Springs_V11/work/spectral_desert_0a01ac2f3df04c41"
+        ],
+        "compiler_version": "g++ (Debian 14.2.0-19) 14.2.0",
+        "binary_sha256": "3a856e38080a755553bcf9c8871e2a3a46d21b04140295fd2c986449d28bf978",
+        "render_command": [
+          "/mnt/data/CYBR_Hot_Springs_V11/work/spectral_desert_0a01ac2f3df04c41",
+          "/mnt/data/CYBR_Hot_Springs_V11/work/scene.meshbin",
+          "/mnt/data/CYBR_Hot_Springs_V11/work/previous_lighting",
+          "--w",
+          "1200",
+          "--h",
+          "800",
+          "--spp",
+          "80",
+          "--depth",
+          "12",
+          "--water-spp",
+          "192",
+          "--indirect-clamp",
+          "0.0",
+          "--threads",
+          "5",
+          "--view",
+          "hero",
+          "--seed",
+          "20260914",
+          "--exposure",
+          "1.16999996",
+          "--aperture",
+          "0.001",
+          "--water-absorption",
+          "1.0",
+          "--grain",
+          "/mnt/data/CYBR_Hot_Springs_V11/cybr-geo/examples/desert_hot_springs/assets/gravel_periodic.pgm",
+          "--relief",
+          "/mnt/data/CYBR_Hot_Springs_V11/cybr-geo/examples/desert_hot_springs/assets/granular_relief.bin",
+          "--no-clouds",
+          "--sun",
+          "-0.895043492,0.295069277,0.33441186"
+        ],
+        "elapsed_total_seconds": 322.6151816030001,
+        "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+        "packages": {
+          "numpy": "2.3.5",
+          "scipy": "1.17.0",
+          "trimesh": "4.11.1",
+          "Pillow": "12.3.0",
+          "numba": "0.65.1",
+          "scikit-image": "0.26.0"
+        },
+        "upstream_defaults_modified": false,
+        "pushed_to_github": false,
+        "scene_inputs_fingerprint": "67f5d8ccbaf1b4fb09dd015978bda84ef2042ee1888a8a5d007d50b32142009a",
+        "mesh_sha256": "3bb30342fed34aa78a1a090df966ccf1ac3437aab521437c4b87d689bdb80264"
+      },
+      "image": {
+        "source": "Native spectral radiance, not an image-generation model",
+        "resolution": [
+          1200,
+          800
+        ],
+        "guided_filter_steps": [
+          1,
+          2
+        ],
+        "sky_only_filter_steps": [
+          2,
+          4,
+          8
+        ],
+        "sky_filter_pixel_count": 146520,
+        "sky_filter_mask": "Negative first-opaque-surface material guide only; no landscape pixel changes in sky-only passes",
+        "filter_space": "Linear scene-referred RGB after 16-band CIE integration",
+        "opaque_filter_strength": 0.55,
+        "opaque_residual_preserved_fraction": 0.44999999999999996,
+        "opaque_policy_pixel_count": 260567,
+        "opaque_mask": "Center-ray budget equals ordinary spp and sediment/crust material 0 or 4; disabled if water budget is not higher",
+        "opaque_policy": "Sediment/crust only: convex native/filtered radiance blend, not sharpening or detail synthesis; other materials retain full filtering",
+        "postprocess_source_sha256": "25841de9e92f92792fe4fe99bb19bf29b2fc160219797a3cfe054e14f4711650",
+        "raw_radiance_finite": true,
+        "raw_radiance_min": 0.0022462063934653997,
+        "raw_radiance_max": 37.37107849121094,
+        "mean_linear_rgb": [
+          0.20305654406547546,
+          0.1764494627714157,
+          0.13595032691955566
+        ],
+        "png_round_trip_exact": true,
+        "png_sha256": "579cba13531dcf192241a81792060995768b543685ba09009ea895aaee945e1f",
+        "exposure": 1.16999996,
+        "camera_white_balance_K": 5700.0,
+        "display_white_rgb": [
+          1.1201520497979691,
+          0.9756777150911409,
+          0.8877413759278178
+        ],
+        "toe_parameter": 0.035,
+        "added_grain": false,
+        "upscaling": false,
+        "photo_compositing": false,
+        "mean_linear_filter_change": 0.0105973482131958
+      },
+      "spectral_reintegration": {
+        "finite": true,
+        "max_normalized_error": 5.44612684266752e-07,
+        "mean_absolute_error": 2.47699561346803e-08,
+        "passed": true
+      },
+      "sample_budget_consistent": true,
+      "renderer_source_matches_receipt": true,
+      "passed": true
+    },
+    "shoreline": {
+      "render": {
+        "renderer": "CYBR GEO native V11 scale-separated microgeometry and jointed ridge terrain",
+        "geometry_accelerator": "CYBR GEO native SAH BVH",
+        "view": "detail",
+        "width": 1200,
+        "height": 800,
+        "spp": 128,
+        "max_depth": 12,
+        "seed": 20260914,
+        "threads": 5,
+        "triangles": 23690858,
+        "bvh_nodes": 13672423,
+        "spectral_bands": 16,
+        "wavelength_range_nm": [
+          380,
+          780
+        ],
+        "spectral_method": "Jointly transported fixed midpoint wavelength quadrature, 25 nm bins",
+        "water_ior": 1.33399999,
+        "dispersion": false,
+        "steam": true,
+        "steam_model": "Authored heterogeneous trilinear density grid; grid-bounded delta and ratio tracking; HG phase",
+        "water_absorption_scale": 1,
+        "finite_difference_water_connection_step_radians": 0.0001,
+        "nonfinite_path_samples": 0,
+        "exposure": 1.89999998,
+        "film_white_rgb": [
+          1.04491019,
+          0.984612525,
+          1.02078438
+        ],
+        "seconds": 511.493622,
+        "band_means": [
+          0.0892061442,
+          0.115814656,
+          0.138576269,
+          0.156478122,
+          0.17343694,
+          0.189589947,
+          0.200552583,
+          0.20285894,
+          0.201275334,
+          0.198879719,
+          0.194384634,
+          0.187572688,
+          0.179924741,
+          0.171508983,
+          0.162042201,
+          0.153864473
+        ],
+        "water_scattering_coefficient_per_m": 0.0250000004,
+        "water_scattering_HG_g": 0.74000001,
+        "ripple_modes": 128,
+        "camera_origin_m": [
+          1.95000005,
+          -4.6500001,
+          0.670000017
+        ],
+        "camera_target_m": [
+          0.810000002,
+          -2.95000005,
+          0.0900000036
+        ],
+        "horizontal_fov_degrees": 55,
+        "aperture_radius_m": 0.00100000005,
+        "sun_direction": [
+          -0.853579164,
+          0.426789582,
+          0.298752695
+        ],
+        "photographic_grayscale_albedo_detail": true,
+        "photographic_backplate": false,
+        "image_generation": false,
+        "sky_model": "Single-scattering spherical Rayleigh/aerosol spectral LUT, not reference-validated",
+        "material_spectra": "Reference-illuminant-calibrated RGB-anchor reflectance, not measured mineral spectra",
+        "clouds": false,
+        "cloud_model": "Bounded 3D extinction grid; conservative column-majorant DDA; delta-tracked scattering and ratio-tracked shadows",
+        "cloud_grid": [
+          640,
+          512,
+          48
+        ],
+        "water_spp": 256,
+        "total_camera_samples": 169155328,
+        "indirect_contribution_clamp_Y": 0,
+        "clamped_indirect_contributions": 0,
+        "water_microfacet_alpha": 0.00499999989,
+        "water_reflection_estimator": "Primary: GGX VNDF and solar-disc MIS; indirect: one-root macro reflection manifold with exclusive path ownership",
+        "underwater_direct_light_approximation": "One-root macro-surface manifolds approximate indirect reflected and transmitted caustics; primary reflection uses GGX"
+      },
+      "execution": {
+        "source_hash": "0a01ac2f3df04c41395cfd3289bdd9c02f377bab8a705accbc1a043f062b0f25",
+        "compile_command": [
+          "/usr/bin/g++",
+          "-std=c++17",
+          "-O3",
+          "-march=native",
+          "-fopenmp",
+          "/mnt/data/CYBR_Hot_Springs_V11/cybr-geo/native/spectral_desert.cpp",
+          "-o",
+          "/mnt/data/CYBR_Hot_Springs_V11/work/spectral_desert_0a01ac2f3df04c41"
+        ],
+        "compiler_version": "g++ (Debian 14.2.0-19) 14.2.0",
+        "binary_sha256": "3a856e38080a755553bcf9c8871e2a3a46d21b04140295fd2c986449d28bf978",
+        "render_command": [
+          "/mnt/data/CYBR_Hot_Springs_V11/work/spectral_desert_0a01ac2f3df04c41",
+          "/mnt/data/CYBR_Hot_Springs_V11/work/scene.meshbin",
+          "/mnt/data/CYBR_Hot_Springs_V11/work/shoreline",
+          "--w",
+          "1200",
+          "--h",
+          "800",
+          "--spp",
+          "128",
+          "--depth",
+          "12",
+          "--water-spp",
+          "256",
+          "--indirect-clamp",
+          "0.0",
+          "--threads",
+          "5",
+          "--view",
+          "detail",
+          "--seed",
+          "20260914",
+          "--exposure",
+          "1.9",
+          "--aperture",
+          "0.001",
+          "--water-absorption",
+          "1.0",
+          "--grain",
+          "/mnt/data/CYBR_Hot_Springs_V11/cybr-geo/examples/desert_hot_springs/assets/gravel_periodic.pgm",
+          "--relief",
+          "/mnt/data/CYBR_Hot_Springs_V11/cybr-geo/examples/desert_hot_springs/assets/granular_relief.bin",
+          "--no-clouds",
+          "--sun",
+          "-0.80,0.40,0.28"
+        ],
+        "elapsed_total_seconds": 521.9858797739994,
+        "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+        "packages": {
+          "numpy": "2.3.5",
+          "scipy": "1.17.0",
+          "trimesh": "4.11.1",
+          "Pillow": "12.3.0",
+          "numba": "0.65.1",
+          "scikit-image": "0.26.0"
+        },
+        "upstream_defaults_modified": false,
+        "pushed_to_github": false,
+        "scene_inputs_fingerprint": "67f5d8ccbaf1b4fb09dd015978bda84ef2042ee1888a8a5d007d50b32142009a",
+        "mesh_sha256": "3bb30342fed34aa78a1a090df966ccf1ac3437aab521437c4b87d689bdb80264"
+      },
+      "image": {
+        "source": "Native spectral radiance, not an image-generation model",
+        "resolution": [
+          1200,
+          800
+        ],
+        "guided_filter_steps": [
+          1,
+          2
+        ],
+        "sky_only_filter_steps": [
+          2,
+          4,
+          8
+        ],
+        "sky_filter_pixel_count": 155,
+        "sky_filter_mask": "Negative first-opaque-surface material guide only; no landscape pixel changes in sky-only passes",
+        "filter_space": "Linear scene-referred RGB after 16-band CIE integration",
+        "opaque_filter_strength": 0.5,
+        "opaque_residual_preserved_fraction": 0.5,
+        "opaque_policy_pixel_count": 411590,
+        "opaque_mask": "Center-ray budget equals ordinary spp and sediment/crust material 0 or 4; disabled if water budget is not higher",
+        "opaque_policy": "Sediment/crust only: convex native/filtered radiance blend, not sharpening or detail synthesis; other materials retain full filtering",
+        "postprocess_source_sha256": "25841de9e92f92792fe4fe99bb19bf29b2fc160219797a3cfe054e14f4711650",
+        "raw_radiance_finite": true,
+        "raw_radiance_min": 0.0016534094465896487,
+        "raw_radiance_max": 95.64437866210938,
+        "mean_linear_rgb": [
+          0.23971150815486908,
+          0.19062496721744537,
+          0.12338724732398987
+        ],
+        "png_round_trip_exact": true,
+        "png_sha256": "f30915ddef13bfe0bf6e4edf3db770694e3148da63f97bc0c0ca92a8b6ef82ee",
+        "exposure": 1.89999998,
+        "camera_white_balance_K": 5750.0,
+        "display_white_rgb": [
+          1.1147017919323665,
+          0.9763938573539243,
+          0.8966954151524217
+        ],
+        "toe_parameter": 0.035,
+        "added_grain": false,
+        "upscaling": false,
+        "photo_compositing": false,
+        "mean_linear_filter_change": 0.00926133617758751
+      },
+      "spectral_reintegration": {
+        "finite": true,
+        "max_normalized_error": 6.043637254745495e-07,
+        "mean_absolute_error": 2.6711415061103336e-08,
+        "passed": true
+      },
+      "sample_budget_consistent": true,
+      "renderer_source_matches_receipt": true,
+      "passed": true
+    }
+  },
+  "component_tests": {
+    "scene_io": {
+      "scope": "Streamed archive hashes, exact round-trip, ownership, tamper detection; no visual-quality assertion",
+      "stream_hash_matches_whole_file_for_4_chunk_sizes": true,
+      "round_trip_exact": true,
+      "loaded_arrays_independent": true,
+      "tampering_rejected": true,
+      "passed": true
+    },
+    "materials": {
+      "scope": "Finite materials, normalized normals, periodic relief and bounded rough diffuse energy at sampled angles; not perceptual validation",
+      "material_samples": 15000,
+      "finite": true,
+      "bounded": true,
+      "maximum_normal_length_error": 1.192092896e-07,
+      "maximum_relief_gradient": 1.233577371,
+      "maximum_periodic_height_error_m": 1.659151167e-06,
+      "maximum_directional_hemispherical_reflectance": 0.9555570483,
+      "passed": true
+    },
+    "steam_grid": {
+      "scope": "Conservative trilinear-grid density bound, representation error against authored field, and sampled transmittance; not CFD or measured steam",
+      "grid": [
+        256,
+        288,
+        80
+      ],
+      "tracking_majorant_per_m": 0.2380304933,
+      "random_samples": 50000,
+      "sampled_maximum_density": 0.1585974693,
+      "maximum_absolute_density_error": 0.04922957346,
+      "mean_absolute_density_error": 3.15233863e-05,
+      "rms_density_error": 0.0004793228066,
+      "finite": true,
+      "sampled_densities_within_majorant": true,
+      "maximum_transmittance_absolute_error": 0.0007173127378,
+      "maximum_transmittance_standard_error": 0.0005365862744,
+      "passed": true
+    },
+    "optics": {
+      "spectral_bands": 16,
+      "wavelength_range_nm": [
+        380,
+        780
+      ],
+      "fresnel_normal": 0.02047817037,
+      "fresnel_error": 0,
+      "beer_lambert_composition_error": 6.776446071e-08,
+      "snell_error": 1.303499886e-07,
+      "sampled_max_steam_density": 0.1674433202,
+      "steam_majorant": 0.8500000238,
+      "passed": true
+    }
+  },
+  "authored_geometry": true,
+  "measured_geometry": false,
+  "image_generation": false,
+  "photographic_backplates": false,
+  "photographic_compositing": false,
+  "gravel_asset": "Previously supplied CC0 grayscale photograph; weak albedo detail plus an explicitly authored reconstructed granular support field. This is not measured displacement.",
+  "limitations": [
+    "16 fixed midpoint bands, not continuous-wavelength or measured material spectra",
+    "Constant water IOR; wavelength-dependent absorption but no dispersion",
+    "One-root transmitted/reflected solar connections approximate water caustics",
+    "Authored waves and steam, not coupled fluid/thermal simulation",
+    "Quadrature-refined reduced single-scattering sky, not a reference multiple-scattering atmosphere",
+    "Conditional non-neural radiance denoising; raw image and radiance preserved"
+  ],
+  "upstream_render_defaults_changed": false,
+  "github_push": false,
+  "numerical_checks_certify_photorealism": false,
+  "listed_checks_passed": true,
+  "comparison_settings": {
+    "scope": "Explicit comparison-setting alignment, not an image-realism score or geometry-only ablation",
+    "camera": {
+      "camera_origin_m": {
+        "wide_matches": true,
+        "comparison_matches": true
+      },
+      "camera_target_m": {
+        "wide_matches": true,
+        "comparison_matches": true
+      },
+      "horizontal_fov_degrees": {
+        "wide_matches": true,
+        "comparison_matches": true
+      },
+      "aperture_radius_m": {
+        "wide_matches": true,
+        "comparison_matches": true
+      }
+    },
+    "sample_and_resolution_settings": {
+      "width": true,
+      "height": true,
+      "spp": true,
+      "water_spp": true,
+      "seed": true,
+      "max_depth": true
+    },
+    "sun_direction_matches": true,
+    "exposure_matches": true,
+    "white_balance_matches": true,
+    "opaque_filter_strength_matches": true,
+    "geometry_matches": false,
+    "materials_match": false,
+    "atmosphere_implementation_matches": false,
+    "baseline_png_sha256": "ff5280bfa4cfb2f419e836b9e450c611e273f4d87347e0094e5de32c6241a5d0",
+    "comparison_png_sha256": "579cba13531dcf192241a81792060995768b543685ba09009ea895aaee945e1f",
+    "stated_setting_checks_passed": true
+  },
+  "visual_review": {
+    "review_complete": true,
+    "reviewed_utc": "2026-09-14T23:48:48.878317+00:00",
+    "review_type": "Direct model visual inspection of actual completed frames and native-resolution crops. Not a human panel, calibrated perceptual benchmark, or a numerical photorealism certificate.",
+    "photorealism_target_met": false,
+    "major_photorealism_jump_demonstrated": false,
+    "larger_structural_change_visible_than_V10": true,
+    "all_requested_visual_failures_resolved": false,
+    "reviewed_image_sha256": {
+      "final.png": "1a2fba20de75ca540562b631b4275820c11622bf7f160775de64f664b706a9d4",
+      "final_raw.png": "ce45d5d30f43ba0d4e9fee1559712fc248472a1bc13523e4e87c75629c69bc0a",
+      "previous_lighting.png": "579cba13531dcf192241a81792060995768b543685ba09009ea895aaee945e1f",
+      "shoreline.png": "f30915ddef13bfe0bf6e4edf3db770694e3148da63f97bc0c0ca92a8b6ef82ee",
+      "final_crop_rock.png": "ddc7b88e19d2897c4e5b4b1b84a081d9dfe73c2d4d6aa051cd700540c4ebbded",
+      "final_crop_ground.png": "c96bda97156d96ca34ff1704c2332e7961446c2385f50d3b15cb25202302d7e4",
+      "final_crop_mountain.png": "6c29f0457f035ed32587bf8aee9a6425a251af2c783819912fa838ba761d3901"
+    },
+    "comparison": "The original wide camera is retained. A separately executed 1200x800 comparison restores V10 sun direction, exposure, white balance, sample budgets and opaque filter blend. It keeps V11 geometry, materials and atmosphere implementation, and is not a geometry-only ablation.",
+    "visible_changes": [
+      "The previously broad smooth mountains now have more irregular silhouettes, ridges, spurs and incision.",
+      "The large right-hand rocks are visibly fractured and surface-damaged rather than the V10 rounded, camouflage-colored forms.",
+      "Near-shore vegetation is larger and more numerous, with stems and attached leaves rather than mostly distant sparse plants.",
+      "The foreground has more resolved relief and fragments; the final image is natively 1920x1280 rather than V10 1200x800."
+    ],
+    "remaining_failures": [
+      "The wide frame still reads as a procedurally constructed environment rather than a photograph. Increased detail and changed silhouettes do not establish the requested photographic jump.",
+      "The opaque foreground and shoreline still resemble one lumpy or clay-like substrate. Native-resolution crops expose smooth rounded relief and insufficient material-specific surface structure between stones.",
+      "Hero-rock surfaces are still overly uniform in hue and generic pitting. More geometric damage does not provide convincing distinct geology.",
+      "The mountains retain repetitive local relief and nearly uniform brown material treatment. They lack convincing differentiation between exposed formations, talus and alluvial deposits.",
+      "The plants remain recognizably procedural and their twig/leaf patterns repeat across the scene.",
+      "The pool has an overly designed-looking basin/shelf transition and broad repeated-looking illumination patterns. No all-root reference caustics validation was performed.",
+      "The independent shoreline view does not solve the problem: it magnifies the clay-like ground and generic fractured fragments. It is retained as a diagnostic view, not presented as a more photorealistic substitute for the wide landscape."
+    ],
+    "unfiltered_outputs": "Saved native RGB and sixteen-band radiance, with contribution clamping disabled. The unfiltered PNG still uses the declared display exposure, white balance and tone transform.",
+    "postprocessing": "Two geometry-guided non-neural radiance-filter passes, with additional sky-only filtering. The specified sediment/crust blend retains half of the unfiltered residual. No generative enhancement, extra grain, photographic backplate or upscaling.",
+    "rejected_test": "A different sun direction with procedural cloud lighting was actually rendered as light_study and rejected because its visible cloud shapes and reflection stripe were less natural. It is not included among finished deliverables.",
+    "github_push": false
+  }
+}

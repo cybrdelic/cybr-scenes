@@ -1,0 +1,48 @@
+{
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "/mnt/data/CYBR_SCENES_R2/tools/finish_r2.py",
+    "--backend",
+    "geo",
+    "/mnt/data/CYBR_SCENES_R2/renders/fernwater/hero/hero",
+    "--passes",
+    "2",
+    "--sky-passes",
+    "2",
+    "--white-balance",
+    "6100",
+    "--opaque-filter-strength",
+    "0.4"
+  ],
+  "cwd": "engines/geo",
+  "started_at": "2026-09-21T17:33:05.399159+00:00",
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "4",
+    "NUMBA_NUM_THREADS": "4",
+    "CYBR_SURFACE_ATLAS": "/mnt/data/CYBR_SCENES_R2/assets/mineral_detail.cdt"
+  },
+  "executed_command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/mnt/data/CYBR_SCENES_R2/renders/fernwater/hero/finish.resources.txt",
+    "/opt/pyvenv/bin/python",
+    "/mnt/data/CYBR_SCENES_R2/tools/finish_r2.py",
+    "--backend",
+    "geo",
+    "/mnt/data/CYBR_SCENES_R2/renders/fernwater/hero/hero",
+    "--passes",
+    "2",
+    "--sky-passes",
+    "2",
+    "--white-balance",
+    "6100",
+    "--opaque-filter-strength",
+    "0.4"
+  ],
+  "returncode": 0,
+  "seconds": 6.909923161000279,
+  "finished_at": "2026-09-21T17:33:12.309014+00:00",
+  "log_sha256": "d41b28923de1252e7a062dc0c498f050a9a6ba24487607c193f0bb0d311afdca"
+}

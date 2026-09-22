@@ -1,0 +1,8 @@
+Built terrain 2.3
+Built interlocked rocky banks 4418266 10.3
+Crust bodies 200 34.8
+Crust bodies 400 36.3
+Crust bodies 600 37.3
+Crust bodies 800 38.1
+Crust bodies 1000 38.9
+{"seconds": 42.53821356200001, "triangles": 6210833, "parts": 9583, "separate_folded_crust_bodies": 1008, "lava_texture_dimensions": [1024, 4096], "image_generation": false, "fluid_simulation": false}

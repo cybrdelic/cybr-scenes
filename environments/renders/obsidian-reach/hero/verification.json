@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "tests": {
+    "finite_radiance": true,
+    "nonnegative_transport_radiance": true,
+    "dimensions_match": true,
+    "nonblank_image": true,
+    "no_invalid_reported_paths": true,
+    "positive_triangle_count": true,
+    "image_generation_disabled": true
+  },
+  "dimensions": [
+    1280,
+    560
+  ],
+  "radiance_min": 0.00027791663887910545,
+  "radiance_max": 5.332682132720947,
+  "spectral_film": null,
+  "negative_linear_rgb_components": 0,
+  "rgb_note": "Spectral-to-XYZ-to-display-RGB conversion may produce negative out-of-gamut RGB components. Positivity is checked in the transported spectral bands when present, not in display RGB.",
+  "mean_linear_rgb": [
+    0.03176340460777283,
+    0.011955173686146736,
+    0.011282623745501041
+  ],
+  "png_sha256": "213aa6a675536b117074cfe28d8b4d4ca4b3063b5018030a6eb4f3dca95a0ce2",
+  "raw_pfm_sha256": "c3e82c966147d3a460e4d0541a5820bad6f9f3084b66407ea9327c2f2ae04fa1",
+  "native_metadata_sha256": "550f341e38a513b202b2dd99add4a38746fa81891a164aac6d8897c4ab70a129",
+  "renderer_metadata": {
+    "renderer": "CYBR SCENES R2 / CYBR LIGHT CPU bridge, explicit HDR MIS",
+    "width": 1280,
+    "height": 560,
+    "spp": 64,
+    "triangles": 6210833,
+    "seconds": 248.083,
+    "path_depth": 7,
+    "gpu": false,
+    "image_generation": false,
+    "nonfinite_path_samples": 0,
+    "temperature_spectrum_preintegrated": true,
+    "fluid_simulation": false,
+    "native_metadata_file": "renders/obsidian-reach/hero/hero_render.json",
+    "image_generation_evidence": "Executed native C++ renderer; full recorded command and source build"
+  },
+  "scope": "Execution, finite radiance, dimensions, traceable geometry; not an aesthetic or physical-reference validation.",
+  "checked_at": "2026-09-21T17:44:33.001109+00:00"
+}

@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "state": "succeeded",
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "/mnt/data/execution_repair/CYBR_SCENES_R2/engines/obsidian/build_scene.py"
+  ],
+  "cwd": "/mnt/data/execution_repair/CYBR_SCENES_R2/engines/obsidian",
+  "started_at": "2026-09-21T21:26:37.974577+00:00",
+  "started_unix": 1790025997.9745805,
+  "supervisor": {
+    "pid": 1123,
+    "start_ticks": 38268,
+    "boot_id": "6d4adc15-175c-4a7b-ab22-618f70e77433",
+    "pid_namespace": "pid:[4026532199]"
+  },
+  "log": "/mnt/data/execution_repair/CYBR_SCENES_R2/evidence/build-obsidian-reach.log",
+  "timeout_seconds": 14400,
+  "memory_budget_bytes": null,
+  "peak_tree_rss_bytes": 1776148480,
+  "returncode": 0,
+  "completed": true,
+  "child": {
+    "pid": 1130,
+    "start_ticks": 38321,
+    "boot_id": "6d4adc15-175c-4a7b-ab22-618f70e77433",
+    "pid_namespace": "pid:[4026532199]"
+  },
+  "pid": 1130,
+  "heartbeat_at": "2026-09-21T21:27:22.835002+00:00",
+  "elapsed_seconds": 44.86051269400002,
+  "tree_rss_bytes": 0,
+  "descendant_count": 0,
+  "log_bytes": 373,
+  "log_silent_seconds": 1.0792803764343262,
+  "finished_at": "2026-09-21T21:27:22.835085+00:00",
+  "log_sha256": "08c5512708b974fac68745d437468a5f528058a125fc2577ae4804dd7a153b82"
+}

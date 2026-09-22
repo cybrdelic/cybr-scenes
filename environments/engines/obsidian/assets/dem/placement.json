@@ -1,0 +1,11 @@
+{
+  "source": "assets/dem/source.json",
+  "input_decode": "R*256 + G + B/256 - 32768 metres",
+  "sample_stride": 2,
+  "uniform_scale": 0.6,
+  "near_distance_m": 3500,
+  "datum_subtraction_m": 200,
+  "height_offset_m": 20,
+  "geographic_reconstruction": false,
+  "placement": "Axis reversal/transpose, uniform scaling, relocation as a fictional background."
+}

@@ -1,0 +1,23 @@
+CYBR R2 photographic surface atlas: 1024 square; 11 moment mip levels
+CYBR GEO BVH: 8108728 actual triangles; 4701389 nodes
+4% 49.8992 s
+9% 95.3362 s
+14% 137.038 s
+19% 176.605 s
+24% 213.287 s
+29% 246.068 s
+34% 282.729 s
+39% 321.465 s
+44% 362.059 s
+49% 406.886 s
+54% 461.233 s
+59% 523.187 s
+63% 573.122 s
+68% 621.349 s
+73% 668.562 s
+78% 713.825 s
+83% 760.327 s
+88% 807.51 s
+93% 857.223 s
+98% 901.903 s
+WROTE /mnt/data/CYBR_SCENES_R2/renders/sandstone-passage/hero/hero; 922.855 seconds; invalid paths 0

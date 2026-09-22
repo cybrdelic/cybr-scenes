@@ -1,0 +1,38 @@
+{
+  "command": [
+    "/mnt/data/CYBR_SCENES_R2/build/obsidian_r2",
+    "/mnt/data/CYBR_SCENES_R2/geometry-r2/obsidian/scene.bin",
+    "/mnt/data/CYBR_SCENES_R2/renders/obsidian-reach/hero/hero",
+    "1280",
+    "560",
+    "64",
+    "0",
+    "7"
+  ],
+  "cwd": "engines/obsidian",
+  "started_at": "2026-09-21T17:07:25.347757+00:00",
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "3",
+    "NUMBA_NUM_THREADS": "4",
+    "CYBR_SURFACE_ATLAS": "/mnt/data/CYBR_SCENES_R2/assets/mineral_detail.cdt"
+  },
+  "executed_command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/mnt/data/CYBR_SCENES_R2/renders/obsidian-reach/hero/render.resources.txt",
+    "/mnt/data/CYBR_SCENES_R2/build/obsidian_r2",
+    "/mnt/data/CYBR_SCENES_R2/geometry-r2/obsidian/scene.bin",
+    "/mnt/data/CYBR_SCENES_R2/renders/obsidian-reach/hero/hero",
+    "1280",
+    "560",
+    "64",
+    "0",
+    "7"
+  ],
+  "returncode": 143,
+  "seconds": 49.5218895779999,
+  "finished_at": "2026-09-21T17:08:14.869555+00:00",
+  "log_sha256": "de39d69a7781d02ba6e961c04452669e9fb4f0176faeb26519779706b9722ea8"
+}

@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "materials": 30,
+  "triangles": 6210833,
+  "uv_textured_scan_triangles": 3516630,
+  "minimum_triangle_area_m2": 5.801695098699872e-09,
+  "degenerate_triangles": 0,
+  "lava_temperature_min_K": 1030.0,
+  "lava_temperature_max_K": 1509.6861572265625,
+  "checks": [
+    "OBS2 binary size and schema",
+    "all vertex, normal and UV values finite",
+    "material indices and values",
+    "no zero-area triangles",
+    "CYBR GEO report count",
+    "heat map finite and bounded",
+    "ELEMENTS Jacobian",
+    "Planck source monotonicity"
+  ]
+}

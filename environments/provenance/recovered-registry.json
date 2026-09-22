@@ -1,0 +1,220 @@
+{
+  "schema": 1,
+  "scenes": [
+    {
+      "id": "obsidian-reach",
+      "title": "Obsidian Reach",
+      "default": "authored-iv",
+      "reference": "references/obsidian-reach.png",
+      "reference_status": "Matched to archived Obsidian Reach IV render after resizing; not byte-identical.",
+      "description": "Dark volcanic gorge with incandescent lava and cooling surface plates.",
+      "variants": {
+        "authored-iv": {
+          "pipeline": "obsidian-iv",
+          "backend": "obsidian",
+          "finish": "finish_v4.py",
+          "exposure": 5.5,
+          "depth": 5,
+          "camera": 0,
+          "simulation": false,
+          "match": true
+        },
+        "authored-v": {
+          "pipeline": "obsidian-v",
+          "backend": "obsidian",
+          "finish": "finish_v4.py",
+          "exposure": 5.5,
+          "depth": 5,
+          "camera": 0,
+          "simulation": false
+        },
+        "computed-v": {
+          "pipeline": "obsidian-computed-v",
+          "backend": "computed",
+          "simulation": true,
+          "exposure": 28,
+          "depth": 7,
+          "camera": 1,
+          "finish": "finish_v2.py"
+        },
+        "original": {
+          "pipeline": "obsidian-original",
+          "backend": "obsidian",
+          "finish": "finish.py",
+          "exposure": 2,
+          "depth": 5,
+          "camera": 0,
+          "simulation": false
+        }
+      }
+    },
+    {
+      "id": "drowned-geode",
+      "title": "Drowned Geode",
+      "default": "v3",
+      "reference": "references/drowned-geode.png",
+      "reference_status": "Matched to archived Drowned Geode V3 render after resizing; not byte-identical.",
+      "description": "Flooded limestone cavern, collapsed skylight, quartz and submerged shelves.",
+      "variants": {
+        "v3": {
+          "pipeline": "geode-v3",
+          "backend": "geode",
+          "recipe": "build_v3.py",
+          "native": "src/cathedral_v3.cpp",
+          "finish": "finish_v3.py",
+          "depth": 24,
+          "exposure": 1.4,
+          "match": true
+        },
+        "original-source": {
+          "pipeline": "geode-original",
+          "backend": "archive",
+          "notes": "Preserved original builder and renderer assembly scripts; use upstream command."
+        }
+      }
+    },
+    {
+      "id": "sandstone-passage",
+      "title": "Sandstone Passage",
+      "default": "recovered-r2",
+      "reference": "references/sandstone-passage.png",
+      "reference_status": "Scene identified, but exact native still revision not matched. Several genuine revisions preserved; no claim that the default exactly reproduces this still.",
+      "description": "Sandstone canyon; separate native and browser presentations.",
+      "variants": {
+        "recovered-r2": {
+          "pipeline": "geo-recovered-r2",
+          "backend": "geo",
+          "member": "canyon",
+          "recipe": "rebuild_scenes.py"
+        },
+        "r4": {
+          "pipeline": "geo-r4",
+          "backend": "geo",
+          "member": "canyon",
+          "recipe": "rebuild_scenes.py"
+        },
+        "noise-fixed-r5": {
+          "pipeline": "geo-r5",
+          "backend": "geo",
+          "member": "canyon",
+          "recipe": "rebuild_scenes.py"
+        },
+        "original": {
+          "pipeline": "geo-original",
+          "backend": "geo",
+          "member": "canyon",
+          "recipe": "build_scenes.py"
+        },
+        "interactive-banding-fixed": {
+          "pipeline": "sandstone-banding-fix",
+          "backend": "web",
+          "url": "/apps/sandstone_walk/index.html",
+          "notes": "Later split photographic-material viewer; geometry differs from the supplied older mobile screenshot."
+        },
+        "interactive-recovery": {
+          "pipeline": "sandstone-recovery",
+          "backend": "legacy-web",
+          "entry": "CYBR_Canyon_Recovery.html",
+          "notes": "Earlier recovered browser viewer with original recovery geometry."
+        }
+      }
+    },
+    {
+      "id": "fernwater",
+      "title": "Fernwater",
+      "default": "r6",
+      "reference": "references/fernwater.png",
+      "reference_status": "Matched to archived Fernwater R6 render after resizing; not byte-identical.",
+      "description": "Woodland stream, leaf litter, banks, ferns and fallen log.",
+      "variants": {
+        "r6": {
+          "pipeline": "fernwater-r6",
+          "backend": "geo",
+          "member": "forest",
+          "recipe": "fernwater_r6.py",
+          "match": true
+        },
+        "noise-fixed-r5": {
+          "pipeline": "geo-r5",
+          "backend": "geo",
+          "member": "forest",
+          "recipe": "rebuild_scenes.py"
+        },
+        "recovered-r2": {
+          "pipeline": "geo-recovered-r2",
+          "backend": "geo",
+          "member": "forest",
+          "recipe": "rebuild_scenes.py"
+        },
+        "original": {
+          "pipeline": "geo-original",
+          "backend": "geo",
+          "member": "forest",
+          "recipe": "build_scenes.py"
+        },
+        "r7-source": {
+          "pipeline": "fernwater-r7",
+          "backend": "archive",
+          "notes": "Alternate R7 source retained; not substituted for R6. See upstream build_fernwater_r7.py."
+        }
+      }
+    },
+    {
+      "id": "basalt-tide",
+      "title": "Basalt Tide",
+      "default": "recovered-r2",
+      "reference": "references/basalt-tide.png",
+      "reference_status": "Matched to archived CYBR_Basalt_Rebuilt render from recovered source delivery after resizing; not byte-identical.",
+      "description": "Basalt columns along a calm coast with offshore stacks.",
+      "variants": {
+        "recovered-r2": {
+          "pipeline": "geo-recovered-r2",
+          "backend": "geo",
+          "member": "coast",
+          "recipe": "rebuild_scenes.py",
+          "match": true
+        },
+        "r4": {
+          "pipeline": "geo-r4",
+          "backend": "geo",
+          "member": "coast",
+          "recipe": "rebuild_scenes.py"
+        },
+        "noise-fixed-r5": {
+          "pipeline": "geo-r5",
+          "backend": "geo",
+          "member": "coast",
+          "recipe": "rebuild_scenes.py"
+        },
+        "original": {
+          "pipeline": "geo-original",
+          "backend": "geo",
+          "member": "coast",
+          "recipe": "build_scenes.py"
+        }
+      }
+    },
+    {
+      "id": "desert-hot-springs",
+      "title": "Desert Hot Springs",
+      "default": "native-v11",
+      "reference": "references/desert-hot-springs.png",
+      "reference_status": "Matched to archived native V11 render after resizing; not byte-identical.",
+      "description": "Desert mineral pool with scrub, sediment and distant mountains.",
+      "variants": {
+        "native-v11": {
+          "pipeline": "hot-springs-v11",
+          "backend": "hot",
+          "match": true,
+          "exposure": 1.9,
+          "depth": 12
+        },
+        "photographic-v3-source": {
+          "pipeline": "hot-springs-photographic-v3",
+          "backend": "archive",
+          "notes": "Different Mitsuba spectral branch. Full source and input assets preserved; Mitsuba not part of native runtime."
+        }
+      }
+    }
+  ]
+}

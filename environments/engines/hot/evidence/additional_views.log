@@ -1,0 +1,147 @@
+EXECUTING ["/opt/pyvenv/bin/python", "-u", "/mnt/data/CYBR_Hot_Springs_V11/cybr-geo/examples/desert_hot_springs/render.py", "--out", "/mnt/data/CYBR_Hot_Springs_V11/work", "--no-glb", "--no-clouds", "--indirect-clamp", "0", "--stem", "previous_lighting", "--width", "1200", "--height", "800", "--spp", "80", "--water-spp", "192", "--sun=-0.895043492,0.295069277,0.33441186", "--exposure", "1.16999996", "--white-balance", "5700.0"]
++ /mnt/data/CYBR_Hot_Springs_V11/work/spectral_desert_0a01ac2f3df04c41 /mnt/data/CYBR_Hot_Springs_V11/work/scene.meshbin /mnt/data/CYBR_Hot_Springs_V11/work/previous_lighting --w 1200 --h 800 --spp 80 --depth 12 --water-spp 192 --indirect-clamp 0.0 --threads 5 --view hero --seed 20260914 --exposure 1.16999996 --aperture 0.001 --water-absorption 1.0 --grain /mnt/data/CYBR_Hot_Springs_V11/cybr-geo/examples/desert_hot_springs/assets/gravel_periodic.pgm --relief /mnt/data/CYBR_Hot_Springs_V11/cybr-geo/examples/desert_hot_springs/assets/granular_relief.bin --no-clouds --sun -0.895043492,0.295069277,0.33441186
+CYBR GEO BVH: 23690858 actual triangles; 13672423 nodes
+5% 33.4525 s
+10% 34.2026 s
+15% 36.0974 s
+20% 39.5582 s
+25% 43.593 s
+30% 47.5174 s
+35% 51.6993 s
+40% 58.8303 s
+45% 68.2264 s
+50% 82.2336 s
+55% 109.04 s
+60% 143.216 s
+65% 178.15 s
+70% 209.153 s
+75% 237.037 s
+80% 263.199 s
+85% 283.832 s
+90% 298.112 s
+95% 306.627 s
+100% 312.118 s
+WROTE /mnt/data/CYBR_Hot_Springs_V11/work/previous_lighting; 312.492 seconds; invalid paths 0
++ /opt/pyvenv/bin/python /mnt/data/CYBR_Hot_Springs_V11/cybr-geo/examples/desert_hot_springs/finish.py /mnt/data/CYBR_Hot_Springs_V11/work/previous_lighting --passes 2 --white-balance 5700.0 --opaque-filter-strength 0.55
+{
+  "source": "Native spectral radiance, not an image-generation model",
+  "resolution": [
+    1200,
+    800
+  ],
+  "guided_filter_steps": [
+    1,
+    2
+  ],
+  "sky_only_filter_steps": [
+    2,
+    4,
+    8
+  ],
+  "sky_filter_pixel_count": 146520,
+  "sky_filter_mask": "Negative first-opaque-surface material guide only; no landscape pixel changes in sky-only passes",
+  "filter_space": "Linear scene-referred RGB after 16-band CIE integration",
+  "opaque_filter_strength": 0.55,
+  "opaque_residual_preserved_fraction": 0.44999999999999996,
+  "opaque_policy_pixel_count": 260567,
+  "opaque_mask": "Center-ray budget equals ordinary spp and sediment/crust material 0 or 4; disabled if water budget is not higher",
+  "opaque_policy": "Sediment/crust only: convex native/filtered radiance blend, not sharpening or detail synthesis; other materials retain full filtering",
+  "postprocess_source_sha256": "25841de9e92f92792fe4fe99bb19bf29b2fc160219797a3cfe054e14f4711650",
+  "raw_radiance_finite": true,
+  "raw_radiance_min": 0.0022462063934653997,
+  "raw_radiance_max": 37.37107849121094,
+  "mean_linear_rgb": [
+    0.20305654406547546,
+    0.1764494627714157,
+    0.13595032691955566
+  ],
+  "png_round_trip_exact": true,
+  "png_sha256": "579cba13531dcf192241a81792060995768b543685ba09009ea895aaee945e1f",
+  "exposure": 1.16999996,
+  "camera_white_balance_K": 5700.0,
+  "display_white_rgb": [
+    1.1201520497979691,
+    0.9756777150911409,
+    0.8877413759278178
+  ],
+  "toe_parameter": 0.035,
+  "added_grain": false,
+  "upscaling": false,
+  "photo_compositing": false,
+  "mean_linear_filter_change": 0.0105973482131958
+}
+Completed: /mnt/data/CYBR_Hot_Springs_V11/work/previous_lighting.png
+EXECUTING ["/opt/pyvenv/bin/python", "-u", "/mnt/data/CYBR_Hot_Springs_V11/cybr-geo/examples/desert_hot_springs/render.py", "--out", "/mnt/data/CYBR_Hot_Springs_V11/work", "--no-glb", "--no-clouds", "--indirect-clamp", "0", "--stem", "shoreline", "--view", "detail", "--width", "1200", "--height", "800", "--spp", "128", "--water-spp", "256", "--sun=-0.80,0.40,0.28", "--exposure", "1.90", "--white-balance", "5750", "--opaque-filter-strength", ".50"]
++ /mnt/data/CYBR_Hot_Springs_V11/work/spectral_desert_0a01ac2f3df04c41 /mnt/data/CYBR_Hot_Springs_V11/work/scene.meshbin /mnt/data/CYBR_Hot_Springs_V11/work/shoreline --w 1200 --h 800 --spp 128 --depth 12 --water-spp 256 --indirect-clamp 0.0 --threads 5 --view detail --seed 20260914 --exposure 1.9 --aperture 0.001 --water-absorption 1.0 --grain /mnt/data/CYBR_Hot_Springs_V11/cybr-geo/examples/desert_hot_springs/assets/gravel_periodic.pgm --relief /mnt/data/CYBR_Hot_Springs_V11/cybr-geo/examples/desert_hot_springs/assets/granular_relief.bin --no-clouds --sun -0.80,0.40,0.28
+CYBR GEO BVH: 23690858 actual triangles; 13672423 nodes
+5% 42.4503 s
+10% 60.2655 s
+15% 75.7424 s
+20% 92.7374 s
+25% 129.062 s
+30% 178.142 s
+35% 226.636 s
+40% 276.978 s
+45% 327.316 s
+50% 367.935 s
+55% 398.38 s
+60% 425.806 s
+65% 446.677 s
+70% 455.928 s
+75% 465.132 s
+80% 474.205 s
+85% 483.568 s
+90% 493.681 s
+95% 502.623 s
+100% 511.129 s
+WROTE /mnt/data/CYBR_Hot_Springs_V11/work/shoreline; 511.494 seconds; invalid paths 0
++ /opt/pyvenv/bin/python /mnt/data/CYBR_Hot_Springs_V11/cybr-geo/examples/desert_hot_springs/finish.py /mnt/data/CYBR_Hot_Springs_V11/work/shoreline --passes 2 --white-balance 5750.0 --opaque-filter-strength 0.5
+{
+  "source": "Native spectral radiance, not an image-generation model",
+  "resolution": [
+    1200,
+    800
+  ],
+  "guided_filter_steps": [
+    1,
+    2
+  ],
+  "sky_only_filter_steps": [
+    2,
+    4,
+    8
+  ],
+  "sky_filter_pixel_count": 155,
+  "sky_filter_mask": "Negative first-opaque-surface material guide only; no landscape pixel changes in sky-only passes",
+  "filter_space": "Linear scene-referred RGB after 16-band CIE integration",
+  "opaque_filter_strength": 0.5,
+  "opaque_residual_preserved_fraction": 0.5,
+  "opaque_policy_pixel_count": 411590,
+  "opaque_mask": "Center-ray budget equals ordinary spp and sediment/crust material 0 or 4; disabled if water budget is not higher",
+  "opaque_policy": "Sediment/crust only: convex native/filtered radiance blend, not sharpening or detail synthesis; other materials retain full filtering",
+  "postprocess_source_sha256": "25841de9e92f92792fe4fe99bb19bf29b2fc160219797a3cfe054e14f4711650",
+  "raw_radiance_finite": true,
+  "raw_radiance_min": 0.0016534094465896487,
+  "raw_radiance_max": 95.64437866210938,
+  "mean_linear_rgb": [
+    0.23971150815486908,
+    0.19062496721744537,
+    0.12338724732398987
+  ],
+  "png_round_trip_exact": true,
+  "png_sha256": "f30915ddef13bfe0bf6e4edf3db770694e3148da63f97bc0c0ca92a8b6ef82ee",
+  "exposure": 1.89999998,
+  "camera_white_balance_K": 5750.0,
+  "display_white_rgb": [
+    1.1147017919323665,
+    0.9763938573539243,
+    0.8966954151524217
+  ],
+  "toe_parameter": 0.035,
+  "added_grain": false,
+  "upscaling": false,
+  "photo_compositing": false,
+  "mean_linear_filter_change": 0.00926133617758751
+}
+Completed: /mnt/data/CYBR_Hot_Springs_V11/work/shoreline.png
+BOTH_ADDITIONAL_VIEWS_COMPLETE

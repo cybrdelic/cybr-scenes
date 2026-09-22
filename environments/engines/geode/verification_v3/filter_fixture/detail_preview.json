@@ -1,0 +1,88 @@
+{
+  "renderer": "CYBR GEO native cavern V3 - rough-quartz NEE spectral CPU",
+  "geometry_accelerator": "CYBR GEO native SAH BVH4 / AVX2 triangle packets",
+  "view": "detail",
+  "width": 420,
+  "height": 315,
+  "spp": 8,
+  "max_depth": 20,
+  "seed": 735080,
+  "threads": 1,
+  "triangles": 3655632,
+  "bvh_nodes": 2073513,
+  "spectral_bands": 16,
+  "wavelength_range_nm": [
+    380,
+    780
+  ],
+  "spectral_method": "Jointly transported fixed midpoint wavelength quadrature, 25 nm bins",
+  "water_ior": 1.33399999,
+  "dispersion": true,
+  "steam": true,
+  "steam_model": "Bounded homogeneous haze; analytic transmittance; forced first collision; full continuation",
+  "water_absorption_scale": 1,
+  "finite_difference_water_connection_step_radians": 0.002,
+  "nonfinite_path_samples": 0,
+  "exposure": 1.39999998,
+  "film_white_rgb": [
+    1.04490995,
+    0.984612584,
+    1.02078414
+  ],
+  "seconds": 96.0858078,
+  "band_means": [
+    0.131587252,
+    0.13328892,
+    0.133055195,
+    0.131957859,
+    0.136780873,
+    0.144946218,
+    0.149339899,
+    0.147183374,
+    0.146252215,
+    0.146730602,
+    0.143941879,
+    0.13664116,
+    0.129598066,
+    0.122295447,
+    0.115260497,
+    0.108030885
+  ],
+  "sampling_v3": {
+    "sampler": "per-pixel digital shift over linearly scrambled 1024-dimensional Sobol nets",
+    "water_camera_interface": "both Fresnel reflection and transmission evaluated",
+    "quartz_bsdf": "GGX visible-normal dielectric with Fresnel reflection/transmission, matching PDF, spectral index and direct sun/sky NEE",
+    "water_sky_nee": "actual triangle interface, Snell refraction, Fresnel/absorption/scattering transmittance and MIS",
+    "primary_haze": "forced first collision, exact homogeneous transmittance, full continuation",
+    "minimum": 8,
+    "mean": 8.0,
+    "maximum": 8,
+    "camera_samples_total": 1058400,
+    "histogram": {
+      "8": 132300
+    },
+    "allocation": "deterministic primary-material/depth allocation; no noisy stopping rule"
+  },
+  "finishing": {
+    "method": "symmetric log-variance, first-interface-aware component wavelet filtering; non-neural",
+    "iterations": {
+      "base": 3,
+      "reflection": 4,
+      "volume": 5
+    },
+    "raw_modified": false,
+    "outlier_control": {
+      "enabled": false,
+      "affected_pixels": 0,
+      "biased_viewing_regularization": true,
+      "peak_ratio": 8,
+      "absolute_margin": 0.35
+    },
+    "display_transform": "ACES fit / exact sRGB",
+    "exposure": 1.4,
+    "image_generation": false,
+    "neural_denoiser": false
+  },
+  "finite_raw": true,
+  "aov_reconstruction_max_abs_error": 1.1920928955078125e-07
+}

@@ -1,0 +1,5 @@
+[2026-09-21T21:31:00.461971+00:00] STEP_START render: /mnt/data/execution_repair/CYBR_SCENES_R2/build/obsidian_r2 /mnt/data/execution_repair/CYBR_SCENES_R2/geometry-r2/obsidian/scene.bin /mnt/data/execution_repair/CYBR_SCENES_R2/renders/execution-proof/obsidian-reach/hero/hero 384 168 8 0 7
+[2026-09-21T21:31:34.403389+00:00] STEP_END render: succeeded (33.94s)
+[2026-09-21T21:31:34.404479+00:00] STEP_START finish: /opt/pyvenv/bin/python /mnt/data/execution_repair/CYBR_SCENES_R2/engines/obsidian/finish_v4.py /mnt/data/execution_repair/CYBR_SCENES_R2/renders/execution-proof/obsidian-reach/hero/hero --exposure 5.5 --passes 3
+[2026-09-21T21:31:36.093601+00:00] STEP_END finish: succeeded (1.68s)
+RENDER VERIFIED: obsidian-reach 384x168 8 spp -> /mnt/data/execution_repair/CYBR_SCENES_R2/renders/execution-proof/obsidian-reach/hero/hero.png

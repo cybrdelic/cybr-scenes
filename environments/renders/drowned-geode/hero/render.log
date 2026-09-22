@@ -1,0 +1,24 @@
+CYBR R2 photographic surface atlas: 1024 square; 11 moment mip levels
+BVH equivalence: 5000 rays passed
+CYBR GEO BVH: 3655632 actual triangles; 2068807 nodes
+5% 29.2157 s
+10% 41.6972 s
+15% 55.4522 s
+20% 72.6343 s
+25% 85.0663 s
+30% 102.205 s
+35% 120.996 s
+40% 141.756 s
+45% 160.864 s
+50% 186.859 s
+55% 214.002 s
+60% 242.299 s
+65% 269.197 s
+70% 300.262 s
+75% 345.185 s
+80% 374.013 s
+85% 404.687 s
+90% 435.841 s
+95% 467.16 s
+100% 495.981 s
+WROTE /mnt/data/CYBR_SCENES_R2/renders/drowned-geode/hero/hero; 496.518 seconds; invalid paths 0

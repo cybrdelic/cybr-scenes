@@ -1,0 +1,1 @@
+[2026-09-21T17:41:15.799922+00:00] finish: /opt/pyvenv/bin/python /mnt/data/CYBR_SCENES_R2/tools/finish_r2.py --backend hot /mnt/data/CYBR_SCENES_R2/renders/desert-hot-springs/hero/hero --passes 2 --white-balance 5750 --opaque-filter-strength 0.5

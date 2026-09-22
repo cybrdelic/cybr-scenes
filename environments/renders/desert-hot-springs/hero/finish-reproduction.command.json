@@ -1,0 +1,44 @@
+{
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "/mnt/data/CYBR_SCENES_R2/tools/finish_r2.py",
+    "--backend",
+    "hot",
+    "/mnt/data/CYBR_SCENES_R2/renders/desert-hot-springs/hero/hero",
+    "--passes",
+    "2",
+    "--white-balance",
+    "5750",
+    "--opaque-filter-strength",
+    "0.5"
+  ],
+  "cwd": "engines/hot",
+  "started_at": "2026-09-21T17:43:55.208259+00:00",
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "2",
+    "NUMBA_NUM_THREADS": "4",
+    "CYBR_SURFACE_ATLAS": "/mnt/data/CYBR_SCENES_R2/assets/mineral_detail.cdt"
+  },
+  "executed_command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/mnt/data/CYBR_SCENES_R2/renders/desert-hot-springs/hero/finish-reproduction.resources.txt",
+    "/opt/pyvenv/bin/python",
+    "/mnt/data/CYBR_SCENES_R2/tools/finish_r2.py",
+    "--backend",
+    "hot",
+    "/mnt/data/CYBR_SCENES_R2/renders/desert-hot-springs/hero/hero",
+    "--passes",
+    "2",
+    "--white-balance",
+    "5750",
+    "--opaque-filter-strength",
+    "0.5"
+  ],
+  "returncode": 0,
+  "seconds": 11.589715290999266,
+  "finished_at": "2026-09-21T17:44:06.797960+00:00",
+  "log_sha256": "4d6924e199c0bdf5043ed0fdb8f77e1c4b88e054828ab192d83007a02fd07813"
+}

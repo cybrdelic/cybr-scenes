@@ -1,0 +1,23 @@
+CYBR R2 photographic surface atlas: 1024 square; 11 moment mip levels
+CYBR GEO BVH: 11644696 actual triangles; 6624189 nodes
+5% 39.7248 s
+10% 49.737 s
+15% 65.2518 s
+20% 87.8093 s
+25% 115.456 s
+30% 150.089 s
+35% 180.516 s
+40% 213.538 s
+45% 244.793 s
+50% 285.13 s
+55% 325.289 s
+60% 368.057 s
+65% 417.859 s
+70% 463.118 s
+75% 505.912 s
+80% 551.895 s
+85% 599.58 s
+90% 645.229 s
+95% 688.348 s
+100% 730.818 s
+WROTE /mnt/data/CYBR_SCENES_R2/renders/basalt-tide/hero/hero; 731.104 seconds; invalid paths 0

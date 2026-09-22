@@ -1,0 +1,23 @@
+{
+  "schema": "cybrgeo.validation/1",
+  "name": "OBSIDIAN_REACH_IV",
+  "part_count": 9583,
+  "triangles": 6210833,
+  "bounds_mm": [
+    [
+      -14593020.809122633,
+      -13177878.030070886,
+      -767.6033373526017
+    ],
+    [
+      14593020.809122633,
+      30000.0,
+      1874820.3125
+    ]
+  ],
+  "analytic_brep_parts": 0,
+  "unique_names": true,
+  "finite_vertices": true,
+  "valid_indices": true,
+  "note": "Structural data checks only. No load, tolerance, interference or thermal certification."
+}

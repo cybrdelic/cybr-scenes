@@ -1,0 +1,23 @@
+	Command being timed: "/opt/pyvenv/bin/python /mnt/data/CYBR_SCENES_R2/tools/finish_r2.py --backend geo /mnt/data/CYBR_SCENES_R2/renders/fernwater/hero/hero --passes 2 --sky-passes 2 --white-balance 6100 --opaque-filter-strength 0.4 --foliage"
+	User time (seconds): 13.35
+	System time (seconds): 1.40
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:14.69
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 368696
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 70010
+	Voluntary context switches: 74
+	Involuntary context switches: 2392
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 62792
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

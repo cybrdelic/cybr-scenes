@@ -1,0 +1,1 @@
+PASS: radiance mip average, auxiliary normal preservation, light PDFs normalized/full-support, finite BSDF and hemisphere integral, Planck monotonicity

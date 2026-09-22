@@ -1,0 +1,36 @@
+{
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "/mnt/data/CYBR_SCENES_R2/engines/obsidian/finish_v4.py",
+    "/mnt/data/CYBR_SCENES_R2/renders/obsidian-reach/hero/hero",
+    "--exposure",
+    "5.5",
+    "--passes",
+    "3"
+  ],
+  "cwd": "engines/obsidian",
+  "started_at": "2026-09-21T17:44:06.832257+00:00",
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "2",
+    "NUMBA_NUM_THREADS": "4",
+    "CYBR_SURFACE_ATLAS": "/mnt/data/CYBR_SCENES_R2/assets/mineral_detail.cdt"
+  },
+  "executed_command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/mnt/data/CYBR_SCENES_R2/renders/obsidian-reach/hero/finish-reproduction.resources.txt",
+    "/opt/pyvenv/bin/python",
+    "/mnt/data/CYBR_SCENES_R2/engines/obsidian/finish_v4.py",
+    "/mnt/data/CYBR_SCENES_R2/renders/obsidian-reach/hero/hero",
+    "--exposure",
+    "5.5",
+    "--passes",
+    "3"
+  ],
+  "returncode": 0,
+  "seconds": 8.9457381229995,
+  "finished_at": "2026-09-21T17:44:15.777992+00:00",
+  "log_sha256": "6e276a0c1f34d2b9d52469b3656b6834d4b3b30421f17d1ce3e9d1efbd29e0d3"
+}

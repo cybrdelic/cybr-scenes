@@ -1,0 +1,6 @@
+ground 4320264
+mountains 3450000
+water collar 0 {'optical_enclosure_not_storage_volume': True, 'boundary_q': 1.13, 'boundary_samples': 1024, 'minimum_bank_cover_m': 0.07572207371439865, 'maximum_boundary_q_error': 1.2414382855041595e-09, 'boundary_contained': True}
+water collar 1 {'optical_enclosure_not_storage_volume': True, 'boundary_q': 1.13, 'boundary_samples': 512, 'minimum_bank_cover_m': 0.08577985183322051, 'maximum_boundary_q_error': 9.840495085455814e-10, 'boundary_contained': True}
+submerged rock shelf fragments 217
+stones {'large_rocks': 156, 'small_rocks': 8814, 'gravel': 32640, 'mineral_nodules': 629, 'shrubs': 0, 'grass_tufts': 0}

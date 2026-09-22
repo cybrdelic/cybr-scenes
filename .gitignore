@@ -1,4 +1,9 @@
 __pycache__/
+environments/demo-output/
+environments/geometry/
+environments/geometry-r2/
+environments/engines/geode/assets/built_v3/
+environments/engines/obsidian/assets/scene.bin
 *.py[cod]
 .venv/
 build/

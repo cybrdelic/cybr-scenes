@@ -1,0 +1,36 @@
+{
+  "checked_at": "2026-09-21T21:28:54.880135+00:00",
+  "observed_current_tool_health": {
+    "shell": "passed",
+    "python_kernel": "passed",
+    "subprocess": "passed",
+    "cross_tool_file_read_write": "passed"
+  },
+  "previous_r3_workspace_present": false,
+  "previous_r3_link_target_present": false,
+  "recovery_source": {
+    "file": "CYBR_SCENES_R2_Source.zip",
+    "sha256": "3b8c35353a8d09f7b48fefd56b364837488b7d48be33893d88c371af11a7d38b",
+    "zip_crc_passed": true
+  },
+  "restored_revision": "R2 plus execution repair; not recovered R3",
+  "doctor": {
+    "checked_at": "2026-09-21T21:28:55.013373+00:00",
+    "project": "/mnt/data/execution_repair/CYBR_SCENES_R2",
+    "project_exists": true,
+    "user_id": 1000,
+    "python": "/opt/pyvenv/bin/python",
+    "g++": "/usr/bin/g++",
+    "resource_limits": {
+      "memory_limit_bytes": 4294967296,
+      "cgroup_memory_current_bytes": 1843003392,
+      "host_available_bytes": 4762370048,
+      "cpu_budget": 4
+    },
+    "disk_roundtrip": "passed",
+    "subprocess": "SUBPROCESS_OK",
+    "errors": [],
+    "passed": true
+  },
+  "cause_scope": "Current observations do not establish why an earlier tool invocation stopped. The reproducible missing-workspace condition is separate from the now-functioning execution tools."
+}

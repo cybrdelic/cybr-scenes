@@ -1,0 +1,21 @@
+{
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "Pillow": "12.3.0",
+    "trimesh": "4.11.1",
+    "shapely": "2.1.2"
+  },
+  "threads": 4,
+  "compiler_flags": [
+    "-O3",
+    "-march=native",
+    "-fno-math-errno",
+    "-fopenmp",
+    "-std=c++17"
+  ],
+  "executed_binary_sha256": "0c4cb5cda4be576b2587c9bea1b494ded85d4df63a4f9c41f9cc343803834c88",
+  "rebuilt_default_binary_sha256": "0c4cb5cda4be576b2587c9bea1b494ded85d4df63a4f9c41f9cc343803834c88"
+}

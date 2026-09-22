@@ -1,0 +1,20 @@
+test_hot_sun_flag_uses_native_two_argument_form (test_foliage_filter.FoliageTests.test_hot_sun_flag_uses_native_two_argument_form) ... ok
+test_isolated_zero_sample_leaf_is_not_locked_black (test_foliage_filter.FoliageTests.test_isolated_zero_sample_leaf_is_not_locked_black) ... ok
+test_two_sided_constant_radiance_is_preserved (test_foliage_filter.FoliageTests.test_two_sided_constant_radiance_is_preserved) ... ok
+test_unrelated_material_and_sky_are_untouched (test_foliage_filter.FoliageTests.test_unrelated_material_and_sky_are_untouched) ... ok
+test_inverse_transpose (test_geometry.GeometryTests.test_inverse_transpose) ... ok
+test_inversion_is_rejected (test_geometry.GeometryTests.test_inversion_is_rejected) ... ok
+test_litter_endpoints (test_geometry.GeometryTests.test_litter_endpoints) ... ok
+test_native_layout_headers (test_geometry.GeometryTests.test_native_layout_headers) ... ok
+test_six_noninverting_world_deformations (test_geometry.GeometryTests.test_six_noninverting_world_deformations) ... ok
+test_wave_gradient (test_geometry.GeometryTests.test_wave_gradient) ... ok
+test_disk_spool_and_exact_native_roundtrip (test_geometry.StreamAssemblyTests.test_disk_spool_and_exact_native_roundtrip) ... ok
+test_albedo_remodulation_identity_and_exclusion (test_pipeline.PipelineTests.test_albedo_remodulation_identity_and_exclusion) ... ok
+test_existing_lock_is_not_deleted (test_pipeline.PipelineTests.test_existing_lock_is_not_deleted) ... ok
+test_negative_display_rgb_is_not_negative_spectral_energy (test_pipeline.PipelineTests.test_negative_display_rgb_is_not_negative_spectral_energy) ... ok
+test_scene_registry_complete (test_pipeline.PipelineTests.test_scene_registry_complete) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.789s
+
+OK

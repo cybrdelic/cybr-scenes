@@ -1,0 +1,451 @@
+{
+  "project": "CYBR_Drowned_Geode_V3",
+  "completed_native_render": true,
+  "image_generation": false,
+  "main_image": "output_v3/Drowned_Geode_V3.png",
+  "width": 1800,
+  "height": 1200,
+  "input_mesh_sha256": "74ece0fd45bf4ffddfbc42850645730230dd798bc4058ff82cfc3a02c834a56c",
+  "source_files": [
+    {
+      "path": "LICENSE",
+      "bytes": 18092,
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+    },
+    {
+      "path": "README.md",
+      "bytes": 12686,
+      "sha256": "f5091be9e4cba0ea230f729f58551900d3203ef3a99399582e677dd36e1d4992"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 589,
+      "sha256": "84cdcdba011cf41442a53c0d1ea3e6881119277b8c83321027fa95174a0e0ab5"
+    },
+    {
+      "path": "assets/ORIGINAL_ASSET_README.md",
+      "bytes": 4793,
+      "sha256": "e0f16bae438f3bf995b4432268aaad8f1369f398a3d9968880c6c17faf673b14"
+    },
+    {
+      "path": "assets/ORIGINAL_V2_README.md",
+      "bytes": 6441,
+      "sha256": "831e16a039445b811068f35c9745e94ef656689eaffff68abd3c96d04e7d78e8"
+    },
+    {
+      "path": "assets/built_v3/crystal_anchors_v3.json",
+      "bytes": 15020,
+      "sha256": "3936ccccd48be7125be8a7f0d9885dbc36ab246faf77425687d215e80a1267e1"
+    },
+    {
+      "path": "assets/built_v3/geometry_manifest.json",
+      "bytes": 87329,
+      "sha256": "105eb1b488fb7751b0ced8fca1c2e19430f4098699439debe2f480747c46b2df"
+    },
+    {
+      "path": "assets/built_v3/textures.json",
+      "bytes": 1373,
+      "sha256": "de7086aa8577846dfd787c296fcf1e1f73bf47794c4c18db83afdec2565753f1"
+    },
+    {
+      "path": "assets/comparison/Drowned_Geode_V2.png",
+      "bytes": 1521156,
+      "sha256": "aa22f4572011da77b6e164b8216cb034a0a7c0d71beff858844292dd9b968778"
+    },
+    {
+      "path": "assets/comparison/previous_finished.png",
+      "bytes": 2202735,
+      "sha256": "13ed9fadfd1e94084ec01b88f9d47efcff44c992ada29b6131e233e011cf6823"
+    },
+    {
+      "path": "assets/inputs/cybr-geo/examples/desert_hot_springs_v2/assets/rock_boulder_dry_diff_4k.jpg",
+      "bytes": 14349759,
+      "sha256": "2787cfdf899ea12442e67e337e32712d6e25f4a0763ab3df63fd9306a02e156f"
+    },
+    {
+      "path": "assets/inputs/cybr-geo/examples/desert_hot_springs_v2/assets/rock_boulder_dry_disp_4k.jpg",
+      "bytes": 2567374,
+      "sha256": "173d6af4402b195441292c56befaa8db2234c04ea4624c3875fa46a1ac4761ef"
+    },
+    {
+      "path": "assets/inputs/cybr-geo/examples/desert_hot_springs_v2/assets/rock_boulder_dry_rough_4k.jpg",
+      "bytes": 11371523,
+      "sha256": "69588fbeb8672ed0d448af7fbf28e834cc1e8dfde45bd1c5dbf6bf50d2674130"
+    },
+    {
+      "path": "assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/boulder_01/boulder_01.bin",
+      "bytes": 2938808,
+      "sha256": "7f5b06503d62bd95bfe9c6b8a354a5cc8ff04a4d271a8cf87a3e3125db4232d7"
+    },
+    {
+      "path": "assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/boulder_01/boulder_01_2k.gltf",
+      "bytes": 2773,
+      "sha256": "52d118b56748a18509e4ec0075d07b254d72a0401793f22363c0bb3a682e7361"
+    },
+    {
+      "path": "assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/boulder_01/textures/boulder_01_arm_2k.jpg",
+      "bytes": 2273068,
+      "sha256": "ab52859dde519b4822111aa60916b6d21f8a6966c67b6cec44d1cd0775b8a86a"
+    },
+    {
+      "path": "assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/boulder_01/textures/boulder_01_diff_2k.jpg",
+      "bytes": 3672483,
+      "sha256": "90bbaa17c1fe0254d2b0b6e5148264fa834953a72724d566f14af029eebe3ca3"
+    },
+    {
+      "path": "assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/boulder_01/textures/boulder_01_nor_gl_2k.jpg",
+      "bytes": 4649207,
+      "sha256": "5174b318712ac7725cbcb55d422607f9c66d7f8d035c5412ab897b5939e2db6b"
+    },
+    {
+      "path": "assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/brown_mud_rocks_01_diff_2k.jpg",
+      "bytes": 3144138,
+      "sha256": "aa4b314c8e488c2d3d0db399e1023420ffb2198293f7ed07441bde7e70c8c57e"
+    },
+    {
+      "path": "assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/brown_mud_rocks_01_disp_2k.jpg",
+      "bytes": 635930,
+      "sha256": "d0fa5d1baeeb62c54eb99a05947336b9fd91e19d7ce9a58c8dcc2c6c807622d4"
+    },
+    {
+      "path": "assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/brown_mud_rocks_01_nor_gl_2k.jpg",
+      "bytes": 4213708,
+      "sha256": "23bdf3ea51a396379183e01e5899e62cedcda151c5eb1cd9af95330330feca82"
+    },
+    {
+      "path": "assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/brown_mud_rocks_01_rough_2k.jpg",
+      "bytes": 2676813,
+      "sha256": "7e3be7bd34556f174a4a201ad4735873c575a60dd9a5a7032e160a169c5428ac"
+    },
+    {
+      "path": "assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/download_manifest.json",
+      "bytes": 5808,
+      "sha256": "ccb0f3484afe648342347eb4a9a20cfafdde1fe83711572058facef8874b9158"
+    },
+    {
+      "path": "assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/namaqualand_boulder_02/namaqualand_boulder_02.bin",
+      "bytes": 2297768,
+      "sha256": "0f6daa7ec9b1a92207c0b09b737ff1eec904aebc1c1eada778afa6e5eacd55c0"
+    },
+    {
+      "path": "assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/namaqualand_boulder_02/namaqualand_boulder_02_2k.gltf",
+      "bytes": 2818,
+      "sha256": "e181b722c8c8bd56f98ab8883b283b3cb3c437c372af3b831aec2f94c22fe0f2"
+    },
+    {
+      "path": "assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/namaqualand_boulder_02/textures/namaqualand_boulder_02_arm_2k.jpg",
+      "bytes": 2914937,
+      "sha256": "2314bc882e140adba4ee2eae2873f11458b359208b59240a04ae85f2e5766014"
+    },
+    {
+      "path": "assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/namaqualand_boulder_02/textures/namaqualand_boulder_02_diff_2k.jpg",
+      "bytes": 3867934,
+      "sha256": "0f81c51224deb025079f10dad21530e77e42baad541eb766922fe8fc6e46a88e"
+    },
+    {
+      "path": "assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/namaqualand_boulder_02/textures/namaqualand_boulder_02_nor_gl_2k.jpg",
+      "bytes": 3919158,
+      "sha256": "3067767374241dec6612ad60cc806cb9e30594f784d74f19a7cda4cdc2d28cc0"
+    },
+    {
+      "path": "assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/namaqualand_boulder_03/namaqualand_boulder_03.bin",
+      "bytes": 1450268,
+      "sha256": "d24151021ed310fe3207f1b5964bff22b583e77d2617427a88b5dcbc0447a475"
+    },
+    {
+      "path": "assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/namaqualand_boulder_03/namaqualand_boulder_03_2k.gltf",
+      "bytes": 2823,
+      "sha256": "5d135c8e3a74edf7f53ae04d41deed19582ed6ced6d629d5d51e730319ed0dcb"
+    },
+    {
+      "path": "assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/namaqualand_boulder_03/textures/namaqualand_boulder_03_arm_2k.jpg",
+      "bytes": 2441884,
+      "sha256": "24f443dd1c1da875a3653f0820d02e3140319fe199123765987d166ada3d1ddc"
+    },
+    {
+      "path": "assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/namaqualand_boulder_03/textures/namaqualand_boulder_03_diff_2k.jpg",
+      "bytes": 3341422,
+      "sha256": "d7bfae01eed80a6318679f13a8be14253fa0f6338b93f6e2126946f86bea4f82"
+    },
+    {
+      "path": "assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/namaqualand_boulder_03/textures/namaqualand_boulder_03_nor_gl_2k.jpg",
+      "bytes": 2919390,
+      "sha256": "e83ccfe677a6c82aadd56d1e5138aa97823a23cde32573dd65dafb321fffeb33"
+    },
+    {
+      "path": "build.sh",
+      "bytes": 214,
+      "sha256": "81725036f53df487ea9b8a43b11d9c898c2a75691d9bb03d2c23899d78a0e578"
+    },
+    {
+      "path": "build_scene.py",
+      "bytes": 20559,
+      "sha256": "4b3f6c31a9fc09844e17b9d363f5e0f0be0c60324a836956defdad96a07b1265"
+    },
+    {
+      "path": "build_v3.py",
+      "bytes": 19785,
+      "sha256": "ac508bc214d0b923c7f88d924aec284ef45e6000e178a0dd88014f338497c2a9"
+    },
+    {
+      "path": "create_comparisons_v3.py",
+      "bytes": 2158,
+      "sha256": "b90fbdca22080e926b2c205d0dafc40351b8fe4a68e1fe2e931bfe977c3cbd0b"
+    },
+    {
+      "path": "docs/README_V1.md",
+      "bytes": 11201,
+      "sha256": "29edbfb598743657a0b56fdc399302267d639e5b549211dc4f7e29b9169f3129"
+    },
+    {
+      "path": "docs/SCIPY_LICENSE.txt",
+      "bytes": 46838,
+      "sha256": "4daf14e37432e7026165979ecb7a39930707a3e89bef4876cfaf9dad36ed364a"
+    },
+    {
+      "path": "docs/geometry_v1_to_v2.diff",
+      "bytes": 11113,
+      "sha256": "3fda5ff1fe65b62c3ad1bde7e301c44953cd612d02a40f9a2db61f740fc86ff2"
+    },
+    {
+      "path": "docs/renderer_v1_to_v2.diff",
+      "bytes": 29510,
+      "sha256": "dc57594d7fce9258efd9f56118d384e9cbe20672e8a21cdf4dcb24ba95e9bbc9"
+    },
+    {
+      "path": "docs_v3/README_V2_ARCHIVE.md",
+      "bytes": 10200,
+      "sha256": "7ffca9e1c2e6c476fff00a27dfcfd44248f4f3a8c8d5c84968b1c9616482cb2f"
+    },
+    {
+      "path": "docs_v3/ROUGH_GLASS_AND_FILTER_NOTES.md",
+      "bytes": 2618,
+      "sha256": "3750cebe071c50805a1bcf53e09b8585f184a59b0ff9270951340048b56adc26"
+    },
+    {
+      "path": "docs_v3/renderer_v2_to_v3.patch",
+      "bytes": 16090,
+      "sha256": "e3df4a728f4968e2f024ee5577d11459a34c100fea33ee68b3f9ca21a5dec499"
+    },
+    {
+      "path": "finish.py",
+      "bytes": 6093,
+      "sha256": "b2ddc274c52e940a3a748c87813ab30e8865d96fd139591e614af9dbd1a79f44"
+    },
+    {
+      "path": "finish_v3.py",
+      "bytes": 10416,
+      "sha256": "d927500e2c788cfd29620d0e4c0a075d92bb1f9790ed77d70e41902b39452675"
+    },
+    {
+      "path": "output_v3/Drowned_Geode_V3.json",
+      "bytes": 2711,
+      "sha256": "44be9bb939482f013d38a29c4bb86b5bd9f0d5d27211feee49ef2ee68162dc8b"
+    },
+    {
+      "path": "output_v3/Drowned_Geode_V3.png",
+      "bytes": 2723345,
+      "sha256": "5f70a30cdf646affd87f4d3d21830b3c611ea61e8835cfadbef5b179a916d722"
+    },
+    {
+      "path": "output_v3/Drowned_Geode_V3_Before_After.png",
+      "bytes": 1326959,
+      "sha256": "5d6bc56d920a6296bfef466cf092bf4a7e4e11a2c5790cb0380aaec22b3f585a"
+    },
+    {
+      "path": "output_v3/Drowned_Geode_V3_Filter_Artifact_Check.png",
+      "bytes": 321780,
+      "sha256": "5012cc0387dc851c4135bab4286495a21c02feee2e284a6a53cd1a57d1c2eb33"
+    },
+    {
+      "path": "output_v3/detail_filter_after.png",
+      "bytes": 231200,
+      "sha256": "41049de1b3064d020b82e152a5ebc55be495bdf922e1676ba07b46eb8084c6b3"
+    },
+    {
+      "path": "output_v3/detail_filter_before.png",
+      "bytes": 247867,
+      "sha256": "776418f22571d9faaaa0451097a89eea5a283427f5a354c359a11822c67faca6"
+    },
+    {
+      "path": "output_v3/final_render.log",
+      "bytes": 821,
+      "sha256": "0f3978b14522294fb55902750ac736dd7770bb65f66d2fe6be93ef56ea743fc3"
+    },
+    {
+      "path": "render_final.sh",
+      "bytes": 347,
+      "sha256": "f658def9a4ba8d5426a701039ab9841c78984c61037ccebeb1dbcd9833dd6306"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 114,
+      "sha256": "64253587939e2dac725aab581c50aa46e55f564dba5e2a35bd693c1938e7b3f9"
+    },
+    {
+      "path": "src/UPSTREAM_QUARTZ_README.md",
+      "bytes": 10414,
+      "sha256": "359f4589bb0a26b7808512e4b1c75dc78dcadf4dfbd871b0c27387e4e6da5ee6"
+    },
+    {
+      "path": "src/cathedral_v3.cpp",
+      "bytes": 43697,
+      "sha256": "48821b75515694a661e76d6cd8aa0ee3dfdeefc0aaae70dbe8790b1b76e237fb"
+    },
+    {
+      "path": "src/make_sampler.py",
+      "bytes": 519,
+      "sha256": "6316155bb09042e412f008f33316f80d73b16fbe25477446ef139f624b92d013"
+    },
+    {
+      "path": "src/quartz_growth.py",
+      "bytes": 8594,
+      "sha256": "44214effc127a5d24501351f95292c5dd3ebece9d672bd090c8d78d5cfe9e752"
+    },
+    {
+      "path": "src/rough_quartz_v3.h",
+      "bytes": 2310,
+      "sha256": "b82bf453f11dd5f6f1795eeac159906de1b7f8b6980ca8ade84504bddfe54fad"
+    },
+    {
+      "path": "src/sobol_directions.h",
+      "bytes": 394511,
+      "sha256": "c1df14ec217bb6bf6ac880ceb406e7bcf524b861885d558e520c5fff6454f907"
+    },
+    {
+      "path": "src/spectral_geometry.h",
+      "bytes": 7893,
+      "sha256": "7c0acc4ece6bb0824a5a03bba776a4e01b7fe574d930568b2f9fca12eaa92736"
+    },
+    {
+      "path": "src/texture_adapter.h",
+      "bytes": 1755,
+      "sha256": "321e29ea114d0f6e6509c554d0c0abf5adc1e964998d3d9e834dd7690748e64d"
+    },
+    {
+      "path": "src/upstream_quartz_optics.py",
+      "bytes": 6861,
+      "sha256": "aa33d29c12f44de14959ae354d94e00d43683f0619bea27518319b737217e029"
+    },
+    {
+      "path": "src/wide_bvh.h",
+      "bytes": 5345,
+      "sha256": "7eca2940f3ce7a5dac2e00e6dff4296d1c29334f1dcfc4a9b9dfaa08a723ebb2"
+    },
+    {
+      "path": "verification_v3/compare_rebuild.py",
+      "bytes": 1094,
+      "sha256": "6fb8712e5ddbe2c64e8626ca25e028af9ca975f5e08873e6563214d39362e77e"
+    },
+    {
+      "path": "verification_v3/filter_fixture/README.md",
+      "bytes": 788,
+      "sha256": "324d6f4395bbb213da724c8e8509994970f9e4a70754f1901004a6720680b246"
+    },
+    {
+      "path": "verification_v3/filter_fixture/detail_filter_after.png",
+      "bytes": 231200,
+      "sha256": "41049de1b3064d020b82e152a5ebc55be495bdf922e1676ba07b46eb8084c6b3"
+    },
+    {
+      "path": "verification_v3/filter_fixture/detail_filter_before.png",
+      "bytes": 247867,
+      "sha256": "776418f22571d9faaaa0451097a89eea5a283427f5a354c359a11822c67faca6"
+    },
+    {
+      "path": "verification_v3/filter_fixture/detail_preview.json",
+      "bytes": 2628,
+      "sha256": "e5c3621a64df8f452f769aeced8191c27d63659031afd70ea9c5d097a4c71308"
+    },
+    {
+      "path": "verification_v3/filter_fixture/detail_preview_guides.npz",
+      "bytes": 9073107,
+      "sha256": "2600eab300c083267ee3a4c43145318d9d0e375dbc3d8ebc3197d94e6f306182"
+    },
+    {
+      "path": "verification_v3/filter_fixture/detail_preview_raw.exr",
+      "bytes": 1569143,
+      "sha256": "2e1fdc9fa2cdb8c5b8d26fef924b04416edab027f224627435306009a4441b96"
+    },
+    {
+      "path": "verification_v3/filter_fixture/detail_preview_reflection_raw.exr",
+      "bytes": 382324,
+      "sha256": "f4a6eb4bb2c77aac567443f19d5ffddce04ed676a6c3d626cbaec7b0aafdb292"
+    },
+    {
+      "path": "verification_v3/filter_fixture/detail_preview_sample_counts.npy",
+      "bytes": 529328,
+      "sha256": "e77249b707a76b970195fac5fb2892be8c6b06ed3bbe5d5db0124b5692aa5edc"
+    },
+    {
+      "path": "verification_v3/filter_fixture/detail_preview_volume_raw.exr",
+      "bytes": 1548851,
+      "sha256": "e73a67dec910b38cc5eea0ef39a0940ab01a397c7e754b8603af120b3ced885d"
+    },
+    {
+      "path": "verification_v3/filter_test.json",
+      "bytes": 372,
+      "sha256": "864b6198ae463dabcec2149cd3c5b4e4fec0cfdab756cc7e6f49b381d7d07e4a"
+    },
+    {
+      "path": "verification_v3/finish_replay.json",
+      "bytes": 498,
+      "sha256": "59c4483e9ad8d140a1ce48c5106f21d0cf08e315b2bf6f7b7c8faee6d9066bcf"
+    },
+    {
+      "path": "verification_v3/geometry.json",
+      "bytes": 42241,
+      "sha256": "23e0fc12d464124aa82f2ca25598619a3f98bcad40ae0b34aafc750d683c7aa6"
+    },
+    {
+      "path": "verification_v3/legacy_filter_reference.py",
+      "bytes": 10139,
+      "sha256": "e2891f22a2b9045f872278642c783e7c0e835905ef28573210f9c5b77f53f423"
+    },
+    {
+      "path": "verification_v3/native_optics.json",
+      "bytes": 306,
+      "sha256": "dbcf1afbb639d8a9aa397e1344ba66dd76380846c8135664311cb76c9abe8898"
+    },
+    {
+      "path": "verification_v3/rebuild.json",
+      "bytes": 2277,
+      "sha256": "4aeb54441e74b68bb501d57a8c0e4281fcbf3e2d8e9edc834e4b4355e9f5efbc"
+    },
+    {
+      "path": "verification_v3/rough_quartz_test.json",
+      "bytes": 323,
+      "sha256": "663a64b8cf9b9f7ec8ae85723d1252ddfe31ff33b498ee798656f2265f76059d"
+    },
+    {
+      "path": "verification_v3/test_filter.py",
+      "bytes": 1604,
+      "sha256": "cf2b6e3ee8f051b973e5bf39a9010b8180b5a0915dbd9ac933565739339d7e6c"
+    },
+    {
+      "path": "verification_v3/test_rough_quartz.cpp",
+      "bytes": 1751,
+      "sha256": "8d322a989a77e9d4db5285cebe1d7b7c9356d206bb3568f82be544163ae63b97"
+    },
+    {
+      "path": "verification_v3/validation.json",
+      "bytes": 52721,
+      "sha256": "692eca5bf046d7df02be3c2392e2bb9121b2514f2b1e44e367a7d4b2f6ac71bc"
+    },
+    {
+      "path": "verification_v3/verify_geometry.py",
+      "bytes": 2308,
+      "sha256": "a105318ff0501c9fba2311ab9a52c63ff92a16d480655db4f0f90c695dd3cc1c"
+    },
+    {
+      "path": "verification_v3/verify_outputs.py",
+      "bytes": 5107,
+      "sha256": "34f19e1d42dcf307eff474f2fc843f843a27ab5f1d52329def3ef68f26ae2439"
+    },
+    {
+      "path": "verify.sh",
+      "bytes": 557,
+      "sha256": "92b178bce158d5f4e3706eaef413ad5bab367c9a518be09c59e2ea246cc4706d"
+    }
+  ]
+}

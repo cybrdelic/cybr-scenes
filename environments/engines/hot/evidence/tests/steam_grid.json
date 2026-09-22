@@ -1,0 +1,15 @@
+{
+  "scope": "Conservative trilinear-grid density bound, representation error against authored field, and sampled transmittance; not CFD or measured steam",
+  "grid": [256,288,80],
+  "tracking_majorant_per_m": 0.2380304933,
+  "random_samples": 50000,
+  "sampled_maximum_density": 0.1585974693,
+  "maximum_absolute_density_error": 0.04922957346,
+  "mean_absolute_density_error": 3.15233863e-05,
+  "rms_density_error": 0.0004793228066,
+  "finite": true,
+  "sampled_densities_within_majorant": true,
+  "maximum_transmittance_absolute_error": 0.0007173127378,
+  "maximum_transmittance_standard_error": 0.0005365862744,
+  "passed": true
+}

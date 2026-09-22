@@ -1,0 +1,40 @@
+{
+  "command": [
+    "/usr/bin/g++",
+    "-std=c++17",
+    "-O3",
+    "-march=native",
+    "-fno-math-errno",
+    "-fopenmp",
+    "/mnt/data/CYBR_SCENES_R2/build/original-engines/hot/cybr-geo/native/spectral_desert.cpp",
+    "-o",
+    "/mnt/data/CYBR_SCENES_R2/build/hot_original"
+  ],
+  "cwd": ".",
+  "started_at": "2026-09-21T17:16:04.347759+00:00",
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "4",
+    "NUMBA_NUM_THREADS": "4",
+    "CYBR_SURFACE_ATLAS": "/mnt/data/CYBR_SCENES_R2/assets/mineral_detail.cdt"
+  },
+  "executed_command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/mnt/data/CYBR_SCENES_R2/evidence/compile-original-hot.resources.txt",
+    "/usr/bin/g++",
+    "-std=c++17",
+    "-O3",
+    "-march=native",
+    "-fno-math-errno",
+    "-fopenmp",
+    "/mnt/data/CYBR_SCENES_R2/build/original-engines/hot/cybr-geo/native/spectral_desert.cpp",
+    "-o",
+    "/mnt/data/CYBR_SCENES_R2/build/hot_original"
+  ],
+  "returncode": 0,
+  "seconds": 11.012263570999949,
+  "finished_at": "2026-09-21T17:16:15.359915+00:00",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

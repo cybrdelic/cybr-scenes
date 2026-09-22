@@ -1,0 +1,23 @@
+	Command being timed: "/mnt/data/CYBR_SCENES_R2/build/obsidian_r2 /mnt/data/CYBR_SCENES_R2/geometry-r2/obsidian/scene.bin /mnt/data/CYBR_SCENES_R2/renders/obsidian-reach/hero/hero 1280 560 64 0 7"
+	User time (seconds): 851.98
+	System time (seconds): 7.04
+	Percent of CPU this job got: 335%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:15.88
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2982696
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1
+	Minor (reclaiming a frame) page faults: 747157
+	Voluntary context switches: 28
+	Involuntary context switches: 9146
+	Swaps: 0
+	File system inputs: 2093112
+	File system outputs: 100928
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

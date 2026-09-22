@@ -1,0 +1,23 @@
+{
+  "scene": "canyon",
+  "triangles": 8108728,
+  "parts": 7,
+  "components": {
+    "Alluvial_sand_and_rockfall_support": 1,
+    "West_bedded_sandstone": 1,
+    "East_bedded_sandstone": 1,
+    "Rockfall_fans": 2460,
+    "Wash_gravel": 2662,
+    "Fallen_jointed_slabs": 5,
+    "Far_bend_continuous_wall": 1
+  },
+  "saved_and_reloaded_with_CYBR_GEO": true,
+  "finite_vertices": true,
+  "valid_indices": true,
+  "water_checks": [],
+  "tested_twig_roots": 0,
+  "maximum_twig_root_centerline_error_m": 0.0,
+  "mesh_sha256": "50fbfa563abe246a9049279274a1cea710be5b38f423ccdc6ab6ef731d27156a",
+  "image_generation": false
+}
+NEW_BUILD_COMPLETED canyon 138.23s

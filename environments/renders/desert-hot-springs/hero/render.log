@@ -1,0 +1,23 @@
+CYBR R2 photographic surface atlas: 1024 square; 11 moment mip levels
+CYBR GEO BVH: 23690858 actual triangles; 13664661 nodes
+5% 51.8204 s
+10% 52.4317 s
+15% 54.2186 s
+20% 59.2959 s
+25% 63.7788 s
+30% 67.4543 s
+35% 73.0671 s
+40% 82.9815 s
+45% 98.3099 s
+50% 110.822 s
+55% 141.23 s
+60% 180.192 s
+65% 205.026 s
+70% 233.196 s
+75% 255.069 s
+80% 273.661 s
+85% 290.382 s
+90% 306.014 s
+95% 313.607 s
+100% 319.66 s
+WROTE /mnt/data/CYBR_SCENES_R2/renders/desert-hot-springs/hero/hero; 319.974 seconds; invalid paths 0

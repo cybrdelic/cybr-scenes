@@ -1,0 +1,12 @@
+{
+  "min_spp": 16,
+  "max_spp": 192,
+  "mean_spp": 60.293431919642856,
+  "total_camera_paths": 172873328,
+  "method": "Independent pilot-frame variance allocation; fixed budget per final pixel, no convergence-dependent stopping",
+  "pilot": "1200x528, 20spp",
+  "dimensions": [
+    2560,
+    1120
+  ]
+}

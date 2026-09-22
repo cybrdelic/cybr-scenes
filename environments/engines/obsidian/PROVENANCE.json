@@ -1,0 +1,21 @@
+{
+  "project": "Obsidian Reach IV",
+  "input_archive": "Obsidian_Reach_III_Native_Source.zip",
+  "input_archive_sha256": "e3dea4c7c474a0181d4b91ebccfd15bbb2809dccfbfe2d38cdf5fab510ed4bc1",
+  "project_core_sources": [
+    "vendor/cybrgeo/core.py",
+    "vendor/cybrelements/lava_optics.py",
+    "include/cybr/geometry.hpp",
+    "include/cybr/math.hpp",
+    "include/cybr/spectrum.hpp"
+  ],
+  "renderer": "Custom native CPU integration, not the unmodified stock CYBR LIGHT renderer",
+  "transport": "RGB surface paths; preintegrated temperature-dependent emission using an analytic spectral observer",
+  "geometry": "Authored detached cooling-crust bodies, scanned rock fragments, continuous terrain and relocated elevation-derived backdrop",
+  "fluid_simulation": false,
+  "atmosphere": "Deterministic authored density integration with approximate source lighting",
+  "neural_processing": false,
+  "image_generation": false,
+  "radiance_upscaling": false,
+  "repository_writes": false
+}

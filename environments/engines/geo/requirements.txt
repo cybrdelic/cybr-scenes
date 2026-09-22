@@ -1,0 +1,6 @@
+numpy>=1.24
+scipy>=1.10
+trimesh>=4.0
+Pillow>=10.0
+numba>=0.59
+opencv-python-headless>=4.8

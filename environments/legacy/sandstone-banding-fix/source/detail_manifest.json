@@ -1,0 +1,196 @@
+{
+  "schema": "sandstone-walk-photographic-detail/1",
+  "license": "CC0-1.0",
+  "geometry_changed": false,
+  "camera_projection_used": false,
+  "textures": {
+    "rock_face_03": {
+      "source": {
+        "url": "https://polyhaven.com/a/rock_face_03",
+        "resolution": "4k",
+        "maps": {
+          "diff": {
+            "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/rock_face_03/rock_face_03_diff_4k.jpg",
+            "bytes": 15319503,
+            "sha256": "83148536c125cee3a2e2fc1368c8851ad4c87aef8b8bb35c5129d82d223effb3",
+            "path": "detail_sources/rock_face_03/diff.jpg"
+          },
+          "nor_gl": {
+            "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/rock_face_03/rock_face_03_nor_gl_4k.jpg",
+            "bytes": 16283883,
+            "sha256": "b479761c4d48511f3c0bb8a27d948082c6d88ab584e38ff3791ca395d27a16ea",
+            "path": "detail_sources/rock_face_03/nor_gl.jpg"
+          },
+          "rough": {
+            "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/rock_face_03/rock_face_03_rough_4k.jpg",
+            "bytes": 10380943,
+            "sha256": "b6bf6baf88d605e6d4532a844c85b39eaf7141d57ec0e2b55ad0991b3200546c",
+            "path": "detail_sources/rock_face_03/rough.jpg"
+          },
+          "disp": {
+            "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/4k/rock_face_03/rock_face_03_disp_4k.png",
+            "bytes": 21772279,
+            "sha256": "123d5c5e087f99365f7fe7508937917294dedede244236f6c2b0f05675e2cc6e",
+            "path": "detail_sources/rock_face_03/disp.png"
+          },
+          "ao": {
+            "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/rock_face_03/rock_face_03_ao_4k.jpg",
+            "bytes": 9638961,
+            "sha256": "d94f5490a21faa8a92d1b1ba97904c0e017a1842c0180d2138b2efebab55d1f9",
+            "path": "detail_sources/rock_face_03/ao.jpg"
+          }
+        }
+      },
+      "width_metres": 2.7,
+      "parallax_height_metres": 0.026,
+      "linear_color_mean": [
+        0.234478765,
+        0.147022581,
+        0.084703926
+      ],
+      "normal_convention": "OpenGL +Y, surface-gradient triplanar; RG decoded to [-1,1], positive Z reconstructed",
+      "formats": {
+        "color_rough": "RGB sRGB diffuse; alpha linear roughness",
+        "normal_height_ao": "RG normal XY; B linear height; alpha linear AO"
+      },
+      "levels": {
+        "4096": {
+          "color_rough": {
+            "url": "web/detail/rock_face_03_color_rough_4096.webp",
+            "sha256": "e2b0eb2b70cc749b190e1986fa2763605211148e0c0969c4703916fc7e5616a5",
+            "bytes": 17931882,
+            "width": 4096,
+            "height": 4096
+          },
+          "normal_height_ao": {
+            "url": "web/detail/rock_face_03_normal_height_ao_4096.webp",
+            "sha256": "8157870910450ecf117a7369819d9676a8a006d3f75397c9c420045d3154f074",
+            "bytes": 30793376,
+            "width": 4096,
+            "height": 4096
+          }
+        },
+        "2048": {
+          "color_rough": {
+            "url": "web/detail/rock_face_03_color_rough_2048.webp",
+            "sha256": "917dfdc8dc321c6cb685d3a221ec77960ba927999cc9f651e9d28cc07c426a14",
+            "bytes": 4557370,
+            "width": 2048,
+            "height": 2048
+          },
+          "normal_height_ao": {
+            "url": "web/detail/rock_face_03_normal_height_ao_2048.webp",
+            "sha256": "ecec0577c7cae7f847019ad99c8dc564c8c4c61c21ab3dff3c8ec77f375f4d0c",
+            "bytes": 9220894,
+            "width": 2048,
+            "height": 2048
+          }
+        }
+      }
+    },
+    "sandy_gravel": {
+      "source": {
+        "url": "https://polyhaven.com/a/sandy_gravel",
+        "resolution": "4k",
+        "maps": {
+          "diff": {
+            "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/sandy_gravel/sandy_gravel_diff_4k.jpg",
+            "bytes": 14884948,
+            "sha256": "9fb12e1292dfcec70e4e72c1727ed51849744745a3644d9275b3351afe28a7ce",
+            "path": "detail_sources/sandy_gravel/diff.jpg"
+          },
+          "nor_gl": {
+            "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/sandy_gravel/sandy_gravel_nor_gl_4k.jpg",
+            "bytes": 19673774,
+            "sha256": "a5a6904c5b863f0cee67aa413e5a14e9e490e2a6f85b6705924034cab81b254e",
+            "path": "detail_sources/sandy_gravel/nor_gl.jpg"
+          },
+          "rough": {
+            "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/sandy_gravel/sandy_gravel_rough_4k.jpg",
+            "bytes": 6877049,
+            "sha256": "f4d55b38f8b576cc64d60455f391cfcbcada40a07f031a0c6473b27fcffa8efd",
+            "path": "detail_sources/sandy_gravel/rough.jpg"
+          },
+          "disp": {
+            "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/4k/sandy_gravel/sandy_gravel_disp_4k.png",
+            "bytes": 27749887,
+            "sha256": "73147940ffd54b984ec8321bada54199402542d9d39c2c0ba981c85131ee1a91",
+            "path": "detail_sources/sandy_gravel/disp.png"
+          },
+          "ao": {
+            "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/sandy_gravel/sandy_gravel_ao_4k.jpg",
+            "bytes": 13762071,
+            "sha256": "5019acb0472f5a56987075f20562e979b9ad25c7a442d54780660d82d47c54d5",
+            "path": "detail_sources/sandy_gravel/ao.jpg"
+          }
+        }
+      },
+      "width_metres": 2.1,
+      "parallax_height_metres": 0.016,
+      "linear_color_mean": [
+        0.424504473,
+        0.369643754,
+        0.306827175
+      ],
+      "normal_convention": "OpenGL +Y, surface-gradient triplanar; RG decoded to [-1,1], positive Z reconstructed",
+      "formats": {
+        "color_rough": "RGB sRGB diffuse; alpha linear roughness",
+        "normal_height_ao": "RG normal XY; B linear height; alpha linear AO"
+      },
+      "levels": {
+        "4096": {
+          "color_rough": {
+            "url": "web/detail/sandy_gravel_color_rough_4096.webp",
+            "sha256": "700f15fd1674047783254ae83314dfdf6b226432e75e6f9af14da6b5f67d3186",
+            "bytes": 14953896,
+            "width": 4096,
+            "height": 4096
+          },
+          "normal_height_ao": {
+            "url": "web/detail/sandy_gravel_normal_height_ao_4096.webp",
+            "sha256": "1a5d594c22f6713945ab7a8fac4790c1c3d932db8f61664e7e49627b89fc5b8d",
+            "bytes": 40413542,
+            "width": 4096,
+            "height": 4096
+          }
+        },
+        "2048": {
+          "color_rough": {
+            "url": "web/detail/sandy_gravel_color_rough_2048.webp",
+            "sha256": "19ec658b8073a9f5adc670929e72a3b879aa42d144b77928ccecbca534050b2b",
+            "bytes": 3668316,
+            "width": 2048,
+            "height": 2048
+          },
+          "normal_height_ao": {
+            "url": "web/detail/sandy_gravel_normal_height_ao_2048.webp",
+            "sha256": "4e5e93ca8b04a988fe73495a2962f71dc0db658864bf7eb8257bd9dbc0a7db7f",
+            "bytes": 11797292,
+            "width": 2048,
+            "height": 2048
+          }
+        }
+      }
+    }
+  },
+  "lighting": "Original 16-band macro irradiance response reused; scan albedo mean-matched. Fine normals, AO and parallax are runtime approximations, not a new full spectral transport bake.",
+  "shader_sha256": "1d36f25f6281c3fcc13e68e62ab573ad9b890e9431dd2b2705f777cd1554ad47",
+  "rendering": {
+    "default_maps": 4096,
+    "compact_maps": 2048,
+    "normal_height_ao_encoding": "lossless 8-bit WebP",
+    "albedo_encoding": "quality-96 WebP; exact roughness alpha",
+    "default_pixels": "devicePixelRatio, capped at 8,388,608 interactive pixels",
+    "stationary_aa_samples": 8,
+    "linear_hdr": true,
+    "shadow_maps": {
+      "broad": 4096,
+      "near": 4096
+    },
+    "actual_displacement_geometry": false,
+    "parallax_depth": "authored 26 mm rock / 16 mm sediment, faded between 5 and 10 metres",
+    "native_spectral_bake_changed": false,
+    "fine_scale_indirect": "AO approximation; source macro irradiance retained",
+    "source_geometry_unchanged": true
+  }
+}

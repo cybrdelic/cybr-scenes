@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/mnt/data/CYBR_SCENES_R2/tools/finish_r2.py", line 65, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/mnt/data/CYBR_SCENES_R2/tools/finish_r2.py", line 53, in main
+    sys.argv=[str(path),*rest];module.main()
+                               ~~~~~~~~~~~^^
+  File "/mnt/data/CYBR_SCENES_R2/engines/hot/cybr-geo/examples/desert_hot_springs/finish.py", line 113, in main
+    set_num_threads(5);filtered=rgb.copy()
+    ~~~~~~~~~~~~~~~^^^
+  File "/opt/pyvenv/lib/python3.13/site-packages/numba/np/ufunc/parallel.py", line 612, in set_num_threads
+    snt_check(n)
+    ~~~~~~~~~^^^
+  File "/opt/pyvenv/lib/python3.13/site-packages/numba/np/ufunc/parallel.py", line 574, in snt_check
+    raise ValueError(msg)
+ValueError: The number of threads must be between 1 and 4

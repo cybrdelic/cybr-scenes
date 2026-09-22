@@ -1,0 +1,13 @@
+{
+  "inputs": "Only lossless raw EXRs, NPZ guides, NPY sample counts and JSON settings; no native PFM/guide files",
+  "delivered_png_sha256": "5f70a30cdf646affd87f4d3d21830b3c611ea61e8835cfadbef5b179a916d722",
+  "replayed_png_sha256": "5f70a30cdf646affd87f4d3d21830b3c611ea61e8835cfadbef5b179a916d722",
+  "byte_identical": true,
+  "outlier_control": {
+    "enabled": true,
+    "affected_pixels": 554,
+    "biased_viewing_regularization": true,
+    "peak_ratio": 8,
+    "absolute_margin": 0.35
+  }
+}

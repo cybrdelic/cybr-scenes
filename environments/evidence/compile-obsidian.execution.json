@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "state": "succeeded",
+  "command": [
+    "/usr/bin/g++",
+    "-std=c++17",
+    "-O3",
+    "-march=native",
+    "-fno-math-errno",
+    "-fopenmp",
+    "-Ishared",
+    "-Iengines/obsidian/include",
+    "engines/obsidian/src/render.cpp",
+    "-o",
+    "/mnt/data/execution_repair/CYBR_SCENES_R2/build/obsidian_r2"
+  ],
+  "cwd": "/mnt/data/execution_repair/CYBR_SCENES_R2",
+  "started_at": "2026-09-21T21:30:49.865543+00:00",
+  "started_unix": 1790026249.8655493,
+  "supervisor": {
+    "pid": 1381,
+    "start_ticks": 61048,
+    "boot_id": "6d4adc15-175c-4a7b-ab22-618f70e77433",
+    "pid_namespace": "pid:[4026532199]"
+  },
+  "log": "/mnt/data/execution_repair/CYBR_SCENES_R2/evidence/compile-obsidian.log",
+  "timeout_seconds": 14400,
+  "memory_budget_bytes": null,
+  "peak_tree_rss_bytes": 219074560,
+  "returncode": 0,
+  "completed": true,
+  "child": {
+    "pid": 1504,
+    "start_ticks": 63510,
+    "boot_id": "6d4adc15-175c-4a7b-ab22-618f70e77433",
+    "pid_namespace": "pid:[4026532199]"
+  },
+  "pid": 1504,
+  "heartbeat_at": "2026-09-21T21:30:53.629028+00:00",
+  "elapsed_seconds": 3.7635656050000534,
+  "tree_rss_bytes": 0,
+  "descendant_count": 0,
+  "log_bytes": 0,
+  "log_silent_seconds": 3.763338088989258,
+  "finished_at": "2026-09-21T21:30:53.629105+00:00",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

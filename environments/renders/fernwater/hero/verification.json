@@ -1,0 +1,137 @@
+{
+  "passed": true,
+  "tests": {
+    "finite_radiance": true,
+    "nonnegative_transport_radiance": true,
+    "dimensions_match": true,
+    "nonblank_image": true,
+    "no_invalid_reported_paths": true,
+    "positive_triangle_count": true,
+    "image_generation_disabled": true
+  },
+  "dimensions": [
+    960,
+    640
+  ],
+  "radiance_min": -0.0006471152883023024,
+  "radiance_max": 13.793305397033691,
+  "spectral_film": {
+    "bands": 16,
+    "minimum": 0.0,
+    "maximum": 11.822760581970215,
+    "sha256": "e27c1d12303633ca37911fe8a29f4a3494c452bb950216f2e15be8f35fdc1ccf"
+  },
+  "negative_linear_rgb_components": 152,
+  "rgb_note": "Spectral-to-XYZ-to-display-RGB conversion may produce negative out-of-gamut RGB components. Positivity is checked in the transported spectral bands when present, not in display RGB.",
+  "mean_linear_rgb": [
+    0.08635064214468002,
+    0.08144170045852661,
+    0.06119268387556076
+  ],
+  "png_sha256": "a096b4ec0e37a8cbb55277f4503f3ce3e2886d18aa839f707047381294e729d2",
+  "raw_pfm_sha256": "633c3683d95461d1758d06c38ecbb7f3afb4bae8d14afff1d6a04bc917463423",
+  "native_metadata_sha256": "82a73f6e595043a1e3725aa4fb93f2ffab7c5fd0c040648fedb0965611fb90d3",
+  "renderer_metadata": {
+    "renderer": "CYBR SCENES R2 / GEO: stochastic photographic minerals, slope moments, global sky MIS",
+    "guide_spp": 16,
+    "primary_surface_guides": true,
+    "geometry_accelerator": "CYBR GEO native SAH BVH",
+    "view": "hero",
+    "width": 960,
+    "height": 640,
+    "spp": 64,
+    "max_depth": 12,
+    "seed": 20260915,
+    "threads": 4,
+    "triangles": 20400077,
+    "bvh_nodes": 11905173,
+    "spectral_bands": 16,
+    "wavelength_range_nm": [
+      380,
+      780
+    ],
+    "spectral_method": "Jointly transported fixed midpoint wavelength quadrature, 25 nm bins",
+    "water_ior": 1.33399999,
+    "dispersion": false,
+    "steam": false,
+    "steam_model": "Authored heterogeneous trilinear density grid; grid-bounded delta and ratio tracking; HG phase",
+    "water_absorption_scale": 0.850000024,
+    "finite_difference_water_connection_step_radians": 0.0001,
+    "nonfinite_path_samples": 0,
+    "exposure": 2.3499999,
+    "film_white_rgb": [
+      1.04491019,
+      0.984612525,
+      1.02078438
+    ],
+    "seconds": 555.835632,
+    "band_means": [
+      0.0552178025,
+      0.0633759871,
+      0.0688922033,
+      0.0720998347,
+      0.0766450018,
+      0.082800664,
+      0.0868946686,
+      0.0847080424,
+      0.0786665529,
+      0.0722683445,
+      0.0674015433,
+      0.0639729351,
+      0.0604713261,
+      0.0567717813,
+      0.0525083132,
+      0.0491960719
+    ],
+    "r6_surface_coordinate_frames": 720110,
+    "sky_next_event_sampling": true,
+    "water_scattering_coefficient_per_m": 0.0250000004,
+    "water_scattering_HG_g": 0.74000001,
+    "ripple_modes": 128,
+    "camera_origin_m": [
+      0.479999989,
+      -6.75,
+      0.939999998
+    ],
+    "camera_target_m": [
+      0.100000001,
+      7.5,
+      0.349999994
+    ],
+    "horizontal_fov_degrees": 66,
+    "aperture_radius_m": 0.00079999998,
+    "sun_direction": [
+      -0.450483084,
+      0.532389045,
+      0.716677606
+    ],
+    "photographic_grayscale_albedo_detail": true,
+    "granular_relief_enabled": true,
+    "photographic_backplate": false,
+    "image_generation": false,
+    "sky_model": "Single-scattering spherical Rayleigh/aerosol spectral LUT, not reference-validated",
+    "material_spectra": "Reference-illuminant-calibrated RGB-anchor reflectance, not measured mineral spectra",
+    "clouds": false,
+    "cloud_model": "Bounded 3D extinction grid; conservative column-majorant DDA; delta-tracked scattering and ratio-tracked shadows",
+    "cloud_grid": [
+      640,
+      512,
+      48
+    ],
+    "water_spp": 128,
+    "total_camera_samples": 47126848,
+    "indirect_contribution_clamp_Y": 0,
+    "clamped_indirect_contributions": 0,
+    "leaf_surface_model": "Reciprocal Fresnel-GGX coat with two-sided attenuated diffuse body; authored, not measured",
+    "leaf_body_reflection_share": 0.6,
+    "leaf_surface_r4": true,
+    "ground_occlusion_enabled": false,
+    "ground_occlusion_queries": 0,
+    "ground_occlusion_rejections": 0,
+    "water_microfacet_alpha": 0.00499999989,
+    "water_reflection_estimator": "Primary: GGX VNDF and solar-disc MIS; indirect: one-root macro reflection manifold with exclusive path ownership",
+    "underwater_direct_light_approximation": "One-root macro-surface manifolds approximate indirect reflected and transmitted caustics; primary reflection uses GGX"
+  },
+  "scope": "Execution, finite radiance, dimensions, traceable geometry; not an aesthetic or physical-reference validation.",
+  "checked_at": "2026-09-21T17:44:32.656229+00:00"
+}

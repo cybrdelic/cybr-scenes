@@ -1,0 +1,5 @@
+[2026-09-21T17:10:33.780351+00:00] compile-geode: /usr/bin/g++ -std=c++17 -O3 -march=native -fno-math-errno -fopenmp -Ishared -mavx2 -ffp-contract=off engines/geode/src/cathedral_v3.cpp -o /mnt/data/CYBR_SCENES_R2/build/geode_r2
+[2026-09-21T17:10:40.627554+00:00] self-test-geode: /mnt/data/CYBR_SCENES_R2/build/geode_r2 --self-test
+[2026-09-21T17:10:40.636166+00:00] render: /mnt/data/CYBR_SCENES_R2/build/geode_r2 /mnt/data/CYBR_SCENES_R2/geometry-r2/geode/scene.meshbin /mnt/data/CYBR_SCENES_R2/renders/drowned-geode/hero/hero --w 960 --h 640 --spp 32 --depth 24 --threads 4 --seed 735041 --exposure 1.4
+[2026-09-21T17:18:57.360728+00:00] finish: /opt/pyvenv/bin/python /mnt/data/CYBR_SCENES_R2/engines/geode/finish_v3.py /mnt/data/CYBR_SCENES_R2/renders/drowned-geode/hero/hero --exposure 1.4
+RENDER VERIFIED: drowned-geode 960x640 32/64 spp -> /mnt/data/CYBR_SCENES_R2/renders/drowned-geode/hero/hero.png

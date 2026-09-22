@@ -1,0 +1,17 @@
+Previously supplied Gravel04 photograph / grayscale derivative
+Source as identified by the inherited archive: scikit-image.data.gravel.
+Upstream attribution: CC0 Textures, Gravel04, CC0 (public domain).
+https://scikit-image.org/docs/stable/api/skimage.data.html#skimage.data.gravel
+
+The original 512x512 grayscale crop and its periodic derivative were already
+included in the user-supplied source. They were not newly downloaded here.
+The acquisition lighting is not calibrated reflectance; this is not a complete
+PBR scan or a photogrammetric mesh.
+
+V11 reuses the photograph as weak albedo detail and reconstructs a granular
+support field with image watershed segmentation. The field's millimetre-scale
+heights are explicitly authored. They are NOT measured surface elevations.
+The reconstruction source and numeric provenance are supplied separately.
+
+No generated image, landscape backplate, photographic composite, new measured
+terrain, or newly downloaded rock scan is part of this scene.

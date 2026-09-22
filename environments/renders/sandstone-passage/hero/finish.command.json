@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "/mnt/data/CYBR_SCENES_R2/engines/geo/cybr-geo/examples/three_scenes/finish.py",
+    "/mnt/data/CYBR_SCENES_R2/renders/sandstone-passage/hero/hero",
+    "--passes",
+    "2",
+    "--sky-passes",
+    "2",
+    "--white-balance",
+    "5900",
+    "--opaque-filter-strength",
+    "0.4"
+  ],
+  "cwd": "engines/geo",
+  "started_at": "2026-09-21T17:00:34.250916+00:00",
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "3",
+    "NUMBA_NUM_THREADS": "4",
+    "CYBR_SURFACE_ATLAS": "/mnt/data/CYBR_SCENES_R2/assets/mineral_detail.cdt"
+  },
+  "returncode": 0,
+  "seconds": 18.2451636830001,
+  "finished_at": "2026-09-21T17:00:52.496016+00:00",
+  "log_sha256": "bf011212c9b3bce660c849f6e6568b511de66c6f489bd96fb357caa7d88aa807"
+}

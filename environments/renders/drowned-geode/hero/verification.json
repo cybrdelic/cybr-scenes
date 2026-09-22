@@ -1,0 +1,125 @@
+{
+  "passed": true,
+  "tests": {
+    "finite_radiance": true,
+    "nonnegative_transport_radiance": true,
+    "dimensions_match": true,
+    "nonblank_image": true,
+    "no_invalid_reported_paths": true,
+    "positive_triangle_count": true,
+    "image_generation_disabled": true
+  },
+  "dimensions": [
+    960,
+    640
+  ],
+  "radiance_min": -91.01554870605469,
+  "radiance_max": 154.6055450439453,
+  "spectral_film": {
+    "bands": 16,
+    "minimum": 0.00015929696382954717,
+    "maximum": 211.82630920410156,
+    "sha256": "03131b5f5ff036476bac4be5e192b84f52df05ffa8eb6d004685b3414611e874"
+  },
+  "negative_linear_rgb_components": 80,
+  "rgb_note": "Spectral-to-XYZ-to-display-RGB conversion may produce negative out-of-gamut RGB components. Positivity is checked in the transported spectral bands when present, not in display RGB.",
+  "mean_linear_rgb": [
+    0.1314784586429596,
+    0.1444140523672104,
+    0.1947651356458664
+  ],
+  "png_sha256": "be32b230a4d1de4397725c3d5702e3d918bb0b480056a3b4f200fc9d550021a2",
+  "raw_pfm_sha256": "898663430b831716d2967ca641ed08141ccf04b8881ada7139e4d13b79f4f66e",
+  "native_metadata_sha256": "fffb561f4b9cdcb4147f7cef82754d05284e469dcf9d098d17c6c2ddc19a6b4d",
+  "renderer_metadata": {
+    "renderer": "CYBR SCENES R2 / Drowned Geode: seepage mineral layers and weathered quartz",
+    "geometry_accelerator": "CYBR GEO native SAH BVH4 / AVX2 triangle packets",
+    "view": "hero",
+    "width": 960,
+    "height": 640,
+    "spp": 32,
+    "max_depth": 24,
+    "seed": 735041,
+    "threads": 4,
+    "triangles": 3655632,
+    "bvh_nodes": 2068807,
+    "image_generation": false,
+    "spectral_bands": 16,
+    "wavelength_range_nm": [
+      380,
+      780
+    ],
+    "spectral_method": "Jointly transported fixed midpoint wavelength quadrature, 25 nm bins",
+    "water_ior": 1.33399999,
+    "dispersion": true,
+    "steam": true,
+    "steam_model": "Bounded homogeneous haze; analytic transmittance; forced first collision; full continuation",
+    "water_absorption_scale": 1,
+    "finite_difference_water_connection_step_radians": 0.002,
+    "nonfinite_path_samples": 0,
+    "exposure": 1.39999998,
+    "film_white_rgb": [
+      1.04490995,
+      0.984612584,
+      1.02078414
+    ],
+    "seconds": 496.518097,
+    "band_means": [
+      0.260296136,
+      0.238460407,
+      0.216391698,
+      0.195386231,
+      0.179657578,
+      0.167397633,
+      0.155078515,
+      0.140235618,
+      0.127053335,
+      0.117004469,
+      0.10704653,
+      0.096702002,
+      0.0875575915,
+      0.0795067772,
+      0.0723200738,
+      0.066089265
+    ],
+    "sampling_v3": {
+      "sampler": "per-pixel digital shift over linearly scrambled 1024-dimensional Sobol nets",
+      "water_camera_interface": "both Fresnel reflection and transmission evaluated",
+      "quartz_bsdf": "GGX visible-normal dielectric with Fresnel reflection/transmission, matching PDF, spectral index and direct sun/sky NEE",
+      "water_sky_nee": "actual triangle interface, Snell refraction, Fresnel/absorption/scattering transmittance and MIS",
+      "primary_haze": "forced first collision, exact homogeneous transmittance, full continuation",
+      "minimum": 32,
+      "mean": 32.0,
+      "maximum": 32,
+      "camera_samples_total": 19660800,
+      "histogram": {
+        "32": 614400
+      },
+      "allocation": "deterministic primary-material/depth allocation; no noisy stopping rule"
+    },
+    "finishing": {
+      "method": "symmetric log-variance, first-interface-aware component wavelet filtering; non-neural",
+      "iterations": {
+        "base": 3,
+        "reflection": 4,
+        "volume": 5
+      },
+      "raw_modified": false,
+      "outlier_control": {
+        "enabled": true,
+        "affected_pixels": 134,
+        "biased_viewing_regularization": true,
+        "peak_ratio": 8,
+        "absolute_margin": 0.35
+      },
+      "display_transform": "ACES fit / exact sRGB",
+      "exposure": 1.4,
+      "image_generation": false,
+      "neural_denoiser": false
+    },
+    "finite_raw": true,
+    "aov_reconstruction_max_abs_error": 1.1920928955078125e-07
+  },
+  "scope": "Execution, finite radiance, dimensions, traceable geometry; not an aesthetic or physical-reference validation.",
+  "checked_at": "2026-09-21T17:44:33.153232+00:00"
+}

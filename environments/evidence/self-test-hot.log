@@ -1,0 +1,11 @@
+{
+  "spectral_bands": 16,
+  "wavelength_range_nm": [380,780],
+  "fresnel_normal": 0.02047817037,
+  "fresnel_error": 0,
+  "beer_lambert_composition_error": 6.776446071e-08,
+  "snell_error": 1.303499886e-07,
+  "sampled_max_steam_density": 0.1674433202,
+  "steam_majorant": 0.8500000238,
+  "passed": true
+}

@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "created_at": "2026-09-21T21:30:25.968230+00:00",
+  "created_unix": 1790026225.9682481,
+  "job_id": "final-tests-v2",
+  "cwd": "/mnt/data/execution_repair/CYBR_SCENES_R2",
+  "command": [
+    "python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "threads": 2,
+  "timeout": 120.0,
+  "memory_bytes": 3521873182
+}

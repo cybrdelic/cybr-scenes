@@ -1,0 +1,35 @@
+{
+  "scene": "coast",
+  "triangles": 11644696,
+  "parts": 12,
+  "components": {
+    "Intertidal_lag_and_submerged_platform": 1,
+    "Cooling_columns": 5866,
+    "Cooling_columns_broken_caps": 984,
+    "Fractured_stack_cells": 1068,
+    "Fractured_stack_cells_broken_caps": 178,
+    "Fractured_cliff_toe_rubble": 60,
+    "Toppled_column_fragments": 184,
+    "Toppled_column_fragments_broken_caps": 30,
+    "Size_sorted_beach_armour": 15494,
+    "Wave_worn_boulders": 5,
+    "Intertidal_shell_fragments": 313,
+    "Water_enclosure": 1
+  },
+  "saved_and_reloaded_with_CYBR_GEO": true,
+  "finite_vertices": true,
+  "valid_indices": true,
+  "water_checks": [
+    {
+      "name": "Water_enclosure",
+      "watertight": true,
+      "winding_consistent": true,
+      "positive_volume": true
+    }
+  ],
+  "tested_twig_roots": 0,
+  "maximum_twig_root_centerline_error_m": 0.0,
+  "mesh_sha256": "20d901557aa0f54b918711dbcddbe92dea8dbe52eec4f951f7bdd2aa3927fec1",
+  "image_generation": false
+}
+NEW_BUILD_COMPLETED coast 124.24s

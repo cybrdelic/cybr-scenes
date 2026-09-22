@@ -1,0 +1,61 @@
+{
+  "passed": true,
+  "checked_at": "2026-09-21T17:44:31.969291+00:00",
+  "scenes": [
+    {
+      "scene": "sandstone-passage",
+      "png_byte_identical": true,
+      "raw_film_unchanged": true,
+      "png_sha256": "aeb20ac5df92e1d02a8c0f2f7539b0d4a9af538498ff1c8b57894c570a467458",
+      "raw_pfm_sha256": "4f14dea7eb22a71c932a01dce37161fa5124f777784477891e0ee349b3c8835a",
+      "command_record": "renders/sandstone-passage/hero/finish-reproduction.command.json",
+      "seconds": 14.358578377999947
+    },
+    {
+      "scene": "basalt-tide",
+      "png_byte_identical": true,
+      "raw_film_unchanged": true,
+      "png_sha256": "5ccd5b6b78ce81beab71830dd24bb42f0a94c662de34c8bb4714a4fe9d9dd213",
+      "raw_pfm_sha256": "0b5f6b7563cb19dd5aef6888018b13c54074a50c948c7bc547914717b92fd272",
+      "command_record": "renders/basalt-tide/hero/finish-reproduction.command.json",
+      "seconds": 11.531748878000144
+    },
+    {
+      "scene": "fernwater",
+      "png_byte_identical": true,
+      "raw_film_unchanged": true,
+      "png_sha256": "a096b4ec0e37a8cbb55277f4503f3ce3e2886d18aa839f707047381294e729d2",
+      "raw_pfm_sha256": "633c3683d95461d1758d06c38ecbb7f3afb4bae8d14afff1d6a04bc917463423",
+      "command_record": "renders/fernwater/hero/finish-reproduction.command.json",
+      "seconds": 10.753064782000365
+    },
+    {
+      "scene": "desert-hot-springs",
+      "png_byte_identical": true,
+      "raw_film_unchanged": true,
+      "png_sha256": "9c7dfc2defc2e6c3e9a1a6a3c6e39704d959ddc7e7772439620bc540b8584761",
+      "raw_pfm_sha256": "037946bdecfe31093c09a24898b07af3502105d9dd808c50b772e17e16c07c78",
+      "command_record": "renders/desert-hot-springs/hero/finish-reproduction.command.json",
+      "seconds": 11.589715290999266
+    },
+    {
+      "scene": "obsidian-reach",
+      "png_byte_identical": true,
+      "raw_film_unchanged": true,
+      "png_sha256": "213aa6a675536b117074cfe28d8b4d4ca4b3063b5018030a6eb4f3dca95a0ce2",
+      "raw_pfm_sha256": "c3e82c966147d3a460e4d0541a5820bad6f9f3084b66407ea9327c2f2ae04fa1",
+      "command_record": "renders/obsidian-reach/hero/finish-reproduction.command.json",
+      "seconds": 8.9457381229995
+    },
+    {
+      "scene": "drowned-geode",
+      "png_byte_identical": true,
+      "raw_film_unchanged": true,
+      "png_sha256": "be32b230a4d1de4397725c3d5702e3d918bb0b480056a3b4f200fc9d550021a2",
+      "raw_pfm_sha256": "898663430b831716d2967ca641ed08141ccf04b8881ada7139e4d13b79f4f66e",
+      "command_record": "renders/drowned-geode/hero/finish-reproduction.command.json",
+      "seconds": 16.14751725499991
+    }
+  ],
+  "scope": "Each PNG was recomputed from its unchanged native PFM/AOV files using the same documented display code; byte equality is checked. This is not a second full native transport run."
+}

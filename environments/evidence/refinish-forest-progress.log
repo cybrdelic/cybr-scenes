@@ -1,0 +1,1 @@
+[2026-09-21T17:38:52.538555+00:00] finish-r2-foliage: /opt/pyvenv/bin/python /mnt/data/CYBR_SCENES_R2/tools/finish_r2.py --backend geo /mnt/data/CYBR_SCENES_R2/renders/fernwater/hero/hero --passes 2 --sky-passes 2 --white-balance 6100 --opaque-filter-strength 0.4 --foliage

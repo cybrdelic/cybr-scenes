@@ -1,0 +1,13 @@
+{
+  "source": "work/shoreline.pfm",
+  "output": "work/shoreline_linear.exr",
+  "resolution": [
+    1200,
+    800
+  ],
+  "color_space": "Native scene-linear RGB after 16-band integration; no display transform",
+  "storage": "float32 RGB OpenEXR",
+  "round_trip_exact": true,
+  "opencv_version": "4.13.0",
+  "sha256": "8228fcdab1396a6f225cc0aafaa46516b7f358c5d4b09bd87c4cac54396c007d"
+}

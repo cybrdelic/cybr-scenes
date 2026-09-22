@@ -1,0 +1,40 @@
+BVH equivalence: 5000 rays passed
+CYBR GEO BVH: 3655632 actual triangles; 2073513 nodes
+5% 42.9401 s
+10% 71.8748 s
+15% 100.493 s
+20% 128.068 s
+25% 157.994 s
+30% 191.024 s
+35% 228.045 s
+40% 266.83 s
+45% 304.735 s
+50% 343.981 s
+55% 382.296 s
+60% 421.248 s
+65% 458.32 s
+70% 516.432 s
+75% 654.337 s
+80% 783.077 s
+85% 879.245 s
+90% 986.484 s
+95% 1110.7 s
+100% 1230.24 s
+WROTE output_v3/Drowned_Geode_V3; 1231.44 seconds; invalid paths 0
+{
+  "finished": "output_v3/Drowned_Geode_V3",
+  "sampling": {
+    "minimum": 8,
+    "mean": 41.51438148148148,
+    "maximum": 128,
+    "camera_samples_total": 89671064,
+    "histogram": {
+      "8": 135423,
+      "32": 1317431,
+      "64": 688825,
+      "128": 18321
+    },
+    "allocation": "deterministic primary-material/depth allocation; no noisy stopping rule"
+  },
+  "outliers": 0
+}

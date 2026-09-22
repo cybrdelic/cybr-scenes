@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "state": "succeeded",
+  "command": [
+    "python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "cwd": "/mnt/data/execution_repair/CYBR_SCENES_R2",
+  "started_at": "2026-09-21T21:30:26.569595+00:00",
+  "started_unix": 1790026226.569603,
+  "supervisor": {
+    "pid": 1397,
+    "start_ticks": 61121,
+    "boot_id": "6d4adc15-175c-4a7b-ab22-618f70e77433",
+    "pid_namespace": "pid:[4026532199]"
+  },
+  "log": "/mnt/data/execution_repair/CYBR_SCENES_R2/execution-jobs/final-tests-v2/output.log",
+  "timeout_seconds": 120.0,
+  "memory_budget_bytes": 3521873182,
+  "peak_tree_rss_bytes": 332574720,
+  "returncode": 0,
+  "completed": true,
+  "child": {
+    "pid": 1408,
+    "start_ticks": 61181,
+    "boot_id": "6d4adc15-175c-4a7b-ab22-618f70e77433",
+    "pid_namespace": "pid:[4026532199]"
+  },
+  "pid": 1408,
+  "heartbeat_at": "2026-09-21T21:30:40.862866+00:00",
+  "elapsed_seconds": 14.293380963000004,
+  "tree_rss_bytes": 0,
+  "descendant_count": 0,
+  "log_bytes": 4530,
+  "log_silent_seconds": 0.9986593723297119,
+  "finished_at": "2026-09-21T21:30:40.862969+00:00",
+  "log_sha256": "16d9784d35273ceed4a52d8eba59738d0b174636bcf231c7c1199f53a26fe668"
+}

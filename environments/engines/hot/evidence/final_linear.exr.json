@@ -1,0 +1,13 @@
+{
+  "source": "work/final.pfm",
+  "output": "work/final_linear.exr",
+  "resolution": [
+    1920,
+    1280
+  ],
+  "color_space": "Native scene-linear RGB after 16-band integration; no display transform",
+  "storage": "float32 RGB OpenEXR",
+  "round_trip_exact": true,
+  "opencv_version": "4.13.0",
+  "sha256": "1bd94a904e3ef391f14ebe9183bc9d9e96f11e86c6e832e688fc7678e14fad2b"
+}

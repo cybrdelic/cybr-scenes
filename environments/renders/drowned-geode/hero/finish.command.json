@@ -1,0 +1,32 @@
+{
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "/mnt/data/CYBR_SCENES_R2/engines/geode/finish_v3.py",
+    "/mnt/data/CYBR_SCENES_R2/renders/drowned-geode/hero/hero",
+    "--exposure",
+    "1.4"
+  ],
+  "cwd": "engines/geode",
+  "started_at": "2026-09-21T17:18:57.360283+00:00",
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "4",
+    "NUMBA_NUM_THREADS": "4",
+    "CYBR_SURFACE_ATLAS": "/mnt/data/CYBR_SCENES_R2/assets/mineral_detail.cdt"
+  },
+  "executed_command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/mnt/data/CYBR_SCENES_R2/renders/drowned-geode/hero/finish.resources.txt",
+    "/opt/pyvenv/bin/python",
+    "/mnt/data/CYBR_SCENES_R2/engines/geode/finish_v3.py",
+    "/mnt/data/CYBR_SCENES_R2/renders/drowned-geode/hero/hero",
+    "--exposure",
+    "1.4"
+  ],
+  "returncode": 0,
+  "seconds": 15.875679518000197,
+  "finished_at": "2026-09-21T17:19:13.235894+00:00",
+  "log_sha256": "cf691f85e67a8193e5ebde7addf654afb63a8920a91013f364d92a66479c643e"
+}

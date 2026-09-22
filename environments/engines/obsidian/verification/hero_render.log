@@ -1,0 +1,33 @@
+Building 6210833 CYBR LIGHT primitives
+BVH 4030327 nodes; rendering 2560x1120 @ 192 spp
+40/1120 rows
+80/1120 rows
+120/1120 rows
+160/1120 rows
+200/1120 rows
+240/1120 rows
+280/1120 rows
+320/1120 rows
+360/1120 rows
+400/1120 rows
+440/1120 rows
+480/1120 rows
+520/1120 rows
+560/1120 rows
+600/1120 rows
+640/1120 rows
+680/1120 rows
+720/1120 rows
+760/1120 rows
+800/1120 rows
+840/1120 rows
+880/1120 rows
+920/1120 rows
+960/1120 rows
+1000/1120 rows
+1040/1120 rows
+1080/1120 rows
+1120/1120 rows
+NONFINITE_SAMPLES 0
+DONE 441.548 seconds
+render/hero.exr

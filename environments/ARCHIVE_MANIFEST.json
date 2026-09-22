@@ -1,0 +1,4300 @@
+{
+  "created_at": "2026-09-21T21:31:54.572492+00:00",
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 18092,
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+    },
+    {
+      "path": "README.md",
+      "bytes": 12473,
+      "sha256": "4b6aa6ce08e970317a847fda0dd70fe9855b9a8ec28cebfa043a484cf41d59fb"
+    },
+    {
+      "path": "README_EXECUTION.md",
+      "bytes": 4579,
+      "sha256": "66b8341abb45cdb2c548aad261cf02599e2364dadfa87423bcbb0d9313ebd56a"
+    },
+    {
+      "path": "assets/mineral_detail.cdt",
+      "bytes": 33554444,
+      "sha256": "0678c4adeaa1d853f982f4e5a3ff8a747d59984937426d4db57ccb418ac99045"
+    },
+    {
+      "path": "cybr_scenes.py",
+      "bytes": 21165,
+      "sha256": "b282a96f24649ba5e5663c82ed383bdefd2b1dd1435a061d76548b8c454b406d"
+    },
+    {
+      "path": "engines/geo/LICENSE",
+      "bytes": 17984,
+      "sha256": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6"
+    },
+    {
+      "path": "engines/geo/R6_changes.patch",
+      "bytes": 86437,
+      "sha256": "a3daed3aa0a1954cd92f6fbd793a5ef82fe64d1a19021bce020c6fc88a785efd"
+    },
+    {
+      "path": "engines/geo/README.md",
+      "bytes": 6260,
+      "sha256": "2bb05821d73a28585bfe364f3bdf3c4c4d0e843550d740281eb77372ab8852ed"
+    },
+    {
+      "path": "engines/geo/SOURCE_MANIFEST_R6.json",
+      "bytes": 18778,
+      "sha256": "143a0910962a148f2875a7d14d0b283e4a0fbc248334b23e6fcff7cfa90e448a"
+    },
+    {
+      "path": "engines/geo/cybr-geo/LICENSE",
+      "bytes": 18092,
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+    },
+    {
+      "path": "engines/geo/cybr-geo/README.md",
+      "bytes": 1085,
+      "sha256": "d0c28c49e61580f1521cb6dce901dbbd9cc0f9faf0476858631091464dd8d81d"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/assets/ATTRIBUTION.txt",
+      "bytes": 995,
+      "sha256": "096212de81352b0805b9233cc8adf5c5872786cd1cd00d30d0076a4a52115c88"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/assets/granular_relief.bin",
+      "bytes": 1048588,
+      "sha256": "babbb2aa418d669003be4b6bac9f53a1da9d0f2533bcc3677c4f2f4b712e8c11"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/assets/granular_relief.npy",
+      "bytes": 1048704,
+      "sha256": "6c25ce2868740483acb90dad3d1d7239692401e2a53e8f997432392fb1be2470"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/assets/granular_relief_provenance.json",
+      "bytes": 280,
+      "sha256": "6a8eab84e37c6a09640ca632be54c89bb5c6aca8e267e59d129599266ee603a5"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/assets/gravel_cc0_original.png",
+      "bytes": 194247,
+      "sha256": "c48615b451bf1e606fbd72c0aa9f8cc0f068ab7111ef7d93bb9b0f2586440c12"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/assets/gravel_periodic.pgm",
+      "bytes": 262159,
+      "sha256": "1a25e996869d39d4963082b41a353fa227378e17efc844c3e639c16ec8b6f5b3"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/assets/ripple_modes.json",
+      "bytes": 15262,
+      "sha256": "8af04c2b01745c35e14a644e66393ee4b62ffe8f8ef9ca0c1872926a654cc5ab"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/broken_shelves_v9.py",
+      "bytes": 5676,
+      "sha256": "1beb1d6c5079ce851504adc002ae8e965a6409a3f0d6e678d8fb9482a7befb9d"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/build_scene.py",
+      "bytes": 16154,
+      "sha256": "2ff480d90bdfcc33d8823494e40abaef83613aef9fe99eef1e9662b499e6e18a"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/build_scene_before_continuity_fix.py",
+      "bytes": 19397,
+      "sha256": "247bf68d786b8f8234a50ce4fcc8ba5190882de10c3b4a422174c1d906b3f07b"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/build_scene_v4.py",
+      "bytes": 24714,
+      "sha256": "c1aa3e01766940a1fbb4ff56e1e2abe58d4e162f2be3d16176665d5c67260f7d"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/build_scene_v6.py",
+      "bytes": 19128,
+      "sha256": "2e3c428534e82fc04c06bc0ef5c533eb01a425d36def8b96d703c4483dc9d23b"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/carbonate_shelves.py",
+      "bytes": 2355,
+      "sha256": "efa9ace08b775d8ac666f644f436ff5407b1ae4ac8b12dd955e3970c4e135327"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/contour_water.py",
+      "bytes": 2754,
+      "sha256": "f3fd718ae58aeb8dc83114d585d0162154f02dcc5118963a86eb4a850098cca4"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/export_exr.py",
+      "bytes": 2278,
+      "sha256": "dfb73f861bfef41de165d6e671c945988ec005a3a4cebc1dd17be74f7f60e6cb"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/finish.py",
+      "bytes": 8883,
+      "sha256": "25841de9e92f92792fe4fe99bb19bf29b2fc160219797a3cfe054e14f4711650"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/fluvial_detail_v9.py",
+      "bytes": 1628,
+      "sha256": "b3d8dc150fffa3172968dcc33ea167297fb028f2601617df75ce55fd4bae320e"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/implicit_rocks_v10.py",
+      "bytes": 2873,
+      "sha256": "1673a745f0f883e2d8dbe21a31c5095e0b11a4b0d2fc11c8d2213978a37100c2"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/prepare_granular_relief.py",
+      "bytes": 1642,
+      "sha256": "5b0a3959141d13d6f6233d69354fdccbab6f39c7546bf2581d053c033bd1fb2d"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/render.py",
+      "bytes": 7874,
+      "sha256": "30bbcbf15259195264507862a166592afbf8a06c8e07cb5083b46c03af54affe"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/requirements.txt",
+      "bytes": 128,
+      "sha256": "06a151bbdc2bb6f89cdc8988c52c615b557524e2b33c322dcec19d90788ffa9f"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/run_checks_v11.py",
+      "bytes": 3133,
+      "sha256": "c0675b60d957e3a2d7477a6d5ff4ffb99267c54d87b8f3c1e1a3d5e1f5582505"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/run_unit_tests.py",
+      "bytes": 3196,
+      "sha256": "4996b51175c2c6192ebbea2e2840033aeef3665ed9e753e6a40f8127cdb1852e"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/scene_inputs.py",
+      "bytes": 1843,
+      "sha256": "2c23d42f8c1b523ddec99f8f3545c8aaf3b8f6ac37983dcb500074ff97fce035"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/test_connected_vegetation.py",
+      "bytes": 1948,
+      "sha256": "cbacfeff2b9c44a1de8566d1ddce12be4783a49a18ea659484b102470badf78c"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/test_filter_policy.py",
+      "bytes": 2376,
+      "sha256": "52552514d48360e8d8ad2aa165056e5416374ac672e3f60b25a946abf5c5051e"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/test_implicit_rocks_v10.py",
+      "bytes": 1327,
+      "sha256": "ee5f3f30ecf75ce2cf4957e1afb1c426d094b7e472662a35ba385c52443b2d32"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/test_shoreline_continuity.py",
+      "bytes": 1560,
+      "sha256": "fee9c9d3bccaf94799dc5358f9eedac5c12ff0fc236684f7aa776f3da2c7b41c"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/test_sky_quadrature.py",
+      "bytes": 2332,
+      "sha256": "f33be15ceaaef36d183c9327ebcd3f5db43299c79c77c82211ffefc373353064"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/test_streaming_scene_io.py",
+      "bytes": 2159,
+      "sha256": "82a042442d92f92a3f0edaca18cd3fcc9b75b7fc80af000d35f001967e5066ea"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/v10_landforms.py",
+      "bytes": 7253,
+      "sha256": "b6088e60485bb3883d830c7aef1b98aaae526324fb824525e6333b3fba0dc829"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/v11_landforms.py",
+      "bytes": 11688,
+      "sha256": "13c367aeb0bf3a1357372a33b7ef362079d09168e55df040705d7ea29a76e2ec"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/v8_landforms.py",
+      "bytes": 6997,
+      "sha256": "9d93419fbb072c4ed32993f8a2a7338d0d3f41b0d445f265ebd5583c836af66c"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/v9_landforms.py",
+      "bytes": 10253,
+      "sha256": "c0f73325d783957d959b0d6ae7e8c7b674ead73c9225bbfdb727b0717ed38404"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/verify.py",
+      "bytes": 12721,
+      "sha256": "30f4941ef793b9f37818a480f238f67526dc1ab66ddc61957cf6707e7b16b4ee"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/verify_v10.py",
+      "bytes": 8605,
+      "sha256": "0be7376253b05f306cbdfee8b3cfac8d41e9b1516a2bfec9f8d5dae1b04e8648"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/desert_hot_springs/verify_v11.py",
+      "bytes": 6761,
+      "sha256": "fdbd18a9710555ed5fdae7f1e00e4b40e457f1435c6af91ecf678951152d7441"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/three_scenes/build_scenes.py",
+      "bytes": 30382,
+      "sha256": "b7eade91cf9f7551c49e029e7df12ab999e2176d3238feb9c830600c81448bab"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/three_scenes/export_exr.py",
+      "bytes": 2278,
+      "sha256": "dfb73f861bfef41de165d6e671c945988ec005a3a4cebc1dd17be74f7f60e6cb"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/three_scenes/fernwater_r6.py",
+      "bytes": 30907,
+      "sha256": "8c4828875755839f21f6b23a3a278ff1ec52f788949023dbe57090fc1cb39a04"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/three_scenes/finish.py",
+      "bytes": 11262,
+      "sha256": "a529a0fbd384e5f0a417c9b2b6a8130e4e6cc3fa680e7dc6702a41bb8c4582b2"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/three_scenes/ground_occlusion.py",
+      "bytes": 4295,
+      "sha256": "1263e43c34417fc5872d1f6de7fa2beebd74437803d38d5dddb28ac6b31e1553"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/three_scenes/lineage.json",
+      "bytes": 842,
+      "sha256": "072aec857ce42c5f678c8d7190e1143990a3eee123906856cd5b2e5f210d98ff"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/three_scenes/noise_resolve.py",
+      "bytes": 14794,
+      "sha256": "2ba8daeae80b7bdc8428aa1bcf29f07f0485bf6a2b6bf6338d6ec5d66c55ff3c"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/three_scenes/rebuild_scenes.py",
+      "bytes": 38141,
+      "sha256": "a61396d7bab7d0fa618fb78b0725eddeb58b4f55a0a06662053b882543e9d910"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/three_scenes/render_scenes.py",
+      "bytes": 6983,
+      "sha256": "0818d6fd9c0d13d1feb89b7efdabb7cafa88a5538a6cab249473312528013604"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/three_scenes/verify.py",
+      "bytes": 12721,
+      "sha256": "30f4941ef793b9f37818a480f238f67526dc1ab66ddc61957cf6707e7b16b4ee"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/three_scenes/verify_outputs.py",
+      "bytes": 5480,
+      "sha256": "21133c86cee3552e14bddf9d083c0fcd12de40cad8c99339be7a70107641946f"
+    },
+    {
+      "path": "engines/geo/cybr-geo/examples/three_scenes/wave_modes.json",
+      "bytes": 45413,
+      "sha256": "37031d53e978ce1b3b4e8f91866d606471a1b007a499d251b84f08f1cff09445"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/CMakeLists.txt",
+      "bytes": 2601,
+      "sha256": "808e991e4c1aef85c50adb9f5e7e871648c200f71835118761f10ff28628bc22"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/broadband_ripples.h",
+      "bytes": 12642,
+      "sha256": "a2e6ff74d86465dd0c8ec4383837ed386048b10cae60e4ae1212b0379a80b3e9"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/bvh8_recovery.h",
+      "bytes": 3796,
+      "sha256": "e5ab520642bb859059a9ceed783f9b833b35431b4851890874f3d04c7d19f4f9"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/cloud_volume_v9.h",
+      "bytes": 5962,
+      "sha256": "902a13e50bb3568b9d341c465da8120a6090904eb57ce9076d4926b3dfe0d41d"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/exponential_haze_v10.h",
+      "bytes": 1712,
+      "sha256": "24ff02f86ef488faaacc7b1e0648c5c320f7349c5c4e07c9d3efa340af3e08c4"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/fernwater_materials_r6.h",
+      "bytes": 7788,
+      "sha256": "e3bff23f0ddafa3b7034d935e8b59183e832338680bdc37c3dabd03f530ec2ee"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/formation_materials_r2.h",
+      "bytes": 8502,
+      "sha256": "45248fef143b0fae35cea2bc5f66f397cf45bb3934044936ffb5162ccb1e4b7d"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/formation_materials_r4.h",
+      "bytes": 8255,
+      "sha256": "7b00dd1bbb19db55f4695883c958a88f67e1b587ff81319cdb8bfd192a7c1891"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/granular_relief_v11.h",
+      "bytes": 2254,
+      "sha256": "fea473b22dd5f757ebdace0dd4ee11c9df81baabcca7f843e5b3e5c4f863cdff"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/ground_occlusion_r4.h",
+      "bytes": 4684,
+      "sha256": "993123d6b0c3664778aeee5c0a128fa3313e940ba787394cac8f01c91c1133ae"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/landscape_materials_v11.h",
+      "bytes": 6105,
+      "sha256": "f6f4249369d2ef92892f0e0e28c3af6204342fff7a208dd0dcf4247eeaa65374"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/pathtrace.cpp",
+      "bytes": 21599,
+      "sha256": "f1b3eb112b48137645c28c931be4162a76d21dc98ca02f5f99790b4e18183b38"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/photographic_grain.h",
+      "bytes": 2300,
+      "sha256": "028a4c1838b69bacba30b231304f951a33b3e0489b811e1aa52237533c16cb26"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/photographic_volume.cpp",
+      "bytes": 11780,
+      "sha256": "64a681fbaee3a871bbe288a2d59e58f7c56672cfbecad6b6a748a03f5ba44093"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/photoreal.cpp",
+      "bytes": 15084,
+      "sha256": "3e0c5d0bf01c98b780a4af5285eb4255ce784022c43a31bfddee06e04ab90ddf"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/scale_aware_landscape.h",
+      "bytes": 5276,
+      "sha256": "2b2c5731cf3af28722a579eb5adb13f998e5bc3c3cd4c102858dd175107748cd"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/scale_aware_landscape_v10.h",
+      "bytes": 7215,
+      "sha256": "7d8a4052bd63751cba17674ac42061ad5905086304d6316714bfb6b950583e7f"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/scale_aware_landscape_v9.h",
+      "bytes": 6828,
+      "sha256": "b55dbfc75b05133c9cdbb036cd74c76d54479412ff8f511dbcdace668f503929"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/scene_haze.h",
+      "bytes": 1873,
+      "sha256": "688951c023d19b769d6b582fdd24b6ecbbda202a3f535729467ef5355114d293"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/scene_reflection_connection.h",
+      "bytes": 3888,
+      "sha256": "1cad036ece13c18ece0b69947c93f1aef4dd822b34341f3ae2a6a5416a1e23a4"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/scene_ripples.h",
+      "bytes": 23237,
+      "sha256": "0a7f40c4d0c89ae9e950db9df093e6dc4322ff64f5109fdef99391cda795ab80"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/single_scatter_sky.h",
+      "bytes": 3388,
+      "sha256": "fc5ed71d2256edd45eed9ceb6c54519808cbddce16d2df74bfb794c023f3f781"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/spectral_desert.cpp",
+      "bytes": 42574,
+      "sha256": "4d89bbdb8317928d6ee9d95286c451240b05fc2b1758d582ed326363b812bf95"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/spectral_desert_v6.cpp",
+      "bytes": 37227,
+      "sha256": "68d2cd495873c595c1cf1add7c660ea3c4e5d87585d85e0a371729acfe0ee9fd"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/spectral_desert_v7_before_glints.cpp",
+      "bytes": 38042,
+      "sha256": "365fb17f817af5a6d48ac60f663583d7a3e2fc63171f7f5c9af37b286477d97a"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/spectral_geometry.h",
+      "bytes": 6281,
+      "sha256": "9cd2391f75d4c645bd8aa0c5f66c98f99a6295c4a47483bdbc75e8d6a2a4a9a9"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/spectral_scenes.cpp",
+      "bytes": 50157,
+      "sha256": "fc97170e2b11a4e5dd01e7ced4cb3b9a26469e44e70f8758a8edb32fd5ea6263"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/specular_reflection_connection.h",
+      "bytes": 3080,
+      "sha256": "81fb854b71034eae75341bd4181f81c29af444ccd834fd3936d467499aa8843a"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/steam_volume_v11.h",
+      "bytes": 2057,
+      "sha256": "3bf883ab0f914c2bffcf9fb1ea7e80bee3966be32a423d72ae0e4556e6d9019e"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/test_broadband_ripples.cpp",
+      "bytes": 1490,
+      "sha256": "7f12d93d99c6725bfad342c0eca0b0d76aef116d420a447f22bfc2192613e8af"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/test_cloud_volume_v9.cpp",
+      "bytes": 3042,
+      "sha256": "c1467d85e8e2bb73d7eee54a1f8175032621dba2085548b31dda84ac0502b54a"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/test_exponential_haze_v10.cpp",
+      "bytes": 1882,
+      "sha256": "3931b9823a4a0140a19b8823117bfdc66c9a7df6905b78cc0b14c67c0541dd4b"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/test_fernwater_r6.cpp",
+      "bytes": 3710,
+      "sha256": "4864e58a49bdbe7931a4f94c3d58a75f11e595402eb557fde891db927aefa6c5"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/test_ground_occlusion_r4.cpp",
+      "bytes": 2610,
+      "sha256": "a86fef3bc2212c5e7c3195b735bd71cbfd7dae129a01c50ca739803c9ffcaca5"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/test_legacy_water_connection.cpp",
+      "bytes": 3229,
+      "sha256": "42933d53cdcca7b8cb0c2d1837269124b345d336f58537effcf1caf7fc10931f"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/test_materials_v11.cpp",
+      "bytes": 2676,
+      "sha256": "6d638d12dde160ab27d4fdee3405e65dbfbe2b12dbb826532d98736c6763325d"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/test_photographic_grain.cpp",
+      "bytes": 852,
+      "sha256": "be0aebf957d0994d1bafeadd026b68eff6a60705bdaa58af160404d94e72cf0d"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/test_photographic_volume.cpp",
+      "bytes": 1438,
+      "sha256": "1cb26c0cdbea806a1a8b4ad4fc0f3059f266eda1191186922e92a585343dbc86"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/test_recovery.cpp",
+      "bytes": 5808,
+      "sha256": "04d3a17164963ed56370d1959bd65d99be39b10c00dc74f16142fd4bc271b2c1"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/test_reflectance_calibration_v9.cpp",
+      "bytes": 1928,
+      "sha256": "7c68ac5dbd51863d42d56f4dc3039b46565c0791f14b321b55a0958c5d05c6c1"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/test_reflected_connection.cpp",
+      "bytes": 2562,
+      "sha256": "aa833153319224ec10578d163e2a4c90c3ed9459daf2ed5bb84ab96d1be813ff"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/test_spectral_desert_v5.cpp",
+      "bytes": 3698,
+      "sha256": "b3ea97d46f601bd0838660e974774ef8f1da7c448bcc14a94f2acdf7d4b58a77"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/test_steam_grid_v11.cpp",
+      "bytes": 2442,
+      "sha256": "c26be6d4101c30f7993c6d05fbbfddbdf3d8bcb5fcdc7fbc16cfa3a9459ad80b"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/test_thin_leaf_r4.cpp",
+      "bytes": 2243,
+      "sha256": "7cd87a0c337e35a48e74d5cf496662de3784beb75920c8eb3136af8ba9662ea6"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/test_three_scenes.cpp",
+      "bytes": 1277,
+      "sha256": "e9fd58984edb8fe9482108f54e8482656e44cc082638eb29f6aebf33cb51e587"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/test_water_medium.cpp",
+      "bytes": 1196,
+      "sha256": "7f99f67b3cb3bd8d427b7417f921bb820741de4547e0ec1394587274ec8d1b9c"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/test_water_microfacet.cpp",
+      "bytes": 2359,
+      "sha256": "6a5ab024604d13d8d3bca641079e5a7fb4a4061701d20212feee54f924cf66f8"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/test_wave_parity.cpp",
+      "bytes": 595,
+      "sha256": "50f014354cc7784f7f7c21edd60b976e1b960107877d993a13341eda54b05233"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/thin_leaf_r4.h",
+      "bytes": 2820,
+      "sha256": "e3333c4ffd31b8a9a935b67dca20325e523b1a1df86e920659218235c4259c90"
+    },
+    {
+      "path": "engines/geo/cybr-geo/native/three_scene_materials.h",
+      "bytes": 4513,
+      "sha256": "8fc646c16c44c52d87ff2905d14d21604c3bee5ecf0ae1bccf86225ad26f2de5"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/cybrgeo/__init__.py",
+      "bytes": 257,
+      "sha256": "5aee0599ec98581fbc5ffca358428217de6ce51b846c74dee80426039a4eeba7"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/cybrgeo/__main__.py",
+      "bytes": 29,
+      "sha256": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/cybrgeo/cad.py",
+      "bytes": 2157,
+      "sha256": "7aea6e66f98361ef226a6d1069ac0995ba9cd0bd88eaa5bf15934370f4030c07"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/cybrgeo/cli.py",
+      "bytes": 4666,
+      "sha256": "5f4d65ea7ae0aebf3ec160b9ae40c92b0d77dbe00cb06460d9e511ae220a6e5d"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/cybrgeo/core.py",
+      "bytes": 10557,
+      "sha256": "ebcde9d683feffe32feee780377494279ab67ee106dd38ae4f73589b88d636e5"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/cybrgeo/features.py",
+      "bytes": 2546,
+      "sha256": "f805ce2ff848cfa28ca07665058edb72f4665353205e847b9e25d80a59270fe9"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/cybrgeo/filter.py",
+      "bytes": 4015,
+      "sha256": "e32123cf19aaac16ce8709b5ae1456db3564a8ac30f98cdadf3dba34d9837740"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/cybrgeo/media.py",
+      "bytes": 4344,
+      "sha256": "dfb1dad2afba7b738532eec6a2b6654456fedb904a22dead6763ac067c8b273e"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/cybrgeo/native/pathtrace.cpp",
+      "bytes": 20437,
+      "sha256": "f970994f675622160291473016f19495655a5706a918b288ffb13688e840b9d6"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/cybrgeo/offline.py",
+      "bytes": 3582,
+      "sha256": "1b382b7a704b56fcf9da1add9c930d8f79c7b61c32c9bb55ff0300d7879f8961"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/cybrgeo/render.py",
+      "bytes": 8940,
+      "sha256": "338ba4d8955232a01dac91b5484f3cc8081c6469124f5021b8b360b66459624f"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/cybrgeo/whiteprint.py",
+      "bytes": 7602,
+      "sha256": "9e964292246641fc46d16a0a6610806aa9a2a87bd1c88d78542b414e386ab8b6"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/__init__.py",
+      "bytes": 139,
+      "sha256": "8d5d147c73c4376793f748548fe72a29d168b467ba6edd32d31375e2352bd833"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/__main__.py",
+      "bytes": 47,
+      "sha256": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/advanced_geometry.py",
+      "bytes": 5793,
+      "sha256": "de79f0e759705ac26dc1cb8bba41cd6a06b053e9235b35528847fa31540cb1c3"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/cli.py",
+      "bytes": 13464,
+      "sha256": "f9b6a7f8783bf992e7b2f1092d1de72223b488dd568359b95ae9e9609f0a4c3b"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/contact2d.py",
+      "bytes": 11141,
+      "sha256": "1fb50dcdae372c5afc658fe02247f739969479b75a2eed2fcdccab26ebdc3f51"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/core.py",
+      "bytes": 14299,
+      "sha256": "53f186ac81ced8614d6f217832885801d72859eb42decb4600f5c5490420ba76"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/exporters.py",
+      "bytes": 9106,
+      "sha256": "060c5e46d1988fd0fb9098a5cd4b8b0c3234891b47ed3d71899b9423030fdfb0"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/finish_render.py",
+      "bytes": 4015,
+      "sha256": "e32123cf19aaac16ce8709b5ae1456db3564a8ac30f98cdadf3dba34d9837740"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/geometry.py",
+      "bytes": 4259,
+      "sha256": "b77b78a7421dbe127ab7c29f01b9c4c03fc068337ae8357429e161730c56e12c"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/importers.py",
+      "bytes": 6632,
+      "sha256": "de2bc57c993936ca9b527525b67fbf1ba9be75bf8eec7732486dbd33cd0fc380"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/media.py",
+      "bytes": 7223,
+      "sha256": "b636465e1884bd66dca2fde9211f3ab062838a29b8136018d6237b0bdb46ae14"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/models/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/models/differential.py",
+      "bytes": 2488,
+      "sha256": "543a68aa6421c7ce9a9012267976ac8c3878472fe0889ca84ba66239aaf35fa7"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/models/drivetrain.py",
+      "bytes": 12068,
+      "sha256": "e7244a4d530c5cb92f73142b2ff4d84be6f4cccb895496d7ce60caaf02bf41d6"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/models/example.py",
+      "bytes": 816,
+      "sha256": "18e6b08c463f94a272a43e530ff2dd555baeab65f048741334a7bfb0c87905f6"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/models/motor.py",
+      "bytes": 11124,
+      "sha256": "7a503d327b03f3d528ea2f2c25bade5a5894eb6839d1ec13bd5f323b7b39134c"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/models/nitinol_actuator.py",
+      "bytes": 27820,
+      "sha256": "93327a517693a07f5321c68adcb0f1ad40802bbbac7bf0add7b717a53b41a72a"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/models/nitinol_actuator_v2.py",
+      "bytes": 10493,
+      "sha256": "bffb03212261e8713bccec50049b276d1d5f279ba9aa554a61b04ea145e31e54"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/packaging.py",
+      "bytes": 4480,
+      "sha256": "d6ce26e991db25f2f1504ed95096dcb19a24a927de98535d61565c9d51000dce"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/pathtrace.py",
+      "bytes": 4847,
+      "sha256": "dc71c555e660fd1c0820615bee839959236dc748d7ec84dbecb7c959a95c03bb"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/photoreal.py",
+      "bytes": 8705,
+      "sha256": "268fa1390f0785689eadbb70edff872551139a1ecf40015313af75d3e0eeab3f"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/registry.py",
+      "bytes": 4812,
+      "sha256": "d5bdc78e95c4d738923ee495dc5e25ecc3a355ab7bcfcd7f61ca1832f6e749cd"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/render.py",
+      "bytes": 12835,
+      "sha256": "dee92c373540e49f3be664e72a8e95f76d5f4024dff3781112ed91802f6786f3"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/stable_media.py",
+      "bytes": 12374,
+      "sha256": "d4afefa18b978d5513fa01414a9b2f3bdbac8243207e4207095cb02dc4fb9986"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/temporal_resolve.py",
+      "bytes": 9891,
+      "sha256": "94c762c360113968dc86cbc6de3740e36bb9c0725546e6a14f91a2df61cb0f15"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/truth.py",
+      "bytes": 5000,
+      "sha256": "c32272178721c3427247f50fc690a93a9c746c1e54a5c6f79f7376b95d198a01"
+    },
+    {
+      "path": "engines/geo/cybr-geo/src/mechanism_lab/whiteprint.py",
+      "bytes": 14786,
+      "sha256": "7477e547e919ce90c522a8ac97babe139a39b495f5e485de88cdb54476adf89b"
+    },
+    {
+      "path": "engines/geo/display_filter_regression.py",
+      "bytes": 1821,
+      "sha256": "04d0a748b77259926bb85b801d423ce163a87a11c380219e0aea27ec63a99cf4"
+    },
+    {
+      "path": "engines/geo/environment_used.json",
+      "bytes": 348,
+      "sha256": "b885e622828c6db276bd268efd83c7f36eb68d5f76bc062c2ebc062d19111c56"
+    },
+    {
+      "path": "engines/geo/export_glb_stream.py",
+      "bytes": 8611,
+      "sha256": "8a6ce6c1e7e8775edc391ea0333213a76576d7e763c0b0a3fc641cf1ed135ac2"
+    },
+    {
+      "path": "engines/geo/namespace_regression.py",
+      "bytes": 1784,
+      "sha256": "d05ad53d903f992da8d706941d70a50416a72242914d6211462a97b6f9325872"
+    },
+    {
+      "path": "engines/geo/provenance/R5/spectral_scenes.cpp",
+      "bytes": 48071,
+      "sha256": "15b1a40902f330c733e5e7113d1321c62396bef682abd785177934c1ec788b6e"
+    },
+    {
+      "path": "engines/geo/provenance/base_lineage.json",
+      "bytes": 2586,
+      "sha256": "15e2011e0acb914dd6e3323f5985c936f37a78b0f03558d1f4df91afd48c5577"
+    },
+    {
+      "path": "engines/geo/requirements-used.txt",
+      "bytes": 106,
+      "sha256": "c12c098f54e450882032031e0307cb775d0859e78b6efe055d6db941a8a416bb"
+    },
+    {
+      "path": "engines/geo/requirements.txt",
+      "bytes": 90,
+      "sha256": "1aab3a3749fb39362cd9b9ce52b4b5c6f4a768ab6cf91b1092e143b96254b459"
+    },
+    {
+      "path": "engines/geo/run.py",
+      "bytes": 8033,
+      "sha256": "c570d2af70112d69af214d3de8a2ed4df6057f28f42b6a29f8f806f9689d1e86"
+    },
+    {
+      "path": "engines/geo/run_all.sh",
+      "bytes": 129,
+      "sha256": "5ada5ed3373fb36755e1e12cf2d263e2fd2285db17c6ae59434c133963fd9798"
+    },
+    {
+      "path": "engines/geo/smoke_test.py",
+      "bytes": 2252,
+      "sha256": "426e6977263caac78374133576f623bd1f47cf40935a97096091312c486ecf30"
+    },
+    {
+      "path": "engines/geo/test_formation_geometry_r4.py",
+      "bytes": 3165,
+      "sha256": "13003a8e61ef6925b3c6a6062153b181555fb9c985826607223dcf3a44b8e3c6"
+    },
+    {
+      "path": "engines/geo/test_ground_occlusion.py",
+      "bytes": 1702,
+      "sha256": "6a6f3a1ca884416e05ae132bd47e73f6b0685d0c4546fa49b7b6044fa173ae0f"
+    },
+    {
+      "path": "engines/geo/test_noise_guides.py",
+      "bytes": 3115,
+      "sha256": "e1ada911730eb0b8a55f6d2579c7856d0f0dfb6b23557f3583b95f43df9e7ccd"
+    },
+    {
+      "path": "engines/geo/test_noise_resolve.py",
+      "bytes": 3805,
+      "sha256": "d76128f3faa2e1b1fea282f09c85bfd9ac98d6b2fe4cb5aac61fbfa06bb6fb17"
+    },
+    {
+      "path": "engines/geo/test_project.py",
+      "bytes": 3100,
+      "sha256": "00e6fe90e26f1d1374c9c798adafc6c6886a9a191caacd38c7f4536622014bd5"
+    },
+    {
+      "path": "engines/geo/test_r6_integration.py",
+      "bytes": 5694,
+      "sha256": "2bc9d008b7dd9c8a693131f6bd580c518cd9c40113d4abed878f2e0e59d2d7c2"
+    },
+    {
+      "path": "engines/geode/DELIVERY_MANIFEST_V3.json",
+      "bytes": 16688,
+      "sha256": "b44a11f09de178a6c6a2800ebf0de7b3510eb11b204b9a4170e1cef8aec7551c"
+    },
+    {
+      "path": "engines/geode/LICENSE",
+      "bytes": 18092,
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+    },
+    {
+      "path": "engines/geode/README.md",
+      "bytes": 12686,
+      "sha256": "f5091be9e4cba0ea230f729f58551900d3203ef3a99399582e677dd36e1d4992"
+    },
+    {
+      "path": "engines/geode/THIRD_PARTY_NOTICES.md",
+      "bytes": 589,
+      "sha256": "84cdcdba011cf41442a53c0d1ea3e6881119277b8c83321027fa95174a0e0ab5"
+    },
+    {
+      "path": "engines/geode/assets/ORIGINAL_ASSET_README.md",
+      "bytes": 4793,
+      "sha256": "e0f16bae438f3bf995b4432268aaad8f1369f398a3d9968880c6c17faf673b14"
+    },
+    {
+      "path": "engines/geode/assets/ORIGINAL_V2_README.md",
+      "bytes": 6441,
+      "sha256": "831e16a039445b811068f35c9745e94ef656689eaffff68abd3c96d04e7d78e8"
+    },
+    {
+      "path": "engines/geode/assets/comparison/Drowned_Geode_V2.png",
+      "bytes": 1521156,
+      "sha256": "aa22f4572011da77b6e164b8216cb034a0a7c0d71beff858844292dd9b968778"
+    },
+    {
+      "path": "engines/geode/assets/comparison/previous_finished.png",
+      "bytes": 2202735,
+      "sha256": "13ed9fadfd1e94084ec01b88f9d47efcff44c992ada29b6131e233e011cf6823"
+    },
+    {
+      "path": "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v2/assets/rock_boulder_dry_diff_4k.jpg",
+      "bytes": 14349759,
+      "sha256": "2787cfdf899ea12442e67e337e32712d6e25f4a0763ab3df63fd9306a02e156f"
+    },
+    {
+      "path": "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v2/assets/rock_boulder_dry_disp_4k.jpg",
+      "bytes": 2567374,
+      "sha256": "173d6af4402b195441292c56befaa8db2234c04ea4624c3875fa46a1ac4761ef"
+    },
+    {
+      "path": "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v2/assets/rock_boulder_dry_rough_4k.jpg",
+      "bytes": 11371523,
+      "sha256": "69588fbeb8672ed0d448af7fbf28e834cc1e8dfde45bd1c5dbf6bf50d2674130"
+    },
+    {
+      "path": "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/boulder_01/boulder_01.bin",
+      "bytes": 2938808,
+      "sha256": "7f5b06503d62bd95bfe9c6b8a354a5cc8ff04a4d271a8cf87a3e3125db4232d7"
+    },
+    {
+      "path": "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/boulder_01/boulder_01_2k.gltf",
+      "bytes": 2773,
+      "sha256": "52d118b56748a18509e4ec0075d07b254d72a0401793f22363c0bb3a682e7361"
+    },
+    {
+      "path": "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/boulder_01/textures/boulder_01_arm_2k.jpg",
+      "bytes": 2273068,
+      "sha256": "ab52859dde519b4822111aa60916b6d21f8a6966c67b6cec44d1cd0775b8a86a"
+    },
+    {
+      "path": "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/boulder_01/textures/boulder_01_diff_2k.jpg",
+      "bytes": 3672483,
+      "sha256": "90bbaa17c1fe0254d2b0b6e5148264fa834953a72724d566f14af029eebe3ca3"
+    },
+    {
+      "path": "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/boulder_01/textures/boulder_01_nor_gl_2k.jpg",
+      "bytes": 4649207,
+      "sha256": "5174b318712ac7725cbcb55d422607f9c66d7f8d035c5412ab897b5939e2db6b"
+    },
+    {
+      "path": "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/brown_mud_rocks_01_diff_2k.jpg",
+      "bytes": 3144138,
+      "sha256": "aa4b314c8e488c2d3d0db399e1023420ffb2198293f7ed07441bde7e70c8c57e"
+    },
+    {
+      "path": "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/brown_mud_rocks_01_disp_2k.jpg",
+      "bytes": 635930,
+      "sha256": "d0fa5d1baeeb62c54eb99a05947336b9fd91e19d7ce9a58c8dcc2c6c807622d4"
+    },
+    {
+      "path": "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/brown_mud_rocks_01_nor_gl_2k.jpg",
+      "bytes": 4213708,
+      "sha256": "23bdf3ea51a396379183e01e5899e62cedcda151c5eb1cd9af95330330feca82"
+    },
+    {
+      "path": "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/brown_mud_rocks_01_rough_2k.jpg",
+      "bytes": 2676813,
+      "sha256": "7e3be7bd34556f174a4a201ad4735873c575a60dd9a5a7032e160a169c5428ac"
+    },
+    {
+      "path": "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/download_manifest.json",
+      "bytes": 5808,
+      "sha256": "ccb0f3484afe648342347eb4a9a20cfafdde1fe83711572058facef8874b9158"
+    },
+    {
+      "path": "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/namaqualand_boulder_02/namaqualand_boulder_02.bin",
+      "bytes": 2297768,
+      "sha256": "0f6daa7ec9b1a92207c0b09b737ff1eec904aebc1c1eada778afa6e5eacd55c0"
+    },
+    {
+      "path": "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/namaqualand_boulder_02/namaqualand_boulder_02_2k.gltf",
+      "bytes": 2818,
+      "sha256": "e181b722c8c8bd56f98ab8883b283b3cb3c437c372af3b831aec2f94c22fe0f2"
+    },
+    {
+      "path": "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/namaqualand_boulder_02/textures/namaqualand_boulder_02_arm_2k.jpg",
+      "bytes": 2914937,
+      "sha256": "2314bc882e140adba4ee2eae2873f11458b359208b59240a04ae85f2e5766014"
+    },
+    {
+      "path": "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/namaqualand_boulder_02/textures/namaqualand_boulder_02_diff_2k.jpg",
+      "bytes": 3867934,
+      "sha256": "0f81c51224deb025079f10dad21530e77e42baad541eb766922fe8fc6e46a88e"
+    },
+    {
+      "path": "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/namaqualand_boulder_02/textures/namaqualand_boulder_02_nor_gl_2k.jpg",
+      "bytes": 3919158,
+      "sha256": "3067767374241dec6612ad60cc806cb9e30594f784d74f19a7cda4cdc2d28cc0"
+    },
+    {
+      "path": "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/namaqualand_boulder_03/namaqualand_boulder_03.bin",
+      "bytes": 1450268,
+      "sha256": "d24151021ed310fe3207f1b5964bff22b583e77d2617427a88b5dcbc0447a475"
+    },
+    {
+      "path": "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/namaqualand_boulder_03/namaqualand_boulder_03_2k.gltf",
+      "bytes": 2823,
+      "sha256": "5d135c8e3a74edf7f53ae04d41deed19582ed6ced6d629d5d51e730319ed0dcb"
+    },
+    {
+      "path": "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/namaqualand_boulder_03/textures/namaqualand_boulder_03_arm_2k.jpg",
+      "bytes": 2441884,
+      "sha256": "24f443dd1c1da875a3653f0820d02e3140319fe199123765987d166ada3d1ddc"
+    },
+    {
+      "path": "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/namaqualand_boulder_03/textures/namaqualand_boulder_03_diff_2k.jpg",
+      "bytes": 3341422,
+      "sha256": "d7bfae01eed80a6318679f13a8be14253fa0f6338b93f6e2126946f86bea4f82"
+    },
+    {
+      "path": "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/namaqualand_boulder_03/textures/namaqualand_boulder_03_nor_gl_2k.jpg",
+      "bytes": 2919390,
+      "sha256": "e83ccfe677a6c82aadd56d1e5138aa97823a23cde32573dd65dafb321fffeb33"
+    },
+    {
+      "path": "engines/geode/build.sh",
+      "bytes": 214,
+      "sha256": "81725036f53df487ea9b8a43b11d9c898c2a75691d9bb03d2c23899d78a0e578"
+    },
+    {
+      "path": "engines/geode/build_scene.py",
+      "bytes": 20559,
+      "sha256": "4b3f6c31a9fc09844e17b9d363f5e0f0be0c60324a836956defdad96a07b1265"
+    },
+    {
+      "path": "engines/geode/build_v3.py",
+      "bytes": 19785,
+      "sha256": "ac508bc214d0b923c7f88d924aec284ef45e6000e178a0dd88014f338497c2a9"
+    },
+    {
+      "path": "engines/geode/create_comparisons_v3.py",
+      "bytes": 2158,
+      "sha256": "b90fbdca22080e926b2c205d0dafc40351b8fe4a68e1fe2e931bfe977c3cbd0b"
+    },
+    {
+      "path": "engines/geode/docs/README_V1.md",
+      "bytes": 11201,
+      "sha256": "29edbfb598743657a0b56fdc399302267d639e5b549211dc4f7e29b9169f3129"
+    },
+    {
+      "path": "engines/geode/docs/SCIPY_LICENSE.txt",
+      "bytes": 46838,
+      "sha256": "4daf14e37432e7026165979ecb7a39930707a3e89bef4876cfaf9dad36ed364a"
+    },
+    {
+      "path": "engines/geode/docs/geometry_v1_to_v2.diff",
+      "bytes": 11113,
+      "sha256": "3fda5ff1fe65b62c3ad1bde7e301c44953cd612d02a40f9a2db61f740fc86ff2"
+    },
+    {
+      "path": "engines/geode/docs/renderer_v1_to_v2.diff",
+      "bytes": 29510,
+      "sha256": "dc57594d7fce9258efd9f56118d384e9cbe20672e8a21cdf4dcb24ba95e9bbc9"
+    },
+    {
+      "path": "engines/geode/docs_v3/README_V2_ARCHIVE.md",
+      "bytes": 10200,
+      "sha256": "7ffca9e1c2e6c476fff00a27dfcfd44248f4f3a8c8d5c84968b1c9616482cb2f"
+    },
+    {
+      "path": "engines/geode/docs_v3/ROUGH_GLASS_AND_FILTER_NOTES.md",
+      "bytes": 2618,
+      "sha256": "3750cebe071c50805a1bcf53e09b8585f184a59b0ff9270951340048b56adc26"
+    },
+    {
+      "path": "engines/geode/docs_v3/renderer_v2_to_v3.patch",
+      "bytes": 16090,
+      "sha256": "e3df4a728f4968e2f024ee5577d11459a34c100fea33ee68b3f9ca21a5dec499"
+    },
+    {
+      "path": "engines/geode/finish.py",
+      "bytes": 6093,
+      "sha256": "b2ddc274c52e940a3a748c87813ab30e8865d96fd139591e614af9dbd1a79f44"
+    },
+    {
+      "path": "engines/geode/finish_v3.py",
+      "bytes": 10416,
+      "sha256": "d927500e2c788cfd29620d0e4c0a075d92bb1f9790ed77d70e41902b39452675"
+    },
+    {
+      "path": "engines/geode/output_v3/Drowned_Geode_V3.json",
+      "bytes": 2711,
+      "sha256": "44be9bb939482f013d38a29c4bb86b5bd9f0d5d27211feee49ef2ee68162dc8b"
+    },
+    {
+      "path": "engines/geode/output_v3/Drowned_Geode_V3.png",
+      "bytes": 2723345,
+      "sha256": "5f70a30cdf646affd87f4d3d21830b3c611ea61e8835cfadbef5b179a916d722"
+    },
+    {
+      "path": "engines/geode/output_v3/Drowned_Geode_V3_Before_After.png",
+      "bytes": 1326959,
+      "sha256": "5d6bc56d920a6296bfef466cf092bf4a7e4e11a2c5790cb0380aaec22b3f585a"
+    },
+    {
+      "path": "engines/geode/output_v3/Drowned_Geode_V3_Filter_Artifact_Check.png",
+      "bytes": 321780,
+      "sha256": "5012cc0387dc851c4135bab4286495a21c02feee2e284a6a53cd1a57d1c2eb33"
+    },
+    {
+      "path": "engines/geode/output_v3/detail_filter_after.png",
+      "bytes": 231200,
+      "sha256": "41049de1b3064d020b82e152a5ebc55be495bdf922e1676ba07b46eb8084c6b3"
+    },
+    {
+      "path": "engines/geode/output_v3/detail_filter_before.png",
+      "bytes": 247867,
+      "sha256": "776418f22571d9faaaa0451097a89eea5a283427f5a354c359a11822c67faca6"
+    },
+    {
+      "path": "engines/geode/output_v3/final_render.log",
+      "bytes": 821,
+      "sha256": "0f3978b14522294fb55902750ac736dd7770bb65f66d2fe6be93ef56ea743fc3"
+    },
+    {
+      "path": "engines/geode/render_final.sh",
+      "bytes": 347,
+      "sha256": "f658def9a4ba8d5426a701039ab9841c78984c61037ccebeb1dbcd9833dd6306"
+    },
+    {
+      "path": "engines/geode/requirements.txt",
+      "bytes": 114,
+      "sha256": "64253587939e2dac725aab581c50aa46e55f564dba5e2a35bd693c1938e7b3f9"
+    },
+    {
+      "path": "engines/geode/src/UPSTREAM_QUARTZ_README.md",
+      "bytes": 10414,
+      "sha256": "359f4589bb0a26b7808512e4b1c75dc78dcadf4dfbd871b0c27387e4e6da5ee6"
+    },
+    {
+      "path": "engines/geode/src/cathedral_v3.cpp",
+      "bytes": 44848,
+      "sha256": "c39f72274b97e34d84d793916d208461b4ab87cb632dc88a8f0f2724fc3c52d4"
+    },
+    {
+      "path": "engines/geode/src/make_sampler.py",
+      "bytes": 519,
+      "sha256": "6316155bb09042e412f008f33316f80d73b16fbe25477446ef139f624b92d013"
+    },
+    {
+      "path": "engines/geode/src/quartz_growth.py",
+      "bytes": 8594,
+      "sha256": "44214effc127a5d24501351f95292c5dd3ebece9d672bd090c8d78d5cfe9e752"
+    },
+    {
+      "path": "engines/geode/src/rough_quartz_v3.h",
+      "bytes": 2310,
+      "sha256": "b82bf453f11dd5f6f1795eeac159906de1b7f8b6980ca8ade84504bddfe54fad"
+    },
+    {
+      "path": "engines/geode/src/sobol_directions.h",
+      "bytes": 394511,
+      "sha256": "c1df14ec217bb6bf6ac880ceb406e7bcf524b861885d558e520c5fff6454f907"
+    },
+    {
+      "path": "engines/geode/src/spectral_geometry.h",
+      "bytes": 7893,
+      "sha256": "7c0acc4ece6bb0824a5a03bba776a4e01b7fe574d930568b2f9fca12eaa92736"
+    },
+    {
+      "path": "engines/geode/src/texture_adapter.h",
+      "bytes": 1755,
+      "sha256": "321e29ea114d0f6e6509c554d0c0abf5adc1e964998d3d9e834dd7690748e64d"
+    },
+    {
+      "path": "engines/geode/src/upstream_quartz_optics.py",
+      "bytes": 6861,
+      "sha256": "aa33d29c12f44de14959ae354d94e00d43683f0619bea27518319b737217e029"
+    },
+    {
+      "path": "engines/geode/src/wide_bvh.h",
+      "bytes": 5345,
+      "sha256": "7eca2940f3ce7a5dac2e00e6dff4296d1c29334f1dcfc4a9b9dfaa08a723ebb2"
+    },
+    {
+      "path": "engines/geode/verification_v3/compare_rebuild.py",
+      "bytes": 1094,
+      "sha256": "6fb8712e5ddbe2c64e8626ca25e028af9ca975f5e08873e6563214d39362e77e"
+    },
+    {
+      "path": "engines/geode/verification_v3/filter_fixture/README.md",
+      "bytes": 788,
+      "sha256": "324d6f4395bbb213da724c8e8509994970f9e4a70754f1901004a6720680b246"
+    },
+    {
+      "path": "engines/geode/verification_v3/filter_fixture/detail_filter_after.png",
+      "bytes": 231200,
+      "sha256": "41049de1b3064d020b82e152a5ebc55be495bdf922e1676ba07b46eb8084c6b3"
+    },
+    {
+      "path": "engines/geode/verification_v3/filter_fixture/detail_filter_before.png",
+      "bytes": 247867,
+      "sha256": "776418f22571d9faaaa0451097a89eea5a283427f5a354c359a11822c67faca6"
+    },
+    {
+      "path": "engines/geode/verification_v3/filter_fixture/detail_preview.json",
+      "bytes": 2628,
+      "sha256": "e5c3621a64df8f452f769aeced8191c27d63659031afd70ea9c5d097a4c71308"
+    },
+    {
+      "path": "engines/geode/verification_v3/filter_fixture/detail_preview_guides.npz",
+      "bytes": 9073107,
+      "sha256": "2600eab300c083267ee3a4c43145318d9d0e375dbc3d8ebc3197d94e6f306182"
+    },
+    {
+      "path": "engines/geode/verification_v3/filter_fixture/detail_preview_raw.exr",
+      "bytes": 1569143,
+      "sha256": "2e1fdc9fa2cdb8c5b8d26fef924b04416edab027f224627435306009a4441b96"
+    },
+    {
+      "path": "engines/geode/verification_v3/filter_fixture/detail_preview_reflection_raw.exr",
+      "bytes": 382324,
+      "sha256": "f4a6eb4bb2c77aac567443f19d5ffddce04ed676a6c3d626cbaec7b0aafdb292"
+    },
+    {
+      "path": "engines/geode/verification_v3/filter_fixture/detail_preview_sample_counts.npy",
+      "bytes": 529328,
+      "sha256": "e77249b707a76b970195fac5fb2892be8c6b06ed3bbe5d5db0124b5692aa5edc"
+    },
+    {
+      "path": "engines/geode/verification_v3/filter_fixture/detail_preview_volume_raw.exr",
+      "bytes": 1548851,
+      "sha256": "e73a67dec910b38cc5eea0ef39a0940ab01a397c7e754b8603af120b3ced885d"
+    },
+    {
+      "path": "engines/geode/verification_v3/filter_test.json",
+      "bytes": 372,
+      "sha256": "864b6198ae463dabcec2149cd3c5b4e4fec0cfdab756cc7e6f49b381d7d07e4a"
+    },
+    {
+      "path": "engines/geode/verification_v3/finish_replay.json",
+      "bytes": 498,
+      "sha256": "59c4483e9ad8d140a1ce48c5106f21d0cf08e315b2bf6f7b7c8faee6d9066bcf"
+    },
+    {
+      "path": "engines/geode/verification_v3/geometry.json",
+      "bytes": 42241,
+      "sha256": "23e0fc12d464124aa82f2ca25598619a3f98bcad40ae0b34aafc750d683c7aa6"
+    },
+    {
+      "path": "engines/geode/verification_v3/legacy_filter_reference.py",
+      "bytes": 10139,
+      "sha256": "e2891f22a2b9045f872278642c783e7c0e835905ef28573210f9c5b77f53f423"
+    },
+    {
+      "path": "engines/geode/verification_v3/native_optics.json",
+      "bytes": 306,
+      "sha256": "dbcf1afbb639d8a9aa397e1344ba66dd76380846c8135664311cb76c9abe8898"
+    },
+    {
+      "path": "engines/geode/verification_v3/rebuild.json",
+      "bytes": 2277,
+      "sha256": "4aeb54441e74b68bb501d57a8c0e4281fcbf3e2d8e9edc834e4b4355e9f5efbc"
+    },
+    {
+      "path": "engines/geode/verification_v3/rough_quartz_test.json",
+      "bytes": 323,
+      "sha256": "663a64b8cf9b9f7ec8ae85723d1252ddfe31ff33b498ee798656f2265f76059d"
+    },
+    {
+      "path": "engines/geode/verification_v3/test_filter.py",
+      "bytes": 1604,
+      "sha256": "cf2b6e3ee8f051b973e5bf39a9010b8180b5a0915dbd9ac933565739339d7e6c"
+    },
+    {
+      "path": "engines/geode/verification_v3/test_rough_quartz.cpp",
+      "bytes": 1751,
+      "sha256": "8d322a989a77e9d4db5285cebe1d7b7c9356d206bb3568f82be544163ae63b97"
+    },
+    {
+      "path": "engines/geode/verification_v3/validation.json",
+      "bytes": 52721,
+      "sha256": "692eca5bf046d7df02be3c2392e2bb9121b2514f2b1e44e367a7d4b2f6ac71bc"
+    },
+    {
+      "path": "engines/geode/verification_v3/verify_geometry.py",
+      "bytes": 2308,
+      "sha256": "a105318ff0501c9fba2311ab9a52c63ff92a16d480655db4f0f90c695dd3cc1c"
+    },
+    {
+      "path": "engines/geode/verification_v3/verify_outputs.py",
+      "bytes": 5107,
+      "sha256": "34f19e1d42dcf307eff474f2fc843f843a27ab5f1d52329def3ef68f26ae2439"
+    },
+    {
+      "path": "engines/geode/verify.sh",
+      "bytes": 557,
+      "sha256": "92b178bce158d5f4e3706eaef413ad5bab367c9a518be09c59e2ea246cc4706d"
+    },
+    {
+      "path": "engines/hot/README.md",
+      "bytes": 7678,
+      "sha256": "ac44d03f491eb321676aa188f5035fb178f6c1d19a13620ae0a428eaaff48b36"
+    },
+    {
+      "path": "engines/hot/SOURCE_MANIFEST_V11.json",
+      "bytes": 18585,
+      "sha256": "19e297a3e0f4c80d9540990873c089c45b2ffc79b6130a1a5b51e413aa84b2e3"
+    },
+    {
+      "path": "engines/hot/V10_to_V11.patch",
+      "bytes": 74809,
+      "sha256": "bec5d7fd3dedfab8c5795190ec7cf1ae6f4b0242ef307067c84fbbf1268bd526"
+    },
+    {
+      "path": "engines/hot/cybr-geo/LICENSE",
+      "bytes": 18092,
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+    },
+    {
+      "path": "engines/hot/cybr-geo/README.md",
+      "bytes": 1085,
+      "sha256": "d0c28c49e61580f1521cb6dce901dbbd9cc0f9faf0476858631091464dd8d81d"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/assets/ATTRIBUTION.txt",
+      "bytes": 995,
+      "sha256": "096212de81352b0805b9233cc8adf5c5872786cd1cd00d30d0076a4a52115c88"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/assets/granular_relief.bin",
+      "bytes": 1048588,
+      "sha256": "babbb2aa418d669003be4b6bac9f53a1da9d0f2533bcc3677c4f2f4b712e8c11"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/assets/granular_relief.npy",
+      "bytes": 1048704,
+      "sha256": "6c25ce2868740483acb90dad3d1d7239692401e2a53e8f997432392fb1be2470"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/assets/granular_relief_provenance.json",
+      "bytes": 280,
+      "sha256": "6a8eab84e37c6a09640ca632be54c89bb5c6aca8e267e59d129599266ee603a5"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/assets/gravel_cc0_original.png",
+      "bytes": 194247,
+      "sha256": "c48615b451bf1e606fbd72c0aa9f8cc0f068ab7111ef7d93bb9b0f2586440c12"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/assets/gravel_periodic.pgm",
+      "bytes": 262159,
+      "sha256": "1a25e996869d39d4963082b41a353fa227378e17efc844c3e639c16ec8b6f5b3"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/assets/ripple_modes.json",
+      "bytes": 15262,
+      "sha256": "8af04c2b01745c35e14a644e66393ee4b62ffe8f8ef9ca0c1872926a654cc5ab"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/broken_shelves_v9.py",
+      "bytes": 5676,
+      "sha256": "1beb1d6c5079ce851504adc002ae8e965a6409a3f0d6e678d8fb9482a7befb9d"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/build_scene.py",
+      "bytes": 15728,
+      "sha256": "fcbdbac5b58c46856802b02c784975bb4c397c1f4744494f88108d0b64b3f57b"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/build_scene_before_continuity_fix.py",
+      "bytes": 19397,
+      "sha256": "247bf68d786b8f8234a50ce4fcc8ba5190882de10c3b4a422174c1d906b3f07b"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/build_scene_v4.py",
+      "bytes": 24714,
+      "sha256": "c1aa3e01766940a1fbb4ff56e1e2abe58d4e162f2be3d16176665d5c67260f7d"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/build_scene_v6.py",
+      "bytes": 19128,
+      "sha256": "2e3c428534e82fc04c06bc0ef5c533eb01a425d36def8b96d703c4483dc9d23b"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/carbonate_shelves.py",
+      "bytes": 2355,
+      "sha256": "efa9ace08b775d8ac666f644f436ff5407b1ae4ac8b12dd955e3970c4e135327"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/contour_water.py",
+      "bytes": 2754,
+      "sha256": "f3fd718ae58aeb8dc83114d585d0162154f02dcc5118963a86eb4a850098cca4"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/export_exr.py",
+      "bytes": 2278,
+      "sha256": "dfb73f861bfef41de165d6e671c945988ec005a3a4cebc1dd17be74f7f60e6cb"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/finish.py",
+      "bytes": 8883,
+      "sha256": "25841de9e92f92792fe4fe99bb19bf29b2fc160219797a3cfe054e14f4711650"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/fluvial_detail_v9.py",
+      "bytes": 1628,
+      "sha256": "b3d8dc150fffa3172968dcc33ea167297fb028f2601617df75ce55fd4bae320e"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/implicit_rocks_v10.py",
+      "bytes": 2873,
+      "sha256": "1673a745f0f883e2d8dbe21a31c5095e0b11a4b0d2fc11c8d2213978a37100c2"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/prepare_granular_relief.py",
+      "bytes": 1642,
+      "sha256": "5b0a3959141d13d6f6233d69354fdccbab6f39c7546bf2581d053c033bd1fb2d"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/render.py",
+      "bytes": 7874,
+      "sha256": "30bbcbf15259195264507862a166592afbf8a06c8e07cb5083b46c03af54affe"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/requirements.txt",
+      "bytes": 128,
+      "sha256": "06a151bbdc2bb6f89cdc8988c52c615b557524e2b33c322dcec19d90788ffa9f"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/run_checks_v11.py",
+      "bytes": 3133,
+      "sha256": "c0675b60d957e3a2d7477a6d5ff4ffb99267c54d87b8f3c1e1a3d5e1f5582505"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/run_unit_tests.py",
+      "bytes": 3196,
+      "sha256": "4996b51175c2c6192ebbea2e2840033aeef3665ed9e753e6a40f8127cdb1852e"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/scene_inputs.py",
+      "bytes": 1843,
+      "sha256": "2c23d42f8c1b523ddec99f8f3545c8aaf3b8f6ac37983dcb500074ff97fce035"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/stream_scene_r2.py",
+      "bytes": 2783,
+      "sha256": "3f7cbe8b01547809be16c4c1e4632d0e18a473450b8e0de2d055561cbc9d56d4"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/test_connected_vegetation.py",
+      "bytes": 1948,
+      "sha256": "cbacfeff2b9c44a1de8566d1ddce12be4783a49a18ea659484b102470badf78c"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/test_filter_policy.py",
+      "bytes": 2376,
+      "sha256": "52552514d48360e8d8ad2aa165056e5416374ac672e3f60b25a946abf5c5051e"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/test_implicit_rocks_v10.py",
+      "bytes": 1327,
+      "sha256": "ee5f3f30ecf75ce2cf4957e1afb1c426d094b7e472662a35ba385c52443b2d32"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/test_shoreline_continuity.py",
+      "bytes": 1560,
+      "sha256": "fee9c9d3bccaf94799dc5358f9eedac5c12ff0fc236684f7aa776f3da2c7b41c"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/test_sky_quadrature.py",
+      "bytes": 2332,
+      "sha256": "f33be15ceaaef36d183c9327ebcd3f5db43299c79c77c82211ffefc373353064"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/test_streaming_scene_io.py",
+      "bytes": 2159,
+      "sha256": "82a042442d92f92a3f0edaca18cd3fcc9b75b7fc80af000d35f001967e5066ea"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/v10_landforms.py",
+      "bytes": 7253,
+      "sha256": "b6088e60485bb3883d830c7aef1b98aaae526324fb824525e6333b3fba0dc829"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/v11_landforms.py",
+      "bytes": 11688,
+      "sha256": "13c367aeb0bf3a1357372a33b7ef362079d09168e55df040705d7ea29a76e2ec"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/v8_landforms.py",
+      "bytes": 6997,
+      "sha256": "9d93419fbb072c4ed32993f8a2a7338d0d3f41b0d445f265ebd5583c836af66c"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/v9_landforms.py",
+      "bytes": 10253,
+      "sha256": "c0f73325d783957d959b0d6ae7e8c7b674ead73c9225bbfdb727b0717ed38404"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/verify.py",
+      "bytes": 12721,
+      "sha256": "30f4941ef793b9f37818a480f238f67526dc1ab66ddc61957cf6707e7b16b4ee"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/verify_v10.py",
+      "bytes": 8605,
+      "sha256": "0be7376253b05f306cbdfee8b3cfac8d41e9b1516a2bfec9f8d5dae1b04e8648"
+    },
+    {
+      "path": "engines/hot/cybr-geo/examples/desert_hot_springs/verify_v11.py",
+      "bytes": 6761,
+      "sha256": "fdbd18a9710555ed5fdae7f1e00e4b40e457f1435c6af91ecf678951152d7441"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/CMakeLists.txt",
+      "bytes": 2601,
+      "sha256": "808e991e4c1aef85c50adb9f5e7e871648c200f71835118761f10ff28628bc22"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/broadband_ripples.h",
+      "bytes": 12642,
+      "sha256": "a2e6ff74d86465dd0c8ec4383837ed386048b10cae60e4ae1212b0379a80b3e9"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/cloud_volume_v9.h",
+      "bytes": 5962,
+      "sha256": "902a13e50bb3568b9d341c465da8120a6090904eb57ce9076d4926b3dfe0d41d"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/exponential_haze_v10.h",
+      "bytes": 1712,
+      "sha256": "24ff02f86ef488faaacc7b1e0648c5c320f7349c5c4e07c9d3efa340af3e08c4"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/granular_relief_v11.h",
+      "bytes": 2254,
+      "sha256": "fea473b22dd5f757ebdace0dd4ee11c9df81baabcca7f843e5b3e5c4f863cdff"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/landscape_materials_v11.h",
+      "bytes": 6683,
+      "sha256": "70c532094ccf82ef5eecaea7b4a94e2ac546dfbba014dba0b01f0ac7704285f2"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/pathtrace.cpp",
+      "bytes": 21599,
+      "sha256": "f1b3eb112b48137645c28c931be4162a76d21dc98ca02f5f99790b4e18183b38"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/photographic_grain.h",
+      "bytes": 2300,
+      "sha256": "028a4c1838b69bacba30b231304f951a33b3e0489b811e1aa52237533c16cb26"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/photographic_volume.cpp",
+      "bytes": 11780,
+      "sha256": "64a681fbaee3a871bbe288a2d59e58f7c56672cfbecad6b6a748a03f5ba44093"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/photoreal.cpp",
+      "bytes": 15084,
+      "sha256": "3e0c5d0bf01c98b780a4af5285eb4255ce784022c43a31bfddee06e04ab90ddf"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/scale_aware_landscape.h",
+      "bytes": 5276,
+      "sha256": "2b2c5731cf3af28722a579eb5adb13f998e5bc3c3cd4c102858dd175107748cd"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/scale_aware_landscape_v10.h",
+      "bytes": 7215,
+      "sha256": "7d8a4052bd63751cba17674ac42061ad5905086304d6316714bfb6b950583e7f"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/scale_aware_landscape_v9.h",
+      "bytes": 6828,
+      "sha256": "b55dbfc75b05133c9cdbb036cd74c76d54479412ff8f511dbcdace668f503929"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/single_scatter_sky.h",
+      "bytes": 3388,
+      "sha256": "fc5ed71d2256edd45eed9ceb6c54519808cbddce16d2df74bfb794c023f3f781"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/spectral_desert.cpp",
+      "bytes": 43774,
+      "sha256": "d50c5d18fa289d7899315b7732e0a4c05451821325a179659420a238c8c8d0bb"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/spectral_desert_v6.cpp",
+      "bytes": 37227,
+      "sha256": "68d2cd495873c595c1cf1add7c660ea3c4e5d87585d85e0a371729acfe0ee9fd"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/spectral_desert_v7_before_glints.cpp",
+      "bytes": 38042,
+      "sha256": "365fb17f817af5a6d48ac60f663583d7a3e2fc63171f7f5c9af37b286477d97a"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/spectral_geometry.h",
+      "bytes": 6281,
+      "sha256": "9cd2391f75d4c645bd8aa0c5f66c98f99a6295c4a47483bdbc75e8d6a2a4a9a9"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/specular_reflection_connection.h",
+      "bytes": 3080,
+      "sha256": "81fb854b71034eae75341bd4181f81c29af444ccd834fd3936d467499aa8843a"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/steam_volume_v11.h",
+      "bytes": 2057,
+      "sha256": "3bf883ab0f914c2bffcf9fb1ea7e80bee3966be32a423d72ae0e4556e6d9019e"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/test_broadband_ripples.cpp",
+      "bytes": 1490,
+      "sha256": "7f12d93d99c6725bfad342c0eca0b0d76aef116d420a447f22bfc2192613e8af"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/test_cloud_volume_v9.cpp",
+      "bytes": 3042,
+      "sha256": "c1467d85e8e2bb73d7eee54a1f8175032621dba2085548b31dda84ac0502b54a"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/test_exponential_haze_v10.cpp",
+      "bytes": 1882,
+      "sha256": "3931b9823a4a0140a19b8823117bfdc66c9a7df6905b78cc0b14c67c0541dd4b"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/test_legacy_water_connection.cpp",
+      "bytes": 3229,
+      "sha256": "42933d53cdcca7b8cb0c2d1837269124b345d336f58537effcf1caf7fc10931f"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/test_materials_v11.cpp",
+      "bytes": 2676,
+      "sha256": "6d638d12dde160ab27d4fdee3405e65dbfbe2b12dbb826532d98736c6763325d"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/test_photographic_grain.cpp",
+      "bytes": 852,
+      "sha256": "be0aebf957d0994d1bafeadd026b68eff6a60705bdaa58af160404d94e72cf0d"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/test_photographic_volume.cpp",
+      "bytes": 1438,
+      "sha256": "1cb26c0cdbea806a1a8b4ad4fc0f3059f266eda1191186922e92a585343dbc86"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/test_reflectance_calibration_v9.cpp",
+      "bytes": 1928,
+      "sha256": "7c68ac5dbd51863d42d56f4dc3039b46565c0791f14b321b55a0958c5d05c6c1"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/test_reflected_connection.cpp",
+      "bytes": 2562,
+      "sha256": "aa833153319224ec10578d163e2a4c90c3ed9459daf2ed5bb84ab96d1be813ff"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/test_spectral_desert_v5.cpp",
+      "bytes": 3698,
+      "sha256": "b3ea97d46f601bd0838660e974774ef8f1da7c448bcc14a94f2acdf7d4b58a77"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/test_steam_grid_v11.cpp",
+      "bytes": 2442,
+      "sha256": "c26be6d4101c30f7993c6d05fbbfddbdf3d8bcb5fcdc7fbc16cfa3a9459ad80b"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/test_water_medium.cpp",
+      "bytes": 1196,
+      "sha256": "7f99f67b3cb3bd8d427b7417f921bb820741de4547e0ec1394587274ec8d1b9c"
+    },
+    {
+      "path": "engines/hot/cybr-geo/native/test_water_microfacet.cpp",
+      "bytes": 2359,
+      "sha256": "6a5ab024604d13d8d3bca641079e5a7fb4a4061701d20212feee54f924cf66f8"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/cybrgeo/__init__.py",
+      "bytes": 257,
+      "sha256": "5aee0599ec98581fbc5ffca358428217de6ce51b846c74dee80426039a4eeba7"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/cybrgeo/__main__.py",
+      "bytes": 29,
+      "sha256": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/cybrgeo/cad.py",
+      "bytes": 2157,
+      "sha256": "7aea6e66f98361ef226a6d1069ac0995ba9cd0bd88eaa5bf15934370f4030c07"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/cybrgeo/cli.py",
+      "bytes": 4666,
+      "sha256": "5f4d65ea7ae0aebf3ec160b9ae40c92b0d77dbe00cb06460d9e511ae220a6e5d"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/cybrgeo/core.py",
+      "bytes": 10557,
+      "sha256": "ebcde9d683feffe32feee780377494279ab67ee106dd38ae4f73589b88d636e5"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/cybrgeo/features.py",
+      "bytes": 2546,
+      "sha256": "f805ce2ff848cfa28ca07665058edb72f4665353205e847b9e25d80a59270fe9"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/cybrgeo/filter.py",
+      "bytes": 4015,
+      "sha256": "e32123cf19aaac16ce8709b5ae1456db3564a8ac30f98cdadf3dba34d9837740"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/cybrgeo/media.py",
+      "bytes": 4344,
+      "sha256": "dfb1dad2afba7b738532eec6a2b6654456fedb904a22dead6763ac067c8b273e"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/cybrgeo/native/pathtrace.cpp",
+      "bytes": 20437,
+      "sha256": "f970994f675622160291473016f19495655a5706a918b288ffb13688e840b9d6"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/cybrgeo/offline.py",
+      "bytes": 3582,
+      "sha256": "1b382b7a704b56fcf9da1add9c930d8f79c7b61c32c9bb55ff0300d7879f8961"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/cybrgeo/render.py",
+      "bytes": 8940,
+      "sha256": "338ba4d8955232a01dac91b5484f3cc8081c6469124f5021b8b360b66459624f"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/cybrgeo/whiteprint.py",
+      "bytes": 7602,
+      "sha256": "9e964292246641fc46d16a0a6610806aa9a2a87bd1c88d78542b414e386ab8b6"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/__init__.py",
+      "bytes": 139,
+      "sha256": "8d5d147c73c4376793f748548fe72a29d168b467ba6edd32d31375e2352bd833"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/__main__.py",
+      "bytes": 47,
+      "sha256": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/advanced_geometry.py",
+      "bytes": 5793,
+      "sha256": "de79f0e759705ac26dc1cb8bba41cd6a06b053e9235b35528847fa31540cb1c3"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/cli.py",
+      "bytes": 13464,
+      "sha256": "f9b6a7f8783bf992e7b2f1092d1de72223b488dd568359b95ae9e9609f0a4c3b"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/contact2d.py",
+      "bytes": 11141,
+      "sha256": "1fb50dcdae372c5afc658fe02247f739969479b75a2eed2fcdccab26ebdc3f51"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/core.py",
+      "bytes": 14299,
+      "sha256": "53f186ac81ced8614d6f217832885801d72859eb42decb4600f5c5490420ba76"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/exporters.py",
+      "bytes": 9106,
+      "sha256": "060c5e46d1988fd0fb9098a5cd4b8b0c3234891b47ed3d71899b9423030fdfb0"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/finish_render.py",
+      "bytes": 4015,
+      "sha256": "e32123cf19aaac16ce8709b5ae1456db3564a8ac30f98cdadf3dba34d9837740"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/geometry.py",
+      "bytes": 4259,
+      "sha256": "b77b78a7421dbe127ab7c29f01b9c4c03fc068337ae8357429e161730c56e12c"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/importers.py",
+      "bytes": 6632,
+      "sha256": "de2bc57c993936ca9b527525b67fbf1ba9be75bf8eec7732486dbd33cd0fc380"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/media.py",
+      "bytes": 7223,
+      "sha256": "b636465e1884bd66dca2fde9211f3ab062838a29b8136018d6237b0bdb46ae14"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/models/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/models/differential.py",
+      "bytes": 2488,
+      "sha256": "543a68aa6421c7ce9a9012267976ac8c3878472fe0889ca84ba66239aaf35fa7"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/models/drivetrain.py",
+      "bytes": 12068,
+      "sha256": "e7244a4d530c5cb92f73142b2ff4d84be6f4cccb895496d7ce60caaf02bf41d6"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/models/example.py",
+      "bytes": 816,
+      "sha256": "18e6b08c463f94a272a43e530ff2dd555baeab65f048741334a7bfb0c87905f6"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/models/motor.py",
+      "bytes": 11124,
+      "sha256": "7a503d327b03f3d528ea2f2c25bade5a5894eb6839d1ec13bd5f323b7b39134c"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/models/nitinol_actuator.py",
+      "bytes": 27820,
+      "sha256": "93327a517693a07f5321c68adcb0f1ad40802bbbac7bf0add7b717a53b41a72a"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/models/nitinol_actuator_v2.py",
+      "bytes": 10493,
+      "sha256": "bffb03212261e8713bccec50049b276d1d5f279ba9aa554a61b04ea145e31e54"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/packaging.py",
+      "bytes": 4480,
+      "sha256": "d6ce26e991db25f2f1504ed95096dcb19a24a927de98535d61565c9d51000dce"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/pathtrace.py",
+      "bytes": 4847,
+      "sha256": "dc71c555e660fd1c0820615bee839959236dc748d7ec84dbecb7c959a95c03bb"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/photoreal.py",
+      "bytes": 8705,
+      "sha256": "268fa1390f0785689eadbb70edff872551139a1ecf40015313af75d3e0eeab3f"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/registry.py",
+      "bytes": 4812,
+      "sha256": "d5bdc78e95c4d738923ee495dc5e25ecc3a355ab7bcfcd7f61ca1832f6e749cd"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/render.py",
+      "bytes": 12835,
+      "sha256": "dee92c373540e49f3be664e72a8e95f76d5f4024dff3781112ed91802f6786f3"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/stable_media.py",
+      "bytes": 12374,
+      "sha256": "d4afefa18b978d5513fa01414a9b2f3bdbac8243207e4207095cb02dc4fb9986"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/temporal_resolve.py",
+      "bytes": 9891,
+      "sha256": "94c762c360113968dc86cbc6de3740e36bb9c0725546e6a14f91a2df61cb0f15"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/truth.py",
+      "bytes": 5000,
+      "sha256": "c32272178721c3427247f50fc690a93a9c746c1e54a5c6f79f7376b95d198a01"
+    },
+    {
+      "path": "engines/hot/cybr-geo/src/mechanism_lab/whiteprint.py",
+      "bytes": 14786,
+      "sha256": "7477e547e919ce90c522a8ac97babe139a39b495f5e485de88cdb54476adf89b"
+    },
+    {
+      "path": "engines/hot/evidence/additional_views.log",
+      "bytes": 6740,
+      "sha256": "e88fb527638d0cd2d0311b705f594a3bee83f9bf2be13301a8e5f984417ca032"
+    },
+    {
+      "path": "engines/hot/evidence/build.log",
+      "bytes": 1838,
+      "sha256": "6d3ddcb14a67cade550f50ba0d99d76c12df53e180415802a4c3216f8311d82c"
+    },
+    {
+      "path": "engines/hot/evidence/final.json",
+      "bytes": 2432,
+      "sha256": "b2dfc2e8d548bd184e5e277118a48458c714e1e3d7c875aa9540db6728b0ec96"
+    },
+    {
+      "path": "engines/hot/evidence/final_finish.log",
+      "bytes": 1854,
+      "sha256": "68e6d68be4fb3ab2ffec9dab9f2f8a820acb4be8484b7783f0ed58bb5d6cf7de"
+    },
+    {
+      "path": "engines/hot/evidence/final_image_verification.json",
+      "bytes": 1607,
+      "sha256": "22e4c2e5ebb7796cb72532e5138f4e6bfb8b3cb782d290dc9e329e645480789d"
+    },
+    {
+      "path": "engines/hot/evidence/final_linear.exr.json",
+      "bytes": 378,
+      "sha256": "144a7296bb689242f07ecaed711fb22a9720fa92a09bab4fb18c35e97747e1b3"
+    },
+    {
+      "path": "engines/hot/evidence/final_pipeline.log",
+      "bytes": 2862,
+      "sha256": "10761836f3a54ab36a5ae73e4460eef236e17c423bf80ac39c4d0b9d116a0ef1"
+    },
+    {
+      "path": "engines/hot/evidence/final_render.log",
+      "bytes": 1104,
+      "sha256": "934a6078238d40132f21c9db459f7aa04357df8f5a2b7582f3cbdcb85b984fbb"
+    },
+    {
+      "path": "engines/hot/evidence/final_run_receipt.json",
+      "bytes": 1870,
+      "sha256": "591d7f86922c9d89ae22d9197ecc68854f75d7a4f08f1b79548085b0c8bff0f3"
+    },
+    {
+      "path": "engines/hot/evidence/geometry_verification.json",
+      "bytes": 828,
+      "sha256": "9316872c22bd836086bfb49e43949ff76fa5b1fc98450c34b0ceb2216b8d03f8"
+    },
+    {
+      "path": "engines/hot/evidence/optics_tests.json",
+      "bytes": 317,
+      "sha256": "a25260374bd06739c365830ff9e7b49e32abbdbd9735c768abd6b73e7fda2c64"
+    },
+    {
+      "path": "engines/hot/evidence/previous_lighting.json",
+      "bytes": 2430,
+      "sha256": "a9607ba1f5f220811c415024942be3f47eb599ff6239e31721912e5f605cfbbb"
+    },
+    {
+      "path": "engines/hot/evidence/previous_lighting_finish.log",
+      "bytes": 1880,
+      "sha256": "345def7fd21f5240d9fd3df8c91732c5d6ce3dfc3331c49e6c1b85cf0453793d"
+    },
+    {
+      "path": "engines/hot/evidence/previous_lighting_image_verification.json",
+      "bytes": 1620,
+      "sha256": "3a387e81160d23a97bb8de1022cb02f1735410ca2f79bb2932fd4b76b20ea92a"
+    },
+    {
+      "path": "engines/hot/evidence/previous_lighting_render.log",
+      "bytes": 1153,
+      "sha256": "9989dd9568e241375c30337a2eb5f03ea79735a938bc4d9843af103f998006de"
+    },
+    {
+      "path": "engines/hot/evidence/previous_lighting_run_receipt.json",
+      "bytes": 1906,
+      "sha256": "8cabefb03c868db9361e50fed24a2193c3688d942bbfca6034613d52d28793cf"
+    },
+    {
+      "path": "engines/hot/evidence/scene_inputs.json",
+      "bytes": 2837,
+      "sha256": "05e8f655bd7f6e14f14d1663f84f07dba820a6b40f8460382d8ea61e2d883079"
+    },
+    {
+      "path": "engines/hot/evidence/shoreline.json",
+      "bytes": 2440,
+      "sha256": "5bbbe040ec9c5bd36a5471cb04ab533ffb7f0ede8ac5cb8cc864df9019d31345"
+    },
+    {
+      "path": "engines/hot/evidence/shoreline_finish.log",
+      "bytes": 1853,
+      "sha256": "fc3d28542eba2413437056df4572567a55e48a27cdccb52af8769f5546f0ed19"
+    },
+    {
+      "path": "engines/hot/evidence/shoreline_image_verification.json",
+      "bytes": 1602,
+      "sha256": "1f49d8af211f267839a032329186dfbc6adbd8995543327795b2d8c406606145"
+    },
+    {
+      "path": "engines/hot/evidence/shoreline_linear.exr.json",
+      "bytes": 385,
+      "sha256": "f6e01c93b023e7e11367ce9fb8ef6a045c4537a5d24d95b4264aad716bbadb74"
+    },
+    {
+      "path": "engines/hot/evidence/shoreline_render.log",
+      "bytes": 1115,
+      "sha256": "39f7cfb1406c68598bf39a1a06325565682da637e6fac6ac9d992465e5a28e94"
+    },
+    {
+      "path": "engines/hot/evidence/shoreline_run_receipt.json",
+      "bytes": 1874,
+      "sha256": "56b98155a2256dd210e27b28a908ec035783492287cec7abe72d4e0386b709c5"
+    },
+    {
+      "path": "engines/hot/evidence/tests/comparison_alignment.json",
+      "bytes": 1137,
+      "sha256": "b918c0d77e0f1880666792d234af2175dd3f635997c21fe23ce614c7ca86b41f"
+    },
+    {
+      "path": "engines/hot/evidence/tests/current_source.json",
+      "bytes": 1404,
+      "sha256": "f2408b1d3684173e87e88730cf597ff01dabc9088536cfc1d01e35d9e99ebf14"
+    },
+    {
+      "path": "engines/hot/evidence/tests/materials.json",
+      "bytes": 444,
+      "sha256": "dc07dff3366e0394ab966311e9c073a576de435a55997db5dbdd98c1a2cbebee"
+    },
+    {
+      "path": "engines/hot/evidence/tests/optics.json",
+      "bytes": 304,
+      "sha256": "899c403f58f47d83fa81bd1baf011f24ab65625f8e12cef95fa7762373dc90c5"
+    },
+    {
+      "path": "engines/hot/evidence/tests/optics_grid_build.json",
+      "bytes": 304,
+      "sha256": "899c403f58f47d83fa81bd1baf011f24ab65625f8e12cef95fa7762373dc90c5"
+    },
+    {
+      "path": "engines/hot/evidence/tests/scene_io.json",
+      "bytes": 290,
+      "sha256": "b9b3af34d5b21a09851c04d8bd3cd2ac47e3364c21c003c625602b8ff6913953"
+    },
+    {
+      "path": "engines/hot/evidence/tests/sky_quadrature.json",
+      "bytes": 2364,
+      "sha256": "5121a21f3099427c62f5c50251f4e26ac9a01f030f6314e8bb8e99ee8696f1ac"
+    },
+    {
+      "path": "engines/hot/evidence/tests/sky_quadrature_development.json",
+      "bytes": 2363,
+      "sha256": "fb72fd6372af7efdbca62bd2113195d817241eaf70469664cb024fed515ab9e4"
+    },
+    {
+      "path": "engines/hot/evidence/tests/steam_grid.json",
+      "bytes": 634,
+      "sha256": "3dca81422f24d6ee5cf33d97a4b1e4440372f0bc9c11f244f9877d8a5dd0d255"
+    },
+    {
+      "path": "engines/hot/evidence/tests_reproduced/check_commands.json",
+      "bytes": 1330,
+      "sha256": "878233eb649fdcd4fb1611693881168f18a8241f6dad80daaccb4275a314b6cc"
+    },
+    {
+      "path": "engines/hot/evidence/tests_reproduced/materials.json",
+      "bytes": 444,
+      "sha256": "47145471fb948105b46e2694345d88571b3f28f47fad1e06da48afa03166bf6e"
+    },
+    {
+      "path": "engines/hot/evidence/tests_reproduced/scene_io.json",
+      "bytes": 290,
+      "sha256": "b9b3af34d5b21a09851c04d8bd3cd2ac47e3364c21c003c625602b8ff6913953"
+    },
+    {
+      "path": "engines/hot/evidence/tests_reproduced/sky_quadrature.json",
+      "bytes": 2364,
+      "sha256": "5121a21f3099427c62f5c50251f4e26ac9a01f030f6314e8bb8e99ee8696f1ac"
+    },
+    {
+      "path": "engines/hot/evidence/tests_reproduced/steam_grid.json",
+      "bytes": 651,
+      "sha256": "13d052f804d02a52877845049492f158f7cffe3c42c6ea33de43a9a92aed0e9a"
+    },
+    {
+      "path": "engines/hot/evidence/v10_comparison_settings.json",
+      "bytes": 4515,
+      "sha256": "4e14bbd6bb394f6f55346dd97d1bbe03c2fbbd041f2f9388d9663a1b9b17e085"
+    },
+    {
+      "path": "engines/hot/evidence/verification_v11.json",
+      "bytes": 33602,
+      "sha256": "83be9ed7ef6825dd8b9d1c0d9580541f99d5feeed07fe5f678c435dfded8be4a"
+    },
+    {
+      "path": "engines/hot/evidence/visual_review.json",
+      "bytes": 4019,
+      "sha256": "ae853fe2fa6e4ef58637435b2a5a9ba40fe089a8ebbd25b5aa56344c99b3acc9"
+    },
+    {
+      "path": "engines/hot/run_v11.sh",
+      "bytes": 678,
+      "sha256": "45e105d37182f1bc3e1aca697d772f403822d05003f44aa59a1c46c5966008f1"
+    },
+    {
+      "path": "engines/obsidian/LICENSE",
+      "bytes": 17984,
+      "sha256": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6"
+    },
+    {
+      "path": "engines/obsidian/LICENSES/ASSET_NOTICES.txt",
+      "bytes": 648,
+      "sha256": "9e0034b9b25a2b5997b30d1629ee96f72f97d105532d1307c51b23e971575508"
+    },
+    {
+      "path": "engines/obsidian/LICENSES/CYBR_LIGHT_ORIGINAL_MIT.txt",
+      "bytes": 1080,
+      "sha256": "1c530b585d1bc2d7d9b08cd47291ed2467699c2d0265e6fe7c6d7fe3de75ff49"
+    },
+    {
+      "path": "engines/obsidian/PROVENANCE.json",
+      "bytes": 984,
+      "sha256": "633cae42c2b58df653e52888745d525f8dbf3605ab3f48393509f1bd2b51838e"
+    },
+    {
+      "path": "engines/obsidian/README.md",
+      "bytes": 7049,
+      "sha256": "5ac803d3884434393dc53a81198d0bbb0d6920143f8e7f4d69965027260b6b43"
+    },
+    {
+      "path": "engines/obsidian/SHA256SUMS.json",
+      "bytes": 9752,
+      "sha256": "1afbad264f2ddc153dc87d5608878dec679d6a66cec6d4a6433f106ddde0361c"
+    },
+    {
+      "path": "engines/obsidian/allocate_samples.py",
+      "bytes": 2380,
+      "sha256": "9f85e733d42a579f4f771b2b27ce5377c1fac97b093b40099172a8420fafe606"
+    },
+    {
+      "path": "engines/obsidian/assets/brown_mud_rocks_01_diff_2k.jpg",
+      "bytes": 3144138,
+      "sha256": "aa4b314c8e488c2d3d0db399e1023420ffb2198293f7ed07441bde7e70c8c57e"
+    },
+    {
+      "path": "engines/obsidian/assets/brown_mud_rocks_01_disp_2k.jpg",
+      "bytes": 635930,
+      "sha256": "d0fa5d1baeeb62c54eb99a05947336b9fd91e19d7ce9a58c8dcc2c6c807622d4"
+    },
+    {
+      "path": "engines/obsidian/assets/brown_mud_rocks_01_nor_gl_2k.jpg",
+      "bytes": 4213708,
+      "sha256": "23bdf3ea51a396379183e01e5899e62cedcda151c5eb1cd9af95330330feca82"
+    },
+    {
+      "path": "engines/obsidian/assets/brown_mud_rocks_01_rough_2k.jpg",
+      "bytes": 2676813,
+      "sha256": "7e3be7bd34556f174a4a201ad4735873c575a60dd9a5a7032e160a169c5428ac"
+    },
+    {
+      "path": "engines/obsidian/assets/build_record.json",
+      "bytes": 228,
+      "sha256": "ea209071a66b3d476191807009e70dd78a4b541b639f94a03fc49786bdf01c92"
+    },
+    {
+      "path": "engines/obsidian/assets/dem/placement.json",
+      "bytes": 358,
+      "sha256": "bea5ffdec5b65868994e18bf156b865d5d8be7e9b027df557d0acaaa88b6605f"
+    },
+    {
+      "path": "engines/obsidian/assets/dem/source.json",
+      "bytes": 563,
+      "sha256": "afe117f009ac595b04f1bad2076f529b1fcef3a00e487c374f7eba19dec875ff"
+    },
+    {
+      "path": "engines/obsidian/assets/dem/terrain_11_360_818.png",
+      "bytes": 130752,
+      "sha256": "9dfc055be6133d6cd3e17356c489741ab9e9d193372fc9802127dc4b40c031cd"
+    },
+    {
+      "path": "engines/obsidian/assets/dem/terrain_11_360_819.png",
+      "bytes": 146966,
+      "sha256": "bb74804fdcb4277e9838fa3b11f9012a80d345c61ea7fb2464a5a9c6115a908a"
+    },
+    {
+      "path": "engines/obsidian/assets/dem/terrain_11_360_820.png",
+      "bytes": 140632,
+      "sha256": "d8986da2693cb7adf5bc39466d62b1dfcaa6a447c823638dc6c09c6ad04772df"
+    },
+    {
+      "path": "engines/obsidian/assets/download_manifest.json",
+      "bytes": 5808,
+      "sha256": "ccb0f3484afe648342347eb4a9a20cfafdde1fe83711572058facef8874b9158"
+    },
+    {
+      "path": "engines/obsidian/assets/geometry_validation.json",
+      "bytes": 506,
+      "sha256": "b4313874adc10d12a7ce5be4566ca42f7f693f826e3678275e283bd99d072869"
+    },
+    {
+      "path": "engines/obsidian/assets/overcast_soil_puresky_2k.hdr",
+      "bytes": 4568000,
+      "sha256": "5414e1ac0c35e451d28595b2a2cba05e2ca301fdeb755b0a469408443093dafc"
+    },
+    {
+      "path": "engines/obsidian/assets/scan_provenance.json",
+      "bytes": 876,
+      "sha256": "e36dc03b8f25947bec6e85c2e962d006aa5ea50baffe4f155798520339e4f665"
+    },
+    {
+      "path": "engines/obsidian/assets/scans/boulder_01/boulder_01.bin",
+      "bytes": 2938808,
+      "sha256": "7f5b06503d62bd95bfe9c6b8a354a5cc8ff04a4d271a8cf87a3e3125db4232d7"
+    },
+    {
+      "path": "engines/obsidian/assets/scans/boulder_01/boulder_01_2k.gltf",
+      "bytes": 2773,
+      "sha256": "52d118b56748a18509e4ec0075d07b254d72a0401793f22363c0bb3a682e7361"
+    },
+    {
+      "path": "engines/obsidian/assets/scans/boulder_01/textures/boulder_01_arm_2k.jpg",
+      "bytes": 2273068,
+      "sha256": "ab52859dde519b4822111aa60916b6d21f8a6966c67b6cec44d1cd0775b8a86a"
+    },
+    {
+      "path": "engines/obsidian/assets/scans/boulder_01/textures/boulder_01_diff_2k.jpg",
+      "bytes": 3672483,
+      "sha256": "90bbaa17c1fe0254d2b0b6e5148264fa834953a72724d566f14af029eebe3ca3"
+    },
+    {
+      "path": "engines/obsidian/assets/scans/boulder_01/textures/boulder_01_nor_gl_2k.jpg",
+      "bytes": 4649207,
+      "sha256": "5174b318712ac7725cbcb55d422607f9c66d7f8d035c5412ab897b5939e2db6b"
+    },
+    {
+      "path": "engines/obsidian/assets/scans/namaqualand_boulder_03/namaqualand_boulder_03.bin",
+      "bytes": 1450268,
+      "sha256": "d24151021ed310fe3207f1b5964bff22b583e77d2617427a88b5dcbc0447a475"
+    },
+    {
+      "path": "engines/obsidian/assets/scans/namaqualand_boulder_03/namaqualand_boulder_03_2k.gltf",
+      "bytes": 2823,
+      "sha256": "5d135c8e3a74edf7f53ae04d41deed19582ed6ced6d629d5d51e730319ed0dcb"
+    },
+    {
+      "path": "engines/obsidian/assets/scans/namaqualand_boulder_03/textures/namaqualand_boulder_03_arm_2k.jpg",
+      "bytes": 2441884,
+      "sha256": "24f443dd1c1da875a3653f0820d02e3140319fe199123765987d166ada3d1ddc"
+    },
+    {
+      "path": "engines/obsidian/assets/scans/namaqualand_boulder_03/textures/namaqualand_boulder_03_diff_2k.jpg",
+      "bytes": 3341422,
+      "sha256": "d7bfae01eed80a6318679f13a8be14253fa0f6338b93f6e2126946f86bea4f82"
+    },
+    {
+      "path": "engines/obsidian/assets/scans/namaqualand_boulder_03/textures/namaqualand_boulder_03_nor_gl_2k.jpg",
+      "bytes": 2919390,
+      "sha256": "e83ccfe677a6c82aadd56d1e5138aa97823a23cde32573dd65dafb321fffeb33"
+    },
+    {
+      "path": "engines/obsidian/assets/scene_manifest.json",
+      "bytes": 1353627,
+      "sha256": "6d9415db265012d218b85a60839dc771c3e687c967a459a79855fd06e02e7666"
+    },
+    {
+      "path": "engines/obsidian/assets/sky.bin",
+      "bytes": 6291464,
+      "sha256": "405a297c5d2f48dbea85bf0ed30aff8cca78000be4ca865de426612c9dc3949c"
+    },
+    {
+      "path": "engines/obsidian/authoring.py",
+      "bytes": 5698,
+      "sha256": "b2f80335f30544b979993693f19ab6b9946a0e2536e0adb1c9bc3da954ca4b94"
+    },
+    {
+      "path": "engines/obsidian/build_scene.py",
+      "bytes": 14617,
+      "sha256": "77759c1e6f165048b02de96760f912c88385dfe9f4b90cf202faaeb89ad115cd"
+    },
+    {
+      "path": "engines/obsidian/export_exr.py",
+      "bytes": 2153,
+      "sha256": "bea366cbf04abac65f22e0df8cf2bf3d2a59dc1c929e534f06301a933d872f61"
+    },
+    {
+      "path": "engines/obsidian/finish.py",
+      "bytes": 2913,
+      "sha256": "c0a3f265aaf79091a9ba0da4990afb075530da6a27f6344b214a7d342d3e294d"
+    },
+    {
+      "path": "engines/obsidian/finish_v2.py",
+      "bytes": 2981,
+      "sha256": "94942bf92ff85f0c59e250aae59d245ba33d7f5e7dd8b5a1db6d36af0135c4a7"
+    },
+    {
+      "path": "engines/obsidian/finish_v4.py",
+      "bytes": 2543,
+      "sha256": "3d98091004c5c45ec4c1056b110cdde99a6a7007c8727ee18b50724a994a9df9"
+    },
+    {
+      "path": "engines/obsidian/include/cybr/geometry.hpp",
+      "bytes": 10645,
+      "sha256": "7f73697f534707f0d9b2363560822589cf2e5e5724ec117628c002a440909c21"
+    },
+    {
+      "path": "engines/obsidian/include/cybr/math.hpp",
+      "bytes": 5784,
+      "sha256": "c4e9244fd7c399fbc37887d71fcede9cfbd81313193c8f6ad10d3dee4d991e29"
+    },
+    {
+      "path": "engines/obsidian/include/cybr/spectrum.hpp",
+      "bytes": 3779,
+      "sha256": "34a1ca98911ddf7149f815e27cef7988e94dd650608301964f59be3cee3b4c38"
+    },
+    {
+      "path": "engines/obsidian/reference/Obsidian_Reach_IV.png",
+      "bytes": 3115457,
+      "sha256": "8a66a753cba57431cd4341fe046b03303fe53cd78794182f3d9fef45d014ec41"
+    },
+    {
+      "path": "engines/obsidian/reference/hero_budget.bin",
+      "bytes": 5734408,
+      "sha256": "a9d6c6cddb8459529ef0e86285f1cb527551fc99029621904d6fcc7b516e0605"
+    },
+    {
+      "path": "engines/obsidian/reference/hero_finish.json",
+      "bytes": 547,
+      "sha256": "19e9e7606b68cbef62c0d07d865b38202a00dca17af55f3c5cb2cb2d048f31cb"
+    },
+    {
+      "path": "engines/obsidian/reference/hero_render.json",
+      "bytes": 227,
+      "sha256": "2044a4eb5ff75e50e768181f076d2e9746950479779e2d11787b0735f1f7dc53"
+    },
+    {
+      "path": "engines/obsidian/reference/hero_sampling.json",
+      "bytes": 72,
+      "sha256": "d3b8d803ee03254366c9497607db62e3d1d736da6f202d0d5311c118c30635d7"
+    },
+    {
+      "path": "engines/obsidian/reference/sampling_budget.json",
+      "bytes": 302,
+      "sha256": "b9a08a49ef0f549c3876d0453ab1033b230180f83c015c5f863fb9c4e96f3284"
+    },
+    {
+      "path": "engines/obsidian/requirements.txt",
+      "bytes": 74,
+      "sha256": "0b741430ca6cb50ad9cb34d3e37828442ac0e58d9daa6fe3ad11a905dc5f68e5"
+    },
+    {
+      "path": "engines/obsidian/run.py",
+      "bytes": 4021,
+      "sha256": "1dd2322663b8acd946dbbae7eedd581cc3a726c3bf2c76b03f779032fb43e991"
+    },
+    {
+      "path": "engines/obsidian/src/render.cpp",
+      "bytes": 23222,
+      "sha256": "b6cf76099a143f674fe797819f5350e9b67481bdf0ebd0bf7a2ad7a6460894ee"
+    },
+    {
+      "path": "engines/obsidian/src/scene_maps.hpp",
+      "bytes": 4134,
+      "sha256": "8f5af16a81ba394ab791d3cd824a097a74853508d89d36e11de6762278a3957d"
+    },
+    {
+      "path": "engines/obsidian/tests/bvh_regression.cpp",
+      "bytes": 1155,
+      "sha256": "4f86e2a009de5bc86aa9dc1972395e574e540e4486a4840f7ebbabd349863a9f"
+    },
+    {
+      "path": "engines/obsidian/tests/check_scene.py",
+      "bytes": 2660,
+      "sha256": "5585777f0eb485703c1676eccf5aa20b5fbf7e348e4c9f44e2c5553dff6734d0"
+    },
+    {
+      "path": "engines/obsidian/tests/core_smoke.cpp",
+      "bytes": 962,
+      "sha256": "5857e22d737e580bfc60c63d2398d9d99fa52306659b3f901891469de4a333dd"
+    },
+    {
+      "path": "engines/obsidian/tests/renderer_checks.cpp",
+      "bytes": 1599,
+      "sha256": "f31662172d3926cf88eb7d45544b9b172c7e329e8955ab04a22a2f55be120574"
+    },
+    {
+      "path": "engines/obsidian/tests/sampling_consistency.cpp",
+      "bytes": 1149,
+      "sha256": "53e3cf619e203f828ed078f93d9e416ead07e4917d23124695f0565e1b88235b"
+    },
+    {
+      "path": "engines/obsidian/tests/verify_exr.py",
+      "bytes": 4310,
+      "sha256": "1b61478987e03551907949cb5b2bd8035d7ad89299ae379977c6656e54a00903"
+    },
+    {
+      "path": "engines/obsidian/vendor/cybrelements/lava_optics.py",
+      "bytes": 1727,
+      "sha256": "3438c6e344abbdaaacdb2a0cfaecf733dbcd0c1d9767e8d4eeafaf3ee59a168d"
+    },
+    {
+      "path": "engines/obsidian/vendor/cybrgeo/__init__.py",
+      "bytes": 292,
+      "sha256": "0fd70eb1aa37024dc65d651c550ac7e97961b9bc469ce6e772177a5aee0975be"
+    },
+    {
+      "path": "engines/obsidian/vendor/cybrgeo/core.py",
+      "bytes": 5557,
+      "sha256": "aa6eaa0976abc45d5c04604e771e93afc951e6d3aa69700bb1427c7808fc0552"
+    },
+    {
+      "path": "engines/obsidian/verification/bvh_regression.log",
+      "bytes": 137,
+      "sha256": "dec78df7732281276fc2131cb989ce56398428f95cb3db2f84fe567d912bab01"
+    },
+    {
+      "path": "engines/obsidian/verification/core_smoke.log",
+      "bytes": 74,
+      "sha256": "1beeb9609fcb0237fc1ca3e935e6b983878ecf8a904e679e7c129178bb117284"
+    },
+    {
+      "path": "engines/obsidian/verification/environment.json",
+      "bytes": 588,
+      "sha256": "d989a7e611a112dd15a6624407e1fc6f3ed24096c768f03ab1db005cdd8e516f"
+    },
+    {
+      "path": "engines/obsidian/verification/exr_check.json",
+      "bytes": 335,
+      "sha256": "b17e3415b27d43d1bc3e368c8c0881f14c950c65e6eec28452d55d18a9e6be17"
+    },
+    {
+      "path": "engines/obsidian/verification/hero_render.log",
+      "bytes": 539,
+      "sha256": "c8805f1455ba9416ac87f09f31ca4d3c316d94f4edb01b51170a4dfb779c8a55"
+    },
+    {
+      "path": "engines/obsidian/verification/renderer_checks.log",
+      "bytes": 152,
+      "sha256": "f826b24cc3f410a3181ff3a4e6515285667b255b169e356a13655d160dbc2627"
+    },
+    {
+      "path": "engines/obsidian/verification/sampling_consistency.log",
+      "bytes": 782,
+      "sha256": "ed7aaee923caabc8769729b94df351ed2a404dc5503d0cf843827b717e0c5c67"
+    },
+    {
+      "path": "engines/obsidian/verification/scene_check.json",
+      "bytes": 561,
+      "sha256": "4b5a92d1668b878bbcf55cb7ea5fff50a76e86d8ed0414b06e2a48dd27d47b68"
+    },
+    {
+      "path": "evidence/all-scenes-verification.json",
+      "bytes": 29015,
+      "sha256": "b4a4229da318d650098e21f290a862bf2a72c9b099895b09b75178ac039796b8"
+    },
+    {
+      "path": "evidence/build-canyon.log",
+      "bytes": 651,
+      "sha256": "7c61949f3ded8dd6c4219c6371e2e6a3e7d7ac0971b12d8eb13b74f411863307"
+    },
+    {
+      "path": "evidence/build-coast.log",
+      "bytes": 1016,
+      "sha256": "a547a66bc2d005f43aa0a4925dfb7ac4aaeafed91bcada92aa33780f3587fcc2"
+    },
+    {
+      "path": "evidence/build-forest.log",
+      "bytes": 10171,
+      "sha256": "d36a5f2c6ef370b54f6d9fd4ffa1bab070c646916a88b04cc8deafe5f8904ff9"
+    },
+    {
+      "path": "evidence/build-geode.log",
+      "bytes": 5578,
+      "sha256": "5256310ad7335e0a185d26874926c61de2f66ba05cd1b08b0cc89a752be1c51a"
+    },
+    {
+      "path": "evidence/build-hot-streamed.log",
+      "bytes": 1708,
+      "sha256": "b562e70cbb8c951a443e1fea5e06ec5a27da82bc33c43fa54497e2c6487da59c"
+    },
+    {
+      "path": "evidence/build-hot.log",
+      "bytes": 653,
+      "sha256": "73611e0d0cb48e319cf65ba9fb4c732b9caf26599a12a62807751d5abc5c8e37"
+    },
+    {
+      "path": "evidence/build-obsidian-reach.command.json",
+      "bytes": 1614,
+      "sha256": "0e9e3db1d0ce35714dff2d505fe219d862580111ece98acf86a2d3db1d880d06"
+    },
+    {
+      "path": "evidence/build-obsidian-reach.execution.json",
+      "bytes": 1232,
+      "sha256": "df9ef131b83d1acea82d235f95e862d60431ce94aa8759864fdb8ac52cbf47ad"
+    },
+    {
+      "path": "evidence/build-obsidian-reach.log",
+      "bytes": 373,
+      "sha256": "08c5512708b974fac68745d437468a5f528058a125fc2577ae4804dd7a153b82"
+    },
+    {
+      "path": "evidence/build-obsidian.log",
+      "bytes": 373,
+      "sha256": "224cd444b68f857d477cd0be79165a881e96421b9fc3597f795713de29ffc4d4"
+    },
+    {
+      "path": "evidence/build-progress.log",
+      "bytes": 511,
+      "sha256": "ce0a6623e723e54acc01f2e347e87aad2ca562e0607440916e3be5b5ff91ea5d"
+    },
+    {
+      "path": "evidence/canyon-original-probe.log",
+      "bytes": 436,
+      "sha256": "e9b0daebbce57584263a25f314488650d60fe4da86c204497c9a74b190ae4686"
+    },
+    {
+      "path": "evidence/canyon-probe-command.json",
+      "bytes": 881,
+      "sha256": "26c6f74d344547690d05f91d412d3a1c07d650e527d41b2f2bb05a4a8522c6af"
+    },
+    {
+      "path": "evidence/compile-geo.command.json",
+      "bytes": 1866,
+      "sha256": "bcf596357c725cac1d016d46346580e2cba236d1c89697e0246fb96565a12a47"
+    },
+    {
+      "path": "evidence/compile-geo.execution.json",
+      "bytes": 1343,
+      "sha256": "5b094669bda8835477112f551d43f83f53d339a6dd26260b369fc6d5693a945b"
+    },
+    {
+      "path": "evidence/compile-geo.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/compile-geode.command.json",
+      "bytes": 1924,
+      "sha256": "3e970550370fc7bdef593a89626243d79398384bf24b262d25ddbca518ab0721"
+    },
+    {
+      "path": "evidence/compile-geode.execution.json",
+      "bytes": 1373,
+      "sha256": "0b591c345924a37e56b82722fe82e0b09c9260f54c06de133592d205ee1c5dd7"
+    },
+    {
+      "path": "evidence/compile-geode.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/compile-geode.resources.txt",
+      "bytes": 903,
+      "sha256": "01e489a4e2d258b1e0a09a0f769003100d14b51a1ea70bd3647eb42308310b01"
+    },
+    {
+      "path": "evidence/compile-hot.command.json",
+      "bytes": 1865,
+      "sha256": "46ec6ae973c3b500027810ce4d4824c59f14ee2ca87f61255becea8b53897fdd"
+    },
+    {
+      "path": "evidence/compile-hot.execution.json",
+      "bytes": 1342,
+      "sha256": "d2c8891983b5857c87795a93f89bb329635984f4f93940907b602124fbb9bdd4"
+    },
+    {
+      "path": "evidence/compile-hot.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/compile-hot.resources.txt",
+      "bytes": 886,
+      "sha256": "848a800768b7d945f5a70d39e8515a65d7c9471284f4f35b2d6c283e64f20f41"
+    },
+    {
+      "path": "evidence/compile-obsidian.command.json",
+      "bytes": 1919,
+      "sha256": "752694aa89abd788e0040a16f4726c57d7805183326d6f4cf1541d3e7d6aeea6"
+    },
+    {
+      "path": "evidence/compile-obsidian.execution.json",
+      "bytes": 1372,
+      "sha256": "cfb07a5c7b6b96971bb53dd1b46d18b0e6ba5bb7ca9ab7d5a9bd5f352f86b142"
+    },
+    {
+      "path": "evidence/compile-obsidian.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/compile-obsidian.resources.txt",
+      "bytes": 902,
+      "sha256": "265f425df65ead3591cf7e131745f7ec714aca2253845215d321dd576a8743b2"
+    },
+    {
+      "path": "evidence/compile-original-geo.command.json",
+      "bytes": 1146,
+      "sha256": "081f483092a1b75e91066516bf0c4283fb05c7a5caaed7ccc9b58d80529c4a53"
+    },
+    {
+      "path": "evidence/compile-original-geo.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/compile-original-geo.resources.txt",
+      "bytes": 927,
+      "sha256": "9c7347074400c75baa0073cb92ad3056187cac523f78a6f88fe8f55210b2e00c"
+    },
+    {
+      "path": "evidence/compile-original-geode.command.json",
+      "bytes": 1204,
+      "sha256": "bcaee1a206346d316bfd16789bc67c5c10cd5a9cd88f65a05ff200b71c42c111"
+    },
+    {
+      "path": "evidence/compile-original-geode.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/compile-original-geode.resources.txt",
+      "bytes": 938,
+      "sha256": "2d05c30eea0b0ab56930481ff8fe1ea17e32ce6b957580be1e17f09bf1b33acb"
+    },
+    {
+      "path": "evidence/compile-original-hot.command.json",
+      "bytes": 1146,
+      "sha256": "a565fa5a8d084a70f9109765941b32cbb4e453c98e15d315b3a579414e8c96a1"
+    },
+    {
+      "path": "evidence/compile-original-hot.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/compile-original-hot.resources.txt",
+      "bytes": 924,
+      "sha256": "9142402cb0e9facdead7998d2506978364b2800db9e72eb1ce1d38c7c5cde527"
+    },
+    {
+      "path": "evidence/compile-original-obsidian.command.json",
+      "bytes": 1276,
+      "sha256": "b7aba619fcdfdc31606fdf670992a910b7b7bbf7a581d07c682430d32e72758d"
+    },
+    {
+      "path": "evidence/compile-original-obsidian.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/compile-original-obsidian.resources.txt",
+      "bytes": 980,
+      "sha256": "4609b5de2682c6b21781b2a37ac5dd840d2efad622012cd88e034428af7bc250"
+    },
+    {
+      "path": "evidence/compile-original.log",
+      "bytes": 903,
+      "sha256": "bc1aaab2f6e2a17f99c72af3542b7b7e176a6d15e6be08fd089531960b814755"
+    },
+    {
+      "path": "evidence/compile-r2.log",
+      "bytes": 1233,
+      "sha256": "9a0b1291dcc27d0c3284536444094afb1ba3a2a74e3481047e7f5b20902ab6a8"
+    },
+    {
+      "path": "evidence/continue-builds.log",
+      "bytes": 230,
+      "sha256": "a9511703d7d1815d8087e0ce5c23cbe000a8bcb200daaf208f9f522fda760042"
+    },
+    {
+      "path": "evidence/enhance-batch.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/enhance-canyon.log",
+      "bytes": 1419,
+      "sha256": "fce6cec14c910557935ce3be8495444fa30509169fdce28528bda436cb1e9ff7"
+    },
+    {
+      "path": "evidence/enhance-coast.log",
+      "bytes": 1503,
+      "sha256": "4e33e0dc47d02bac5084192b5c37e9825134ed9cd7bb5389b4a35bb9c32a9b07"
+    },
+    {
+      "path": "evidence/enhance-forest.log",
+      "bytes": 1856,
+      "sha256": "342fc698f91771f9590d1957a9e021d69b75aa59bb99fcdaeb62b20846399041"
+    },
+    {
+      "path": "evidence/enhance-geode.log",
+      "bytes": 1208,
+      "sha256": "beb6df970840ed832982586c395c2ccdbd11cd30872692a4cb30a9b9a2cb67e4"
+    },
+    {
+      "path": "evidence/enhance-hot.log",
+      "bytes": 2175,
+      "sha256": "7ad691e4fe065b20aae8dc174650cc80c5d219637c55809d5449d7b831e4dafa"
+    },
+    {
+      "path": "evidence/enhance-obsidian.log",
+      "bytes": 1320,
+      "sha256": "bfcd7c788fec0b06be984cd268929fd09b76f5d4ad5e231d520d6d2b48c7a4d2"
+    },
+    {
+      "path": "evidence/environment-final.json",
+      "bytes": 707,
+      "sha256": "31504db7512593141fafd3d4ce21e95bc406d4e7aa604fee1be57a4ac2286bb4"
+    },
+    {
+      "path": "evidence/environment.json",
+      "bytes": 707,
+      "sha256": "31504db7512593141fafd3d4ce21e95bc406d4e7aa604fee1be57a4ac2286bb4"
+    },
+    {
+      "path": "evidence/execution-integrity.json",
+      "bytes": 7161,
+      "sha256": "e3713436aae2cfe3f31aea281bd793b3ca0f0fb379c86af6c494a4d177531af5"
+    },
+    {
+      "path": "evidence/final-audits-progress.log",
+      "bytes": 2054,
+      "sha256": "257ae64061b256142d4f0d1009f6b67d2798a8517abaa6d9e6d610e7ed28b73e"
+    },
+    {
+      "path": "evidence/finalize-progress.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/finish-reproduction.json",
+      "bytes": 2783,
+      "sha256": "d221691df3ecc4c1c7d347d2fa4ea32e4e9599bec1ff8dd1ff71d4a891c3b805"
+    },
+    {
+      "path": "evidence/forest-foliage-preview.log",
+      "bytes": 1924,
+      "sha256": "1d0c186399c138c04c65cf949390799cebed6866a17e1de59e2b6a2291e1ad6d"
+    },
+    {
+      "path": "evidence/gallery-browser-verification.json",
+      "bytes": 5394,
+      "sha256": "7d2be800a07fc4e78530f03717fea4e551ec2436796718a646813c48b18aaecf"
+    },
+    {
+      "path": "evidence/gallery-browser.log",
+      "bytes": 132,
+      "sha256": "779a03d71c18d29320af1ea2a2b3a8c6de261c4ec226d8a9198db698a1b5ef4e"
+    },
+    {
+      "path": "evidence/gallery-build.log",
+      "bytes": 144,
+      "sha256": "6e6d6868f8b45ee23c0ad869ed2e0b25f4ecf31daad727a41fc6f2b0de8079f2"
+    },
+    {
+      "path": "evidence/gallery-desktop.png",
+      "bytes": 835162,
+      "sha256": "dbe65848d65ced768e8a240d34e6d06ac723e933310c2a5dd6660693b5510fd8"
+    },
+    {
+      "path": "evidence/gallery-mobile.png",
+      "bytes": 169864,
+      "sha256": "6a8ac57be787a6866e98082667038a83023f03d2427e82404e97ebb6c09c886c"
+    },
+    {
+      "path": "evidence/gallery-scenes.json",
+      "bytes": 45929,
+      "sha256": "fd5962e3bd542931874b2e2c7c85d4391de91ac3b7c5986f44692652e1025586"
+    },
+    {
+      "path": "evidence/gallery-standalone-offline.png",
+      "bytes": 515577,
+      "sha256": "5f263f599001c3803c13d38fdf27a6f2170117cefcfef662e10e9bb029c28651"
+    },
+    {
+      "path": "evidence/geometry/canyon.json",
+      "bytes": 1021,
+      "sha256": "dcd8211839c0b9bdd1dfd1c8fd195b584885455e0fd06d6963f62b0dcc423c55"
+    },
+    {
+      "path": "evidence/geometry/coast.json",
+      "bytes": 987,
+      "sha256": "d5b951063c48cf8631d833b767767497b2bc7621abb9dae9e0d0868b582c3cc4"
+    },
+    {
+      "path": "evidence/geometry/forest.json",
+      "bytes": 1017,
+      "sha256": "285ba65456d693fbd20ad857e20c683f639691ad1a00346b4b520c2eb0f49040"
+    },
+    {
+      "path": "evidence/geometry/geode.json",
+      "bytes": 1051,
+      "sha256": "7390dfc605ed251f6fe24508bdacc44528e22989bbfe7161e033ecbc086cc6cc"
+    },
+    {
+      "path": "evidence/geometry/hot.json",
+      "bytes": 993,
+      "sha256": "760bac11900b60443133239cdb1309f4bae71b93a63463342e3afa59c2e0ad9d"
+    },
+    {
+      "path": "evidence/geometry/obsidian.json",
+      "bytes": 1033,
+      "sha256": "25156b7a41dd9001dbbe500c019334baf9dcb5f2740cbd7956d849bb1b032585"
+    },
+    {
+      "path": "evidence/obsidian-first-attempt-command.json",
+      "bytes": 1094,
+      "sha256": "5a56784ad3c59bc15ce5caaf4f924beaf56ac21412373e59a7d68b96287661fa"
+    },
+    {
+      "path": "evidence/obsidian-first-attempt.log",
+      "bytes": 39,
+      "sha256": "de39d69a7781d02ba6e961c04452669e9fb4f0176faeb26519779706b9722ea8"
+    },
+    {
+      "path": "evidence/obsidian-memory-scheduling-retry.log",
+      "bytes": 583,
+      "sha256": "c31bd39f9e8de6471756a129b3a9ac5c1b6304ca59504205b5ffdf052559e4a3"
+    },
+    {
+      "path": "evidence/obsidian-tests.log",
+      "bytes": 1145,
+      "sha256": "05c62ee4768944c356bd71c0264ff6e0d1de13547e64882255c54e6a84fb2d7d"
+    },
+    {
+      "path": "evidence/original-self-test-geo.command.json",
+      "bytes": 757,
+      "sha256": "7e689331be64403830b9b582e788d4153b26e9e585bb3c6112ce9c2c5495817e"
+    },
+    {
+      "path": "evidence/original-self-test-geo.log",
+      "bytes": 293,
+      "sha256": "d1fc60918f7d343ed1c1cca1d4bb45af034de416cd925fea5130161756fc7989"
+    },
+    {
+      "path": "evidence/original-self-test-geo.resources.txt",
+      "bytes": 776,
+      "sha256": "ee5a5097b19cc0b7a79155a77cc4958fd88d2c148b7f0e955ccfb3be74a3f4f4"
+    },
+    {
+      "path": "evidence/original-self-test-geode.command.json",
+      "bytes": 766,
+      "sha256": "d8a499f25d2fb515ad2bcd8ae0a67f089651975ea98a1c1d39bc804d6118b635"
+    },
+    {
+      "path": "evidence/original-self-test-geode.log",
+      "bytes": 306,
+      "sha256": "dbcf1afbb639d8a9aa397e1344ba66dd76380846c8135664311cb76c9abe8898"
+    },
+    {
+      "path": "evidence/original-self-test-geode.resources.txt",
+      "bytes": 771,
+      "sha256": "76b79943a4e843eb3f69e1cf14a968191e73a4088c6cfdc6f7b7d4ad0019e206"
+    },
+    {
+      "path": "evidence/original-self-test-hot.command.json",
+      "bytes": 757,
+      "sha256": "c351aae826ea1f5096ab6808c9d187ea43d3e0fb58a7e0635fe6fb476399a72b"
+    },
+    {
+      "path": "evidence/original-self-test-hot.log",
+      "bytes": 304,
+      "sha256": "899c403f58f47d83fa81bd1baf011f24ab65625f8e12cef95fa7762373dc90c5"
+    },
+    {
+      "path": "evidence/original-self-test-hot.resources.txt",
+      "bytes": 776,
+      "sha256": "388de892b32848adba6aa066d07b099174abc9c4840a9476c56f83def0c7ecd1"
+    },
+    {
+      "path": "evidence/original-source-preservation.json",
+      "bytes": 3702,
+      "sha256": "94c2bf7d980d7b76f767a1a83ff4e0a17fd8eafddff16f269f80d175b76563b2"
+    },
+    {
+      "path": "evidence/packaging.log",
+      "bytes": 1499,
+      "sha256": "9607592b149ace5feaefc038146ff4c55b6497cb6ed9b77363c665bae2e898f3"
+    },
+    {
+      "path": "evidence/python_roundtrip.json",
+      "bytes": 42,
+      "sha256": "049b74f665d911c284dc40981ecf3c7923272a48084cb2ad4c2d67b8815bb6a2"
+    },
+    {
+      "path": "evidence/refinish-first-two.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/refinish-forest-progress.log",
+      "bytes": 274,
+      "sha256": "b1c0f6941ed14d067d8dfb352d70225202f36a20ab11c9e12a658c04842868ff"
+    },
+    {
+      "path": "evidence/refinish-hot-progress.log",
+      "bytes": 247,
+      "sha256": "7c2fc6b0ceecc21b7dba52eba34b347579fb97edfa538fef186f2cd20f8087a4"
+    },
+    {
+      "path": "evidence/remaining-progress.log",
+      "bytes": 400,
+      "sha256": "19070740e4cfc1a49cd103efaf9f31f4300c4a4451e0885ecb3e0f5c866ec45c"
+    },
+    {
+      "path": "evidence/render-batch.json",
+      "bytes": 2176,
+      "sha256": "d23cffc102abd454a8ff0206f42946eef3752e06633adedd7e74865cfd20e3db"
+    },
+    {
+      "path": "evidence/render-canyon-progress.log",
+      "bytes": 1576,
+      "sha256": "7db4ea0b06c5721d40dd211bb63aaf4704ea8f84c820bd252fabdefb742812b1"
+    },
+    {
+      "path": "evidence/render-coast-progress.log",
+      "bytes": 1099,
+      "sha256": "ebd66d01c6485cdb0582c7add990cfbfd4f7e57cac9d904fef46370e1beddc23"
+    },
+    {
+      "path": "evidence/render-desert-hot-springs-progress.log",
+      "bytes": 2873,
+      "sha256": "b721d5dbef1f673cdf5cb36df382ac1bc4de907e467e628bec06058d44b46095"
+    },
+    {
+      "path": "evidence/render-drowned-geode-progress.log",
+      "bytes": 910,
+      "sha256": "8de3d10c0af81c1a4c0550238a4bfa261ba17541447c7722b39b55aca744173c"
+    },
+    {
+      "path": "evidence/render-fernwater-progress.log",
+      "bytes": 1076,
+      "sha256": "4801a62022da364c8884e4a1e05120ec25e7367c60753ae1e43a215f6c6294ca"
+    },
+    {
+      "path": "evidence/render-obsidian-progress.log",
+      "bytes": 583,
+      "sha256": "c31bd39f9e8de6471756a129b3a9ac5c1b6304ca59504205b5ffdf052559e4a3"
+    },
+    {
+      "path": "evidence/render-obsidian-reach-progress.log",
+      "bytes": 771,
+      "sha256": "3ca87a54eed9b8e4a0f455dfdb1fd9b5ffe2cd4cf44ad8724b62dd44ff3c2358"
+    },
+    {
+      "path": "evidence/renderer-upgrade.json",
+      "bytes": 580,
+      "sha256": "8cf3f973aa67d7d4e0c83672c6954ac89cbca7a061e3adc4354e3f170091d34d"
+    },
+    {
+      "path": "evidence/repro-canyon.log",
+      "bytes": 1419,
+      "sha256": "13673b8bc6aec10acf7c5bd49da5b2032e304a32d56134f2c3d9c29a06cae679"
+    },
+    {
+      "path": "evidence/repro-coast.log",
+      "bytes": 1502,
+      "sha256": "d5285a5603a9d99f1fd62a613429a4cef5c0965a2e432b3a9ba2f25eb2bd8f00"
+    },
+    {
+      "path": "evidence/repro-forest.log",
+      "bytes": 1857,
+      "sha256": "442ef87e3137251953776a3a926b49032f34445545b82f2e8eaf27c090357d44"
+    },
+    {
+      "path": "evidence/self-test-geo.command.json",
+      "bytes": 1530,
+      "sha256": "87b6367235cc040a60047269cda9ad76d1e23bd0fd6a6a63fd061036ea3a4486"
+    },
+    {
+      "path": "evidence/self-test-geo.execution.json",
+      "bytes": 1177,
+      "sha256": "a164fe4b372dc49e876d29e1c90c010fb83bd812296cd41ecb748b830c96d420"
+    },
+    {
+      "path": "evidence/self-test-geo.log",
+      "bytes": 293,
+      "sha256": "d1fc60918f7d343ed1c1cca1d4bb45af034de416cd925fea5130161756fc7989"
+    },
+    {
+      "path": "evidence/self-test-geode.command.json",
+      "bytes": 1533,
+      "sha256": "f0a58ac25f92682e511d012f0900c8e29bd32a89505f5eea39265c959a67eb6e"
+    },
+    {
+      "path": "evidence/self-test-geode.execution.json",
+      "bytes": 1178,
+      "sha256": "301cdb3f712657595b67d2fdd2ee47fed578aabda54ef48d867b3b61bcf10446"
+    },
+    {
+      "path": "evidence/self-test-geode.log",
+      "bytes": 306,
+      "sha256": "dbcf1afbb639d8a9aa397e1344ba66dd76380846c8135664311cb76c9abe8898"
+    },
+    {
+      "path": "evidence/self-test-geode.resources.txt",
+      "bytes": 764,
+      "sha256": "2861c7b10236d2f8744d5f7abdac9fe68d1fcabceceace5bee8e34bbec7076a4"
+    },
+    {
+      "path": "evidence/self-test-hot.command.json",
+      "bytes": 1528,
+      "sha256": "48c2244351f0c8f64d35947f7c96b0153f5cd2369569f6f4069f5034d360132d"
+    },
+    {
+      "path": "evidence/self-test-hot.execution.json",
+      "bytes": 1176,
+      "sha256": "620ae1b20fc5d97ca78dc7da3d855c5d91d32644cca45a296b4f755445c12425"
+    },
+    {
+      "path": "evidence/self-test-hot.log",
+      "bytes": 304,
+      "sha256": "899c403f58f47d83fa81bd1baf011f24ab65625f8e12cef95fa7762373dc90c5"
+    },
+    {
+      "path": "evidence/self-test-hot.resources.txt",
+      "bytes": 769,
+      "sha256": "d253e57f552707a8b43a87009158dcd6b82255d150ca41e52547611fed0c4689"
+    },
+    {
+      "path": "evidence/test-environment-sampling.json",
+      "bytes": 168,
+      "sha256": "6ac50c438318ae633ea1b870999088fc43c790e01d06a9b274ffe50eeedde180"
+    },
+    {
+      "path": "evidence/test-foliage-filter.log",
+      "bytes": 672,
+      "sha256": "2c9f57eb5be5daca84620fee134e9ee94829a6d2be37ef1690bc4d5c70e4a7be"
+    },
+    {
+      "path": "evidence/test-geometry-final.log",
+      "bytes": 1804,
+      "sha256": "c6efb5502f96576ef06913c0a33f90a1b66c81f870e1f5c7ab0406bb27847b31"
+    },
+    {
+      "path": "evidence/test-geometry.log",
+      "bytes": 1254,
+      "sha256": "730fe053837666d9de789ae02da24ebbcea108cba117f456737fd01d9197bc11"
+    },
+    {
+      "path": "evidence/test-r2-progress.log",
+      "bytes": 70,
+      "sha256": "a4b6f6f0168cc8cf04166dfa0e249dc36016787fee9962ad1bec446ea9e5ba35"
+    },
+    {
+      "path": "evidence/test-surface-atlas.json",
+      "bytes": 145,
+      "sha256": "b673cf176b7a0fcb87e940afb9c12f1540cfca711ec01d509e1060663432e3f1"
+    },
+    {
+      "path": "evidence/verify-all.log",
+      "bytes": 29015,
+      "sha256": "b4a4229da318d650098e21f290a862bf2a72c9b099895b09b75178ac039796b8"
+    },
+    {
+      "path": "execctl.py",
+      "bytes": 2969,
+      "sha256": "7c23e61ab6a820344d76f078d2002cfe4df52f410f56f8eaaa827736ae5be913"
+    },
+    {
+      "path": "execution-repair/diagnosis.json",
+      "bytes": 1289,
+      "sha256": "49d3cd3dfb65221712bc04067bdbbecf2378779a921a5497ad6f12b620fef697"
+    },
+    {
+      "path": "execution-repair/execution-repair.patch",
+      "bytes": 50682,
+      "sha256": "89dfd98a062671e7c783bfbbe63d289dba01d713bb0938b467dcd3ad851bca95"
+    },
+    {
+      "path": "execution-repair/jobs/compile-native-fresh/output.log",
+      "bytes": 1929,
+      "sha256": "c90a743992a8fa31b6725d0d715a4b36a708dfb9645c481413a743757f6148f8"
+    },
+    {
+      "path": "execution-repair/jobs/compile-native-fresh/spec.json",
+      "bytes": 349,
+      "sha256": "1efba21608c676b0453d4d562e6d93c93a4c21bb88c087f4a46464975b011795"
+    },
+    {
+      "path": "execution-repair/jobs/compile-native-fresh/state.json",
+      "bytes": 1185,
+      "sha256": "3bf35b7788ad00b61f83236423a1685c466d129464a5aa74159228e42bc60b4f"
+    },
+    {
+      "path": "execution-repair/jobs/final-tests-v2/output.log",
+      "bytes": 4530,
+      "sha256": "16d9784d35273ceed4a52d8eba59738d0b174636bcf231c7c1199f53a26fe668"
+    },
+    {
+      "path": "execution-repair/jobs/final-tests-v2/spec.json",
+      "bytes": 393,
+      "sha256": "143c5238240039b0bfb72569caa3d69db3466e7345113796dd6dd34069ade416"
+    },
+    {
+      "path": "execution-repair/jobs/final-tests-v2/state.json",
+      "bytes": 1233,
+      "sha256": "a13125512f6c7e0fb62040d0ce5b68e58c7fff065a191a6f941dd4d2ee7841cd"
+    },
+    {
+      "path": "execution-repair/jobs/native-render-proof/output.log",
+      "bytes": 2413,
+      "sha256": "abe79e756f0cace8108f8e4fb14e5c7915f2364b9d288e1a134393779e201583"
+    },
+    {
+      "path": "execution-repair/jobs/native-render-proof/spec.json",
+      "bytes": 558,
+      "sha256": "ec6de373de2b093af0d246edddc3e04e06d5e42e60e337da3a07dcc78fb6cae7"
+    },
+    {
+      "path": "execution-repair/jobs/native-render-proof/state.json",
+      "bytes": 1394,
+      "sha256": "53d4cf06718c11789c6d97743b4362c981b330dfbabe3d2d6923517d6905b3e8"
+    },
+    {
+      "path": "execution-repair/jobs/native-render-repeat/output.log",
+      "bytes": 843,
+      "sha256": "3df2bfcb61bfad496b231fdaee508d159a39837df5a44c3e571fd1c88c8db992"
+    },
+    {
+      "path": "execution-repair/jobs/native-render-repeat/spec.json",
+      "bytes": 574,
+      "sha256": "935d553d985a35c6c862fd289157cd46b9c7cfd25ed3eb143658815374e5c921"
+    },
+    {
+      "path": "execution-repair/jobs/native-render-repeat/state.json",
+      "bytes": 1414,
+      "sha256": "3df5be10112f12ca98f21309f2e0abd519ffa538ed381712c3e9935c8de062e7"
+    },
+    {
+      "path": "execution-repair/native-proof/finish.command.json",
+      "bytes": 1933,
+      "sha256": "edafca272527005a00b25c143b2e95d176de05e2e139e14d981e8d73fac3d4b9"
+    },
+    {
+      "path": "execution-repair/native-proof/finish.execution.json",
+      "bytes": 1400,
+      "sha256": "d341dbe835a9ad4cd0f05fa79970a3d7e7305e3eec17c6446ae88cb998ad31fd"
+    },
+    {
+      "path": "execution-repair/native-proof/finish.log",
+      "bytes": 424,
+      "sha256": "478fd1df13f2568d8f1ebb73768dd53f0616f99df394d7d25049198d023b0d2e"
+    },
+    {
+      "path": "execution-repair/native-proof/hero.json",
+      "bytes": 531,
+      "sha256": "cb2f5d20ccc32e74f2fd25c746405b2f95d0adbff8fcd3c4a177308c371880f2"
+    },
+    {
+      "path": "execution-repair/native-proof/hero.pfm",
+      "bytes": 774160,
+      "sha256": "08e6843577bbaac507100ae0424c5355dce4384d0cb6c4c3e21615dab136df89"
+    },
+    {
+      "path": "execution-repair/native-proof/hero.png",
+      "bytes": 103130,
+      "sha256": "19ce9453b38ec6e47edad31a26fbd73ac02d2d0c948b76901ef282eb1c0e678e"
+    },
+    {
+      "path": "execution-repair/native-proof/hero_albedo.pfm",
+      "bytes": 774160,
+      "sha256": "f2e901c2a9cd7f0db3f12e0b0c7bdea8e3687e1c256c825dcc14fe4bb22cea9f"
+    },
+    {
+      "path": "execution-repair/native-proof/hero_denoised.npy",
+      "bytes": 774272,
+      "sha256": "f1768df0e4eef40fa3ea26c68b06667e39973abf724d79c0f25f10f3087c4815"
+    },
+    {
+      "path": "execution-repair/native-proof/hero_depth.pfm",
+      "bytes": 774160,
+      "sha256": "3bbb01e136b1d7811eacb6e2846a0a10e367b6f4f3f278af53ef5d142fb0c32a"
+    },
+    {
+      "path": "execution-repair/native-proof/hero_emission.pfm",
+      "bytes": 774160,
+      "sha256": "db483f2d759ca438b4fc4fe4d39abf299583ce247cceb2d7456dfa61fc8fe00c"
+    },
+    {
+      "path": "execution-repair/native-proof/hero_normal.pfm",
+      "bytes": 774160,
+      "sha256": "d67c8323cd55c554b11d0074396e61e93942e8e1a350499ec161e7349965c01a"
+    },
+    {
+      "path": "execution-repair/native-proof/hero_raw.png",
+      "bytes": 136673,
+      "sha256": "14f0a93d51b95e90ab7eac3ca4d9cdccc4a307dd874282d622467e47fef355e5"
+    },
+    {
+      "path": "execution-repair/native-proof/hero_render.json",
+      "bytes": 288,
+      "sha256": "a00aa8bdbbd4a929ea8465d0f461e143ff537dac94216263c99ddf8d7144380a"
+    },
+    {
+      "path": "execution-repair/native-proof/hero_sampling.json",
+      "bytes": 64,
+      "sha256": "e2b82589a9af3459a58ae4247982be70c9c04afe66ebbcb936f041e07864e935"
+    },
+    {
+      "path": "execution-repair/native-proof/hero_variance.pfm",
+      "bytes": 774160,
+      "sha256": "b230fb430b628c2cb24823ac68b451e9fbde3e59b7e67694ea9d7f60e80c4bd8"
+    },
+    {
+      "path": "execution-repair/native-proof/native-metadata.json",
+      "bytes": 288,
+      "sha256": "a00aa8bdbbd4a929ea8465d0f461e143ff537dac94216263c99ddf8d7144380a"
+    },
+    {
+      "path": "execution-repair/native-proof/receipt.json",
+      "bytes": 6736,
+      "sha256": "aec0024ddbcaff7b37eb65c9d47d3ef1b8c39b87f6b36c704b75131c453b263b"
+    },
+    {
+      "path": "execution-repair/native-proof/render.command.json",
+      "bytes": 1998,
+      "sha256": "7ff4d6915cfbdb340ff01f3db0290cb53747393983eadf4d236d6fdb33dea89f"
+    },
+    {
+      "path": "execution-repair/native-proof/render.execution.json",
+      "bytes": 1433,
+      "sha256": "9245b37ff1b894b4459e1597c8e1e684b3fb81ec3383718a38fce6baadacaf1e"
+    },
+    {
+      "path": "execution-repair/native-proof/render.log",
+      "bytes": 175,
+      "sha256": "055edd4c5a951f6d4a7f919bf4ad3c6cf0d177a84d93041538a94f4322663043"
+    },
+    {
+      "path": "execution-repair/native-proof/verification.json",
+      "bytes": 1800,
+      "sha256": "85f4cfecada3c586afc20bc0e7167caae366137080dca3df2d5ce1857dbc9684"
+    },
+    {
+      "path": "execution-repair/verification.json",
+      "bytes": 7525,
+      "sha256": "9adb4b46dd50ed94562a4132127c6145224100ce4f0aea83ef4b78780e49d40d"
+    },
+    {
+      "path": "execution_runtime.py",
+      "bytes": 17731,
+      "sha256": "6e6c8fe65ac6b926ce12e6d58a8894e252d4c5a3372dc1fe3b3770e026f1d1f2"
+    },
+    {
+      "path": "gallery.html",
+      "bytes": 14196,
+      "sha256": "28e1b75f69eb41934c17ae5cb15d905a16f1986e362618af375ed4623d61f123"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/LICENSE",
+      "bytes": 17984,
+      "sha256": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/R2_STATUS.md",
+      "bytes": 297,
+      "sha256": "e32a199e1cd2668b0cea69930351a08d96bab77a92895a03c3d76288d6190d45"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/README.md",
+      "bytes": 10447,
+      "sha256": "dd06750902628aa05f465b267dd360c89a3f91fa2bdabe9c82ebd4e3f44ca7bf"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/SHA256SUMS.json",
+      "bytes": 11947,
+      "sha256": "4a93373b782a08248660ab6482735e3b1fb0e51054d8f874f549a508e723af81"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/after/app.js",
+      "bytes": 20841,
+      "sha256": "88e765bacb3156cfb1ca06dd0b7df31c51dc700ae0e2d6646c8c31684496f9b1"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/after/index.html",
+      "bytes": 12320,
+      "sha256": "23984a8ed493876d023bb25c4f0e05942f9d1ef921734d43ff03e279ecca4274"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/after/material.glsl",
+      "bytes": 11041,
+      "sha256": "b3b3af0296a81549ad0b351f54fb17897613bf99e4ceb50ac9a9fbd6514bd516"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/after/quality.js",
+      "bytes": 18091,
+      "sha256": "10b8c2e2cf7f266bbcbcfd7ff5ba8843da358502c394d6cfbc21cf3df627eab9"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/after/runtime.js",
+      "bytes": 6242,
+      "sha256": "cf78aa4f9fa71bbcf9409f3fb8ad01cd49f98766254759aad2396a42a21ab42e"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/apply_local_fix.py",
+      "bytes": 4583,
+      "sha256": "4be9dd450e0dd3af13b5cbc8a47b147a898656b06b448cd480b4852b3f5e4ac1"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/before/app.js",
+      "bytes": 20813,
+      "sha256": "10def87c0f89fb521d4b6aa9d02f45b757e2083787417bd779c0e27802b65fb4"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/before/index.html",
+      "bytes": 12320,
+      "sha256": "23984a8ed493876d023bb25c4f0e05942f9d1ef921734d43ff03e279ecca4274"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/before/material.glsl",
+      "bytes": 8860,
+      "sha256": "1d36f25f6281c3fcc13e68e62ab573ad9b890e9431dd2b2705f777cd1554ad47"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/before/quality.js",
+      "bytes": 13650,
+      "sha256": "826091d76348476c8bdaee2bd845a91e70c65007c0eaa19e84057cdc821e67d6"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/before/runtime.js",
+      "bytes": 6249,
+      "sha256": "96bd1a96a094e97117c3419b8540b6cc22cfacf28411fe4bd0fccf09f8f1ffdb"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/patch/app.js",
+      "bytes": 20841,
+      "sha256": "88e765bacb3156cfb1ca06dd0b7df31c51dc700ae0e2d6646c8c31684496f9b1"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/patch/material.glsl",
+      "bytes": 11041,
+      "sha256": "b3b3af0296a81549ad0b351f54fb17897613bf99e4ceb50ac9a9fbd6514bd516"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/patch/quality.js",
+      "bytes": 18091,
+      "sha256": "10b8c2e2cf7f266bbcbcfd7ff5ba8843da358502c394d6cfbc21cf3df627eab9"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/patch/runtime.js",
+      "bytes": 6242,
+      "sha256": "cf78aa4f9fa71bbcf9409f3fb8ad01cd49f98766254759aad2396a42a21ab42e"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/precision_only/app.js",
+      "bytes": 20841,
+      "sha256": "88e765bacb3156cfb1ca06dd0b7df31c51dc700ae0e2d6646c8c31684496f9b1"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/precision_only/index.html",
+      "bytes": 12320,
+      "sha256": "23984a8ed493876d023bb25c4f0e05942f9d1ef921734d43ff03e279ecca4274"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/precision_only/material.glsl",
+      "bytes": 8926,
+      "sha256": "dd50e946ed2bdcd36e0c52946006da84d3c923b8b83f5054a8cd1813d7da5933"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/precision_only/quality.js",
+      "bytes": 14982,
+      "sha256": "5a8b03d0f3f2e3b228144c6670eada69094b738faba7b5ca03a9d4a6139aa760"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/precision_only/runtime.js",
+      "bytes": 6249,
+      "sha256": "96bd1a96a094e97117c3419b8540b6cc22cfacf28411fe4bd0fccf09f8f1ffdb"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/source/app_inline.js",
+      "bytes": 21002,
+      "sha256": "87af3cabfec73f15468b78d1b2fc93e0323a7f7ea762b23cdf1951499df8c50e"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/source/app_readable.js",
+      "bytes": 11284,
+      "sha256": "a6122a898e4dc625b3a4f21149cbea984e213a87ebddfc441fe6976720ef51f7"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/source/capture_tiled.js",
+      "bytes": 4750,
+      "sha256": "819598579bb37583909dd181c2a56ff5e74e2eca03c8afbe2ba45b86ab6cf920"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/source/controls.js",
+      "bytes": 15809,
+      "sha256": "5fe57ff35a14ee4361ef6d4d52285d3244fba6f3dee69a241ed3f13f42779f9f"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/source/detail_manifest.json",
+      "bytes": 8137,
+      "sha256": "3b9cc04d49c0c97435da9903b96ad573358b45f9d5ca224b75f012bfee4d048e"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/source/detail_material.glsl",
+      "bytes": 8860,
+      "sha256": "1d36f25f6281c3fcc13e68e62ab573ad9b890e9431dd2b2705f777cd1554ad47"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/source/detail_runtime.js",
+      "bytes": 6249,
+      "sha256": "96bd1a96a094e97117c3419b8540b6cc22cfacf28411fe4bd0fccf09f8f1ffdb"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/source/package_final.py",
+      "bytes": 8161,
+      "sha256": "e71b4e34e75e0fecaa570fc96180f39c83a771ec57aca8836d249396bffe31ed"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/source/patch_sources.py",
+      "bytes": 4501,
+      "sha256": "8a945567d413854fe55ac4cf018b7d58d6368d388f8f5fa3c488200a3193c349"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/source/prepare_local.py",
+      "bytes": 3459,
+      "sha256": "bf1e73736943867fc2abe1e98331b4c23d9bb462cf7a9b8da9da69e68cb1a86a"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/source/quality.js",
+      "bytes": 13650,
+      "sha256": "826091d76348476c8bdaee2bd845a91e70c65007c0eaa19e84057cdc821e67d6"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/source/shadow_fix.glsl",
+      "bytes": 3279,
+      "sha256": "d0e7d77e49d466cfee35f7ecc9bf1766719a556bdd5815643004ee1d96732fd0"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/source/sky_fragment.glsl",
+      "bytes": 684,
+      "sha256": "28131dded7929c2bea7698e6d5ede4beee5ea1642993710ede78fd9a45674fa1"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/source/sky_vertex.glsl",
+      "bytes": 227,
+      "sha256": "5d847398752d945684c42f69f23b4f115649ffa87217e66ad818fe152ab5c720"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/source/surface_fragment.glsl",
+      "bytes": 8136,
+      "sha256": "04f969e6de0e33089dd317d922b6a1bda01a8427a31f9ab02e3ae6c85bd86942"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/source/surface_vertex.glsl",
+      "bytes": 369,
+      "sha256": "59e17f48b5e8cbe7d19fc9cf68b81e75e28d89a4e88cdb71f9e5fe47cd6e7160"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/source/three.bundle.js",
+      "bytes": 701372,
+      "sha256": "879cc65f5021c03ac84045f8176a8f05b31de55aaebb3843fac64613b61eeda3"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/tests/render_scene.py",
+      "bytes": 6118,
+      "sha256": "51c2e03c65c3c9182fb9e968d70d5ff599d075500243b1ee0ac86cd29c106cea"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/tests/test_delivery.py",
+      "bytes": 12408,
+      "sha256": "1c976dd6dd6f155ff91188e42d5c2bb9af9566e3e7161f82e8e18e29c1b4a180"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/tests/test_precision.py",
+      "bytes": 8628,
+      "sha256": "03cccd3721d3fdd1877be98a482b79c8d9767c55cdce09a3ee976839a232a878"
+    },
+    {
+      "path": "legacy/sandstone-banding-fix/verification.json",
+      "bytes": 10973,
+      "sha256": "420906d56d1bdc20efb5efb7aa0cc85a697022762d2df305e59672105d970f83"
+    },
+    {
+      "path": "provenance/builder-upgrade.diff",
+      "bytes": 3348,
+      "sha256": "c0e9fc5d7a4a692273efa74ca9ac25a5d9dc0efc48afea71171a2be97895659b"
+    },
+    {
+      "path": "provenance/complete-r2.patch",
+      "bytes": 44531,
+      "sha256": "40705dfb8467b1b70cfbdca66500d3d033adc073ece72dfb3d1a71d5ce4f54d8"
+    },
+    {
+      "path": "provenance/execution-before/cybr_scenes.py",
+      "bytes": 22545,
+      "sha256": "69b1b72fcd040f80b95820d49f14bc87d7a752ccac4541d1de5cceac39362b26"
+    },
+    {
+      "path": "provenance/execution-before/package_delivery.py",
+      "bytes": 4017,
+      "sha256": "491c57df799bb556c20480460581db2eb851149bab177ef3a4e16e293382bce9"
+    },
+    {
+      "path": "provenance/execution-before/test_pipeline.py",
+      "bytes": 2371,
+      "sha256": "9e214d187d3511f1c8f61c0ae9bf69f1d31ef92f589626e1206030a7e8e58bb8"
+    },
+    {
+      "path": "provenance/material-atlas.json",
+      "bytes": 1034,
+      "sha256": "35cc90e840c57aa693d3447ce67846378324a5d62ddbfb360770f116fac46194"
+    },
+    {
+      "path": "provenance/metadata-upgrade.diff",
+      "bytes": 5423,
+      "sha256": "83e4ef30df93c48e74d78972e2821d23e1f9b37bab1e7f689c8181ec0da87a94"
+    },
+    {
+      "path": "provenance/native-before/engines/geo/cybr-geo/native/fernwater_materials_r6.h",
+      "bytes": 6539,
+      "sha256": "176e72ee04141ddf2fda38ee969304614c530fc14fbac86dbfd452b5179467e7"
+    },
+    {
+      "path": "provenance/native-before/engines/geo/cybr-geo/native/formation_materials_r2.h",
+      "bytes": 8453,
+      "sha256": "466aca00e0bd95679699f70df4631a0c062a5d71e8e2763c08c5d15c9fb391c8"
+    },
+    {
+      "path": "provenance/native-before/engines/geo/cybr-geo/native/spectral_scenes.cpp",
+      "bytes": 50107,
+      "sha256": "3e3cffb51920baa00b2236ddbf9ed0f6d907564a8f815a0dab73fdccc8bbc276"
+    },
+    {
+      "path": "provenance/native-before/engines/geode/src/cathedral_v3.cpp",
+      "bytes": 43697,
+      "sha256": "48821b75515694a661e76d6cd8aa0ee3dfdeefc0aaae70dbe8790b1b76e237fb"
+    },
+    {
+      "path": "provenance/native-before/engines/hot/cybr-geo/examples/desert_hot_springs/build_scene.py",
+      "bytes": 16154,
+      "sha256": "2ff480d90bdfcc33d8823494e40abaef83613aef9fe99eef1e9662b499e6e18a"
+    },
+    {
+      "path": "provenance/native-before/engines/hot/cybr-geo/native/landscape_materials_v11.h",
+      "bytes": 6105,
+      "sha256": "f6f4249369d2ef92892f0e0e28c3af6204342fff7a208dd0dcf4247eeaa65374"
+    },
+    {
+      "path": "provenance/native-before/engines/hot/cybr-geo/native/spectral_desert.cpp",
+      "bytes": 42574,
+      "sha256": "4d89bbdb8317928d6ee9d95286c451240b05fc2b1758d582ed326363b812bf95"
+    },
+    {
+      "path": "provenance/native-before/engines/obsidian/src/render.cpp",
+      "bytes": 22459,
+      "sha256": "97cef4c13e7af27a5c26b57bbb9b041c65cc56355b206b3544539dc5393d7bc2"
+    },
+    {
+      "path": "provenance/native-before/engines/obsidian/src/scene_maps.hpp",
+      "bytes": 4134,
+      "sha256": "a922b800f200cc2941b42d9a5e6789ba496c565b4392d2eaf8a19acabfcc7c0f"
+    },
+    {
+      "path": "provenance/recovered-registry.json",
+      "bytes": 7193,
+      "sha256": "062292b85fafff71543c7fd4805a3a22492e2c65b25d62e44b1169d53d6fa709"
+    },
+    {
+      "path": "provenance/renderer-changes.json",
+      "bytes": 580,
+      "sha256": "8cf3f973aa67d7d4e0c83672c6954ac89cbca7a061e3adc4354e3f170091d34d"
+    },
+    {
+      "path": "provenance/renderer-upgrade.diff",
+      "bytes": 41066,
+      "sha256": "f97dbf3f7bb3e4f086baed40ad679332c255f07e90ae895ae48b41846c4411d5"
+    },
+    {
+      "path": "provenance/source-changes.json",
+      "bytes": 2415,
+      "sha256": "a13151fefe5d777f32ed16a70248fdc750c0b437b2521fef4449083d56614a6c"
+    },
+    {
+      "path": "references/basalt-tide.png",
+      "bytes": 166100,
+      "sha256": "150be22859d6bbd556abe7951c3a431be2171c717df9e9978d8e20d977175e77"
+    },
+    {
+      "path": "references/desert-hot-springs.png",
+      "bytes": 354508,
+      "sha256": "5db41dcbfbcd8009b1946447968420a6172c2911caa1f8259402bf143f852066"
+    },
+    {
+      "path": "references/drowned-geode.png",
+      "bytes": 275964,
+      "sha256": "58f09dbedf1d926ff3a9b893d827e013c20ce2ce88964f3699221ee43e80f737"
+    },
+    {
+      "path": "references/fernwater.png",
+      "bytes": 457580,
+      "sha256": "2e04a6a1d6c71b1d3fccd008030e074689bb1d14956b29e26ebdcee543e6e22a"
+    },
+    {
+      "path": "references/obsidian-reach.png",
+      "bytes": 220735,
+      "sha256": "dfa82a5a3fc78383ef2fbe23b6a89660496851c20dc030d715cfb1e3cee071fc"
+    },
+    {
+      "path": "references/sandstone-mobile.png",
+      "bytes": 210988,
+      "sha256": "8b7e8d49272b8ba3d87fd8f08b933c947f46913e21f00b586fd109571f41b040"
+    },
+    {
+      "path": "references/sandstone-passage.png",
+      "bytes": 459471,
+      "sha256": "3dbcc1e65998863de1de357053d4bf9f857b5cdc0a7d79a8b24c57a410489d54"
+    },
+    {
+      "path": "renders/basalt-tide/hero/finish-r2.command.json",
+      "bytes": 1237,
+      "sha256": "bc208344a4a7610474d3b66715948e0bb38677fd59f1b2165ab6d4b5e6047820"
+    },
+    {
+      "path": "renders/basalt-tide/hero/finish-r2.log",
+      "bytes": 1908,
+      "sha256": "0182f499fbd52e244e0070f0e039c84e86b53cadea9cffdbeea7ae67808c90b8"
+    },
+    {
+      "path": "renders/basalt-tide/hero/finish-r2.resources.txt",
+      "bytes": 941,
+      "sha256": "5382c277437e19f9f6a437864296061797081d4013c3346af11c65944187413f"
+    },
+    {
+      "path": "renders/basalt-tide/hero/finish-reproduction.command.json",
+      "bytes": 1247,
+      "sha256": "3c383d14e55c33f139afa1f66617cec7ab988e64e517977a46625e7326142db8"
+    },
+    {
+      "path": "renders/basalt-tide/hero/finish-reproduction.log",
+      "bytes": 1908,
+      "sha256": "0182f499fbd52e244e0070f0e039c84e86b53cadea9cffdbeea7ae67808c90b8"
+    },
+    {
+      "path": "renders/basalt-tide/hero/finish-reproduction.resources.txt",
+      "bytes": 940,
+      "sha256": "64b1543346f2f57e6ef41245a23c27ac3a4d33518a21853b323586cb03e8e20e"
+    },
+    {
+      "path": "renders/basalt-tide/hero/finish.command.json",
+      "bytes": 789,
+      "sha256": "839d34c1abd1b07e2202374773cb3dc9f8714c537e9028586db5b4a8e104aeca"
+    },
+    {
+      "path": "renders/basalt-tide/hero/finish.log",
+      "bytes": 1847,
+      "sha256": "5f1a93b66ca4065db4d9e5e4d1c5372c475ef0befc53ec93429fbe0d82769e3b"
+    },
+    {
+      "path": "renders/basalt-tide/hero/hero.json",
+      "bytes": 2889,
+      "sha256": "52de715b254e7a39c69b4e1d4630a213e91bf7cf2e8c77d614de8b7bf1a4dc5d"
+    },
+    {
+      "path": "renders/basalt-tide/hero/hero.png",
+      "bytes": 561810,
+      "sha256": "5ccd5b6b78ce81beab71830dd24bb42f0a94c662de34c8bb4714a4fe9d9dd213"
+    },
+    {
+      "path": "renders/basalt-tide/hero/hero_depth.png",
+      "bytes": 45586,
+      "sha256": "7096485d1ed01a0068701ebc55e62935faee102b160feed5c0c3d246360a0fc3"
+    },
+    {
+      "path": "renders/basalt-tide/hero/hero_image_verification.json",
+      "bytes": 2477,
+      "sha256": "4eae8d64e2b2587e286a9ed04591ee6c34abfa609953b62ac8f25420031fadc2"
+    },
+    {
+      "path": "renders/basalt-tide/hero/hero_normal.png",
+      "bytes": 510836,
+      "sha256": "fbcda8dc5dcb5d603538a21affdb8db34cf34999918760e4b62bb083881bd5c7"
+    },
+    {
+      "path": "renders/basalt-tide/hero/hero_raw.png",
+      "bytes": 1318791,
+      "sha256": "538fffa6ffda5fe07158eaf6eb50d426bec58dff3f9b1ad725760692d9dc4a52"
+    },
+    {
+      "path": "renders/basalt-tide/hero/receipt.json",
+      "bytes": 8670,
+      "sha256": "6b3c7878c5e9c889ad395e8de45a47e14c09efcead6b9abe559ad22b4de573e6"
+    },
+    {
+      "path": "renders/basalt-tide/hero/refinish-r2.log",
+      "bytes": 1908,
+      "sha256": "0182f499fbd52e244e0070f0e039c84e86b53cadea9cffdbeea7ae67808c90b8"
+    },
+    {
+      "path": "renders/basalt-tide/hero/render.command.json",
+      "bytes": 1466,
+      "sha256": "918d76c5e85e0086d4a06f294221eaf5f7d37d241bc0f60b4e29f3a99db36407"
+    },
+    {
+      "path": "renders/basalt-tide/hero/render.log",
+      "bytes": 497,
+      "sha256": "c69c00ee8fc4e83bbf452482b31731f13b00cdf2e2ba25b0474e8f3eb2dff052"
+    },
+    {
+      "path": "renders/basalt-tide/hero/verification.json",
+      "bytes": 4700,
+      "sha256": "fa3426e0ac3134c2419f534545ab8c5da63e3d74baa8ce2d682da64ec1b4ad54"
+    },
+    {
+      "path": "renders/desert-hot-springs/hero/finish-reproduction.command.json",
+      "bytes": 1210,
+      "sha256": "184d4c7f0ae08d139e984d2eb1cd43e87915dc7dadd174ab31e689d28833fa66"
+    },
+    {
+      "path": "renders/desert-hot-springs/hero/finish-reproduction.log",
+      "bytes": 1665,
+      "sha256": "4d6924e199c0bdf5043ed0fdb8f77e1c4b88e054828ab192d83007a02fd07813"
+    },
+    {
+      "path": "renders/desert-hot-springs/hero/finish-reproduction.resources.txt",
+      "bytes": 931,
+      "sha256": "417dbc2e58123cc0451fc4294cdd396b85f1d21eba829f8b0470c00d5a51fc4a"
+    },
+    {
+      "path": "renders/desert-hot-springs/hero/finish.command.json",
+      "bytes": 1197,
+      "sha256": "cd07414de79e24ea0227c26c4c07062cb1a383a1fad8a4c82879ca554d8962bd"
+    },
+    {
+      "path": "renders/desert-hot-springs/hero/finish.log",
+      "bytes": 1665,
+      "sha256": "4d6924e199c0bdf5043ed0fdb8f77e1c4b88e054828ab192d83007a02fd07813"
+    },
+    {
+      "path": "renders/desert-hot-springs/hero/finish.resources.txt",
+      "bytes": 928,
+      "sha256": "01966a611d0dff8da8eeff47e6512221da35feb51ae03d4fa703626be8ca9b12"
+    },
+    {
+      "path": "renders/desert-hot-springs/hero/first-argument-error-render.command.json",
+      "bytes": 2243,
+      "sha256": "5de158f7f5c0cc699ae0d8050717d169ac64ecbb0953e164d828f9fa46fd9b73"
+    },
+    {
+      "path": "renders/desert-hot-springs/hero/first-argument-error-render.log",
+      "bytes": 46,
+      "sha256": "26981e0feef8c3b3bf06c4f0e9836d8b13369231642aab71c91455d95e4860f2"
+    },
+    {
+      "path": "renders/desert-hot-springs/hero/first-argument-error-render.resources.txt",
+      "bytes": 1323,
+      "sha256": "840425948a0e61bcffb9e7a33e369daf0ef44061d8101de67bcddfa06264e586"
+    },
+    {
+      "path": "renders/desert-hot-springs/hero/hero.json",
+      "bytes": 2433,
+      "sha256": "9580248d3d2b15834c85819af96b9f93aec07b1032cbc112a7c6699d47649342"
+    },
+    {
+      "path": "renders/desert-hot-springs/hero/hero.png",
+      "bytes": 915902,
+      "sha256": "9c7dfc2defc2e6c3e9a1a6a3c6e39704d959ddc7e7772439620bc540b8584761"
+    },
+    {
+      "path": "renders/desert-hot-springs/hero/hero_depth.png",
+      "bytes": 55202,
+      "sha256": "c6655a9eddc8c7bae4536f46af592411bc8d00d469e514cc260066ee09dad563"
+    },
+    {
+      "path": "renders/desert-hot-springs/hero/hero_image_verification.json",
+      "bytes": 2234,
+      "sha256": "f7c9f92000377c9cef0b45061784e9cdff3dff35cc7081b5e88dd1796cc68817"
+    },
+    {
+      "path": "renders/desert-hot-springs/hero/hero_normal.png",
+      "bytes": 1154358,
+      "sha256": "c7341ddd14dfebb44702ac92792e8117f31e4b4c27af277af6e5a41ae9e5c8e6"
+    },
+    {
+      "path": "renders/desert-hot-springs/hero/hero_raw.png",
+      "bytes": 1327910,
+      "sha256": "11e03b3e6394027dceb80d164fb92b450a323583cfc9888ab252b0b37ce3316b"
+    },
+    {
+      "path": "renders/desert-hot-springs/hero/native-metadata.json",
+      "bytes": 2433,
+      "sha256": "9580248d3d2b15834c85819af96b9f93aec07b1032cbc112a7c6699d47649342"
+    },
+    {
+      "path": "renders/desert-hot-springs/hero/receipt.json",
+      "bytes": 9016,
+      "sha256": "8e784c61eeec3e27f779b3750fdddfe089627b9fbd18a310c3d3f147d7b20d1e"
+    },
+    {
+      "path": "renders/desert-hot-springs/hero/render.command.json",
+      "bytes": 2254,
+      "sha256": "e6f6baa92ecf6a963c71abdfee1a4c3ce13ed4353606c418ff1239843a8b7c51"
+    },
+    {
+      "path": "renders/desert-hot-springs/hero/render.log",
+      "bytes": 506,
+      "sha256": "22414d412e774598ddefcffdbe19ede3761a1a48d900f28aacaeec61518683af"
+    },
+    {
+      "path": "renders/desert-hot-springs/hero/render.resources.txt",
+      "bytes": 1310,
+      "sha256": "28d17784196d9171b0368f420e515f7eb606fef1db774cd47f13958b135d247d"
+    },
+    {
+      "path": "renders/desert-hot-springs/hero/thread-error-finish.command.json",
+      "bytes": 1196,
+      "sha256": "181f5f592abc6c308393d18e5d27069ff3daba1f89a9a4d388538a8bb79d0caf"
+    },
+    {
+      "path": "renders/desert-hot-springs/hero/thread-error-finish.log",
+      "bytes": 845,
+      "sha256": "20cd29caf4717b41c62f7b177afc30af6575287f50c4e392baf95d12e4ab247d"
+    },
+    {
+      "path": "renders/desert-hot-springs/hero/thread-error-finish.resources.txt",
+      "bytes": 962,
+      "sha256": "73ea452811c8fef1dd003e6163db5094b6f4ce96fc688f977eaa278eb54b0a1a"
+    },
+    {
+      "path": "renders/desert-hot-springs/hero/verification.json",
+      "bytes": 4221,
+      "sha256": "0b97dc29ae1385ad785e889ab193e579e4d74dd6c523fe2a6c94008febe57705"
+    },
+    {
+      "path": "renders/drowned-geode/hero/finish-reproduction.command.json",
+      "bytes": 1008,
+      "sha256": "7fe0d5105f98dca7c4d365231857efbfb1fb218e3c3a3332b33903dfeb37856d"
+    },
+    {
+      "path": "renders/drowned-geode/hero/finish-reproduction.log",
+      "bytes": 348,
+      "sha256": "cf691f85e67a8193e5ebde7addf654afb63a8920a91013f364d92a66479c643e"
+    },
+    {
+      "path": "renders/drowned-geode/hero/finish-reproduction.resources.txt",
+      "bytes": 880,
+      "sha256": "96e0bbdff8204a5de33f8c981b6069f213b949551821ebafba663cfa495dbf62"
+    },
+    {
+      "path": "renders/drowned-geode/hero/finish.command.json",
+      "bytes": 996,
+      "sha256": "f611bda40c8c35369033acb511571bf4f685d6dfc89ea2c66459c69a0253eddf"
+    },
+    {
+      "path": "renders/drowned-geode/hero/finish.log",
+      "bytes": 348,
+      "sha256": "cf691f85e67a8193e5ebde7addf654afb63a8920a91013f364d92a66479c643e"
+    },
+    {
+      "path": "renders/drowned-geode/hero/finish.resources.txt",
+      "bytes": 877,
+      "sha256": "95387b3d711caa79fc6769086307e1b86bb79aa62032758f7f89ff7df3f1a332"
+    },
+    {
+      "path": "renders/drowned-geode/hero/hero.json",
+      "bytes": 2684,
+      "sha256": "fffb561f4b9cdcb4147f7cef82754d05284e469dcf9d098d17c6c2ddc19a6b4d"
+    },
+    {
+      "path": "renders/drowned-geode/hero/hero.png",
+      "bytes": 820554,
+      "sha256": "be32b230a4d1de4397725c3d5702e3d918bb0b480056a3b4f200fc9d550021a2"
+    },
+    {
+      "path": "renders/drowned-geode/hero/hero_depth.png",
+      "bytes": 81206,
+      "sha256": "a25b3e42968fc932d14616536fdff4f77af31a51b101d80b96aa47825fce5787"
+    },
+    {
+      "path": "renders/drowned-geode/hero/hero_normal.png",
+      "bytes": 808792,
+      "sha256": "4f64155c5c3b6a4965336af0f412c4956b68a7308a42a902b14477b4e3e5cd10"
+    },
+    {
+      "path": "renders/drowned-geode/hero/hero_raw.png",
+      "bytes": 1397114,
+      "sha256": "b351584e16d6831e5e389d71ef2e4ef4b4eadeb7b7e13558d11bef68a08cc029"
+    },
+    {
+      "path": "renders/drowned-geode/hero/hero_reflection.png",
+      "bytes": 99695,
+      "sha256": "5800490c7ca05b96e5c5bf9c4faaf3ca677ec50da4252bd44dc63c47185d4491"
+    },
+    {
+      "path": "renders/drowned-geode/hero/hero_transmission_and_surfaces.png",
+      "bytes": 848444,
+      "sha256": "f07469af97b482944d35d1995a98471cf7018baf9dfeef842529a42c3e516fe6"
+    },
+    {
+      "path": "renders/drowned-geode/hero/hero_unfiltered.png",
+      "bytes": 1397114,
+      "sha256": "b351584e16d6831e5e389d71ef2e4ef4b4eadeb7b7e13558d11bef68a08cc029"
+    },
+    {
+      "path": "renders/drowned-geode/hero/hero_volume.png",
+      "bytes": 135121,
+      "sha256": "c48457f8a5dd2d92e75b2dc2cb6f7a91ae513783275b314c4cf823dacddbbf8d"
+    },
+    {
+      "path": "renders/drowned-geode/hero/receipt.json",
+      "bytes": 6612,
+      "sha256": "a475f8b425f7b4878d3b17256341625387759b915b6f9611549db3b928d25b10"
+    },
+    {
+      "path": "renders/drowned-geode/hero/render.command.json",
+      "bytes": 1331,
+      "sha256": "b53bffc359c63d71c2eabcb43f7ba26056e526f0b3bec0b2448725914383929f"
+    },
+    {
+      "path": "renders/drowned-geode/hero/render.log",
+      "bytes": 534,
+      "sha256": "3a6a6f820c2b04413e9f5634c3a4245fee91a870cbeef38707c8655ad3c84989"
+    },
+    {
+      "path": "renders/drowned-geode/hero/render.resources.txt",
+      "bytes": 969,
+      "sha256": "ba26a78eac3d45d2cf779c7106b0e4e0947b623c6640150902e5e408f75b410d"
+    },
+    {
+      "path": "renders/drowned-geode/hero/verification.json",
+      "bytes": 4265,
+      "sha256": "6d976adb4c103976b5302b974794af9cd8fea622527796f977e66906683b8318"
+    },
+    {
+      "path": "renders/fernwater/hero/finish-r2-foliage.command.json",
+      "bytes": 1272,
+      "sha256": "24395007a2cabd49da5933bff697e6f2ceb422df9726c92555f4f6f5abb7043c"
+    },
+    {
+      "path": "renders/fernwater/hero/finish-r2-foliage.log",
+      "bytes": 1915,
+      "sha256": "9d90837539a3ef9345b4876bb1a3d342252fd52d7ecf585ac4dbc56527a7d36c"
+    },
+    {
+      "path": "renders/fernwater/hero/finish-r2-foliage.resources.txt",
+      "bytes": 946,
+      "sha256": "540c99e00c4675d4feda1c1adaca60bfc876e4a5281f38b05b8433ac29dfbdcc"
+    },
+    {
+      "path": "renders/fernwater/hero/finish-reproduction.command.json",
+      "bytes": 1275,
+      "sha256": "a5cb97b87175ddca89784160f19f82805ee441b163351baade2fe18756d520d9"
+    },
+    {
+      "path": "renders/fernwater/hero/finish-reproduction.log",
+      "bytes": 1915,
+      "sha256": "9d90837539a3ef9345b4876bb1a3d342252fd52d7ecf585ac4dbc56527a7d36c"
+    },
+    {
+      "path": "renders/fernwater/hero/finish-reproduction.resources.txt",
+      "bytes": 947,
+      "sha256": "ef9f43c403bab0dd426e57e6ea6638023c1dd6e3c2c3b49babd522b42ac85fa4"
+    },
+    {
+      "path": "renders/fernwater/hero/finish.command.json",
+      "bytes": 1227,
+      "sha256": "e30dbddf66d3a92bd06851728dadea16539659a5b2b03c184b6fcf9604a92bd6"
+    },
+    {
+      "path": "renders/fernwater/hero/finish.log",
+      "bytes": 1916,
+      "sha256": "d41b28923de1252e7a062dc0c498f050a9a6ba24487607c193f0bb0d311afdca"
+    },
+    {
+      "path": "renders/fernwater/hero/finish.resources.txt",
+      "bytes": 935,
+      "sha256": "57155dd32e2d9637a0cd0165a65e9de50c70c116d9e8aa26f015dd3f9ab25952"
+    },
+    {
+      "path": "renders/fernwater/hero/hero.json",
+      "bytes": 2911,
+      "sha256": "82a73f6e595043a1e3725aa4fb93f2ffab7c5fd0c040648fedb0965611fb90d3"
+    },
+    {
+      "path": "renders/fernwater/hero/hero.png",
+      "bytes": 1062681,
+      "sha256": "a096b4ec0e37a8cbb55277f4503f3ce3e2886d18aa839f707047381294e729d2"
+    },
+    {
+      "path": "renders/fernwater/hero/hero_depth.png",
+      "bytes": 155947,
+      "sha256": "2aedae43be9e5a6f0176de9da618dc0259299d10dbc883875205112e548ae5ed"
+    },
+    {
+      "path": "renders/fernwater/hero/hero_image_verification.json",
+      "bytes": 2545,
+      "sha256": "b17959ea3eef08ba49f06877b3af86d5bbc621b74518bba4ad4e45bec50789d0"
+    },
+    {
+      "path": "renders/fernwater/hero/hero_normal.png",
+      "bytes": 935008,
+      "sha256": "f884353e73faff959ab4745066194bb386ce4fe265233045544c12d9805dbc33"
+    },
+    {
+      "path": "renders/fernwater/hero/hero_raw.png",
+      "bytes": 1592089,
+      "sha256": "bca32b9c8a7ce213a1445c2126e5b968f7d07d9adb2394dec13fec5f66b9defa"
+    },
+    {
+      "path": "renders/fernwater/hero/native-metadata.json",
+      "bytes": 2911,
+      "sha256": "82a73f6e595043a1e3725aa4fb93f2ffab7c5fd0c040648fedb0965611fb90d3"
+    },
+    {
+      "path": "renders/fernwater/hero/receipt.json",
+      "bytes": 9957,
+      "sha256": "9750b5071d2fff77dd320d0e25494c07cb6988c6532416b3712694ee7f530c1f"
+    },
+    {
+      "path": "renders/fernwater/hero/render.command.json",
+      "bytes": 2603,
+      "sha256": "130fbe7258a13e5a1d3b26593f1ec8cadadd46f9cf60b7f50c430824b5b240b1"
+    },
+    {
+      "path": "renders/fernwater/hero/render.log",
+      "bytes": 538,
+      "sha256": "d1eaa5eee728f25a2f3185dbcab82995b6fcda7dfb3fdab5e99507db872f1f8e"
+    },
+    {
+      "path": "renders/fernwater/hero/render.resources.txt",
+      "bytes": 1413,
+      "sha256": "fd4e992e062f9c3ac96204c5b5de64ba9300cab3af053fe2bc1ce28c0b5dc42b"
+    },
+    {
+      "path": "renders/fernwater/hero/verification.json",
+      "bytes": 4707,
+      "sha256": "26e69199964c388e252b19f49a76975c10a3297a270c63516a71d85c095ea371"
+    },
+    {
+      "path": "renders/obsidian-reach/hero/finish-reproduction.command.json",
+      "bytes": 1068,
+      "sha256": "c88d3892db11d1896ac6fbdc12041eaedca03198c0bc57f526865f075f93252a"
+    },
+    {
+      "path": "renders/obsidian-reach/hero/finish-reproduction.log",
+      "bytes": 425,
+      "sha256": "6e276a0c1f34d2b9d52469b3656b6834d4b3b30421f17d1ce3e9d1efbd29e0d3"
+    },
+    {
+      "path": "renders/obsidian-reach/hero/finish-reproduction.resources.txt",
+      "bytes": 888,
+      "sha256": "2536773b7c54ea98c79bdf91706542f3ddc4d9c291ba17d4f92ddecc92c64fcf"
+    },
+    {
+      "path": "renders/obsidian-reach/hero/finish.command.json",
+      "bytes": 1057,
+      "sha256": "c20f779ff2aa078992094cd3db927cd57584db07ddd5bf00dcdf7fc808ada903"
+    },
+    {
+      "path": "renders/obsidian-reach/hero/finish.log",
+      "bytes": 425,
+      "sha256": "6e276a0c1f34d2b9d52469b3656b6834d4b3b30421f17d1ce3e9d1efbd29e0d3"
+    },
+    {
+      "path": "renders/obsidian-reach/hero/finish.resources.txt",
+      "bytes": 884,
+      "sha256": "3e22a00dd77d827e840ccdd6d65976342dd077508371872b49e6d5713560af50"
+    },
+    {
+      "path": "renders/obsidian-reach/hero/hero.json",
+      "bytes": 517,
+      "sha256": "550f341e38a513b202b2dd99add4a38746fa81891a164aac6d8897c4ab70a129"
+    },
+    {
+      "path": "renders/obsidian-reach/hero/hero.png",
+      "bytes": 867181,
+      "sha256": "213aa6a675536b117074cfe28d8b4d4ca4b3063b5018030a6eb4f3dca95a0ce2"
+    },
+    {
+      "path": "renders/obsidian-reach/hero/hero_depth.png",
+      "bytes": 60144,
+      "sha256": "3ed041bc4d6994505380c00b86508c947c8c75025746f53d9cb16f40a9ddc8be"
+    },
+    {
+      "path": "renders/obsidian-reach/hero/hero_normal.png",
+      "bytes": 1298380,
+      "sha256": "d8b2c3c92194e316ae35beec99c431b310076121f6e802a5080d923afd2ac76f"
+    },
+    {
+      "path": "renders/obsidian-reach/hero/hero_raw.png",
+      "bytes": 1135296,
+      "sha256": "09f1aab9f4a0566da9d4b22fcb4e5fa5b32ad7c86b37e6e42844ac87ab445903"
+    },
+    {
+      "path": "renders/obsidian-reach/hero/hero_render.json",
+      "bytes": 290,
+      "sha256": "a0e6221ba0180f78cec1c74291b8f64a1aead58b7c0311439c69e47c44a70bcf"
+    },
+    {
+      "path": "renders/obsidian-reach/hero/hero_sampling.json",
+      "bytes": 67,
+      "sha256": "de9cf1342bc366d480f1308ce30be6cd35a0c5055dfbb0afccfad96696d28b71"
+    },
+    {
+      "path": "renders/obsidian-reach/hero/native-metadata.json",
+      "bytes": 290,
+      "sha256": "a0e6221ba0180f78cec1c74291b8f64a1aead58b7c0311439c69e47c44a70bcf"
+    },
+    {
+      "path": "renders/obsidian-reach/hero/receipt.json",
+      "bytes": 4851,
+      "sha256": "248b8ab8940a469e91712820f1e3006232514c34616864cd01240ff962d194a1"
+    },
+    {
+      "path": "renders/obsidian-reach/hero/render.command.json",
+      "bytes": 1094,
+      "sha256": "214784108982ff86f23124346de7c750ccaa015c64c0d83e6043005ba3df3eaf"
+    },
+    {
+      "path": "renders/obsidian-reach/hero/render.log",
+      "bytes": 307,
+      "sha256": "e0e2db9fed65c15c312f6aae830e66722155a9bf5b5feed913cecf3280850465"
+    },
+    {
+      "path": "renders/obsidian-reach/hero/render.resources.txt",
+      "bytes": 909,
+      "sha256": "e852cac47058f58bf4733fdfe0ab71a54c9388bef49eab2684db98cacbcf5e54"
+    },
+    {
+      "path": "renders/obsidian-reach/hero/verification.json",
+      "bytes": 1787,
+      "sha256": "3307b0b5666edf39ed94201293296cefc4944ec127401f2a5139e58d62a45e8a"
+    },
+    {
+      "path": "renders/sandstone-passage/hero/finish-r2.command.json",
+      "bytes": 1254,
+      "sha256": "684fc8542ee9514a3ffe17fe120485eddd9dc417ecaa9990a943d8f9488d5b91"
+    },
+    {
+      "path": "renders/sandstone-passage/hero/finish-r2.log",
+      "bytes": 1909,
+      "sha256": "b936739cdab480683554b1f0c139fdcbe8bc2318974a8935faa6bc05b2f697b4"
+    },
+    {
+      "path": "renders/sandstone-passage/hero/finish-r2.resources.txt",
+      "bytes": 948,
+      "sha256": "ffb6e7042af0eadea26de286cdef12ba33c4b1b6c618830cf61899f498df04da"
+    },
+    {
+      "path": "renders/sandstone-passage/hero/finish-reproduction.command.json",
+      "bytes": 1265,
+      "sha256": "b7927220391c2e388767a99071b5da5f469e7953244f24791b8f8b8e14e3e8c9"
+    },
+    {
+      "path": "renders/sandstone-passage/hero/finish-reproduction.log",
+      "bytes": 1909,
+      "sha256": "b936739cdab480683554b1f0c139fdcbe8bc2318974a8935faa6bc05b2f697b4"
+    },
+    {
+      "path": "renders/sandstone-passage/hero/finish-reproduction.resources.txt",
+      "bytes": 947,
+      "sha256": "1af5e568e62dd257a35b23113b90153a5eb87664c0391d0fb007d9d0b8a3d631"
+    },
+    {
+      "path": "renders/sandstone-passage/hero/finish.command.json",
+      "bytes": 794,
+      "sha256": "85a464872a4afa135eb246e2152d35f69e9c6dfe4231e91ff29f39b7e9986cb9"
+    },
+    {
+      "path": "renders/sandstone-passage/hero/finish.log",
+      "bytes": 1847,
+      "sha256": "bf011212c9b3bce660c849f6e6568b511de66c6f489bd96fb357caa7d88aa807"
+    },
+    {
+      "path": "renders/sandstone-passage/hero/hero.json",
+      "bytes": 2893,
+      "sha256": "606b88a5987afaf48a387ad02382da2a49ab893b673edb4196023e7859869ef5"
+    },
+    {
+      "path": "renders/sandstone-passage/hero/hero.png",
+      "bytes": 1431520,
+      "sha256": "aeb20ac5df92e1d02a8c0f2f7539b0d4a9af538498ff1c8b57894c570a467458"
+    },
+    {
+      "path": "renders/sandstone-passage/hero/hero_depth.png",
+      "bytes": 119088,
+      "sha256": "97ba96d98fd66fa97c91f08ab6a565af9cb4fc8d3ffc090c56b0957c4a55d19c"
+    },
+    {
+      "path": "renders/sandstone-passage/hero/hero_image_verification.json",
+      "bytes": 2478,
+      "sha256": "6f4c0cc751a6e291f480a6b684ee3c68208f93f8b10d0271b06a76e7a8433726"
+    },
+    {
+      "path": "renders/sandstone-passage/hero/hero_normal.png",
+      "bytes": 1504851,
+      "sha256": "85cd5cdfb668837cb3d7530dc5f66ba3dd54cb6763efdef9ffc16cc663a171c6"
+    },
+    {
+      "path": "renders/sandstone-passage/hero/hero_raw.png",
+      "bytes": 2256274,
+      "sha256": "fe7d0d8e40b56a6d6e91abc5715c2b3a4bb577f41ce2444605c8317643deafa0"
+    },
+    {
+      "path": "renders/sandstone-passage/hero/receipt.json",
+      "bytes": 8852,
+      "sha256": "073cb0e0e3079b116967c6f5131ab3be024126a18e1b5b38a17d0f9c8e5faf60"
+    },
+    {
+      "path": "renders/sandstone-passage/hero/refinish-r2.log",
+      "bytes": 1908,
+      "sha256": "24fb61dfe9cb9377ea64f178057a306eff23f2a09ebed391d1de9dde345f728c"
+    },
+    {
+      "path": "renders/sandstone-passage/hero/render.command.json",
+      "bytes": 1496,
+      "sha256": "6a275682f7c7d2ae3cd064256b7cc52432e83327658737f1256dbfb6aa27c3af"
+    },
+    {
+      "path": "renders/sandstone-passage/hero/render.log",
+      "bytes": 502,
+      "sha256": "508cf058df5eee204907b6b557244d93e0923d04d49aeeb2e50fe279cb3709eb"
+    },
+    {
+      "path": "renders/sandstone-passage/hero/verification.json",
+      "bytes": 4708,
+      "sha256": "25379e1da03b25bd9d8a2d6c751725fb1ccdc5330428ef4cd5022d00c8e1ec27"
+    },
+    {
+      "path": "requirements-audit.txt",
+      "bytes": 39,
+      "sha256": "afd8bd12dab46e15941ede9767a5e770899dab3fac6b32ee3f3b99c03fe3855b"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 143,
+      "sha256": "da1afe710ba1c48902d08917c1da4dbc24dec2ec1c45c29fb55002e2176d19ff"
+    },
+    {
+      "path": "scenes.json",
+      "bytes": 1922,
+      "sha256": "f8ef9858e1e6e15f8ddca86285f23c8f811528b5ad41a24fdfbde1db8ef6e073"
+    },
+    {
+      "path": "shared/environment_sampler.hpp",
+      "bytes": 1609,
+      "sha256": "8e2168121d203cb37717416824e0f674e310a8b83b2185cf1f9d5b6cbf84e48e"
+    },
+    {
+      "path": "shared/surface_detail.hpp",
+      "bytes": 5604,
+      "sha256": "fad23631be14bb259f61d2ce29b5abe4e7fd9f371941b223a13b41f4501d131f"
+    },
+    {
+      "path": "tests/environment_sampling.cpp",
+      "bytes": 1041,
+      "sha256": "ffece1d1acc10fa85adae2cb6ae3aa9c7c2b66d64e213b2c4e5661b182fea540"
+    },
+    {
+      "path": "tests/surface_atlas.cpp",
+      "bytes": 1804,
+      "sha256": "e1175b8b341eb32e5526db1af3deee30fda17d36835b7021953772482baba37d"
+    },
+    {
+      "path": "tests/test_execution_runtime.py",
+      "bytes": 9189,
+      "sha256": "26461cbe75aa7cfd280ef326f50bcb09c01b749b9778a70de606684eec52e2d5"
+    },
+    {
+      "path": "tests/test_foliage_filter.py",
+      "bytes": 1625,
+      "sha256": "6ad742e10a6ff5ea60b05796c8ea50e00269e388a24f42c373edb97b0a5199aa"
+    },
+    {
+      "path": "tests/test_geometry.py",
+      "bytes": 4132,
+      "sha256": "ebf1e4335a9d2db85652c722a17791c5b341e0da108472f46febc58c3d6e65a0"
+    },
+    {
+      "path": "tests/test_pipeline.py",
+      "bytes": 2396,
+      "sha256": "791f81450aca917c2787e0eb9239b2ec2653cc0b2310150e28745d7e7ea35a95"
+    },
+    {
+      "path": "tools/apply_renderer_upgrade.py",
+      "bytes": 9467,
+      "sha256": "ba2e82c3dde695a068a175d68cd64ecedac40605994de954b966e9915833e0c7"
+    },
+    {
+      "path": "tools/audit_results.py",
+      "bytes": 2646,
+      "sha256": "4b058368270a290a9d0d320faad9f3dd4cba596f6b4e8c65daa177784551807f"
+    },
+    {
+      "path": "tools/build_gallery.py",
+      "bytes": 11470,
+      "sha256": "05463abc267cc443a543610b56218d1caca24fa688e425d0a71ed0227818b47d"
+    },
+    {
+      "path": "tools/compile_initial.sh",
+      "bytes": 114,
+      "sha256": "d470bbeaeb20923fea6023f93f335b87099d930d1b560fdb676f698fec1d0912"
+    },
+    {
+      "path": "tools/compile_originals.py",
+      "bytes": 1797,
+      "sha256": "c0a240644a600991aa0841e818b704359800e567bb6c524b846a2d15c039c9ca"
+    },
+    {
+      "path": "tools/compile_r2.sh",
+      "bytes": 686,
+      "sha256": "04b2770963aeef17a97b1b0376cd58d5fa6fbae9aee79f75efff49d56c76ba1f"
+    },
+    {
+      "path": "tools/enhance_geometry.py",
+      "bytes": 9166,
+      "sha256": "58e4475a8231b0ab4f31bc2960ddf055d8baa82a107c24658ab83b338bd7438c"
+    },
+    {
+      "path": "tools/finish_r2.py",
+      "bytes": 4563,
+      "sha256": "903b8448185bc851f37584d3f813933a452b5ec3d13d6ef17ae8a290fa3d5543"
+    },
+    {
+      "path": "tools/foliage_filter.py",
+      "bytes": 2112,
+      "sha256": "dfee179d547ebcdb0296af52e6107fb15c843d14705ec3299c82983da84a3610"
+    },
+    {
+      "path": "tools/package_delivery.py",
+      "bytes": 4954,
+      "sha256": "b37955a4fd3276aa6379427cfaffa5ca48975c9add442adfa4340dccaa48a726"
+    },
+    {
+      "path": "tools/prepare_detail.py",
+      "bytes": 2382,
+      "sha256": "f9014546784f542adcc14584077a8b141fa2f437efbb5034f642f0891a7864a1"
+    },
+    {
+      "path": "tools/report_execution_repair.py",
+      "bytes": 4850,
+      "sha256": "e3415c127ec0a275016aa0607ba680402c820320c0efb64abf165542d393a271"
+    },
+    {
+      "path": "tools/test_r2.sh",
+      "bytes": 613,
+      "sha256": "c9abba53618bb85ca2446760e73a8f2c52bb446c2abc578c50a996b2f6cac88b"
+    },
+    {
+      "path": "tools/upgrade_builders.py",
+      "bytes": 2090,
+      "sha256": "f70cfe9ea76603fe153d5bb8bd8e27009cc696c92e7bdd0a2805b631a1641d0f"
+    },
+    {
+      "path": "tools/upgrade_obsidian.py",
+      "bytes": 2387,
+      "sha256": "0a8bc0720a9b85e8e6b2fda928df6c22b44823363e6f4f5b6f39e2a839b5b8ba"
+    },
+    {
+      "path": "tools/verify_finishing.py",
+      "bytes": 1826,
+      "sha256": "b2e432f420b449133b1637da0429284142a295379cfb8e0ce50da9df98408d7c"
+    },
+    {
+      "path": "tools/verify_gallery.py",
+      "bytes": 3380,
+      "sha256": "bee4f8d28ace593c1ef1fa77ead84e2d4bdbabf1c6082bc86a51e921952bde0f"
+    }
+  ]
+}

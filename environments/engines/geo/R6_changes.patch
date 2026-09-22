@@ -1,0 +1,1257 @@
+--- a/run.py
++++ b/run.py
+@@ -30,12 +30,12 @@
+ 
+ 
+ def required_files() -> list[Path]:
+-    relative = ['native/spectral_scenes.cpp', 'native/spectral_geometry.h',
++    relative = ['native/spectral_scenes.cpp', 'native/fernwater_materials_r6.h', 'native/spectral_geometry.h',
+                 'native/bvh8_recovery.h', 'native/formation_materials_r4.h', 'native/thin_leaf_r4.h',
+                 'native/photographic_grain.h', 'native/granular_relief_v11.h',
+                 'src/cybrgeo/core.py', 'src/cybrgeo/__init__.py',
+                 'examples/three_scenes/build_scenes.py',
+-                'examples/three_scenes/rebuild_scenes.py',
++                'examples/three_scenes/rebuild_scenes.py', 'examples/three_scenes/fernwater_r6.py',
+                 'examples/three_scenes/render_scenes.py',
+                 'examples/three_scenes/finish.py',
+                 'examples/three_scenes/noise_resolve.py',
+@@ -66,9 +66,9 @@
+     parser = argparse.ArgumentParser(description=__doc__)
+     parser.add_argument('stage', choices=['check', 'test', 'build', 'render', 'verify', 'all'],
+                         nargs='?', default='all')
+-    parser.add_argument('--scene', choices=['all', *SCENES], default='all')
++    parser.add_argument('--scene', choices=['all', *SCENES], default='forest')
+     parser.add_argument('--quality', choices=['preview', 'production'], default='production')
+-    parser.add_argument('--threads', type=int, default=min(5, os.cpu_count() or 1))
++    parser.add_argument('--threads', type=int, default=min(4, os.cpu_count() or 1))
+     parser.add_argument('--output', type=Path, default=ROOT / 'output')
+     parser.add_argument('--glb', action='store_true', help='Also export inspection GLBs (large).')
+     args = parser.parse_args()
+@@ -105,7 +105,7 @@
+             return
+     for scene in scenes:
+         # Dense thin-leaf reflection/transmission requires more sampling than opaque rock.
+-        settings = ((640, 426, 256, 512) if scene == 'forest' else (640, 426, 64, 128)) if preview else ((1920, 1280, 256, 512) if scene == 'forest' else (1920, 1280, 128, 320))
++        settings = ((640, 426, 256, 512) if scene == 'forest' else (640, 426, 64, 128)) if preview else ((1920, 1280, 192, 384) if scene == 'forest' else (1920, 1280, 128, 320))
+         w, h, spp, water_spp = settings
+         state: dict = {}
+         status['scenes'][scene] = state
+@@ -115,9 +115,12 @@
+                            '--scene', scene]
+                 if not args.glb:
+                     command.append('--no-glb')
+-                source_hash = digest(TOOLS / 'rebuild_scenes.py')
++                if scene=='forest':
++                    command=[sys.executable,str(TOOLS/'fernwater_r6.py'),'--out',str(output)]
++                recipe=TOOLS/('fernwater_r6.py' if scene=='forest' else 'rebuild_scenes.py')
++                source_hash = digest(recipe)
+                 state['build'] = execute(command, reports / f'{scene}_build.log')
+-                if source_hash != digest(TOOLS / 'rebuild_scenes.py'):
++                if source_hash != digest(recipe):
+                     raise RuntimeError('Recipe changed during scene generation')
+                 receipt = {'recipe_sha256': source_hash,
+                            'adapter_sha256': digest(TOOLS / 'build_scenes.py'),
+--- a/README.md
++++ b/README.md
+@@ -1,129 +1,120 @@
+-# CYBR GEO — R5 noise-resolve repair
++# CYBR Fernwater R6
+ 
+-This project is a source-level repair of the supplied R4 CYBR GEO three-scene
+-renderer. The geometry recipes and spectral light transport are unchanged.
+-No generated image, photographic backplate, neural filter, or upscaling is used.
+-It is not a claim that the environments are photorealistic or that raw radiance
+-has converged.
+-
+-## What changed
+-
+-The default render wrapper now runs `noise_resolve.py` rather than the R4
+-finisher's raw/filtered blend. R4 mixed 60% unfiltered radiance back onto the
+-opaque ground. R5 does not reintroduce that residual.
+-
+-The native renderer supplies independent stratified auxiliary rays (16 per
+-pixel; 64 for the dense forest). First-visible-surface guides distinguish water
+-from its refracted bed. Their surface normals are unperturbed mesh normals;
+-texture detail is represented by the sampled albedo instead of being used as a
+-hard no-filter barrier. Coverage, normal dispersion and depth spread are saved
+-in the new `.support` buffer.
+-
+-The non-neural finisher uses albedo-demodulated, variance-aware spatial wavelet
+-filtering, a conservative isolated-HDR-outlier pass, and atomic verified PNG
+-writes. Unreliable mixed-coverage and thin-leaf pixels are not demodulated.
+-Radiance and demodulated irradiance are never blended across representation
+-boundaries; a dedicated regression guards against bright/dark edge halos.
+-The isolated-outlier pass requires a strong local luminance ratio and compatible
+-neighbours. It returns the exact changed-pixel mask. Bright multi-pixel features
+-are excluded from that isolated-outlier operation, although spatial denoising
+-can still soften highlights and subpixel texture.
+-
+-This is a biased display reconstruction, not an unbiased radiance estimator.
+-Raw PFM/spectral data and original linear EXRs remain unmodified. Denoised EXRs
+-are explicitly named `_denoised_linear.exr`, not passed off as raw reference
+-radiance. There is no newly added transport contribution clamp.
++A new, geometry-built riparian woodland rendered by the recovered CYBR GEO native
++spectral pipeline. The forest scene has been rebuilt; this is not an image edit.
+ 
+ ## Run
+ 
+-Requirements: Python 3.10+, the packages in `requirements.txt`, and a C++17
+-compiler with OpenMP. GCC/Linux was exercised here. Binaries are compiled on the
+-local machine; a previous executable is never required.
++Use Python 3.10 or later and a C++17 compiler with OpenMP (`g++` was tested on
++Linux). Install the Python dependencies and run from this extracted directory:
+ 
+ ```sh
+ python -m pip install -r requirements.txt
+ python run.py check
+ python run.py test
+-python smoke_test.py
+-python run.py all --scene all --quality production --threads 4
++python test_r6_integration.py
++python run.py all --scene forest --quality production --threads 4
+ ```
+ 
+-Production settings are unchanged: 1920 x 1280, 128 ordinary / 320 water spp for
+-canyon and coast; 256 / 512 for forest. Preview settings are now 640 x 426 at
+-64 / 128 for canyon/coast, and 256 / 512 for forest. The denoiser cannot make
+-those smaller previews equivalent to full-resolution production images.
+-
+-A completed scene directory can be rendered again without rebuilding geometry:
++The production preset uses 1920 x 1280 pixels, 192 camera samples for ordinary
++surfaces, 384 for water, and 64 guide samples per pixel. It is an offline CPU job.
++The `preview` preset retains high sampling at 640 x 426. For a quick layout test:
+ 
+ ```sh
+-python run.py render --scene coast --quality production --threads 4
+-python run.py verify --scene coast --quality production --threads 4
++python run.py build --scene forest
++python cybr-geo/examples/three_scenes/render_scenes.py --root output --scene forest --width 640 --height 426 --spp 32 --water-spp 64 --stem layout --threads 4
+ ```
+ 
+-## Reprocess existing native linear radiance
+-
+-The native renderer accepts `--guides-only --guide-spp 16` in addition to the
+-normal mesh, camera, material-input and resolution arguments. This produces only
+-`.guides`, `.support` and metadata. It does not falsely write a new beauty frame
+-or nonzero path variance. Use the exact geometry and camera from the original
+-render. The supplied repair verified identical geometry hashes before doing so.
++A completed scene can be rendered again without regeneration:
+ 
+ ```sh
+-python cybr-geo/examples/three_scenes/noise_resolve.py \
+-  --linear existing_linear.exr \
+-  --guides guide_pass.guides --support guide_pass.support \
+-  --guide-metadata guide_pass.json --metadata original_render.json \
+-  --output cleaned --white-balance 6200
++python run.py render --scene forest --quality production --threads 4
++python run.py verify --scene forest --quality production --threads 4
+ ```
+ 
+-When original per-path moments are unavailable, the report says "robust spatial
+-estimate". It never treats a guide-only pass as a source of measured variance.
+-Use the original render's exposure and white balance. The display transform is
+-the same R4 transform; no contrast boost or grading change conceals the noise.
++The program reconstructs its native executable when the renderer, any native
++header, compiler settings, CPU features, or executable identity changes. Different
++library/compiler versions can alter geometry ordering or floating-point results.
++The delivered receipts identify the exact tested inputs and outputs.
++
++## What changed
++
++`cybr-geo/examples/three_scenes/fernwater_r6.py` constructs an asymmetric meandering
++stream, deposited gravel, actual bank relief, attached roots, irregular greywacke
++stones, discontinuous geometric moss, broadleaf canopies, a dense background tree
++tier, divided ferns, slope-aligned litter, twigs, and an open-ended hollow log.
++Near leaves have folded, serrated or lobed silhouettes. Distant leaves use simpler
++opaque polygon silhouettes, not image cards or an opaque crown shell.
++
++The builder still uses CYBR GEO `Part` and `Assembly` objects and their save/load
++path. Independent foliage groups are chunked during export to reduce temporary
++concatenation memory without removing their geometry. The saved assembly is the
++source of the native triangle stream.
++
++`native/fernwater_materials_r6.h` uses per-component material frames. Veins and
++midribs are expressed in each leaf's longitudinal/transverse coordinates; bark
++fissures and lenticles follow each woody component's axis. This replaces the
++world-coordinate diagonal texture patterns. The original photographic grayscale
++grain and granular-relief inputs remain active where appropriate. Their source
++and license are in `examples/desert_hot_springs/assets/ATTRIBUTION.txt`.
++
++The native transport adds upper-hemisphere sky next-event sampling for forest
++surfaces. Sky samples and BSDF-sampled sky escape are combined with the power
++heuristic; water and volume events reset that local MIS state. The existing sun,
++water and thin-leaf transport remain. `--no-sky-nee` disables the new technique for
++investigation, rather than silently selecting a different renderer.
++
++The R5 multisampled guides and non-neural variance-aware noise reconstruction are
++retained. The raw PFM/EXR and fixed-band radiance are saved separately. No raw-noise
++reinjection, sharpening, photographic backplate, generated-image texture, or
++image-generation model is used. Denoising is biased and may soften subpixel detail.
++
++## Local surface-coordinate files
++
++Each built forest directory contains:
++
++- `assembly/scene.json` and `assembly/meshes.npz`: CYBR GEO geometry in millimetres.
++- `assembly/surface_coordinates.npz`: local frames and their triangle ranges.
++- `scene.meshbin`: the original twenty-float triangle layout, in metres.
++- `surface_frames.bin`: `FRM6`, a little-endian uint32 count, then sixteen float32
++  values per frame: origin, longitudinal axis, transverse axis, normal, length,
++  width/radius, kind, and seed. Index zero is the unframed default.
++
++The existing native group slot carries a material-frame index. It does not change
++the primitive-intersection code. The loader rejects corrupt/nonfinite frame
++records and invalid indices rather than silently accepting mismatched tables.
++Keep the frame file beside its matching mesh. Older scene formats with no table
++use the unframed fallback; the rebuilt forest requires its generated table.
+ 
+ ## Verification
+ 
+-`test_noise_guides.py` executes a small native fixture with 1 versus 16 guide
+-samples. It checks bitwise equality of the raw beauty and spectral buffers,
+-finite coverage and auxiliary data, and guide-only output semantics.
++`test_project.py` runs the inherited optical, traversal, material-input, wave,
++namespace, guide, and denoising tests plus R6 material-coordinate and independent
++sky/BSDF MIS quadrature tests. `test_r6_integration.py` builds and renders a small
++new native fixture twice, checks deterministic radiance, tests local-coordinate
++serialization, and exercises corrupt-sidecar rejection. These are not duplicate
++full-forest rebuilds.
+ 
+-`test_noise_resolve.py` uses a known synthetic reference with noise, genuine
+-one-pixel texture, a narrow dark albedo crack, and injected HDR spikes. It tests
+-noise reduction, detail retention, finite output and read-only raw input. Its
+-percentages describe this synthetic test, not a measured accuracy improvement
+-against an unavailable production ground-truth render.
++`verify_outputs.py` checks the rendered image, sample-count map, mesh fingerprint,
++raw values, and independent reintegration of all sixteen saved spectral bands.
++Tests do not certify photographic realism, geophysical accuracy, or botanical
++accuracy. The final visual review is separate from these numerical checks.
+ 
+-The existing material, traversal, water-wave, thin-leaf and geometry tests remain
+-part of `python run.py test`. `smoke_test.py` compiles and renders three SMALL
+-fixtures and verifies buffer integration. A clean-unpack smoke test is not a
+-second full production rerender.
++## Limits
+ 
+-## Delivered-image provenance
++The vegetation, geology, material spectra, atmospheric density, and ripple field
++are authored mathematical models, not measured reconstructions or growth/erosion
++simulations. Transport uses sixteen fixed wavelength bins over 380–780 nm, not
++continuous wavelength sampling. Water has spectral absorption but a constant
++refractive index; dispersion is absent. Water caustics retain the approximate
++one-root interface connections. The sky uses a single-scattering lookup model.
++The finite path depth and those approximations preclude a claim of an unbiased
++all-path reference solution.
+ 
+-The canyon and coast noise-resolved images reprocess the supplied 1920 x 1280
+-R4 linear EXRs with newly rendered, matching-camera guide buffers. They are not
+-new higher-sample beauty renders. Their original raw radiance is unchanged.
++The legacy canyon/coast recipes remain for compatibility; this R6 upgrade and its
++final visual review concern Fernwater. Nothing is automatically pushed to GitHub.
+ 
+-The forest image delivered with this repair is a newly rendered 640 x 426
+-preview with 256 ordinary / 512 water spp and 64 guide spp. It replaces the
+-previous noisy preview at the same dimensions, not a full-resolution forest
+-final. The production commands above retain the full-resolution target.
+-
+-## Remaining rendering limits
+-
+-The renderer retains 16 fixed midpoint wavelength bands, authored rather than
+-measured reflectance, achromatic water IOR, approximate one-root water caustics,
+-and a limited atmosphere model. Denoising does not validate these approximations
+-or repair the procedural geometry. Some fine highlights or texture may soften.
+-No temporal denoising is implemented, so this patch does not certify video
+-stability.
+-
+-## Credits
+-
+-CYBR GEO core and scene source retain their supplied GPL-2.0-only notices.
+-The inherited CC0 grayscale material input has attribution in
+-`cybr-geo/examples/desert_hot_springs/assets/ATTRIBUTION.txt`.
+-
+-The spatial wavelet/variance idea is informed by Schied et al., *Spatiotemporal
+-Variance-Guided Filtering*, HPG 2017. This independent implementation has no
+-reprojection/history buffer and is not a complete SVGF implementation.
++The complete source and local detail assets are included. Large generated geometry
++and image buffers are regenerated by the commands above and need not be present
++in the source archive. See the supplied release verification for outputs actually
++completed; a production preset alone is not evidence that a render finished.
+--- a/test_project.py
++++ b/test_project.py
+@@ -13,11 +13,12 @@
+ binary,build=compile_renderer()
+ reports={'scope':'Input activation, traversal parity, wave agreement, and named optical equations; not photorealism', 'source_sha256':build['source_sha256'],'components':{}}
+ env=dict(os.environ,OPENBLAS_NUM_THREADS='1')
+-for name in ['test_recovery','test_wave_parity','test_thin_leaf_r4']:
++for name in ['test_recovery','test_wave_parity','test_thin_leaf_r4','test_fernwater_r6']:
+     flags=['g++','-std=c++17','-O3','-march=native','-fopenmp',str(NATIVE/(name+'.cpp')),'-o',str(OUT/name)]
+     subprocess.run(flags,check=True,env=env)
+ asset=ROOT/'cybr-geo/examples/desert_hot_springs/assets'
+ reports['components']['materials_and_traversal']=json.loads(subprocess.check_output([str(OUT/'test_recovery'),str(asset)],text=True,env=env))
++reports['components']['r6_material_frames_and_sky_mis']=json.loads(subprocess.check_output([str(OUT/'test_fernwater_r6')],text=True,env=env))
+ reports['components']['optics']=json.loads(subprocess.check_output([str(binary),'--self-test'],text=True,env=env))
+ subprocess.run([str(OUT/'test_wave_parity'),str(OUT/'wave_samples.bin')],check=True,env=env)
+ points=np.fromfile(OUT/'wave_samples.bin','<f4').reshape(-1,7)
+--- a/test_r6_integration.py
++++ b/test_r6_integration.py
+@@ -0,0 +1,88 @@
++#!/usr/bin/env python3
++"""Fresh, SMALL native R6 geometry/coordinate/transport integration fixture.
++
++This is not a second full-forest rebuild or a perceptual-quality test.
++"""
++from pathlib import Path
++import argparse,json,os,subprocess,sys
++os.environ.setdefault('OPENBLAS_NUM_THREADS','1')
++os.environ.setdefault('OPENCV_IO_ENABLE_OPENEXR','1')
++ROOT=Path(__file__).resolve().parent
++sys.path.insert(0,str(ROOT/'cybr-geo/examples/three_scenes'))
++import numpy as np
++from fernwater_r6 import WoodlandBuilder,fern
++from build_scenes import Water,sha
++from render_scenes import render,compile_renderer,build_scene_geometry
++from unittest.mock import patch
++from verify_outputs import verify_scene
++
++
++def main():
++    parser=argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('--output',type=Path,default=ROOT/'verification/r6_integration')
++    args=parser.parse_args();out=args.output.resolve();folder=out/'forest'
++    dispatched=[]
++    with patch('render_scenes.subprocess.run',side_effect=lambda command,**kwargs:dispatched.append(command)):
++        build_scene_geometry(out/'dispatch_probe','all')
++    dispatch_valid=[Path(c[1]).name for c in dispatched]==['rebuild_scenes.py','rebuild_scenes.py','fernwater_r6.py'] and all(Path(c[1]).is_file() for c in dispatched)
++    b=WoodlandBuilder(87313)
++    x,y=np.meshgrid(np.linspace(-3,3,32),np.linspace(-2,5,40))
++    z=-.16+.36/(1+np.exp(-(x-.9)*5))+.012*np.sin(x*9)*np.cos(y*11)
++    b.terrain=z;b.terrain_bounds=(-3,3,-2,5)
++    b.surface('Fixture_substrate',np.stack([x,y,z],-1),0)
++    path=np.array([[1.2,.8,.16],[1.23,.84,.9],[1.31,.87,1.8]])
++    b.tube('Fixture_cylindrical_bark',path,[.11,.075,.028],8,20,True,.7)
++    b.tube('Fixture_attached_petiole',[path[-1],path[-1]+[-.04,0,.005]],[.002,.0006],8,5)
++    b.leaf('Fixture_local_lamina',path[-1]+[-.04,0,.005],[-1,.05,-.22],.43,.23,9,.78,.09,detail=True)
++    b.leaf('Fixture_ground_litter',[-1.,.3,float(b.ground(-1,.3))+.006],[.7,.4,.03],.18,.11,11,.1,.04,detail=True)
++    fern(b,1.7,1.3,.42)
++    Water('forest').add(b,np.linspace(-2.7,2.7,30),np.linspace(-1.7,4.7,30),bottom=-1)
++    cfg={'scene':'forest','title':'R6 small local-coordinate fixture','camera':[1.9,-2.4,1.5],
++         'target':[.4,1.,.70],'fov':49,'sun':[-.4,-.4,.8],'sun_scale':1.,'sky_scale':1.,
++         'exposure':2.35,'white_balance':6100,'water_absorption':.85,'r6_local_material_frames':True}
++    geometry=b.finish(folder,cfg,False)
++    render(out,'forest',96,64,8,16,'test',2,True)
++    report=verify_scene(folder,'test')
++    render(out,'forest',96,64,8,16,'repeat',2,True)
++    checks=report['checks']
++    checks['all_entrypoints_select_r6_forest_recipe']=dispatch_valid
++    checks['local_frames_loaded']=report['render']['r6_surface_coordinate_frames']==geometry['surface_coordinate_frames']>1
++    checks['sky_nee_active']=report['render']['sky_next_event_sampling']
++    checks['surface_sidecar_receipt_matches']=report['execution']['surface_frames_sha256']==sha(folder/'surface_frames.bin')
++    checks['deterministic_pfm']=sha(folder/'test.pfm')==sha(folder/'repeat.pfm')
++    checks['deterministic_spectral']=sha(folder/'test.spectral')==sha(folder/'repeat.spectral')
++    frames=np.fromfile(folder/'surface_frames.bin','<f4',offset=8).reshape(-1,16)
++    mesh=np.memmap(folder/'scene.meshbin','<f4',mode='r',offset=4,shape=(geometry['triangles'],20))
++    indices=mesh[:,19].astype(np.int64)
++    checks['native_frame_indices_bounded']=bool((indices>=0).all() and (indices<len(frames)).all())
++    cursor=0;tested_leaf_triangles=0;coordinates_correct=True
++    scene_description=json.loads((folder/'assembly/scene.json').read_text())
++    with np.load(folder/'assembly/meshes.npz') as source_meshes:
++        for part in scene_description['parts']:
++            count=len(source_meshes[part['key']+'_faces'])
++            if 'lamina' in part['name'].lower() or 'pinnules' in part['name'].lower():
++                ids=indices[cursor:cursor+count]
++                coordinates_correct=coordinates_correct and bool((ids>0).all() and np.isin(frames[ids,14],[3,5,6]).all())
++                tested_leaf_triangles+=count
++            cursor+=count
++    checks['live_leaf_triangle_has_local_coordinates']=coordinates_correct and tested_leaf_triangles>1000
++    fern_frames=frames[frames[:,14]==5]
++    checks['fern_frames_follow_curved_fronds']=bool(len(fern_frames)>500 and fern_frames[:,11].min()<.85 and fern_frames[:,11].max()>.95)
++    coordinates=np.load(folder/'assembly/surface_coordinates.npz')
++    checks['assembly_coordinate_table_exact']=bool(np.array_equal(coordinates['frames'],frames))
++    # An intentional corrupt sidecar must be rejected rather than silently ignored.
++    bad=out/'deliberately_invalid';bad.mkdir(parents=True,exist_ok=True)
++    (bad/'surface_frames.bin').write_bytes(b'BAD!'+np.array([1],'<u4').tobytes()+bytes(64))
++    (bad/'scene.meshbin').write_bytes((folder/'scene.meshbin').read_bytes())
++    binary,_=compile_renderer()
++    bad_cmd=[str(binary),str(bad/'scene.meshbin'),str(bad/'bad'),'--scene','forest','--w','8','--h','8','--spp','1','--threads','1','--no-clouds','--no-steam']
++    result=subprocess.run(bad_cmd,capture_output=True,text=True)
++    (out/'invalid_frame_rejection.log').write_text(result.stdout+result.stderr)
++    checks['invalid_sidecar_rejected']=result.returncode!=0 and 'surface-frame' in result.stderr
++    report.update({'scope':__doc__,'checks':checks,'passed':all(checks.values()),
++                   'fixture_triangle_count':geometry['triangles'],'full_forest_rebuilt':False})
++    (out/'integration.json').write_text(json.dumps(report,indent=2)+'\n')
++    print(json.dumps(checks,indent=2))
++    if not report['passed']:raise SystemExit(1)
++
++if __name__=='__main__':main()
+--- a/cybr-geo/native/spectral_scenes.cpp
++++ b/cybr-geo/native/spectral_scenes.cpp
+@@ -37,6 +37,7 @@
+ constexpr float SUN_RADIUS=.00465f;
+ const float SUN_COS=std::cos(SUN_RADIUS), SUN_SOLID=2*PI*(1-SUN_COS);
+ int sceneStyle=0;
++bool skyNEE6=true;
+ bool useSteam=false,useWater=true;float waterStrength=1.f;
+ float sceneSunScale=1.f,sceneSkyScale=1.f;
+ 
+@@ -297,7 +298,10 @@
+ // All coordinates are metres; tiny grains are footprint filtered.
+ // Correlated position/elevation driven mixtures. The retained CC0 grayscale
+ // photograph is only a weak albedo modulation, never a backdrop or a render.
++#define shade shadeLegacyR5
+ #include "formation_materials_r4.h"
++#undef shade
++#include "fernwater_materials_r6.h"
+ 
+ // A numerical Snell-law connection to the displaced water heightfield.
+ // The finite-difference solid-angle Jacobian includes local wave focusing.
+@@ -397,6 +401,7 @@
+ Spec trace(Ray ray,RNG&rng,int maxDepth,float pixelCone){
+     Spec L,throughput(1);int waterPool=-1,scatterWater=-2,deltaCount=0;
+     bool indirect=false;bool lastWaterReflection=false;bool waterReflectionNEE=false;float previousReflectionPDF=0;float totalPathLength=0;
++    float previousSkyPDF6=0; bool previousSkyNEE6=false;
+     for(int depth=0;depth<maxDepth;depth++){
+         Hit h;bool found=closest(ray,h);
+         if(waterPool>=0){
+@@ -415,7 +420,7 @@
+                         recordRadiance(L,throughput*solar*attenuation(dist)*factor,indirect);
+                     }
+                 }
+-                scatterWater=waterPool;deltaCount=0;waterReflectionNEE=false;indirect=true;
++                previousSkyNEE6=false;scatterWater=waterPool;deltaCount=0;waterReflectionNEE=false;indirect=true;
+                 ray=Ray(p,sampleHG(ray.d,rng,WATER_PHASE_G));
+                 continue;
+             }
+@@ -438,7 +443,7 @@
+                 }
+             }
+             throughput*=.995f;
+-            scatterWater=-1;deltaCount=0;waterReflectionNEE=false;indirect=true;
++            previousSkyNEE6=false;scatterWater=-1;deltaCount=0;waterReflectionNEE=false;indirect=true;
+             ray=Ray(p,sampleHG(ray.d,rng,g));
+             continue;
+         }
+@@ -446,6 +451,7 @@
+             bool sunVisible=!(scatterWater==-1&&deltaCount==0)&&!(scatterWater>=0&&deltaCount==1)
+                 &&!(scatterWater==-1&&deltaCount==1&&lastWaterReflection);
+             Spec incoming=physicalSky(ray.d);
++            if(previousSkyNEE6&&ray.d.z>0)incoming*=powerWeight(previousSkyPDF6,1/(2*PI));
+             if(sunVisible&&dot(ray.d,SUN)>=SUN_COS){
+                 float weight=waterReflectionNEE?powerWeight(previousReflectionPDF,1/SUN_SOLID):1.f;
+                 incoming+=solar*weight;
+@@ -458,6 +464,7 @@
+         V gn=unit(cross(tri.e1,tri.e2)),n=unit(tri.n0*(1-h.u-h.v)+tri.n1*h.u+tri.n2*h.v);
+         int material=tri.mat;waterReflectionNEE=false;
+         if(useWater&&(material==6||material==7)){
++            previousSkyNEE6=false;
+             bool enter=dot(ray.d,gn)<0;
+             // Only top normals are smoothed. The closed buried side/bottom
+             // geometry still supplies the actual boundary orientations.
+@@ -492,10 +499,28 @@
+         }
+         if(dot(gn,ray.d)>0)gn=-gn;if(dot(n,gn)<0)n=-n;
+         if(dot(n,-ray.d)<.04f)n=unit(n+gn*(.041f-dot(n,-ray.d)));
+-        Surface m=shade(p,n,material,std::max(.00004f,totalPathLength*pixelCone/std::max(.18f,std::fabs(dot(n,ray.d)))));
++        Surface m=shadeAt6(p,n,material,std::max(.00004f,totalPathLength*pixelCone/std::max(.18f,std::fabs(dot(n,ray.d)))),tri.group);
+         if(dot(n,gn)<.1f)n=gn;
+         if(dot(n,-ray.d)<.01f)n=gn;
+         Spec base=rgbAnchors(m.color);V v=-ray.d,lAir=sampleSun(rng);
++        const bool sampleSkyHere6=skyNEE6&&sceneStyle==2&&waterPool<0;
++        if(sampleSkyHere6){
++            float z=rng.uniform(),phi=2*PI*rng.uniform(),rr=std::sqrt(std::max(0.f,1-z*z));
++            V light(rr*std::cos(phi),rr*std::sin(phi),z);
++            bool leaf=material==3||material==9;float nc=dot(n,light),gc=dot(gn,light);
++            if((leaf?nc*gc>0.f:(nc>0&&gc>0))){
++                V offset=gn*(gc>0?EPS*5:-EPS*5);Ray shadow(p+offset,light);Hit blocker;
++                // A direct environment connection cannot silently cross a water
++                // boundary. Water/foliage are actual occluders for this path class.
++                if(!meshHitWideR3(shadow,blocker,true,false)){
++                    const float lightPdf=1/(2*PI);
++                    float bsdfPdf=leaf?pdfLeafBSDF(m,n,v,light):pdfBSDF(m,n,v,light);
++                    Spec f=leaf?evalLeafBSDF(m,base,n,v,light):evalBSDF(m,base,n,v,light);
++                    float tr=airTransmittance(shadow,INF,rng);
++                    recordRadiance(L,throughput*f*physicalSky(light)*(std::fabs(nc)*tr*powerWeight(lightPdf,bsdfPdf)/lightPdf),indirect);
++                }
++            }
++        }
+         if(useWater&&waterPool<0){
+             for(int pool=0;pool<1;pool++){
+                 auto c=reflectedWaterConnection(p,lAir,pool);
+@@ -522,6 +547,7 @@
+             throughput*=evalLeafBSDF(m,base,n,v,next)*(std::fabs(nc)/pdf);
+             if(!std::isfinite(throughput.maximum()))break;
+             if(depth>=3){float survive=clamp(throughput.maximum(),.05f,.94f);if(rng.uniform()>survive)break;throughput*=1/survive;}
++            previousSkyNEE6=sampleSkyHere6;previousSkyPDF6=pdf;
+             scatterWater=-1;deltaCount=0;indirect=true;
+             ray=Ray(p+gn*(gc>0?EPS*5:-EPS*5),next);continue;
+         }
+@@ -551,6 +577,7 @@
+         throughput*=evalBSDF(m,base,n,v,next)*(cosine/pdf);
+         if(!std::isfinite(throughput.maximum()))break;
+         if(depth>=3){float survive=clamp(throughput.maximum(),.05f,.94f);if(rng.uniform()>survive)break;throughput*=1/survive;}
++        previousSkyNEE6=sampleSkyHere6;previousSkyPDF6=pdf;
+         scatterWater=waterPool;deltaCount=0;indirect=true;
+         ray=Ray(p+gn*EPS*5,unit(next));
+     }
+@@ -579,6 +606,7 @@
+         else if(arg=="--sky-scale")sceneSkyScale=std::stof(get());
+         else if(arg=="--guide-spp")o.guideSpp=std::stoi(get());
+         else if(arg=="--guides-only")o.guidesOnly=true;
++        else if(arg=="--no-sky-nee")skyNEE6=false;
+         else if(arg=="--water-spp")o.waterSpp=std::stoi(get());else if(arg=="--indirect-clamp")indirectClamp=std::stof(get());else if(arg=="--w")o.width=std::stoi(get());else if(arg=="--h")o.height=std::stoi(get());else if(arg=="--spp")o.spp=std::stoi(get());
+         else if(arg=="--depth")o.depth=std::stoi(get());else if(arg=="--threads")o.threads=std::stoi(get());else if(arg=="--seed")o.seed=std::stoi(get());
+         else if(arg=="--view")o.view=get();else if(arg=="--exposure")o.exposure=std::stof(get());else if(arg=="--aperture")o.aperture=std::stof(get());
+@@ -612,7 +640,7 @@
+         V n=unit(t.n0*(1-h.u-h.v)+t.n1*h.u+t.n2*h.v);if(dot(n,ray.d)>0)n=-n;
+         travelled+=h.t;
+         if(t.mat==6||t.mat==7){V d=refractRay(ray.d,n,1/WATER_IOR);ray=Ray(p-n*EPS*5,d);continue;}
+-        auto m=shade(p,n,t.mat,travelled*cone);
++        auto m=shadeAt6(p,n,t.mat,travelled*cone,t.group);
+         g.normal=n;g.albedo=m.color;g.depth=travelled;g.material=t.mat;return g;
+     }return g;
+ }
+@@ -630,7 +658,7 @@
+     g.normal=n;g.material=float(t.mat);g.depth=h.t;
+     if(t.mat==6||t.mat==7){g.albedo=V(1);return g;}
+     float footprint=std::max(.00004f,h.t*cone/std::max(.18f,std::fabs(dot(n,ray.d))));
+-    g.albedo=shade(p,n,t.mat,footprint).color;return g;
++    g.albedo=shadeAt6(p,n,t.mat,footprint,t.group).color;return g;
+ }
+ struct GuideSupport{float coverage=1,normalVariance=0,depthSigma=0,skyCoverage=0;};
+ Guide supersampledFeature(V camera,V forward,V right,V up,float tangent,float aspect,
+@@ -673,6 +701,7 @@
+     if(argc==2&&std::string(argv[1])=="--self-test")return selftest();
+     auto o=parse(argc,argv);if(!o.grain.empty())photographicGrain.load(o.grain);if(!o.relief.empty())granularRelief.load(o.relief);omp_set_num_threads(o.threads);configureScene();initSpectra();initRipples();initClouds();initSteam();if(!o.groundCertificate.empty())groundOcclusion.load(o.groundCertificate);
+     auto started=std::chrono::steady_clock::now();
++    loadSurfaceFrames6(o.mesh);
+     std::ifstream input(o.mesh,std::ios::binary);if(!input)throw std::runtime_error("Cannot read CYBR GEO mesh "+o.mesh);
+     uint32_t count;input.read(reinterpret_cast<char*>(&count),4);
+     if(!input||count>40000000)throw std::runtime_error("Invalid mesh header");
+@@ -686,6 +715,7 @@
+         if(dot(cross(t.e1,t.e2),cross(t.e1,t.e2))>1e-20f)tris.push_back(t);
+     }
+     if(tris.empty())throw std::runtime_error("No geometry");
++    if(!surfaceFrames6.empty())for(const auto &t:tris)if(t.group<0||size_t(t.group)>=surfaceFrames6.size())throw std::runtime_error("Mesh group/frame mismatch");
+     order.resize(tris.size());std::iota(order.begin(),order.end(),0);nodes.reserve(tris.size()/2);build(0,int(order.size()));buildWideR3();
+     std::cerr<<"CYBR GEO BVH: "<<tris.size()<<" actual triangles; "<<nodes.size()<<" nodes\n";
+     V camera(2.10f,-5.65f,1.52f),target(-.15f,3.15f,.15f);float hfov=72;
+@@ -752,9 +782,9 @@
+     {std::ofstream sf(o.out+".support",std::ios::binary);sf.write(reinterpret_cast<char*>(dim),8);sf.write(reinterpret_cast<char*>(support.data()),support.size()*sizeof(GuideSupport));}
+     uint64_t totalCameraSamples=std::accumulate(sampleCounts.begin(),sampleCounts.end(),uint64_t(0));
+     float sec=std::chrono::duration<float>(std::chrono::steady_clock::now()-started).count();
+-    std::ofstream meta(o.out+".json");meta<<std::setprecision(9)<<"{\n  \"renderer\": \"CYBR GEO R5 noise resolve; unchanged R4 transport; multisample primary features\",\n  \"guide_spp\": "<<o.guideSpp<<",\n  \"primary_surface_guides\": true,\n  \"geometry_accelerator\": \"CYBR GEO native SAH BVH\",\n  \"view\": \""<<o.view<<"\",\n  \"width\": "<<o.width<<", \"height\": "<<o.height<<", \"spp\": "<<o.spp<<",\n  \"max_depth\": "<<o.depth<<", \"seed\": "<<o.seed<<", \"threads\": "<<o.threads<<",\n  \"triangles\": "<<tris.size()<<", \"bvh_nodes\": "<<nodes.size()<<",\n  \"spectral_bands\": 16, \"wavelength_range_nm\": [380,780],\n  \"spectral_method\": \"Jointly transported fixed midpoint wavelength quadrature, 25 nm bins\",\n  \"water_ior\": "<<WATER_IOR<<", \"dispersion\": false,\n  \"steam\": "<<(useSteam?"true":"false")<<", \"steam_model\": \"Authored heterogeneous trilinear density grid; grid-bounded delta and ratio tracking; HG phase\",\n  \"water_absorption_scale\": "<<waterStrength<<",\n  \"finite_difference_water_connection_step_radians\": 0.0001,\n  \"nonfinite_path_samples\": "<<nonfinite.load()<<",\n  \"exposure\": "<<o.exposure<<",\n  \"film_white_rgb\": ["<<whiteRGB.x<<","<<whiteRGB.y<<","<<whiteRGB.z<<"],\n  \"seconds\": "<<sec<<",\n  \"band_means\": [";
++    std::ofstream meta(o.out+".json");meta<<std::setprecision(9)<<"{\n  \"renderer\": \"CYBR GEO Fernwater R6; local leaf/bark material frames; R5 noise resolve\",\n  \"guide_spp\": "<<o.guideSpp<<",\n  \"primary_surface_guides\": true,\n  \"geometry_accelerator\": \"CYBR GEO native SAH BVH\",\n  \"view\": \""<<o.view<<"\",\n  \"width\": "<<o.width<<", \"height\": "<<o.height<<", \"spp\": "<<o.spp<<",\n  \"max_depth\": "<<o.depth<<", \"seed\": "<<o.seed<<", \"threads\": "<<o.threads<<",\n  \"triangles\": "<<tris.size()<<", \"bvh_nodes\": "<<nodes.size()<<",\n  \"spectral_bands\": 16, \"wavelength_range_nm\": [380,780],\n  \"spectral_method\": \"Jointly transported fixed midpoint wavelength quadrature, 25 nm bins\",\n  \"water_ior\": "<<WATER_IOR<<", \"dispersion\": false,\n  \"steam\": "<<(useSteam?"true":"false")<<", \"steam_model\": \"Authored heterogeneous trilinear density grid; grid-bounded delta and ratio tracking; HG phase\",\n  \"water_absorption_scale\": "<<waterStrength<<",\n  \"finite_difference_water_connection_step_radians\": 0.0001,\n  \"nonfinite_path_samples\": "<<nonfinite.load()<<",\n  \"exposure\": "<<o.exposure<<",\n  \"film_white_rgb\": ["<<whiteRGB.x<<","<<whiteRGB.y<<","<<whiteRGB.z<<"],\n  \"seconds\": "<<sec<<",\n  \"band_means\": [";
+     for(int k=0;k<NBANDS;k++)meta<<(k?",":"")<<means.v[k];
+-    meta<<"],\n  \"water_scattering_coefficient_per_m\": "<<WATER_SIGMA_S<<",\n  \"water_scattering_HG_g\": "<<WATER_PHASE_G<<",\n  \"ripple_modes\": "<<RIPPLE_COUNT<<",\n  \"camera_origin_m\": ["<<camera.x<<","<<camera.y<<","<<camera.z<<"],\n  \"camera_target_m\": ["<<target.x<<","<<target.y<<","<<target.z<<"],\n  \"horizontal_fov_degrees\": "<<hfov<<",\n  \"aperture_radius_m\": "<<o.aperture<<",\n  \"sun_direction\": ["<<SUN.x<<","<<SUN.y<<","<<SUN.z<<"],\n  \"photographic_grayscale_albedo_detail\": "<<(!photographicGrain.levels.empty()?"true":"false")<<",\n  \"granular_relief_enabled\": "<<(!granularRelief.levels.empty()?"true":"false")<<",\n  \"photographic_backplate\": false,\n  \"image_generation\": false,\n  \"sky_model\": \"Single-scattering spherical Rayleigh/aerosol spectral LUT, not reference-validated\",\n  \"material_spectra\": \"Reference-illuminant-calibrated RGB-anchor reflectance, not measured mineral spectra\",\n  \"clouds\": "<<(useClouds?"true":"false")<<",\n  \"cloud_model\": \"Bounded 3D extinction grid; conservative column-majorant DDA; delta-tracked scattering and ratio-tracked shadows\",\n  \"cloud_grid\": ["<<CLOUD_NX<<","<<CLOUD_NY<<","<<CLOUD_NZ<<"],\n  \"water_spp\": "<<o.waterSpp<<",\n  \"total_camera_samples\": "<<totalCameraSamples<<",\n  \"indirect_contribution_clamp_Y\": "<<indirectClamp<<",\n  \"clamped_indirect_contributions\": "<<clampedIndirectContributions.load()<<",\n  \"leaf_surface_model\": \"Reciprocal Fresnel-GGX coat with two-sided attenuated diffuse body; authored, not measured\",\n  \"leaf_body_reflection_share\": 0.6,\n  \"leaf_surface_r4\": true,\n  \"ground_occlusion_enabled\": "<<(groundOcclusion.active?"true":"false")<<",\n  \"ground_occlusion_queries\": "<<groundOcclusion.queries.load()<<",\n  \"ground_occlusion_rejections\": "<<groundOcclusion.rejections.load()<<",\n  \"water_microfacet_alpha\": "<<WATER_MICRO_ALPHA<<",\n  \"water_reflection_estimator\": \"Primary: GGX VNDF and solar-disc MIS; indirect: one-root macro reflection manifold with exclusive path ownership\",\n  \"underwater_direct_light_approximation\": \"One-root macro-surface manifolds approximate indirect reflected and transmitted caustics; primary reflection uses GGX\"\n}\n";
++    meta<<"],\n  \"r6_surface_coordinate_frames\": "<<surfaceFrames6.size()<<",\n  \"sky_next_event_sampling\": "<<(skyNEE6&&sceneStyle==2?"true":"false")<<",\n  \"water_scattering_coefficient_per_m\": "<<WATER_SIGMA_S<<",\n  \"water_scattering_HG_g\": "<<WATER_PHASE_G<<",\n  \"ripple_modes\": "<<RIPPLE_COUNT<<",\n  \"camera_origin_m\": ["<<camera.x<<","<<camera.y<<","<<camera.z<<"],\n  \"camera_target_m\": ["<<target.x<<","<<target.y<<","<<target.z<<"],\n  \"horizontal_fov_degrees\": "<<hfov<<",\n  \"aperture_radius_m\": "<<o.aperture<<",\n  \"sun_direction\": ["<<SUN.x<<","<<SUN.y<<","<<SUN.z<<"],\n  \"photographic_grayscale_albedo_detail\": "<<(!photographicGrain.levels.empty()?"true":"false")<<",\n  \"granular_relief_enabled\": "<<(!granularRelief.levels.empty()?"true":"false")<<",\n  \"photographic_backplate\": false,\n  \"image_generation\": false,\n  \"sky_model\": \"Single-scattering spherical Rayleigh/aerosol spectral LUT, not reference-validated\",\n  \"material_spectra\": \"Reference-illuminant-calibrated RGB-anchor reflectance, not measured mineral spectra\",\n  \"clouds\": "<<(useClouds?"true":"false")<<",\n  \"cloud_model\": \"Bounded 3D extinction grid; conservative column-majorant DDA; delta-tracked scattering and ratio-tracked shadows\",\n  \"cloud_grid\": ["<<CLOUD_NX<<","<<CLOUD_NY<<","<<CLOUD_NZ<<"],\n  \"water_spp\": "<<o.waterSpp<<",\n  \"total_camera_samples\": "<<totalCameraSamples<<",\n  \"indirect_contribution_clamp_Y\": "<<indirectClamp<<",\n  \"clamped_indirect_contributions\": "<<clampedIndirectContributions.load()<<",\n  \"leaf_surface_model\": \"Reciprocal Fresnel-GGX coat with two-sided attenuated diffuse body; authored, not measured\",\n  \"leaf_body_reflection_share\": 0.6,\n  \"leaf_surface_r4\": true,\n  \"ground_occlusion_enabled\": "<<(groundOcclusion.active?"true":"false")<<",\n  \"ground_occlusion_queries\": "<<groundOcclusion.queries.load()<<",\n  \"ground_occlusion_rejections\": "<<groundOcclusion.rejections.load()<<",\n  \"water_microfacet_alpha\": "<<WATER_MICRO_ALPHA<<",\n  \"water_reflection_estimator\": \"Primary: GGX VNDF and solar-disc MIS; indirect: one-root macro reflection manifold with exclusive path ownership\",\n  \"underwater_direct_light_approximation\": \"One-root macro-surface manifolds approximate indirect reflected and transmitted caustics; primary reflection uses GGX\"\n}\n";
+     std::cerr<<"WROTE "<<o.out<<"; "<<sec<<" seconds; invalid paths "<<nonfinite<<"\n";
+     return nonfinite?2:0;
+ }catch(const std::exception&e){std::cerr<<"ERROR: "<<e.what()<<"\n";return 1;}}
+--- a/cybr-geo/native/fernwater_materials_r6.h
++++ b/cybr-geo/native/fernwater_materials_r6.h
+@@ -0,0 +1,101 @@
++// SPDX-License-Identifier: GPL-2.0-only
++// Per-component coordinates for genuine triangle surfaces. Authored, not scanned.
++#pragma once
++struct SurfaceFrame6 {V origin,d,side,normal;float length,width,kind,seed;};
++static_assert(sizeof(SurfaceFrame6)==64,"Unexpected frame packing");
++std::vector<SurfaceFrame6> surfaceFrames6;
++void loadSurfaceFrames6(const std::string &mesh){
++    const auto pos=mesh.find_last_of("/\\");
++    std::string path=(pos==std::string::npos?std::string():mesh.substr(0,pos+1))+"surface_frames.bin";
++    std::ifstream f(path,std::ios::binary);surfaceFrames6.clear();if(!f)return;
++    char tag[4];uint32_t n=0;f.read(tag,4);f.read(reinterpret_cast<char*>(&n),4);
++    if(!f||std::memcmp(tag,"FRM6",4)||n>2000000)throw std::runtime_error("Invalid surface-frame sidecar");
++    surfaceFrames6.resize(n);f.read(reinterpret_cast<char*>(surfaceFrames6.data()),n*sizeof(SurfaceFrame6));
++    if(!f||f.peek()!=std::char_traits<char>::eof())throw std::runtime_error("Truncated/overlong frame table");
++    for(uint32_t i=1;i<n;++i){const auto &a=surfaceFrames6[i];
++        const float *p=reinterpret_cast<const float*>(&a);for(int k=0;k<16;++k)if(!std::isfinite(p[k]))throw std::runtime_error("Nonfinite local frame");
++        if(a.length<=0||a.width<=0||std::fabs(len(a.d)-1)>.001||std::fabs(len(a.side)-1)>.001||std::fabs(dot(a.d,a.side))>.001)throw std::runtime_error("Invalid local frame axes");
++    }
++    std::cerr<<"R6 local surface coordinate frames: "<<n<<"\n";
++}
++Surface shadeAt6(V p,V &n,int id,float footprint,int group){
++    if(sceneStyle!=2)return shadeLegacyR5(p,n,id,footprint);
++    Surface m;m.kind=id;m.rough=.80f;m.ior=1.49f;V gn=n;
++    float grain=.12f,relief=.09f;
++    float wet=1-smooth(.00f,.19f,p.z),macro=noise(p*.94f),fine=1/(1+sqr(footprint*140));
++    const SurfaceFrame6 *f=(group>0&&size_t(group)<surfaceFrames6.size())?&surfaceFrames6[group]:nullptr;
++    if(id==0||id==4){
++        float mineral=smooth(.03f,.39f,noise(p*5.8f));
++        m.color=mixc(V(.024f,.014f,.007f),V(.078f,.048f,.021f),.55f+.30f*macro);
++        m.color=mixc(m.color,V(.115f,.098f,.066f),mineral*.35f*(1-smooth(.01f,.22f,p.z)));
++        m.color*=1+.08f*noise(p*171)*fine;
++        m.rough=.92f-.48f*wet;grain=.37f;relief=.36f;
++    }else if(id==1||id==2||id==5){
++        // Coarser independent mineral domains with a much finer grain, not large pits.
++        m.color=mixc(V(.067f,.072f,.068f),V(.173f,.165f,.135f),.40f+.28f*macro);
++        float grainy=smooth(.03f,.62f,noise(p*150));
++        m.color*=1+.12f*noise(p*19)+.13f*grainy*fine;
++        float fleck=smooth(.30f,.64f,noise(p*290));
++        m.color=mixc(m.color,V(.30f,.31f,.28f),fleck*.17f*fine);
++        float stain=smooth(.22f,.48f,noise(p*4.4f));m.color=mixc(m.color,V(.043f,.071f,.020f),stain*.30f*smooth(.015f,.16f,p.z));
++        m.color*=1-.32f*wet;m.rough=.77f-.52f*wet;grain=.26f;relief=.15f;
++        n=unit(n-noiseSlope(p,n,119,.06f,footprint));
++    }else if(id==8||id==14){
++        float plate;
++        if(f){
++            V q=p-f->origin;float height=dot(q,f->d),arc=std::atan2(dot(q,f->normal),dot(q,f->side))*f->width;
++            V local(arc,height,f->seed);float drift=.36f*noise(V(arc*11,height*1.3f,f->seed));
++            float groove=std::pow(std::max(0.f,std::cos(arc*94.f+drift)),8.f);
++            plate=.5f+.5f*noise(V(arc*23,height*4.5f,f->seed));
++            m.color=mixc(V(.034f,.024f,.017f),V(.146f,.112f,.072f),plate);
++            m.color*=1-.39f*groove/(1+sqr(footprint*90));
++            if(id==14){
++                float mark=smooth(.25f,.57f,noise(V(arc*13,height*27.f,f->seed)));
++                m.color=mixc(V(.31f,.303f,.253f),V(.044f,.035f,.025f),mark*.82f);
++                m.color*=.88f+.18f*plate;
++            }
++            // Small normal perturbation follows the tree axis, never diagonal world stripes.
++            V tangent=unit(cross(f->d,n));
++            n=unit(n+tangent*(.045f*std::sin(arc*94+drift)/(1+sqr(footprint*94))));
++        }else{
++            plate=.5f+.5f*noise(V(p.x*24,p.y*24,p.z*3));m.color=mixc(V(.032f,.022f,.014f),V(.12f,.091f,.050f),plate);
++        }
++        float bryo=smooth(.10f,.43f,noise(p*4.5f))*(1-smooth(.12f,1.2f,p.z));
++        m.color=mixc(m.color,V(.026f,.064f,.011f),bryo*.71f);
++        m.rough=.85f;grain=.23f;relief=.18f;
++    }else if(id==3||id==9||id==13||id==11){
++        float component=f?(.5f+.5f*std::sin(f->seed*2.71f)):(.5f+.5f*noise(p*12));
++        bool dead=id==11||id==13;
++        m.color=dead?mixc(V(.044f,.017f,.005f),V(.235f,.119f,.035f),component):mixc(V(.028f,.105f,.009f),V(.110f,.235f,.034f),component*.78f);
++        m.rough=dead?.66f:(.38f+.16f*component);m.ior=1.45f;grain=dead?.035f:0;relief=0;
++        if(id==3){m.color=mixc(V(.018f,.048f,.012f),V(.052f,.108f,.024f),component);m.rough=.56f;}
++        if(f){
++            V q=p-f->origin;float u=dot(q,f->d)/f->length,v=dot(q,f->side)*2/f->width;
++            float filtered=1/(1+sqr(footprint/std::max(.001f,f->length*.022f)));
++            float mid=std::exp(-sqr(v/.031f))*filtered;
++            float sequence=u*8.5f-std::fabs(v)*1.0f;
++            float d=std::fabs(sequence-std::round(sequence));
++            float vein=std::exp(-sqr(d/.030f))*filtered*(1-mid);
++            float mottling=noise(V(u*10,v*5,f->seed));
++            m.color*=1+.060f*mottling;
++            m.color=mixc(m.color,dead?V(.26f,.164f,.058f):V(.13f,.218f,.032f),.34f*mid+.17f*vein);
++            if(dead){float decay=smooth(.20f,.53f,noise(V(u*9,v*6,f->seed)));m.color*=1-.48f*decay;}
++            // Sparse gloss modulation and a vein ridge normal in the leaf's own frame.
++            float delta=.016f*std::sin(sequence*2*PI)*filtered;
++            V tangent=f->side-n*dot(f->side,n);n=unit(n+tangent*delta);
++        }
++    }else if(id==10){
++        float local=.5f+.5f*noise(p*47);
++        m.color=mixc(V(.016f,.045f,.005f),V(.056f,.112f,.012f),local);
++        m.rough=.96f;grain=.05f;relief=.055f;
++    }else if(id==12){
++        float lines=noise(V(p.x*37,p.y*37,p.z*7));
++        m.color=mixc(V(.047f,.023f,.010f),V(.18f,.10f,.042f),.48f+.38f*lines);m.rough=.94f;grain=.24f;relief=.15f;
++    }else{m.color=V(.10f);grain=.1f;}
++    if(grain>0)m.color*=1+grain*(projectedGrain(p,n,footprint,.39f)-1);
++    if(relief>0)n=unit(n-projectedRelief(p,n,footprint,relief));
++    if(dot(n,gn)<.70f)n=unit(n+gn);
++    m.color=vmin(vmax(m.color,V(.002f)),V(.88f));m.rough=clamp(m.rough,.11f,.98f);return m;
++}
++// Preserve the original public material-test interface for unframed samples.
++Surface shade(V p,V &n,int id,float footprint){return shadeAt6(p,n,id,footprint,0);}
+--- a/cybr-geo/native/test_fernwater_r6.cpp
++++ b/cybr-geo/native/test_fernwater_r6.cpp
+@@ -0,0 +1,44 @@
++// SPDX-License-Identifier: GPL-2.0-only
++#define main cybr_native_main
++#include "spectral_scenes.cpp"
++#undef main
++struct Stats6 {double s=0,s2=0;int n=0;void add(double a){s+=a;s2+=a*a;n++;}double mean()const{return s/n;}double variance()const{return std::max(0.,s2/n-sqr(mean()));}double se()const{return std::sqrt(variance()/n);}};
++float testEnv6(V l){return l.z>0&&std::sin(l.x*9)+std::cos(l.y*7)>.30f?(.4f+.9f*l.z):0.f;}
++int main(){try{
++    sceneStyle=2;configureScene();initSpectra();
++    bool passed=true;int materialSamples=0;float maxNormalError=0,translationError=0;
++    surfaceFrames6.push_back({});surfaceFrames6.push_back({V(0),V(1,0,0),V(0,1,0),V(0,0,1),.14f,.065f,3,52});
++    RNG r(601271);
++    for(int j=0;j<12000;j++){
++        int id=j%17;V p(r.uniform()*8-4,r.uniform()*15,r.uniform()*6),n=unit(V(r.uniform()-.5f,r.uniform()-.5f,r.uniform()+.1f));
++        auto s=shadeAt6(p,n,id,.0001f+.01f*r.uniform(),id==9?1:0);
++        if(!std::isfinite(maxc(s.color))||maxc(s.color)>.88001f||std::min({s.color.x,s.color.y,s.color.z})<.00199f||s.rough<.10999f||s.rough>.98001f)passed=false;
++        maxNormalError=std::max(maxNormalError,std::fabs(len(n)-1));materialSamples++;
++    }
++    for(int i=0;i<2000;i++){
++        surfaceFrames6[1].origin=V(0);V p(r.uniform()*.14f,(r.uniform()-.5f)*.045f,.002f),n(0,0,1);
++        auto first=shadeAt6(p,n,9,.0003f,1);V shift(2.7f,-1.5f,4.3f);surfaceFrames6[1].origin=shift;n=V(0,0,1);
++        auto second=shadeAt6(p+shift,n,9,.0003f,1);translationError=std::max(translationError,len(first.color-second.color));
++    }
++    passed=passed&&maxNormalError<2e-5f&&translationError<2e-4f;
++    std::cout<<std::setprecision(10)<<"{\n \"scope\": \"Executed material-frame, bounded-output and independent environment-MIS quadrature checks; not photorealism\",\n \"material_samples\": "<<materialSamples<<",\n \"max_normal_error\": "<<maxNormalError<<",\n \"leaf_translation_color_error\": "<<translationError<<",\n \"mis_cases\": [";
++    for(int leaf=0;leaf<2;leaf++){
++        V n=unit(V(.22f,.18f,.9f)),view=unit(V(.42f,-.05f,.91f));Surface m;m.ior=1.46;m.rough=.42f;Spec base(.38f);
++        auto eval=[&](V l){return (leaf?evalLeafBSDF(m,base,n,view,l):evalBSDF(m,base,n,view,l)).v[0]*std::fabs(dot(n,l))*testEnv6(l);};
++        auto pdf=[&](V l){return leaf?pdfLeafBSDF(m,n,view,l):pdfBSDF(m,n,view,l);};
++        double reference=0;constexpr int NZ=512,NP=1024;
++        for(int zi=0;zi<NZ;zi++)for(int pi=0;pi<NP;pi++){
++            float z=(zi+.5f)/NZ,phi=2*PI*(pi+.5f)/NP,t=std::sqrt(1-z*z);reference+=eval(V(t*std::cos(phi),t*std::sin(phi),z));
++        }reference*=2*PI/(NZ*NP);
++        Stats6 bsdf,mis;
++        for(int j=0;j<180000;j++){
++            V l=leaf?sampleLeafBSDF(m,n,view,r):sampleBSDF(m,n,view,r);double c=0,mixed=0;
++            if(dot(l,l)>.5f&&pdf(l)>1e-10f){c=eval(l)/pdf(l);mixed=c*(l.z>0?powerWeight(pdf(l),1/(2*PI)):1.f);}
++            float z=r.uniform(),phi=2*PI*r.uniform(),t=std::sqrt(1-z*z);V sky(t*std::cos(phi),t*std::sin(phi),z);
++            mixed+=eval(sky)*2*PI*powerWeight(1/(2*PI),pdf(sky));bsdf.add(c);mis.add(mixed);
++        }
++        bool ok=std::fabs(bsdf.mean()-reference)<6*bsdf.se()+.0003&&std::fabs(mis.mean()-reference)<6*mis.se()+.0003;passed=passed&&ok;
++        std::cout<<(leaf?",":"")<<"\n  {\"leaf\": "<<(leaf?"true":"false")<<", \"reference_quadrature\": "<<reference<<", \"bsdf_mean\": "<<bsdf.mean()<<", \"mis_mean\": "<<mis.mean()<<", \"bsdf_standard_error\": "<<bsdf.se()<<", \"mis_standard_error\": "<<mis.se()<<", \"passed\": "<<(ok?"true":"false")<<"}";
++    }
++    std::cout<<"\n ],\n \"passed\": "<<(passed?"true":"false")<<"\n}\n";return passed?0:1;
++}catch(const std::exception &e){std::cerr<<e.what()<<"\n";return 2;}}
+--- a/cybr-geo/examples/three_scenes/fernwater_r6.py
++++ b/cybr-geo/examples/three_scenes/fernwater_r6.py
+@@ -0,0 +1,508 @@
++"""Fernwater R6: a new winding riparian woodland, native CYBR GEO geometry.
++
++The formation models, leaf optics, rock and plant shapes are authored. They are
++not scanned, image generated, a geophysical solver, or a botanical simulation.
++All visible objects are triangles; leaves have attached petioles and local frames.
++"""
++from __future__ import annotations
++import argparse, json, math, time
++from pathlib import Path
++import numpy as np
++from scipy.ndimage import map_coordinates
++import trimesh
++import build_scenes as base
++from build_scenes import Builder, Water, unit, n3, smooth, fractal, vertex_normals, sha, REPO, HERE
++import rebuild_scenes as inherited
++
++
++def field(x,y,z=0.,s=1.,octaves=3):
++    return fractal(np.asarray(x)*s,np.asarray(y)*s,np.asarray(z)*s,octaves)
++
++
++def channel(y):
++    y=np.asarray(y)
++    return .82*np.sin((y+2.2)*.26)+.42*np.sin(y*.47-.2)+.035*y+2.2*smooth(17,34,y)
++
++
++def bank_width(y,side):
++    y,side=np.broadcast_arrays(y,side)
++    return (1.34+.32*np.sin(y*.33+.4)+.23*n3(y*.72,side*3)
++            +.58*np.exp(-((y-2.5)/2.0)**2)*(side<0)
++            -.35*np.exp(-((y-8.2)/2.2)**2)*(side>0))
++
++
++def floor_height(x,y):
++    x,y=np.broadcast_arrays(x,y);q=x-channel(y);side=np.where(q>0,1.,-1.);d=np.abs(q)
++    w=bank_width(y,side)
++    # Meandering asymmetric cut-bank / sediment-bar transitions. No constant-height
++    # canal wall, no raised six-metre embankment immediately behind the log.
++    steep=.30+.60*smooth(-.4,.6,np.sin(y*.27+side*1.7))
++    transition=smooth(w-.38,w+steep,d)
++    depth=.20+.20*np.exp(-((y-1.4)/3.1)**2)+.06*np.sin(y*.32)
++    bed=-depth+.065*field(x,y,s=1.35)+.014*field(x,y,s=9,octaves=2)
++    bank=.23+.18*field(x,y,s=.63)+.11*field(x,y,s=2.6)
++    bank+=.21*smooth(1.6,5.8,d)+.54*smooth(5,15,d)
++    bank+=2.1*smooth(23,59,y)+.24*field(x,y,s=.18)*smooth(17,37,y)
++    z=bed*(1-transition)+bank*transition
++    # Actual sediment tongues on alternating inside bends.
++    z+=.13*np.exp(-((q-.83*np.sin(y*.28))/.43)**2)*np.exp(-((y-5.7)/1.8)**2)
++    z+=.13*np.exp(-((q+.89)/.38)**2-((y+3.8)/1.8)**2)
++    # Low hummocks, localized exposed roots, and denuded depressions.
++    z+=.043*field(x,y,s=6.8,octaves=2)*transition
++    return z
++
++
++class WoodlandBuilder(Builder):
++    """Native mesh assembly + compact per-component material-coordinate table.
++
++    Triangles keep CYBR's 20-float mesh layout. The existing group slot is a
++    material-frame index; separate assembly parts remain intact. Frame records
++    are 16 float32 values: origin, longitudinal axis, transverse axis, normal,
++    length, width/radius, species/type, seed. No image UV projection/backplate.
++    """
++    def __init__(self,seed):
++        super().__init__('forest',seed)
++        self.frames=[np.zeros(16,np.float32)]
++        self.frame_ranges={};self.current_frame=0
++        self.terrain=None;self.terrain_bounds=None;self.moss_count=0
++        self.leaf_positions=[];self.chunk_triangles={}
++
++    def make_frame(self,origin,d,side,normal,length,width,kind,seed):
++        idx=len(self.frames)
++        self.frames.append(np.array([*origin,*d,*side,*normal,length,width,kind,seed],np.float32))
++        return idx
++
++    def add(self,label,v,f,n=None,mat=0,flat=False):
++        if len(f)==0:return
++        # Chunk large independent foliage groups without changing any vertices.
++        # This bounds temporary concatenation memory during native Assembly export.
++        if any(token in label for token in ('laminae','litter','pinnules','crown_shoots')):
++            original=label;total=self.chunk_triangles.get(original,0)
++            label=f'{original}_section{total//180000:03d}'
++            self.chunk_triangles[original]=total+len(f)
++        super().add(label,v,f,n,mat,flat)
++        self.frame_ranges.setdefault((label,mat),[]).append((len(f),self.current_frame))
++
++    def ground(self,x,y):
++        x,y=np.broadcast_arrays(x,y)
++        if self.terrain is None:return floor_height(x,y)
++        x0,x1,y0,y1=self.terrain_bounds;ny,nx=self.terrain.shape
++        coords=np.array([(y-y0)/(y1-y0)*(ny-1),(x-x0)/(x1-x0)*(nx-1)])
++        return map_coordinates(self.terrain,coords.reshape(2,-1),order=1,mode='nearest',prefilter=False).reshape(x.shape)
++
++    def ground_normal(self,x,y):
++        e=.023;dx=(self.ground(x+e,y)-self.ground(x-e,y))/(2*e)
++        dy=(self.ground(x,y+e)-self.ground(x,y-e))/(2*e)
++        return unit(np.stack([-dx,-dy,np.ones_like(dx)],axis=-1))
++
++    def tube(self,label,path,radii,mat=8,sides=9,bark=False,phase=0):
++        path=np.asarray(path,float);rr=np.broadcast_to(radii,(len(path),))
++        if len(path)<2:return
++        d=unit(path[-1]-path[0]);side=unit(np.cross(d,[0,0,1]))
++        if np.linalg.norm(side)<.5:side=np.array([1.,0.,0.])
++        normal=np.cross(d,side)
++        idx=self.make_frame(path[0],d,side,normal,float(np.linalg.norm(path[-1]-path[0])),float(np.max(rr)),2 if mat==14 else 1,phase) if bark else 0
++        old=self.current_frame;self.current_frame=idx
++        # Parallel-transport frame avoids sudden 90-degree bands along curved roots.
++        distances=np.r_[0,np.cumsum(np.linalg.norm(np.diff(path,axis=0),axis=1))]
++        large=bark and np.max(rr)>.075
++        if large:
++            dense=np.linspace(0,distances[-1],max(len(path),min(180,int(distances[-1]/.10)+2)))
++            rr=np.interp(dense,distances,rr)
++            path=np.stack([np.interp(dense,distances,path[:,k]) for k in range(3)],axis=-1)
++            distances=dense;sides=max(sides,48 if rr.max()>.22 else 24)
++        tangent=unit(np.gradient(path,axis=0));first=unit(np.cross(tangent[0],[0,1,0]))
++        if np.linalg.norm(first)<.5:first=np.array([1.,0,0])
++        T=[first]
++        for tg in tangent[1:]:
++            v=T[-1]-tg*np.dot(T[-1],tg)
++            T.append(unit(v))
++        T=np.array(T);B=np.cross(tangent,T);ang=np.linspace(0,2*np.pi,sides+1)
++        ring=np.cos(ang)[None,:,None]*T[:,None,:]+np.sin(ang)[None,:,None]*B[:,None,:]
++        mod=np.ones((len(path),len(ang)))
++        if large:
++            ax=ang[None,:];hh=distances[:,None]
++            rills=.023*np.sin(ax*19+phase+.27*np.sin(hh*.72))+.016*np.sin(ax*31+phase*2+.45*np.sin(hh*1.1))
++            basal=.11*np.cos(ax*5+phase)*np.exp(-hh/np.maximum(.2,rr[0]*3))
++            mod+=rills+basal
++        v=(path[:,None,:]+ring*(rr[:,None]*mod)[:,:,None]).reshape(-1,3)
++        f=base.grid_faces(len(path),sides+1)
++        # Weld the seam before normal evaluation; tube caps stay below other joints.
++        f[f%(sides+1)==sides]-=sides
++        caps=[]
++        for j in range(1,sides-1):
++            caps.append((0,j+1,j));a=(len(path)-1)*(sides+1);caps.append((a,a+j,a+j+1))
++        f=np.r_[f,np.array(caps,np.int64)]
++        self.add(label,v,f,mat=mat)
++        self.current_frame=old
++
++    def leaf(self,label,origin,direction,length,width,mat=9,roll=0.,fold=.07,kind=None,detail=None):
++        origin=np.asarray(origin,float);d=unit(direction)
++        side=unit(np.cross([0,0,1],d))
++        if np.linalg.norm(side)<.5:side=np.array([1.,0.,0.])
++        normal=unit(np.cross(d,side));s=side*np.cos(roll)+normal*np.sin(roll);n=unit(np.cross(d,s))
++        seed=float(self.rng.uniform(0,512))
++        if kind is None:kind=4 if mat==11 else 3
++        # Larger living leaves have serrated or lobed outlines, varying curvature,
++        # taper and an off-centre midrib. Distal canopy is simplified by scale.
++        near=(-7<origin[1]<16 and abs(origin[0])<8 and origin[2]<5.5)
++        rows=9 if detail or (near and length>.065) else 4
++        if kind==5:rows=4
++        t=np.linspace(0,1,rows)
++        leafshape=np.sin(np.pi*t)**(.76 if kind!=6 else .64)
++        if kind==6:
++            leafshape*=.73+.27*np.cos(t*9*np.pi+seed*.07)**2
++        else:
++            leafshape*=1+.075*np.sin(t*27*np.pi+seed)
++        zz=length*(fold*np.sin(np.pi*t)-.045*t*t)
++        mid=origin+t[:,None]*d*length+zz[:,None]*n
++        wav=.018*np.sin(t*15+seed)*length
++        spread=width*.5*leafshape
++        left=mid-spread[:,None]*s*(1+.05*np.sin(t*8+seed))[:,None]+(wav-.020*length*np.sin(np.pi*t))[:,None]*n
++        right=mid+spread[:,None]*s*(1-.04*np.sin(t*9+seed))[:,None]+(wav-.016*length*np.sin(np.pi*t))[:,None]*n
++        verts=np.stack([left,mid,right],axis=1).reshape(-1,3)
++        f=base.grid_faces(rows,3);tr=verts[f];areas=np.linalg.norm(np.cross(tr[:,1]-tr[:,0],tr[:,2]-tr[:,0]),axis=1);f=f[areas>1e-13]
++        idx=self.make_frame(origin,d,s,n,length,width,kind,seed)
++        old=self.current_frame;self.current_frame=idx;self.add(label,verts,f,mat=mat);self.current_frame=old
++        if near:self.leaf_positions.append([*origin,length,width,int(mat)])
++
++    def finish(self,out,config,glb=False):
++        # Snapshot component mapping before the base builder consumes its groups.
++        ranges=[(key,list(self.frame_ranges[key])) for key in self.groups]
++        report=super().finish(out,config,glb)
++        a=np.memmap(out/'scene.meshbin',dtype='<f4',mode='r+',offset=4,shape=(report['triangles'],20));start=0;serial=[]
++        for (label,mat),items in ranges:
++            for count,index in items:
++                a[start:start+count,19]=index;serial.append([start,count,index]);start+=count
++        if start!=len(a):raise RuntimeError('Frame/mesh ordering mismatch')
++        a.flush();del a
++        with (out/'surface_frames.bin').open('wb') as f:
++            f.write(b'FRM6');f.write(np.array([len(self.frames)],'<u4').tobytes());f.write(np.asarray(self.frames,'<f4').tobytes())
++        np.savez_compressed(out/'assembly/surface_coordinates.npz',frames=np.asarray(self.frames,'<f4'),ranges=np.asarray(serial,'<u4'))
++        report.update({'mesh_sha256':sha(out/'scene.meshbin'),'surface_frames_sha256':sha(out/'surface_frames.bin'),
++                       'surface_coordinate_frames':len(self.frames),'leaf_components':sum(v for k,v in self.counts.items() if any(t in k for t in ['lamina','litter','pinnule'])),
++                       'authored_not_measured':True,'image_generation':False,'script_sha256':sha(Path(__file__))})
++        (out/'geometry.json').write_text(json.dumps(report,indent=2))
++        np.save(out/'near_leaf_samples.npy',np.asarray(self.leaf_positions,np.float32))
++        return report
++
++
++def point_on(path,q):
++    f=q*(len(path)-1);i=min(len(path)-2,int(f));return path[i]*(1-(f-i))+path[i+1]*(f-i)
++
++
++def grow_spray(b,start,heading,reach,material,phase,leafsize=.11,count=9):
++    """A connected tertiary shoot carrying paired, slightly drooping laminae."""
++    r=b.rng;u=np.linspace(0,1,4);d=unit(heading)
++    path=np.asarray(start)+u[:,None]*d*reach
++    path[:,2]+=.05*reach*np.sin(np.pi*u)-.08*reach*u*u
++    b.tube('Attached_crown_shoots',path,[.0026,.0018,.0011,.0003],material,4)
++    side=unit(np.cross(d,[0,0,1]))
++    for j in range(count):
++        t=.08+.90*j/max(1,count-1);at=point_on(path,t)
++        sign=(-1 if j%2 else 1);dire=unit(d*.35+side*sign+[0,0,r.uniform(-.80,.45)])
++        L=leafsize*r.uniform(.74,1.24);petiole=L*.12
++        tip=at+dire*petiole
++        if at[1]<18 and abs(at[0])<8 and at[2]<5:
++            b.tube('Crown_petioles',[at,tip],[.0006,.00024],material,3)
++        else:tip=at
++        b.leaf('Broadleaf_laminae',tip,dire,L,L*r.uniform(.46,.65),9,r.uniform(-1.25,1.25),r.uniform(.025,.12),kind=6 if material==8 and phase%4<1 else 3)
++
++
++def crown_branch(b,path,radius,material,phase,leafsize,amount=1):
++    r=b.rng
++    b.tube('Living_branch_hierarchy',path,np.linspace(radius,.004,len(path)),material,8,bark=radius>.06,phase=phase)
++    for k in range(int(r.integers(13,20)*amount)):
++        q=r.uniform(.22,.98);at=point_on(path,q);local=unit(path[-1]-path[0]);side=unit(np.cross(local,[0,0,1]))
++        sign=1 if k%2 else -1;heading=unit(local*.65+side*sign*r.uniform(.4,.95)+[0,0,r.uniform(-.1,.3)])
++        L=r.uniform(.34,.75)*(1.05-.35*q);end=at+heading*L
++        sec=np.array([at,(at+end)*.5+[0,0,.03],end]);b.tube('Secondary_crown_twigs',sec,[.009,.0045,.0011],material,5)
++        for j in range(int(r.integers(4,7))):
++            t=r.uniform(.15,.98);ss=point_on(sec,t);h=unit(heading*.52+side*(1 if j%2 else -1)*.8+[0,0,r.uniform(-.1,.1)])
++            grow_spray(b,ss,h,r.uniform(.20,.34),material,phase+k*.1,leafsize,int(r.integers(6,10)))
++
++
++def tree(b,x,y,height,radius,archetype='beech',near=False):
++    r=b.rng;origin=np.array([x,y,float(b.ground(x,y))]);phase=r.uniform(0,2*np.pi)
++    lean=r.uniform(-.38,.38,2)
++    if archetype=='lean':lean=np.array([-np.sign(x-channel(y))*.9,.4])
++    t=np.linspace(0,1,40 if near else 24)
++    path=origin+np.c_[lean[0]*t**1.3+.045*np.sin(t*8+phase)*t,lean[1]*t**1.6,height*t]
++    radii=radius*(1-.87*t)**.92*(1+.32*np.exp(-t*14))
++    mat=14 if archetype=='birch' else 8
++    b.tube('Mature_'+archetype+'_trunks',path,radii,mat,56 if near else 28,True,phase)
++    for k in range(int(r.integers(5,9))):
++        a=phase+k*2.4+r.uniform(-.2,.2);L=radius*r.uniform(3.3,6.6);ss=np.linspace(0,1,15)
++        xx=x+L*np.cos(a)*ss;yy=y+L*np.sin(a)*ss;zz=b.ground(xx,yy)+radius*.38*(1-ss)**2
++        root=np.c_[xx,yy,zz];root[0]=origin+[0,0,radius*.40];root[-1,2]-=.035
++        b.tube('Buttress_and_exposed_roots',root,radius*.35*(1-ss)**1.6+.002,mat,16,True,phase+k)
++    # Variable clear-bole heights and broad arching crowns instead of a single
++    # repeated fixed branch/twig count. Forked crowns occupy actual light gaps.
++    clear=.40 if height>11 else .25
++    n=int(r.integers(8,13) if near else r.integers(7,10))
++    for k in range(n):
++        q=r.uniform(clear,.91);at=point_on(path,q);a=phase+k*2.39996+r.uniform(-.47,.47)
++        reach=height*r.uniform(.18,.29)*(1-.50*q)
++        direction=np.array([np.cos(a),np.sin(a),0.]);rise=reach*r.uniform(.22,.65)
++        ts=np.linspace(0,1,8);branch=at+ts[:,None]*direction*reach
++        branch[:,2]+=rise*ts+.12*reach*np.sin(np.pi*ts)
++        crown_branch(b,branch,radius*r.uniform(.18,.34)*(1-.5*q),mat,phase+k,.12 if archetype=='birch' else .15,1.1 if near else 1.0)
++    # Low reaching boughs are rooted in the trunk, not floating canopy planes.
++    if near and y<15:
++        at=point_on(path,r.uniform(2.4,3.2)/height)
++        target=channel(y+1.8);direction=unit([target-x,r.uniform(.5,1.5),.20])
++        reach=min(3.6,abs(target-x)+.7);ts=np.linspace(0,1,9)
++        branch=at+direction*reach*ts[:,None];branch[:,2]+=.68*np.sin(ts*np.pi)+.32*ts
++        crown_branch(b,branch,radius*.20,mat,phase,.14,1.65)
++
++
++def moss_shell(b,v,f,coverage=.65):
++    """Geometry attached to actual rock triangles, with discontinuous furry edges."""
++    n=vertex_normals(v,f);cent=v[f].mean(axis=1);norm=n[f].mean(axis=1)
++    mask=(norm[:,2]>.12)&(cent[:,2]>.025)&(n3(cent[:,0]*5,cent[:,1]*5,cent[:,2]*5)>.035)
++    selected=f[mask]
++    if len(selected)==0:return
++    raised=v+n*(.004+.007*(.5+.5*n3(v[:,0]*19,v[:,1]*19,v[:,2]*19)))[:,None]
++    b.add('Attached_moss_cushions',raised,selected,n,10)
++    area=np.linalg.norm(np.cross(v[selected][:,1]-v[selected][:,0],v[selected][:,2]-v[selected][:,0]),axis=1)*.5
++    samples=min(2800,int(area.sum()*5500))
++    if samples<1:return
++    r=b.rng;ii=r.choice(len(selected),size=samples,p=area/area.sum());tr=selected[ii]
++    uv=r.uniform(size=(samples,2));over=uv.sum(axis=1)>1;uv[over]=1-uv[over];w=np.c_[1-uv.sum(axis=1),uv]
++    pos=np.sum(raised[tr]*w[:,:,None],axis=1);nn=unit(np.sum(n[tr]*w[:,:,None],axis=1))
++    # One small folded blade per shoot, not thousands of fat rounded tubes.
++    t=unit(np.cross(nn,np.where((np.abs(nn[:,2])>.9)[:,None],[0,1,0],[0,0,1])))
++    h=r.uniform(.004,.014,samples);wid=r.uniform(.0005,.0012,samples)
++    tips=pos+nn*h[:,None]
++    vv=np.stack([pos-t*wid[:,None],pos+t*wid[:,None],tips+t*.0003,tips-t*.0003],axis=1).reshape(-1,3)
++    ff=np.tile([[0,1,2],[0,2,3]],(samples,1))+np.repeat(np.arange(samples)*4,2)[:,None]
++    b.add('Moss_capsule_blades',vv,ff,mat=10);b.moss_count+=samples
++
++
++def boulder(b,x,y,scale,seed,moss=True,burial=.38):
++    # Joint planes generate silhouettes; larger-scale edge smoothing, unequal
++    # planar facets and embedded base replace the old spherical noisy blobs.
++    v,f=inherited.fracture_block(seed,scale,'block',4 if max(scale)>.28 else 2)
++    # Stream transport rounds exposed convex edges, while unequal fracture faces
++    # remain. Blend in normalized metric space so unequal axes are preserved.
++    scale_array=np.asarray(scale,float);local=v/scale_array;direction=unit(local)
++    weathered=direction*(.72+.060*field(direction[:,0]+seed,direction[:,1],direction[:,2],s=2.7))[:,None]
++    v=(.37*local+.63*weathered)*scale_array
++    v+=unit(v)*(.020*field(v[:,0]+seed,v[:,1],v[:,2],s=7)+.005*field(v[:,0]+seed,v[:,1],v[:,2],s=35))[:,None]
++    v+=np.array([x,y,float(b.ground(x,y))-v[:,2].min()-np.ptp(v[:,2])*burial])
++    b.add('Stream_jointed_greywacke',v,f,mat=2)
++    if moss:moss_shell(b,v,f)
++    return v,f
++
++
++def fern(b,x,y,size):
++    r=b.rng;o=np.array([x,y,float(b.ground(x,y))+.012]);phase=r.uniform(0,6.28)
++    for j in range(int(r.integers(6,11))):
++        a=phase+j*2.39996+r.uniform(-.26,.26);d=np.array([np.cos(a),np.sin(a),0.]);side=np.array([-d[1],d[0],0])
++        L=size*r.uniform(.62,1.18);t=np.linspace(0,1,29);rise=r.uniform(.9,1.3);drop=r.uniform(.63,.90)
++        path=o+t[:,None]*d*L;path[:,2]+=L*(rise*t-drop*t*t)
++        b.tube('Curved_fern_rachis',path,np.linspace(.0029,.0003,len(t))*size,9,5)
++        for k,q in enumerate(np.linspace(.10,.95,int(r.integers(18,26)))):
++            if r.uniform()<.025:continue
++            center=point_on(path,q);length=L*.235*np.sin(np.pi*q)**.80
++            tangent=unit(d+np.array([0.,0.,rise-2*drop*q]))
++            desired_normal=unit(np.cross(tangent,side))
++            for sign in (-1,1):
++                tip=center+side*sign*length+tangent*length*.32+[0,0,-.015*L*q]
++                b.tube('Fern_secondary_stems',[center,tip],[.0008,.00015],9,4)
++                sd=unit(tip-center);across=unit(tangent-sd*np.dot(tangent,sd))
++                for qi in np.linspace(.12,.94,7):
++                    at=center+(tip-center)*qi
++                    for ss in (-1,1):
++                        length2=length*.275*(1-.70*qi)
++                        direction=unit(sd*.35+across*ss*.82)
++                        transverse=unit(np.cross([0,0,1],direction));normal0=unit(np.cross(direction,transverse))
++                        roll=np.arctan2(-np.dot(transverse,desired_normal),np.dot(normal0,desired_normal))
++                        b.leaf('Fern_divided_pinnules',at,direction,length2,length2*.53,9,roll+r.uniform(-.18,.18),.04,5)
++
++
++def hollow_log(b,start,end,radius):
++    r=b.rng;start=np.array(start);end=np.array(end);d=unit(end-start)
++    side=unit(np.cross(d,[0,0,1]));normal=unit(np.cross(d,side));ns=80;nt=64
++    ts=np.linspace(0,1,nt);ang=np.linspace(0,2*np.pi,ns+1);path=start+ts[:,None]*(end-start);path[:,2]-=.08*np.sin(np.pi*ts)
++    radial=np.cos(ang)[None,:,None]*side+np.sin(ang)[None,:,None]*normal
++    mod=1+.048*np.sin(ang*17+.4*np.sin(ts[:,None]*9))+.017*np.sin(ang*37)
++    outer=path[:,None,:]+radial*(radius*(1-.10*ts[:,None])*mod)[:,:,None]
++    inner=path[:,None,:]+radial*(radius*(.66-.04*ts[:,None]))[:,:,None]
++    # Jagged openings extend both inner/outer rings, leaving genuine open cavities.
++    rag=.065*np.sin(ang*7)+.025*np.sin(ang*13+1)
++    outer[-1]+=rag[:,None]*d;inner[-1]+=rag[:,None]*d
++    old=b.current_frame;b.current_frame=b.make_frame(start,d,side,normal,np.linalg.norm(end-start),radius,1,49.2)
++    b.surface('Hollow_log_outer_bark',outer,8);b.current_frame=0
++    b.surface('Hollow_log_inner_decay',inner,12,flip=True)
++    for endindex in [0,-1]:
++        ring=np.stack([outer[endindex],inner[endindex]],axis=0)
++        b.surface('Splintered_log_end_annulus',ring,12,flip=endindex==0)
++    b.current_frame=old
++    for q in [.23,.46,.76]:
++        at=point_on(path,q);tip=at+side*r.uniform(-.7,.7)+normal*r.uniform(.28,.52)
++        b.tube('Broken_log_branch_stubs',[at,at+(tip-at)*.75,tip],[radius*.22,.048,.018],8,9,True,q*23)
++    # Local attached top moss; follows the curved trunk surface.
++    aa=np.linspace(.10,2.95,70);tt=np.linspace(.06,.89,180);pp=start+tt[:,None]*(end-start);pp[:,2]-=.08*np.sin(np.pi*tt)
++    v=pp[:,None,:]+(np.cos(aa)[None,:,None]*side+np.sin(aa)[None,:,None]*normal)*(radius*1.038)
++    b.surface('Log_moss_cap',v,10)
++
++
++def background_broadleaf(b,x,y,height,radius):
++    """A densely branched distant broadleaf tier with real lanceolate laminae.
++
++    Each distant leaf has its own opaque, two-triangle silhouette and attached
++    shoot. These are simplified actual leaves, not alpha cards or crown solids.
++    """
++    r=b.rng;origin=np.array([x,y,float(b.ground(x,y))]);phase=r.uniform(0,2*np.pi)
++    lean=r.uniform(-.30,.30,2);t=np.linspace(0,1,14)
++    trunk=origin+np.c_[lean[0]*t,lean[1]*t,height*t]
++    b.tube('Background_broadleaf_trunks',trunk,radius*(1-.98*t)**.83,8,10,True,phase)
++    needles=[]
++    # The lowest branches vary from dense near-ground fir to older clear-bole trees.
++    levels=int(r.integers(29,46));bottom=r.uniform(.12,.30)
++    for level,q in enumerate(np.sort(r.uniform(bottom,.95,levels))):
++        at=point_on(trunk,q);branches=1
++        for k in range(branches):
++            a=phase+level*2.34+k*2*np.pi/branches+r.uniform(-.24,.24)
++            L=height*r.uniform(.125,.19)*np.sin(np.pi*q)**.65
++            d=np.array([np.cos(a),np.sin(a),0]);side=np.array([-d[1],d[0],0])
++            ts=np.linspace(0,1,5);branch=at+ts[:,None]*d*L
++            branch[:,2]+=L*(r.uniform(.10,.42)*ts+.14*np.sin(np.pi*ts))
++            b.tube('Distant_woody_lateral_branches',branch,np.linspace(radius*.16,.0007,5),8,4)
++            for qq in np.linspace(.15,.96,5):
++                for sign in (-1,1):
++                    start=point_on(branch,qq);dire=unit(d*.48+side*sign+.12*np.array([0.,0.,1.]))
++                    length=L*.36*(1-.71*qq);end=start+dire*length
++                    b.tube('Distant_attached_leaf_shoots',[start,end],[.0014,.0003],8,3)
++                    n=5;u=np.linspace(.05,.97,n)
++                    centers=start+dire*(length*u[:,None])
++                    transverse=unit(np.cross(dire,[0,0,1]));vertical=np.cross(dire,transverse)
++                    for sideSign in (-1,1):
++                        rotation=r.uniform(-1.0,1.0,n)
++                        outward=sideSign*(np.cos(rotation)[:,None]*transverse+np.sin(rotation)[:,None]*vertical)
++                        nd=unit(dire*.38+outward)
++                        needlelength=r.uniform(.095,.185,n)
++                        tip=centers+nd*needlelength[:,None]
++                        width=r.uniform(.018,.040,n)
++                        nn=unit(np.cross(nd,dire));mid=centers+nd*needlelength[:,None]*.55
++                        vv=np.stack([centers,mid+nn*width[:,None],tip,mid-nn*width[:,None]],axis=1)
++                        needles.append(vv.reshape(-1,3))
++    if needles:
++        vv=np.concatenate(needles);count=len(vv)//4
++        ff=np.tile([[0,1,2],[0,2,3]],(count,1))+np.repeat(np.arange(count)*4,2)[:,None]
++        b.add('Distant_lanceolate_laminae',vv,ff,mat=9)
++
++
++def build(out,seed=20260916):
++    begin=time.monotonic();b=WoodlandBuilder(seed);r=b.rng
++    # Complete first-part heightfield retains the existing conservative shadow certificate.
++    x=np.linspace(-22,22,900);y=np.linspace(-13,65,1200);xx,yy=np.meshgrid(x,y)
++    zz=floor_height(xx,yy)+.0045*n3(xx*41,yy*41)+.002*n3(xx*109,yy*109)
++    b.terrain=zz;b.terrain_bounds=(-22,22,-13,65)
++    b.surface('Continuous_winding_forest_floor',np.stack([xx,yy,zz],axis=-1),0)
++    print('Terrain ready',time.monotonic()-begin,flush=True)
++    # Gravel becomes dense only in the active streambed and inside-bend depositional bars.
++    for i in range(11200):
++        y0=r.uniform(-9,28);x0=float(channel(y0))+r.normal(0,1.35)
++        z=float(b.ground(x0,y0));d=abs(x0-channel(y0))
++        if d>2.7 or z>.18 and r.uniform()>.18:continue
++        rr=np.exp(r.uniform(np.log(.012),np.log(.13)))
++        vv,ff=base.rock_mesh(int(r.integers(1,2**30)),(rr,rr*r.uniform(.65,1.1),rr*r.uniform(.32,.7)),1 if rr<.07 else 2,True)
++        vv+=np.array([x0,y0,z-vv[:,2].min()-np.ptp(vv[:,2])*.43]);b.add('Submerged_gravel_and_point_bars',vv,ff,mat=2)
++    for i,(x0,y0,rr) in enumerate([(-1.3,-4.6,.65),(1.6,-3.0,.64),(-1.75,.6,.87),(2.25,1.8,.60),(-.95,5.8,.62),(1.5,8,.71),(-2.7,12.3,.59),(.4,3.2,.21),(.1,-2.1,.20)]):
++        boulder(b,x0,y0,(rr,rr*.80,rr*.54),400+i,True,.30 if i<7 else .42)
++    print('Substrate rocks ready',time.monotonic()-begin,flush=True)
++    # Mature bank trees have different spacing, clear-bole heights and crown forms.
++    sites=[(-3.9,.7,13.8,.46,'beech',True),(4.5,2.2,14.8,.49,'lean',True),(-3.8,5.9,12.0,.42,'beech',True),
++           (4.3,7.6,14.5,.35,'birch',True),(-2.8,12.0,11.7,.36,'lean',True),(4.1,15.2,13.9,.42,'beech',True),
++           (-6.2,-1.9,17,.48,'beech',False),(6.6,-2.0,15,.38,'birch',False),(-7.4,7,14,.40,'birch',False),
++           (8.,9.3,16,.39,'beech',False)]
++    for _ in range(48):
++        y0=r.uniform(5,62);x0=r.uniform(-19,19)
++        if abs(x0-channel(y0))<2.25 or any((x0-a)**2+(y0-c)**2<3.0 for a,c,*_ in sites):continue
++        sites.append((x0,y0,r.uniform(10,18),r.uniform(.19,.39),r.choice(['beech','birch','lean'],p=[.56,.29,.15]),False))
++    for i,site in enumerate(sites):
++        tree(b,*site)
++        if i%8==0:print('Trees',i+1,'/',len(sites),time.monotonic()-begin,flush=True)
++    # Moisture-biased thickets fill the banks and screen distant sky at eye level.
++    # Broad living laminae remain geometrically attached to their branching stems.
++    for i in range(500):
++        y0=r.uniform(-2.7,47);side=r.choice([-1,1]);x0=float(channel(y0))+side*r.uniform(2.05,11.2)
++        origin=np.array([x0,y0,float(b.ground(x0,y0))]);h=r.uniform(.85,2.3)
++        if origin[2]<.09:continue
++        branches=int(r.integers(4,7));phase=r.uniform(0,6.28)
++        for k in range(branches):
++            a=phase+k*2.40;end=origin+[np.cos(a)*h*.34,np.sin(a)*h*.34,h*r.uniform(.68,1.0)]
++            path=np.array([origin,(origin+end)*.5+[0,0,.06],end]);b.tube('Understory_woody_stems',path,[.009,.005,.0007],8,5)
++            for j in range(int(r.integers(4,7))):
++                q=.25+.70*j/6;at=point_on(path,q);aa=a+(1 if j%2 else -1)*1.1
++                grow_spray(b,at,[np.cos(aa),np.sin(aa),r.uniform(-.12,.20)],r.uniform(.24,.43),8,k,.205,int(r.integers(8,12)))
++    # A younger woodland tier fills the space below the tall mature crowns.
++    for x0,y0,h0 in [(-3.0,1.9,5.7),(3.3,4.2,6.1),(-3.0,8.9,6.2),(3.6,12.3,7.2),(-3.8,16.8,7.8),(4.3,21,8.2),(-4.6,24,9.1),(4.8,29,7.4),(-6.2,30,8.2),(7.3,36,9)]:
++        tree(b,x0,y0,h0,r.uniform(.105,.17),'beech',False)
++    # A dense, genuinely three-dimensional broadleaf tier screens sky at eye level.
++    # Randomized spacing and overlap are evaluated against the existing trees.
++    background_sites=[]
++    for candidate in range(550):
++        y0=r.uniform(18,62);x0=r.uniform(-21,21)
++        if abs(x0-channel(y0))<2.2 and y0<32:continue
++        if any((x0-a)**2+(y0-c)**2<2.15 for a,c in background_sites):continue
++        background_sites.append((x0,y0))
++        background_broadleaf(b,x0,y0,r.uniform(8.5,16.2),r.uniform(.074,.16))
++        if len(background_sites)>=88:break
++    print('Background woodland ready',len(background_sites),time.monotonic()-begin,flush=True)
++    print('Canopy ready',time.monotonic()-begin,flush=True)
++    # Hollow diagonal nurse log, supported at both ends on the banks.
++    start=[-2.4,6.2,float(b.ground(-2.4,6.2))+.27]
++    end=[2.05,8.7,float(b.ground(2.05,8.7))+.24]
++    hollow_log(b,start,end,.245)
++    # Coherent leaf litter blankets the soil, with gaps where water washes it away.
++    count=200000;lx=r.uniform(-9,9,count);ly=r.uniform(-9,31,count)
++    lz=b.ground(lx,ly);prob=.52+.30*n3(lx*.7,ly*.7);keep=(lz>.06)&(r.uniform(size=count)<prob)
++    lx,ly,lz=lx[keep],ly[keep],lz[keep];normals=b.ground_normal(lx,ly)
++    for i,(x0,y0,z0,gn) in enumerate(zip(lx,ly,lz,normals)):
++        a=r.uniform(0,6.28);d=unit([np.cos(a),np.sin(a),-(gn[0]*np.cos(a)+gn[1]*np.sin(a))/max(.25,gn[2])])
++        side=unit(np.cross([0,0,1],d));normal=np.cross(d,side)
++        roll=np.arctan2(-np.dot(side,gn),np.dot(normal,gn));L=r.uniform(.040,.103)
++        b.leaf('Damp_layered_leaf_litter',[x0,y0,z0+.004],d,L,L*r.uniform(.48,.79),11,roll+r.uniform(-.13,.13),r.uniform(.025,.075),4)
++    # Concentrated near-bank litter improves actual visible coverage, rather than
++    # spending triangles on the far, hidden forest floor.
++    near_y=r.uniform(-6.8,7.0,22000);side=r.choice([-1,1],size=len(near_y))
++    near_x=channel(near_y)+side*r.uniform(1.45,3.3,len(near_y));near_z=b.ground(near_x,near_y)
++    keep=near_z>.07;near_x,near_y,near_z=near_x[keep],near_y[keep],near_z[keep]
++    gnall=b.ground_normal(near_x,near_y)
++    for x0,y0,z0,gn in zip(near_x,near_y,near_z,gnall):
++        a=r.uniform(0,6.28);d=unit([np.cos(a),np.sin(a),-(gn[0]*np.cos(a)+gn[1]*np.sin(a))/max(.25,gn[2])])
++        sideways=unit(np.cross([0,0,1],d));nn=np.cross(d,sideways)
++        roll=np.arctan2(-np.dot(sideways,gn),np.dot(nn,gn));L=r.uniform(.054,.12)
++        b.leaf('Damp_layered_leaf_litter',[x0,y0,z0+r.uniform(.006,.014)],d,L,L*r.uniform(.50,.76),11,roll+r.uniform(-.15,.15),r.uniform(.025,.085),4)
++    print('Litter ready',len(lx)+len(near_x),time.monotonic()-begin,flush=True)
++    for _ in range(370):
++        y0=r.uniform(-9,28);x0=r.uniform(-8,8);z=float(b.ground(x0,y0))
++        if z<.045:continue
++        a=r.uniform(0,6.28);L=r.uniform(.12,.86);x1=x0+L*np.cos(a);y1=y0+L*np.sin(a)
++        path=np.array([[x0,y0,z+.01],[(x0+x1)/2,(y0+y1)/2,float(b.ground((x0+x1)/2,(y0+y1)/2))+.027],[x1,y1,float(b.ground(x1,y1))+.013]])
++        b.tube('Fallen_fine_branches',path,[.009,.006,.0015],8,5,True,a)
++    # Visually legible near fronds, with smaller shade clusters deeper in the image.
++    ferns=[(1.72,-1.5,.78),(-1.75,-1.45,.81),(-1.8,-3.0,1.02),(2.6,-2.0,1.18),(-2.55,1.4,1.03),(2.45,3.8,1.14),(-2.65,5.7,.9),(3.25,8.5,.87),(-1.9,-.2,.83),(2.2,-4.6,.92)]
++    for _ in range(26):
++        y0=r.uniform(-3,24);side=r.choice([-1,1]);x0=float(channel(y0))+side*r.uniform(1.9,6.8)
++        if b.ground(x0,y0)>.08:ferns.append((x0,y0,r.uniform(.45,.83)))
++    for v in ferns:fern(b,*v)
++    print('Ferns ready',len(ferns),time.monotonic()-begin,flush=True)
++    Water('forest').add(b,np.linspace(-18,18,500),np.linspace(-15,71,860),bottom=-3.)
++    cfg={'scene':'forest','title':'Fernwater R6 - Meander and Nurse Log','camera':[.48,-6.75,.94],
++         'target':[.10,7.5,.35],'fov':66,'sun':[-.44,.52,.70],'sun_scale':1.12,'sky_scale':.95,
++         'exposure':2.35,'white_balance':6100,'water_absorption':.85,
++         'r6_local_material_frames':True}
++    result=b.finish(out,cfg,False)
++    result['elapsed_build_seconds']=time.monotonic()-begin
++    (out/'geometry.json').write_text(json.dumps(result,indent=2))
++    return result
++
++
++def main():
++    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--out',type=Path,required=True);p.add_argument('--seed',type=int,default=20260916)
++    a=p.parse_args();base.prepare_waves();print(json.dumps(build(a.out/'forest',a.seed),indent=2))
++if __name__=='__main__':main()
+--- a/cybr-geo/examples/three_scenes/render_scenes.py
++++ b/cybr-geo/examples/three_scenes/render_scenes.py
+@@ -33,6 +33,11 @@
+ 
+ def render(root,scene,width=1920,height=1280,spp=128,water_spp=320,stem='hero',threads=4,exr=True):
+     binary,build=compile_renderer();folder=root/scene;config=json.loads((folder/'camera.json').read_text());output=folder/stem
++    if config.get('r6_local_material_frames',False):
++        frame_path=folder/'surface_frames.bin'
++        geometry=json.loads((folder/'geometry.json').read_text())
++        if not frame_path.is_file() or sha(frame_path)!=geometry.get('surface_frames_sha256'):
++            raise RuntimeError('Missing or mismatched R6 surface-coordinate table; rebuild the scene')
+     command=[str(binary),str(folder/'scene.meshbin'),str(output),'--scene',scene,'--camera',','.join(map(str,config['camera'])),'--target',','.join(map(str,config['target'])),'--fov',str(config['fov']),
+              '--sun',','.join(map(str,config['sun'])),'--exposure',str(config['exposure']),'--sun-scale',str(config.get('sun_scale',1)),'--sky-scale',str(config.get('sky_scale',1)),
+              '--w',str(width),'--h',str(height),'--spp',str(spp),'--water-spp',str(water_spp),'--threads',str(threads),'--depth','12','--seed','20260915','--aperture','0.0008','--indirect-clamp','0',
+@@ -52,7 +57,8 @@
+     receipt={'command':command,'build':build,'mesh_sha256':sha(folder/'scene.meshbin'),'camera':config,'wall_seconds':time.monotonic()-started,
+              'grain_sha256':sha(REPO/'examples/desert_hot_springs/assets/gravel_periodic.pgm'),
+              'relief_sha256':sha(REPO/'examples/desert_hot_springs/assets/granular_relief.bin'),
+-             'active_material_header':'formation_materials_r4.h','image_generation':False,
++             'active_material_header':'fernwater_materials_r6.h','image_generation':False,
++             'surface_frames_sha256':sha(folder/'surface_frames.bin') if (folder/'surface_frames.bin').exists() else None,
+              'ground_occlusion_certificate_sha256':sha(certificate) if certificate else None,
+              'ground_occlusion_certificate':json.loads(certificate.with_suffix('.json').read_text()) if certificate else None}
+     (folder/(stem+'_execution.json')).write_text(json.dumps(receipt,indent=2)+'\n')
+@@ -60,11 +66,21 @@
+     if exr:subprocess.run([sys.executable,str(HERE/'export_exr.py'),str(output)+'.pfm',str(output)+'_linear.exr'],check=True,stdout=subprocess.DEVNULL)
+     print('COMPLETED',scene,stem,time.monotonic()-started,flush=True);return receipt
+ 
++def build_scene_geometry(root:Path,scene:str):
++    """Keep the standalone --build-scenes path on the same active R6 forest recipe."""
++    for name in (['canyon','coast','forest'] if scene=='all' else [scene]):
++        if name=='forest':
++            command=[sys.executable,str(HERE/'fernwater_r6.py'),'--out',str(root)]
++        else:
++            command=[sys.executable,str(HERE/'rebuild_scenes.py'),'--out',str(root),'--scene',name,'--no-glb']
++        subprocess.run(command,check=True)
++
++
+ def main():
+     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--root',type=Path,required=True);p.add_argument('--scene',choices=['canyon','coast','forest','all'],default='all');p.add_argument('--width',type=int,default=1920);p.add_argument('--height',type=int,default=1280);p.add_argument('--spp',type=int,default=128);p.add_argument('--water-spp',type=int,default=320);p.add_argument('--stem',default='hero');p.add_argument('--threads',type=int,default=4);p.add_argument('--build-scenes',action='store_true');p.add_argument('--no-exr',action='store_true')
+     a=p.parse_args()
+     if min(a.width,a.height,a.spp,a.threads)<1:p.error('Positive dimensions, samples, and threads required')
+     if Path(a.stem).name!=a.stem:p.error('Stem must be a simple filename')
+-    if a.build_scenes:subprocess.run([sys.executable,str(HERE/'rebuild_scenes.py'),'--out',str(a.root),'--scene',a.scene,'--no-glb'],check=True)
++    if a.build_scenes:build_scene_geometry(a.root,a.scene)
+     for scene in (['canyon','coast','forest'] if a.scene=='all' else [a.scene]):render(a.root,scene,a.width,a.height,a.spp,a.water_spp,a.stem,a.threads,exr=not a.no_exr)
+ if __name__=='__main__':main()

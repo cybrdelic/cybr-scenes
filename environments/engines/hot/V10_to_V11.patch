@@ -1,0 +1,1193 @@
+--- a/examples/desert_hot_springs/assets/ATTRIBUTION.txt
++++ b/examples/desert_hot_springs/assets/ATTRIBUTION.txt
+@@ -1,14 +1,17 @@
+-Gravel04 photograph / grayscale derivative
+-Source: scikit-image.data.gravel, distributed in scikit-image.
+-Upstream: CC0 Textures, Gravel04, CC0 (public domain).
++Previously supplied Gravel04 photograph / grayscale derivative
++Source as identified by the inherited archive: scikit-image.data.gravel.
++Upstream attribution: CC0 Textures, Gravel04, CC0 (public domain).
+ https://scikit-image.org/docs/stable/api/skimage.data.html#skimage.data.gravel
+ 
+-The original 512x512 grayscale crop and periodic-plus-smooth derivative were
+-already present in the user-supplied V8 archive. V10 reuses the derivative only
+-as ALBEDO modulation at an authored 64 cm patch width. The photograph contains acquisition
+-lighting; it is not calibrated reflectance or a PBR scan.
++The original 512x512 grayscale crop and its periodic derivative were already
++included in the user-supplied source. They were not newly downloaded here.
++The acquisition lighting is not calibrated reflectance; this is not a complete
++PBR scan or a photogrammetric mesh.
+ 
+-V10 does not displace any mesh from photographic grayscale. Older historical
+-utility examples include different usage; those are not the current recipe.
+-No newly downloaded photogrammetry, new PBR scan, generated image, photograph
+-backplate or photographic composite is part of V10.
++V11 reuses the photograph as weak albedo detail and reconstructs a granular
++support field with image watershed segmentation. The field's millimetre-scale
++heights are explicitly authored. They are NOT measured surface elevations.
++The reconstruction source and numeric provenance are supplied separately.
++
++No generated image, landscape backplate, photographic composite, new measured
++terrain, or newly downloaded rock scan is part of this scene.
+--- a/examples/desert_hot_springs/build_scene.py
++++ b/examples/desert_hot_springs/build_scene.py
+@@ -20,7 +20,7 @@
+ from cybrgeo import Assembly,Part,Material
+ SEED=20260914
+ MODES=np.asarray(json.loads((Path(__file__).parent/'assets/ripple_modes.json').read_text())['modes_kx_ky_amplitude_phase'])
+-from v10_landforms import height, poolq, rock_template, landscape_ridges, connected_shrub, POOLS, RIPPLE_SCALE, smooth
++from v11_landforms import height, poolq, rock_template, landscape_ridges, connected_shrub, POOLS, RIPPLE_SCALE, smooth
+ 
+ def water(x,y,i):
+     x,y=np.broadcast_arrays(x,y);z=np.zeros_like(x,dtype=float)+POOLS[i][4]
+@@ -56,15 +56,15 @@
+                           role='Authored environmental mesh; not a surveyed or simulated landform',metadata=meta))
+     # ~1 cm foreground geometry; a smoothly graded density budget rather than
+     # millions of distant gravel triangles with almost no projected area.
+-    xs=np.unique(np.r_[np.linspace(-180,-14,65),np.linspace(-14,-7,130),np.linspace(-7,8,1001),np.linspace(8,20,130),np.linspace(20,180,65)])
+-    ys=np.unique(np.r_[np.linspace(-80,-7,35),np.linspace(-7,6,1001),np.linspace(6,18,110),np.linspace(18,150,120)])
++    xs=np.unique(np.r_[np.linspace(-180,-14,65),np.linspace(-14,-7,130),np.linspace(-7,8,1201),np.linspace(8,20,130),np.linspace(20,180,65)])
++    ys=np.unique(np.r_[np.linspace(-80,-7,35),np.linspace(-7,6,1101),np.linspace(6,18,110),np.linspace(18,150,120)])
+     xx,yy=np.meshgrid(xs,ys);v,f,n=gridmesh(xs,ys,height(xx,yy));add('Continuous_irregular_spring_shelf',v,f,n,0)
+     print('ground',len(f),flush=True);del xx,yy,v,f,n
+-    mx=np.linspace(-7500,7500,1101);my=np.linspace(149.9,12000,1001)
+-    cache=out/('ridge_heights_'+hashlib.sha256((Path(__file__).parent/'v10_landforms.py').read_bytes()+(Path(__file__).parent/'fluvial_detail_v9.py').read_bytes()+str(args.seed).encode()).hexdigest()[:14]+'.npy')
++    mx=np.linspace(-7500,7500,1501);my=np.linspace(149.9,12000,1151)
++    cache=out/('ridge_heights_'+hashlib.sha256((Path(__file__).parent/'v11_landforms.py').read_bytes()+(Path(__file__).parent/'fluvial_detail_v9.py').read_bytes()+str(args.seed).encode()).hexdigest()[:14]+'.npy')
+     if cache.is_file():z=np.load(cache)
+     else:z=landscape_ridges(mx,my,args.seed);np.save(cache,z)
+-    v,f,n=gridmesh(mx,my,z);add('Continuous_eroded_ridge_backbone',v,f,n,5,erosion_droplets=480000)
++    v,f,n=gridmesh(mx,my,z);add('Continuous_eroded_ridge_backbone',v,f,n,5,erosion_droplets=310000)
+     print('mountains',len(f),flush=True)
+     def ground(x,y):
+         if y<149.9:return float(height(x,y))
+@@ -81,8 +81,8 @@
+     templates={(sub,k):rock_template(args.seed+sub*100+k,sub) for sub in [0,1,2,3,4,5] for k in range(9 if sub>=5 else 12)}
+     stones={1:[],2:[],4:[]};counts={'large_rocks':0,'small_rocks':0,'gravel':0,'mineral_nodules':0,'shrubs':0,'grass_tufts':0}
+     # Deliberate hero outcrop, partly buried rather than floating on the terrain.
+-    placements=[(3.96,2.05,.49),(4.39,2.24,.53),(4.90,2.65,.39),
+-                (4.04,2.96,.96),(4.46,3.43,1.09),(5.16,3.73,.44),
++    placements=[(3.96,2.05,.40),(4.39,2.24,.53),(4.90,2.65,.39),
++                (4.04,2.96,.72),(4.64,3.61,.80),(5.16,3.73,.44),
+                 (3.64,3.91,.36),(4.87,4.04,.37),(5.48,2.76,.28),
+                 (3.55,.41,.25),(4.08,-.73,.24),(3.95,-2.2,.21),
+                 (-3.74,3.62,.32),(-3.58,1.08,.24),(-4.14,-.65,.22),
+@@ -100,7 +100,7 @@
+         buried_fraction=np.clip(burial+.25,.25,.78)
+         v+=np.array([x,y,ground(x,y)-bottom-buried_fraction*span]);n=(nn/sizes)@rt.T;n/=np.linalg.norm(n,axis=1)[:,None]
+         stones[mat].append((v,ff,n));counts[kind]+=1
+-    for j,(x,y,r) in enumerate(placements):place(x,y,r,5,2 if j%3 else 1,'large_rocks',.08)
++    for j,(x,y,r) in enumerate(placements):place(x,y,r,5 if r>.35 else 4,2 if j%3 else 1,'large_rocks',.08)
+     # Refraction now reveals actual submerged fragments and shelves. They are
+     # embedded in the same bed mesh, not a caustic texture projected on a bowl.
+     submerged=0
+@@ -119,7 +119,7 @@
+         place(x,y,np.exp(rng.uniform(np.log(.12),np.log(.54))),3,2 if rng.random()<.5 else 1,'large_rocks',.25)
+     # Gravel concentrates in a few sediment lobes and runnels; quiet fine-sand
+     # areas remain quiet. It no longer blankets every square metre equally.
+-    for j in range(15000):
++    for j in range(26000):
+         x=rng.uniform(-12,14);y=rng.uniform(-7,24)
+         q=min(float(poolq(x,y,i)) for i in range(2))
+         cluster=smooth(-.05,.60,float(fbm(np.array(x*.53),np.array(y*.49),4)))
+@@ -131,7 +131,7 @@
+         place(x,y,radius,sub,1 if rng.random()<.63 else 2,kind,.36)
+     # Near-field sediment pockets: dense, embedded millimetre-to-centimetre
+     # gravel whose clustering leaves genuinely fine-sediment quiet patches.
+-    for j in range(18000):
++    for j in range(32000):
+         x=rng.uniform(-3.5,7.0);y=rng.uniform(-5.0,6.2)
+         q=min(float(poolq(x,y,i)) for i in range(2))
+         cluster=smooth(-.34,.45,float(fbm(np.array(x*.91),np.array(y*.87),4)))
+@@ -162,6 +162,7 @@
+         stones[4].append((v,ff,nn));counts['mineral_nodules']+=1
+     for mat,items in stones.items():
+         if items:v,f,n=join(items);add(f'Buried_weathered_rock_and_sediment_{mat}',v,f,n,mat,'stones')
++    stones.clear();templates.clear();del items,v,f,n;gc.collect()
+     print('stones',counts,flush=True)
+     # Irregular small plate islands, confined to genuinely dry evaporative banks.
+     pts=rng.uniform([-7,-6],[8,13],(10500,2));vor=Voronoi(pts);chips=[]
+@@ -183,24 +184,30 @@
+         for j in range(nn):a=j+1;b=(j+1)%nn+1;f.extend([[0,a,b],[a,a+nn,b+nn],[a,b+nn,b]])
+         f=np.asarray(f);chips.append((v,f,mesh_normals(v,f)))
+     if chips:v,f,n=join(chips);add('Cupped_dry_mud_microplates',v,f,n,0,'mineral',count=len(chips))
++    chips.clear();gc.collect()
+     grass=[];wood=[];leaves=[]
+     plants=[(-3.75,4.8,1.02),(-5.,1.,.79),(5.8,3.,1.08),(3.6,7.8,.65),
+         (-1.7,7.,.49),(-4.7,-.5,.70),(-5.4,2.,.65),(6.5,.8,.55),(-7.,8.,.88),
+         (2.7,9.5,.83),(7.5,7.,.94),(-2.5,5.9,.41),(-6.,14.,.83),(4.5,14,.93),
+         (-.5,18,.82),(9.2,15,.86),(-9,13,.85)]
+-    for i in range(550):
++    plants += [(-3.85,-.70,.66),(-4.55,1.70,.76),(-2.70,5.65,.72),
++               (5.70,1.20,.88),(5.20,5.15,.94),(1.20,7.55,.75),(-6.35,5.60,.98),
++               (-3.60,-2.75,.47),(4.94,-1.02,.58),(6.3,2.55,.72)]
++    for i in range(780):
+         x=rng.uniform(-85,85);y=np.exp(rng.uniform(np.log(8),np.log(410)))
+         if rng.random()>.30+.37*smooth(-.25,.35,float(fbm(x*.055,y*.065,4))):continue
+         plants.append((x,y,rng.uniform(.36,1.1)))
+     for x,y,h in plants:
+-        if min(float(poolq(x,y,k)) for k in range(2))<1.64:continue
++        if min(float(poolq(x,y,k)) for k in range(2))<1.20:continue
+         w,l=connected_shrub(rng,np.array([x,y,ground(x,y)-.008]),h,0 if y<28 else 1,stem)
+         wood+=w;leaves+=l;counts['shrubs']+=1
+     print('attached shrubs',counts['shrubs'],flush=True)
+     positions=[(-1.8,-2.8,.25),(-3.5,2.8,.28),(4.9,1.4,.33),(-3.6,-2.5,.28),(5.4,-.1,.4),(-4.7,2.8,.28),(3.8,6.8,.44)]
++    positions += [(-2.82,-2.70,.34),(3.56,-2.64,.32),(4.48,-1.15,.39),
++                  (-3.75,.80,.40),(3.51,5.20,.45),(2.54,5.68,.33)]
+     positions +=[(rng.uniform(-35,35),rng.uniform(-3,180),rng.uniform(.12,.42)) for _ in range(400)]
+     for x,y,h in positions:
+-        if min(float(poolq(x,y,i)) for i in range(2))<1.38:continue
++        if min(float(poolq(x,y,i)) for i in range(2))<1.12:continue
+         counts['grass_tufts']+=1;nb=int(rng.integers(80,190));az=rng.uniform(0,2*np.pi,nb)
+         ax=np.c_[np.cos(az),np.sin(az),np.zeros(nb)];side=np.c_[-np.sin(az),np.cos(az),np.zeros(nb)]
+         base=np.array([x,y,ground(x,y)])+ax*rng.uniform(0,.07,nb)[:,None]
+@@ -215,16 +222,18 @@
+         grass.append((vv,ff,mesh_normals(vv,ff)))
+     print('vegetation',counts,flush=True)
+     for name,items,mat in [('Curved_dry_grass',grass,3),('Desert_shrub_branches',wood,8),('Curled_small_leaves',leaves,9)]:
+-        if items:v,f,n=join(items);add(name,v,f,n,mat,'vegetation')
+-    assembly=Assembly('CYBR_HOT_SPRINGS_V10',parts,mats,metadata={
+-        'revision':'V10 mineral-layered terrain, clustered fracture outcrop, overlapping ridges','seed':args.seed,
++        if items:
++            v,f,n=join(items);add(name,v,f,n,mat,'vegetation')
++            items.clear();del v,f,n;gc.collect()
++    assembly=Assembly('CYBR_HOT_SPRINGS_V11',parts,mats,metadata={
++        'revision':'V11 jointed mesogeometry, routed spur ridges, reconstructed granular support, connected compact vegetation','seed':args.seed,
+         'source_units':'mm','transport_units':'m','no_image_generation':True,'no_photographic_backplates':True,
+         'geometry_source':'CYBR GEO Assembly and Part','pools_m':POOLS,'counts':counts,
+         'ripples':'128 prescribed directional modes; 0.6 mm RMS; not CFD',
+         'limitations':['Authored landscape, not a site scan','Authored steam, not CFD','Authored reflectance, not measured spectra']})
+     assembly.save(out/'scene')
+     if not args.no_glb:assembly.export_glb(out/'scene.glb')
+-    del assembly,parts,stones,grass,wood,leaves,chips,templates,v,f,n;gc.collect()
++    del assembly,parts,stones,grass,wood,leaves,chips,templates;gc.collect()
+     loaded=Assembly.load(out/'scene');meshpath=out/'scene.meshbin';total=sum(len(p.faces) for p in loaded.parts)
+     with meshpath.open('wb') as stream:
+         stream.write(np.uint32(total).tobytes())
+--- a/examples/desert_hot_springs/prepare_granular_relief.py
++++ b/examples/desert_hot_springs/prepare_granular_relief.py
+@@ -0,0 +1,28 @@
++"""Extract granular support masks from the already supplied CC0 photograph.
++This is authored microgeometry, not measured height or photogrammetry.
++"""
++from pathlib import Path
++import json
++import numpy as np
++from PIL import Image
++from scipy.ndimage import gaussian_filter, distance_transform_edt
++from skimage.segmentation import watershed, find_boundaries
++from skimage.feature import peak_local_max
++p=Path(__file__).parent/'assets'
++g=np.asarray(Image.open(p/'gravel_cc0_original.png').convert('L'),dtype=float)/255
++# Pad with wrapping for a seamless support field.
++g=np.pad(g,32,mode='wrap');s=gaussian_filter(g,1)
++coords=peak_local_max(s,min_distance=5,threshold_abs=.45)
++markers=np.zeros(g.shape,dtype=np.int32);markers[tuple(coords.T)]=np.arange(len(coords))+1
++labels=watershed(-s,markers)
++bound=find_boundaries(labels,mode='thick')
++mask=(~bound)&(s>.26)
++d=distance_transform_edt(mask)
++height=.0052*(1-np.exp(-d/2.5))+.00030*(g-gaussian_filter(g,3))
++height=gaussian_filter(height,.45)[32:-32,32:-32].astype('<f4')
++np.save(p/'granular_relief.npy',height)
++# Native mipmap payload, raw metre elevations; no sRGB transfer on height.
++with (p/'granular_relief.bin').open('wb') as f:
++ np.array([0x31465247,height.shape[1],height.shape[0]],dtype='<u4').tofile(f);height.tofile(f)
++(p/'granular_relief_provenance.json').write_text(json.dumps({'source':'Existing supplied gravel_cc0_original.png','method':'Watershed support masks and authored 5.2 mm rounded granular caps','measured_height':False,'image_generation':False,'height_min_m':float(height.min()),'height_max_m':float(height.max())},indent=2))
++print(height.shape,height.min(),height.max())
+--- a/examples/desert_hot_springs/render.py
++++ b/examples/desert_hot_springs/render.py
+@@ -85,7 +85,7 @@
+             cmd.append('--no-glb')
+         call(cmd, root / 'build.log')
+         (root/'scene_inputs.json').write_text(json.dumps(fingerprint(args.scene_seed),indent=2)+'\n')
+-    sources = [REPO / 'native' / name for name in ('spectral_desert.cpp', 'spectral_geometry.h', 'single_scatter_sky.h', 'photographic_grain.h', 'broadband_ripples.h', 'scale_aware_landscape_v10.h', 'exponential_haze_v10.h', 'cloud_volume_v9.h', 'specular_reflection_connection.h')]
++    sources = [REPO / 'native' / name for name in ('spectral_desert.cpp', 'spectral_geometry.h', 'single_scatter_sky.h', 'photographic_grain.h', 'broadband_ripples.h', 'landscape_materials_v11.h', 'granular_relief_v11.h', 'steam_volume_v11.h', 'exponential_haze_v10.h', 'cloud_volume_v9.h', 'specular_reflection_connection.h')]
+     source_hash = hashlib.sha256(b''.join(path.read_bytes() for path in sources)).hexdigest()
+     binary = root / f'spectral_desert_{source_hash[:16]}'
+     compile_command = [compiler, '-std=c++17', '-O3', '-march=native', '-fopenmp',
+@@ -107,7 +107,7 @@
+                '--indirect-clamp', str(args.indirect_clamp), '--threads', str(args.threads),
+                '--view', args.view, '--seed', str(args.seed), '--exposure', str(args.exposure),
+                '--aperture', str(args.aperture), '--water-absorption', str(args.water_absorption),
+-               '--grain', str(HERE/'assets/gravel_periodic.pgm')]
++               '--grain', str(HERE/'assets/gravel_periodic.pgm'), '--relief', str(HERE/'assets/granular_relief.bin')]
+     for enabled, flag in [(args.no_clouds, '--no-clouds'), (args.no_steam, '--no-steam'), (args.no_water, '--no-water'),
+                           (args.no_spectral_buffer, '--no-bands')]:
+         if enabled:
+--- a/examples/desert_hot_springs/run_checks_v11.py
++++ b/examples/desert_hot_springs/run_checks_v11.py
+@@ -0,0 +1,70 @@
++"""Run the newly added V11 component checks; render validation is separate.
++
++Example:
++  python cybr-geo/examples/desert_hot_springs/run_checks_v11.py --out output/tests
++  python cybr-geo/examples/desert_hot_springs/verify_v11.py --out output --views final
++
++Passing component checks do not establish photographic realism or complete
++reference-integrator accuracy. The sky check is convergence evidence, not a
++measured-atmosphere validation or a blanket pass/fail test.
++"""
++from __future__ import annotations
++import argparse
++import json
++import os
++from pathlib import Path
++import shutil
++import subprocess
++import sys
++
++HERE = Path(__file__).resolve().parent
++REPO = HERE.parents[1]
++
++
++def main() -> None:
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('--out', type=Path, default=Path('output/tests'))
++    parser.add_argument('--compiler', default=os.environ.get('CXX', 'g++'))
++    args = parser.parse_args()
++    out = args.out.resolve()
++    out.mkdir(parents=True, exist_ok=True)
++    compiler = shutil.which(args.compiler)
++    if compiler is None:
++        parser.error(f'C++ compiler not found: {args.compiler}')
++    env = dict(os.environ, OPENBLAS_NUM_THREADS='1', OMP_NUM_THREADS='1')
++    reports: dict[str, object] = {}
++    commands: list[list[str]] = []
++
++    def execute(command: list[str], report_name: str | None = None) -> None:
++        commands.append(command)
++        result = subprocess.run(command, cwd=REPO, env=env, check=True,
++                                text=True, capture_output=True)
++        if result.stderr:
++            (out / f'{report_name or "compile"}.stderr.log').write_text(result.stderr)
++        if report_name is not None:
++            data = json.loads(result.stdout)
++            (out / f'{report_name}.json').write_text(json.dumps(data, indent=2) + '\n')
++            reports[report_name] = data
++            if data.get('passed') is False:
++                raise RuntimeError(f'{report_name} returned passed=false')
++
++    execute([sys.executable, str(HERE / 'test_streaming_scene_io.py')], 'scene_io')
++    for source, name in [('test_materials_v11.cpp', 'materials'),
++                         ('test_steam_grid_v11.cpp', 'steam_grid')]:
++        binary = out / f'check_{name}'
++        execute([compiler, '-std=c++17', '-O2', '-fopenmp',
++                 str(REPO / 'native' / source), '-o', str(binary)])
++        # These tests accept the scalar grain and reconstructed microrelief
++        # assets on their command line. The steam test ignores asset args.
++        execute([str(binary), str(HERE / 'assets/granular_relief.bin'),
++                 str(HERE / 'assets/gravel_periodic.pgm')], name)
++    execute([sys.executable, str(HERE / 'test_sky_quadrature.py')], 'sky_quadrature')
++    (out / 'check_commands.json').write_text(json.dumps(commands, indent=2) + '\n')
++    print(json.dumps({'completed': list(reports),
++                      'component_checks_passed': all(
++                          report.get('passed', True) for report in reports.values()),
++                      'numerical_checks_certify_photorealism': False}, indent=2))
++
++
++if __name__ == '__main__':
++    main()
+--- a/examples/desert_hot_springs/scene_inputs.py
++++ b/examples/desert_hot_springs/scene_inputs.py
+@@ -8,7 +8,7 @@
+ REPO=HERE.parents[1]
+ 
+ def fingerprint(seed:int)->dict:
+-    paths=[HERE/name for name in ('build_scene.py','build_scene_v4.py','v8_landforms.py','v9_landforms.py','v10_landforms.py','implicit_rocks_v10.py','contour_water.py','broken_shelves_v9.py','fluvial_detail_v9.py','assets/ripple_modes.json')]
++    paths=[HERE/name for name in ('build_scene.py','build_scene_v4.py','v8_landforms.py','v9_landforms.py','v10_landforms.py','v11_landforms.py','assets/granular_relief.npy','assets/granular_relief.bin','implicit_rocks_v10.py','contour_water.py','broken_shelves_v9.py','fluvial_detail_v9.py','assets/ripple_modes.json')]
+     paths+=sorted((REPO/'src/cybrgeo').glob('*.py'))
+     files={str(p.relative_to(REPO)):hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
+     payload={'schema':'cybr-geo/scene-inputs/1','scene_seed':seed,'files':files}
+--- a/examples/desert_hot_springs/test_sky_quadrature.py
++++ b/examples/desert_hot_springs/test_sky_quadrature.py
+@@ -0,0 +1,42 @@
++import numpy as np,json
++from pathlib import Path
++R=6360000.;Rt=6460000.
++sun=np.array([-.8,.4,.28]);sun/=np.linalg.norm(sun)
++def exit(p,d):
++ b=np.sum(p*d,axis=-1);c=np.sum(p*p,axis=-1)-Rt**2
++ return -b+np.sqrt(b*b-c)
++def depth(p,n,power):
++ p=np.asarray(p);end=exit(p,sun)
++ edges=(np.arange(n+1)/n)**power
++ t=(edges[1:]+edges[:-1])*.5;ds=np.diff(edges)
++ pos=p[...,None,:]+end[...,None,None]*t[:,None]*sun
++ h=np.maximum(np.linalg.norm(pos,axis=-1)-R,0)
++ return np.sum(np.exp(-h/8000)*end[...,None]*ds,axis=-1),np.sum(np.exp(-h/1200)*end[...,None]*ds,axis=-1)
++p=np.array([0,0,R+1.])
++ref=depth(p,2048,2)
++results={}
++for n,power in [(12,1),(32,2),(48,2),(64,2)]:
++ rr,mm=depth(p,n,power)
++ results[f'{n}_power_{power}']={'rayleigh':float(rr),'aerosol':float(mm),'rayleigh_relative_error':float(abs(rr-ref[0])/ref[0]),'aerosol_relative_error':float(abs(mm-ref[1])/ref[1])}
++# Single-scattering radiance in arbitrary units at three viewing elevations.
++w=380+(np.arange(16)+.5)*25;br=13.5e-6*(550/w)**4.08;bm=2.8e-6*(550/w)**1.3
++
++def sky(el,n,power,ns,ps):
++ theta=np.deg2rad(el);d=np.array([0,np.cos(theta),np.sin(theta)])
++ end=exit(p,d);ed=(np.arange(n+1)/n)**power;ds=np.diff(ed)*end;t=(ed[1:]+ed[:-1])*.5*end
++ pos=p[None,:]+t[:,None]*d
++ h=np.maximum(np.linalg.norm(pos,axis=-1)-R,0);dr=np.exp(-h/8000);dm=np.exp(-h/1200)
++ vr=np.cumsum(dr*ds)-.5*dr*ds;vm=np.cumsum(dm*ds)-.5*dm*ds
++ sr,sm=depth(pos,ns,ps);c=np.dot(d,sun);pr=3*(1+c*c)/(16*np.pi);g=.76
++ pm=(1-g*g)/(4*np.pi*(1+g*g-2*g*c)**1.5)
++ tr=np.exp(-(vr+sr)[:,None]*br-(vm+sm)[:,None]*bm)
++ return np.sum(tr*(br[None,:]*dr[:,None]*pr+.93*bm[None,:]*dm[:,None]*pm)*ds[:,None],axis=0)
++res=[]
++for el in [2.,8.,20.,50.,90.]:
++ reference=sky(el,640,2,128,2)
++ old=sky(el,32,1,12,1)
++ new=sky(el,64,2,32,2)
++ res.append({'view_elevation_deg':el,'legacy_max_band_relative_error':float(np.max(abs(old-reference)/reference)),'refined_max_band_relative_error':float(np.max(abs(new-reference)/reference)), 'legacy_mean_ratio':float(np.mean(old/reference)), 'refined_mean_ratio':float(np.mean(new/reference))})
++r={'scope':'Quadrature convergence for the same reduced single-scattering sky, not measured atmosphere validation','sun_elevation_deg':float(np.rad2deg(np.arcsin(sun[2]))),'solar_path':results,'sky':res}
++# JSON is emitted to stdout; callers choose the destination.
++print(json.dumps(r,indent=2))
+--- a/examples/desert_hot_springs/test_streaming_scene_io.py
++++ b/examples/desert_hot_springs/test_streaming_scene_io.py
+@@ -0,0 +1,40 @@
++"""Exercise the actual CYBR GEO archive round-trip and bounded-memory hashing."""
++from __future__ import annotations
++import json,hashlib,tempfile,sys
++from pathlib import Path
++import numpy as np
++REPO=Path(__file__).resolve().parents[2]
++sys.path.insert(0,str(REPO/'src'))
++from cybrgeo import Assembly,Part,Material
++from cybrgeo.core import _stream_sha256
++
++def main():
++    rng=np.random.default_rng(421)
++    with tempfile.TemporaryDirectory() as folder:
++        root=Path(folder)
++        parts=[]
++        for i in range(4):
++            v=rng.normal(size=(900,3));f=np.arange(900).reshape(-1,3)
++            n=v/np.linalg.norm(v,axis=1,keepdims=True)
++            parts.append(Part(f'part_{i}',v,f,n,material=0))
++        original=Assembly('round_trip',parts,[Material()]);original.save(root)
++        path=root/'meshes.npz'
++        digest=hashlib.sha256(path.read_bytes()).hexdigest()
++        hashes_equal=all(_stream_sha256(path,s)==digest for s in [7,1024,65536,4*1024*1024])
++        loaded=Assembly.load(root)
++        arrays_equal=all(np.array_equal(getattr(a,k),getattr(b,k)) for a,b in zip(original.parts,loaded.parts) for k in ['vertices','faces','normals'])
++        # Loaded arrays remain valid after the archive handle has closed, and
++        # changing the loaded result cannot mutate the source in memory.
++        loaded.parts[0].vertices[0,0]+=2
++        independent=not np.array_equal(original.parts[0].vertices,loaded.parts[0].vertices)
++        with path.open('ab') as out:out.write(b'tamper')
++        rejected=False
++        try:Assembly.load(root)
++        except ValueError as error:rejected='SHA256' in str(error)
++        result={'scope':'Streamed archive hashes, exact round-trip, ownership, tamper detection; no visual-quality assertion',
++                'stream_hash_matches_whole_file_for_4_chunk_sizes':hashes_equal,
++                'round_trip_exact':arrays_equal,'loaded_arrays_independent':independent,
++                'tampering_rejected':rejected,'passed':hashes_equal and arrays_equal and independent and rejected}
++        print(json.dumps(result,indent=2))
++        if not result['passed']:raise SystemExit(1)
++if __name__=='__main__':main()
+--- a/examples/desert_hot_springs/v11_landforms.py
++++ b/examples/desert_hot_springs/v11_landforms.py
+@@ -0,0 +1,228 @@
++"""Scale-separated authored terrain and physically tessellated rock damage.
++
++This is authored geometry, not a terrain scan or a calibrated erosion model.
++Coordinates are metres; CYBR GEO serializes millimetres at its existing boundary.
++"""
++from __future__ import annotations
++import numpy as np
++import trimesh
++from scipy.ndimage import gaussian_filter, map_coordinates
++from build_scene_v4 import noise, fbm, mesh_normals, erode
++from v10_landforms import poolq, POOLS, RIPPLE_SCALE
++from v9_landforms import smooth, cellular_gap
++from fluvial_detail_v9 import drainage
++from pathlib import Path
++
++HERE=Path(__file__).parent
++MICRO=np.load(HERE/'assets'/'granular_relief.npy')
++
++def micro_height(x,y):
++    # A reconstructed granular support field derived from the supplied CC0
++    # gravel photograph. NOT measured displacement; relief scale is authored.
++    u=(x*.917+y*.399)/.68*MICRO.shape[1]
++    v=(y*.917-x*.399)/.68*MICRO.shape[0]
++    shape=np.broadcast(x,y).shape
++    h=map_coordinates(MICRO,np.stack([np.ravel(v),np.ravel(u)]),order=1,mode='grid-wrap')
++    return h.reshape(shape)
++
++def height(x,y):
++    x,y=np.broadcast_arrays(np.asarray(x,dtype=float),np.asarray(y,dtype=float))
++    h=.215+.0015*y+.055*fbm(x*.24,y*.24,6)+.014*fbm(x*2.2,y*2.2,5)
++    # Interleaved low alluvial fans with channels, rather than a flat tabletop.
++    h+=.26*np.exp(-((x+12)/8)**2-((y-23)/18)**2)
++    h+=.47*np.exp(-((x-16)/11)**2-((y-38)/22)**2)
++    h+=.55*np.exp(-((x+27)/13)**2-((y-84)/40)**2)
++    for i,(_,_,rx,ry,level,depth) in enumerate(POOLS):
++        q=poolq(x,y,i);d=(q-1)*rx;qi=np.minimum(q,1.)
++        # Shallow broken shelves around an offset vent, no uniform bowl gradient.
++        bed=level+.006-.25*np.maximum(1-qi**4,0)**1.12
++        vent=1-smooth(.26,.82,qi+.065*fbm(x*1.1,y*.8,4))
++        bed-=1.24*depth*vent
++        bed+=(.064*fbm(x*1.7+13,y*1.3-7,5)+.010*fbm(x*12.7,y*13.1,4))*(1-smooth(.88,1.0,q))
++        pos=np.maximum(d,0.)
++        bank=level+.006+.172*(1-np.exp(-pos*2.4))
++        patch=smooth(-.27,.26,fbm(x*.92+8,y*.81+4,5))
++        warp=.057*fbm(x*5.4,y*4.7,5)+.019*fbm(x*17.1,y*18.7,4)
++        # Staggered accretion margins. Most are low and interrupted, not a rail.
++        rim=.030*np.exp(-((d-.053-warp)/.047)**2)*patch
++        rim+=.024*np.exp(-((d-.18-warp)/.042)**2)*smooth(-.12,.35,fbm(x*2.7,y*2.9,4))
++        rim+=.014*np.exp(-((d-.35-warp)/.031)**2)*patch
++        grains=.006*fbm(x*17.7,y*17.7,5)+.0021*noise(x*51,y*51)
++        shore=np.exp(-((q-1.045)/.22)**2)
++        desired=np.where(q<1,bed,bank)+shore*(grains+rim)
++        blend=1-smooth(1.32,1.88,q);h=h*(1-blend)+desired*blend
++    q=poolq(x,y,0)
++    # Fine mud cracks, separated from the sandy/granular areas.
++    crust=smooth(1.07,1.28,q)*(1-smooth(1.75,2.4,q))*smooth(-.26,.27,noise(x*.47,y*.51))
++    gap=cellular_gap(x*6.3+.26*noise(x*3.1,y*3.1),y*6.3+.26*noise(x*3.1+9,y*3.1))
++    h-=crust*.0075*np.exp(-(gap/.06)**2)
++    # Branching damp rills on the low side, not a painted unbroken orange band.
++    line=x-(3.28+.27*np.sin(y*.94)+.13*noise(y*3.7,np.zeros_like(y)))
++    drain=np.exp(-(line/.28)**2)*np.exp(-((y+1.65)/2.8)**4)
++    h-=.050*drain
++    near=np.exp(-((x-.5)/20)**8-((y-1)/25)**8)
++    gravel=smooth(-.40,.44,fbm(x*.53+3,y*.57-9,5))
++    h+=near*(.0009*fbm(x*63,y*63,3)+micro_height(x,y)*(.26+.74*gravel))
++    return h
++
++
++def rock_template(seed,sub):
++    """Closed deformed halfspace solid with mesoscopic scars and anisotropic grain.
++
++    Every large boulder receives its own independent shape. Normals derive from
++    the final vertices; there is no flat polygon with a painted groove.
++    """
++    rng=np.random.default_rng(seed)
++    level=6 if sub>=5 else sub
++    mesh=trimesh.creation.icosphere(subdivisions=level)
++    d=mesh.vertices.copy();f=mesh.faces.copy()
++    # A rotated orthogonal joint set, plus irregular oblique broken faces.
++    q,_=np.linalg.qr(rng.normal(size=(3,3)))
++    if np.linalg.det(q)<0:q[:,0]*=-1
++    ns=np.vstack([q,-q,rng.normal(size=(13,3))])
++    ns/=np.linalg.norm(ns,axis=1)[:,None]
++    ds=rng.uniform(.56,1.08,len(ns))
++    den=d@ns.T
++    radii=np.divide(ds,den,out=np.full_like(den,1e5),where=den>1e-5)
++    nearest=np.min(radii,axis=1)
++    weights=np.exp(-np.maximum(radii-nearest[:,None],0)*65.)
++    rr=nearest-np.log(weights.sum(axis=1))/65.
++    v=d*rr[:,None]
++    surf=weights@ns;surf/=np.maximum(np.linalg.norm(surf,axis=1),1e-12)[:,None]
++    p=v+np.array([rng.uniform(-70,70),rng.uniform(-70,70),rng.uniform(-70,70)])
++    a,b,c=p.T
++    # Different support lengths: joints, exfoliation scars, and granular pits.
++    warp=.34*noise(a*3.3,b*3.6,c*3.2)
++    relief=.043*noise(a*7.4+warp,b*6.8,c*8.9)
++    relief+=.021*noise(a*20.1,b*18.4,c*24.9)
++    relief+=.010*noise(a*51.4,b*49.6,c*67.4)
++    relief+=.0036*noise(a*127.2,b*133.1,c*141.9)
++    # Compact spalls are centered ON the surface, rather than sampling an
++    # interior volume where most depressions never intersected the shell.
++    for k in range(24 if sub>=5 else (9 if sub>=3 else 3)):
++        idx=int(rng.integers(len(v)));centre=v[idx].copy();axis=surf[idx].copy()
++        t=np.cross(axis,[0,0,1] if abs(axis[2])<.8 else [0,1,0]);t/=np.linalg.norm(t)
++        binormal=np.cross(axis,t);dv=v-centre
++        radius=rng.uniform(.045,.18);aspect=rng.uniform(.47,1.35)
++        ru=(dv@t)/radius;rv=(dv@binormal)/(radius*aspect);rn=dv@axis
++        metric=np.sqrt(ru*ru+rv*rv)
++        jitter=.12*noise(v[:,0]*43+k,v[:,1]*41+k,v[:,2]*39)
++        edge=metric+jitter
++        # Broad concave scars have a short fractured transition; their support
++        # is bounded to the selected face, so no far-side dents or painted rings.
++        mask=(1-smooth(.64,1.04,edge))*np.exp(-(rn/.11)**4)
++        relief-=rng.uniform(.020,.067)*mask*(.79+.21*np.maximum(1-metric,0))
++        lip=np.exp(-((edge-.99)/.11)**2)*np.exp(-(rn/.09)**4)
++        relief+=rng.uniform(.003,.010)*lip
++    band=v@q[:,0]+.12*noise(a*5,b*5,c*5)
++    # Worn lamination creates narrow local edges; amplitudes remain centimetres.
++    relief-=.016*np.exp(-((band-rng.uniform(-.5,.5))/.018)**2)*smooth(-.2,.37,noise(a*4,b*4,c*4))
++    v+=surf*relief[:,None]
++    return v,f,mesh_normals(v,f)
++
++
++def landscape_ridges(xs,ys,seed):
++    """Branching spur skeleton plus routed area-dependent incision.
++
++    This is an authored geomorphology construction, not a claim of a site DEM,
++    sediment conservation, or a calibrated geological timescale.
++    """
++    rng=np.random.default_rng(seed+182)
++    x,y=np.meshgrid(xs,ys)
++    z=np.zeros_like(x)
++    # Tall irregular main ridges; spurs lead downhill into separate watersheds.
++    for layer,(centre,width,peakbase) in enumerate([(3650,1700,720),(6950,2400,1260),(10800,3000,1720)]):
++        knots=np.linspace(xs[0]-2000,xs[-1]+2000,21)
++        yy=centre+rng.normal(0,280,len(knots))
++        zz=peakbase*rng.uniform(.52,1.16,len(knots))
++        ridge=np.zeros_like(x)
++        for k in range(len(knots)-1):
++            ax,ay=knots[k],yy[k];bx,by=knots[k+1],yy[k+1]
++            vx,vy=bx-ax,by-ay
++            t=np.clip(((x-ax)*vx+(y-ay)*vy)/(vx*vx+vy*vy),0,1)
++            dist=np.hypot(x-ax-t*vx,y-ay-t*vy)
++            h=zz[k]*(1-t)+zz[k+1]*t
++            # Slightly convex ridges become flatter talus at the base.
++            surface=h*np.maximum(1-dist/width,0)**1.42
++            ridge=np.maximum(ridge,surface)
++        for k in range(1,len(knots)-1):
++            for sign in [-1,1]:
++                # Uneven downhill spurs branch from the main peak.
++                origin=np.array([knots[k],yy[k]])
++                end=origin+np.array([rng.uniform(-520,520),sign*rng.uniform(950,1650)])
++                points=[origin,(origin+end)/2+np.array([rng.uniform(-140,140),0]),end]
++                heights=[zz[k],zz[k]*rng.uniform(.39,.63),zz[k]*.025]
++                for j in range(2):
++                    aa,bb=points[j],points[j+1];v=bb-aa
++                    t=np.clip(((x-aa[0])*v[0]+(y-aa[1])*v[1])/np.dot(v,v),0,1)
++                    dist=np.hypot(x-aa[0]-t*v[0],y-aa[1]-t*v[1])
++                    h=heights[j]*(1-t)+heights[j+1]*t
++                    ridge=np.maximum(ridge,h-np.maximum(dist,0)*rng.uniform(.59,.91))
++        # Add directional rough rock to the skeleton, at much smaller scale.
++        envelope=smooth(20,160,ridge)
++        wx=x+95*fbm(x*.0018,y*.0016,5)
++        wy=y+95*fbm(x*.0016+7,y*.0018-5,5)
++        r=fbm(wx*.0039,wy*.0036,7)
++        ridge+=envelope*(42*r+18*fbm(x*.013,y*.012,5))
++        z=np.maximum(z,ridge)
++    dx=float(xs[1]-xs[0]);dy=float(ys[1]-ys[0])
++    # Real routed drainage changes the surface, not just its albedo.
++    evolved=erode(np.maximum(z,0).astype(float)/dx,310000,seed+284)*dx
++    z=.20*z+.80*evolved
++    for it in range(5):
++        area,slope=drainage(z,dx,dy)
++        cut=np.minimum(np.sqrt(area)*np.sqrt(slope)*.32,4.5)*smooth(20,160,z)
++        z-=.55*cut+.45*gaussian_filter(cut,.7)
++    # No broad final Gaussian blur: retain tributaries and angular rock outcrops.
++    gy,gx=np.gradient(z,dy,dx);steep=smooth(.13,.56,np.hypot(gx,gy))
++    # Resistant rock beds stand above scree. Relief varies with steepness.
++    bedding=z*.017+x*.006-y*.0015+.7*fbm(x*.009,y*.009,5)
++    steps=np.sin(bedding)+.27*np.sin(bedding*3.7)
++    z+=steep*(9*steps+7.5*fbm(x*.038,y*.034,5)+2.8*noise(x*.094,y*.089))
++    z=np.maximum(z,0)+.215+.0015*y
++    fade=smooth(149.9,840,y)
++    return height(x,y)*(1-fade)+z*fade
++
++
++def connected_shrub(rng,base,h,lod,stem):
++    """Uneven rounded multi-stem shrubs; all leaves originate on real twigs."""
++    wood=[];leaf_v=[];leaf_f=[];offset=0
++    wind=np.r_[rng.normal(0,.12,2),0.]*h
++    def leaf(at,axis,length):
++        nonlocal offset
++        tangent=axis+rng.normal(0,.5,3);tangent/=np.linalg.norm(tangent)
++        side=np.cross(tangent,rng.normal(size=3));side/=max(np.linalg.norm(side),1e-9)
++        up=np.cross(tangent,side);w=length*rng.uniform(.16,.32)
++        mid=at+tangent*length*.52
++        vv=np.array([at,mid+side*w,at+tangent*length,mid-side*w,mid+up*w*.33])
++        ff=np.array([[0,1,4],[1,2,4],[2,3,4],[3,0,4]])+offset
++        leaf_v.append(vv);leaf_f.append(ff);offset+=5
++    def branch(a,b,r,order):
++        axis=b-a;length=np.linalg.norm(axis)
++        bend=rng.normal(0,.08,3)*length
++        ts=np.linspace(0,1,5 if lod==0 else 3)
++        points=a[None,:]*(1-ts[:,None])+b[None,:]*ts[:,None]+np.sin(ts[:,None]*np.pi)*bend
++        for j in range(len(points)-1):wood.append(stem(points[j],points[j+1],r*(1-.65*j/(len(points)-1))))
++        if order<2:
++            count=5 if order==0 else (5 if lod==0 else 3)
++            for k in range(count):
++                t=(k+1.2)/(count+1.7);idx=min(int(t*(len(points)-1)),len(points)-2)
++                u=t*(len(points)-1)-idx;attach=points[idx]*(1-u)+points[idx+1]*u
++                phi=rng.uniform(0,2*np.pi);spread=.46 if order==0 else .26
++                direction=axis/length*.35+np.array([np.cos(phi)*spread,np.sin(phi)*spread,rng.uniform(.22,.80)])
++                direction/=np.linalg.norm(direction)
++                end=attach+direction*length*rng.uniform(.30,.62)
++                branch(attach,end,r*.35,order+1)
++        else:
++            axis/=length
++            for j in range(len(points)-1):
++                count=6 if lod==0 else 3
++                for k in range(count):
++                    t=(k+.35)/count;at=points[j]*(1-t)+points[j+1]*t
++                    for side in range(2):leaf(at,axis,rng.uniform(.010,.024))
++    for j in range(int(rng.integers(6,10))):
++        phi=rng.uniform(0,2*np.pi);rad=h*rng.uniform(.27,.56)
++        end=base+np.array([np.cos(phi)*rad,np.sin(phi)*rad,h*rng.uniform(.56,1.05)])+wind
++        branch(base+np.r_[rng.normal(0,.035*h,2),0],end,.0055*h,0)
++    v=np.concatenate(leaf_v);f=np.concatenate(leaf_f)
++    return wood,[(v,f,mesh_normals(v,f))]
+--- a/examples/desert_hot_springs/verify_v11.py
++++ b/examples/desert_hot_springs/verify_v11.py
+@@ -0,0 +1,78 @@
++"""Fresh V11 execution evidence. No numerical test certifies photographic realism."""
++from __future__ import annotations
++import argparse,hashlib,json,re
++from pathlib import Path
++import numpy as np
++import trimesh
++from finish import read_pfm
++from verify import matching,sha
++from scene_inputs import fingerprint,current_scene_matches
++
++HERE=Path(__file__).resolve().parent
++REPO=HERE.parents[1]
++NATIVE_SOURCES=['spectral_desert.cpp','spectral_geometry.h','single_scatter_sky.h','photographic_grain.h','broadband_ripples.h','landscape_materials_v11.h','granular_relief_v11.h','steam_volume_v11.h','exponential_haze_v10.h','cloud_volume_v9.h','specular_reflection_connection.h']
++def check_view(root:Path,name:str):
++    stem=root/name
++    meta=json.loads(stem.with_suffix('.json').read_text())
++    receipt=json.loads(Path(str(stem)+'_run_receipt.json').read_text())
++    image=json.loads(Path(str(stem)+'_image_verification.json').read_text())
++    raw=read_pfm(stem.with_suffix('.pfm'))
++    with stem.with_suffix('.spectral').open('rb') as f:
++        magic,w,h,bands=map(int,np.fromfile(f,'<u4',4))
++    if magic!=0x36315053 or bands!=16 or raw.shape!=(h,w,3):raise ValueError('Inconsistent raw film buffers')
++    spectra=np.memmap(stem.with_suffix('.spectral'),dtype='<f4',mode='r',offset=16,shape=(h,w,bands))
++    transform=np.array([[3.2406,-1.5372,-.4986],[-.9689,1.8758,.0415],[.0557,-.204,1.057]])
++    maximum=0.;summed=0.;finite=True
++    for y in range(0,h,32):
++        values=np.asarray(spectra[y:y+32],dtype=np.float64)
++        reconstructed=(values@matching())@transform.T
++        difference=abs(reconstructed-raw[y:y+32]);finite=finite and bool(np.isfinite(values).all())
++        maximum=max(maximum,float(np.max(difference/(1+abs(raw[y:y+32])))))
++        summed+=float(difference.sum())
++    with stem.with_suffix('.samples').open('rb') as f:
++        dimensions=np.fromfile(f,'<u4',2);counts=np.fromfile(f,'<u2')
++    budget_ok=tuple(dimensions)==(w,h) and len(counts)==w*h and int(counts.sum(dtype=np.uint64))==meta['total_camera_samples']
++    source_hash=hashlib.sha256(b''.join((REPO/'native'/n).read_bytes() for n in NATIVE_SOURCES)).hexdigest()
++    source_ok=source_hash==receipt['source_hash']
++    passed=finite and bool(np.isfinite(raw).all()) and maximum<1e-4 and budget_ok and source_ok and meta['nonfinite_path_samples']==0 and image['png_sha256']==sha(stem.with_suffix('.png'))
++    return {'render':meta,'execution':receipt,'image':image,'spectral_reintegration':{'finite':finite,'max_normalized_error':maximum,'mean_absolute_error':summed/(h*w*3),'passed':maximum<1e-4 and finite},'sample_budget_consistent':budget_ok,'renderer_source_matches_receipt':source_ok,'passed':passed}
++
++def main():
++    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--out',type=Path,required=True);p.add_argument('--views',nargs='+',default=['final']);a=p.parse_args();root=a.out
++    geometry=json.loads((root/'geometry_verification.json').read_text())
++    meta=json.loads((root/'scene/scene.json').read_text());water=[]
++    with np.load(root/'scene/meshes.npz',allow_pickle=False) as archive:
++        for item in meta['parts']:
++            if not item['name'].startswith('Closed_water'):continue
++            key=item['key'];mesh=trimesh.Trimesh(archive[key+'_vertices']*.001,archive[key+'_faces'],process=False)
++            mesh.merge_vertices(digits_vertex=7)
++            water.append({'name':item['name'],'watertight':bool(mesh.is_watertight),'consistent_winding':bool(mesh.is_winding_consistent),'positive_signed_volume':bool(mesh.volume>0),'boundary':item['metadata']})
++            del mesh
++    modes=np.asarray(json.loads((HERE/'assets/ripple_modes.json').read_text())['modes_kx_ky_amplitude_phase'])
++    header=(REPO/'native/broadband_ripples.h').read_text();block=header.split('RIPPLE_MODES[RIPPLE_COUNT][4]={',1)[1].split('};',1)[0]
++    native=np.array([[float(n) for n in row.split(',')] for row in re.findall(r'\{([^{}]+)\}',block)])
++    views={name:check_view(root,name) for name in a.views}
++    tests={}
++    for name in ['scene_io','materials','steam_grid']:
++        path=root/'tests'/f'{name}.json'
++        if path.exists():tests[name]=json.loads(path.read_text())
++    if (root/'optics_tests.json').exists():tests['optics']=json.loads((root/'optics_tests.json').read_text())
++    report={'scope':'Newly executed render/geometry/buffer integrity and explicitly named component checks. Not a photorealism, measured-geometry, or reference-integrator certificate.',
++      'geometry':geometry,'water_boundaries':water,'scene_inputs_match':current_scene_matches(root,meta['metadata']['seed']),
++      'mode_table_matches':modes.shape==native.shape and bool(np.array_equal(modes,native)),
++      'views':views,'component_tests':tests,'authored_geometry':True,'measured_geometry':False,
++      'image_generation':False,'photographic_backplates':False,'photographic_compositing':False,
++      'gravel_asset':'Previously supplied CC0 grayscale photograph; weak albedo detail plus an explicitly authored reconstructed granular support field. This is not measured displacement.',
++      'limitations':['16 fixed midpoint bands, not continuous-wavelength or measured material spectra','Constant water IOR; wavelength-dependent absorption but no dispersion','One-root transmitted/reflected solar connections approximate water caustics','Authored waves and steam, not coupled fluid/thermal simulation','Quadrature-refined reduced single-scattering sky, not a reference multiple-scattering atmosphere','Conditional non-neural radiance denoising; raw image and radiance preserved'],
++      'upstream_render_defaults_changed':False,'github_push':False,'numerical_checks_certify_photorealism':False}
++    report['listed_checks_passed']=report['scene_inputs_match'] and report['mode_table_matches'] and len(water)==2 and all(w['watertight'] and w['consistent_winding'] and w['positive_signed_volume'] for w in water) and all(v['passed'] for v in views.values()) and all(t['passed'] for t in tests.values()) and len(tests)==4
++    comparison=root/'tests/comparison_alignment.json'
++    if comparison.exists() and 'previous_lighting' in views:
++        report['comparison_settings']=json.loads(comparison.read_text())
++        report['listed_checks_passed']=report['listed_checks_passed'] and report['comparison_settings']['stated_setting_checks_passed']
++    visual=root/'visual_review.json'
++    if visual.exists():report['visual_review']=json.loads(visual.read_text())
++    (root/'verification_v11.json').write_text(json.dumps(report,indent=2)+'\n')
++    print(json.dumps({'listed_checks_passed':report['listed_checks_passed'],'views':list(views),'water_boundaries':water},indent=2))
++    if not report['listed_checks_passed']:raise SystemExit(1)
++if __name__=='__main__':main()
+--- a/native/exponential_haze_v10.h
++++ b/native/exponential_haze_v10.h
+@@ -3,7 +3,7 @@
+ // This is a reduced atmosphere, not a measured atmosphere or weather solver.
+ #pragma once
+ const V ATM_LO(-9000,200,-.4f),ATM_HI(9000,14000,1800);
+-constexpr double ATM_SIGMA=0.000063,ATM_SCALE_HEIGHT=500.0;
++constexpr double ATM_SIGMA=0.000034,ATM_SCALE_HEIGHT=500.0;
+ bool atmosphereInterval(const Ray&r,float maximum,float&a,float&b){
+     a=0;b=maximum;
+     for(int k=0;k<3;k++){
+--- a/native/granular_relief_v11.h
++++ b/native/granular_relief_v11.h
+@@ -0,0 +1,35 @@
++// Authored microrelief reconstructed from an existing CC0 granular photograph.
++// Scalar metres; no claim of measured displacement or calibrated photogrammetry.
++#pragma once
++struct GranularRelief {
++ struct Level {int w,h;std::vector<float> data;};
++ std::vector<Level> levels;
++ void load(const std::string&path){
++  std::ifstream f(path,std::ios::binary);if(!f)throw std::runtime_error("Cannot read granular relief: "+path);
++  uint32_t h[3];f.read(reinterpret_cast<char*>(h),12);
++  if(!f||h[0]!=0x31465247||h[1]<2||h[2]<2||h[1]>4096||h[2]>4096)throw std::runtime_error("Invalid granular relief header");
++  Level base{int(h[1]),int(h[2]),std::vector<float>(size_t(h[1])*h[2])};f.read(reinterpret_cast<char*>(base.data.data()),base.data.size()*4);
++  if(!f)throw std::runtime_error("Truncated relief map");
++  for(float v:base.data)if(!std::isfinite(v)||std::fabs(v)>.05f)throw std::runtime_error("Invalid metre relief");
++  levels.push_back(std::move(base));
++  while(levels.back().w>1&&levels.back().h>1){auto&a=levels.back();Level l{a.w/2,a.h/2,{}};l.data.resize(size_t(l.w)*l.h);
++   for(int y=0;y<l.h;y++)for(int x=0;x<l.w;x++)l.data[size_t(y)*l.w+x]=.25f*(a.data[size_t(y*2)*a.w+x*2]+a.data[size_t(y*2)*a.w+x*2+1]+a.data[size_t(y*2+1)*a.w+x*2]+a.data[size_t(y*2+1)*a.w+x*2+1]);
++   levels.push_back(std::move(l));
++  }
++ }
++ float bilinear(float u,float v,int l)const {
++  auto&a=levels[l];u=(u-std::floor(u))*a.w;v=(v-std::floor(v))*a.h;
++  int x=int(u),y=int(v);float dx=u-x,dy=v-y;int x1=(x+1)%a.w,y1=(y+1)%a.h;
++  return (a.data[size_t(y)*a.w+x]*(1-dx)+a.data[size_t(y)*a.w+x1]*dx)*(1-dy)+(a.data[size_t(y1)*a.w+x]*(1-dx)+a.data[size_t(y1)*a.w+x1]*dx)*dy;
++ }
++ float sample(float x,float y,float footprint)const {
++  if(levels.empty())return 0;
++  float u=(x*.917f+y*.399f)/.68f,v=(y*.917f-x*.399f)/.68f;
++  float lod=clamp(std::log2(std::max(1.f,footprint*levels[0].w/.68f)),0.f,float(levels.size()-1));int l=int(lod);float t=lod-l;
++  return bilinear(u,v,l)*(1-t)+bilinear(u,v,std::min(l+1,int(levels.size()-1)))*t;
++ }
++ V gradient(float x,float y,float footprint)const {
++  float e=std::max(.00065f,footprint*.5f);
++  return V((sample(x+e,y,footprint)-sample(x-e,y,footprint))/(2*e),(sample(x,y+e,footprint)-sample(x,y-e,footprint))/(2*e),0);
++ }
++} granularRelief;
+--- a/native/landscape_materials_v11.h
++++ b/native/landscape_materials_v11.h
+@@ -0,0 +1,114 @@
++// World-scale material hierarchy. All spectra are authored reconstructed RGB.
++// No screen-space overlays, depth tint, external beauty images or generated images.
++#pragma once
++V mixc(V a,V b,float t){return a*(1-t)+b*t;}
++float gap2(float x,float y){
++ int ix=int(std::floor(x)),iy=int(std::floor(y));float a=INF,b=INF;
++ for(int j=-1;j<=1;j++)for(int i=-1;i<=1;i++){
++  uint32_t h=hash3(ix+i,iy+j,0),q=h*1664525u+1013904223u;
++  float dx=ix+i+.18f+.64f*(float(h)/4294967295.f)-x,dy=iy+j+.18f+.64f*(float(q)/4294967295.f)-y;
++  float r=dx*dx+dy*dy;if(r<a){b=a;a=r;}else if(r<b)b=r;
++ }return std::sqrt(b)-std::sqrt(a);
++}
++V filteredNoiseSlope(V p,V n,float frequency,float amplitude,float footprint){
++ Frame frame(n);float filter=1/(1+sqr(footprint*frequency));float e=.021f;
++ V at=p*frequency;
++ float dx=(noise(at+frame.t*e)-noise(at-frame.t*e))/(2*e);
++ float dy=(noise(at+frame.b*e)-noise(at-frame.b*e))/(2*e);
++ return (frame.t*dx+frame.b*dy)*(amplitude*filter);
++}
++Surface shade(V p,V &n,int material,float footprint){
++ Surface m;m.kind=material;
++ float q0=poolQ(p,0),q1=poolQ(p,1);int pi=q0<q1?0:1;
++ float q=std::min(q0,q1),d=(q-1)*pools[pi].rx,level=pools[pi].level;
++ float macro=fbm(p*.53f),meso=fbm(p*17.1f);
++ float patch=smooth(-.27f,.26f,fbm(V(p.x*.92f+8,p.y*.81f+4,p.z*.71f)));
++ float wet=(1-smooth(level+.015f,level+.105f+.014f*noise(p*4),p.z))*(1-smooth(1.14f,1.5f,q));
++ float line=p.x-(3.28f+.27f*std::sin(p.y*.94f)+.13f*noise(p.y*3.7f,0));
++ float drain=std::exp(-sqr(line/.32f))*std::exp(-std::pow((p.y+1.65f)/2.8f,4));
++ wet=clamp(wet+.84f*drain);
++ if(material==0||material==4){
++  // A broad broken sinter apron, not an evenly colored pool collar.
++  float fresh=std::exp(-sqr((d-.09f)/(.19f+.18f*patch)))*(.23f+.77f*patch);
++  float apron=std::exp(-sqr((d-.62f)/1.25f))*smooth(-.18f,.32f,fbm(V(p.x*.78f-4,p.y*.71f+2,p.z)));
++  float mineral=clamp(fresh+.85f*apron);
++  float gravel=smooth(-.4f,.44f,fbm(V(p.x*.53f+3,p.y*.57f-9,0)));
++  float clay=smooth(-.12f,.36f,fbm(p*.95f));
++  V sand(.265f,.211f,.152f),fines(.165f,.143f,.115f),sinter(.64f,.628f,.565f);
++  m.color=mixc(mixc(sand,fines,clay*.58f),sinter,mineral*.91f);
++  float iron=std::exp(-sqr((d-.033f)/.15f))*(.09f+.59f*(1-patch));
++  iron=clamp(iron+drain*.90f);
++  m.color=mixc(m.color,V(.31f,.125f,.035f),iron*.85f);
++  if(q<.99f){
++   float bed=smooth(-.2f,.45f,fbm(V(p.x*1.5f,p.y*1.31f,p.z*2.3f)));
++   m.color=mixc(V(.39f,.393f,.325f),V(.205f,.230f,.199f),bed*.55f);
++   float oxide=smooth(.69f,.97f,q)*smooth(-.28f,.4f,fbm(p*3.4f));
++   m.color=mixc(m.color,V(.26f,.158f,.066f),oxide*.50f);
++   wet=0;
++  }
++  if(material==4)m.color=V(.66f,.651f,.58f)*(1+.14f*meso);
++  float tiny=1/(1+sqr(footprint*350));
++  m.color*=1+.055f*macro+.13f*meso+.11f*noise(p*311)*tiny;
++  if(!photographicGrain.levels.empty()){
++   float u=p.x*.917f+p.y*.399f,v=p.y*.917f-p.x*.399f;
++   float grit=photographicGrain.sample(u,v,footprint,.68f);
++   // Most brightness comes from the actual geometric relief, not baked shadow.
++   m.color*=.71f+.29f*clamp(grit,.26f,1.90f);
++  }
++  float crackMask=smooth(1.07f,1.28f,q)*(1-smooth(1.75f,2.4f,q))*smooth(-.26f,.27f,noise(p.x*.47f,p.y*.51f));
++  if(crackMask>.001f){
++   float gap=gap2(p.x*6.3f+.26f*noise(p.x*3.1f,p.y*3.1f),p.y*6.3f+.26f*noise(p.x*3.1f+9,p.y*3.1f));
++   m.color*=1-.31f*crackMask*std::exp(-sqr(gap/std::max(.045f,footprint*9)));
++  }
++  // Only unresolved height frequencies affect the shading normal. The coarser
++  // support field is already geometry; subtract it to avoid double displacement.
++  if(footprint<.026f){
++   V delta=granularRelief.gradient(p.x,p.y,std::max(.0006f,footprint))-
++           granularRelief.gradient(p.x,p.y,std::max(.017f,footprint));
++   delta*=.26f+.74f*gravel;
++   n=unit(n-V(delta.x,delta.y,0)*.74f);
++  }
++  n=unit(n-filteredNoiseSlope(p,n,163,.12f,footprint));
++  m.rough=.88f*(1-wet)+.12f*wet;
++ }else if(material==1||material==2){
++  // Eliminate metre-wide pale/dark camouflage. Granite varies mostly at grain
++  // and fracture scale; large colour modulation is restrained.
++  V granite=material==1?V(.34f,.329f,.297f):V(.255f,.254f,.240f);
++  m.color=granite*(1+.075f*macro+.16f*fbm(p*24));
++  float mica=smooth(-.07f,.48f,noise(p*321+V(7,4,1)))/(1+sqr(footprint*260));
++  float quartz=smooth(.12f,.61f,noise(p*173+V(12,3,8)))/(1+sqr(footprint*130));
++  m.color=mixc(m.color,V(.055f,.053f,.049f),mica*.65f);
++  m.color=mixc(m.color,V(.63f,.606f,.545f),quartz*.48f);
++  float rind=smooth(.05f,.54f,fbm(p*3.8f))*.20f;
++  m.color=mixc(m.color,V(.204f,.147f,.085f),rind);
++  float dust=smooth(.5f,.94f,n.z)*smooth(-.1f,.32f,fbm(p*6.3f))*.22f;
++  m.color=mixc(m.color,V(.30f,.237f,.166f),dust);
++  float mineral=std::exp(-sqr((p.z-level-.036f)/.059f))*(1-smooth(1.08f,1.38f,q));
++  m.color=mixc(m.color,V(.63f,.615f,.555f),mineral*.57f);
++  m.rough=.84f*(1-wet)+.20f*wet;
++  n=unit(n-filteredNoiseSlope(p,n,18.3f,.24f,footprint)-filteredNoiseSlope(p,n,75.f,.31f,footprint)-filteredNoiseSlope(p,n,279.f,.19f,footprint));
++ }else if(material==5){
++  float slope=smooth(.035f,.29f,1-n.z);
++  float layer=smooth(-.55f,.73f,std::sin(p.z*.017f+p.x*.006f-p.y*.0015f+.6f*fbm(p*.011f)));
++  float litho=smooth(-.27f,.44f,fbm(V(p.x*.0037f,p.y*.0049f,p.z*.0069f)));
++  V talus(.241f,.195f,.152f),rock(.127f,.127f,.129f),granite(.250f,.226f,.194f);
++  V face=mixc(rock,granite,.35f+.51f*layer);
++  face=mixc(face,V(.248f,.164f,.098f),litho*.23f);
++  m.color=mixc(talus,face,slope);
++  m.color*=1+.21f*fbm(p*.034f)+.14f*fbm(p*.19f);
++  float ramp=smooth(280,1150,p.y);m.color=m.color*ramp+V(.25f,.201f,.144f)*(1-ramp);
++  n=unit(n-filteredNoiseSlope(p,n,.54f,.31f,footprint));m.rough=.94f;
++ }else if(material==3){
++  m.color=V(.45f,.315f,.134f)*(1+.25f*macro+.14f*noise(p*47));m.rough=.88f;
++ }else if(material==8){
++  m.color=V(.165f,.118f,.071f)*(1+.31f*fbm(p*19));m.rough=.94f;
++ }else if(material==9){
++  float dry=smooth(-.19f,.30f,noise(p*3.7f));
++  m.color=mixc(V(.185f,.222f,.131f),V(.31f,.283f,.171f),dry*.52f);
++  m.color*=1+.29f*noise(p*173);m.rough=.83f;
++ }else m.color=V(.3f);
++ m.color*=1-.29f*wet;
++ m.ior=(p.z<level&&q<1.1f)?1.48f/WATER_IOR:(wet>.2f?1.334f:1.48f);
++ m.color=vmin(vmax(m.color,V(.003f)),V(.91f));
++ return m;
++}
+--- a/native/single_scatter_sky.h
++++ b/native/single_scatter_sky.h
+@@ -1,4 +1,5 @@
+ // Wavelength-resolved single-scattering atmosphere LUT. No HDRI or backplate.
++// Quadratic near-observer quadrature resolves the shallow aerosol layer.
+ // Spherical atmosphere; Rayleigh + Henyey-Greenstein aerosol scattering.
+ // This deliberately does not claim a full multiple-scattering sky solution.
+ constexpr int SKY_W=384,SKY_H=144;
+@@ -11,10 +12,12 @@
+     return -b+std::sqrt(std::max(0.,b*b-c));
+ }
+ void opticalDepthToSun(double x,double y,double z,double &rr,double &mm){
+-    double length=atmosphereExit(x,y,z,SUN),ds=length/12;
++    double length=atmosphereExit(x,y,z,SUN);
+     rr=mm=0;
+-    for(int i=0;i<12;i++){
+-        double t=(i+.5)*ds,px=x+SUN.x*t,py=y+SUN.y*t,pz=z+SUN.z*t;
++    for(int i=0;i<32;i++){
++        double a=double(i)/32,b=double(i+1)/32;
++        double lo=a*a*length,hi=b*b*length,ds=hi-lo,t=(lo+hi)*.5;
++        double px=x+SUN.x*t,py=y+SUN.y*t,pz=z+SUN.z*t;
+         double h=std::max(0.,std::sqrt(px*px+py*py+pz*pz)-6360000.);
+         rr+=std::exp(-h/8000.)*ds;mm+=std::exp(-h/1200.)*ds;
+     }
+@@ -35,13 +38,15 @@
+         for(int i=0;i<SKY_W;i++){
+             double phi=((i+.5)/SKY_W)*2*PI;
+             V d(sz*std::cos(phi),sz*std::sin(phi),cz);
+-            double maxT=atmosphereExit(0,0,6360001.,d),ds=maxT/32;
++            double maxT=atmosphereExit(0,0,6360001.,d);
+             double viewR=0,viewM=0,c=dot(d,SUN);
+             double pr=3*(1+c*c)/(16*PI),g=.76;
+             double pm=(1-g*g)/(4*PI*std::pow(1+g*g-2*g*c,1.5));
+             Spec sum;
+-            for(int s=0;s<32;s++){
+-                double t=(s+.5)*ds,x=t*d.x,y=t*d.y,z=6360001.+t*d.z;
++            for(int s=0;s<64;s++){
++                double a=double(s)/64,b=double(s+1)/64;
++                double lo=a*a*maxT,hi=b*b*maxT,ds=hi-lo,t=(lo+hi)*.5;
++                double x=t*d.x,y=t*d.y,z=6360001.+t*d.z;
+                 double h=std::max(0.,std::sqrt(x*x+y*y+z*z)-6360000.);
+                 double dr=std::exp(-h/8000.),dm=std::exp(-h/1200.);
+                 viewR+=dr*ds*.5;viewM+=dm*ds*.5;
+--- a/native/spectral_desert.cpp
++++ b/native/spectral_desert.cpp
+@@ -12,6 +12,7 @@
+ #include <stdexcept>
+ #include <cstring>
+ #include "photographic_grain.h"
++#include "granular_relief_v11.h"
+ 
+ constexpr int NBANDS=16;
+ constexpr float WL0=380.f, DL=25.f, WATER_IOR=1.334f;
+@@ -192,7 +193,7 @@
+ // Bounded, genuinely ray-integrated participating medium. This is a procedural
+ // density field, NOT a Navier-Stokes/thermal plume simulation or a 2-D overlay.
+ const V FOG_LO(-8,-4.8f,.055f),FOG_HI(8.4f,13.4f,3.6f);
+-constexpr float STEAM_SCALE=.58f,MAJORANT=.85f,PHASE_G=.63f;
++constexpr float STEAM_SCALE=.95f,MAJORANT=.85f,PHASE_G=.63f;
+ bool fogInterval(const Ray&r,float maximum,float &a,float &b){
+     a=0;b=maximum;
+     for(int k=0;k<3;k++){
+@@ -201,7 +202,7 @@
+         a=std::max(a,x);b=std::min(b,y);if(a>=b)return false;
+     }return b>a;
+ }
+-float steamDensity(V p){
++float steamAnalytic(V p){
+     if(!useSteam)return 0;
+     float density=0;
+     for(int i=0;i<2;i++){
+@@ -221,21 +222,23 @@
+         }
+     }return density*STEAM_SCALE;
+ }
++#include "steam_volume_v11.h"
++
+ float sampleSteam(const Ray&r,float maxT,RNG&rng){
+     if(!useSteam)return INF;float a,b;if(!fogInterval(r,maxT,a,b))return INF;
+-    float t=a;
++    float t=a;const float majorant=trackingSteamMajorant();if(majorant<=0)return INF;
+     for(int k=0;k<1024;k++){
+-        t+=-std::log(std::max(1e-8f,1-rng.uniform()))/MAJORANT;
++        t+=-std::log(std::max(1e-8f,1-rng.uniform()))/majorant;
+         if(t>=b)return INF;
+-        if(rng.uniform()<steamDensity(r.o+r.d*t)/MAJORANT)return t;
++        if(rng.uniform()<steamDensity(r.o+r.d*t)/majorant)return t;
+     }return INF;
+ }
+ float steamTransmittance(const Ray&r,float maxT,RNG&rng){
+     if(!useSteam)return 1;float a,b;if(!fogInterval(r,maxT,a,b))return 1;
+-    float t=a,tr=1;
++    float t=a,tr=1;const float majorant=trackingSteamMajorant();if(majorant<=0)return 1;
+     for(int k=0;k<1024;k++){
+-        t+=-std::log(std::max(1e-8f,1-rng.uniform()))/MAJORANT;if(t>=b)return tr;
+-        tr*=std::max(0.f,1-steamDensity(r.o+r.d*t)/MAJORANT);
++        t+=-std::log(std::max(1e-8f,1-rng.uniform()))/majorant;if(t>=b)return tr;
++        tr*=std::max(0.f,1-steamDensity(r.o+r.d*t)/majorant);
+         if(tr<1.e-5f)return 0;
+     }return tr;
+ }
+@@ -263,7 +266,13 @@
+     float nv=dot(n,v),nl=dot(n,l);if(nv<=0||nl<=0)return Spec();
+     V h=unit(v+l);float a=std::max(.018f,m.rough*m.rough);
+     float fr=fresnelD(clamp(dot(v,h)),1,m.ior);
+-    return base*((1-fr)/PI)+Spec(fr*Dggx(clamp(dot(n,h)),a)*G1(nv,a)*G1(nl,a)/(4*nv*nl));
++    float sigma=m.rough*.52f,s2=sigma*sigma;
++    float A=1-s2/(2*(s2+.33f)),B=.45f*s2/(s2+.09f);
++    float vi=std::sqrt(std::max(0.f,1-nv*nv)),li=std::sqrt(std::max(0.f,1-nl*nl));
++    float cosPhi=vi*li>1e-8f?std::max(0.f,(dot(v,l)-nv*nl)/(vi*li)):0.f;
++    float sinAlpha=std::max(vi,li),tanBeta=std::min(vi/std::max(nv,1e-5f),li/std::max(nl,1e-5f));
++    float oren=A+B*cosPhi*sinAlpha*tanBeta;
++    return base*((1-fr)*oren/PI)+Spec(fr*Dggx(clamp(dot(n,h)),a)*G1(nv,a)*G1(nl,a)/(4*nv*nl));
+ }
+ float pdfBSDF(const Surface&m,V n,V v,V l){
+     float nv=dot(n,v),nl=dot(n,l);if(nv<=0||nl<=0)return 0;
+@@ -291,7 +300,7 @@
+ // All coordinates are metres; tiny grains are footprint filtered.
+ // Correlated position/elevation driven mixtures. The retained CC0 grayscale
+ // photograph is only a weak albedo modulation, never a backdrop or a render.
+-#include "scale_aware_landscape_v10.h"
++#include "landscape_materials_v11.h"
+ 
+ // A numerical Snell-law connection to the displaced water heightfield.
+ // The finite-difference solid-angle Jacobian includes local wave focusing.
+@@ -375,7 +384,7 @@
+ 
+ // Authored, homogeneous suspended-mineral scattering. Units: inverse metres.
+ // Scattering free flights are sampled explicitly; absorption remains spectral.
+-constexpr float WATER_SIGMA_S=.049f;
++constexpr float WATER_SIGMA_S=.025f;
+ constexpr float WATER_PHASE_G=.74f;
+ float indirectClamp=12.f;
+ std::atomic<uint64_t> clampedIndirectContributions{0};
+@@ -549,7 +558,7 @@
+ }
+ 
+ struct Options{
+-    std::string mesh,out,grain,view="hero";int width=1200,height=800,spp=128,depth=12,threads=5,seed=20260913;
++    std::string mesh,out,grain,relief,view="hero";int width=1200,height=800,spp=128,depth=12,threads=5,seed=20260913;
+     int waterSpp=0;float exposure=1.3f;bool bands=true;float aperture=.00025f;
+ };
+ Options parse(int argc,char**argv){
+@@ -567,7 +576,7 @@
+             SUN=unit(V(x,y,z));
+         }
+         else if(arg=="--no-clouds")useClouds=false;else if(arg=="--no-steam")useSteam=false;else if(arg=="--no-water")useWater=false;else if(arg=="--water-absorption")waterStrength=std::stof(get());
+-        else if(arg=="--grain")o.grain=get();else if(arg=="--no-bands")o.bands=false;else throw std::runtime_error("Unknown argument "+arg);
++        else if(arg=="--relief")o.relief=get();else if(arg=="--grain")o.grain=get();else if(arg=="--no-bands")o.bands=false;else throw std::runtime_error("Unknown argument "+arg);
+     }
+     if(o.width<1||o.height<1||o.spp<1||o.depth<1||o.threads<1||o.aperture<0||waterStrength<0||o.waterSpp<0||o.waterSpp>65535||o.spp>65535||indirectClamp<0)throw std::runtime_error("Invalid render setting");
+     return o;
+@@ -608,7 +617,7 @@
+ }
+ int main(int argc,char**argv){try{
+     if(argc==2&&std::string(argv[1])=="--self-test")return selftest();
+-    auto o=parse(argc,argv);if(!o.grain.empty())photographicGrain.load(o.grain);omp_set_num_threads(o.threads);initSpectra();initRipples();initClouds();
++    auto o=parse(argc,argv);if(!o.grain.empty())photographicGrain.load(o.grain);if(!o.relief.empty())granularRelief.load(o.relief);omp_set_num_threads(o.threads);initSpectra();initRipples();initClouds();initSteam();
+     auto started=std::chrono::steady_clock::now();
+     std::ifstream input(o.mesh,std::ios::binary);if(!input)throw std::runtime_error("Cannot read CYBR GEO mesh "+o.mesh);
+     uint32_t count;input.read(reinterpret_cast<char*>(&count),4);
+@@ -677,7 +686,7 @@
+     {std::ofstream samples(o.out+".samples",std::ios::binary);samples.write(reinterpret_cast<char*>(dim),8);samples.write(reinterpret_cast<char*>(sampleCounts.data()),sampleCounts.size()*sizeof(uint16_t));}
+     uint64_t totalCameraSamples=std::accumulate(sampleCounts.begin(),sampleCounts.end(),uint64_t(0));
+     float sec=std::chrono::duration<float>(std::chrono::steady_clock::now()-started).count();
+-    std::ofstream meta(o.out+".json");meta<<std::setprecision(9)<<"{\n  \"renderer\": \"CYBR GEO native V10 rebuilt landforms and mineral material layers\",\n  \"geometry_accelerator\": \"CYBR GEO native SAH BVH\",\n  \"view\": \""<<o.view<<"\",\n  \"width\": "<<o.width<<", \"height\": "<<o.height<<", \"spp\": "<<o.spp<<",\n  \"max_depth\": "<<o.depth<<", \"seed\": "<<o.seed<<", \"threads\": "<<o.threads<<",\n  \"triangles\": "<<tris.size()<<", \"bvh_nodes\": "<<nodes.size()<<",\n  \"spectral_bands\": 16, \"wavelength_range_nm\": [380,780],\n  \"spectral_method\": \"Jointly transported fixed midpoint wavelength quadrature, 25 nm bins\",\n  \"water_ior\": "<<WATER_IOR<<", \"dispersion\": false,\n  \"steam\": "<<(useSteam?"true":"false")<<", \"steam_model\": \"Authored heterogeneous density; delta and ratio tracking; HG phase\",\n  \"water_absorption_scale\": "<<waterStrength<<",\n  \"finite_difference_water_connection_step_radians\": 0.0001,\n  \"nonfinite_path_samples\": "<<nonfinite.load()<<",\n  \"exposure\": "<<o.exposure<<",\n  \"film_white_rgb\": ["<<whiteRGB.x<<","<<whiteRGB.y<<","<<whiteRGB.z<<"],\n  \"seconds\": "<<sec<<",\n  \"band_means\": [";
++    std::ofstream meta(o.out+".json");meta<<std::setprecision(9)<<"{\n  \"renderer\": \"CYBR GEO native V11 scale-separated microgeometry and jointed ridge terrain\",\n  \"geometry_accelerator\": \"CYBR GEO native SAH BVH\",\n  \"view\": \""<<o.view<<"\",\n  \"width\": "<<o.width<<", \"height\": "<<o.height<<", \"spp\": "<<o.spp<<",\n  \"max_depth\": "<<o.depth<<", \"seed\": "<<o.seed<<", \"threads\": "<<o.threads<<",\n  \"triangles\": "<<tris.size()<<", \"bvh_nodes\": "<<nodes.size()<<",\n  \"spectral_bands\": 16, \"wavelength_range_nm\": [380,780],\n  \"spectral_method\": \"Jointly transported fixed midpoint wavelength quadrature, 25 nm bins\",\n  \"water_ior\": "<<WATER_IOR<<", \"dispersion\": false,\n  \"steam\": "<<(useSteam?"true":"false")<<", \"steam_model\": \"Authored heterogeneous trilinear density grid; grid-bounded delta and ratio tracking; HG phase\",\n  \"water_absorption_scale\": "<<waterStrength<<",\n  \"finite_difference_water_connection_step_radians\": 0.0001,\n  \"nonfinite_path_samples\": "<<nonfinite.load()<<",\n  \"exposure\": "<<o.exposure<<",\n  \"film_white_rgb\": ["<<whiteRGB.x<<","<<whiteRGB.y<<","<<whiteRGB.z<<"],\n  \"seconds\": "<<sec<<",\n  \"band_means\": [";
+     for(int k=0;k<NBANDS;k++)meta<<(k?",":"")<<means.v[k];
+     meta<<"],\n  \"water_scattering_coefficient_per_m\": "<<WATER_SIGMA_S<<",\n  \"water_scattering_HG_g\": "<<WATER_PHASE_G<<",\n  \"ripple_modes\": "<<RIPPLE_COUNT<<",\n  \"camera_origin_m\": ["<<camera.x<<","<<camera.y<<","<<camera.z<<"],\n  \"camera_target_m\": ["<<target.x<<","<<target.y<<","<<target.z<<"],\n  \"horizontal_fov_degrees\": "<<hfov<<",\n  \"aperture_radius_m\": "<<o.aperture<<",\n  \"sun_direction\": ["<<SUN.x<<","<<SUN.y<<","<<SUN.z<<"],\n  \"photographic_grayscale_albedo_detail\": "<<(!photographicGrain.levels.empty()?"true":"false")<<",\n  \"photographic_backplate\": false,\n  \"image_generation\": false,\n  \"sky_model\": \"Single-scattering spherical Rayleigh/aerosol spectral LUT, not reference-validated\",\n  \"material_spectra\": \"Reference-illuminant-calibrated RGB-anchor reflectance, not measured mineral spectra\",\n  \"clouds\": "<<(useClouds?"true":"false")<<",\n  \"cloud_model\": \"Bounded 3D extinction grid; conservative column-majorant DDA; delta-tracked scattering and ratio-tracked shadows\",\n  \"cloud_grid\": ["<<CLOUD_NX<<","<<CLOUD_NY<<","<<CLOUD_NZ<<"],\n  \"water_spp\": "<<o.waterSpp<<",\n  \"total_camera_samples\": "<<totalCameraSamples<<",\n  \"indirect_contribution_clamp_Y\": "<<indirectClamp<<",\n  \"clamped_indirect_contributions\": "<<clampedIndirectContributions.load()<<",\n  \"water_microfacet_alpha\": "<<WATER_MICRO_ALPHA<<",\n  \"water_reflection_estimator\": \"Primary: GGX VNDF and solar-disc MIS; indirect: one-root macro reflection manifold with exclusive path ownership\",\n  \"underwater_direct_light_approximation\": \"One-root macro-surface manifolds approximate indirect reflected and transmitted caustics; primary reflection uses GGX\"\n}\n";
+     std::cerr<<"WROTE "<<o.out<<"; "<<sec<<" seconds; invalid paths "<<nonfinite<<"\n";
+--- a/native/steam_volume_v11.h
++++ b/native/steam_volume_v11.h
+@@ -0,0 +1,39 @@
++// GPL-2.0-only. Trilinear representation of the authored steam field.
++// The tracking majorant is computed from EVERY grid vertex. A trilinear sample
++// is a convex combination, hence cannot exceed that bound. No density image,
++// billboard, learned volume, or fluid/thermal simulation is used.
++#pragma once
++constexpr int STEAM_NX=256, STEAM_NY=288, STEAM_NZ=80;
++std::vector<float> steamGrid;
++float steamGridMajorant=0;
++void initSteam(){
++    if(!useSteam)return;
++    steamGrid.resize(size_t(STEAM_NX)*STEAM_NY*STEAM_NZ);
++    float maximum=0;int invalid=0;
++    #pragma omp parallel for reduction(max:maximum) reduction(|:invalid) schedule(static)
++    for(int k=0;k<STEAM_NZ;k++)for(int j=0;j<STEAM_NY;j++)for(int i=0;i<STEAM_NX;i++){
++        V p(FOG_LO.x+(FOG_HI.x-FOG_LO.x)*i/(STEAM_NX-1),
++            FOG_LO.y+(FOG_HI.y-FOG_LO.y)*j/(STEAM_NY-1),
++            FOG_LO.z+(FOG_HI.z-FOG_LO.z)*k/(STEAM_NZ-1));
++        float value=steamAnalytic(p);
++        if(!std::isfinite(value)||value<0){invalid=1;value=0;}
++        steamGrid[(size_t(k)*STEAM_NY+j)*STEAM_NX+i]=value;
++        maximum=std::max(maximum,value);
++    }
++    if(invalid)throw std::runtime_error("Invalid authored steam density");
++    steamGridMajorant=std::nextafter(maximum*1.000005f+1e-8f,INF);
++}
++float steamDensity(V p){
++    if(!useSteam)return 0;
++    if(steamGrid.empty())return steamAnalytic(p);
++    if(p.x<FOG_LO.x||p.y<FOG_LO.y||p.z<FOG_LO.z||p.x>FOG_HI.x||p.y>FOG_HI.y||p.z>FOG_HI.z)return 0;
++    float x=(p.x-FOG_LO.x)/(FOG_HI.x-FOG_LO.x)*(STEAM_NX-1);
++    float y=(p.y-FOG_LO.y)/(FOG_HI.y-FOG_LO.y)*(STEAM_NY-1);
++    float z=(p.z-FOG_LO.z)/(FOG_HI.z-FOG_LO.z)*(STEAM_NZ-1);
++    int ix=std::min(int(x),STEAM_NX-2),iy=std::min(int(y),STEAM_NY-2),iz=std::min(int(z),STEAM_NZ-2);
++    float fx=x-ix,fy=y-iy,fz=z-iz,sum=0;
++    for(int k=0;k<2;k++)for(int j=0;j<2;j++)for(int i=0;i<2;i++)
++        sum+=steamGrid[(size_t(iz+k)*STEAM_NY+iy+j)*STEAM_NX+ix+i]*(i?fx:1-fx)*(j?fy:1-fy)*(k?fz:1-fz);
++    return sum;
++}
++float trackingSteamMajorant(){return steamGrid.empty()?MAJORANT:steamGridMajorant;}
+--- a/native/test_materials_v11.cpp
++++ b/native/test_materials_v11.cpp
+@@ -0,0 +1,38 @@
++#define main spectral_desert_entrypoint
++#include "spectral_desert.cpp"
++#undef main
++int main(int argc,char**argv){
++ try{
++  if(argc!=3)throw std::runtime_error("usage: test_materials_v11 relief.bin gravel.pgm");
++  omp_set_num_threads(2);initSpectra();initRipples();granularRelief.load(argv[1]);photographicGrain.load(argv[2]);
++  RNG r(987656321);bool finite=true,bounded=true;float maxNormalError=0,maxSlope=0,periodicError=0;
++  for(int k=0;k<15000;k++){
++   V p(-7+15*r.uniform(),-5+17*r.uniform(),-.4f+2*r.uniform());
++   int material=k%10;if(material==6||material==7)material=0;
++   V n=unit(V(r.uniform()-.5f,r.uniform()-.5f,.6f));float footprint=std::pow(10.f,-4+3.5f*r.uniform());
++   Surface s=shade(p,n,material,footprint);
++   for(int c=0;c<3;c++){finite&=std::isfinite(n[c])&&std::isfinite(s.color[c]);bounded&=s.color[c]>=.0029f&&s.color[c]<=.91001f;}
++   bounded&=s.rough>=0&&s.rough<=1&&s.ior>=1;
++   maxNormalError=std::max(maxNormalError,std::fabs(len(n)-1));
++   maxSlope=std::max(maxSlope,len(granularRelief.gradient(p.x,p.y,footprint)));
++   // Shift by one exact texture-space u period transformed into world XY.
++   const float norm=.917f*.917f+.399f*.399f;
++   float x=p.x+.68f*.917f/norm,y=p.y+.68f*.399f/norm;
++   periodicError=std::max(periodicError,std::fabs(granularRelief.sample(p.x,p.y,footprint)-granularRelief.sample(x,y,footprint)));
++  }
++  float maximumEnergy=0;
++  for(float rough:{.3f,.6f,.94f})for(float cosine:{.2f,.6f,1.f}){
++   Surface s;s.color=V(.75f);s.rough=rough;s.ior=1.48f;Spec base(.75f);V n(0,0,1),v(std::sqrt(1-cosine*cosine),0,cosine);
++   double sum=0;const int N=180000;
++   for(int i=0;i<N;i++){
++    float z=(i+.5f)/N,phi=2*PI*std::fmod(i*.61803398875f,.999999999f),rad=std::sqrt(1-z*z);
++    V l(rad*std::cos(phi),rad*std::sin(phi),z);
++    sum+=evalBSDF(s,base,n,v,l).v[5]*z*2*PI;
++   }
++   maximumEnergy=std::max(maximumEnergy,float(sum/N));
++  }
++  bool passed=finite&&bounded&&maxNormalError<1e-5f&&periodicError<2e-5f&&maximumEnergy<=1.02f;
++  std::cout<<std::setprecision(10)<<"{\n  \"scope\": \"Finite materials, normalized normals, periodic relief and bounded rough diffuse energy at sampled angles; not perceptual validation\",\n  \"material_samples\": 15000,\n  \"finite\": "<<(finite?"true":"false")<<",\n  \"bounded\": "<<(bounded?"true":"false")<<",\n  \"maximum_normal_length_error\": "<<maxNormalError<<",\n  \"maximum_relief_gradient\": "<<maxSlope<<",\n  \"maximum_periodic_height_error_m\": "<<periodicError<<",\n  \"maximum_directional_hemispherical_reflectance\": "<<maximumEnergy<<",\n  \"passed\": "<<(passed?"true":"false")<<"\n}\n";
++  return passed?0:1;
++ }catch(const std::exception&e){std::cerr<<e.what()<<"\n";return 2;}
++}
+--- a/native/test_steam_grid_v11.cpp
++++ b/native/test_steam_grid_v11.cpp
+@@ -0,0 +1,28 @@
++#define main spectral_desert_entrypoint
++#include "spectral_desert.cpp"
++#undef main
++int main(){try{
++ omp_set_num_threads(2);initSteam();RNG random(1935813);
++ double mae=0,squared=0;float maxError=0,maxValue=0;bool finite=true,bounded=true;
++ const int count=50000;
++ for(int i=0;i<count;i++){
++  V p(FOG_LO.x+(FOG_HI.x-FOG_LO.x)*random.uniform(),FOG_LO.y+(FOG_HI.y-FOG_LO.y)*random.uniform(),FOG_LO.z+(FOG_HI.z-FOG_LO.z)*random.uniform());
++  float exact=steamAnalytic(p),approx=steamDensity(p),error=std::fabs(exact-approx);
++  finite&=std::isfinite(approx);bounded&=approx>=0&&approx<=steamGridMajorant;
++  maxError=std::max(maxError,error);maxValue=std::max(maxValue,approx);mae+=error;squared+=double(error)*error;
++ }
++ float maximumTransmissionError=0,maximumStandardError=0;
++ for(float z:{.18f,.44f,1.0f}){
++  Ray r(V(-6,1,z),V(1,0,0));constexpr float distance=12;double tau=0;
++  constexpr int steps=16384;
++  for(int i=0;i<steps;i++)tau+=steamDensity(r.o+r.d*((i+.5f)*distance/steps))*distance/steps;
++  double expected=std::exp(-tau),sum=0,sum2=0;const int N=70000;
++  for(int i=0;i<N;i++){float tr=steamTransmittance(r,distance,random);sum+=tr;sum2+=tr*tr;}
++  double mean=sum/N,se=std::sqrt(std::max(0.,sum2/N-mean*mean)/N);
++  maximumTransmissionError=std::max(maximumTransmissionError,float(std::fabs(mean-expected)));
++  maximumStandardError=std::max(maximumStandardError,float(se));
++ }
++ bool passed=finite&&bounded&&mae/count<.00025&&maximumTransmissionError<.0075;
++ std::cout<<std::setprecision(10)<<"{\n  \"scope\": \"Conservative trilinear-grid density bound, representation error against authored field, and sampled transmittance; not CFD or measured steam\",\n  \"grid\": ["<<STEAM_NX<<","<<STEAM_NY<<","<<STEAM_NZ<<"],\n  \"tracking_majorant_per_m\": "<<steamGridMajorant<<",\n  \"random_samples\": "<<count<<",\n  \"sampled_maximum_density\": "<<maxValue<<",\n  \"maximum_absolute_density_error\": "<<maxError<<",\n  \"mean_absolute_density_error\": "<<mae/count<<",\n  \"rms_density_error\": "<<std::sqrt(squared/count)<<",\n  \"finite\": "<<(finite?"true":"false")<<",\n  \"sampled_densities_within_majorant\": "<<(bounded?"true":"false")<<",\n  \"maximum_transmittance_absolute_error\": "<<maximumTransmissionError<<",\n  \"maximum_transmittance_standard_error\": "<<maximumStandardError<<",\n  \"passed\": "<<(passed?"true":"false")<<"\n}\n";
++ return passed?0:1;
++}catch(const std::exception&e){std::cerr<<e.what()<<"\n";return 2;}}
+--- a/src/cybrgeo/core.py
++++ b/src/cybrgeo/core.py
+@@ -10,6 +10,14 @@
+ import hashlib, json, re
+ import numpy as np
+ import trimesh
++
++def _stream_sha256(path: Path, chunk_size: int = 4 * 1024 * 1024) -> str:
++    """Hash geometry archives without allocating a second archive-sized buffer."""
++    digest = hashlib.sha256()
++    with path.open('rb') as stream:
++        for chunk in iter(lambda: stream.read(chunk_size), b''):
++            digest.update(chunk)
++    return digest.hexdigest()
+ 
+ @dataclass(frozen=True)
+ class Material:
+@@ -104,7 +112,7 @@
+         meta = dict(schema="cybrgeo.scene/1", name=self.name, units="mm", up="Z",
+                     materials=[asdict(m) for m in self.materials], parts=entries,
+                     metadata=self.metadata,
+-                    meshes_sha256=hashlib.sha256((root/'meshes.npz').read_bytes()).hexdigest())
++                    meshes_sha256=_stream_sha256(root/'meshes.npz'))
+         (root/'scene.json').write_text(json.dumps(meta, indent=2)+'\n')
+         if self.cad:
+             import cadquery as cq
+@@ -122,13 +130,13 @@
+         info = json.loads(path.read_text()); root = path.parent
+         if info.get('schema') != 'cybrgeo.scene/1' or info.get('units') != 'mm':
+             raise ValueError("Unsupported scene schema or units")
+-        if hashlib.sha256((root/'meshes.npz').read_bytes()).hexdigest() != info['meshes_sha256']:
++        if _stream_sha256(root/'meshes.npz') != info['meshes_sha256']:
+             raise ValueError("Mesh archive SHA256 mismatch")
+         parts=[]
+         with np.load(root/'meshes.npz', allow_pickle=False) as arr:
+             for entry in info['parts']:
+                 e=dict(entry); key=e.pop('key')
+-                parts.append(Part(**e, **{k:arr[f'{key}_{k}'].copy() for k in ('vertices','faces','normals')}))
++                parts.append(Part(**e, **{k:arr[f'{key}_{k}'] for k in ('vertices','faces','normals')}))
+         result=cls(info['name'],parts,[Material(**m) for m in info['materials']],info['metadata'])
+         if with_cad:
+             import cadquery as cq

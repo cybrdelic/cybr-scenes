@@ -1,0 +1,66 @@
+{
+  "base_archive": "CYBR_GEO_NoiseFix_R5_Source.zip",
+  "base_archive_sha256": "1aaa271a5c60b07203e32da084996d22f062360f83af243e3906685d97dffd87",
+  "base_archive_root": "CYBR_GEO_NoiseFix_R5",
+  "unchanged_core": {
+    "cybr-geo/native/spectral_geometry.h": {
+      "unchanged": true,
+      "sha256": "9cd2391f75d4c645bd8aa0c5f66c98f99a6295c4a47483bdbc75e8d6a2a4a9a9"
+    },
+    "cybr-geo/native/bvh8_recovery.h": {
+      "unchanged": true,
+      "sha256": "e5ab520642bb859059a9ceed783f9b833b35431b4851890874f3d04c7d19f4f9"
+    },
+    "cybr-geo/src/cybrgeo/core.py": {
+      "unchanged": true,
+      "sha256": "ebcde9d683feffe32feee780377494279ab67ee106dd38ae4f73589b88d636e5"
+    }
+  },
+  "changed_source_files": [
+    {
+      "path": "run.py",
+      "old_sha256": "3829f6cf20c9ece34e9f4d5d02dc95f482f6f0a1343059a00a3da02316ee6a23",
+      "new_sha256": "c570d2af70112d69af214d3de8a2ed4df6057f28f42b6a29f8f806f9689d1e86"
+    },
+    {
+      "path": "README.md",
+      "old_sha256": "0f7aa977d2ca0687a78e22f03a88e583db3e7485a8a15384a7b58e1465d01edb",
+      "new_sha256": "2bb05821d73a28585bfe364f3bdf3c4c4d0e843550d740281eb77372ab8852ed"
+    },
+    {
+      "path": "test_project.py",
+      "old_sha256": "a80547bf85287f591bd781a73130b30b804e9359948e2bb693a870ed34965d28",
+      "new_sha256": "00e6fe90e26f1d1374c9c798adafc6c6886a9a191caacd38c7f4536622014bd5"
+    },
+    {
+      "path": "test_r6_integration.py",
+      "old_sha256": null,
+      "new_sha256": "2bc9d008b7dd9c8a693131f6bd580c518cd9c40113d4abed878f2e0e59d2d7c2"
+    },
+    {
+      "path": "cybr-geo/native/spectral_scenes.cpp",
+      "old_sha256": "15b1a40902f330c733e5e7113d1321c62396bef682abd785177934c1ec788b6e",
+      "new_sha256": "3e3cffb51920baa00b2236ddbf9ed0f6d907564a8f815a0dab73fdccc8bbc276"
+    },
+    {
+      "path": "cybr-geo/native/fernwater_materials_r6.h",
+      "old_sha256": null,
+      "new_sha256": "176e72ee04141ddf2fda38ee969304614c530fc14fbac86dbfd452b5179467e7"
+    },
+    {
+      "path": "cybr-geo/native/test_fernwater_r6.cpp",
+      "old_sha256": null,
+      "new_sha256": "4864e58a49bdbe7931a4f94c3d58a75f11e595402eb557fde891db927aefa6c5"
+    },
+    {
+      "path": "cybr-geo/examples/three_scenes/fernwater_r6.py",
+      "old_sha256": null,
+      "new_sha256": "8c4828875755839f21f6b23a3a278ff1ec52f788949023dbe57090fc1cb39a04"
+    },
+    {
+      "path": "cybr-geo/examples/three_scenes/render_scenes.py",
+      "old_sha256": "67144f784c565f8aa6ed6924f32953484e6d9eafd78eb810bc38acb5e75a11d6",
+      "new_sha256": "0818d6fd9c0d13d1feb89b7efdabb7cafa88a5538a6cab249473312528013604"
+    }
+  ]
+}

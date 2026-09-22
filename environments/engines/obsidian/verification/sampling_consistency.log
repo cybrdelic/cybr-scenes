@@ -1,0 +1,10 @@
+rough=0.28 cos_view=0.12 uniform=0.497125 matched=0.493443 stderr=0.0150258 PASS
+rough=0.28 cos_view=0.5 uniform=0.370311 matched=0.369757 stderr=0.00140069 PASS
+rough=0.28 cos_view=1 uniform=0.350088 matched=0.348605 stderr=0.000860586 PASS
+rough=0.5 cos_view=0.12 uniform=0.293835 matched=0.297508 stderr=0.00193572 PASS
+rough=0.5 cos_view=0.5 uniform=0.353774 matched=0.354145 stderr=0.000611806 PASS
+rough=0.5 cos_view=1 uniform=0.344795 matched=0.344963 stderr=0.000604034 PASS
+rough=0.82 cos_view=0.12 uniform=0.200513 matched=0.200723 stderr=0.000339526 PASS
+rough=0.82 cos_view=0.5 uniform=0.326197 matched=0.325949 stderr=0.000538223 PASS
+rough=0.82 cos_view=1 uniform=0.328337 matched=0.328299 stderr=0.000571346 PASS
+PASS 9 grazing/roughness estimator consistency cases.

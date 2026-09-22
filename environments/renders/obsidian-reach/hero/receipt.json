@@ -1,0 +1,134 @@
+{
+  "scene": "obsidian-reach",
+  "revision": "R2",
+  "started_at": "2026-09-21T17:19:19.615926+00:00",
+  "finished_at": "2026-09-21T17:23:42.137712+00:00",
+  "mesh_sha256": "002d180967afdc91a649deb33de85b62fc5d8d6d41fca9c4b6bf9e7dbfd62d23",
+  "executable_sha256": "8fc2a3d66da94a3f675a5d601488e16cd9175086fbba60e64d65eda6c71cf664",
+  "source_fingerprint": "51ca390382f1995897498af3777083266669b12dd667e1633a5328366670a2e3",
+  "material_atlas_sha256": "0678c4adeaa1d853f982f4e5a3ff8a747d59984937426d4db57ccb418ac99045",
+  "render": {
+    "command": [
+      "/mnt/data/CYBR_SCENES_R2/build/obsidian_r2",
+      "/mnt/data/CYBR_SCENES_R2/geometry-r2/obsidian/scene.bin",
+      "/mnt/data/CYBR_SCENES_R2/renders/obsidian-reach/hero/hero",
+      "1280",
+      "560",
+      "64",
+      "0",
+      "7"
+    ],
+    "cwd": "engines/obsidian",
+    "started_at": "2026-09-21T17:19:19.616084+00:00",
+    "environment": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "4",
+      "NUMBA_NUM_THREADS": "4",
+      "CYBR_SURFACE_ATLAS": "/mnt/data/CYBR_SCENES_R2/assets/mineral_detail.cdt"
+    },
+    "executed_command": [
+      "/usr/bin/time",
+      "-v",
+      "-o",
+      "/mnt/data/CYBR_SCENES_R2/renders/obsidian-reach/hero/render.resources.txt",
+      "/mnt/data/CYBR_SCENES_R2/build/obsidian_r2",
+      "/mnt/data/CYBR_SCENES_R2/geometry-r2/obsidian/scene.bin",
+      "/mnt/data/CYBR_SCENES_R2/renders/obsidian-reach/hero/hero",
+      "1280",
+      "560",
+      "64",
+      "0",
+      "7"
+    ],
+    "returncode": 0,
+    "seconds": 255.91300680599988,
+    "finished_at": "2026-09-21T17:23:35.528977+00:00",
+    "log_sha256": "e0e2db9fed65c15c312f6aae830e66722155a9bf5b5feed913cecf3280850465"
+  },
+  "postprocess": {
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "/mnt/data/CYBR_SCENES_R2/engines/obsidian/finish_v4.py",
+      "/mnt/data/CYBR_SCENES_R2/renders/obsidian-reach/hero/hero",
+      "--exposure",
+      "5.5",
+      "--passes",
+      "3"
+    ],
+    "cwd": "engines/obsidian",
+    "started_at": "2026-09-21T17:23:35.529969+00:00",
+    "environment": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "4",
+      "NUMBA_NUM_THREADS": "4",
+      "CYBR_SURFACE_ATLAS": "/mnt/data/CYBR_SCENES_R2/assets/mineral_detail.cdt"
+    },
+    "executed_command": [
+      "/usr/bin/time",
+      "-v",
+      "-o",
+      "/mnt/data/CYBR_SCENES_R2/renders/obsidian-reach/hero/finish.resources.txt",
+      "/opt/pyvenv/bin/python",
+      "/mnt/data/CYBR_SCENES_R2/engines/obsidian/finish_v4.py",
+      "/mnt/data/CYBR_SCENES_R2/renders/obsidian-reach/hero/hero",
+      "--exposure",
+      "5.5",
+      "--passes",
+      "3"
+    ],
+    "returncode": 0,
+    "seconds": 6.351370998999755,
+    "finished_at": "2026-09-21T17:23:41.881274+00:00",
+    "log_sha256": "6e276a0c1f34d2b9d52469b3656b6834d4b3b30421f17d1ce3e9d1efbd29e0d3"
+  },
+  "verification": {
+    "passed": true,
+    "tests": {
+      "finite_radiance": true,
+      "nonnegative_transport_radiance": true,
+      "dimensions_match": true,
+      "nonblank_image": true,
+      "no_invalid_reported_paths": true,
+      "positive_triangle_count": true,
+      "image_generation_disabled": true
+    },
+    "dimensions": [
+      1280,
+      560
+    ],
+    "radiance_min": 0.00027791663887910545,
+    "radiance_max": 5.332682132720947,
+    "spectral_film": null,
+    "negative_linear_rgb_components": 0,
+    "rgb_note": "Spectral-to-XYZ-to-display-RGB conversion may produce negative out-of-gamut RGB components. Positivity is checked in the transported spectral bands when present, not in display RGB.",
+    "mean_linear_rgb": [
+      0.03176340460777283,
+      0.011955173686146736,
+      0.011282623745501041
+    ],
+    "png_sha256": "213aa6a675536b117074cfe28d8b4d4ca4b3063b5018030a6eb4f3dca95a0ce2",
+    "raw_pfm_sha256": "c3e82c966147d3a460e4d0541a5820bad6f9f3084b66407ea9327c2f2ae04fa1",
+    "native_metadata_sha256": "550f341e38a513b202b2dd99add4a38746fa81891a164aac6d8897c4ab70a129",
+    "renderer_metadata": {
+      "renderer": "CYBR SCENES R2 / CYBR LIGHT CPU bridge, explicit HDR MIS",
+      "width": 1280,
+      "height": 560,
+      "spp": 64,
+      "triangles": 6210833,
+      "seconds": 248.083,
+      "path_depth": 7,
+      "gpu": false,
+      "image_generation": false,
+      "nonfinite_path_samples": 0,
+      "temperature_spectrum_preintegrated": true,
+      "fluid_simulation": false,
+      "native_metadata_file": "renders/obsidian-reach/hero/hero_render.json",
+      "image_generation_evidence": "Executed native C++ renderer; full recorded command and source build"
+    },
+    "scope": "Execution, finite radiance, dimensions, traceable geometry; not an aesthetic or physical-reference validation.",
+    "checked_at": "2026-09-21T17:42:01.862200+00:00"
+  },
+  "reference_image_used_as_render_input": false,
+  "camera_orbit_animation": false,
+  "simulation": false
+}

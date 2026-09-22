@@ -1,0 +1,30 @@
+{
+  "scene": "desert-hot-springs",
+  "source_sha256": "3bb30342fed34aa78a1a090df966ccf1ac3437aab521437c4b87d689bdb80264",
+  "result_sha256": "c6a5a08662ae4293bc34936f713d7335bb06e9446d851afe590e2fd9a3a1e27c",
+  "tool_sha256": "58e4475a8231b0ab4f31bc2960ddf055d8baa82a107c24658ab83b338bd7438c",
+  "triangles": 23690858,
+  "changed_vertex_records": 15379020,
+  "curled_litter_triangles": 0,
+  "max_displacement_m": 0.01426650583744049,
+  "minimum_jacobian_determinant": 0.8985097408294678,
+  "water_records_unchanged": true,
+  "bounds_min": [
+    -7500.0,
+    -80.0,
+    -3.0
+  ],
+  "bounds_max": [
+    7500.0,
+    12000.0,
+    1940.1431884765625
+  ],
+  "primitive_order_preserved": true,
+  "material_ids_and_uvs_preserved": true,
+  "finite": true,
+  "new_normal_method": "Exact inverse-transpose of continuous deformation Jacobian; normalized",
+  "source": "geometry/hot/scene.meshbin",
+  "result": "geometry-r2/hot/scene.meshbin",
+  "seconds": 17.97768870500022,
+  "image_generation": false
+}

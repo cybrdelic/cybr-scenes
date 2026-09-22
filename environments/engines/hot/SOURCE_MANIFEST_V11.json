@@ -1,0 +1,450 @@
+{
+  "created_utc": "2026-09-14T23:49:25.170611+00:00",
+  "scope": "Exact current source and explicitly selected fresh evidence; no old delivery reports or compiled binaries",
+  "files": {
+    "cybr-geo/README.md": {
+      "bytes": 1085,
+      "sha256": "d0c28c49e61580f1521cb6dce901dbbd9cc0f9faf0476858631091464dd8d81d"
+    },
+    "cybr-geo/LICENSE": {
+      "bytes": 18092,
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+    },
+    "cybr-geo/native/scale_aware_landscape_v10.h": {
+      "bytes": 7215,
+      "sha256": "7d8a4052bd63751cba17674ac42061ad5905086304d6316714bfb6b950583e7f"
+    },
+    "cybr-geo/native/test_water_medium.cpp": {
+      "bytes": 1196,
+      "sha256": "7f99f67b3cb3bd8d427b7417f921bb820741de4547e0ec1394587274ec8d1b9c"
+    },
+    "cybr-geo/native/test_legacy_water_connection.cpp": {
+      "bytes": 3229,
+      "sha256": "42933d53cdcca7b8cb0c2d1837269124b345d336f58537effcf1caf7fc10931f"
+    },
+    "cybr-geo/native/photographic_volume.cpp": {
+      "bytes": 11780,
+      "sha256": "64a681fbaee3a871bbe288a2d59e58f7c56672cfbecad6b6a748a03f5ba44093"
+    },
+    "cybr-geo/native/specular_reflection_connection.h": {
+      "bytes": 3080,
+      "sha256": "81fb854b71034eae75341bd4181f81c29af444ccd834fd3936d467499aa8843a"
+    },
+    "cybr-geo/native/test_water_microfacet.cpp": {
+      "bytes": 2359,
+      "sha256": "6a5ab024604d13d8d3bca641079e5a7fb4a4061701d20212feee54f924cf66f8"
+    },
+    "cybr-geo/native/exponential_haze_v10.h": {
+      "bytes": 1712,
+      "sha256": "24ff02f86ef488faaacc7b1e0648c5c320f7349c5c4e07c9d3efa340af3e08c4"
+    },
+    "cybr-geo/native/spectral_desert_v6.cpp": {
+      "bytes": 37227,
+      "sha256": "68d2cd495873c595c1cf1add7c660ea3c4e5d87585d85e0a371729acfe0ee9fd"
+    },
+    "cybr-geo/native/spectral_desert_v7_before_glints.cpp": {
+      "bytes": 38042,
+      "sha256": "365fb17f817af5a6d48ac60f663583d7a3e2fc63171f7f5c9af37b286477d97a"
+    },
+    "cybr-geo/native/cloud_volume_v9.h": {
+      "bytes": 5962,
+      "sha256": "902a13e50bb3568b9d341c465da8120a6090904eb57ce9076d4926b3dfe0d41d"
+    },
+    "cybr-geo/native/test_reflectance_calibration_v9.cpp": {
+      "bytes": 1928,
+      "sha256": "7c68ac5dbd51863d42d56f4dc3039b46565c0791f14b321b55a0958c5d05c6c1"
+    },
+    "cybr-geo/native/landscape_materials_v11.h": {
+      "bytes": 6105,
+      "sha256": "f6f4249369d2ef92892f0e0e28c3af6204342fff7a208dd0dcf4247eeaa65374"
+    },
+    "cybr-geo/native/steam_volume_v11.h": {
+      "bytes": 2057,
+      "sha256": "3bf883ab0f914c2bffcf9fb1ea7e80bee3966be32a423d72ae0e4556e6d9019e"
+    },
+    "cybr-geo/native/test_broadband_ripples.cpp": {
+      "bytes": 1490,
+      "sha256": "7f12d93d99c6725bfad342c0eca0b0d76aef116d420a447f22bfc2192613e8af"
+    },
+    "cybr-geo/native/spectral_geometry.h": {
+      "bytes": 6281,
+      "sha256": "9cd2391f75d4c645bd8aa0c5f66c98f99a6295c4a47483bdbc75e8d6a2a4a9a9"
+    },
+    "cybr-geo/native/granular_relief_v11.h": {
+      "bytes": 2254,
+      "sha256": "fea473b22dd5f757ebdace0dd4ee11c9df81baabcca7f843e5b3e5c4f863cdff"
+    },
+    "cybr-geo/native/test_exponential_haze_v10.cpp": {
+      "bytes": 1882,
+      "sha256": "3931b9823a4a0140a19b8823117bfdc66c9a7df6905b78cc0b14c67c0541dd4b"
+    },
+    "cybr-geo/native/test_cloud_volume_v9.cpp": {
+      "bytes": 3042,
+      "sha256": "c1467d85e8e2bb73d7eee54a1f8175032621dba2085548b31dda84ac0502b54a"
+    },
+    "cybr-geo/native/pathtrace.cpp": {
+      "bytes": 21599,
+      "sha256": "f1b3eb112b48137645c28c931be4162a76d21dc98ca02f5f99790b4e18183b38"
+    },
+    "cybr-geo/native/spectral_desert.cpp": {
+      "bytes": 42574,
+      "sha256": "4d89bbdb8317928d6ee9d95286c451240b05fc2b1758d582ed326363b812bf95"
+    },
+    "cybr-geo/native/test_steam_grid_v11.cpp": {
+      "bytes": 2442,
+      "sha256": "c26be6d4101c30f7993c6d05fbbfddbdf3d8bcb5fcdc7fbc16cfa3a9459ad80b"
+    },
+    "cybr-geo/native/CMakeLists.txt": {
+      "bytes": 2601,
+      "sha256": "808e991e4c1aef85c50adb9f5e7e871648c200f71835118761f10ff28628bc22"
+    },
+    "cybr-geo/native/broadband_ripples.h": {
+      "bytes": 12642,
+      "sha256": "a2e6ff74d86465dd0c8ec4383837ed386048b10cae60e4ae1212b0379a80b3e9"
+    },
+    "cybr-geo/native/test_spectral_desert_v5.cpp": {
+      "bytes": 3698,
+      "sha256": "b3ea97d46f601bd0838660e974774ef8f1da7c448bcc14a94f2acdf7d4b58a77"
+    },
+    "cybr-geo/native/test_photographic_volume.cpp": {
+      "bytes": 1438,
+      "sha256": "1cb26c0cdbea806a1a8b4ad4fc0f3059f266eda1191186922e92a585343dbc86"
+    },
+    "cybr-geo/native/single_scatter_sky.h": {
+      "bytes": 3388,
+      "sha256": "fc5ed71d2256edd45eed9ceb6c54519808cbddce16d2df74bfb794c023f3f781"
+    },
+    "cybr-geo/native/scale_aware_landscape_v9.h": {
+      "bytes": 6828,
+      "sha256": "b55dbfc75b05133c9cdbb036cd74c76d54479412ff8f511dbcdace668f503929"
+    },
+    "cybr-geo/native/scale_aware_landscape.h": {
+      "bytes": 5276,
+      "sha256": "2b2c5731cf3af28722a579eb5adb13f998e5bc3c3cd4c102858dd175107748cd"
+    },
+    "cybr-geo/native/test_photographic_grain.cpp": {
+      "bytes": 852,
+      "sha256": "be0aebf957d0994d1bafeadd026b68eff6a60705bdaa58af160404d94e72cf0d"
+    },
+    "cybr-geo/native/test_materials_v11.cpp": {
+      "bytes": 2676,
+      "sha256": "6d638d12dde160ab27d4fdee3405e65dbfbe2b12dbb826532d98736c6763325d"
+    },
+    "cybr-geo/native/photoreal.cpp": {
+      "bytes": 15084,
+      "sha256": "3e0c5d0bf01c98b780a4af5285eb4255ce784022c43a31bfddee06e04ab90ddf"
+    },
+    "cybr-geo/native/photographic_grain.h": {
+      "bytes": 2300,
+      "sha256": "028a4c1838b69bacba30b231304f951a33b3e0489b811e1aa52237533c16cb26"
+    },
+    "cybr-geo/native/test_reflected_connection.cpp": {
+      "bytes": 2562,
+      "sha256": "aa833153319224ec10578d163e2a4c90c3ed9459daf2ed5bb84ab96d1be813ff"
+    },
+    "cybr-geo/src/cybrgeo/media.py": {
+      "bytes": 4344,
+      "sha256": "dfb1dad2afba7b738532eec6a2b6654456fedb904a22dead6763ac067c8b273e"
+    },
+    "cybr-geo/src/cybrgeo/features.py": {
+      "bytes": 2546,
+      "sha256": "f805ce2ff848cfa28ca07665058edb72f4665353205e847b9e25d80a59270fe9"
+    },
+    "cybr-geo/src/cybrgeo/__main__.py": {
+      "bytes": 29,
+      "sha256": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3"
+    },
+    "cybr-geo/src/cybrgeo/render.py": {
+      "bytes": 8940,
+      "sha256": "338ba4d8955232a01dac91b5484f3cc8081c6469124f5021b8b360b66459624f"
+    },
+    "cybr-geo/src/cybrgeo/whiteprint.py": {
+      "bytes": 7602,
+      "sha256": "9e964292246641fc46d16a0a6610806aa9a2a87bd1c88d78542b414e386ab8b6"
+    },
+    "cybr-geo/src/cybrgeo/filter.py": {
+      "bytes": 4015,
+      "sha256": "e32123cf19aaac16ce8709b5ae1456db3564a8ac30f98cdadf3dba34d9837740"
+    },
+    "cybr-geo/src/cybrgeo/cad.py": {
+      "bytes": 2157,
+      "sha256": "7aea6e66f98361ef226a6d1069ac0995ba9cd0bd88eaa5bf15934370f4030c07"
+    },
+    "cybr-geo/src/cybrgeo/core.py": {
+      "bytes": 10557,
+      "sha256": "ebcde9d683feffe32feee780377494279ab67ee106dd38ae4f73589b88d636e5"
+    },
+    "cybr-geo/src/cybrgeo/__init__.py": {
+      "bytes": 257,
+      "sha256": "5aee0599ec98581fbc5ffca358428217de6ce51b846c74dee80426039a4eeba7"
+    },
+    "cybr-geo/src/cybrgeo/offline.py": {
+      "bytes": 3582,
+      "sha256": "1b382b7a704b56fcf9da1add9c930d8f79c7b61c32c9bb55ff0300d7879f8961"
+    },
+    "cybr-geo/src/cybrgeo/cli.py": {
+      "bytes": 4666,
+      "sha256": "5f4d65ea7ae0aebf3ec160b9ae40c92b0d77dbe00cb06460d9e511ae220a6e5d"
+    },
+    "cybr-geo/src/mechanism_lab/media.py": {
+      "bytes": 7223,
+      "sha256": "b636465e1884bd66dca2fde9211f3ab062838a29b8136018d6237b0bdb46ae14"
+    },
+    "cybr-geo/src/mechanism_lab/__main__.py": {
+      "bytes": 47,
+      "sha256": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4"
+    },
+    "cybr-geo/src/mechanism_lab/packaging.py": {
+      "bytes": 4480,
+      "sha256": "d6ce26e991db25f2f1504ed95096dcb19a24a927de98535d61565c9d51000dce"
+    },
+    "cybr-geo/src/mechanism_lab/stable_media.py": {
+      "bytes": 12374,
+      "sha256": "d4afefa18b978d5513fa01414a9b2f3bdbac8243207e4207095cb02dc4fb9986"
+    },
+    "cybr-geo/src/mechanism_lab/exporters.py": {
+      "bytes": 9106,
+      "sha256": "060c5e46d1988fd0fb9098a5cd4b8b0c3234891b47ed3d71899b9423030fdfb0"
+    },
+    "cybr-geo/src/mechanism_lab/truth.py": {
+      "bytes": 5000,
+      "sha256": "c32272178721c3427247f50fc690a93a9c746c1e54a5c6f79f7376b95d198a01"
+    },
+    "cybr-geo/src/mechanism_lab/render.py": {
+      "bytes": 12835,
+      "sha256": "dee92c373540e49f3be664e72a8e95f76d5f4024dff3781112ed91802f6786f3"
+    },
+    "cybr-geo/src/mechanism_lab/whiteprint.py": {
+      "bytes": 14786,
+      "sha256": "7477e547e919ce90c522a8ac97babe139a39b495f5e485de88cdb54476adf89b"
+    },
+    "cybr-geo/src/mechanism_lab/advanced_geometry.py": {
+      "bytes": 5793,
+      "sha256": "de79f0e759705ac26dc1cb8bba41cd6a06b053e9235b35528847fa31540cb1c3"
+    },
+    "cybr-geo/src/mechanism_lab/photoreal.py": {
+      "bytes": 8705,
+      "sha256": "268fa1390f0785689eadbb70edff872551139a1ecf40015313af75d3e0eeab3f"
+    },
+    "cybr-geo/src/mechanism_lab/contact2d.py": {
+      "bytes": 11141,
+      "sha256": "1fb50dcdae372c5afc658fe02247f739969479b75a2eed2fcdccab26ebdc3f51"
+    },
+    "cybr-geo/src/mechanism_lab/pathtrace.py": {
+      "bytes": 4847,
+      "sha256": "dc71c555e660fd1c0820615bee839959236dc748d7ec84dbecb7c959a95c03bb"
+    },
+    "cybr-geo/src/mechanism_lab/core.py": {
+      "bytes": 14299,
+      "sha256": "53f186ac81ced8614d6f217832885801d72859eb42decb4600f5c5490420ba76"
+    },
+    "cybr-geo/src/mechanism_lab/importers.py": {
+      "bytes": 6632,
+      "sha256": "de2bc57c993936ca9b527525b67fbf1ba9be75bf8eec7732486dbd33cd0fc380"
+    },
+    "cybr-geo/src/mechanism_lab/__init__.py": {
+      "bytes": 139,
+      "sha256": "8d5d147c73c4376793f748548fe72a29d168b467ba6edd32d31375e2352bd833"
+    },
+    "cybr-geo/src/mechanism_lab/registry.py": {
+      "bytes": 4812,
+      "sha256": "d5bdc78e95c4d738923ee495dc5e25ecc3a355ab7bcfcd7f61ca1832f6e749cd"
+    },
+    "cybr-geo/src/mechanism_lab/finish_render.py": {
+      "bytes": 4015,
+      "sha256": "e32123cf19aaac16ce8709b5ae1456db3564a8ac30f98cdadf3dba34d9837740"
+    },
+    "cybr-geo/src/mechanism_lab/geometry.py": {
+      "bytes": 4259,
+      "sha256": "b77b78a7421dbe127ab7c29f01b9c4c03fc068337ae8357429e161730c56e12c"
+    },
+    "cybr-geo/src/mechanism_lab/cli.py": {
+      "bytes": 13464,
+      "sha256": "f9b6a7f8783bf992e7b2f1092d1de72223b488dd568359b95ae9e9609f0a4c3b"
+    },
+    "cybr-geo/src/mechanism_lab/temporal_resolve.py": {
+      "bytes": 9891,
+      "sha256": "94c762c360113968dc86cbc6de3740e36bb9c0725546e6a14f91a2df61cb0f15"
+    },
+    "cybr-geo/src/mechanism_lab/models/nitinol_actuator_v2.py": {
+      "bytes": 10493,
+      "sha256": "bffb03212261e8713bccec50049b276d1d5f279ba9aa554a61b04ea145e31e54"
+    },
+    "cybr-geo/src/mechanism_lab/models/differential.py": {
+      "bytes": 2488,
+      "sha256": "543a68aa6421c7ce9a9012267976ac8c3878472fe0889ca84ba66239aaf35fa7"
+    },
+    "cybr-geo/src/mechanism_lab/models/nitinol_actuator.py": {
+      "bytes": 27820,
+      "sha256": "93327a517693a07f5321c68adcb0f1ad40802bbbac7bf0add7b717a53b41a72a"
+    },
+    "cybr-geo/src/mechanism_lab/models/example.py": {
+      "bytes": 816,
+      "sha256": "18e6b08c463f94a272a43e530ff2dd555baeab65f048741334a7bfb0c87905f6"
+    },
+    "cybr-geo/src/mechanism_lab/models/drivetrain.py": {
+      "bytes": 12068,
+      "sha256": "e7244a4d530c5cb92f73142b2ff4d84be6f4cccb895496d7ce60caaf02bf41d6"
+    },
+    "cybr-geo/src/mechanism_lab/models/motor.py": {
+      "bytes": 11124,
+      "sha256": "7a503d327b03f3d528ea2f2c25bade5a5894eb6839d1ec13bd5f323b7b39134c"
+    },
+    "cybr-geo/src/mechanism_lab/models/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "cybr-geo/src/cybrgeo/native/pathtrace.cpp": {
+      "bytes": 20437,
+      "sha256": "f970994f675622160291473016f19495655a5706a918b288ffb13688e840b9d6"
+    },
+    "cybr-geo/examples/desert_hot_springs/verify.py": {
+      "bytes": 12721,
+      "sha256": "30f4941ef793b9f37818a480f238f67526dc1ab66ddc61957cf6707e7b16b4ee"
+    },
+    "cybr-geo/examples/desert_hot_springs/build_scene.py": {
+      "bytes": 16154,
+      "sha256": "2ff480d90bdfcc33d8823494e40abaef83613aef9fe99eef1e9662b499e6e18a"
+    },
+    "cybr-geo/examples/desert_hot_springs/finish.py": {
+      "bytes": 8883,
+      "sha256": "25841de9e92f92792fe4fe99bb19bf29b2fc160219797a3cfe054e14f4711650"
+    },
+    "cybr-geo/examples/desert_hot_springs/fluvial_detail_v9.py": {
+      "bytes": 1628,
+      "sha256": "b3d8dc150fffa3172968dcc33ea167297fb028f2601617df75ce55fd4bae320e"
+    },
+    "cybr-geo/examples/desert_hot_springs/contour_water.py": {
+      "bytes": 2754,
+      "sha256": "f3fd718ae58aeb8dc83114d585d0162154f02dcc5118963a86eb4a850098cca4"
+    },
+    "cybr-geo/examples/desert_hot_springs/test_shoreline_continuity.py": {
+      "bytes": 1560,
+      "sha256": "fee9c9d3bccaf94799dc5358f9eedac5c12ff0fc236684f7aa776f3da2c7b41c"
+    },
+    "cybr-geo/examples/desert_hot_springs/implicit_rocks_v10.py": {
+      "bytes": 2873,
+      "sha256": "1673a745f0f883e2d8dbe21a31c5095e0b11a4b0d2fc11c8d2213978a37100c2"
+    },
+    "cybr-geo/examples/desert_hot_springs/render.py": {
+      "bytes": 7874,
+      "sha256": "30bbcbf15259195264507862a166592afbf8a06c8e07cb5083b46c03af54affe"
+    },
+    "cybr-geo/examples/desert_hot_springs/carbonate_shelves.py": {
+      "bytes": 2355,
+      "sha256": "efa9ace08b775d8ac666f644f436ff5407b1ae4ac8b12dd955e3970c4e135327"
+    },
+    "cybr-geo/examples/desert_hot_springs/v11_landforms.py": {
+      "bytes": 11688,
+      "sha256": "13c367aeb0bf3a1357372a33b7ef362079d09168e55df040705d7ea29a76e2ec"
+    },
+    "cybr-geo/examples/desert_hot_springs/test_streaming_scene_io.py": {
+      "bytes": 2159,
+      "sha256": "82a042442d92f92a3f0edaca18cd3fcc9b75b7fc80af000d35f001967e5066ea"
+    },
+    "cybr-geo/examples/desert_hot_springs/test_implicit_rocks_v10.py": {
+      "bytes": 1327,
+      "sha256": "ee5f3f30ecf75ce2cf4957e1afb1c426d094b7e472662a35ba385c52443b2d32"
+    },
+    "cybr-geo/examples/desert_hot_springs/verify_v11.py": {
+      "bytes": 6761,
+      "sha256": "fdbd18a9710555ed5fdae7f1e00e4b40e457f1435c6af91ecf678951152d7441"
+    },
+    "cybr-geo/examples/desert_hot_springs/run_checks_v11.py": {
+      "bytes": 3133,
+      "sha256": "c0675b60d957e3a2d7477a6d5ff4ffb99267c54d87b8f3c1e1a3d5e1f5582505"
+    },
+    "cybr-geo/examples/desert_hot_springs/v10_landforms.py": {
+      "bytes": 7253,
+      "sha256": "b6088e60485bb3883d830c7aef1b98aaae526324fb824525e6333b3fba0dc829"
+    },
+    "cybr-geo/examples/desert_hot_springs/v8_landforms.py": {
+      "bytes": 6997,
+      "sha256": "9d93419fbb072c4ed32993f8a2a7338d0d3f41b0d445f265ebd5583c836af66c"
+    },
+    "cybr-geo/examples/desert_hot_springs/requirements.txt": {
+      "bytes": 128,
+      "sha256": "06a151bbdc2bb6f89cdc8988c52c615b557524e2b33c322dcec19d90788ffa9f"
+    },
+    "cybr-geo/examples/desert_hot_springs/test_filter_policy.py": {
+      "bytes": 2376,
+      "sha256": "52552514d48360e8d8ad2aa165056e5416374ac672e3f60b25a946abf5c5051e"
+    },
+    "cybr-geo/examples/desert_hot_springs/build_scene_before_continuity_fix.py": {
+      "bytes": 19397,
+      "sha256": "247bf68d786b8f8234a50ce4fcc8ba5190882de10c3b4a422174c1d906b3f07b"
+    },
+    "cybr-geo/examples/desert_hot_springs/verify_v10.py": {
+      "bytes": 8605,
+      "sha256": "0be7376253b05f306cbdfee8b3cfac8d41e9b1516a2bfec9f8d5dae1b04e8648"
+    },
+    "cybr-geo/examples/desert_hot_springs/export_exr.py": {
+      "bytes": 2278,
+      "sha256": "dfb73f861bfef41de165d6e671c945988ec005a3a4cebc1dd17be74f7f60e6cb"
+    },
+    "cybr-geo/examples/desert_hot_springs/run_unit_tests.py": {
+      "bytes": 3196,
+      "sha256": "4996b51175c2c6192ebbea2e2840033aeef3665ed9e753e6a40f8127cdb1852e"
+    },
+    "cybr-geo/examples/desert_hot_springs/test_connected_vegetation.py": {
+      "bytes": 1948,
+      "sha256": "cbacfeff2b9c44a1de8566d1ddce12be4783a49a18ea659484b102470badf78c"
+    },
+    "cybr-geo/examples/desert_hot_springs/broken_shelves_v9.py": {
+      "bytes": 5676,
+      "sha256": "1beb1d6c5079ce851504adc002ae8e965a6409a3f0d6e678d8fb9482a7befb9d"
+    },
+    "cybr-geo/examples/desert_hot_springs/v9_landforms.py": {
+      "bytes": 10253,
+      "sha256": "c0f73325d783957d959b0d6ae7e8c7b674ead73c9225bbfdb727b0717ed38404"
+    },
+    "cybr-geo/examples/desert_hot_springs/prepare_granular_relief.py": {
+      "bytes": 1642,
+      "sha256": "5b0a3959141d13d6f6233d69354fdccbab6f39c7546bf2581d053c033bd1fb2d"
+    },
+    "cybr-geo/examples/desert_hot_springs/test_sky_quadrature.py": {
+      "bytes": 2332,
+      "sha256": "f33be15ceaaef36d183c9327ebcd3f5db43299c79c77c82211ffefc373353064"
+    },
+    "cybr-geo/examples/desert_hot_springs/scene_inputs.py": {
+      "bytes": 1843,
+      "sha256": "2c23d42f8c1b523ddec99f8f3545c8aaf3b8f6ac37983dcb500074ff97fce035"
+    },
+    "cybr-geo/examples/desert_hot_springs/build_scene_v4.py": {
+      "bytes": 24714,
+      "sha256": "c1aa3e01766940a1fbb4ff56e1e2abe58d4e162f2be3d16176665d5c67260f7d"
+    },
+    "cybr-geo/examples/desert_hot_springs/build_scene_v6.py": {
+      "bytes": 19128,
+      "sha256": "2e3c428534e82fc04c06bc0ef5c533eb01a425d36def8b96d703c4483dc9d23b"
+    },
+    "cybr-geo/examples/desert_hot_springs/assets/ripple_modes.json": {
+      "bytes": 15262,
+      "sha256": "8af04c2b01745c35e14a644e66393ee4b62ffe8f8ef9ca0c1872926a654cc5ab"
+    },
+    "cybr-geo/examples/desert_hot_springs/assets/granular_relief_provenance.json": {
+      "bytes": 280,
+      "sha256": "6a8eab84e37c6a09640ca632be54c89bb5c6aca8e267e59d129599266ee603a5"
+    },
+    "cybr-geo/examples/desert_hot_springs/assets/gravel_periodic.pgm": {
+      "bytes": 262159,
+      "sha256": "1a25e996869d39d4963082b41a353fa227378e17efc844c3e639c16ec8b6f5b3"
+    },
+    "cybr-geo/examples/desert_hot_springs/assets/granular_relief.npy": {
+      "bytes": 1048704,
+      "sha256": "6c25ce2868740483acb90dad3d1d7239692401e2a53e8f997432392fb1be2470"
+    },
+    "cybr-geo/examples/desert_hot_springs/assets/gravel_cc0_original.png": {
+      "bytes": 194247,
+      "sha256": "c48615b451bf1e606fbd72c0aa9f8cc0f068ab7111ef7d93bb9b0f2586440c12"
+    },
+    "cybr-geo/examples/desert_hot_springs/assets/ATTRIBUTION.txt": {
+      "bytes": 995,
+      "sha256": "096212de81352b0805b9233cc8adf5c5872786cd1cd00d30d0076a4a52115c88"
+    },
+    "cybr-geo/examples/desert_hot_springs/assets/granular_relief.bin": {
+      "bytes": 1048588,
+      "sha256": "babbb2aa418d669003be4b6bac9f53a1da9d0f2533bcc3677c4f2f4b712e8c11"
+    }
+  }
+}

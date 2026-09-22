@@ -1,0 +1,45 @@
+name: Recovered environment verification
+on: [push, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: environments
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -v
+      - run: python cybr_scenes.py compile
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        scene: [sandstone-passage, basalt-tide, fernwater, desert-hot-springs, obsidian-reach, drowned-geode]
+    defaults:
+      run:
+        working-directory: environments
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: pip install -r requirements.txt
+      - run: python cybr_scenes.py render ${{ matrix.scene }} --width 480 --spp 24 --water-spp 48 --threads 2 --output demo-output
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ${{ matrix.scene }}-fresh-render
+          path: |
+            environments/demo-output/**/*.png
+            environments/demo-output/**/*.json
+            environments/demo-output/**/*.log
+            environments/evidence/render-batch.json

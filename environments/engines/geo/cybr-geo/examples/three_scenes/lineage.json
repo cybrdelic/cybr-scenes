@@ -1,0 +1,21 @@
+{
+  "base_archive": "CYBR_GEO_Hot_Springs_V11_Source.zip",
+  "base_archive_sha256": "6c66da6a5c1b2df4df441c45d51cac38a3a86521544f796855bf727ac2676c18",
+  "unchanged_architecture_files": {
+    "native/spectral_geometry.h": {
+      "sha256": "9cd2391f75d4c645bd8aa0c5f66c98f99a6295c4a47483bdbc75e8d6a2a4a9a9",
+      "identical_to_supplied_source": true
+    },
+    "src/cybrgeo/core.py": {
+      "sha256": "ebcde9d683feffe32feee780377494279ab67ee106dd38ae4f73589b88d636e5",
+      "identical_to_supplied_source": true
+    },
+    "native/spectral_desert.cpp": {
+      "sha256": "4d89bbdb8317928d6ee9d95286c451240b05fc2b1758d582ed326363b812bf95",
+      "identical_to_supplied_source": true
+    }
+  },
+  "new_native_driver": "native/spectral_scenes.cpp",
+  "new_scene_recipes": "examples/three_scenes/build_scenes.py",
+  "license_preserved": true
+}

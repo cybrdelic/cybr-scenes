@@ -1,0 +1,39 @@
+sandstone-passage: 0/8108728 triangles
+sandstone-passage: 960000/8108728 triangles
+sandstone-passage: 1920000/8108728 triangles
+sandstone-passage: 2880000/8108728 triangles
+sandstone-passage: 3840000/8108728 triangles
+sandstone-passage: 4800000/8108728 triangles
+sandstone-passage: 5760000/8108728 triangles
+sandstone-passage: 6720000/8108728 triangles
+sandstone-passage: 7680000/8108728 triangles
+{
+  "scene": "sandstone-passage",
+  "source_sha256": "50fbfa563abe246a9049279274a1cea710be5b38f423ccdc6ab6ef731d27156a",
+  "result_sha256": "0b35bc8fa06153e30370ccf729f681a59c77f62d54dd066b5971a45cf774264f",
+  "tool_sha256": "8adcdfc6788a3ebd544346155d86035cdf7b3923b70f3e44467d5a5f9baf36e0",
+  "triangles": 8108728,
+  "changed_vertex_records": 19073178,
+  "curled_litter_triangles": 0,
+  "max_displacement_m": 0.042330656200647354,
+  "minimum_jacobian_determinant": 0.8723304867744446,
+  "water_records_unchanged": true,
+  "bounds_min": [
+    -13.008005142211914,
+    -11.0,
+    -0.6499999761581421
+  ],
+  "bounds_max": [
+    17.034587860107422,
+    48.0,
+    24.0
+  ],
+  "primitive_order_preserved": true,
+  "material_ids_and_uvs_preserved": true,
+  "finite": true,
+  "new_normal_method": "Exact inverse-transpose of continuous deformation Jacobian; normalized",
+  "source": "geometry/canyon/scene.meshbin",
+  "result": "geometry-r2/canyon/scene.meshbin",
+  "seconds": 10.133491234999951,
+  "image_generation": false
+}

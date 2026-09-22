@@ -1,0 +1,1 @@
+PASS: 12000 accelerated closest-hit and shadow rays match brute-force intersections, including axis-parallel rays and moving primitives.

@@ -1,0 +1,14 @@
+{
+  "width": 2560,
+  "height": 1120,
+  "finite_raw": true,
+  "raw_min": 0.0002429542801110074,
+  "raw_max": 8.130475997924805,
+  "exposure": 5.5,
+  "denoising": "non-neural variance/normal/depth/albedo-guided reflected light; visible emission retained separately",
+  "passes": 3,
+  "display": "filmic cross-channel highlight compression and restrained linear-light bloom",
+  "upscaling": false,
+  "image_generation": false,
+  "display_review": "Selected a higher display exposure after native-resolution review; no geometry or radiance edited."
+}

@@ -1,0 +1,8 @@
+BUILD canyon 2026-09-21T16:29:42+00:00
+BUILT canyon 2026-09-21T16:32:02+00:00
+BUILD coast 2026-09-21T16:32:02+00:00
+BUILT coast 2026-09-21T16:34:09+00:00
+BUILD forest 2026-09-21T16:34:09+00:00
+BUILT forest 2026-09-21T16:44:40+00:00
+BUILD hot 2026-09-21T16:44:40+00:00
+/mnt/data/CYBR_SCENES_R2/tools/prepare_initial.sh: line 15:  1225 Killed                  python engines/hot/cybr-geo/examples/desert_hot_springs/build_scene.py --out "$ROOT/geometry/hot" --seed 20260914 --no-glb > evidence/build-hot.log 2>&1

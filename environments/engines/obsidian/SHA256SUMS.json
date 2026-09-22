@@ -1,0 +1,274 @@
+{
+  "LICENSE": {
+    "sha256": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6",
+    "bytes": 17984
+  },
+  "LICENSES/ASSET_NOTICES.txt": {
+    "sha256": "9e0034b9b25a2b5997b30d1629ee96f72f97d105532d1307c51b23e971575508",
+    "bytes": 648
+  },
+  "LICENSES/CYBR_LIGHT_ORIGINAL_MIT.txt": {
+    "sha256": "1c530b585d1bc2d7d9b08cd47291ed2467699c2d0265e6fe7c6d7fe3de75ff49",
+    "bytes": 1080
+  },
+  "PROVENANCE.json": {
+    "sha256": "633cae42c2b58df653e52888745d525f8dbf3605ab3f48393509f1bd2b51838e",
+    "bytes": 984
+  },
+  "README.md": {
+    "sha256": "5ac803d3884434393dc53a81198d0bbb0d6920143f8e7f4d69965027260b6b43",
+    "bytes": 7049
+  },
+  "allocate_samples.py": {
+    "sha256": "9f85e733d42a579f4f771b2b27ce5377c1fac97b093b40099172a8420fafe606",
+    "bytes": 2380
+  },
+  "assets/brown_mud_rocks_01_diff_2k.jpg": {
+    "sha256": "aa4b314c8e488c2d3d0db399e1023420ffb2198293f7ed07441bde7e70c8c57e",
+    "bytes": 3144138
+  },
+  "assets/brown_mud_rocks_01_disp_2k.jpg": {
+    "sha256": "d0fa5d1baeeb62c54eb99a05947336b9fd91e19d7ce9a58c8dcc2c6c807622d4",
+    "bytes": 635930
+  },
+  "assets/brown_mud_rocks_01_nor_gl_2k.jpg": {
+    "sha256": "23bdf3ea51a396379183e01e5899e62cedcda151c5eb1cd9af95330330feca82",
+    "bytes": 4213708
+  },
+  "assets/brown_mud_rocks_01_rough_2k.jpg": {
+    "sha256": "7e3be7bd34556f174a4a201ad4735873c575a60dd9a5a7032e160a169c5428ac",
+    "bytes": 2676813
+  },
+  "assets/build_record.json": {
+    "sha256": "53c3f0518994fbcd722d612430ec42161c770a2adaf254e236e18b533e24d0b5",
+    "bytes": 229
+  },
+  "assets/dem/placement.json": {
+    "sha256": "bea5ffdec5b65868994e18bf156b865d5d8be7e9b027df557d0acaaa88b6605f",
+    "bytes": 358
+  },
+  "assets/dem/source.json": {
+    "sha256": "afe117f009ac595b04f1bad2076f529b1fcef3a00e487c374f7eba19dec875ff",
+    "bytes": 563
+  },
+  "assets/dem/terrain_11_360_818.png": {
+    "sha256": "9dfc055be6133d6cd3e17356c489741ab9e9d193372fc9802127dc4b40c031cd",
+    "bytes": 130752
+  },
+  "assets/dem/terrain_11_360_819.png": {
+    "sha256": "bb74804fdcb4277e9838fa3b11f9012a80d345c61ea7fb2464a5a9c6115a908a",
+    "bytes": 146966
+  },
+  "assets/dem/terrain_11_360_820.png": {
+    "sha256": "d8986da2693cb7adf5bc39466d62b1dfcaa6a447c823638dc6c09c6ad04772df",
+    "bytes": 140632
+  },
+  "assets/download_manifest.json": {
+    "sha256": "ccb0f3484afe648342347eb4a9a20cfafdde1fe83711572058facef8874b9158",
+    "bytes": 5808
+  },
+  "assets/geometry_validation.json": {
+    "sha256": "b4313874adc10d12a7ce5be4566ca42f7f693f826e3678275e283bd99d072869",
+    "bytes": 506
+  },
+  "assets/overcast_soil_puresky_2k.hdr": {
+    "sha256": "5414e1ac0c35e451d28595b2a2cba05e2ca301fdeb755b0a469408443093dafc",
+    "bytes": 4568000
+  },
+  "assets/scan_provenance.json": {
+    "sha256": "e36dc03b8f25947bec6e85c2e962d006aa5ea50baffe4f155798520339e4f665",
+    "bytes": 876
+  },
+  "assets/scans/boulder_01/boulder_01.bin": {
+    "sha256": "7f5b06503d62bd95bfe9c6b8a354a5cc8ff04a4d271a8cf87a3e3125db4232d7",
+    "bytes": 2938808
+  },
+  "assets/scans/boulder_01/boulder_01_2k.gltf": {
+    "sha256": "52d118b56748a18509e4ec0075d07b254d72a0401793f22363c0bb3a682e7361",
+    "bytes": 2773
+  },
+  "assets/scans/boulder_01/textures/boulder_01_arm_2k.jpg": {
+    "sha256": "ab52859dde519b4822111aa60916b6d21f8a6966c67b6cec44d1cd0775b8a86a",
+    "bytes": 2273068
+  },
+  "assets/scans/boulder_01/textures/boulder_01_diff_2k.jpg": {
+    "sha256": "90bbaa17c1fe0254d2b0b6e5148264fa834953a72724d566f14af029eebe3ca3",
+    "bytes": 3672483
+  },
+  "assets/scans/boulder_01/textures/boulder_01_nor_gl_2k.jpg": {
+    "sha256": "5174b318712ac7725cbcb55d422607f9c66d7f8d035c5412ab897b5939e2db6b",
+    "bytes": 4649207
+  },
+  "assets/scans/namaqualand_boulder_03/namaqualand_boulder_03.bin": {
+    "sha256": "d24151021ed310fe3207f1b5964bff22b583e77d2617427a88b5dcbc0447a475",
+    "bytes": 1450268
+  },
+  "assets/scans/namaqualand_boulder_03/namaqualand_boulder_03_2k.gltf": {
+    "sha256": "5d135c8e3a74edf7f53ae04d41deed19582ed6ced6d629d5d51e730319ed0dcb",
+    "bytes": 2823
+  },
+  "assets/scans/namaqualand_boulder_03/textures/namaqualand_boulder_03_arm_2k.jpg": {
+    "sha256": "24f443dd1c1da875a3653f0820d02e3140319fe199123765987d166ada3d1ddc",
+    "bytes": 2441884
+  },
+  "assets/scans/namaqualand_boulder_03/textures/namaqualand_boulder_03_diff_2k.jpg": {
+    "sha256": "d7bfae01eed80a6318679f13a8be14253fa0f6338b93f6e2126946f86bea4f82",
+    "bytes": 3341422
+  },
+  "assets/scans/namaqualand_boulder_03/textures/namaqualand_boulder_03_nor_gl_2k.jpg": {
+    "sha256": "e83ccfe677a6c82aadd56d1e5138aa97823a23cde32573dd65dafb321fffeb33",
+    "bytes": 2919390
+  },
+  "assets/scene_manifest.json": {
+    "sha256": "6d9415db265012d218b85a60839dc771c3e687c967a459a79855fd06e02e7666",
+    "bytes": 1353627
+  },
+  "assets/sky.bin": {
+    "sha256": "405a297c5d2f48dbea85bf0ed30aff8cca78000be4ca865de426612c9dc3949c",
+    "bytes": 6291464
+  },
+  "authoring.py": {
+    "sha256": "b2f80335f30544b979993693f19ab6b9946a0e2536e0adb1c9bc3da954ca4b94",
+    "bytes": 5698
+  },
+  "build_scene.py": {
+    "sha256": "77759c1e6f165048b02de96760f912c88385dfe9f4b90cf202faaeb89ad115cd",
+    "bytes": 14617
+  },
+  "export_exr.py": {
+    "sha256": "bea366cbf04abac65f22e0df8cf2bf3d2a59dc1c929e534f06301a933d872f61",
+    "bytes": 2153
+  },
+  "finish.py": {
+    "sha256": "c0a3f265aaf79091a9ba0da4990afb075530da6a27f6344b214a7d342d3e294d",
+    "bytes": 2913
+  },
+  "finish_v2.py": {
+    "sha256": "94942bf92ff85f0c59e250aae59d245ba33d7f5e7dd8b5a1db6d36af0135c4a7",
+    "bytes": 2981
+  },
+  "finish_v4.py": {
+    "sha256": "3d98091004c5c45ec4c1056b110cdde99a6a7007c8727ee18b50724a994a9df9",
+    "bytes": 2543
+  },
+  "include/cybr/geometry.hpp": {
+    "sha256": "7f73697f534707f0d9b2363560822589cf2e5e5724ec117628c002a440909c21",
+    "bytes": 10645
+  },
+  "include/cybr/math.hpp": {
+    "sha256": "c4e9244fd7c399fbc37887d71fcede9cfbd81313193c8f6ad10d3dee4d991e29",
+    "bytes": 5784
+  },
+  "include/cybr/spectrum.hpp": {
+    "sha256": "34a1ca98911ddf7149f815e27cef7988e94dd650608301964f59be3cee3b4c38",
+    "bytes": 3779
+  },
+  "reference/Obsidian_Reach_IV.png": {
+    "sha256": "8a66a753cba57431cd4341fe046b03303fe53cd78794182f3d9fef45d014ec41",
+    "bytes": 3115457
+  },
+  "reference/hero_budget.bin": {
+    "sha256": "a9d6c6cddb8459529ef0e86285f1cb527551fc99029621904d6fcc7b516e0605",
+    "bytes": 5734408
+  },
+  "reference/hero_finish.json": {
+    "sha256": "19e9e7606b68cbef62c0d07d865b38202a00dca17af55f3c5cb2cb2d048f31cb",
+    "bytes": 547
+  },
+  "reference/hero_render.json": {
+    "sha256": "2044a4eb5ff75e50e768181f076d2e9746950479779e2d11787b0735f1f7dc53",
+    "bytes": 227
+  },
+  "reference/hero_sampling.json": {
+    "sha256": "d3b8d803ee03254366c9497607db62e3d1d736da6f202d0d5311c118c30635d7",
+    "bytes": 72
+  },
+  "reference/sampling_budget.json": {
+    "sha256": "b9a08a49ef0f549c3876d0453ab1033b230180f83c015c5f863fb9c4e96f3284",
+    "bytes": 302
+  },
+  "requirements.txt": {
+    "sha256": "0b741430ca6cb50ad9cb34d3e37828442ac0e58d9daa6fe3ad11a905dc5f68e5",
+    "bytes": 74
+  },
+  "run.py": {
+    "sha256": "1dd2322663b8acd946dbbae7eedd581cc3a726c3bf2c76b03f779032fb43e991",
+    "bytes": 4021
+  },
+  "src/render.cpp": {
+    "sha256": "97cef4c13e7af27a5c26b57bbb9b041c65cc56355b206b3544539dc5393d7bc2",
+    "bytes": 22459
+  },
+  "src/scene_maps.hpp": {
+    "sha256": "a922b800f200cc2941b42d9a5e6789ba496c565b4392d2eaf8a19acabfcc7c0f",
+    "bytes": 4134
+  },
+  "tests/bvh_regression.cpp": {
+    "sha256": "4f86e2a009de5bc86aa9dc1972395e574e540e4486a4840f7ebbabd349863a9f",
+    "bytes": 1155
+  },
+  "tests/check_scene.py": {
+    "sha256": "5585777f0eb485703c1676eccf5aa20b5fbf7e348e4c9f44e2c5553dff6734d0",
+    "bytes": 2660
+  },
+  "tests/core_smoke.cpp": {
+    "sha256": "5857e22d737e580bfc60c63d2398d9d99fa52306659b3f901891469de4a333dd",
+    "bytes": 962
+  },
+  "tests/renderer_checks.cpp": {
+    "sha256": "f31662172d3926cf88eb7d45544b9b172c7e329e8955ab04a22a2f55be120574",
+    "bytes": 1599
+  },
+  "tests/sampling_consistency.cpp": {
+    "sha256": "53e3cf619e203f828ed078f93d9e416ead07e4917d23124695f0565e1b88235b",
+    "bytes": 1149
+  },
+  "tests/verify_exr.py": {
+    "sha256": "1b61478987e03551907949cb5b2bd8035d7ad89299ae379977c6656e54a00903",
+    "bytes": 4310
+  },
+  "vendor/cybrelements/lava_optics.py": {
+    "sha256": "3438c6e344abbdaaacdb2a0cfaecf733dbcd0c1d9767e8d4eeafaf3ee59a168d",
+    "bytes": 1727
+  },
+  "vendor/cybrgeo/__init__.py": {
+    "sha256": "0fd70eb1aa37024dc65d651c550ac7e97961b9bc469ce6e772177a5aee0975be",
+    "bytes": 292
+  },
+  "vendor/cybrgeo/core.py": {
+    "sha256": "aa6eaa0976abc45d5c04604e771e93afc951e6d3aa69700bb1427c7808fc0552",
+    "bytes": 5557
+  },
+  "verification/bvh_regression.log": {
+    "sha256": "dec78df7732281276fc2131cb989ce56398428f95cb3db2f84fe567d912bab01",
+    "bytes": 137
+  },
+  "verification/core_smoke.log": {
+    "sha256": "1beeb9609fcb0237fc1ca3e935e6b983878ecf8a904e679e7c129178bb117284",
+    "bytes": 74
+  },
+  "verification/environment.json": {
+    "sha256": "d989a7e611a112dd15a6624407e1fc6f3ed24096c768f03ab1db005cdd8e516f",
+    "bytes": 588
+  },
+  "verification/exr_check.json": {
+    "sha256": "b17e3415b27d43d1bc3e368c8c0881f14c950c65e6eec28452d55d18a9e6be17",
+    "bytes": 335
+  },
+  "verification/hero_render.log": {
+    "sha256": "c8805f1455ba9416ac87f09f31ca4d3c316d94f4edb01b51170a4dfb779c8a55",
+    "bytes": 539
+  },
+  "verification/renderer_checks.log": {
+    "sha256": "f826b24cc3f410a3181ff3a4e6515285667b255b169e356a13655d160dbc2627",
+    "bytes": 152
+  },
+  "verification/sampling_consistency.log": {
+    "sha256": "ed7aaee923caabc8769729b94df351ed2a404dc5503d0cf843827b717e0c5c67",
+    "bytes": 782
+  },
+  "verification/scene_check.json": {
+    "sha256": "4b5a92d1668b878bbcf55cb7ea5fff50a76e86d8ed0414b06e2a48dd27d47b68",
+    "bytes": 561
+  }
+}

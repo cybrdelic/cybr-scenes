@@ -1,0 +1,188 @@
+{
+  "checked_at": "2026-09-21T21:31:45.264843+00:00",
+  "passed": true,
+  "scope": "Local execution repair on recovered R2; not a recovered R3 or a six-scene visual upgrade.",
+  "diagnosis": {
+    "checked_at": "2026-09-21T21:28:54.880135+00:00",
+    "observed_current_tool_health": {
+      "shell": "passed",
+      "python_kernel": "passed",
+      "subprocess": "passed",
+      "cross_tool_file_read_write": "passed"
+    },
+    "previous_r3_workspace_present": false,
+    "previous_r3_link_target_present": false,
+    "recovery_source": {
+      "file": "CYBR_SCENES_R2_Source.zip",
+      "sha256": "3b8c35353a8d09f7b48fefd56b364837488b7d48be33893d88c371af11a7d38b",
+      "zip_crc_passed": true
+    },
+    "restored_revision": "R2 plus execution repair; not recovered R3",
+    "doctor": {
+      "checked_at": "2026-09-21T21:28:55.013373+00:00",
+      "project": "/mnt/data/execution_repair/CYBR_SCENES_R2",
+      "project_exists": true,
+      "user_id": 1000,
+      "python": "/opt/pyvenv/bin/python",
+      "g++": "/usr/bin/g++",
+      "resource_limits": {
+        "memory_limit_bytes": 4294967296,
+        "cgroup_memory_current_bytes": 1843003392,
+        "host_available_bytes": 4762370048,
+        "cpu_budget": 4
+      },
+      "disk_roundtrip": "passed",
+      "subprocess": "SUBPROCESS_OK",
+      "errors": [],
+      "passed": true
+    },
+    "cause_scope": "Current observations do not establish why an earlier tool invocation stopped. The reproducible missing-workspace condition is separate from the now-functioning execution tools."
+  },
+  "test_count": 36,
+  "tests_passed": true,
+  "tests_log_sha256": "16d9784d35273ceed4a52d8eba59738d0b174636bcf231c7c1199f53a26fe668",
+  "compiled_backends": {
+    "geo": {
+      "passed": true,
+      "executable_sha256": "b1910918e2b2f4751a75c1d5901a10095eb6afe4d6b37994848ca08ce6c12f03",
+      "source_fingerprint": "05284e2ce1547b757cba97e3864f04800e679826002632c6be8057bc7099e194",
+      "native_self_test": {
+        "spectral_bands": 16,
+        "wavelength_range_nm": [
+          380,
+          780
+        ],
+        "fresnel_normal": 0.02047817037,
+        "fresnel_error": 0,
+        "beer_lambert_composition_error": 6.776446071e-08,
+        "snell_error": 1.303499886e-07,
+        "sampled_max_steam_density": 0,
+        "steam_majorant": 0.8500000238,
+        "passed": true
+      }
+    },
+    "hot": {
+      "passed": true,
+      "executable_sha256": "2aa458602a593108599126139d13c7f81b95d081440dcc36879056d02b661c35",
+      "source_fingerprint": "0ff3964ee6b1a945ca6e02c9c6e6e65324cb4019b09f7a462265195e0fbf1124",
+      "native_self_test": {
+        "spectral_bands": 16,
+        "wavelength_range_nm": [
+          380,
+          780
+        ],
+        "fresnel_normal": 0.02047817037,
+        "fresnel_error": 0,
+        "beer_lambert_composition_error": 6.776446071e-08,
+        "snell_error": 1.303499886e-07,
+        "sampled_max_steam_density": 0.1674433202,
+        "steam_majorant": 0.8500000238,
+        "passed": true
+      }
+    },
+    "geode": {
+      "passed": true,
+      "executable_sha256": "325f83d1d4ced3b4ec3c74581814dad7136f84426b36b6a9623980836dd05a17",
+      "source_fingerprint": "2d5c36da39d839e2a6944624ee588a0ab2d6b9ae041e90871da0055fa9c4ba00",
+      "native_self_test": {
+        "spectral_bands": 16,
+        "wavelength_range_nm": [
+          380,
+          780
+        ],
+        "fresnel_normal": 0.02047817037,
+        "fresnel_error": 0,
+        "beer_lambert_composition_error": 5.960464478e-08,
+        "snell_error": 1.788139343e-07,
+        "sampled_max_steam_density": 0.0027999999,
+        "steam_majorant": 0.008999999613,
+        "passed": true
+      }
+    },
+    "obsidian": {
+      "passed": true,
+      "executable_sha256": "eff1fe1a776b53913356e7bde582935ffe04f8cd27dc3957d2fcd5f8104adb96",
+      "source_fingerprint": "51ca390382f1995897498af3777083266669b12dd667e1633a5328366670a2e3"
+    }
+  },
+  "fresh_native_render_runs": 2,
+  "native_proof": {
+    "scene": "obsidian-reach",
+    "triangles": 6210833,
+    "resolution": [
+      384,
+      168
+    ],
+    "spp": 8,
+    "full_geometry": true,
+    "fresh_render": true,
+    "verification": {
+      "passed": true,
+      "tests": {
+        "finite_radiance": true,
+        "nonnegative_transport_radiance": true,
+        "dimensions_match": true,
+        "nonblank_image": true,
+        "no_invalid_reported_paths": true,
+        "positive_triangle_count": true,
+        "image_generation_disabled": true
+      },
+      "dimensions": [
+        384,
+        168
+      ],
+      "radiance_min": 0.00024233196745626628,
+      "radiance_max": 4.368161678314209,
+      "spectral_film": null,
+      "negative_linear_rgb_components": 0,
+      "rgb_note": "Spectral-to-XYZ-to-display-RGB conversion may produce negative out-of-gamut RGB components. Positivity is checked in the transported spectral bands when present, not in display RGB.",
+      "mean_linear_rgb": [
+        0.03127332776784897,
+        0.011904485523700714,
+        0.011302238330245018
+      ],
+      "png_sha256": "19ce9453b38ec6e47edad31a26fbd73ac02d2d0c948b76901ef282eb1c0e678e",
+      "raw_pfm_sha256": "08e6843577bbaac507100ae0424c5355dce4384d0cb6c4c3e21615dab136df89",
+      "native_metadata_sha256": "cb2f5d20ccc32e74f2fd25c746405b2f95d0adbff8fcd3c4a177308c371880f2",
+      "renderer_metadata": {
+        "renderer": "CYBR SCENES R2 / CYBR LIGHT CPU bridge, explicit HDR MIS",
+        "width": 384,
+        "height": 168,
+        "spp": 8,
+        "triangles": 6210833,
+        "seconds": 29.1567,
+        "path_depth": 7,
+        "gpu": false,
+        "image_generation": false,
+        "nonfinite_path_samples": 0,
+        "temperature_spectrum_preintegrated": true,
+        "fluid_simulation": false,
+        "native_metadata_file": "renders/execution-proof/obsidian-reach/hero/hero_render.json",
+        "image_generation_evidence": "Executed native C++ renderer; full recorded command and source build"
+      },
+      "scope": "Execution, finite radiance, dimensions, traceable geometry; not an aesthetic or physical-reference validation.",
+      "checked_at": "2026-09-21T21:31:36.118557+00:00"
+    },
+    "controller_seconds": 37.66682980999997,
+    "peak_sampled_tree_rss_bytes": 3058892800,
+    "receipt_sha256": "aec0024ddbcaff7b37eb65c9d47d3ef1b8c39b87f6b36c704b75131c453b263b",
+    "image_generation": false
+  },
+  "modified_source_files": {
+    "cybr_scenes.py": "b282a96f24649ba5e5663c82ed383bdefd2b1dd1435a061d76548b8c454b406d",
+    "tools/package_delivery.py": "b37955a4fd3276aa6379427cfaffa5ca48975c9add442adfa4340dccaa48a726",
+    "tests/test_pipeline.py": "791f81450aca917c2787e0eb9239b2ec2653cc0b2310150e28745d7e7ea35a95",
+    "execution_runtime.py": "6e6c8fe65ac6b926ce12e6d58a8894e252d4c5a3372dc1fe3b3770e026f1d1f2",
+    "execctl.py": "7c23e61ab6a820344d76f078d2002cfe4df52f410f56f8eaaa827736ae5be913",
+    "README_EXECUTION.md": "66b8341abb45cdb2c548aad261cf02599e2364dadfa87423bcbb0d9313ebd56a",
+    "tests/test_execution_runtime.py": "26461cbe75aa7cfd280ef326f50bcb09c01b749b9778a70de606684eec52e2d5",
+    "tools/report_execution_repair.py": "e3415c127ec0a275016aa0607ba680402c820320c0efb64abf165542d393a271"
+  },
+  "r3_workspace_recovered": false,
+  "partial_native_samples_resumable": false,
+  "limitations": [
+    "The controller survives short launch calls, not container destruction.",
+    "Memory is sampled; the watchdog cannot prevent every transient memory spike.",
+    "The small proof render verifies execution, not artistic improvements or convergence."
+  ]
+}

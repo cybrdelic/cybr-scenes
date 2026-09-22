@@ -1,0 +1,22 @@
+{
+  "renderer_source_hash": "0a01ac2f3df04c41395cfd3289bdd9c02f377bab8a705accbc1a043f062b0f25",
+  "source_files": {
+    "spectral_desert.cpp": "4d89bbdb8317928d6ee9d95286c451240b05fc2b1758d582ed326363b812bf95",
+    "spectral_geometry.h": "9cd2391f75d4c645bd8aa0c5f66c98f99a6295c4a47483bdbc75e8d6a2a4a9a9",
+    "single_scatter_sky.h": "fc5ed71d2256edd45eed9ceb6c54519808cbddce16d2df74bfb794c023f3f781",
+    "photographic_grain.h": "028a4c1838b69bacba30b231304f951a33b3e0489b811e1aa52237533c16cb26",
+    "broadband_ripples.h": "a2e6ff74d86465dd0c8ec4383837ed386048b10cae60e4ae1212b0379a80b3e9",
+    "landscape_materials_v11.h": "f6f4249369d2ef92892f0e0e28c3af6204342fff7a208dd0dcf4247eeaa65374",
+    "granular_relief_v11.h": "fea473b22dd5f757ebdace0dd4ee11c9df81baabcca7f843e5b3e5c4f863cdff",
+    "steam_volume_v11.h": "3bf883ab0f914c2bffcf9fb1ea7e80bee3966be32a423d72ae0e4556e6d9019e",
+    "exponential_haze_v10.h": "24ff02f86ef488faaacc7b1e0648c5c320f7349c5c4e07c9d3efa340af3e08c4",
+    "cloud_volume_v9.h": "902a13e50bb3568b9d341c465da8120a6090904eb57ce9076d4926b3dfe0d41d",
+    "specular_reflection_connection.h": "81fb854b71034eae75341bd4181f81c29af444ccd834fd3936d467499aa8843a"
+  },
+  "new_tests": [
+    "native/test_materials_v11.cpp",
+    "native/test_steam_grid_v11.cpp",
+    "examples/desert_hot_springs/test_streaming_scene_io.py",
+    "examples/desert_hot_springs/test_sky_quadrature.py"
+  ]
+}

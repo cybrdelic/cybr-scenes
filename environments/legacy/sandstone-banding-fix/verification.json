@@ -1,0 +1,283 @@
+{
+  "schema": "sandstone-local-banding-delivery/1",
+  "result": "PASS",
+  "scope": "Local corrections to supplied v0.5 standalone HTML. No GitHub or other external repository mutations.",
+  "repository_pushed": false,
+  "repository_modified": false,
+  "image_generation": false,
+  "geometry": {
+    "triangles": 5029800,
+    "vertices": 2526592,
+    "native_mesh_sha256": "7522cf1848ef94af2593e4a2d2a9df382df11c2e85e9ac4662a364a107656c79",
+    "scene_payload_unchanged": true,
+    "new_spectral_bake": false
+  },
+  "deliveries": {
+    "compact": {
+      "file": "Sandstone_Walk_BandingFixed_Compact.html",
+      "bytes": 142968307,
+      "sha256": "3f456cdb2512b4f7b6f41f0bca86dbc92660690c1d5af414c717b2cf125c8f19",
+      "original_file": "Sandstone_Walk_Detail_Compact.html",
+      "original_sha256": "23c671a1218d52c56fabe65c159f0b6b4f48ced38bd82d76a3cdf2ce4b843a54",
+      "photographic_resolution": 2048,
+      "scene_payload_byte_identical": true,
+      "all_photographic_payloads_identical": true,
+      "photographic_payload_count": 4,
+      "test_result": "PASS",
+      "checks_passed": 22,
+      "report": "evidence/compact_delivery/report.json",
+      "runtime": {
+        "triangles": 5029800,
+        "vertices": 2526592,
+        "maps": {
+          "resolution": 2048,
+          "anisotropy": 16,
+          "maps": 4,
+          "uncompressed_mip_bytes": 89478485,
+          "parallax": true,
+          "micro_shadows": true,
+          "scan_enabled": true,
+          "geometry_changed": false,
+          "indirect_transport": "Reused macro spectral response; fine-scale scanned receiving material is not rebaked transport."
+        },
+        "targets": [
+          {
+            "complete": true,
+            "bits": 32,
+            "type": 1015
+          },
+          {
+            "complete": true,
+            "bits": 32,
+            "type": 1015
+          },
+          {
+            "complete": true,
+            "bits": 32,
+            "type": 1015
+          }
+        ],
+        "renderer": "ANGLE (Mesa, llvmpipe (LLVM 19.1.7 256 bits), OpenGL 4.5)",
+        "noDataNodes": true
+      }
+    },
+    "full": {
+      "file": "Sandstone_Walk_BandingFixed_4K.html",
+      "bytes": 242766735,
+      "sha256": "f4f72f0221738832406ee993c615089723cc68e5017d279e81278ffc33529d89",
+      "original_file": "Sandstone_Walk_Detail_4K.html",
+      "original_sha256": "2775c4c32d80b52a768d7bd5bd95b16e51e482231046f7c793ab5ba7121b0dba",
+      "photographic_resolution": 4096,
+      "scene_payload_byte_identical": true,
+      "all_photographic_payloads_identical": true,
+      "photographic_payload_count": 4,
+      "test_result": "PASS",
+      "checks_passed": 20,
+      "report": "evidence/full_delivery/report.json",
+      "runtime": {
+        "triangles": 5029800,
+        "vertices": 2526592,
+        "maps": {
+          "resolution": 4096,
+          "anisotropy": 16,
+          "maps": 4,
+          "uncompressed_mip_bytes": 357913941,
+          "parallax": true,
+          "micro_shadows": true,
+          "scan_enabled": true,
+          "geometry_changed": false,
+          "indirect_transport": "Reused macro spectral response; fine-scale scanned receiving material is not rebaked transport."
+        },
+        "targets": [
+          {
+            "complete": true,
+            "bits": 32,
+            "type": 1015
+          },
+          {
+            "complete": true,
+            "bits": 32,
+            "type": 1015
+          },
+          {
+            "complete": true,
+            "bits": 32,
+            "type": 1015
+          }
+        ],
+        "renderer": "ANGLE (Mesa, llvmpipe (LLVM 19.1.7 256 bits), OpenGL 4.5)",
+        "noDataNodes": true
+      }
+    }
+  },
+  "fixes": [
+    "Receiving-plane shadow comparisons use the exact sampled texel centers and true raster-triangle normal, with bounded footprint-scaled normal offset.",
+    "Fractional blocker search and bilinearly combined depth-comparison results replace quantized binary-tap visibility.",
+    "Explicit highp depth, sky, photographic and HDR samplers; actual RGBA32F current/history framebuffers.",
+    "Static achromatic triangular dither after the unchanged native tone/sRGB transform, not in the HDR history or material textures.",
+    "Native-resolution tiled supersampled export keeps GPU memory bounded and preserves a global dither phase; no upscale or blur."
+  ],
+  "isolated_shader_tests": {
+    "result": "PASS",
+    "scope": "Actual WebGL2 execution of copied runtime GLSL; synthetic ramp and geometric receiver, driver dithering disabled to isolate final shader.",
+    "shadow": {
+      "before_plane": {
+        "min": 0.6875,
+        "max": 1.0,
+        "mean": 0.849644660949707,
+        "unique_visibility_values": 6,
+        "false_shadow_fraction": 0.992462158203125
+      },
+      "before_edge": {
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.481201171875,
+        "unique_visibility_values": 17,
+        "false_shadow_fraction": null
+      },
+      "precision_only_plane": {
+        "min": 0.6875,
+        "max": 1.0,
+        "mean": 0.849644660949707,
+        "unique_visibility_values": 6,
+        "false_shadow_fraction": 0.992462158203125
+      },
+      "precision_only_edge": {
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.481201171875,
+        "unique_visibility_values": 17,
+        "false_shadow_fraction": null
+      },
+      "after_plane": {
+        "min": 1.0,
+        "max": 1.0,
+        "mean": 1.0,
+        "unique_visibility_values": 1,
+        "false_shadow_fraction": 0.0
+      },
+      "after_edge": {
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.4740538001060486,
+        "unique_visibility_values": 501,
+        "false_shadow_fraction": null
+      }
+    },
+    "ramp": {
+      "before": {
+        "linear_rmse": 8.30043522906005e-06,
+        "mean_column_error_srgb": 0.001136329487462125,
+        "max_pixel_error_in_codes": 0.5381078341921892,
+        "stationary_output_identical": true
+      },
+      "precision_only": {
+        "linear_rmse": 5.1322787533525e-10,
+        "mean_column_error_srgb": 0.00012400357630588347,
+        "max_pixel_error_in_codes": 1.4841907028874743,
+        "stationary_output_identical": true
+      },
+      "after": {
+        "linear_rmse": 5.1322787533525e-10,
+        "mean_column_error_srgb": 0.00012400357630588347,
+        "max_pixel_error_in_codes": 1.4841907028874743,
+        "stationary_output_identical": true
+      }
+    },
+    "renderer": "ANGLE (Mesa, llvmpipe (LLVM 19.1.7 256 bits), OpenGL 4.5)"
+  },
+  "isolated_gradient_column_mean_error_reduction_factor": 9.163683188129236,
+  "export_4k": {
+    "report": {
+      "width": 3840,
+      "height": 2560,
+      "samples": 8,
+      "bytes": 18636683,
+      "sourceTriangles": 5029800,
+      "upscaled": false,
+      "method": "Native-resolution off-axis tiled WebGL render; RGBA32F supersampling and lossless 8-bit tile assembly after tone mapping",
+      "tiles": 12,
+      "tileSize": 1024,
+      "guardPixels": 2,
+      "maxTilePixels": 1056784,
+      "maxColorTargetBytes": 54952768,
+      "ditherPhase": "Global output pixel coordinates; no noise discontinuity at tile boundaries"
+    },
+    "old": [
+      1200,
+      800
+    ],
+    "restored": [
+      1200,
+      800
+    ],
+    "inert": false,
+    "sha256": "dd2af5479cdde553fdac231b2bfdf170b4b3a3b228f423a1fc7192ab073616e1"
+  },
+  "tile_equivalence": {
+    "mean_abs_code_error": 0.0020005967881944445,
+    "rmse_codes": 0.25452981655861284,
+    "fraction_above_8_codes": 4.3233235677083336e-05,
+    "seam_mean_code_error": 0.0002335575485799701,
+    "interior_mean_code_error": 0.002033257355988396
+  },
+  "unchanged": [
+    "Every embedded geometry/index/normal/baked-light-response buffer",
+    "All 4K/2K photographic image payloads",
+    "Material parallax and microshadowing model",
+    "Walking/orbit control code",
+    "Tone transform and exposure",
+    "Native resolution policy and pixel cap"
+  ],
+  "image_evidence": {
+    "shadow_comparison": {
+      "file": "evidence/Sandstone_Banding_Comparison.png",
+      "sha256": "dcd022dbb3a9d378c2a7cde4b892393f6be1ccd4c31627c6d321ee0b436b1e8a",
+      "source": "Actual original/corrected Three.js untextured visibility draws; same 1200x800 camera and four samples; identical crops.",
+      "edits": "Side-by-side assembly, crop and text labels only; no blur, reconstruction or contrast change."
+    },
+    "beauty_comparison": {
+      "file": "evidence/Sandstone_Banding_Beauty_Comparison.png",
+      "sha256": "c8936e4b67327e965d8faec4e4da375296455b4eefbe311f126176b3623ff401",
+      "source": "Matched original/corrected four-sample 1200x800 browser renders; labelled, unretouched."
+    },
+    "final_4k": {
+      "file": "evidence/full_delivery/hero_4k.png",
+      "sha256": "dd2af5479cdde553fdac231b2bfdf170b4b3a3b228f423a1fc7192ab073616e1",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "samples": 8,
+      "upscaled": false
+    }
+  },
+  "verification_limits": {
+    "browser_entrypoint": "Exact delivered JS blocks and JSON payload nodes loaded into an in-memory Chromium document; HTTP/file navigation was blocked by the environment administrator.",
+    "renderer": "ANGLE (Mesa, llvmpipe (LLVM 19.1.7 256 bits), OpenGL 4.5)",
+    "controls": "Executed real CDP touch emulation, simultaneous thumbstick/look, cancellation, orbit, pinch and keyboard checks.",
+    "physical_phone_benchmark": false,
+    "http_file_url_launch_claimed": false,
+    "memory": "Three RGBA32F buffers use 48 bytes/output pixel, versus 24 before; compact maps reduce texture memory. Final tiled 4K export avoids three full-4K float buffers.",
+    "remaining_limits": "Finite mesh, static baked-light sampling and finite shadow maps remain. No claim that all future camera/light configurations are artifact-free."
+  },
+  "retained_development_failures": [
+    {
+      "file": "evidence/initial_delivery_touch_failure.json",
+      "resolution": "Test used mobile context and flushed coalesced touch events through real animation frames; no controller changes."
+    },
+    {
+      "file": "evidence/initial_fullframe_export_context_loss.json",
+      "resolution": "Runtime export replaced by memory-bounded native-resolution off-axis tiles; final full/compact deliveries retested successfully."
+    }
+  ],
+  "source_hashes": {
+    "patch/app.js": "88e765bacb3156cfb1ca06dd0b7df31c51dc700ae0e2d6646c8c31684496f9b1",
+    "patch/material.glsl": "b3b3af0296a81549ad0b351f54fb17897613bf99e4ceb50ac9a9fbd6514bd516",
+    "patch/quality.js": "10b8c2e2cf7f266bbcbcfd7ff5ba8843da358502c394d6cfbc21cf3df627eab9",
+    "patch/runtime.js": "cf78aa4f9fa71bbcf9409f3fb8ad01cd49f98766254759aad2396a42a21ab42e",
+    "tests/render_scene.py": "51c2e03c65c3c9182fb9e968d70d5ff599d075500243b1ee0ac86cd29c106cea",
+    "tests/test_delivery.py": "1c976dd6dd6f155ff91188e42d5c2bb9af9566e3e7161f82e8e18e29c1b4a180",
+    "tests/test_precision.py": "03cccd3721d3fdd1877be98a482b79c8d9767c55cdce09a3ee976839a232a878"
+  }
+}

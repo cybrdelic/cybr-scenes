@@ -1,0 +1,49 @@
+{
+  "method": "Copied only source, original inputs and notices into an isolated project directory; ran its build.sh; compared generated mesh, five converted texture files and compiled executable",
+  "original_conversation_archives_required": false,
+  "files": [
+    {
+      "file": "assets/built_v3/scene.meshbin",
+      "production_sha256": "74ece0fd45bf4ffddfbc42850645730230dd798bc4058ff82cfc3a02c834a56c",
+      "isolated_rebuild_sha256": "74ece0fd45bf4ffddfbc42850645730230dd798bc4058ff82cfc3a02c834a56c",
+      "byte_identical": true
+    },
+    {
+      "file": "assets/built_v3/textures/0.cvtex",
+      "production_sha256": "e66d58f2884cfe8ffd0d0188274141f1b79529ec5906485bcb5109760654ee38",
+      "isolated_rebuild_sha256": "e66d58f2884cfe8ffd0d0188274141f1b79529ec5906485bcb5109760654ee38",
+      "byte_identical": true
+    },
+    {
+      "file": "assets/built_v3/textures/1.cvtex",
+      "production_sha256": "bbe7fd60f7f4505c7313f2aaf7ecc5e6343936705549f09e07f9934a94692d77",
+      "isolated_rebuild_sha256": "bbe7fd60f7f4505c7313f2aaf7ecc5e6343936705549f09e07f9934a94692d77",
+      "byte_identical": true
+    },
+    {
+      "file": "assets/built_v3/textures/2.cvtex",
+      "production_sha256": "4ea8f5711e47285d917906d9e22f04926210c751c30d80be97428511d3846e9e",
+      "isolated_rebuild_sha256": "4ea8f5711e47285d917906d9e22f04926210c751c30d80be97428511d3846e9e",
+      "byte_identical": true
+    },
+    {
+      "file": "assets/built_v3/textures/3.cvtex",
+      "production_sha256": "e97d0cf591e06460ca44e913d5a01eecf5e64182e642dbe175097ea46731ef78",
+      "isolated_rebuild_sha256": "e97d0cf591e06460ca44e913d5a01eecf5e64182e642dbe175097ea46731ef78",
+      "byte_identical": true
+    },
+    {
+      "file": "assets/built_v3/textures/4.cvtex",
+      "production_sha256": "ab9b6d1a022606021e5b2dce6a23fc94f6888a0e459870e876975f70ca68a283",
+      "isolated_rebuild_sha256": "ab9b6d1a022606021e5b2dce6a23fc94f6888a0e459870e876975f70ca68a283",
+      "byte_identical": true
+    },
+    {
+      "file": "cathedral_v3",
+      "production_sha256": "b578a0b3b6fbfa3ecb7aa6c10551c8fd6ab06bc189ba984ee3ca9e618a8b0f7e",
+      "isolated_rebuild_sha256": "b578a0b3b6fbfa3ecb7aa6c10551c8fd6ab06bc189ba984ee3ca9e618a8b0f7e",
+      "byte_identical": true
+    }
+  ],
+  "passed": true
+}

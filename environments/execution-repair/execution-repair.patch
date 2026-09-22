@@ -1,0 +1,986 @@
+--- a/cybr_scenes.py
++++ b/cybr_scenes.py
+@@ -35,61 +35,15 @@
+     try:return str(Path(path).resolve().relative_to(ROOT))
+     except ValueError:return str(path)
+ 
+-@contextlib.contextmanager
+-def exclusive(path:Path):
+-    """Protect outputs and compilation from overlapping invocations."""
+-    path.parent.mkdir(parents=True,exist_ok=True)
+-    fd=None
+-    try:
+-        fd=os.open(path,os.O_CREAT|os.O_EXCL|os.O_WRONLY,0o600)
+-        os.write(fd,f'{os.getpid()} {now()}\n'.encode());os.close(fd);fd=-1
+-        yield
+-    except FileExistsError:
+-        raise RuntimeError(f'Locked: {path}. Verify no process is active before removing a stale lock.')
+-    finally:
+-        if fd is not None:
+-            if fd>=0:os.close(fd)
+-            path.unlink(missing_ok=True)
+-
+-
+-def environment(threads:int):
+-    return {**os.environ,'OPENBLAS_NUM_THREADS':'1','OMP_NUM_THREADS':str(threads),
+-       'NUMBA_NUM_THREADS':str(max(4,threads)),'PYTHONUNBUFFERED':'1',
+-       'CYBR_SURFACE_ATLAS':str(ROOT/'assets/mineral_detail.cdt')}
+-
+-
+-def run(command,cwd:Path,log:Path,threads:int=4,timeout:int=14400):
+-    log.parent.mkdir(parents=True,exist_ok=True)
+-    command=list(map(str,command));start=time.monotonic()
+-    record={'command':command,'cwd':relative(cwd),'started_at':now(),
+-       'environment':{k:v for k,v in environment(threads).items() if k in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','NUMBA_NUM_THREADS','CYBR_SURFACE_ATLAS']}}
+-    atomic_json(log.with_suffix('.command.json'),record)
+-    print(f'[{now()}] {log.stem}: {" ".join(command)}',flush=True)
+-    try:
+-        resource_path=log.with_suffix('.resources.txt')
+-        executed=['/usr/bin/time','-v','-o',str(resource_path),*command] if Path('/usr/bin/time').exists() else command
+-        record['executed_command']=executed
+-        with log.open('w') as f:
+-            process=subprocess.Popen(executed,cwd=cwd,stdout=f,stderr=subprocess.STDOUT,
+-                env=environment(threads),start_new_session=True)
+-            try:
+-                code=process.wait(timeout=timeout)
+-            except subprocess.TimeoutExpired:
+-                # Stop the entire time/native child group, not only the timing wrapper.
+-                os.killpg(process.pid,signal.SIGTERM)
+-                try:process.wait(timeout=5)
+-                except subprocess.TimeoutExpired:
+-                    os.killpg(process.pid,signal.SIGKILL);process.wait()
+-                raise
+-            completed=subprocess.CompletedProcess(executed,code)
+-        record.update(returncode=completed.returncode,seconds=time.monotonic()-start,finished_at=now(),log_sha256=sha(log))
+-        atomic_json(log.with_suffix('.command.json'),record)
+-        if completed.returncode:
+-            tail='\n'.join(log.read_text(errors='replace').splitlines()[-18:])
+-            raise RuntimeError(f'Command failed ({completed.returncode}), {log}:\n{tail}')
+-    except subprocess.TimeoutExpired:
+-        record.update(timed_out=True,seconds=time.monotonic()-start);atomic_json(log.with_suffix('.command.json'),record);raise
+-    return record
++# Project-local, disk-backed execution; compatible with recovered receipts.
++from execution_runtime import owned_lock as exclusive, run_recorded as run
++from execution_runtime import thread_environment, atomic_json as _durable_json
++atomic_json = _durable_json
++
++def environment(threads: int):
++    env = thread_environment(threads)
++    env['CYBR_SURFACE_ATLAS'] = str(ROOT/'assets/mineral_detail.cdt')
++    return env
+ 
+ 
+ def dependency_fingerprint(engine:str,original:bool=False)->str:
+@@ -339,10 +293,22 @@
+         elif args.command in ['prepare','render']:
+             selected=list(SCENES.values()) if args.scene=='all' else [SCENES[args.scene]]
+             outcomes=[]
++            failed = False
+             for scene in selected:
+-                result=prepare_scene(scene,args.threads) if args.command=='prepare' else render_scene(scene,args)
+-                outcomes.append({'scene':scene['id'],'result':str(result) if isinstance(result,Path) else result})
++                outcome={'scene':scene['id'], 'state':'running', 'started_at':now()}
++                outcomes.append(outcome)
+                 atomic_json(ROOT/'evidence'/f'{args.command}-batch.json',outcomes)
++                try:
++                    result=prepare_scene(scene,args.threads) if args.command=='prepare' else render_scene(scene,args)
++                    outcome.update(state='succeeded',result=str(result) if isinstance(result,Path) else result)
++                except Exception as exc:
++                    failed=True
++                    outcome.update(state='failed',error=f'{type(exc).__name__}: {exc}')
++                    print(f'FAILED {scene["id"]}: {exc}',file=sys.stderr,flush=True)
++                finally:
++                    outcome['finished_at']=now()
++                    atomic_json(ROOT/'evidence'/f'{args.command}-batch.json',outcomes)
++            if failed:return 1
+         elif args.command=='verify':
+             verified=[]
+             for path in sorted(args.root.glob('*/hero/hero.png')):verified.append({'scene':path.parent.parent.name,'result':verify_render(path.with_suffix(''))})
+@@ -357,4 +323,14 @@
+     except (RuntimeError,ValueError,OSError,subprocess.TimeoutExpired) as exc:
+         print(f'ERROR: {exc}',file=sys.stderr);return 1
+ 
+-if __name__=='__main__':raise SystemExit(main())
++if __name__=='__main__':
++    # Enforce one full-geometry workload per project. Short status/doctor calls
++    # remain independent of this lock and cannot block behind a long render.
++    if len(sys.argv)>1 and sys.argv[1] in {'prepare','render','compile'}:
++        try:
++            with exclusive(ROOT/'build'/'.execution-lane.flock'):
++                raise SystemExit(main())
++        except RuntimeError as exc:
++            print(f'ERROR: {exc}',file=sys.stderr)
++            raise SystemExit(1)
++    raise SystemExit(main())
+--- a/tools/package_delivery.py
++++ b/tools/package_delivery.py
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env python3
+ """Package source, display renders and native proof separately; verify every ZIP."""
+ from __future__ import annotations
+-import argparse,json,hashlib,sys,zipfile
++import argparse,json,hashlib,sys,zipfile,os,tempfile
+ from pathlib import Path
+ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ from cybr_scenes import SCENES,verify_render,atomic_json,sha,now
+@@ -11,9 +11,10 @@
+ 
+ def source_selected(p):
+  r=p.relative_to(ROOT);parts=r.parts
+- if p.suffix.lower() in FONTS or any(x in parts for x in ['__pycache__','.git','.part-spool']):return False
++ if p.suffix.lower() in FONTS or any(x in parts for x in ['__pycache__','.git','.part-spool','.execution-history']):return False
+  if p.suffix in ['.pyc','.nbc','.nbi','.partial','.o','.lock']:return False
+- if parts[0] in ['geometry','geometry-r2','build']:return False
++ if parts[0] in ['geometry','geometry-r2','build','execution-jobs']:return False
++ if p.name=='ARCHIVE_MANIFEST.json' or p.suffix in ['.pid','.flock']:return False
+  if r.as_posix()=='evidence/delivery.json':return False
+  if parts[0]=='tools' and p.name in TRANSIENT_TOOLS:return False
+  if parts[0]=='renders':
+@@ -26,16 +27,30 @@
+  return True
+ 
+ def archive(output,files):
+- manifest=[]
+- with zipfile.ZipFile(output,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=6,allowZip64=True) as z:
+-  for p in sorted(files):
+-   r=p.relative_to(ROOT);z.write(p,Path(ROOT.name)/r)
+-   manifest.append({'path':str(r),'bytes':p.stat().st_size,'sha256':sha(p)})
+-  z.writestr(ROOT.name+'/ARCHIVE_MANIFEST.json',json.dumps({'created_at':now(),'files':manifest},indent=2))
+- with zipfile.ZipFile(output) as z:
+-  broken=z.testzip()
+-  if broken:raise RuntimeError(f'Corrupt ZIP entry: {broken}')
++ """Publish only a closed, CRC-tested archive; preserve the previous checkpoint on failure."""
++ output=Path(output).resolve();output.parent.mkdir(parents=True,exist_ok=True)
++ fd,name=tempfile.mkstemp(prefix='.'+output.name+'-',suffix='.partial',dir=output.parent)
++ os.close(fd);temporary=Path(name);manifest=[]
++ try:
++  with zipfile.ZipFile(temporary,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=6,allowZip64=True) as z:
++   for p in sorted(files):
++    r=p.relative_to(ROOT)
++    if p.suffix.lower() in FONTS:raise ValueError('Font files are not distributed')
++    z.write(p,Path(ROOT.name)/r)
++    manifest.append({'path':str(r),'bytes':p.stat().st_size,'sha256':sha(p)})
++   z.writestr(ROOT.name+'/ARCHIVE_MANIFEST.json',json.dumps({'created_at':now(),'files':manifest},indent=2))
++  with zipfile.ZipFile(temporary) as z:
++   broken=z.testzip()
++   if broken:raise RuntimeError(f'Corrupt ZIP entry: {broken}')
++   # Detect any source change during compression before publishing a checkpoint.
++   for entry in manifest:
++    if hashlib.sha256(z.read(ROOT.name+'/'+entry['path'])).hexdigest()!=entry['sha256']:
++     raise RuntimeError('Source changed while archiving: '+entry['path'])
++  with temporary.open('rb') as f:os.fsync(f.fileno())
++  os.replace(temporary,output)
++ finally:temporary.unlink(missing_ok=True)
+  return {'path':str(output),'bytes':output.stat().st_size,'sha256':sha(output),'files':len(manifest),'zip_crc_passed':True}
++
+ 
+ def main():
+  p=argparse.ArgumentParser();p.add_argument('--output',type=Path,default=ROOT.parent);a=p.parse_args();a.output.mkdir(parents=True,exist_ok=True)
+--- a/tests/test_pipeline.py
++++ b/tests/test_pipeline.py
+@@ -13,10 +13,12 @@
+    self.assertNotEqual(scene['mesh'],scene['upgraded_mesh'])
+  def test_existing_lock_is_not_deleted(self):
+   with tempfile.TemporaryDirectory() as d:
+-   p=Path(d)/'lock';p.write_text('owner')
+-   with self.assertRaises(RuntimeError):
+-    with exclusive(p):pass
+-   self.assertEqual(p.read_text(),'owner')
++   p=Path(d)/'lock'
++   with exclusive(p):
++    owner=p.read_text()
++    with self.assertRaises(RuntimeError):
++     with exclusive(p):pass
++    self.assertEqual(p.read_text(),owner)
+  def test_albedo_remodulation_identity_and_exclusion(self):
+   rng=np.random.default_rng(413);rgb=rng.random((5,8,3),dtype='f4');alb=rng.random(rgb.shape,dtype='f4')
+   n=np.zeros_like(rgb);depth=np.ones((5,8),dtype='f4');var=depth.copy();mat=depth.copy();mask=depth.astype(bool);mask[:2]=False
+--- /dev/null
++++ b/execution_runtime.py
+@@ -0,0 +1,399 @@
++"""Linux execution controller with bounded polling and disk-backed evidence.
++
++No terminal streaming or notebook kernel is needed for a running job. This is a
++project-local controller; it does not repair or modify the hosting chat service.
++A killed renderer is restarted at a stage boundary, never described as resuming
++its lost samples. Only explicit, successful exits can become 'succeeded'.
++"""
++from __future__ import annotations
++
++import contextlib
++import datetime as dt
++import fcntl
++import hashlib
++import json
++import math
++import os
++from pathlib import Path
++import re
++import shutil
++import signal
++import subprocess
++import sys
++import tempfile
++import threading
++import time
++import uuid
++
++TERMINAL = {'succeeded', 'failed', 'timed_out', 'cancelled', 'interrupted', 'resource_limit'}
++MiB = 1024 * 1024
++GiB = 1024 * MiB
++
++
++def utc():
++    return dt.datetime.now(dt.timezone.utc).isoformat()
++
++
++def sha256(path):
++    h = hashlib.sha256()
++    with Path(path).open('rb') as f:
++        for chunk in iter(lambda: f.read(4 * MiB), b''):
++            h.update(chunk)
++    return h.hexdigest()
++
++
++def atomic_json(path, value):
++    """Same-directory, fsynced replacement. No shared .tmp filename."""
++    path = Path(path)
++    path.parent.mkdir(parents=True, exist_ok=True)
++    fd, temp = tempfile.mkstemp(prefix='.' + path.name + '-', dir=path.parent)
++    try:
++        with os.fdopen(fd, 'w', encoding='utf-8') as f:
++            json.dump(value, f, indent=2, allow_nan=False)
++            f.write('\n')
++            f.flush()
++            os.fsync(f.fileno())
++        os.replace(temp, path)
++    finally:
++        Path(temp).unlink(missing_ok=True)
++
++
++def read_json(path):
++    return json.loads(Path(path).read_text(encoding='utf-8'))
++
++
++def tail(path, lines=15, max_bytes=16384):
++    """Read a bounded suffix even when a renderer produces multi-GB logs."""
++    try:
++        with Path(path).open('rb') as f:
++            f.seek(0, 2)
++            f.seek(max(0, f.tell() - max_bytes))
++            return '\n'.join(f.read(max_bytes).decode('utf-8', 'replace').splitlines()[-lines:])
++    except FileNotFoundError:
++        return ''
++
++
++def proc_info(pid):
++    try:
++        s = Path(f'/proc/{int(pid)}/stat').read_text()
++        fields = s[s.rfind(')') + 2:].split()
++        return {'pid': int(pid), 'state': fields[0], 'ppid': int(fields[1]),
++                'start_ticks': int(fields[19]), 'rss_bytes': int(fields[21]) * os.sysconf('SC_PAGE_SIZE')}
++    except (OSError, ValueError, IndexError):
++        return None
++
++
++def identity(pid):
++    info = proc_info(pid)
++    if not info or info['state'] == 'Z':
++        return None
++    info.pop('rss_bytes')
++    info.pop('ppid')
++    info.pop('state')
++    info['boot_id'] = Path('/proc/sys/kernel/random/boot_id').read_text().strip()
++    info['pid_namespace'] = os.readlink('/proc/self/ns/pid')
++    return info
++
++
++def alive(token):
++    return isinstance(token, dict) and token == identity(token.get('pid', -1))
++
++
++def process_tree(pid):
++    rows = {}
++    for p in Path('/proc').iterdir():
++        if p.name.isdigit():
++            row = proc_info(int(p.name))
++            if row:
++                rows[row['pid']] = row
++    if pid not in rows:
++        return []
++    selected, frontier = [pid], [pid]
++    while frontier:
++        parents = set(frontier)
++        frontier = [n for n, r in rows.items() if r['ppid'] in parents and n not in selected]
++        selected.extend(frontier)
++    return [rows[n] for n in selected]
++
++
++def terminate_tree(pid, grace=1.5):
++    """Stop verified descendants, including child renderers in new sessions."""
++    victims = [(r['pid'], r['start_ticks']) for r in process_tree(pid)]
++    # Parents first: prevent supervisors from launching replacement children.
++    for sig in [signal.SIGTERM, signal.SIGKILL]:
++        for n, start in victims:
++            r = proc_info(n)
++            if r and r['start_ticks'] == start and n != os.getpid():
++                try:
++                    os.kill(n, sig)
++                except ProcessLookupError:
++                    pass
++        if sig == signal.SIGTERM:
++            end = time.monotonic() + grace
++            while time.monotonic() < end:
++                if not any((r := proc_info(n)) and r['start_ticks'] == st and r['state'] != 'Z' for n, st in victims):
++                    break
++                time.sleep(.05)
++
++
++@contextlib.contextmanager
++def owned_lock(path):
++    """Kernel-released lock; a killed owner's leftover file is harmless.
++
++    The inode is deliberately NOT unlinked. Unlinking a flock file permits a
++    third process to lock a new inode while an existing owner holds the old one.
++    """
++    path = Path(path)
++    path.parent.mkdir(parents=True, exist_ok=True)
++    with path.open('a+', encoding='utf-8') as f:
++        try:
++            fcntl.flock(f, fcntl.LOCK_EX | fcntl.LOCK_NB)
++        except BlockingIOError as exc:
++            raise RuntimeError(f'Another live process owns {path}') from exc
++        try:
++            f.seek(0)
++            f.truncate()
++            json.dump({'owner': identity(os.getpid()), 'acquired_at': utc()}, f)
++            f.flush()
++            yield
++        finally:
++            fcntl.flock(f, fcntl.LOCK_UN)
++
++
++def resource_limits():
++    host = {}
++    for line in Path('/proc/meminfo').read_text().splitlines():
++        key, rest = line.split(':', 1)
++        host[key] = int(rest.strip().split()[0]) * 1024
++    mem = Path('/sys/fs/cgroup/memory.max')
++    current = Path('/sys/fs/cgroup/memory.current')
++    limit = host['MemTotal']
++    if mem.exists() and mem.read_text().strip() != 'max':
++        limit = min(limit, int(mem.read_text()))
++    quota = len(os.sched_getaffinity(0))
++    cpu = Path('/sys/fs/cgroup/cpu.max')
++    if cpu.exists():
++        q, period = cpu.read_text().split()
++        if q != 'max':
++            quota = min(quota, max(1, math.ceil(int(q) / int(period))))
++    return {'memory_limit_bytes': limit,
++            'cgroup_memory_current_bytes': int(current.read_text()) if current.exists() else None,
++            'host_available_bytes': host.get('MemAvailable'), 'cpu_budget': quota}
++
++
++def thread_environment(requested=4, base=None):
++    if not 1 <= int(requested) <= 256:
++        raise ValueError('Threads must be in [1, 256]')
++    threads = min(int(requested), resource_limits()['cpu_budget'])
++    env = dict(os.environ if base is None else base)
++    env.update(OMP_NUM_THREADS=str(threads), NUMBA_NUM_THREADS=str(threads),
++               OPENBLAS_NUM_THREADS='1', MKL_NUM_THREADS='1', BLIS_NUM_THREADS='1',
++               NUMEXPR_NUM_THREADS=str(threads), VECLIB_MAXIMUM_THREADS='1',
++               PYTHONUNBUFFERED='1')
++    return env
++
++
++def doctor(project):
++    project = Path(project).resolve()
++    errors = []
++    result = {'checked_at': utc(), 'project': str(project), 'project_exists': project.is_dir(),
++              'user_id': os.getuid(), 'python': sys.executable, 'g++': shutil.which('g++'),
++              'resource_limits': resource_limits()}
++    try:
++        with tempfile.TemporaryDirectory(prefix='.exec-probe-', dir=project) as d:
++            p = Path(d) / 'roundtrip.json'
++            atomic_json(p, {'verified': True})
++            assert read_json(p)['verified']
++            result['disk_roundtrip'] = 'passed'
++    except Exception as exc:
++        errors.append(f'Project is not writable: {exc}')
++    try:
++        p = subprocess.run([sys.executable, '-c', 'print("SUBPROCESS_OK")'], timeout=5,
++                           capture_output=True, text=True, check=True)
++        result['subprocess'] = p.stdout.strip()
++    except Exception as exc:
++        errors.append(f'Subprocess probe: {exc}')
++    for rel in ['cybr_scenes.py', 'scenes.json']:
++        if not (project / rel).is_file():
++            errors.append(f'Missing source file: {rel}')
++    result.update(errors=errors, passed=not errors)
++    return result
++
++
++def supervise(command, cwd, log, state_path, *, env=None, timeout=14400,
++              memory_bytes=None, cancel_path=None, heartbeat=.75):
++    """Synchronous worker with durable heartbeat, resource samples and exit state."""
++    command = list(map(str, command))
++    cwd, log, state_path = Path(cwd).resolve(), Path(log).resolve(), Path(state_path).resolve()
++    if not command or not cwd.is_dir() or timeout <= 0:
++        raise ValueError('Nonempty argv, existing cwd and positive timeout required')
++    if memory_bytes is not None and memory_bytes <= 0:
++        raise ValueError('Memory budget must be positive')
++    log.parent.mkdir(parents=True, exist_ok=True)
++    # A fresh attempt must not append to archived native output: several native
++    # checks emit one JSON document and counters must belong to this run only.
++    if log.exists():
++        history = log.parent / '.execution-history' / (log.stem + '-' + uuid.uuid4().hex)
++        history.mkdir(parents=True, exist_ok=False)
++        for prior in {log, state_path, log.with_suffix('.command.json')}:
++            if prior.is_file():
++                shutil.copy2(prior, history / prior.name)
++    start = time.monotonic()
++    record = {'schema': 1, 'state': 'starting', 'command': command, 'cwd': str(cwd),
++              'started_at': utc(), 'started_unix': time.time(), 'supervisor': identity(os.getpid()),
++              'log': str(log), 'timeout_seconds': timeout, 'memory_budget_bytes': memory_bytes,
++              'peak_tree_rss_bytes': 0, 'returncode': None, 'completed': False}
++    atomic_json(state_path, record)
++    p = None
++    descendants = {}
++    try:
++        with log.open('wb', buffering=0) as output:
++            p = subprocess.Popen(command, cwd=cwd, env=env, stdout=output,
++                                 stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL,
++                                 start_new_session=True, close_fds=True)
++            record.update(state='running', child=identity(p.pid), pid=p.pid)
++            reason = None
++            while True:
++                rows = process_tree(p.pid)
++                for r in rows:
++                    descendants[(r['pid'], r['start_ticks'])] = True
++                rss = sum(r['rss_bytes'] for r in rows)
++                record.update(heartbeat_at=utc(), elapsed_seconds=time.monotonic() - start,
++                              tree_rss_bytes=rss, descendant_count=max(0, len(rows)-1),
++                              peak_tree_rss_bytes=max(record['peak_tree_rss_bytes'], rss),
++                              log_bytes=log.stat().st_size,
++                              log_silent_seconds=max(0., time.time() - log.stat().st_mtime))
++                code = p.poll()
++                if code is not None:
++                    break
++                if cancel_path and Path(cancel_path).exists():
++                    reason = 'cancelled'
++                elif time.monotonic() - start >= timeout:
++                    reason = 'timed_out'
++                elif memory_bytes and rss > memory_bytes:
++                    reason = 'resource_limit'
++                if reason:
++                    record.update(state=reason, termination_requested_at=utc())
++                    atomic_json(state_path, record)
++                    terminate_tree(p.pid)
++                    code = p.wait(timeout=5)
++                    break
++                atomic_json(state_path, record)
++                time.sleep(heartbeat)
++            record.update(returncode=code, state=reason or ('succeeded' if code == 0 else 'failed'))
++    except BaseException as exc:
++        if p is not None and p.poll() is None:
++            terminate_tree(p.pid)
++            p.wait(timeout=5)
++        record.update(state='interrupted' if isinstance(exc, (KeyboardInterrupt, SystemExit)) else 'failed',
++                      error=f'{type(exc).__name__}: {exc}', returncode=p.returncode if p else None)
++        if isinstance(exc, (KeyboardInterrupt, SystemExit)):
++            raise
++    finally:
++        record.update(finished_at=utc(), elapsed_seconds=time.monotonic() - start,
++                      completed=record['state'] == 'succeeded', log_sha256=sha256(log) if log.exists() else None)
++        # A command must not leave owned child processes working after completion.
++        for n, st in descendants:
++            r = proc_info(n)
++            if r and r['start_ticks'] == st and r['state'] != 'Z':
++                terminate_tree(n, grace=.3)
++        atomic_json(state_path, record)
++    return record
++
++
++def run_recorded(command, cwd, log, threads=4, timeout=14400):
++    """Compatibility adapter for CYBR's existing compile/render/export calls."""
++    log = Path(log)
++    env = thread_environment(threads)
++    root = Path(__file__).resolve().parent
++    env['CYBR_SURFACE_ATLAS'] = str(root / 'assets/mineral_detail.cdt')
++    print(f'[{utc()}] STEP_START {log.stem}: ' + ' '.join(map(str, command)), flush=True)
++    record = supervise(command, cwd, log, log.with_suffix('.execution.json'), env=env, timeout=timeout)
++    print(f'[{utc()}] STEP_END {log.stem}: {record["state"]} ({record["elapsed_seconds"]:.2f}s)', flush=True)
++    record.update(seconds=record['elapsed_seconds'],
++                  environment={k:env[k] for k in ['OMP_NUM_THREADS','NUMBA_NUM_THREADS','OPENBLAS_NUM_THREADS','CYBR_SURFACE_ATLAS']},
++                  executed_command=list(map(str, command)))
++    atomic_json(log.with_suffix('.command.json'), record)
++    if record['state'] != 'succeeded':
++        raise RuntimeError(f"{record['state']} (exit {record['returncode']}): {log}\n{tail(log)}")
++    return record
++
++
++def job_directory(root, job_id):
++    if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_.-]{0,79}', job_id) or job_id in {'.', '..'}:
++        raise ValueError('Job ID must be 1–80 safe filename characters')
++    return Path(root).resolve() / job_id
++
++
++def job_status(root, job_id):
++    folder = job_directory(root, job_id)
++    spec = read_json(folder / 'spec.json')
++    state = read_json(folder / 'state.json') if (folder / 'state.json').exists() else {'state':'starting', 'started_unix':spec['created_unix']}
++    if state['state'] not in TERMINAL and not alive(state.get('supervisor')):
++        if time.time() - state.get('started_unix', spec['created_unix']) > 10:
++            # A status reader only reconciles if the original supervisor no longer
++            # owns its kernel lock. This avoids racing its final status write.
++            try:
++                with owned_lock(folder / 'supervisor.lock'):
++                    if (folder / 'state.json').exists():
++                        state = read_json(folder / 'state.json')
++                    if state['state'] not in TERMINAL and not alive(state.get('supervisor')):
++                        if alive(state.get('child')):
++                            state.update(state='interrupted', completed=False,
++                                         error='Supervisor missing; stopping verified orphan child')
++                            terminate_tree(state['child']['pid'])
++                        else:
++                            state.update(state='interrupted', completed=False,
++                                         error='Supervisor/process is absent. No completion receipt exists.')
++                        state['reconciled_at'] = utc()
++                        atomic_json(folder / 'state.json', state)
++            except RuntimeError:
++                pass
++    state.update(job_id=job_id, state_file=str(folder/'state.json'),
++                 tail=tail(folder/'output.log'))
++    return state
++
++
++def start_job(root, job_id, command, cwd, threads=4, timeout=14400, memory_bytes=None):
++    folder = job_directory(root, job_id)
++    cwd = Path(cwd).resolve()
++    if not cwd.is_dir() or not command or timeout <= 0:
++        raise ValueError('Existing working directory, argv and positive timeout required')
++    thread_environment(threads)  # Validate before creating a job directory.
++    if memory_bytes is not None and memory_bytes <= 0:
++        raise ValueError('Memory budget must be positive')
++    if memory_bytes is None:
++        memory_bytes = int(resource_limits()['memory_limit_bytes'] * .82)
++    folder.mkdir(parents=True, exist_ok=False)
++    spec = {'schema':1, 'created_at':utc(), 'created_unix':time.time(), 'job_id':job_id,
++            'cwd':str(cwd), 'command':list(map(str,command)), 'threads':threads,
++            'timeout':timeout, 'memory_bytes':memory_bytes}
++    atomic_json(folder/'spec.json', spec)
++    with (folder/'supervisor.log').open('ab', buffering=0) as output:
++        p = subprocess.Popen([sys.executable, str(Path(__file__).resolve()), '_worker', str(folder)],
++                             cwd=cwd, stdout=output, stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL,
++                             start_new_session=True, close_fds=True)
++    # Keep and reap the launcher handle without blocking short control calls.
++    threading.Thread(target=p.wait, daemon=True).start()
++    atomic_json(folder/'launch.json', {'pid':p.pid, 'identity':identity(p.pid), 'launched_at':utc()})
++    # Only a short handshake; the expensive command is never awaited here.
++    end = time.monotonic() + 1.5
++    while time.monotonic() < end and not (folder/'state.json').exists() and p.poll() is None:
++        time.sleep(.025)
++    return job_status(root, job_id)
++
++
++def worker(folder):
++    folder = Path(folder).resolve()
++    spec = read_json(folder/'spec.json')
++    with owned_lock(folder/'supervisor.lock'):
++        state = supervise(spec['command'], spec['cwd'], folder/'output.log', folder/'state.json',
++                          env=thread_environment(spec['threads']), timeout=spec['timeout'],
++                          memory_bytes=spec['memory_bytes'], cancel_path=folder/'cancel.request')
++    return 0 if state['state'] == 'succeeded' else 1
++
++
++if __name__ == '__main__':
++    if len(sys.argv) != 3 or sys.argv[1] != '_worker':
++        raise SystemExit('Use execctl.py, not the worker entrypoint.')
++    raise SystemExit(worker(sys.argv[2]))
+--- /dev/null
++++ b/execctl.py
+@@ -0,0 +1,61 @@
++#!/usr/bin/env python3
++"""Short control calls for disk-backed native compile, geometry and render jobs."""
++from __future__ import annotations
++import argparse
++import json
++from pathlib import Path
++import sys
++import time
++from execution_runtime import (TERMINAL, MiB, atomic_json, doctor, job_directory,
++                               job_status, start_job, utc)
++ROOT=Path(__file__).resolve().parent
++
++def main():
++    p=argparse.ArgumentParser(description=__doc__)
++    p.add_argument('--jobs', type=Path, default=ROOT/'execution-jobs')
++    sub=p.add_subparsers(dest='action',required=True)
++    sub.add_parser('doctor')
++    a=sub.add_parser('snapshot');a.add_argument('--output',type=Path,required=True)
++    a=sub.add_parser('start')
++    a.add_argument('--id',required=True)
++    a.add_argument('--cwd',type=Path,default=ROOT)
++    a.add_argument('--threads',type=int,default=4)
++    a.add_argument('--timeout',type=float,default=14400)
++    a.add_argument('--memory-mb',type=int)
++    a.add_argument('command',nargs=argparse.REMAINDER)
++    a=sub.add_parser('status');a.add_argument('id',nargs='?')
++    a=sub.add_parser('wait');a.add_argument('id');a.add_argument('--seconds',type=float,default=5)
++    a=sub.add_parser('cancel');a.add_argument('id')
++    args=p.parse_args()
++    try:
++        if args.action=='doctor':
++            result=doctor(ROOT)
++        elif args.action=='snapshot':
++            from tools.package_delivery import archive,source_selected
++            result=archive(args.output,[p for p in ROOT.rglob('*') if p.is_file() and source_selected(p)])
++        elif args.action=='start':
++            cmd=args.command[1:] if args.command[:1]==['--'] else args.command
++            result=start_job(args.jobs,args.id,cmd,args.cwd,args.threads,args.timeout,
++                             args.memory_mb*MiB if args.memory_mb is not None else None)
++        elif args.action=='status':
++            result=job_status(args.jobs,args.id) if args.id else [job_status(args.jobs,d.name) for d in sorted(args.jobs.glob('*')) if (d/'spec.json').exists()]
++        elif args.action=='wait':
++            if not 0<=args.seconds<=20:raise ValueError('A control call may wait at most 20 seconds; poll again for long jobs.')
++            until=time.monotonic()+args.seconds
++            while True:
++                result=job_status(args.jobs,args.id)
++                if result['state'] in TERMINAL or time.monotonic()>=until:break
++                time.sleep(.2)
++        else:
++            folder=job_directory(args.jobs,args.id)
++            result=job_status(args.jobs,args.id)
++            if result['state'] not in TERMINAL:
++                atomic_json(folder/'cancel.request',{'requested_at':utc()})
++                result['cancel_requested']=True
++        print(json.dumps(result,indent=2))
++        return 0
++    except (OSError,ValueError,RuntimeError) as exc:
++        print(json.dumps({'error':str(exc)}),file=sys.stderr)
++        return 1
++
++if __name__=='__main__':raise SystemExit(main())
+--- /dev/null
++++ b/README_EXECUTION.md
+@@ -0,0 +1,89 @@
++# Execution recovery — six-scene R2 source
++
++This delivery repairs the **local execution workflow**, not the chat hosting
++service. The six scene sources are the recovered R2 release. The previously
++claimed `/mnt/data/r3_work/CYBR_SCENES_R3` directory and its linked hot-springs
++render were absent at inspection; no recovered R3 implementation is implied.
++
++## Start and inspect real work
++
++Linux/WSL, Python and the existing `requirements.txt` dependencies are required.
++The native renderer targets remain the same as the R2 README.
++
++```bash
++python execctl.py doctor
++python execctl.py start --id obsidian-check --threads 4 --timeout 14400 -- \
++  python cybr_scenes.py render obsidian-reach --quality preview \
++    --threads 4 --output renders/obsidian-check
++python execctl.py status obsidian-check
++python execctl.py wait obsidian-check --seconds 5
++python execctl.py cancel obsidian-check
++```
++
++Each control call returns after a short interval. `status` reads durable JSON
++and a bounded suffix of the native log. A running job's supervisor remains in
++the current container when the short launch call exits. It does **not** survive
++destruction of the container, and there is no external scheduling service.
++Use unique job IDs; existing job directories are not silently overwritten.
++
++For all six, replace `obsidian-reach` with `all`. Their render loop is sequential;
++a failed scene is recorded and does not prevent later scenes from being tried.
++Only one compile/prepare/render CLI workload owns the project's heavyweight
++execution lock at a time. A conflicting invocation fails explicitly rather than
++overlapping two multi-gigabyte scene builds.
++
++## What is recorded
++
++`execution-jobs/<id>/` stores argv, cwd, supervisor and child process identities,
++start/finish times, a heartbeat, return status, peak sampled process-tree resident
++memory, and `output.log`. Repeated step attempts preserve their old logs in `.execution-history/` and
++start a clean new log, so archived JSON or old counters cannot contaminate the
++current run. Native compile/render/export steps also write
++`*.execution.json`, `*.command.json` and their own logs. A process identity includes
++PID, process start ticks, boot ID and PID namespace, not PID alone.
++
++States distinguish `starting`, `running`, `succeeded`, `failed`, `timed_out`,
++`cancelled`, `resource_limit` and `interrupted`. No output file or old PID alone is
++accepted as proof that an execution succeeded. The existing scene verifier still
++checks dimensions, raw radiance, native metadata and output fingerprints.
++
++Timeout and cancellation terminate owned descendants, including subprocesses
++that created new sessions. The optional `--memory-mb` watchdog stops a job above
++its sampled process-tree RSS budget; it is not a hard allocation reservation and
++cannot guarantee prevention of every short-lived memory spike. The default
++budget uses the actual container limit, not the host's apparent free RAM.
++OpenMP/Numba use the same CPU budget; BLAS pools use one thread.
++
++Kernel-managed file locks release on process death. Their on-disk lock inode is
++retained deliberately to avoid an unlink/recreate locking race. Never delete
++locks to force overlap with a known live job.
++
++## Recovery and checkpoints
++
++```bash
++python execctl.py snapshot --output ../CYBR_Scenes_Source_Checkpoint.zip
++```
++
++This writes a temporary archive, verifies every ZIP entry and SHA-256 manifest,
++and atomically publishes the completed archive. A failed checkpoint does not
++replace the previous one. It includes source/input assets, not regenerated
++multi-gigabyte geometry, binaries, live process state, or font files. Preserve the
++checkpoint as a downloaded or attached artifact before abandoning a workspace.
++
++After interruption, start a **new job ID** and use a new output directory. Valid
++upstream mesh/build caches can be reused within the surviving project, but the
++renderer has no implemented in-flight sample checkpoint: lost partial path
++samples are restarted, not claimed to have resumed. The missing R3 source cannot
++be reconstructed merely from a progress message or a nonexistent sandbox link.
++
++## Tests
++
++```bash
++python -m unittest discover -s tests -p 'test_*.py' -v
++```
++
++Tests cover subprocess success/failure, bounded log reads, timeout, cancellation,
++memory watchdog, identity mismatch, missing supervisor reconciliation, orphan
++cleanup, locking, cross-launch survival, batch failure isolation and atomic ZIP
++publication. The separate proof render uses the native full Obsidian Reach mesh
++at a small verification resolution; it is not a new artistic scene upgrade.
+--- /dev/null
++++ b/tests/test_execution_runtime.py
+@@ -0,0 +1,158 @@
++from pathlib import Path
++import json
++import os
++import signal
++import subprocess
++import sys
++import tempfile
++import time
++import unittest
++from unittest.mock import patch
++sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
++import execution_runtime as ex
++
++class ExecutionTests(unittest.TestCase):
++    def setUp(self):
++        self.temp=tempfile.TemporaryDirectory()
++        self.root=Path(self.temp.name)
++    def tearDown(self):
++        for d in self.root.glob('jobs/*'):
++            if (d/'state.json').exists():
++                s=ex.read_json(d/'state.json')
++                if ex.alive(s.get('supervisor')):ex.terminate_tree(s['supervisor']['pid'],grace=.1)
++        self.temp.cleanup()
++    def command(self,code):return [sys.executable,'-c',code]
++    def run_cmd(self,code,**kwargs):
++        return ex.supervise(self.command(code),self.root,self.root/'out.log',self.root/'state.json',heartbeat=.03,**kwargs)
++    def wait_job(self,name,limit=8):
++        end=time.monotonic()+limit
++        while time.monotonic()<end:
++            result=ex.job_status(self.root/'jobs',name)
++            if result['state'] in ex.TERMINAL:return result
++            time.sleep(.05)
++        self.fail('job did not finish within test bound')
++    def test_atomic_json_and_suffix_read(self):
++        p=self.root/'state.json';ex.atomic_json(p,{'hello':'world'})
++        self.assertEqual(ex.read_json(p),{'hello':'world'})
++        p.write_text('a'*100000+'\nFINAL\n')
++        self.assertEqual(ex.tail(p,1,max_bytes=20),'FINAL')
++    def test_success_and_stderr_capture(self):
++        r=self.run_cmd('import sys; print("stdout");print("stderr",file=sys.stderr)')
++        self.assertEqual(r['state'],'succeeded');self.assertTrue(r['completed'])
++        self.assertIn('stderr',(self.root/'out.log').read_text())
++    def test_repeat_attempt_has_fresh_log_and_preserves_history(self):
++        self.run_cmd('print("old-attempt")')
++        r=self.run_cmd('print("new-attempt")')
++        self.assertEqual(r['state'],'succeeded')
++        self.assertEqual((self.root/'out.log').read_text(),'new-attempt\n')
++        archived=list((self.root/'.execution-history').glob('*/out.log'))
++        self.assertEqual(len(archived),1)
++        self.assertEqual(archived[0].read_text(),'old-attempt\n')
++    def test_nonzero_is_not_success(self):
++        r=self.run_cmd('raise SystemExit(7)')
++        self.assertEqual(r['returncode'],7);self.assertEqual(r['state'],'failed');self.assertFalse(r['completed'])
++    def test_missing_executable_is_recorded(self):
++        r=ex.supervise(['/no/such/executable'],self.root,self.root/'log',self.root/'state.json')
++        self.assertEqual(r['state'],'failed');self.assertIn('FileNotFoundError',r['error'])
++    def test_timeout_is_explicit(self):
++        r=self.run_cmd('import time;time.sleep(30)',timeout=.15)
++        self.assertEqual(r['state'],'timed_out');self.assertFalse(ex.alive(r['child']))
++    def test_cancel_request(self):
++        p=self.root/'cancel';p.write_text('cancel')
++        r=self.run_cmd('import time;time.sleep(30)',cancel_path=p)
++        self.assertEqual(r['state'],'cancelled')
++    def test_resource_budget_preempts_large_job(self):
++        r=self.run_cmd('import time; data=bytearray(80*1024*1024);time.sleep(5)',memory_bytes=32*ex.MiB)
++        self.assertEqual(r['state'],'resource_limit');self.assertGreater(r['peak_tree_rss_bytes'],32*ex.MiB)
++    def test_thread_budgets_agree(self):
++        env=ex.thread_environment(2)
++        self.assertEqual(env['OMP_NUM_THREADS'],'2');self.assertEqual(env['NUMBA_NUM_THREADS'],'2')
++        self.assertEqual(env['OPENBLAS_NUM_THREADS'],'1')
++        with self.assertRaises(ValueError):ex.thread_environment(0)
++    def test_live_lock_and_stale_recovery(self):
++        p=self.root/'owner.lock'
++        with ex.owned_lock(p):
++            before=p.read_bytes()
++            with self.assertRaises(RuntimeError):
++                with ex.owned_lock(p):pass
++            self.assertEqual(p.read_bytes(),before)
++        with ex.owned_lock(p):pass
++        self.assertTrue(p.exists())
++    def test_owner_death_releases_lock(self):
++        lock=self.root/'owner.lock'
++        code=f'import sys,time;sys.path.insert(0,{str(Path(ex.__file__).parent)!r});from execution_runtime import owned_lock\nwith owned_lock({str(lock)!r}):\n print("LOCKED",flush=True);time.sleep(30)'
++        p=subprocess.Popen(self.command(code),stdout=subprocess.PIPE,text=True)
++        try:
++            self.assertEqual(p.stdout.readline().strip(),'LOCKED')
++            with self.assertRaises(RuntimeError):
++                with ex.owned_lock(lock):pass
++        finally:
++            p.kill();p.wait();p.stdout.close()
++        with ex.owned_lock(lock):pass
++    def test_identity_prevents_pid_reuse(self):
++        token=ex.identity(os.getpid());self.assertTrue(ex.alive(token))
++        token['start_ticks']+=1;self.assertFalse(ex.alive(token))
++    def test_detached_job_survives_short_launcher(self):
++        script=f'import sys;sys.path.insert(0,{str(Path(ex.__file__).parent)!r});import execution_runtime as e;e.start_job({str(self.root/"jobs")!r},"detach",{self.command("import time;time.sleep(.3);print('FINISHED')")!r},{str(self.root)!r})'
++        subprocess.run(self.command(script),check=True,timeout=5)
++        r=self.wait_job('detach');self.assertEqual(r['state'],'succeeded');self.assertIn('FINISHED',r['tail'])
++    def test_duplicate_job_and_path_traversal_refused(self):
++        ex.start_job(self.root/'jobs','same',self.command('print(1)'),self.root)
++        with self.assertRaises(FileExistsError):ex.start_job(self.root/'jobs','same',self.command('print(2)'),self.root)
++        with self.assertRaises(ValueError):ex.job_directory(self.root,'../escape')
++        self.wait_job('same')
++    def test_missing_cwd_fails_before_job_creation(self):
++        with self.assertRaises(ValueError):ex.start_job(self.root/'jobs','missing',self.command('print(1)'),self.root/'missing')
++        self.assertFalse((self.root/'jobs/missing').exists())
++    def test_missing_supervisor_becomes_interrupted(self):
++        folder=self.root/'jobs/interrupted';folder.mkdir(parents=True)
++        ex.atomic_json(folder/'spec.json',{'created_unix':time.time()-30})
++        ex.atomic_json(folder/'state.json',{'state':'running','started_unix':time.time()-30,'supervisor':{'pid':99999999},'completed':False})
++        r=ex.job_status(self.root/'jobs','interrupted')
++        self.assertEqual(r['state'],'interrupted');self.assertFalse(r['completed'])
++    def test_nested_session_child_is_stopped(self):
++        out=self.root/'child.json'
++        code=f'import subprocess,sys,time,json;from pathlib import Path\np=subprocess.Popen([sys.executable,"-c","import time;time.sleep(30)"],start_new_session=True)\nPath({str(out)!r}).write_text(str(p.pid))\ntime.sleep(30)'
++        r=self.run_cmd(code,timeout=2.0)
++        self.assertEqual(r['state'],'timed_out')
++        pid=int(out.read_text());info=ex.proc_info(pid)
++        self.assertTrue(info is None or info['state']=='Z')
++    def test_batch_continues_after_failure(self):
++        import cybr_scenes as scenes
++        calls=[];saved=[]
++        def prepare(scene,threads):
++            calls.append(scene['id'])
++            if len(calls)==1:raise RuntimeError('intentional')
++            return Path('ok')
++        with patch.object(sys,'argv',['cybr_scenes.py','prepare','all']),patch.object(scenes,'prepare_scene',prepare),patch.object(scenes,'atomic_json',lambda p,v:saved.append(json.loads(json.dumps(v)))):
++            rc=scenes.main()
++        self.assertEqual(rc,1);self.assertEqual(len(calls),6)
++        self.assertEqual(saved[-1][0]['state'],'failed')
++        self.assertEqual(saved[-1][-1]['state'],'succeeded')
++    def test_legacy_command_receipt_is_preserved(self):
++        r=ex.run_recorded(self.command('print("ok")'),self.root,self.root/'native.log',threads=2)
++        self.assertEqual(r['returncode'],0)
++        self.assertTrue((self.root/'native.command.json').exists())
++        self.assertEqual(ex.read_json(self.root/'native.execution.json')['state'],'succeeded')
++
++    def test_checkpoint_is_atomic_and_verifiable(self):
++        import tools.package_delivery as package
++        source=self.root/'input.txt';source.write_text('original source')
++        output=self.root/'checkpoint.zip'
++        with patch.object(package,'ROOT',self.root):
++            result=package.archive(output,[source])
++        self.assertTrue(result['zip_crc_passed'])
++        import zipfile
++        with zipfile.ZipFile(output) as z:
++            self.assertIsNone(z.testzip())
++            self.assertEqual(z.read(self.root.name+'/input.txt'),b'original source')
++    def test_bad_checkpoint_does_not_replace_previous(self):
++        import tools.package_delivery as package
++        import zipfile
++        source=self.root/'input.txt';source.write_text('source')
++        output=self.root/'checkpoint.zip';output.write_bytes(b'previous checkpoint')
++        with patch.object(package,'ROOT',self.root),patch.object(zipfile.ZipFile,'testzip',return_value='bad-entry'):
++            with self.assertRaises(RuntimeError):package.archive(output,[source])
++        self.assertEqual(output.read_bytes(),b'previous checkpoint')
++
++if __name__=='__main__':unittest.main()
+--- /dev/null
++++ b/tools/report_execution_repair.py
+@@ -0,0 +1,67 @@
++#!/usr/bin/env python3
++"""Collect verified execution evidence without claiming a new scene revision."""
++from pathlib import Path
++import difflib,json,re,shutil,sys
++ROOT=Path(__file__).resolve().parents[1]
++sys.path.insert(0,str(ROOT))
++from execution_runtime import read_json,atomic_json,sha256,utc
++from cybr_scenes import SOURCES,dependency_fingerprint
++
++def main():
++    out=ROOT/'execution-repair';out.mkdir(exist_ok=True)
++    tests=read_json(ROOT/'execution-jobs/final-tests-v2/state.json')
++    compile_job=read_json(ROOT/'execution-jobs/compile-native-fresh/state.json')
++    native=read_json(ROOT/'execution-jobs/native-render-repeat/state.json')
++    first_native=read_json(ROOT/'execution-jobs/native-render-proof/state.json')
++    assert all(x['state']=='succeeded' and x['returncode']==0 for x in [tests,compile_job,native,first_native])
++    text=(ROOT/'execution-jobs/final-tests-v2/output.log').read_text()
++    count=int(re.search(r'Ran (\d+) tests',text)[1])
++    assert count==36 and text.strip().endswith('OK')
++    builds={}
++    for engine in SOURCES:
++        info=read_json(ROOT/'build'/f'{engine}_r2.build.json')
++        assert info['source_fingerprint']==dependency_fingerprint(engine)
++        assert info['executable_sha256']==sha256(ROOT/'build'/f'{engine}_r2')
++        assert info['returncode']==0
++        builds[engine]={'passed':True,'executable_sha256':info['executable_sha256'],
++                        'source_fingerprint':info['source_fingerprint']}
++        if engine!='obsidian':
++            numerical=read_json(ROOT/'evidence'/f'self-test-{engine}.log')
++            assert numerical['passed']
++            builds[engine]['native_self_test']=numerical
++    proof=ROOT/'renders/execution-proof/obsidian-reach/hero'
++    verification=read_json(proof/'verification.json');assert verification['passed']
++    receipt=read_json(proof/'receipt.json')
++    assert receipt['mesh_sha256']==sha256(ROOT/'geometry-r2/obsidian/scene.bin')
++    assert receipt['verification']['png_sha256']==sha256(proof/'hero.png')
++    shutil.copytree(proof,out/'native-proof',dirs_exist_ok=True)
++    for name in ['final-tests-v2','compile-native-fresh','native-render-proof','native-render-repeat']:
++        dest=out/'jobs'/name;dest.mkdir(parents=True,exist_ok=True)
++        for filename in ['state.json','spec.json','output.log']:
++            shutil.copy2(ROOT/'execution-jobs'/name/filename,dest/filename)
++    edits=['cybr_scenes.py','tools/package_delivery.py','tests/test_pipeline.py']
++    before={'cybr_scenes.py':'cybr_scenes.py','tools/package_delivery.py':'package_delivery.py','tests/test_pipeline.py':'test_pipeline.py'}
++    additions=['execution_runtime.py','execctl.py','README_EXECUTION.md','tests/test_execution_runtime.py','tools/report_execution_repair.py']
++    diffs=[]
++    for rel in edits+additions:
++        old=(ROOT/'provenance/execution-before'/before[rel]).read_text().splitlines(True) if rel in before else []
++        diffs.extend(difflib.unified_diff(old,(ROOT/rel).read_text().splitlines(True),
++                      fromfile='a/'+rel if rel in before else '/dev/null',tofile='b/'+rel))
++    (out/'execution-repair.patch').write_text(''.join(diffs))
++    report={'checked_at':utc(),'passed':True,'scope':'Local execution repair on recovered R2; not a recovered R3 or a six-scene visual upgrade.',
++            'diagnosis':read_json(out/'diagnosis.json'),'test_count':count,'tests_passed':True,'tests_log_sha256':sha256(ROOT/'execution-jobs/final-tests-v2/output.log'),
++            'compiled_backends':builds,'fresh_native_render_runs':2,'native_proof':{'scene':'obsidian-reach','triangles':verification['renderer_metadata'].get('triangles'),
++                'resolution':verification['dimensions'],'spp':8,'full_geometry':True,'fresh_render':True,'verification':verification,
++                'controller_seconds':native['elapsed_seconds'],'peak_sampled_tree_rss_bytes':native['peak_tree_rss_bytes'],
++                'receipt_sha256':sha256(proof/'receipt.json'),'image_generation':False},
++            'modified_source_files':{rel:sha256(ROOT/rel) for rel in edits+additions},
++            'r3_workspace_recovered':False,'partial_native_samples_resumable':False,
++            'limitations':['The controller survives short launch calls, not container destruction.',
++                          'Memory is sampled; the watchdog cannot prevent every transient memory spike.',
++                          'The small proof render verifies execution, not artistic improvements or convergence.']}
++    atomic_json(out/'verification.json',report)
++    shutil.copy2(proof/'hero.png','/mnt/data/CYBR_Execution_Proof.png')
++    atomic_json('/mnt/data/CYBR_Execution_Repair_Verification.json',report)
++    print(json.dumps({'passed':True,'tests':count,'compiled':list(builds),'proof':report['native_proof']['resolution']},indent=2))
++
++if __name__=='__main__':main()

@@ -1,0 +1,9 @@
+{
+  "weight_pairs_tested": 20000,
+  "legacy_max_directional_weight_difference": 0.9990396113669032,
+  "new_max_directional_weight_difference": 0.0,
+  "constant_surface_max_absolute_error": 8.940696716308594e-08,
+  "outlier_control_used": false,
+  "passed": true,
+  "scope": "Pairwise luminance-weight symmetry and preservation of a constant field; not a noise benchmark"
+}

@@ -1,0 +1,16 @@
+{
+  "renderer": "CYBR SCENES R2 / CYBR LIGHT CPU bridge, explicit HDR MIS",
+  "width": 1280,
+  "height": 560,
+  "spp": 64,
+  "triangles": 6210833,
+  "seconds": 248.083,
+  "path_depth": 7,
+  "gpu": false,
+  "image_generation": false,
+  "nonfinite_path_samples": 0,
+  "temperature_spectrum_preintegrated": true,
+  "fluid_simulation": false,
+  "native_metadata_file": "renders/obsidian-reach/hero/hero_render.json",
+  "image_generation_evidence": "Executed native C++ renderer; full recorded command and source build"
+}

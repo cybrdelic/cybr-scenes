@@ -1,0 +1,8 @@
+{
+  "source": "Existing supplied gravel_cc0_original.png",
+  "method": "Watershed support masks and authored 5.2 mm rounded granular caps",
+  "measured_height": false,
+  "image_generation": false,
+  "height_min_m": -0.00011446682037785649,
+  "height_max_m": 0.005151844117790461
+}

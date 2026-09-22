@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "state": "succeeded",
+  "command": [
+    "/mnt/data/execution_repair/CYBR_SCENES_R2/build/geode_r2",
+    "--self-test"
+  ],
+  "cwd": "/mnt/data/execution_repair/CYBR_SCENES_R2",
+  "started_at": "2026-09-21T21:30:49.106765+00:00",
+  "started_unix": 1790026249.106772,
+  "supervisor": {
+    "pid": 1381,
+    "start_ticks": 61048,
+    "boot_id": "6d4adc15-175c-4a7b-ab22-618f70e77433",
+    "pid_namespace": "pid:[4026532199]"
+  },
+  "log": "/mnt/data/execution_repair/CYBR_SCENES_R2/evidence/self-test-geode.log",
+  "timeout_seconds": 14400,
+  "memory_budget_bytes": null,
+  "peak_tree_rss_bytes": 786432,
+  "returncode": 0,
+  "completed": true,
+  "child": {
+    "pid": 1503,
+    "start_ticks": 63434,
+    "boot_id": "6d4adc15-175c-4a7b-ab22-618f70e77433",
+    "pid_namespace": "pid:[4026532199]"
+  },
+  "pid": 1503,
+  "heartbeat_at": "2026-09-21T21:30:49.859264+00:00",
+  "elapsed_seconds": 0.7526489069999798,
+  "tree_rss_bytes": 0,
+  "descendant_count": 0,
+  "log_bytes": 306,
+  "log_silent_seconds": 0.7512068748474121,
+  "finished_at": "2026-09-21T21:30:49.859409+00:00",
+  "log_sha256": "dbcf1afbb639d8a9aa397e1344ba66dd76380846c8135664311cb76c9abe8898",
+  "seconds": 0.7526489069999798,
+  "environment": {
+    "OMP_NUM_THREADS": "4",
+    "NUMBA_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CYBR_SURFACE_ATLAS": "/mnt/data/execution_repair/CYBR_SCENES_R2/assets/mineral_detail.cdt"
+  },
+  "executed_command": [
+    "/mnt/data/execution_repair/CYBR_SCENES_R2/build/geode_r2",
+    "--self-test"
+  ]
+}

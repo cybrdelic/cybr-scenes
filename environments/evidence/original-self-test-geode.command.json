@@ -1,0 +1,26 @@
+{
+  "command": [
+    "/mnt/data/CYBR_SCENES_R2/build/geode_original",
+    "--self-test"
+  ],
+  "cwd": ".",
+  "started_at": "2026-09-21T17:16:36.359684+00:00",
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "4",
+    "NUMBA_NUM_THREADS": "4",
+    "CYBR_SURFACE_ATLAS": "/mnt/data/CYBR_SCENES_R2/assets/mineral_detail.cdt"
+  },
+  "executed_command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/mnt/data/CYBR_SCENES_R2/evidence/original-self-test-geode.resources.txt",
+    "/mnt/data/CYBR_SCENES_R2/build/geode_original",
+    "--self-test"
+  ],
+  "returncode": 0,
+  "seconds": 0.008085308999852714,
+  "finished_at": "2026-09-21T17:16:36.367738+00:00",
+  "log_sha256": "dbcf1afbb639d8a9aa397e1344ba66dd76380846c8135664311cb76c9abe8898"
+}

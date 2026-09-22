@@ -1,0 +1,91 @@
+{
+  "renderer": "CYBR GEO native cavern V3 - rough-quartz NEE spectral CPU",
+  "geometry_accelerator": "CYBR GEO native SAH BVH4 / AVX2 triangle packets",
+  "view": "hero",
+  "width": 1800,
+  "height": 1200,
+  "spp": 64,
+  "max_depth": 24,
+  "seed": 735041,
+  "threads": 4,
+  "triangles": 3655632,
+  "bvh_nodes": 2073513,
+  "spectral_bands": 16,
+  "wavelength_range_nm": [
+    380,
+    780
+  ],
+  "spectral_method": "Jointly transported fixed midpoint wavelength quadrature, 25 nm bins",
+  "water_ior": 1.33399999,
+  "dispersion": true,
+  "steam": true,
+  "steam_model": "Bounded homogeneous haze; analytic transmittance; forced first collision; full continuation",
+  "water_absorption_scale": 1,
+  "finite_difference_water_connection_step_radians": 0.002,
+  "nonfinite_path_samples": 0,
+  "exposure": 1.39999998,
+  "film_white_rgb": [
+    1.04490995,
+    0.984612584,
+    1.02078414
+  ],
+  "seconds": 1231.4436,
+  "band_means": [
+    0.26196149,
+    0.23988001,
+    0.217949778,
+    0.197061956,
+    0.181162089,
+    0.168803096,
+    0.156330362,
+    0.141815215,
+    0.128310129,
+    0.118327282,
+    0.108416989,
+    0.0978719443,
+    0.0885898918,
+    0.0804632604,
+    0.0732479468,
+    0.0669422746
+  ],
+  "sampling_v3": {
+    "sampler": "per-pixel digital shift over linearly scrambled 1024-dimensional Sobol nets",
+    "water_camera_interface": "both Fresnel reflection and transmission evaluated",
+    "quartz_bsdf": "GGX visible-normal dielectric with Fresnel reflection/transmission, matching PDF, spectral index and direct sun/sky NEE",
+    "water_sky_nee": "actual triangle interface, Snell refraction, Fresnel/absorption/scattering transmittance and MIS",
+    "primary_haze": "forced first collision, exact homogeneous transmittance, full continuation",
+    "minimum": 8,
+    "mean": 41.51438148148148,
+    "maximum": 128,
+    "camera_samples_total": 89671064,
+    "histogram": {
+      "8": 135423,
+      "32": 1317431,
+      "64": 688825,
+      "128": 18321
+    },
+    "allocation": "deterministic primary-material/depth allocation; no noisy stopping rule"
+  },
+  "finishing": {
+    "method": "symmetric log-variance, first-interface-aware component wavelet filtering; non-neural",
+    "iterations": {
+      "base": 3,
+      "reflection": 4,
+      "volume": 5
+    },
+    "raw_modified": false,
+    "outlier_control": {
+      "enabled": true,
+      "affected_pixels": 554,
+      "biased_viewing_regularization": true,
+      "peak_ratio": 8,
+      "absolute_margin": 0.35
+    },
+    "display_transform": "ACES fit / exact sRGB",
+    "exposure": 1.4,
+    "image_generation": false,
+    "neural_denoiser": false
+  },
+  "finite_raw": true,
+  "aov_reconstruction_max_abs_error": 2.384185791015625e-07
+}

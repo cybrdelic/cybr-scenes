@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "state": "succeeded",
+  "command": [
+    "/usr/bin/g++",
+    "-std=c++17",
+    "-O3",
+    "-march=native",
+    "-fno-math-errno",
+    "-fopenmp",
+    "-Ishared",
+    "-mavx2",
+    "-ffp-contract=off",
+    "engines/geode/src/cathedral_v3.cpp",
+    "-o",
+    "/mnt/data/execution_repair/CYBR_SCENES_R2/build/geode_r2"
+  ],
+  "cwd": "/mnt/data/execution_repair/CYBR_SCENES_R2",
+  "started_at": "2026-09-21T21:30:43.836918+00:00",
+  "started_unix": 1790026243.8369255,
+  "supervisor": {
+    "pid": 1381,
+    "start_ticks": 61048,
+    "boot_id": "6d4adc15-175c-4a7b-ab22-618f70e77433",
+    "pid_namespace": "pid:[4026532199]"
+  },
+  "log": "/mnt/data/execution_repair/CYBR_SCENES_R2/evidence/compile-geode.log",
+  "timeout_seconds": 14400,
+  "memory_budget_bytes": null,
+  "peak_tree_rss_bytes": 305680384,
+  "returncode": 0,
+  "completed": true,
+  "child": {
+    "pid": 1481,
+    "start_ticks": 62907,
+    "boot_id": "6d4adc15-175c-4a7b-ab22-618f70e77433",
+    "pid_namespace": "pid:[4026532199]"
+  },
+  "pid": 1481,
+  "heartbeat_at": "2026-09-21T21:30:49.102210+00:00",
+  "elapsed_seconds": 5.265373292999925,
+  "tree_rss_bytes": 0,
+  "descendant_count": 0,
+  "log_bytes": 0,
+  "log_silent_seconds": 5.265143632888794,
+  "finished_at": "2026-09-21T21:30:49.102287+00:00",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,225 @@
+{
+  "passed": true,
+  "checked_at": "2026-09-21T17:44:16.616011+00:00",
+  "browser": "/usr/bin/chromium",
+  "transport": "Playwright set_content of exact standalone HTML bytes; browser administrator policy blocks direct file/loopback navigation",
+  "runs": [
+    {
+      "layout": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1100
+      },
+      "scenes": [
+        {
+          "scene": "obsidian-reach",
+          "modes": [
+            "R2 filtered",
+            "R2 unfiltered",
+            "Native normals",
+            "Native depth",
+            "Earlier supplied image"
+          ]
+        },
+        {
+          "scene": "drowned-geode",
+          "modes": [
+            "R2 filtered",
+            "R2 unfiltered",
+            "Native normals",
+            "Native depth",
+            "Earlier supplied image"
+          ]
+        },
+        {
+          "scene": "sandstone-passage",
+          "modes": [
+            "R2 filtered",
+            "R2 unfiltered",
+            "Native normals",
+            "Native depth",
+            "Earlier supplied image"
+          ]
+        },
+        {
+          "scene": "fernwater",
+          "modes": [
+            "R2 filtered",
+            "R2 unfiltered",
+            "Native normals",
+            "Native depth",
+            "Earlier supplied image"
+          ]
+        },
+        {
+          "scene": "basalt-tide",
+          "modes": [
+            "R2 filtered",
+            "R2 unfiltered",
+            "Native normals",
+            "Native depth",
+            "Earlier supplied image"
+          ]
+        },
+        {
+          "scene": "desert-hot-springs",
+          "modes": [
+            "R2 filtered",
+            "R2 unfiltered",
+            "Native normals",
+            "Native depth",
+            "Earlier supplied image"
+          ]
+        }
+      ],
+      "javascript_errors": [],
+      "horizontal_overflow": false,
+      "passed": true
+    },
+    {
+      "layout": "mobile",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "scenes": [
+        {
+          "scene": "obsidian-reach",
+          "modes": [
+            "R2 filtered",
+            "R2 unfiltered",
+            "Native normals",
+            "Native depth",
+            "Earlier supplied image"
+          ]
+        },
+        {
+          "scene": "drowned-geode",
+          "modes": [
+            "R2 filtered",
+            "R2 unfiltered",
+            "Native normals",
+            "Native depth",
+            "Earlier supplied image"
+          ]
+        },
+        {
+          "scene": "sandstone-passage",
+          "modes": [
+            "R2 filtered",
+            "R2 unfiltered",
+            "Native normals",
+            "Native depth",
+            "Earlier supplied image"
+          ]
+        },
+        {
+          "scene": "fernwater",
+          "modes": [
+            "R2 filtered",
+            "R2 unfiltered",
+            "Native normals",
+            "Native depth",
+            "Earlier supplied image"
+          ]
+        },
+        {
+          "scene": "basalt-tide",
+          "modes": [
+            "R2 filtered",
+            "R2 unfiltered",
+            "Native normals",
+            "Native depth",
+            "Earlier supplied image"
+          ]
+        },
+        {
+          "scene": "desert-hot-springs",
+          "modes": [
+            "R2 filtered",
+            "R2 unfiltered",
+            "Native normals",
+            "Native depth",
+            "Earlier supplied image"
+          ]
+        }
+      ],
+      "javascript_errors": [],
+      "horizontal_overflow": false,
+      "passed": true
+    },
+    {
+      "layout": "standalone-offline",
+      "viewport": {
+        "width": 1100,
+        "height": 900
+      },
+      "scenes": [
+        {
+          "scene": "obsidian-reach",
+          "modes": [
+            "R2 filtered",
+            "R2 unfiltered",
+            "Native normals",
+            "Native depth",
+            "Earlier supplied image"
+          ]
+        },
+        {
+          "scene": "drowned-geode",
+          "modes": [
+            "R2 filtered",
+            "R2 unfiltered",
+            "Native normals",
+            "Native depth",
+            "Earlier supplied image"
+          ]
+        },
+        {
+          "scene": "sandstone-passage",
+          "modes": [
+            "R2 filtered",
+            "R2 unfiltered",
+            "Native normals",
+            "Native depth",
+            "Earlier supplied image"
+          ]
+        },
+        {
+          "scene": "fernwater",
+          "modes": [
+            "R2 filtered",
+            "R2 unfiltered",
+            "Native normals",
+            "Native depth",
+            "Earlier supplied image"
+          ]
+        },
+        {
+          "scene": "basalt-tide",
+          "modes": [
+            "R2 filtered",
+            "R2 unfiltered",
+            "Native normals",
+            "Native depth",
+            "Earlier supplied image"
+          ]
+        },
+        {
+          "scene": "desert-hot-springs",
+          "modes": [
+            "R2 filtered",
+            "R2 unfiltered",
+            "Native normals",
+            "Native depth",
+            "Earlier supplied image"
+          ]
+        }
+      ],
+      "javascript_errors": [],
+      "horizontal_overflow": false,
+      "passed": true
+    }
+  ],
+  "scope": "HTML image inspection controls only; not mobile 3D renderer validation."
+}

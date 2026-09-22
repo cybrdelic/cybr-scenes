@@ -1,0 +1,4 @@
+[2026-09-21T17:07:20.278090+00:00] compile-obsidian: /usr/bin/g++ -std=c++17 -O3 -march=native -fno-math-errno -fopenmp -Ishared -Iengines/obsidian/include engines/obsidian/src/render.cpp -o /mnt/data/CYBR_SCENES_R2/build/obsidian_r2
+[2026-09-21T17:07:25.348613+00:00] render: /mnt/data/CYBR_SCENES_R2/build/obsidian_r2 /mnt/data/CYBR_SCENES_R2/geometry-r2/obsidian/scene.bin /mnt/data/CYBR_SCENES_R2/renders/obsidian-reach/hero/hero 1280 560 64 0 7
+ERROR: Command failed (143), /mnt/data/CYBR_SCENES_R2/renders/obsidian-reach/hero/render.log:
+Building 6210833 CYBR LIGHT primitives

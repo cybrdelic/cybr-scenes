@@ -1,0 +1,34 @@
+drowned-geode: 0/3655632 triangles
+drowned-geode: 960000/3655632 triangles
+drowned-geode: 1920000/3655632 triangles
+drowned-geode: 2880000/3655632 triangles
+{
+  "scene": "drowned-geode",
+  "source_sha256": "74ece0fd45bf4ffddfbc42850645730230dd798bc4058ff82cfc3a02c834a56c",
+  "result_sha256": "c1252381a8745e97a83dc619410ccea4185494aaf0dbd82eff5c6d69847052b9",
+  "tool_sha256": "58e4475a8231b0ab4f31bc2960ddf055d8baa82a107c24658ab83b338bd7438c",
+  "triangles": 3655632,
+  "changed_vertex_records": 9210492,
+  "curled_litter_triangles": 0,
+  "max_displacement_m": 0.030639540404081345,
+  "minimum_jacobian_determinant": 0.8229695558547974,
+  "water_records_unchanged": true,
+  "bounds_min": [
+    -18.010995864868164,
+    -20.11254119873047,
+    -7.0
+  ],
+  "bounds_max": [
+    19.00586700439453,
+    55.07025909423828,
+    18.288820266723633
+  ],
+  "primitive_order_preserved": true,
+  "material_ids_and_uvs_preserved": true,
+  "finite": true,
+  "new_normal_method": "Exact inverse-transpose of continuous deformation Jacobian; normalized",
+  "source": "engines/geode/assets/built_v3/scene.meshbin",
+  "result": "geometry-r2/geode/scene.meshbin",
+  "seconds": 8.52106202799996,
+  "image_generation": false
+}

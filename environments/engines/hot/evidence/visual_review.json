@@ -1,0 +1,38 @@
+{
+  "review_complete": true,
+  "reviewed_utc": "2026-09-14T23:48:48.878317+00:00",
+  "review_type": "Direct model visual inspection of actual completed frames and native-resolution crops. Not a human panel, calibrated perceptual benchmark, or a numerical photorealism certificate.",
+  "photorealism_target_met": false,
+  "major_photorealism_jump_demonstrated": false,
+  "larger_structural_change_visible_than_V10": true,
+  "all_requested_visual_failures_resolved": false,
+  "reviewed_image_sha256": {
+    "final.png": "1a2fba20de75ca540562b631b4275820c11622bf7f160775de64f664b706a9d4",
+    "final_raw.png": "ce45d5d30f43ba0d4e9fee1559712fc248472a1bc13523e4e87c75629c69bc0a",
+    "previous_lighting.png": "579cba13531dcf192241a81792060995768b543685ba09009ea895aaee945e1f",
+    "shoreline.png": "f30915ddef13bfe0bf6e4edf3db770694e3148da63f97bc0c0ca92a8b6ef82ee",
+    "final_crop_rock.png": "ddc7b88e19d2897c4e5b4b1b84a081d9dfe73c2d4d6aa051cd700540c4ebbded",
+    "final_crop_ground.png": "c96bda97156d96ca34ff1704c2332e7961446c2385f50d3b15cb25202302d7e4",
+    "final_crop_mountain.png": "6c29f0457f035ed32587bf8aee9a6425a251af2c783819912fa838ba761d3901"
+  },
+  "comparison": "The original wide camera is retained. A separately executed 1200x800 comparison restores V10 sun direction, exposure, white balance, sample budgets and opaque filter blend. It keeps V11 geometry, materials and atmosphere implementation, and is not a geometry-only ablation.",
+  "visible_changes": [
+    "The previously broad smooth mountains now have more irregular silhouettes, ridges, spurs and incision.",
+    "The large right-hand rocks are visibly fractured and surface-damaged rather than the V10 rounded, camouflage-colored forms.",
+    "Near-shore vegetation is larger and more numerous, with stems and attached leaves rather than mostly distant sparse plants.",
+    "The foreground has more resolved relief and fragments; the final image is natively 1920x1280 rather than V10 1200x800."
+  ],
+  "remaining_failures": [
+    "The wide frame still reads as a procedurally constructed environment rather than a photograph. Increased detail and changed silhouettes do not establish the requested photographic jump.",
+    "The opaque foreground and shoreline still resemble one lumpy or clay-like substrate. Native-resolution crops expose smooth rounded relief and insufficient material-specific surface structure between stones.",
+    "Hero-rock surfaces are still overly uniform in hue and generic pitting. More geometric damage does not provide convincing distinct geology.",
+    "The mountains retain repetitive local relief and nearly uniform brown material treatment. They lack convincing differentiation between exposed formations, talus and alluvial deposits.",
+    "The plants remain recognizably procedural and their twig/leaf patterns repeat across the scene.",
+    "The pool has an overly designed-looking basin/shelf transition and broad repeated-looking illumination patterns. No all-root reference caustics validation was performed.",
+    "The independent shoreline view does not solve the problem: it magnifies the clay-like ground and generic fractured fragments. It is retained as a diagnostic view, not presented as a more photorealistic substitute for the wide landscape."
+  ],
+  "unfiltered_outputs": "Saved native RGB and sixteen-band radiance, with contribution clamping disabled. The unfiltered PNG still uses the declared display exposure, white balance and tone transform.",
+  "postprocessing": "Two geometry-guided non-neural radiance-filter passes, with additional sky-only filtering. The specified sediment/crust blend retains half of the unfiltered residual. No generative enhancement, extra grain, photographic backplate or upscaling.",
+  "rejected_test": "A different sun direction with procedural cloud lighting was actually rendered as light_study and rejected because its visible cloud shapes and reflection stripe were less natural. It is not included among finished deliverables.",
+  "github_push": false
+}

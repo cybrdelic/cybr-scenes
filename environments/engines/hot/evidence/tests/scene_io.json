@@ -1,0 +1,8 @@
+{
+  "scope": "Streamed archive hashes, exact round-trip, ownership, tamper detection; no visual-quality assertion",
+  "stream_hash_matches_whole_file_for_4_chunk_sizes": true,
+  "round_trip_exact": true,
+  "loaded_arrays_independent": true,
+  "tampering_rejected": true,
+  "passed": true
+}

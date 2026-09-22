@@ -1,0 +1,55 @@
+[
+  {
+    "scene": "obsidian-reach",
+    "state": "succeeded",
+    "started_at": "2026-09-21T21:31:00.457052+00:00",
+    "result": {
+      "passed": true,
+      "tests": {
+        "finite_radiance": true,
+        "nonnegative_transport_radiance": true,
+        "dimensions_match": true,
+        "nonblank_image": true,
+        "no_invalid_reported_paths": true,
+        "positive_triangle_count": true,
+        "image_generation_disabled": true
+      },
+      "dimensions": [
+        384,
+        168
+      ],
+      "radiance_min": 0.00024233196745626628,
+      "radiance_max": 4.368161678314209,
+      "spectral_film": null,
+      "negative_linear_rgb_components": 0,
+      "rgb_note": "Spectral-to-XYZ-to-display-RGB conversion may produce negative out-of-gamut RGB components. Positivity is checked in the transported spectral bands when present, not in display RGB.",
+      "mean_linear_rgb": [
+        0.03127332776784897,
+        0.011904485523700714,
+        0.011302238330245018
+      ],
+      "png_sha256": "19ce9453b38ec6e47edad31a26fbd73ac02d2d0c948b76901ef282eb1c0e678e",
+      "raw_pfm_sha256": "08e6843577bbaac507100ae0424c5355dce4384d0cb6c4c3e21615dab136df89",
+      "native_metadata_sha256": "cb2f5d20ccc32e74f2fd25c746405b2f95d0adbff8fcd3c4a177308c371880f2",
+      "renderer_metadata": {
+        "renderer": "CYBR SCENES R2 / CYBR LIGHT CPU bridge, explicit HDR MIS",
+        "width": 384,
+        "height": 168,
+        "spp": 8,
+        "triangles": 6210833,
+        "seconds": 29.1567,
+        "path_depth": 7,
+        "gpu": false,
+        "image_generation": false,
+        "nonfinite_path_samples": 0,
+        "temperature_spectrum_preintegrated": true,
+        "fluid_simulation": false,
+        "native_metadata_file": "renders/execution-proof/obsidian-reach/hero/hero_render.json",
+        "image_generation_evidence": "Executed native C++ renderer; full recorded command and source build"
+      },
+      "scope": "Execution, finite radiance, dimensions, traceable geometry; not an aesthetic or physical-reference validation.",
+      "checked_at": "2026-09-21T21:31:36.118557+00:00"
+    },
+    "finished_at": "2026-09-21T21:31:36.679996+00:00"
+  }
+]

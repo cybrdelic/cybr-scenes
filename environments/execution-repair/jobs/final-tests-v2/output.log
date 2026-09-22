@@ -1,0 +1,44 @@
+test_atomic_json_and_suffix_read (test_execution_runtime.ExecutionTests.test_atomic_json_and_suffix_read) ... ok
+test_bad_checkpoint_does_not_replace_previous (test_execution_runtime.ExecutionTests.test_bad_checkpoint_does_not_replace_previous) ... ok
+test_batch_continues_after_failure (test_execution_runtime.ExecutionTests.test_batch_continues_after_failure) ... FAILED sandstone-passage: intentional
+ok
+test_cancel_request (test_execution_runtime.ExecutionTests.test_cancel_request) ... ok
+test_checkpoint_is_atomic_and_verifiable (test_execution_runtime.ExecutionTests.test_checkpoint_is_atomic_and_verifiable) ... ok
+test_detached_job_survives_short_launcher (test_execution_runtime.ExecutionTests.test_detached_job_survives_short_launcher) ... ok
+test_duplicate_job_and_path_traversal_refused (test_execution_runtime.ExecutionTests.test_duplicate_job_and_path_traversal_refused) ... ok
+test_identity_prevents_pid_reuse (test_execution_runtime.ExecutionTests.test_identity_prevents_pid_reuse) ... ok
+test_legacy_command_receipt_is_preserved (test_execution_runtime.ExecutionTests.test_legacy_command_receipt_is_preserved) ... [2026-09-21T21:30:32.147233+00:00] STEP_START native: /opt/pyvenv/bin/python -c print("ok")
+[2026-09-21T21:30:32.902639+00:00] STEP_END native: succeeded (0.75s)
+ok
+test_live_lock_and_stale_recovery (test_execution_runtime.ExecutionTests.test_live_lock_and_stale_recovery) ... ok
+test_missing_cwd_fails_before_job_creation (test_execution_runtime.ExecutionTests.test_missing_cwd_fails_before_job_creation) ... ok
+test_missing_executable_is_recorded (test_execution_runtime.ExecutionTests.test_missing_executable_is_recorded) ... ok
+test_missing_supervisor_becomes_interrupted (test_execution_runtime.ExecutionTests.test_missing_supervisor_becomes_interrupted) ... ok
+test_nested_session_child_is_stopped (test_execution_runtime.ExecutionTests.test_nested_session_child_is_stopped) ... ok
+test_nonzero_is_not_success (test_execution_runtime.ExecutionTests.test_nonzero_is_not_success) ... ok
+test_owner_death_releases_lock (test_execution_runtime.ExecutionTests.test_owner_death_releases_lock) ... ok
+test_repeat_attempt_has_fresh_log_and_preserves_history (test_execution_runtime.ExecutionTests.test_repeat_attempt_has_fresh_log_and_preserves_history) ... ok
+test_resource_budget_preempts_large_job (test_execution_runtime.ExecutionTests.test_resource_budget_preempts_large_job) ... ok
+test_success_and_stderr_capture (test_execution_runtime.ExecutionTests.test_success_and_stderr_capture) ... ok
+test_thread_budgets_agree (test_execution_runtime.ExecutionTests.test_thread_budgets_agree) ... ok
+test_timeout_is_explicit (test_execution_runtime.ExecutionTests.test_timeout_is_explicit) ... ok
+test_hot_sun_flag_uses_native_two_argument_form (test_foliage_filter.FoliageTests.test_hot_sun_flag_uses_native_two_argument_form) ... ok
+test_isolated_zero_sample_leaf_is_not_locked_black (test_foliage_filter.FoliageTests.test_isolated_zero_sample_leaf_is_not_locked_black) ... ok
+test_two_sided_constant_radiance_is_preserved (test_foliage_filter.FoliageTests.test_two_sided_constant_radiance_is_preserved) ... ok
+test_unrelated_material_and_sky_are_untouched (test_foliage_filter.FoliageTests.test_unrelated_material_and_sky_are_untouched) ... ok
+test_inverse_transpose (test_geometry.GeometryTests.test_inverse_transpose) ... ok
+test_inversion_is_rejected (test_geometry.GeometryTests.test_inversion_is_rejected) ... ok
+test_litter_endpoints (test_geometry.GeometryTests.test_litter_endpoints) ... ok
+test_native_layout_headers (test_geometry.GeometryTests.test_native_layout_headers) ... ok
+test_six_noninverting_world_deformations (test_geometry.GeometryTests.test_six_noninverting_world_deformations) ... ok
+test_wave_gradient (test_geometry.GeometryTests.test_wave_gradient) ... ok
+test_disk_spool_and_exact_native_roundtrip (test_geometry.StreamAssemblyTests.test_disk_spool_and_exact_native_roundtrip) ... ok
+test_albedo_remodulation_identity_and_exclusion (test_pipeline.PipelineTests.test_albedo_remodulation_identity_and_exclusion) ... ok
+test_existing_lock_is_not_deleted (test_pipeline.PipelineTests.test_existing_lock_is_not_deleted) ... ok
+test_negative_display_rgb_is_not_negative_spectral_energy (test_pipeline.PipelineTests.test_negative_display_rgb_is_not_negative_spectral_energy) ... ok
+test_scene_registry_complete (test_pipeline.PipelineTests.test_scene_registry_complete) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 12.439s
+
+OK

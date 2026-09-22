@@ -1,0 +1,12 @@
+{
+ "samples": 200000,
+ "valid": 199982,
+ "finite_errors": 0,
+ "transmitted_samples": 190568,
+ "radiance_integral": 0.4457487177,
+ "reflection_integral": 0.04706614529,
+ "transmission_reciprocity_relative_max": 0.001934051514,
+ "smooth_limit_integral": 0.4451936772,
+ "smooth_limit_expected": 0.445160944,
+ "passed": true
+}

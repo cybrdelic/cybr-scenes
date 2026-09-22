@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "/mnt/data/CYBR_SCENES_R2/engines/geo/cybr-geo/examples/three_scenes/finish.py",
+    "/mnt/data/CYBR_SCENES_R2/renders/basalt-tide/hero/hero",
+    "--passes",
+    "2",
+    "--sky-passes",
+    "2",
+    "--white-balance",
+    "6200",
+    "--opaque-filter-strength",
+    "0.4"
+  ],
+  "cwd": "engines/geo",
+  "started_at": "2026-09-21T17:03:23.303460+00:00",
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "2",
+    "NUMBA_NUM_THREADS": "4",
+    "CYBR_SURFACE_ATLAS": "/mnt/data/CYBR_SCENES_R2/assets/mineral_detail.cdt"
+  },
+  "returncode": 0,
+  "seconds": 8.173641279000094,
+  "finished_at": "2026-09-21T17:03:31.477052+00:00",
+  "log_sha256": "5f1a93b66ca4065db4d9e5e4d1c5372c475ef0befc53ec93429fbe0d82769e3b"
+}

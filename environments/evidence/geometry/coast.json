@@ -1,0 +1,30 @@
+{
+  "scene": "basalt-tide",
+  "source_sha256": "20d901557aa0f54b918711dbcddbe92dea8dbe52eec4f951f7bdd2aa3927fec1",
+  "result_sha256": "03bbb8420c81331e76324397d7ca4163bd3833b282797e4905b2d02179d22426",
+  "tool_sha256": "58e4475a8231b0ab4f31bc2960ddf055d8baa82a107c24658ab83b338bd7438c",
+  "triangles": 11644696,
+  "changed_vertex_records": 24418104,
+  "curled_litter_triangles": 0,
+  "max_displacement_m": 0.02023524045944214,
+  "minimum_jacobian_determinant": 0.8523979187011719,
+  "water_records_unchanged": true,
+  "bounds_min": [
+    -23.0,
+    -17.0,
+    -45.0
+  ],
+  "bounds_max": [
+    1050.0,
+    2000.0,
+    9.440436363220215
+  ],
+  "primitive_order_preserved": true,
+  "material_ids_and_uvs_preserved": true,
+  "finite": true,
+  "new_normal_method": "Exact inverse-transpose of continuous deformation Jacobian; normalized",
+  "source": "geometry/coast/scene.meshbin",
+  "result": "geometry-r2/coast/scene.meshbin",
+  "seconds": 25.18087764899974,
+  "image_generation": false
+}

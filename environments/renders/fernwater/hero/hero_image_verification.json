@@ -1,0 +1,60 @@
+{
+  "source": "Native spectral radiance, not an image-generation model",
+  "resolution": [
+    960,
+    640
+  ],
+  "guided_filter_steps": [
+    1,
+    2
+  ],
+  "sky_only_filter_steps": [
+    2,
+    4
+  ],
+  "sky_filter_pixel_count": 31670,
+  "sky_filter_mask": "Negative first-opaque-surface material guide only; no landscape pixel changes in sky-only passes",
+  "filter_space": "Linear scene-referred RGB after 16-band CIE integration",
+  "opaque_filter_strength": 0.4,
+  "opaque_residual_preserved_fraction": 0.6,
+  "opaque_policy_pixel_count": 43113,
+  "opaque_mask": "Center-ray budget equals ordinary spp and sediment/crust material 0 or 4; disabled if water budget is not higher",
+  "opaque_policy": "Sediment/crust only: convex native/filtered radiance blend, not sharpening or detail synthesis; other materials retain full filtering",
+  "postprocess_source_sha256": "a529a0fbd384e5f0a417c9b2b6a8130e4e6cc3fa680e7dc6702a41bb8c4582b2",
+  "raw_radiance_finite": true,
+  "raw_radiance_min": -0.0006471152883023024,
+  "raw_radiance_max": 13.793305397033691,
+  "mean_linear_rgb": [
+    0.08635064214468002,
+    0.08144170045852661,
+    0.06119268387556076
+  ],
+  "png_round_trip_exact": true,
+  "png_sha256": "a096b4ec0e37a8cbb55277f4503f3ce3e2886d18aa839f707047381294e729d2",
+  "exposure": 2.3499999,
+  "camera_white_balance_K": 6100.0,
+  "display_white_rgb": [
+    1.079541195269498,
+    0.9807642189313527,
+    0.9569319229581734
+  ],
+  "toe_parameter": 0.035,
+  "added_grain": false,
+  "upscaling": false,
+  "photo_compositing": false,
+  "mean_linear_filter_change": 0.01913590356707573,
+  "isolated_sky_spike_filter_enabled": true,
+  "isolated_sky_spike_pixels": 0,
+  "sky_spike_policy": "Biased non-neural display filter only; high-variance isolated 20x local peaks; raw radiance unchanged; water, geometry and sun-disc neighbourhood excluded",
+  "r2_display_filter": "Primary-opaque albedo demodulation, guide-filtered irradiance, remodulation by the actual native albedo AOV",
+  "finishing_threads": 2,
+  "demodulation_pixels": 460773,
+  "demodulation_albedo_floor": 0.075,
+  "demodulation_excludes_primary_water": true,
+  "new_filter_source_sha256": "903b8448185bc851f37584d3f813933a452b5ec3d13d6ef17ae8a290fa3d5543",
+  "raw_radiance_changed": false,
+  "reference_image_input": false,
+  "foliage_two_sided_filter": true,
+  "foliage_filter_source_sha256": "dfee179d547ebcdb0296af52e6107fb15c843d14705ec3299c82983da84a3610",
+  "limitation": "Biased non-neural display denoising; guide albedo is not a diffuse/specular decomposition."
+}

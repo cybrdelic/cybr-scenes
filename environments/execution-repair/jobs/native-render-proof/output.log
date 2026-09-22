@@ -1,0 +1,44 @@
+[2026-09-21T21:26:37.974465+00:00] STEP_START build-obsidian-reach: /opt/pyvenv/bin/python /mnt/data/execution_repair/CYBR_SCENES_R2/engines/obsidian/build_scene.py
+[2026-09-21T21:27:22.835833+00:00] STEP_END build-obsidian-reach: succeeded (44.86s)
+obsidian-reach: 0/6210833 triangles
+obsidian-reach: 960000/6210833 triangles
+obsidian-reach: 1920000/6210833 triangles
+obsidian-reach: 2880000/6210833 triangles
+obsidian-reach: 3840000/6210833 triangles
+obsidian-reach: 4800000/6210833 triangles
+obsidian-reach: 5760000/6210833 triangles
+{
+  "scene": "obsidian-reach",
+  "source_sha256": "4bea76ac217cca720f4fc1acd857c0cf7eb0ce40927304a95e07dd6bc83310a3",
+  "result_sha256": "002d180967afdc91a649deb33de85b62fc5d8d6d41fca9c4b6bf9e7dbfd62d23",
+  "tool_sha256": "58e4475a8231b0ab4f31bc2960ddf055d8baa82a107c24658ab83b338bd7438c",
+  "triangles": 6210833,
+  "changed_vertex_records": 15984381,
+  "curled_litter_triangles": 0,
+  "max_displacement_m": 0.024721551686525345,
+  "minimum_jacobian_determinant": 0.95653235912323,
+  "water_records_unchanged": true,
+  "bounds_min": [
+    -14593.0205078125,
+    -0.7704278826713562,
+    -30.0
+  ],
+  "bounds_max": [
+    14593.0205078125,
+    1874.8203125,
+    13177.8779296875
+  ],
+  "primitive_order_preserved": true,
+  "material_ids_and_uvs_preserved": true,
+  "finite": true,
+  "new_normal_method": "Exact inverse-transpose of continuous deformation Jacobian; normalized",
+  "source": "engines/obsidian/assets/scene.bin",
+  "result": "geometry-r2/obsidian/scene.bin",
+  "seconds": 6.307399685999997,
+  "image_generation": false
+}
+[2026-09-21T21:27:29.157159+00:00] STEP_START render: /mnt/data/execution_repair/CYBR_SCENES_R2/build/obsidian_r2 /mnt/data/execution_repair/CYBR_SCENES_R2/geometry-r2/obsidian/scene.bin /mnt/data/execution_repair/CYBR_SCENES_R2/renders/execution-proof/obsidian-reach/hero/hero 384 168 8 0 7
+[2026-09-21T21:28:01.518241+00:00] STEP_END render: succeeded (32.36s)
+[2026-09-21T21:28:01.520704+00:00] STEP_START finish: /opt/pyvenv/bin/python /mnt/data/execution_repair/CYBR_SCENES_R2/engines/obsidian/finish_v4.py /mnt/data/execution_repair/CYBR_SCENES_R2/renders/execution-proof/obsidian-reach/hero/hero --exposure 5.5 --passes 3
+[2026-09-21T21:28:03.793508+00:00] STEP_END finish: succeeded (2.27s)
+RENDER VERIFIED: obsidian-reach 384x168 8 spp -> /mnt/data/execution_repair/CYBR_SCENES_R2/renders/execution-proof/obsidian-reach/hero/hero.png

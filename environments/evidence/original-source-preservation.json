@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "files": [
+    {
+      "path": "geo/cybr-geo/native/fernwater_materials_r6.h",
+      "archive": "CYBR_Fernwater_R6_Source.zip",
+      "archive_entry": "CYBR_Fernwater_R6/cybr-geo/native/fernwater_materials_r6.h",
+      "matched": true,
+      "original_sha256": "176e72ee04141ddf2fda38ee969304614c530fc14fbac86dbfd452b5179467e7",
+      "backup_sha256": "176e72ee04141ddf2fda38ee969304614c530fc14fbac86dbfd452b5179467e7"
+    },
+    {
+      "path": "geo/cybr-geo/native/spectral_scenes.cpp",
+      "archive": "CYBR_Fernwater_R6_Source.zip",
+      "archive_entry": "CYBR_Fernwater_R6/cybr-geo/native/spectral_scenes.cpp",
+      "matched": true,
+      "original_sha256": "3e3cffb51920baa00b2236ddbf9ed0f6d907564a8f815a0dab73fdccc8bbc276",
+      "backup_sha256": "3e3cffb51920baa00b2236ddbf9ed0f6d907564a8f815a0dab73fdccc8bbc276"
+    },
+    {
+      "path": "geo/cybr-geo/native/formation_materials_r2.h",
+      "archive": "CYBR_Fernwater_R6_Source.zip",
+      "archive_entry": "CYBR_Fernwater_R6/cybr-geo/native/formation_materials_r2.h",
+      "matched": true,
+      "original_sha256": "466aca00e0bd95679699f70df4631a0c062a5d71e8e2763c08c5d15c9fb391c8",
+      "backup_sha256": "466aca00e0bd95679699f70df4631a0c062a5d71e8e2763c08c5d15c9fb391c8"
+    },
+    {
+      "path": "obsidian/src/render.cpp",
+      "archive": "Obsidian_Reach_IV_Source.zip",
+      "archive_entry": "Obsidian_Reach_IV/src/render.cpp",
+      "matched": true,
+      "original_sha256": "97cef4c13e7af27a5c26b57bbb9b041c65cc56355b206b3544539dc5393d7bc2",
+      "backup_sha256": "97cef4c13e7af27a5c26b57bbb9b041c65cc56355b206b3544539dc5393d7bc2"
+    },
+    {
+      "path": "obsidian/src/scene_maps.hpp",
+      "archive": "Obsidian_Reach_IV_Source.zip",
+      "archive_entry": "Obsidian_Reach_IV/src/scene_maps.hpp",
+      "matched": true,
+      "original_sha256": "a922b800f200cc2941b42d9a5e6789ba496c565b4392d2eaf8a19acabfcc7c0f",
+      "backup_sha256": "a922b800f200cc2941b42d9a5e6789ba496c565b4392d2eaf8a19acabfcc7c0f"
+    },
+    {
+      "path": "hot/cybr-geo/native/spectral_desert.cpp",
+      "archive": "CYBR_GEO_Hot_Springs_V11_Source.zip",
+      "archive_entry": "CYBR_GEO_Hot_Springs_V11/cybr-geo/native/spectral_desert.cpp",
+      "matched": true,
+      "original_sha256": "4d89bbdb8317928d6ee9d95286c451240b05fc2b1758d582ed326363b812bf95",
+      "backup_sha256": "4d89bbdb8317928d6ee9d95286c451240b05fc2b1758d582ed326363b812bf95"
+    },
+    {
+      "path": "hot/cybr-geo/native/landscape_materials_v11.h",
+      "archive": "CYBR_GEO_Hot_Springs_V11_Source.zip",
+      "archive_entry": "CYBR_GEO_Hot_Springs_V11/cybr-geo/native/landscape_materials_v11.h",
+      "matched": true,
+      "original_sha256": "f6f4249369d2ef92892f0e0e28c3af6204342fff7a208dd0dcf4247eeaa65374",
+      "backup_sha256": "f6f4249369d2ef92892f0e0e28c3af6204342fff7a208dd0dcf4247eeaa65374"
+    },
+    {
+      "path": "hot/cybr-geo/examples/desert_hot_springs/build_scene.py",
+      "archive": "CYBR_GEO_Hot_Springs_V11_Source.zip",
+      "archive_entry": "CYBR_GEO_Hot_Springs_V11/cybr-geo/examples/desert_hot_springs/build_scene.py",
+      "matched": true,
+      "original_sha256": "2ff480d90bdfcc33d8823494e40abaef83613aef9fe99eef1e9662b499e6e18a",
+      "backup_sha256": "2ff480d90bdfcc33d8823494e40abaef83613aef9fe99eef1e9662b499e6e18a"
+    },
+    {
+      "path": "geode/src/cathedral_v3.cpp",
+      "archive": "CYBR_Drowned_Geode_V3_Source.zip",
+      "archive_entry": "CYBR_Drowned_Geode_V3/src/cathedral_v3.cpp",
+      "matched": true,
+      "original_sha256": "48821b75515694a661e76d6cd8aa0ee3dfdeefc0aaae70dbe8790b1b76e237fb",
+      "backup_sha256": "48821b75515694a661e76d6cd8aa0ee3dfdeefc0aaae70dbe8790b1b76e237fb"
+    }
+  ]
+}

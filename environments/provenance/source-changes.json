@@ -1,0 +1,56 @@
+[
+  {
+    "path": "engines/geo/cybr-geo/native/fernwater_materials_r6.h",
+    "before_sha256": "176e72ee04141ddf2fda38ee969304614c530fc14fbac86dbfd452b5179467e7",
+    "after_sha256": "e3bff23f0ddafa3b7034d935e8b59183e832338680bdc37c3dabd03f530ec2ee",
+    "changed": true
+  },
+  {
+    "path": "engines/geo/cybr-geo/native/formation_materials_r2.h",
+    "before_sha256": "466aca00e0bd95679699f70df4631a0c062a5d71e8e2763c08c5d15c9fb391c8",
+    "after_sha256": "45248fef143b0fae35cea2bc5f66f397cf45bb3934044936ffb5162ccb1e4b7d",
+    "changed": true
+  },
+  {
+    "path": "engines/geo/cybr-geo/native/spectral_scenes.cpp",
+    "before_sha256": "3e3cffb51920baa00b2236ddbf9ed0f6d907564a8f815a0dab73fdccc8bbc276",
+    "after_sha256": "fc97170e2b11a4e5dd01e7ced4cb3b9a26469e44e70f8758a8edb32fd5ea6263",
+    "changed": true
+  },
+  {
+    "path": "engines/geode/src/cathedral_v3.cpp",
+    "before_sha256": "48821b75515694a661e76d6cd8aa0ee3dfdeefc0aaae70dbe8790b1b76e237fb",
+    "after_sha256": "c39f72274b97e34d84d793916d208461b4ab87cb632dc88a8f0f2724fc3c52d4",
+    "changed": true
+  },
+  {
+    "path": "engines/hot/cybr-geo/examples/desert_hot_springs/build_scene.py",
+    "before_sha256": "2ff480d90bdfcc33d8823494e40abaef83613aef9fe99eef1e9662b499e6e18a",
+    "after_sha256": "fcbdbac5b58c46856802b02c784975bb4c397c1f4744494f88108d0b64b3f57b",
+    "changed": true
+  },
+  {
+    "path": "engines/hot/cybr-geo/native/landscape_materials_v11.h",
+    "before_sha256": "f6f4249369d2ef92892f0e0e28c3af6204342fff7a208dd0dcf4247eeaa65374",
+    "after_sha256": "70c532094ccf82ef5eecaea7b4a94e2ac546dfbba014dba0b01f0ac7704285f2",
+    "changed": true
+  },
+  {
+    "path": "engines/hot/cybr-geo/native/spectral_desert.cpp",
+    "before_sha256": "4d89bbdb8317928d6ee9d95286c451240b05fc2b1758d582ed326363b812bf95",
+    "after_sha256": "d50c5d18fa289d7899315b7732e0a4c05451821325a179659420a238c8c8d0bb",
+    "changed": true
+  },
+  {
+    "path": "engines/obsidian/src/render.cpp",
+    "before_sha256": "97cef4c13e7af27a5c26b57bbb9b041c65cc56355b206b3544539dc5393d7bc2",
+    "after_sha256": "b6cf76099a143f674fe797819f5350e9b67481bdf0ebd0bf7a2ad7a6460894ee",
+    "changed": true
+  },
+  {
+    "path": "engines/obsidian/src/scene_maps.hpp",
+    "before_sha256": "a922b800f200cc2941b42d9a5e6789ba496c565b4392d2eaf8a19acabfcc7c0f",
+    "after_sha256": "8f5af16a81ba394ab791d3cd824a097a74853508d89d36e11de6762278a3957d",
+    "changed": true
+  }
+]

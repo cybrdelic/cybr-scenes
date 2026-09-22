@@ -1,0 +1,404 @@
+--- src/cavern_v1.cpp	2026-09-21 00:15:34.204878154 +0000
++++ src/cavern.cpp	2026-09-21 00:20:44.181717436 +0000
+@@ -4,6 +4,7 @@
+ // Sixteen spectral bands share paths until macro-quartz dispersion splits
+ // them. Water IOR is achromatic; its absorption remains wavelength dependent.
+ #include "spectral_geometry.h"
++#include "wide_bvh.h"
+ #include <array>
+ #include <iomanip>
+ #include <stdexcept>
+@@ -67,9 +68,9 @@
+     float y=0;
+     for(int k=0;k<NBANDS;k++){matching[k]=cie1931(WL0+(k+.5f)*DL)*DL;y+=matching[k].y;}
+     for(auto &c:matching)c=c/y;
+-    solar=blackbody(4700.f)*(7.5f/SUN_SOLID);
++    solar=blackbody(5000.f)*(8.0f/SUN_SOLID);
+     skyBlue=blackbody(6500.f);
+-    for(int k=0;k<NBANDS;k++)skyBlue.v[k]*=std::pow(550.f/(WL0+(k+.5f)*DL),3.7f);
++    for(int k=0;k<NBANDS;k++)skyBlue.v[k]*=std::pow(550.f/(WL0+(k+.5f)*DL),2.5f);
+     skyBlue*=1.f/xyz(skyBlue).y;skyHorizon=blackbody(7600.f);
+     whiteRGB=toRGB(blackbody(6500.f));
+     // Representative absorption controls [1/metre], not certified measurements.
+@@ -105,8 +106,8 @@
+     float edge=1+.082f*std::sin(3*ang+.7f+i)+.044f*std::sin(7*ang-1.4f)+.019f*std::sin(13*ang+i)+.021f*noise(p.x*1.7f,p.y*1.7f);
+     return std::sqrt(x*x+y*y)/edge;
+ }
+-float waterHeight(float x,float y,int){return .075f+.004f*std::sin(5.7f*x+2.1f*y)+.0022f*std::sin(-3.4f*x+8.1f*y+1.2f)+.0009f*std::sin(12.5f*x-4.3f*y+.4f);}
+-V waterNormal(float x,float y,int){float a=.004f*std::cos(5.7f*x+2.1f*y),b=.0022f*std::cos(-3.4f*x+8.1f*y+1.2f),c=.0009f*std::cos(12.5f*x-4.3f*y+.4f);return unit(V(-(5.7f*a-3.4f*b+12.5f*c),-(2.1f*a+8.1f*b-4.3f*c),1));}
++float waterHeight(float x,float y,int){return .075f+.010f*std::sin(1.25f*x+1.7f*y)+.004f*std::sin(-2.8f*x+3.3f*y+1.2f)+.0012f*std::sin(8.5f*x-2.3f*y+.4f);}
++V waterNormal(float x,float y,int){float a=.010f*std::cos(1.25f*x+1.7f*y),b=.004f*std::cos(-2.8f*x+3.3f*y+1.2f),c=.0012f*std::cos(8.5f*x-2.3f*y+.4f);return unit(V(-(1.25f*a-2.8f*b+8.5f*c),-(1.7f*a+3.3f*b-2.3f*c),1));}
+ float fresnelD(float cosine,float ei,float et){
+     cosine=clamp(cosine);float sin2=ei*ei/(et*et)*(1-cosine*cosine);if(sin2>=1)return 1;
+     float ct=std::sqrt(1-sin2),rs=(ei*cosine-et*ct)/(ei*cosine+et*ct),rp=(et*cosine-ei*ct)/(et*cosine+ei*ct);
+@@ -132,35 +133,22 @@
+ }
+ 
+ bool closest(const Ray&r,Hit&h){
+-    bool ok=meshHit(r,h);
++    bool ok=wideHit(r,h);
+     if(!useWater&&ok&&tris[h.tri].mat>=6&&tris[h.tri].mat<=7){
+         V origin=r.o+r.d*(h.t+EPS*4);float travelled=h.t+EPS*4;Hit next;
+         for(int i=0;i<8;i++){
+-            if(!meshHit(Ray(origin,r.d),next))return false;
++            if(!wideHit(Ray(origin,r.d),next))return false;
+             if(tris[next.tri].mat<6||tris[next.tri].mat>7){next.t+=travelled;h=next;return true;}
+             float step=next.t+EPS*4;origin+=r.d*step;travelled+=step;next=Hit();
+         }return false;
+     }return ok;
+ }
+-bool opaqueShadow(Ray r,float distance){
+-    for(int k=0;k<8;k++){
+-        Hit h;h.t=distance;if(!meshHit(r,h,true))return false;
+-        if(tris[h.tri].mat!=6 && tris[h.tri].mat!=7)return true;
+-        // meshHit(any=true) is only safe when ALL hits block. With transmissive
+-        // water, obtain the true closest hit before skipping its interface.
+-        h=Hit();h.t=distance;if(!meshHit(r,h))return false;
+-        int m=tris[h.tri].mat;
+-        if(m!=6&&m!=7)return true;
+-        float step=h.t+EPS*8;distance-=step;
+-        if(distance<=EPS)return false;
+-        r=Ray(r.o+r.d*step,r.d);
+-    }return true;
+-}
++bool opaqueShadow(Ray r,float distance){Hit h;h.t=distance;return wideHit(r,h,true,true);}
+ 
+ // Bounded, genuinely ray-integrated participating medium. This is a procedural
+ // density field, NOT a Navier-Stokes/thermal plume simulation or a 2-D overlay.
+ const V FOG_LO(-10,-14,.085f),FOG_HI(10,34,13.5f);
+-constexpr float STEAM_SCALE=1.f,MAJORANT=.024f,PHASE_G=.49f;
++constexpr float STEAM_SCALE=1.f,MAJORANT=.009f,PHASE_G=.49f,FOG_SIGMA=.0075f;
+ bool fogInterval(const Ray&r,float maximum,float &a,float &b){
+     a=0;b=maximum;
+     for(int k=0;k<3;k++){
+@@ -169,24 +157,14 @@
+         a=std::max(a,x);b=std::min(b,y);if(a>=b)return false;
+     }return b>a;
+ }
+-float steamDensity(V p){if(!useSteam)return 0;return .0075f*(.80f+.20f*noise(p*.35f))+.0015f*std::exp(-std::max(0.f,p.z)*1.4f);}
++float steamDensity(V){return useSteam?FOG_SIGMA:0.f;}
+ float sampleSteam(const Ray&r,float maxT,RNG&rng){
+-    if(!useSteam)return INF;float a,b;if(!fogInterval(r,maxT,a,b))return INF;
+-    float t=a;
+-    for(int k=0;k<1024;k++){
+-        t+=-std::log(std::max(1e-8f,1-rng.uniform()))/MAJORANT;
+-        if(t>=b)return INF;
+-        if(rng.uniform()<steamDensity(r.o+r.d*t)/MAJORANT)return t;
+-    }return INF;
+-}
+-float steamTransmittance(const Ray&r,float maxT,RNG&rng){
+-    if(!useSteam)return 1;float a,b;if(!fogInterval(r,maxT,a,b))return 1;
+-    float t=a,tr=1;
+-    for(int k=0;k<1024;k++){
+-        t+=-std::log(std::max(1e-8f,1-rng.uniform()))/MAJORANT;if(t>=b)return tr;
+-        tr*=std::max(0.f,1-steamDensity(r.o+r.d*t)/MAJORANT);
+-        if(tr<1.e-5f)return 0;
+-    }return tr;
++ if(!useSteam)return INF;float a,b;if(!fogInterval(r,maxT,a,b))return INF;
++ float t=a-std::log(std::max(1.e-9f,1-rng.uniform()))/FOG_SIGMA;return t<b?t:INF;
++}
++float steamTransmittance(const Ray&r,float maxT,RNG&){
++ if(!useSteam)return 1;float a,b;if(!fogInterval(r,maxT,a,b))return 1;
++ return std::exp(-FOG_SIGMA*(b-a));
+ }
+ const V ATM_LO(-1250,48,-.4f),ATM_HI(1250,1300,210);
+ constexpr float ATM_SIGMA=.00000000001f;
+@@ -282,7 +260,10 @@
+  m.color=tex.color*tint;m.rough=clamp(tex.rough,.4f,.93f);
+  if(material==0){
+   float weather=noise(V(p.x*.29f,p.y*.29f,p.z*.36f));
+-  m.color*=1.02f+.15f*weather;
++  m.color*=.98f+.21f*weather;
++  float z=p.z+.18f*fbm(V(p.x*.32f,p.y*.25f,p.z*.22f))+.07f*p.y;
++  float mineral=std::exp(-sqr(std::sin(z*3.25f))/.030f)*.17f;
++  m.color=m.color*(1-mineral)+V(.34f,.30f,.24f)*mineral;
+   // Green staining occurs only near the water. It is not an emissive material.
+   float algae=std::exp(-sqr((p.z-.45f)/.70f))*clamp(.5f+noise(p*.78f))*.27f;
+   m.color=m.color*(1-algae)+V(.066f,.092f,.026f)*algae;
+@@ -290,8 +271,10 @@
+  bool submerged=p.z<.085f;
+  float wet=submerged?1.f:clamp((.7f-p.z)*1.8f);
+  if(material==0)wet=std::max(wet,.26f*clamp(.35f+noise(V(p.x*1.4f,p.y*.55f,p.z*.075f))*1.6f));
+- m.color*=1-.2f*wet;m.rough=m.rough*(1-wet)+.24f*wet;
+- if(submerged)m.ior=1.5f/WATER_IOR;
++ m.color*=1-.2f*wet;m.rough=m.rough*(1-wet)+.31f*wet;
++ if(submerged){m.ior=1.5f/WATER_IOR;
++  if(material==1){float silt=.64f+.12f*noise(p*.7f);m.color=m.color*(1-silt)+V(.20f,.225f,.215f)*silt;m.rough=.78f;}
++ }
+  if(material==3){m.color=tint;m.rough=.36f;}
+  m.color=vmin(vmax(m.color,V(.002f)),V(.93f));return m;
+ }
+@@ -338,21 +321,35 @@
+ float misPower(float a,float b){return a*a/(a*a+b*b+1e-30f);}
+ float quartzIndex(float wavelength){float l2=sqr(wavelength*.001f);return std::sqrt(1.28604141f+1.07044083f*l2/(l2-.0100585997f)+1.10202242f*l2/(l2-100.f));}
+ Spec quartzAttenuation(float metres){Spec s;for(int k=0;k<NBANDS;k++){float w=WL0+(k+.5f)*DL;s.v[k]=std::exp(-metres*(.024f+.035f*std::exp(-.5f*sqr((w-430)/90))));}return s;}
++constexpr float WATER_SCATTER_RATE=.055f;
++struct WaterSkySample{V dir;Spec radiance;float pdf=1/(2*PI),branchProbability=0;bool valid=false;};
++WaterSkySample sampleWaterSky(V p,RNG&rng){
++ WaterSkySample o;float z=rng.uniform(),phi=2*PI*rng.uniform(),rr=std::sqrt(1-z*z);o.dir=V(rr*std::cos(phi),rr*std::sin(phi),z);
++ Hit hit;if(!wideHit(Ray(p,o.dir),hit)||tris[hit.tri].mat!=6)return o;
++ const auto &tr=tris[hit.tri];V n=unit(tr.n0*(1-hit.u-hit.v)+tr.n1*hit.u+tr.n2*hit.v);
++ if(dot(n,o.dir)>0)n=-n;
++ float f=fresnelD(-dot(o.dir,n),WATER_IOR,1);if(f>=1)return o;
++ V air=refractRay(o.dir,n,WATER_IOR);if(dot(air,air)<.5f)return o;
++ V q=p+o.dir*hit.t;Ray r(q-n*EPS*8,air);if(opaqueShadow(r,INF))return o;
++ o.branchProbability=(1-f)*std::exp(-WATER_SCATTER_RATE*hit.t);
++ o.radiance=environment(air,false)*attenuation(hit.t)*(sqr(WATER_IOR)*o.branchProbability*airTransmittance(r,INF,rng));o.valid=true;return o;
++}
+ bool splitting=true,clay=false;
+-Spec trace(Ray ray,RNG&rng,int maxDepth,float pixelCone,int band=-1,int startWater=-1,int startQuartz=0,int previousScatter=-2,int previousDelta=0,V previousPoint=V(),float previousPDF=0){
++Spec trace(Ray ray,RNG&rng,int maxDepth,float pixelCone,int band=-1,int startWater=-1,int startQuartz=0,int previousScatter=-2,int previousDelta=0,V previousPoint=V(),float previousPDF=0,int primarySplit=0,bool skipFirstFog=false,float travelled=0,Spec *reflectionOut=nullptr){
+  Spec L,throughput(1);if(band>=0){throughput=Spec();throughput.v[band]=1;}
+  int waterPool=startWater,quartzDepth=startQuartz,scatterWater=previousScatter,deltaCount=previousDelta;
+- V prev=previousPoint;float prevPdf=previousPDF;
++ V prev=previousPoint;float prevPdf=previousPDF,exitSkyMIS=1.f;uint32_t baseDimension=rng.dimension;
+  for(int depth=0;depth<maxDepth;depth++){
++  rng.dimension=baseDimension+uint32_t(depth)*32;
+   Hit h;bool found=closest(ray,h);
+   // Common-path deterministic wavelength splitting at the first dispersive
+   // interface. Bands share random numbers; no rainbow-noise hero roulette.
+   if(found&&tris[h.tri].mat==8&&band<0&&splitting&&!clay){
+-   Spec sum;uint64_t common=rng.state;
+-   for(int k=0;k<NBANDS;k++){RNG branch(0);branch.state=common;sum+=trace(ray,branch,maxDepth-depth,pixelCone,k,waterPool,quartzDepth,scatterWater,deltaCount,prev,prevPdf);}
++   Spec sum;RNG common=rng;
++   for(int k=0;k<NBANDS;k++){RNG branch=common;sum+=trace(ray,branch,maxDepth-depth,pixelCone,k,waterPool,quartzDepth,scatterWater,deltaCount,prev,prevPdf,0,skipFirstFog&&depth==0,travelled);}
+    return L+throughput*sum;
+   }
+-  constexpr float waterScatterRate=.055f;
++  constexpr float waterScatterRate=WATER_SCATTER_RATE;
+   if(waterPool>=0&&found&&!clay){
+    float st=-std::log(std::max(1e-8f,1-rng.uniform()))/waterScatterRate;
+    if(st<h.t){
+@@ -363,22 +360,23 @@
+       L+=throughput*solar*attenuation(dist)*(phaseHG(dot(ray.d,c.l),.62f)*SUN_SOLID*(1-fr)*WATER_IOR*WATER_IOR*c.jacobian*air*std::exp(-dist*waterScatterRate));
+      }
+     }
+-    V next=sampleHG(ray.d,rng,.62f);prev=p;prevPdf=phaseHG(dot(ray.d,next),.62f);scatterWater=0;deltaCount=0;ray=Ray(p,next);continue;
++    auto ws=sampleWaterSky(p,rng);if(ws.valid){float ph=phaseHG(dot(ray.d,ws.dir),.62f);L+=throughput*ws.radiance*(ph*misPower(ws.pdf,ph*ws.branchProbability)/ws.pdf);}
++    exitSkyMIS=1.f;V next=sampleHG(ray.d,rng,.62f);prev=p;prevPdf=phaseHG(dot(ray.d,next),.62f);scatterWater=0;deltaCount=0;ray=Ray(p,next);continue;
+    }
+   }
+-  float scatterT=(waterPool<0&&quartzDepth==0&&!clay)?sampleSteam(ray,found?h.t:INF,rng):INF;
++  float scatterT=(waterPool<0&&quartzDepth==0&&!clay&&!(skipFirstFog&&depth==0))?sampleSteam(ray,found?h.t:INF,rng):INF;
+   if(scatterT<(found?h.t:INF)){
+    V p=ray.o+ray.d*scatterT,l=sampleSun(rng);
+    if(!opaqueShadow(Ray(p,l),INF))L+=throughput*solar*(phaseHG(dot(ray.d,l))*SUN_SOLID*airTransmittance(Ray(p,l),INF,rng)*.995f);
+    V sky=samplePortal(p,rng);float pdf=portalPDF(p,sky),phase=phaseHG(dot(ray.d,sky));
+    if(pdf>0&&!opaqueShadow(Ray(p,sky),INF))L+=throughput*environment(sky,false)*(phase*airTransmittance(Ray(p,sky),INF,rng)*misPower(pdf,phase)/pdf);
+    V next=sampleHG(ray.d,rng);prev=p;prevPdf=phaseHG(dot(ray.d,next));
+-   throughput*=.995f;scatterWater=-1;deltaCount=0;ray=Ray(p,next);continue;
++   exitSkyMIS=1.f;throughput*=.995f;scatterWater=-1;deltaCount=0;ray=Ray(p,next);continue;
+   }
+   if(!found){
+    bool sunVisible=!(scatterWater==-1&&deltaCount==0)&&!(scatterWater>=0&&deltaCount==1);
+    float weight=(prevPdf>0&&deltaCount==0)?misPower(prevPdf,portalPDF(prev,ray.d)):1.f;
+-   L+=throughput*environment(ray.d,false)*weight;
++   L+=throughput*environment(ray.d,false)*(weight*exitSkyMIS);
+    if(sunVisible&&dot(ray.d,SUN)>=SUN_COS)L+=throughput*solar;
+    break;
+   }
+@@ -388,16 +386,27 @@
+   V n=unit(tri.n0*(1-h.u-h.v)+tri.n1*h.u+tri.n2*h.v);int mat=tri.mat;
+   if(!clay&&(mat==6||mat==8||mat==9)){
+    bool enter=dot(ray.d,gn)<0;if(dot(n,gn)<0)n=-n;if(dot(n,ray.d)>0)n=-n;
+-   if(mat==8||mat==9){Frame f(n);float q=std::sin(p.z*380.f+p.x*12.f)*.00065f;n=unit(n+f.t*q+f.b*(.0003f*std::sin(p.y*510.f+p.x*240.f)));}
++   if(mat==8||mat==9){Frame f(n);float q=std::sin(p.z*380.f+p.x*12.f)*.00016f;n=unit(n+f.t*q+f.b*(.00008f*std::sin(p.y*510.f+p.x*240.f)));}
+    float index=mat==6?WATER_IOR:quartzIndex(band>=0?WL0+(band+.5f)*DL:550.f);
+    float ei=enter?1.f:index,et=enter?index:1.f,fr=fresnelD(-dot(ray.d,n),ei,et);
++   if(mat==6&&primarySplit&&depth==0&&band<0){
++    RNG reflectedRng=rng,transmittedRng=rng;transmittedRng.dimension+=16;
++    Spec lr=trace(Ray(p+n*EPS*6,unit(reflect(ray.d,n))),reflectedRng,maxDepth-depth-1,pixelCone,band,waterPool,quartzDepth,scatterWater,deltaCount+1,prev,prevPdf,0,false,travelled+h.t);
++    V td=refractRay(ray.d,n,ei/et);Spec lt;
++    if(dot(td,td)>.5f)lt=trace(Ray(p-n*EPS*6,td),transmittedRng,maxDepth-depth-1,pixelCone,band,enter?0:-1,quartzDepth,scatterWater,deltaCount+1,prev,prevPdf,0,false,travelled+h.t);
++    Spec reflectContribution=throughput*lr*fr;if(reflectionOut)*reflectionOut=reflectContribution;
++    return L+reflectContribution+throughput*lt*((1-fr)*sqr(ei/et));
++   }
++   exitSkyMIS=1.f;
++   if(mat==6&&!enter&&scatterWater>=0&&deltaCount==0){float q=ray.d.z>0?1/(2*PI):0;
++    exitSkyMIS=misPower(prevPdf*(1-fr)*std::exp(-h.t*waterScatterRate),q);}
+    if(rng.uniform()<fr)ray=Ray(p+n*EPS*6,unit(reflect(ray.d,n)));
+    else {V d=refractRay(ray.d,n,ei/et);if(dot(d,d)<.5f)ray=Ray(p+n*EPS*6,unit(reflect(ray.d,n)));
+     else {throughput*=sqr(ei/et);if(mat==6)waterPool=enter?0:-1;else quartzDepth=std::max(0,quartzDepth+(enter?1:-1));ray=Ray(p-n*EPS*6,d);}}
+-   deltaCount++;continue;
++   travelled+=h.t;deltaCount++;continue;
+   }
+   if(dot(gn,ray.d)>0)gn=-gn;if(dot(n,gn)<0)n=-n;
+-  Surface m=shade(p,n,mat,std::max(.00002f,h.t*pixelCone),h);
++  Surface m=shade(p,n,mat,std::max(.00002f,(travelled+h.t)*pixelCone/std::max(.18f,std::fabs(dot(n,ray.d)))),h);
+   if(dot(n,gn)<.25f||dot(n,-ray.d)<.06f)n=gn;
+   if(clay){m.color=V(.38f);m.rough=.85f;}
+   Spec base=rgbAnchors(m.color);V v=-ray.d,lAir=sampleSun(rng);
+@@ -416,17 +425,54 @@
+     }
+    }
+   }
+-  V next=sampleBSDF(m,n,v,rng);float cs=dot(n,next),pdf=pdfBSDF(m,n,v,next);
++  if(waterPool>=0){auto ws=sampleWaterSky(p+gn*EPS*6,rng);float cs=dot(n,ws.dir);
++   if(ws.valid&&cs>0&&dot(gn,ws.dir)>0){float bp=pdfBSDF(m,n,v,ws.dir);
++    L+=throughput*evalBSDF(m,base,n,v,ws.dir)*ws.radiance*(cs*misPower(ws.pdf,bp*ws.branchProbability)/ws.pdf);}}
++  exitSkyMIS=1.f;V next=sampleBSDF(m,n,v,rng);float cs=dot(n,next),pdf=pdfBSDF(m,n,v,next);
+   if(cs<=0||pdf<1e-12f||dot(gn,next)<=0)break;
+   throughput*=evalBSDF(m,base,n,v,next)*(cs/pdf);
+   if(!std::isfinite(throughput.maximum()))break;
+   if(depth>=3){float survive=clamp(throughput.maximum(),.05f,.94f);if(rng.uniform()>survive)break;throughput*=1/survive;}
+-  prev=p;prevPdf=pdf;scatterWater=waterPool;deltaCount=0;ray=Ray(p+gn*EPS*6,unit(next));
++  travelled+=h.t;prev=p;prevPdf=pdf;scatterWater=waterPool;deltaCount=0;ray=Ray(p+gn*EPS*6,unit(next));
+  }
+  return L;
+ }
+ 
+-struct Options{
++// V2: forced first collision in a bounded homogeneous atmosphere, followed by
++// full multiple-scattering continuation. Every camera sample evaluates both
++// the surface-survival and atmospheric-scatter terms, instead of roulette
++// between a dark background and a rare bright haze contribution.
++thread_local Spec sampleReflection, sampleVolume;
++
++Spec tracePrimary(Ray ray,RNG &rng,int maxDepth,float cone) {
++    sampleReflection=Spec(); sampleVolume=Spec();
++    Hit h; bool found=closest(ray,h); float lo=0,hi=0;
++    float T=1.f;
++    bool fog=useSteam&&!clay&&fogInterval(ray,found?h.t:INF,lo,hi);
++    if(fog) T=std::exp(-FOG_SIGMA*(hi-lo));
++    Spec reflection;
++    RNG surfaceRng=rng;
++    Spec surface=trace(ray,surfaceRng,maxDepth,cone,-1,-1,0,-2,0,V(),0,1,true,0,&reflection);
++    sampleReflection=reflection*T;
++    if(!fog||T>=1.f) return surface;
++    RNG volumeRng=rng; volumeRng.dimension=640;
++    float t=lo-std::log(std::max(1.e-9f,1-volumeRng.uniform()*(1-T)))/FOG_SIGMA;
++    V p=ray.o+ray.d*t;
++    Spec scatter;
++    V sun=sampleSun(volumeRng);
++    if(!opaqueShadow(Ray(p,sun),INF))
++        scatter+=solar*(phaseHG(dot(ray.d,sun))*SUN_SOLID*airTransmittance(Ray(p,sun),INF,volumeRng));
++    V sky=samplePortal(p,volumeRng);
++    float pdf=portalPDF(p,sky),phase=phaseHG(dot(ray.d,sky));
++    if(pdf>0&&!opaqueShadow(Ray(p,sky),INF))
++        scatter+=environment(sky,false)*(phase*airTransmittance(Ray(p,sky),INF,volumeRng)*misPower(pdf,phase)/pdf);
++    V next=sampleHG(ray.d,volumeRng);
++    scatter+=trace(Ray(p,next),volumeRng,maxDepth-1,cone,-1,-1,0,-1,0,p,phaseHG(dot(ray.d,next)),0,false,t);
++    sampleVolume=scatter*((1-T)*.995f);
++    return surface*T+sampleVolume;
++}
++
++struct Options{bool adaptive=false;
+     std::string mesh,out,view="hero";int width=1600,height=1000,spp=128,depth=16,threads=5,seed=20260913;
+     float exposure=1.0f;bool bands=true;float aperture=.00025f;
+ };
+@@ -439,7 +485,7 @@
+         else if(arg=="--depth")o.depth=std::stoi(get());else if(arg=="--threads")o.threads=std::stoi(get());else if(arg=="--seed")o.seed=std::stoi(get());
+         else if(arg=="--view")o.view=get();else if(arg=="--exposure")o.exposure=std::stof(get());else if(arg=="--aperture")o.aperture=std::stof(get());
+         else if(arg=="--no-steam")useSteam=false;else if(arg=="--no-water")useWater=false;else if(arg=="--water-absorption")waterStrength=std::stof(get());
+-        else if(arg=="--no-split")splitting=false;else if(arg=="--clay")clay=true;else if(arg=="--no-bands")o.bands=false;else throw std::runtime_error("Unknown argument "+arg);
++        else if(arg=="--adaptive")o.adaptive=true;else if(arg=="--no-split")splitting=false;else if(arg=="--clay")clay=true;else if(arg=="--no-bands")o.bands=false;else throw std::runtime_error("Unknown argument "+arg);
+     }
+     if(o.width<1||o.height<1||o.spp<1||o.depth<1||o.threads<1||o.aperture<0||waterStrength<0)throw std::runtime_error("Invalid render setting");
+     return o;
+@@ -462,11 +508,19 @@
+         V n=unit(t.n0*(1-h.u-h.v)+t.n1*h.u+t.n2*h.v);if(dot(n,ray.d)>0)n=-n;
+         travelled+=h.t;
+         if(t.mat==6&&!clay){V d=refractRay(ray.d,n,1/WATER_IOR);ray=Ray(p-n*EPS*5,d);continue;}
+-        auto m=shade(p,n,t.mat,travelled*cone,h);
+-        g.normal=n;g.albedo=m.color;g.depth=travelled;g.material=t.mat;return g;
++        V geometricGuide=n;auto m=shade(p,n,t.mat,travelled*cone,h);
++        g.normal=geometricGuide;g.albedo=m.color;g.depth=travelled;g.material=t.mat;return g;
+     }return g;
+ }
+ 
++Guide primaryGuideRay(Ray ray,float cone,bool reflection){
++ Guide g;Hit h;if(!closest(ray,h))return g;const auto&t=tris[h.tri];V p=ray.o+ray.d*h.t;
++ V n=unit(t.n0*(1-h.u-h.v)+t.n1*h.u+t.n2*h.v);if(dot(n,ray.d)>0)n=-n;
++ g.normal=n;g.depth=h.t;g.material=t.mat;g.albedo=V(1);
++ if(reflection&&t.mat==6){g=guideRay(Ray(p+n*EPS*6,unit(reflect(ray.d,n))),cone);g.depth+=h.t;g.material=6;g.albedo=V(1);}
++ return g;
++}
++
+ int selftest(){
+     initSpectra();float f=fresnelD(1,1,WATER_IOR),expected=sqr((WATER_IOR-1)/(WATER_IOR+1));
+     auto a=attenuation(.7f),b=attenuation(1.4f);float err=0;
+@@ -497,6 +551,15 @@
+     if(tris.empty())throw std::runtime_error("No geometry");
+     std::string root=o.mesh.substr(0,o.mesh.find_last_of("/\\"));textures.resize(5);for(int i=0;i<5;i++)textures[i].load(root+"/textures/"+std::to_string(i)+".cvtex");
+     order.resize(tris.size());std::iota(order.begin(),order.end(),0);nodes.reserve(tris.size()/2);build(0,int(order.size()));
++    {std::vector<Tri> sorted;std::vector<Attribute> sortedAttributes;sorted.reserve(tris.size());sortedAttributes.reserve(tris.size());
++     for(int idx:order){sorted.push_back(tris[idx]);sortedAttributes.push_back(attributes[idx]);}
++     tris.swap(sorted);attributes.swap(sortedAttributes);std::iota(order.begin(),order.end(),0);}
++    buildWide();
++    int traversalErrors=0;
++    for(int i=0;i<5000;i++){RNG test(i+7293);Ray ray(V(test.uniform()*28-14,test.uniform()*58-16,test.uniform()*17-3),unit(V(test.uniform()*2-1,test.uniform()*2-1,test.uniform()*2-1)));
++     Hit a,b;bool ha=wideHit(ray,a),hb=meshHitReference(ray,b);if(ha!=hb||(ha&&std::fabs(a.t-b.t)>1.e-4f)){if(traversalErrors<12)std::cerr<<"MISMATCH "<<i<<" "<<ha<<" "<<hb<<" "<<a.t<<" "<<b.t<<" tris "<<a.tri<<" "<<b.tri<<"\n";traversalErrors++;}}
++    if(traversalErrors)throw std::runtime_error("BVH equivalence failure");
++    std::cerr<<"BVH equivalence: 5000 rays passed\n";
+     std::cerr<<"CYBR GEO BVH: "<<tris.size()<<" actual triangles; "<<nodes.size()<<" nodes\n";
+     V camera(.3f,-6.0f,1.6f),target(1.0f,9.0f,3.5f);float hfov=82;
+     if(o.view=="detail"){camera=V(1.2f,-4.6f,2.35f);target=V(4.15f,.3f,1.0f);hfov=45;}
+@@ -504,28 +567,39 @@
+     else if(o.view!="hero")throw std::runtime_error("Unknown camera view");
+     V forward=unit(target-camera),right=unit(cross(forward,V(0,0,1))),up=cross(right,forward);
+     float tanHalf=std::tan(hfov*PI/360.f),aspect=float(o.width)/o.height,focus=len(target-camera),cone=2*tanHalf/o.width;
+-    size_t pixels=size_t(o.width)*o.height;
+-    std::vector<Spec> film(pixels);std::vector<Guide> guides(pixels);std::atomic<int> rows{0};std::atomic<uint64_t> nonfinite{0};
++    size_t pixels=size_t(o.width)*o.height;std::vector<uint32_t> sampleCounts(pixels);
++    std::vector<Spec> film(pixels),reflectionFilm(pixels),volumeFilm(pixels);std::vector<Guide> guides(pixels),reflectionGuides(pixels),primaryGuides(pixels);std::atomic<int> rows{0};std::atomic<uint64_t> nonfinite{0};
+     int strata=int(std::ceil(std::sqrt(float(o.spp))));
+     #pragma omp parallel for schedule(dynamic,1)
+     for(int y=0;y<o.height;y++){
+         for(int x=0;x<o.width;x++){
+             size_t index=size_t(y)*o.width+x;RNG rng(uint64_t(index)*0x9e3779b97f4a7c15ULL+o.seed);
+-            Spec sum;double lum2=0;float jitterShift=rng.uniform();
+-            for(int s=0;s<o.spp;s++){
+-                float jx=(s+rng.uniform())/o.spp,jy=std::fmod((s+.5f)*.61803398875f+jitterShift,1.f);
++            int pixelSpp=o.spp;
++            float cx=(2*(x+.5f)/o.width-1)*tanHalf,cy=(1-2*(y+.5f)/o.height)*tanHalf/aspect;
++            Guide first=primaryGuideRay(Ray(camera,unit(forward+right*cx+up*cy)),cone,false);
++            if(o.adaptive){
++             if(first.material<0)pixelSpp=std::max(8,o.spp/8);
++             else if((first.material==0||first.material==3)&&first.depth>7)pixelSpp=std::max(16,o.spp/2);
++             else if(first.material==8||first.material==9)pixelSpp=std::max(256,o.spp*4);
++            }
++            sampleCounts[index]=pixelSpp;Spec sum,reflectionSum,volumeSum;double lum2=0;
++            for(int s=0;s<pixelSpp;s++){
++                rng.beginSample(s,mix32(uint32_t(index)^uint32_t(o.seed)));float jx=rng.uniform(),jy=rng.uniform();
+                 float px=(2*(x+jx)/o.width-1)*tanHalf,py=(1-2*(y+jy)/o.height)*tanHalf/aspect;
+                 V direction=unit(forward+right*px+up*py),origin=camera;
+                 if(o.aperture>0){float r=std::sqrt(rng.uniform())*o.aperture,phi=2*PI*rng.uniform();V offset=right*(r*std::cos(phi))+up*(r*std::sin(phi));V fp=camera+direction*(focus/dot(direction,forward));origin+=offset;direction=unit(fp-origin);}
+-                Spec value=trace(Ray(origin,direction),rng,o.depth,cone);
++                Spec value=tracePrimary(Ray(origin,direction),rng,o.depth,cone);reflectionSum+=sampleReflection;volumeSum+=sampleVolume;
+                 bool finite=true;for(float v:value.v)finite=finite&&std::isfinite(v);
+                 if(!finite){nonfinite++;continue;}
+                 sum+=value;double lum=xyz(value).y;lum2+=lum*lum;
+             }
+-            film[index]=sum*(1.f/o.spp);
++            film[index]=sum*(1.f/pixelSpp);reflectionFilm[index]=reflectionSum*(1.f/pixelSpp);volumeFilm[index]=volumeSum*(1.f/pixelSpp);
+             float px=(2*(x+.5f)/o.width-1)*tanHalf,py=(1-2*(y+.5f)/o.height)*tanHalf/aspect;
+             Guide g=guideRay(Ray(camera,unit(forward+right*px+up*py)),cone);
+-            double avg=xyz(film[index]).y;g.variance=std::max(0.,(lum2/o.spp-avg*avg)/std::max(1,o.spp-1));guides[index]=g;
++            double avg=xyz(film[index]).y;g.variance=std::max(0.,(lum2/pixelSpp-avg*avg)/std::max(1,pixelSpp-1));guides[index]=g;
++            Ray centerRay(camera,unit(forward+right*px+up*py));
++            reflectionGuides[index]=primaryGuideRay(centerRay,cone,true);primaryGuides[index]=primaryGuideRay(centerRay,cone,false);
++            reflectionGuides[index].variance=g.variance;primaryGuides[index].variance=g.variance;
+         }
+         int done=++rows;
+         if(done%std::max(1,o.height/20)==0){
+@@ -536,13 +610,19 @@
+     }
+     std::ofstream pf(o.out+".pfm",std::ios::binary);pf<<"PF\n"<<o.width<<" "<<o.height<<"\n-1.0\n";
+     for(int y=o.height-1;y>=0;y--)for(int x=0;x<o.width;x++){V rgb=toRGB(film[size_t(y)*o.width+x]);pf.write(reinterpret_cast<char*>(&rgb),sizeof(V));}
++    auto writeAOV=[&](const std::string &suffix,const std::vector<Spec>&buffer){std::ofstream out(o.out+suffix+".pfm",std::ios::binary);out<<"PF\n"<<o.width<<" "<<o.height<<"\n-1.0\n";
++     for(int y=o.height-1;y>=0;y--)for(int x=0;x<o.width;x++){V rgb=toRGB(buffer[size_t(y)*o.width+x]);out.write((char*)&rgb,sizeof(V));}};
++    writeAOV("_reflection",reflectionFilm);writeAOV("_volume",volumeFilm);
+     std::ofstream ppm(o.out+".ppm",std::ios::binary);ppm<<"P6\n"<<o.width<<" "<<o.height<<"\n255\n";
+     Spec means;
+     for(auto s:film){means+=s*(1.f/float(pixels));V v=tonemap(toRGB(s),o.exposure);for(int k=0;k<3;k++){unsigned char b=static_cast<unsigned char>(clamp(v[k])*255+.5f);ppm.write(reinterpret_cast<char*>(&b),1);}}
+     std::ofstream gf(o.out+".guides",std::ios::binary);uint32_t dim[2]={uint32_t(o.width),uint32_t(o.height)};gf.write(reinterpret_cast<char*>(dim),8);gf.write(reinterpret_cast<char*>(guides.data()),guides.size()*sizeof(Guide));
++    auto writeGuide=[&](const std::string&suffix,const std::vector<Guide>&g){std::ofstream f(o.out+suffix+".guides",std::ios::binary);f.write((char*)dim,8);f.write((char*)g.data(),g.size()*sizeof(Guide));};
++    writeGuide("_reflection",reflectionGuides);writeGuide("_primary",primaryGuides);
++    {std::ofstream f(o.out+".samples",std::ios::binary);f.write((char*)dim,8);f.write((char*)sampleCounts.data(),sampleCounts.size()*sizeof(uint32_t));}
+     if(o.bands){std::ofstream sp(o.out+".spectral",std::ios::binary);uint32_t header[]={0x36315053,uint32_t(o.width),uint32_t(o.height),NBANDS};sp.write(reinterpret_cast<char*>(header),16);sp.write(reinterpret_cast<char*>(film.data()),film.size()*sizeof(Spec));}
+     float sec=std::chrono::duration<float>(std::chrono::steady_clock::now()-started).count();
+-    std::ofstream meta(o.out+".json");meta<<std::setprecision(9)<<"{\n  \"renderer\": \"CYBR GEO native cavern extension with quartz optics\",\n  \"geometry_accelerator\": \"CYBR GEO native SAH BVH\",\n  \"view\": \""<<o.view<<"\",\n  \"width\": "<<o.width<<", \"height\": "<<o.height<<", \"spp\": "<<o.spp<<",\n  \"max_depth\": "<<o.depth<<", \"seed\": "<<o.seed<<", \"threads\": "<<o.threads<<",\n  \"triangles\": "<<tris.size()<<", \"bvh_nodes\": "<<nodes.size()<<",\n  \"spectral_bands\": 16, \"wavelength_range_nm\": [380,780],\n  \"spectral_method\": \"Jointly transported fixed midpoint wavelength quadrature, 25 nm bins\",\n  \"water_ior\": "<<WATER_IOR<<", \"dispersion\": "<<((splitting&&!clay)?"true":"false")<<",\n  \"steam\": "<<(useSteam?"true":"false")<<", \"steam_model\": \"Authored cavern haze; delta and ratio tracking; HG phase\",\n  \"water_absorption_scale\": "<<waterStrength<<",\n  \"finite_difference_water_connection_step_radians\": 0.002,\n  \"nonfinite_path_samples\": "<<nonfinite.load()<<",\n  \"exposure\": "<<o.exposure<<",\n  \"film_white_rgb\": ["<<whiteRGB.x<<","<<whiteRGB.y<<","<<whiteRGB.z<<"],\n  \"seconds\": "<<sec<<",\n  \"band_means\": [";
++    std::ofstream meta(o.out+".json");meta<<std::setprecision(9)<<"{\n  \"renderer\": \"CYBR GEO native cavern V2 - split-transport spectral CPU\",\n  \"geometry_accelerator\": \"CYBR GEO native SAH BVH4 / AVX2 triangle packets\",\n  \"view\": \""<<o.view<<"\",\n  \"width\": "<<o.width<<", \"height\": "<<o.height<<", \"spp\": "<<o.spp<<",\n  \"max_depth\": "<<o.depth<<", \"seed\": "<<o.seed<<", \"threads\": "<<o.threads<<",\n  \"triangles\": "<<tris.size()<<", \"bvh_nodes\": "<<nodes.size()<<",\n  \"spectral_bands\": 16, \"wavelength_range_nm\": [380,780],\n  \"spectral_method\": \"Jointly transported fixed midpoint wavelength quadrature, 25 nm bins\",\n  \"water_ior\": "<<WATER_IOR<<", \"dispersion\": "<<((splitting&&!clay)?"true":"false")<<",\n  \"steam\": "<<(useSteam?"true":"false")<<", \"steam_model\": \"Bounded homogeneous haze; analytic transmittance; forced first collision; full continuation\",\n  \"water_absorption_scale\": "<<waterStrength<<",\n  \"finite_difference_water_connection_step_radians\": 0.002,\n  \"nonfinite_path_samples\": "<<nonfinite.load()<<",\n  \"exposure\": "<<o.exposure<<",\n  \"film_white_rgb\": ["<<whiteRGB.x<<","<<whiteRGB.y<<","<<whiteRGB.z<<"],\n  \"seconds\": "<<sec<<",\n  \"band_means\": [";
+     for(int k=0;k<NBANDS;k++)meta<<(k?",":"")<<means.v[k];meta<<"]\n}\n";
+     std::cerr<<"WROTE "<<o.out<<"; "<<sec<<" seconds; invalid paths "<<nonfinite<<"\n";
+     return nonfinite?2:0;

@@ -1,0 +1,23 @@
+{"command": ["/mnt/data/CYBR_Hot_Springs_V11/work/spectral_desert_0a01ac2f3df04c41", "/mnt/data/CYBR_Hot_Springs_V11/work/scene.meshbin", "/mnt/data/CYBR_Hot_Springs_V11/work/shoreline", "--w", "1200", "--h", "800", "--spp", "128", "--depth", "12", "--water-spp", "256", "--indirect-clamp", "0.0", "--threads", "5", "--view", "detail", "--seed", "20260914", "--exposure", "1.9", "--aperture", "0.001", "--water-absorption", "1.0", "--grain", "/mnt/data/CYBR_Hot_Springs_V11/cybr-geo/examples/desert_hot_springs/assets/gravel_periodic.pgm", "--relief", "/mnt/data/CYBR_Hot_Springs_V11/cybr-geo/examples/desert_hot_springs/assets/granular_relief.bin", "--no-clouds", "--sun", "-0.80,0.40,0.28"]}
+CYBR GEO BVH: 23690858 actual triangles; 13672423 nodes
+5% 42.4503 s
+10% 60.2655 s
+15% 75.7424 s
+20% 92.7374 s
+25% 129.062 s
+30% 178.142 s
+35% 226.636 s
+40% 276.978 s
+45% 327.316 s
+50% 367.935 s
+55% 398.38 s
+60% 425.806 s
+65% 446.677 s
+70% 455.928 s
+75% 465.132 s
+80% 474.205 s
+85% 483.568 s
+90% 493.681 s
+95% 502.623 s
+100% 511.129 s
+WROTE /mnt/data/CYBR_Hot_Springs_V11/work/shoreline; 511.494 seconds; invalid paths 0

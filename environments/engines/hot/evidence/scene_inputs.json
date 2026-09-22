@@ -1,0 +1,31 @@
+{
+  "schema": "cybr-geo/scene-inputs/1",
+  "scene_seed": 20260914,
+  "files": {
+    "examples/desert_hot_springs/build_scene.py": "2ff480d90bdfcc33d8823494e40abaef83613aef9fe99eef1e9662b499e6e18a",
+    "examples/desert_hot_springs/build_scene_v4.py": "c1aa3e01766940a1fbb4ff56e1e2abe58d4e162f2be3d16176665d5c67260f7d",
+    "examples/desert_hot_springs/v8_landforms.py": "9d93419fbb072c4ed32993f8a2a7338d0d3f41b0d445f265ebd5583c836af66c",
+    "examples/desert_hot_springs/v9_landforms.py": "c0f73325d783957d959b0d6ae7e8c7b674ead73c9225bbfdb727b0717ed38404",
+    "examples/desert_hot_springs/v10_landforms.py": "b6088e60485bb3883d830c7aef1b98aaae526324fb824525e6333b3fba0dc829",
+    "examples/desert_hot_springs/v11_landforms.py": "13c367aeb0bf3a1357372a33b7ef362079d09168e55df040705d7ea29a76e2ec",
+    "examples/desert_hot_springs/assets/granular_relief.npy": "6c25ce2868740483acb90dad3d1d7239692401e2a53e8f997432392fb1be2470",
+    "examples/desert_hot_springs/assets/granular_relief.bin": "babbb2aa418d669003be4b6bac9f53a1da9d0f2533bcc3677c4f2f4b712e8c11",
+    "examples/desert_hot_springs/implicit_rocks_v10.py": "1673a745f0f883e2d8dbe21a31c5095e0b11a4b0d2fc11c8d2213978a37100c2",
+    "examples/desert_hot_springs/contour_water.py": "f3fd718ae58aeb8dc83114d585d0162154f02dcc5118963a86eb4a850098cca4",
+    "examples/desert_hot_springs/broken_shelves_v9.py": "1beb1d6c5079ce851504adc002ae8e965a6409a3f0d6e678d8fb9482a7befb9d",
+    "examples/desert_hot_springs/fluvial_detail_v9.py": "b3d8dc150fffa3172968dcc33ea167297fb028f2601617df75ce55fd4bae320e",
+    "examples/desert_hot_springs/assets/ripple_modes.json": "8af04c2b01745c35e14a644e66393ee4b62ffe8f8ef9ca0c1872926a654cc5ab",
+    "src/cybrgeo/__init__.py": "5aee0599ec98581fbc5ffca358428217de6ce51b846c74dee80426039a4eeba7",
+    "src/cybrgeo/__main__.py": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+    "src/cybrgeo/cad.py": "7aea6e66f98361ef226a6d1069ac0995ba9cd0bd88eaa5bf15934370f4030c07",
+    "src/cybrgeo/cli.py": "5f4d65ea7ae0aebf3ec160b9ae40c92b0d77dbe00cb06460d9e511ae220a6e5d",
+    "src/cybrgeo/core.py": "ebcde9d683feffe32feee780377494279ab67ee106dd38ae4f73589b88d636e5",
+    "src/cybrgeo/features.py": "f805ce2ff848cfa28ca07665058edb72f4665353205e847b9e25d80a59270fe9",
+    "src/cybrgeo/filter.py": "e32123cf19aaac16ce8709b5ae1456db3564a8ac30f98cdadf3dba34d9837740",
+    "src/cybrgeo/media.py": "dfb1dad2afba7b738532eec6a2b6654456fedb904a22dead6763ac067c8b273e",
+    "src/cybrgeo/offline.py": "1b382b7a704b56fcf9da1add9c930d8f79c7b61c32c9bb55ff0300d7879f8961",
+    "src/cybrgeo/render.py": "338ba4d8955232a01dac91b5484f3cc8081c6469124f5021b8b360b66459624f",
+    "src/cybrgeo/whiteprint.py": "9e964292246641fc46d16a0a6610806aa9a2a87bd1c88d78542b414e386ab8b6"
+  },
+  "fingerprint": "67f5d8ccbaf1b4fb09dd015978bda84ef2042ee1888a8a5d007d50b32142009a"
+}

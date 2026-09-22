@@ -1,0 +1,26 @@
+[
+  {
+    "file": "engines/geo/cybr-geo/native/spectral_scenes.cpp",
+    "changed_lines": 9
+  },
+  {
+    "file": "engines/geo/cybr-geo/native/formation_materials_r2.h",
+    "changed_lines": 4
+  },
+  {
+    "file": "engines/geo/cybr-geo/native/fernwater_materials_r6.h",
+    "changed_lines": 30
+  },
+  {
+    "file": "engines/hot/cybr-geo/native/landscape_materials_v11.h",
+    "changed_lines": 11
+  },
+  {
+    "file": "engines/hot/cybr-geo/native/spectral_desert.cpp",
+    "changed_lines": 31
+  },
+  {
+    "file": "engines/geode/src/cathedral_v3.cpp",
+    "changed_lines": 28
+  }
+]

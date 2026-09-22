@@ -1,0 +1,35 @@
+{
+  "schema": "cybrgeo.validation/1",
+  "name": "CYBR_HOT_SPRINGS_V11",
+  "part_count": 11,
+  "triangles": 23690858,
+  "bounds_mm": [
+    [
+      -7500000.0,
+      -80000.0,
+      -3000.0
+    ],
+    [
+      7500000.0,
+      12000000.0,
+      1940143.1552224797
+    ]
+  ],
+  "analytic_brep_parts": 0,
+  "unique_names": true,
+  "finite_vertices": true,
+  "valid_indices": true,
+  "note": "Structural data checks only. No load, tolerance, interference or thermal certification.",
+  "counts": {
+    "large_rocks": 156,
+    "small_rocks": 8814,
+    "gravel": 32640,
+    "mineral_nodules": 629,
+    "shrubs": 407,
+    "grass_tufts": 410
+  },
+  "seconds": 233.055344581604,
+  "mesh_sha256": "3bb30342fed34aa78a1a090df966ccf1ac3437aab521437c4b87d689bdb80264",
+  "actual_cybrgeo_save_load_roundtrip": true,
+  "image_generation": false
+}

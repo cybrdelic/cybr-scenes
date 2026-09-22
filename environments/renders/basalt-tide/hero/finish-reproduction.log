@@ -1,0 +1,50 @@
+{
+  "source": "Native spectral radiance, not an image-generation model",
+  "resolution": [
+    960,
+    640
+  ],
+  "guided_filter_steps": [
+    1,
+    2
+  ],
+  "sky_only_filter_steps": [
+    2,
+    4
+  ],
+  "sky_filter_pixel_count": 188188,
+  "sky_filter_mask": "Negative first-opaque-surface material guide only; no landscape pixel changes in sky-only passes",
+  "filter_space": "Linear scene-referred RGB after 16-band CIE integration",
+  "opaque_filter_strength": 0.4,
+  "opaque_residual_preserved_fraction": 0.6,
+  "opaque_policy_pixel_count": 6850,
+  "opaque_mask": "Center-ray budget equals ordinary spp and sediment/crust material 0 or 4; disabled if water budget is not higher",
+  "opaque_policy": "Sediment/crust only: convex native/filtered radiance blend, not sharpening or detail synthesis; other materials retain full filtering",
+  "postprocess_source_sha256": "a529a0fbd384e5f0a417c9b2b6a8130e4e6cc3fa680e7dc6702a41bb8c4582b2",
+  "raw_radiance_finite": true,
+  "raw_radiance_min": 1.4127699614618905e-06,
+  "raw_radiance_max": 1.6079754829406738,
+  "mean_linear_rgb": [
+    0.11450749635696411,
+    0.11720914393663406,
+    0.1182771697640419
+  ],
+  "png_round_trip_exact": true,
+  "png_sha256": "5ccd5b6b78ce81beab71830dd24bb42f0a94c662de34c8bb4714a4fe9d9dd213",
+  "exposure": 2,
+  "camera_white_balance_K": 6200.0,
+  "display_white_rgb": [
+    1.0703723888618422,
+    0.9818291449205323,
+    0.9733799887502058
+  ],
+  "toe_parameter": 0.035,
+  "added_grain": false,
+  "upscaling": false,
+  "photo_compositing": false,
+  "mean_linear_filter_change": 0.009905402548611164,
+  "isolated_sky_spike_filter_enabled": true,
+  "isolated_sky_spike_pixels": 0,
+  "sky_spike_policy": "Biased non-neural display filter only; high-variance isolated 20x local peaks; raw radiance unchanged; water, geometry and sun-disc neighbourhood excluded"
+}
+R2_ALBEDO_DEMODULATION 261864 pixels; raw radiance unchanged

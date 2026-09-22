@@ -1,0 +1,1 @@
+Historical local browser patch sources, preserved unchanged. Not upgraded or revalidated as part of the six native R2 render runs. The older mobile screenshot depicts this environment family, not an extra scene. The self-contained older browser asset is supplied separately in the preceding chat.

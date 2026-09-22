@@ -1,0 +1,14 @@
+{
+  "finished": "/mnt/data/CYBR_SCENES_R2/renders/drowned-geode/hero/hero",
+  "sampling": {
+    "minimum": 32,
+    "mean": 32.0,
+    "maximum": 32,
+    "camera_samples_total": 19660800,
+    "histogram": {
+      "32": 614400
+    },
+    "allocation": "deterministic primary-material/depth allocation; no noisy stopping rule"
+  },
+  "outliers": 134
+}

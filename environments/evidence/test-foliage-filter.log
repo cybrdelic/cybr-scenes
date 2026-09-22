@@ -1,0 +1,9 @@
+test_hot_sun_flag_uses_native_two_argument_form (tests.test_foliage_filter.FoliageTests.test_hot_sun_flag_uses_native_two_argument_form) ... ok
+test_isolated_zero_sample_leaf_is_not_locked_black (tests.test_foliage_filter.FoliageTests.test_isolated_zero_sample_leaf_is_not_locked_black) ... ok
+test_two_sided_constant_radiance_is_preserved (tests.test_foliage_filter.FoliageTests.test_two_sided_constant_radiance_is_preserved) ... ok
+test_unrelated_material_and_sky_are_untouched (tests.test_foliage_filter.FoliageTests.test_unrelated_material_and_sky_are_untouched) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 3.636s
+
+OK

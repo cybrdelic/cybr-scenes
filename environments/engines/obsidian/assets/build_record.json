@@ -1,0 +1,12 @@
+{
+  "seconds": 42.53821356200001,
+  "triangles": 6210833,
+  "parts": 9583,
+  "separate_folded_crust_bodies": 1008,
+  "lava_texture_dimensions": [
+    1024,
+    4096
+  ],
+  "image_generation": false,
+  "fluid_simulation": false
+}

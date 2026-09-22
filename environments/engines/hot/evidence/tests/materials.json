@@ -1,0 +1,11 @@
+{
+  "scope": "Finite materials, normalized normals, periodic relief and bounded rough diffuse energy at sampled angles; not perceptual validation",
+  "material_samples": 15000,
+  "finite": true,
+  "bounded": true,
+  "maximum_normal_length_error": 1.192092896e-07,
+  "maximum_relief_gradient": 1.233577371,
+  "maximum_periodic_height_error_m": 1.659151167e-06,
+  "maximum_directional_hemispherical_reflectance": 0.9555570483,
+  "passed": true
+}

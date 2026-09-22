@@ -1,0 +1,23 @@
+{
+  "input_files": {
+    "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v2/assets/rock_boulder_dry_diff_4k.jpg": "2787cfdf899ea12442e67e337e32712d6e25f4a0763ab3df63fd9306a02e156f",
+    "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v2/assets/rock_boulder_dry_disp_4k.jpg": "173d6af4402b195441292c56befaa8db2234c04ea4624c3875fa46a1ac4761ef",
+    "engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v2/assets/rock_boulder_dry_rough_4k.jpg": "69588fbeb8672ed0d448af7fbf28e834cc1e8dfde45bd1c5dbf6bf50d2674130"
+  },
+  "output_sha256": "0678c4adeaa1d853f982f4e5a3ff8a747d59984937426d4db57ccb418ac99045",
+  "size": 1024,
+  "channels": [
+    "linear_R_ratio",
+    "linear_G_ratio",
+    "linear_B_ratio",
+    "roughness",
+    "height_dU_m",
+    "height_dV_m",
+    "squared_gradient",
+    "height"
+  ],
+  "height_amplitude_m": 0.018,
+  "beauty_image_input": false,
+  "image_generation": false,
+  "source": "Recovered rock_boulder_dry CC0 maps; see original download manifests and notices."
+}

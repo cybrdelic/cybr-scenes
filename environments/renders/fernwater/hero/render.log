@@ -1,0 +1,24 @@
+CYBR R2 photographic surface atlas: 1024 square; 11 moment mip levels
+R6 local surface coordinate frames: 720110
+CYBR GEO BVH: 20400077 actual triangles; 11905173 nodes
+5% 70.9703 s
+10% 91.5204 s
+15% 113.399 s
+20% 139.556 s
+25% 165.049 s
+30% 194.65 s
+35% 225.127 s
+40% 265.021 s
+45% 296.377 s
+50% 324.98 s
+55% 352.961 s
+60% 385.655 s
+65% 412.707 s
+70% 440.778 s
+75% 464.761 s
+80% 486.138 s
+85% 506.19 s
+90% 523.369 s
+95% 539.55 s
+100% 555.491 s
+WROTE /mnt/data/CYBR_SCENES_R2/renders/fernwater/hero/hero; 555.836 seconds; invalid paths 0

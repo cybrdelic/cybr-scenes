@@ -1,0 +1,139 @@
+{
+  "render": {
+    "renderer": "CYBR GEO native V10 rebuilt landforms and mineral material layers",
+    "geometry_accelerator": "CYBR GEO native SAH BVH",
+    "view": "hero",
+    "width": 1200,
+    "height": 800,
+    "spp": 80,
+    "max_depth": 12,
+    "seed": 20260914,
+    "threads": 4,
+    "triangles": 18665044,
+    "bvh_nodes": 10659651,
+    "spectral_bands": 16,
+    "wavelength_range_nm": [
+      380,
+      780
+    ],
+    "spectral_method": "Jointly transported fixed midpoint wavelength quadrature, 25 nm bins",
+    "water_ior": 1.33399999,
+    "dispersion": false,
+    "steam": true,
+    "steam_model": "Authored heterogeneous density; delta and ratio tracking; HG phase",
+    "water_absorption_scale": 1,
+    "finite_difference_water_connection_step_radians": 0.0001,
+    "nonfinite_path_samples": 0,
+    "exposure": 1.16999996,
+    "film_white_rgb": [
+      1.04491019,
+      0.984612525,
+      1.02078438
+    ],
+    "seconds": 688.036255,
+    "band_means": [
+      0.119819082,
+      0.148576304,
+      0.170057341,
+      0.184194759,
+      0.196453676,
+      0.207792878,
+      0.213807315,
+      0.211616784,
+      0.20750685,
+      0.20372647,
+      0.197236598,
+      0.187388554,
+      0.177134365,
+      0.166424155,
+      0.155001327,
+      0.145830005
+    ],
+    "water_scattering_coefficient_per_m": 0.0489999987,
+    "water_scattering_HG_g": 0.74000001,
+    "ripple_modes": 128,
+    "camera_origin_m": [
+      2.0999999,
+      -5.6500001,
+      1.51999998
+    ],
+    "camera_target_m": [
+      -0.150000006,
+      3.1500001,
+      0.150000006
+    ],
+    "horizontal_fov_degrees": 72,
+    "aperture_radius_m": 0.00100000005,
+    "sun_direction": [
+      -0.895043492,
+      0.295069277,
+      0.33441186
+    ],
+    "photographic_grayscale_albedo_detail": true,
+    "photographic_backplate": false,
+    "image_generation": false,
+    "sky_model": "Single-scattering spherical Rayleigh/aerosol spectral LUT, not reference-validated",
+    "material_spectra": "Reference-illuminant-calibrated RGB-anchor reflectance, not measured mineral spectra",
+    "clouds": false,
+    "cloud_model": "Bounded 3D extinction grid; conservative column-majorant DDA; delta-tracked scattering and ratio-tracked shadows",
+    "cloud_grid": [
+      640,
+      512,
+      48
+    ],
+    "water_spp": 192,
+    "total_camera_samples": 105031168,
+    "indirect_contribution_clamp_Y": 0,
+    "clamped_indirect_contributions": 0,
+    "water_microfacet_alpha": 0.00499999989,
+    "water_reflection_estimator": "Primary: GGX VNDF and solar-disc MIS; indirect: one-root macro reflection manifold with exclusive path ownership",
+    "underwater_direct_light_approximation": "One-root macro-surface manifolds approximate indirect reflected and transmitted caustics; primary reflection uses GGX"
+  },
+  "image": {
+    "source": "Native spectral radiance, not an image-generation model",
+    "resolution": [
+      1200,
+      800
+    ],
+    "guided_filter_steps": [
+      1,
+      2
+    ],
+    "sky_only_filter_steps": [
+      2,
+      4,
+      8
+    ],
+    "sky_filter_pixel_count": 160125,
+    "sky_filter_mask": "Negative first-opaque-surface material guide only; no landscape pixel changes in sky-only passes",
+    "filter_space": "Linear scene-referred RGB after 16-band CIE integration",
+    "opaque_filter_strength": 0.55,
+    "opaque_residual_preserved_fraction": 0.44999999999999996,
+    "opaque_policy_pixel_count": 300818,
+    "opaque_mask": "Center-ray budget equals ordinary spp and sediment/crust material 0 or 4; disabled if water budget is not higher",
+    "opaque_policy": "Sediment/crust only: convex native/filtered radiance blend, not sharpening or detail synthesis; other materials retain full filtering",
+    "postprocess_source_sha256": "25841de9e92f92792fe4fe99bb19bf29b2fc160219797a3cfe054e14f4711650",
+    "raw_radiance_finite": true,
+    "raw_radiance_min": 0.0010922376532107592,
+    "raw_radiance_max": 18.03826332092285,
+    "mean_linear_rgb": [
+      0.24200987815856934,
+      0.20296519994735718,
+      0.15211379528045654
+    ],
+    "png_round_trip_exact": true,
+    "png_sha256": "ff5280bfa4cfb2f419e836b9e450c611e273f4d87347e0094e5de32c6241a5d0",
+    "exposure": 1.16999996,
+    "camera_white_balance_K": 5700.0,
+    "display_white_rgb": [
+      1.1201520497979691,
+      0.9756777150911409,
+      0.8877413759278178
+    ],
+    "toe_parameter": 0.035,
+    "added_grain": false,
+    "upscaling": false,
+    "photo_compositing": false,
+    "mean_linear_filter_change": 0.012070548720657825
+  }
+}

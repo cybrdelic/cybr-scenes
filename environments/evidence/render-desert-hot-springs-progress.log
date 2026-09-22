@@ -1,0 +1,24 @@
+[2026-09-21T17:33:18.107790+00:00] compile-hot: /usr/bin/g++ -std=c++17 -O3 -march=native -fno-math-errno -fopenmp -Ishared engines/hot/cybr-geo/native/spectral_desert.cpp -o /mnt/data/CYBR_SCENES_R2/build/hot_r2
+[2026-09-21T17:33:23.210639+00:00] self-test-hot: /mnt/data/CYBR_SCENES_R2/build/hot_r2 --self-test
+[2026-09-21T17:33:26.143767+00:00] render: /mnt/data/CYBR_SCENES_R2/build/hot_r2 /mnt/data/CYBR_SCENES_R2/geometry-r2/hot/scene.meshbin /mnt/data/CYBR_SCENES_R2/renders/desert-hot-springs/hero/hero --w 960 --h 640 --spp 64 --depth 12 --threads 4 --water-spp 128 --indirect-clamp 0 --no-clouds --grain /mnt/data/CYBR_SCENES_R2/engines/hot/cybr-geo/examples/desert_hot_springs/assets/gravel_periodic.pgm --relief /mnt/data/CYBR_SCENES_R2/engines/hot/cybr-geo/examples/desert_hot_springs/assets/granular_relief.bin --view hero --seed 20260914 --exposure 1.9 --sun=-0.80,0.40,0.28 --aperture 0.001 --water-absorption 1
+ERROR: Command failed (1), /mnt/data/CYBR_SCENES_R2/renders/desert-hot-springs/hero/render.log:
+ERROR: Unknown argument --sun=-0.80,0.40,0.28
+[2026-09-21T17:35:14.785657+00:00] render: /mnt/data/CYBR_SCENES_R2/build/hot_r2 /mnt/data/CYBR_SCENES_R2/geometry-r2/hot/scene.meshbin /mnt/data/CYBR_SCENES_R2/renders/desert-hot-springs/hero/hero --w 960 --h 640 --spp 64 --depth 12 --threads 4 --water-spp 128 --indirect-clamp 0 --no-clouds --grain /mnt/data/CYBR_SCENES_R2/engines/hot/cybr-geo/examples/desert_hot_springs/assets/gravel_periodic.pgm --relief /mnt/data/CYBR_SCENES_R2/engines/hot/cybr-geo/examples/desert_hot_springs/assets/granular_relief.bin --view hero --seed 20260914 --exposure 1.9 --sun -0.80,0.40,0.28 --aperture 0.001 --water-absorption 1
+[2026-09-21T17:40:39.894415+00:00] finish: /opt/pyvenv/bin/python /mnt/data/CYBR_SCENES_R2/tools/finish_r2.py --backend hot /mnt/data/CYBR_SCENES_R2/renders/desert-hot-springs/hero/hero --passes 2 --white-balance 5750 --opaque-filter-strength 0.5
+ERROR: Command failed (1), /mnt/data/CYBR_SCENES_R2/renders/desert-hot-springs/hero/finish.log:
+Traceback (most recent call last):
+  File "/mnt/data/CYBR_SCENES_R2/tools/finish_r2.py", line 65, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/mnt/data/CYBR_SCENES_R2/tools/finish_r2.py", line 53, in main
+    sys.argv=[str(path),*rest];module.main()
+                               ~~~~~~~~~~~^^
+  File "/mnt/data/CYBR_SCENES_R2/engines/hot/cybr-geo/examples/desert_hot_springs/finish.py", line 113, in main
+    set_num_threads(5);filtered=rgb.copy()
+    ~~~~~~~~~~~~~~~^^^
+  File "/opt/pyvenv/lib/python3.13/site-packages/numba/np/ufunc/parallel.py", line 612, in set_num_threads
+    snt_check(n)
+    ~~~~~~~~~^^^
+  File "/opt/pyvenv/lib/python3.13/site-packages/numba/np/ufunc/parallel.py", line 574, in snt_check
+    raise ValueError(msg)
+ValueError: The number of threads must be between 1 and 4

@@ -1,0 +1,26 @@
+{
+  "command": [
+    "/mnt/data/CYBR_SCENES_R2/build/hot_original",
+    "--self-test"
+  ],
+  "cwd": ".",
+  "started_at": "2026-09-21T17:16:15.395890+00:00",
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "4",
+    "NUMBA_NUM_THREADS": "4",
+    "CYBR_SURFACE_ATLAS": "/mnt/data/CYBR_SCENES_R2/assets/mineral_detail.cdt"
+  },
+  "executed_command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/mnt/data/CYBR_SCENES_R2/evidence/original-self-test-hot.resources.txt",
+    "/mnt/data/CYBR_SCENES_R2/build/hot_original",
+    "--self-test"
+  ],
+  "returncode": 0,
+  "seconds": 10.65951455100003,
+  "finished_at": "2026-09-21T17:16:26.055431+00:00",
+  "log_sha256": "899c403f58f47d83fa81bd1baf011f24ab65625f8e12cef95fa7762373dc90c5"
+}

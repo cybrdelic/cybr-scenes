@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "float32_values_exact": true,
+  "dimensions": [
+    2560,
+    1120
+  ],
+  "finite_values": true,
+  "negative_values": 0,
+  "linear_min": 0.0002429542801110074,
+  "linear_max": 8.130475997924805,
+  "maximum_absolute_export_error": 0.0,
+  "reader_scope": "independent NONE-compressed RGB scanline layout check"
+}

@@ -1,0 +1,422 @@
+--- a/engines/geo/cybr-geo/native/fernwater_materials_r6.h
++++ b/engines/geo/cybr-geo/native/fernwater_materials_r6.h
+@@ -19,7 +19,22 @@
+     std::cerr<<"R6 local surface coordinate frames: "<<n<<"\n";
+ }
+ Surface shadeAt6(V p,V &n,int id,float footprint,int group){
+-    if(sceneStyle!=2)return shadeLegacyR5(p,n,id,footprint);
++    if(sceneStyle!=2){
++        V gn=n;Surface material=shadeLegacyR5(p,n,id,footprint);
++        bool rock=id==1||id==2||id==13;
++        if(rock){
++            cybr_detail::apply(p,gn,n,material.color,material.rough,footprint,
++                sceneStyle==0?.67f:.93f,sceneStyle==0?.56f:.46f,.72f);
++            // Salt/rust deposition is spatial, not a repeated bright texture.
++            if(sceneStyle==1){float edge=std::exp(-sqr((p.z-.43f)/.19f));
++                float algae=edge*smooth(-.12f,.37f,noise(p*9.2f));
++                material.color=mixc(material.color,V(.030f,.045f,.020f),algae*.34f);
++            }
++        }else if(id==0||id==4){cybr_detail::apply(p,gn,n,material.color,material.rough,footprint,1.85f,.15f,.28f);}
++        material.color=vmin(vmax(material.color,V(.003f)),V(.88f));
++        if(dot(n,gn)<.60f)n=unit(n+gn);
++        return material;
++    }
+     Surface m;m.kind=id;m.rough=.80f;m.ior=1.49f;V gn=n;
+     float grain=.12f,relief=.09f;
+     float wet=1-smooth(.00f,.19f,p.z),macro=noise(p*.94f),fine=1/(1+sqr(footprint*140));
+@@ -66,8 +81,8 @@
+     }else if(id==3||id==9||id==13||id==11){
+         float component=f?(.5f+.5f*std::sin(f->seed*2.71f)):(.5f+.5f*noise(p*12));
+         bool dead=id==11||id==13;
+-        m.color=dead?mixc(V(.044f,.017f,.005f),V(.235f,.119f,.035f),component):mixc(V(.028f,.105f,.009f),V(.110f,.235f,.034f),component*.78f);
+-        m.rough=dead?.66f:(.38f+.16f*component);m.ior=1.45f;grain=dead?.035f:0;relief=0;
++        m.color=dead?mixc(V(.031f,.022f,.013f),V(.185f,.126f,.069f),component):mixc(V(.028f,.105f,.009f),V(.110f,.235f,.034f),component*.78f);
++        m.rough=dead?(.78f-.27f*wet):(.34f+.23f*component);m.ior=1.45f;grain=dead?.035f:0;relief=0;
+         if(id==3){m.color=mixc(V(.018f,.048f,.012f),V(.052f,.108f,.024f),component);m.rough=.56f;}
+         if(f){
+             V q=p-f->origin;float u=dot(q,f->d)/f->length,v=dot(q,f->side)*2/f->width;
+@@ -79,7 +94,13 @@
+             float mottling=noise(V(u*10,v*5,f->seed));
+             m.color*=1+.060f*mottling;
+             m.color=mixc(m.color,dead?V(.26f,.164f,.058f):V(.13f,.218f,.032f),.34f*mid+.17f*vein);
+-            if(dead){float decay=smooth(.20f,.53f,noise(V(u*9,v*6,f->seed)));m.color*=1-.48f*decay;}
++            if(dead){float decay=smooth(.06f,.48f,noise(V(u*9,v*6,f->seed)));
++                m.color=mixc(m.color,V(.020f,.015f,.008f),decay*(.30f+.30f*wet));
++            }else{
++                // Chlorophyll variation follows each leaf, not world-space tiles.
++                float chlorosis=smooth(.26f,.61f,noise(V(u*4.7f,v*3.2f,f->seed)));
++                m.color=mixc(m.color,V(.135f,.181f,.036f),chlorosis*.22f);
++            }
+             // Sparse gloss modulation and a vein ridge normal in the leaf's own frame.
+             float delta=.016f*std::sin(sequence*2*PI)*filtered;
+             V tangent=f->side-n*dot(f->side,n);n=unit(n+tangent*delta);
+@@ -92,6 +113,7 @@
+         float lines=noise(V(p.x*37,p.y*37,p.z*7));
+         m.color=mixc(V(.047f,.023f,.010f),V(.18f,.10f,.042f),.48f+.38f*lines);m.rough=.94f;grain=.24f;relief=.15f;
+     }else{m.color=V(.10f);grain=.1f;}
++    if(id==1||id==2||id==5)cybr_detail::apply(p,gn,n,m.color,m.rough,footprint,1.2f,.42f,.60f);
+     if(grain>0)m.color*=1+grain*(projectedGrain(p,n,footprint,.39f)-1);
+     if(relief>0)n=unit(n-projectedRelief(p,n,footprint,relief));
+     if(dot(n,gn)<.70f)n=unit(n+gn);
+--- a/engines/geo/cybr-geo/native/formation_materials_r2.h
++++ b/engines/geo/cybr-geo/native/formation_materials_r2.h
+@@ -45,8 +45,8 @@
+  if(sceneStyle==0){
+   float bed=p.z+.22f*std::sin(p.y*.33f)+.055f*p.y;
+   float layers=.5f+.5f*std::sin(bed*3.6f+.7f*noise(V(p.y*.6f,p.z*.4f,0)));
+-  float lamina=.5f+.5f*std::sin(bed*49.f+.38f*noise(V(p.y*5,p.z*2,0)));
+-  float crossbed=.5f+.5f*std::sin((bed+.10f*std::sin(p.y*.71f))*113.f+p.y*1.2f);
++  float lamina=.5f+.5f*std::sin(bed*49.f+.38f*noise(V(p.y*5,p.z*2,0)))/(1+sqr(footprint*49.f));
++  float crossbed=.5f+.5f*std::sin((bed+.10f*std::sin(p.y*.71f))*113.f+p.y*1.2f)/(1+sqr(footprint*114.f));
+   if(id==0||id==4){
+    float wash=std::exp(-sqr((p.x-(.40f*std::sin(p.y*.21f)+1.35f*std::exp(-sqr((p.y-18)/6.8f))-.9f*std::exp(-sqr((p.y-30)/4.8f))))/.9f));
+    m.color=mixc(V(.34f,.225f,.125f),V(.50f,.360f,.222f),.45f+.28f*macro);
+--- a/engines/geo/cybr-geo/native/spectral_scenes.cpp
++++ b/engines/geo/cybr-geo/native/spectral_scenes.cpp
+@@ -1,3 +1,4 @@
++#include "surface_detail.hpp"
+ #include <numeric>
+ #include <atomic>
+ #include <cstdint>
+@@ -503,7 +504,7 @@
+         if(dot(n,gn)<.1f)n=gn;
+         if(dot(n,-ray.d)<.01f)n=gn;
+         Spec base=rgbAnchors(m.color);V v=-ray.d,lAir=sampleSun(rng);
+-        const bool sampleSkyHere6=skyNEE6&&sceneStyle==2&&waterPool<0;
++        const bool sampleSkyHere6=skyNEE6&&waterPool<0;
+         if(sampleSkyHere6){
+             float z=rng.uniform(),phi=2*PI*rng.uniform(),rr=std::sqrt(std::max(0.f,1-z*z));
+             V light(rr*std::cos(phi),rr*std::sin(phi),z);
+@@ -699,7 +700,7 @@
+ }
+ int main(int argc,char**argv){try{
+     if(argc==2&&std::string(argv[1])=="--self-test")return selftest();
+-    auto o=parse(argc,argv);if(!o.grain.empty())photographicGrain.load(o.grain);if(!o.relief.empty())granularRelief.load(o.relief);omp_set_num_threads(o.threads);configureScene();initSpectra();initRipples();initClouds();initSteam();if(!o.groundCertificate.empty())groundOcclusion.load(o.groundCertificate);
++    auto o=parse(argc,argv);cybr_detail::load_from_environment();if(!o.grain.empty())photographicGrain.load(o.grain);if(!o.relief.empty())granularRelief.load(o.relief);omp_set_num_threads(o.threads);configureScene();initSpectra();initRipples();initClouds();initSteam();if(!o.groundCertificate.empty())groundOcclusion.load(o.groundCertificate);
+     auto started=std::chrono::steady_clock::now();
+     loadSurfaceFrames6(o.mesh);
+     std::ifstream input(o.mesh,std::ios::binary);if(!input)throw std::runtime_error("Cannot read CYBR GEO mesh "+o.mesh);
+@@ -782,9 +783,9 @@
+     {std::ofstream sf(o.out+".support",std::ios::binary);sf.write(reinterpret_cast<char*>(dim),8);sf.write(reinterpret_cast<char*>(support.data()),support.size()*sizeof(GuideSupport));}
+     uint64_t totalCameraSamples=std::accumulate(sampleCounts.begin(),sampleCounts.end(),uint64_t(0));
+     float sec=std::chrono::duration<float>(std::chrono::steady_clock::now()-started).count();
+-    std::ofstream meta(o.out+".json");meta<<std::setprecision(9)<<"{\n  \"renderer\": \"CYBR GEO Fernwater R6; local leaf/bark material frames; R5 noise resolve\",\n  \"guide_spp\": "<<o.guideSpp<<",\n  \"primary_surface_guides\": true,\n  \"geometry_accelerator\": \"CYBR GEO native SAH BVH\",\n  \"view\": \""<<o.view<<"\",\n  \"width\": "<<o.width<<", \"height\": "<<o.height<<", \"spp\": "<<o.spp<<",\n  \"max_depth\": "<<o.depth<<", \"seed\": "<<o.seed<<", \"threads\": "<<o.threads<<",\n  \"triangles\": "<<tris.size()<<", \"bvh_nodes\": "<<nodes.size()<<",\n  \"spectral_bands\": 16, \"wavelength_range_nm\": [380,780],\n  \"spectral_method\": \"Jointly transported fixed midpoint wavelength quadrature, 25 nm bins\",\n  \"water_ior\": "<<WATER_IOR<<", \"dispersion\": false,\n  \"steam\": "<<(useSteam?"true":"false")<<", \"steam_model\": \"Authored heterogeneous trilinear density grid; grid-bounded delta and ratio tracking; HG phase\",\n  \"water_absorption_scale\": "<<waterStrength<<",\n  \"finite_difference_water_connection_step_radians\": 0.0001,\n  \"nonfinite_path_samples\": "<<nonfinite.load()<<",\n  \"exposure\": "<<o.exposure<<",\n  \"film_white_rgb\": ["<<whiteRGB.x<<","<<whiteRGB.y<<","<<whiteRGB.z<<"],\n  \"seconds\": "<<sec<<",\n  \"band_means\": [";
++    std::ofstream meta(o.out+".json");meta<<std::setprecision(9)<<"{\n  \"renderer\": \"CYBR SCENES R2 / GEO: stochastic photographic minerals, slope moments, global sky MIS\",\n  \"guide_spp\": "<<o.guideSpp<<",\n  \"primary_surface_guides\": true,\n  \"geometry_accelerator\": \"CYBR GEO native SAH BVH\",\n  \"view\": \""<<o.view<<"\",\n  \"width\": "<<o.width<<", \"height\": "<<o.height<<", \"spp\": "<<o.spp<<",\n  \"max_depth\": "<<o.depth<<", \"seed\": "<<o.seed<<", \"threads\": "<<o.threads<<",\n  \"triangles\": "<<tris.size()<<", \"bvh_nodes\": "<<nodes.size()<<",\n  \"spectral_bands\": 16, \"wavelength_range_nm\": [380,780],\n  \"spectral_method\": \"Jointly transported fixed midpoint wavelength quadrature, 25 nm bins\",\n  \"water_ior\": "<<WATER_IOR<<", \"dispersion\": false,\n  \"steam\": "<<(useSteam?"true":"false")<<", \"steam_model\": \"Authored heterogeneous trilinear density grid; grid-bounded delta and ratio tracking; HG phase\",\n  \"water_absorption_scale\": "<<waterStrength<<",\n  \"finite_difference_water_connection_step_radians\": 0.0001,\n  \"nonfinite_path_samples\": "<<nonfinite.load()<<",\n  \"exposure\": "<<o.exposure<<",\n  \"film_white_rgb\": ["<<whiteRGB.x<<","<<whiteRGB.y<<","<<whiteRGB.z<<"],\n  \"seconds\": "<<sec<<",\n  \"band_means\": [";
+     for(int k=0;k<NBANDS;k++)meta<<(k?",":"")<<means.v[k];
+-    meta<<"],\n  \"r6_surface_coordinate_frames\": "<<surfaceFrames6.size()<<",\n  \"sky_next_event_sampling\": "<<(skyNEE6&&sceneStyle==2?"true":"false")<<",\n  \"water_scattering_coefficient_per_m\": "<<WATER_SIGMA_S<<",\n  \"water_scattering_HG_g\": "<<WATER_PHASE_G<<",\n  \"ripple_modes\": "<<RIPPLE_COUNT<<",\n  \"camera_origin_m\": ["<<camera.x<<","<<camera.y<<","<<camera.z<<"],\n  \"camera_target_m\": ["<<target.x<<","<<target.y<<","<<target.z<<"],\n  \"horizontal_fov_degrees\": "<<hfov<<",\n  \"aperture_radius_m\": "<<o.aperture<<",\n  \"sun_direction\": ["<<SUN.x<<","<<SUN.y<<","<<SUN.z<<"],\n  \"photographic_grayscale_albedo_detail\": "<<(!photographicGrain.levels.empty()?"true":"false")<<",\n  \"granular_relief_enabled\": "<<(!granularRelief.levels.empty()?"true":"false")<<",\n  \"photographic_backplate\": false,\n  \"image_generation\": false,\n  \"sky_model\": \"Single-scattering spherical Rayleigh/aerosol spectral LUT, not reference-validated\",\n  \"material_spectra\": \"Reference-illuminant-calibrated RGB-anchor reflectance, not measured mineral spectra\",\n  \"clouds\": "<<(useClouds?"true":"false")<<",\n  \"cloud_model\": \"Bounded 3D extinction grid; conservative column-majorant DDA; delta-tracked scattering and ratio-tracked shadows\",\n  \"cloud_grid\": ["<<CLOUD_NX<<","<<CLOUD_NY<<","<<CLOUD_NZ<<"],\n  \"water_spp\": "<<o.waterSpp<<",\n  \"total_camera_samples\": "<<totalCameraSamples<<",\n  \"indirect_contribution_clamp_Y\": "<<indirectClamp<<",\n  \"clamped_indirect_contributions\": "<<clampedIndirectContributions.load()<<",\n  \"leaf_surface_model\": \"Reciprocal Fresnel-GGX coat with two-sided attenuated diffuse body; authored, not measured\",\n  \"leaf_body_reflection_share\": 0.6,\n  \"leaf_surface_r4\": true,\n  \"ground_occlusion_enabled\": "<<(groundOcclusion.active?"true":"false")<<",\n  \"ground_occlusion_queries\": "<<groundOcclusion.queries.load()<<",\n  \"ground_occlusion_rejections\": "<<groundOcclusion.rejections.load()<<",\n  \"water_microfacet_alpha\": "<<WATER_MICRO_ALPHA<<",\n  \"water_reflection_estimator\": \"Primary: GGX VNDF and solar-disc MIS; indirect: one-root macro reflection manifold with exclusive path ownership\",\n  \"underwater_direct_light_approximation\": \"One-root macro-surface manifolds approximate indirect reflected and transmitted caustics; primary reflection uses GGX\"\n}\n";
++    meta<<"],\n  \"r6_surface_coordinate_frames\": "<<surfaceFrames6.size()<<",\n  \"sky_next_event_sampling\": "<<(skyNEE6?"true":"false")<<",\n  \"water_scattering_coefficient_per_m\": "<<WATER_SIGMA_S<<",\n  \"water_scattering_HG_g\": "<<WATER_PHASE_G<<",\n  \"ripple_modes\": "<<RIPPLE_COUNT<<",\n  \"camera_origin_m\": ["<<camera.x<<","<<camera.y<<","<<camera.z<<"],\n  \"camera_target_m\": ["<<target.x<<","<<target.y<<","<<target.z<<"],\n  \"horizontal_fov_degrees\": "<<hfov<<",\n  \"aperture_radius_m\": "<<o.aperture<<",\n  \"sun_direction\": ["<<SUN.x<<","<<SUN.y<<","<<SUN.z<<"],\n  \"photographic_grayscale_albedo_detail\": "<<(!photographicGrain.levels.empty()?"true":"false")<<",\n  \"granular_relief_enabled\": "<<(!granularRelief.levels.empty()?"true":"false")<<",\n  \"photographic_backplate\": false,\n  \"image_generation\": false,\n  \"sky_model\": \"Single-scattering spherical Rayleigh/aerosol spectral LUT, not reference-validated\",\n  \"material_spectra\": \"Reference-illuminant-calibrated RGB-anchor reflectance, not measured mineral spectra\",\n  \"clouds\": "<<(useClouds?"true":"false")<<",\n  \"cloud_model\": \"Bounded 3D extinction grid; conservative column-majorant DDA; delta-tracked scattering and ratio-tracked shadows\",\n  \"cloud_grid\": ["<<CLOUD_NX<<","<<CLOUD_NY<<","<<CLOUD_NZ<<"],\n  \"water_spp\": "<<o.waterSpp<<",\n  \"total_camera_samples\": "<<totalCameraSamples<<",\n  \"indirect_contribution_clamp_Y\": "<<indirectClamp<<",\n  \"clamped_indirect_contributions\": "<<clampedIndirectContributions.load()<<",\n  \"leaf_surface_model\": \"Reciprocal Fresnel-GGX coat with two-sided attenuated diffuse body; authored, not measured\",\n  \"leaf_body_reflection_share\": 0.6,\n  \"leaf_surface_r4\": true,\n  \"ground_occlusion_enabled\": "<<(groundOcclusion.active?"true":"false")<<",\n  \"ground_occlusion_queries\": "<<groundOcclusion.queries.load()<<",\n  \"ground_occlusion_rejections\": "<<groundOcclusion.rejections.load()<<",\n  \"water_microfacet_alpha\": "<<WATER_MICRO_ALPHA<<",\n  \"water_reflection_estimator\": \"Primary: GGX VNDF and solar-disc MIS; indirect: one-root macro reflection manifold with exclusive path ownership\",\n  \"underwater_direct_light_approximation\": \"One-root macro-surface manifolds approximate indirect reflected and transmitted caustics; primary reflection uses GGX\"\n}\n";
+     std::cerr<<"WROTE "<<o.out<<"; "<<sec<<" seconds; invalid paths "<<nonfinite<<"\n";
+     return nonfinite?2:0;
+ }catch(const std::exception&e){std::cerr<<"ERROR: "<<e.what()<<"\n";return 1;}}
+--- a/engines/geode/src/cathedral_v3.cpp
++++ b/engines/geode/src/cathedral_v3.cpp
+@@ -1,3 +1,4 @@
++#include "surface_detail.hpp"
+ // CYBR GEO / GPL-2.0-only
+ // Native Drowned Geode extension. Reuses CYBR GEO's actual BVH and mesh
+ // intersections. Photographed material maps are inputs, not backgrounds.
+@@ -224,8 +225,9 @@
+     V h=unit(V(alpha*nh.x,alpha*nh.y,std::max(0.f,nh.z)));
+     return frame.world(reflect(-vv,h));
+ }
++static inline float r2Smooth(float a,float b,float x){float t=std::min(1.f,std::max(0.f,(x-a)/(b-a)));return t*t*(3-2*t); }
+ Surface shade(V p,V &n,int material,float footprint,const Hit &hit){
+- const auto &tr=tris[hit.tri];const auto &a=attributes[hit.tri];
++ V originalNormal=n;const auto &tr=tris[hit.tri];const auto &a=attributes[hit.tri];
+  V tint=a.col[0]*(1-hit.u-hit.v)+a.col[1]*hit.u+a.col[2]*hit.v;
+  Texel tex{V(.25f),V(0,0,1),.7f};Surface m;m.kind=material;
+  if(a.texture>=0){
+@@ -282,7 +284,18 @@
+  if(material==4){m.color=tint;m.rough=.63f;}
+  if(material==5){m.color=m.color*.6f+V(.26f,.24f,.19f)*.4f;m.rough=.61f;}
+ 
+- m.color=vmin(vmax(m.color,V(.002f)),V(.93f));return m;
++ if(material==0){
++  // Calcite precipitation concentrates along vertical seepage paths. Its
++  // wet dielectric response is coupled to the same mask as the deposit.
++  float seep=r2Smooth(.12f,.52f,noise(V(p.x*1.8f,p.y*1.8f,p.z*.105f)));
++  float deposit=seep*r2Smooth(.9f,5.f,p.z)*.38f;
++  m.color=m.color*(1-deposit)+V(.38f,.350f,.290f)*deposit;
++  m.rough=m.rough*(1-seep*.35f)+.25f*seep*.35f;
++  cybr_detail::apply(p,originalNormal,n,m.color,m.rough,footprint,.86f,.16f,.38f);
++ }
++ if(material==1||material==2)cybr_detail::apply(p,originalNormal,n,m.color,m.rough,footprint,1.7f,.18f,.40f);
++ if(dot(n,originalNormal)<.55f)n=unit(n+originalNormal);
++ m.color=vmin(vmax(m.color,V(.002f)),V(.88f));return m;
+ }
+ 
+ // A numerical Snell-law connection to the displaced water heightfield.
+@@ -406,7 +419,12 @@
+    V v=-ray.d;
+    float index=quartzIndex(band>=0?WL0+(band+.5f)*DL:550.f);
+    float ratio=entering?index:1.f/index;
+-   float alpha=(mat==8?.022f:.042f)*(1+.22f*noise(p*8.f));
++   // Clear exposed tips and rough weathered attachment zones. All sampling,
++   // BSDF evaluation and PDFs below receive this identical alpha.
++   float clearTip=r2Smooth(.22f,1.6f,p.z);
++   float etch=r2Smooth(.18f,.58f,noise(p*5.1f));
++   float alpha=(mat==8?.013f:.029f)+.026f*(1-clearTip)+.012f*etch;
++
+    V light=sampleSun(rng);auto direct=roughGlass(n,v,light,ratio,alpha);
+    V origin=p+gn*(dot(light,gn)>0?EPS*8:-EPS*8);
+    if(direct.f>0&&!opaqueShadow(Ray(origin,light),INF))
+@@ -574,7 +592,7 @@
+ }
+ int main(int argc,char**argv){try{
+     if(argc==2&&std::string(argv[1])=="--self-test")return selftest();
+-    auto o=parse(argc,argv);initSpectra();omp_set_num_threads(o.threads);
++    auto o=parse(argc,argv);cybr_detail::load_from_environment();initSpectra();omp_set_num_threads(o.threads);
+     auto started=std::chrono::steady_clock::now();
+     std::ifstream input(o.mesh,std::ios::binary);if(!input)throw std::runtime_error("Cannot read CYBR GEO mesh "+o.mesh);
+     char magic[4];input.read(magic,4);if(std::memcmp(magic,"CVR2",4))throw std::runtime_error("Not CVR2");uint32_t count;input.read(reinterpret_cast<char*>(&count),4);
+@@ -662,7 +680,7 @@
+     {std::ofstream f(o.out+".samples",std::ios::binary);f.write((char*)dim,8);f.write((char*)sampleCounts.data(),sampleCounts.size()*sizeof(uint32_t));}
+     if(o.bands){std::ofstream sp(o.out+".spectral",std::ios::binary);uint32_t header[]={0x36315053,uint32_t(o.width),uint32_t(o.height),NBANDS};sp.write(reinterpret_cast<char*>(header),16);sp.write(reinterpret_cast<char*>(film.data()),film.size()*sizeof(Spec));}
+     float sec=std::chrono::duration<float>(std::chrono::steady_clock::now()-started).count();
+-    std::ofstream meta(o.out+".json");meta<<std::setprecision(9)<<"{\n  \"renderer\": \"CYBR GEO native cavern V3 - rough-quartz NEE spectral CPU\",\n  \"geometry_accelerator\": \"CYBR GEO native SAH BVH4 / AVX2 triangle packets\",\n  \"view\": \""<<o.view<<"\",\n  \"width\": "<<o.width<<", \"height\": "<<o.height<<", \"spp\": "<<o.spp<<",\n  \"max_depth\": "<<o.depth<<", \"seed\": "<<o.seed<<", \"threads\": "<<o.threads<<",\n  \"triangles\": "<<tris.size()<<", \"bvh_nodes\": "<<nodes.size()<<",\n  \"spectral_bands\": 16, \"wavelength_range_nm\": [380,780],\n  \"spectral_method\": \"Jointly transported fixed midpoint wavelength quadrature, 25 nm bins\",\n  \"water_ior\": "<<WATER_IOR<<", \"dispersion\": "<<((splitting&&!clay)?"true":"false")<<",\n  \"steam\": "<<(useSteam?"true":"false")<<", \"steam_model\": \"Bounded homogeneous haze; analytic transmittance; forced first collision; full continuation\",\n  \"water_absorption_scale\": "<<waterStrength<<",\n  \"finite_difference_water_connection_step_radians\": 0.002,\n  \"nonfinite_path_samples\": "<<nonfinite.load()<<",\n  \"exposure\": "<<o.exposure<<",\n  \"film_white_rgb\": ["<<whiteRGB.x<<","<<whiteRGB.y<<","<<whiteRGB.z<<"],\n  \"seconds\": "<<sec<<",\n  \"band_means\": [";
++    std::ofstream meta(o.out+".json");meta<<std::setprecision(9)<<"{\n  \"renderer\": \"CYBR SCENES R2 / Drowned Geode: seepage mineral layers and weathered quartz\",\n  \"geometry_accelerator\": \"CYBR GEO native SAH BVH4 / AVX2 triangle packets\",\n  \"view\": \""<<o.view<<"\",\n  \"width\": "<<o.width<<", \"height\": "<<o.height<<", \"spp\": "<<o.spp<<",\n  \"max_depth\": "<<o.depth<<", \"seed\": "<<o.seed<<", \"threads\": "<<o.threads<<",\n  \"triangles\": "<<tris.size()<<", \"bvh_nodes\": "<<nodes.size()<<",\n  \"image_generation\": false,\n  \"spectral_bands\": 16, \"wavelength_range_nm\": [380,780],\n  \"spectral_method\": \"Jointly transported fixed midpoint wavelength quadrature, 25 nm bins\",\n  \"water_ior\": "<<WATER_IOR<<", \"dispersion\": "<<((splitting&&!clay)?"true":"false")<<",\n  \"steam\": "<<(useSteam?"true":"false")<<", \"steam_model\": \"Bounded homogeneous haze; analytic transmittance; forced first collision; full continuation\",\n  \"water_absorption_scale\": "<<waterStrength<<",\n  \"finite_difference_water_connection_step_radians\": 0.002,\n  \"nonfinite_path_samples\": "<<nonfinite.load()<<",\n  \"exposure\": "<<o.exposure<<",\n  \"film_white_rgb\": ["<<whiteRGB.x<<","<<whiteRGB.y<<","<<whiteRGB.z<<"],\n  \"seconds\": "<<sec<<",\n  \"band_means\": [";
+     for(int k=0;k<NBANDS;k++)meta<<(k?",":"")<<means.v[k];meta<<"]\n}\n";
+     std::cerr<<"WROTE "<<o.out<<"; "<<sec<<" seconds; invalid paths "<<nonfinite<<"\n";
+     return nonfinite?2:0;
+--- a/engines/hot/cybr-geo/examples/desert_hot_springs/build_scene.py
++++ b/engines/hot/cybr-geo/examples/desert_hot_springs/build_scene.py
+@@ -41,6 +41,8 @@
+     ap.add_argument('--seed',type=int,default=SEED);ap.add_argument('--no-glb',action='store_true')
+     args=ap.parse_args();out=args.out;out.mkdir(parents=True,exist_ok=True)
+     start=time.time();rng=np.random.default_rng(args.seed);parts=[]
++    from stream_scene_r2 import PartSpool,roundtrip_to_native
++    spool=PartSpool(out/".part-spool")
+     mats=[Material('Mixed sand and carbonate sediment',(.50,.40,.29),0,.86),
+           Material('Weathered pale carbonate',(.58,.53,.44),0,.81),
+           Material('Jointed desert rock',(.29,.235,.17),0,.82),
+@@ -52,8 +54,8 @@
+           Material('Dry branch wood',(.14,.092,.05),0,.93),
+           Material('Sparse grey olive leaves',(.21,.23,.14),0,.88)]
+     def add(name,v,f,n,mat,group='landscape',**meta):
+-        parts.append(Part(name,np.asarray(v)*1000,np.asarray(f),np.asarray(n),material=mat,group=group,
+-                          role='Authored environmental mesh; not a surveyed or simulated landform',metadata=meta))
++        parts.append(spool.store(Part(name,np.asarray(v)*1000,np.asarray(f),np.asarray(n),material=mat,group=group,
++                          role='Authored environmental mesh; not a surveyed or simulated landform',metadata=meta)))
+     # ~1 cm foreground geometry; a smoothly graded density budget rather than
+     # millions of distant gravel triangles with almost no projected area.
+     xs=np.unique(np.r_[np.linspace(-180,-14,65),np.linspace(-14,-7,130),np.linspace(-7,8,1201),np.linspace(8,20,130),np.linspace(20,180,65)])
+@@ -233,18 +235,12 @@
+         'limitations':['Authored landscape, not a site scan','Authored steam, not CFD','Authored reflectance, not measured spectra']})
+     assembly.save(out/'scene')
+     if not args.no_glb:assembly.export_glb(out/'scene.glb')
++    total=sum(len(p.faces) for p in parts)
+     del assembly,parts,stones,grass,wood,leaves,chips,templates;gc.collect()
+-    loaded=Assembly.load(out/'scene');meshpath=out/'scene.meshbin';total=sum(len(p.faces) for p in loaded.parts)
+-    with meshpath.open('wb') as stream:
+-        stream.write(np.uint32(total).tobytes())
+-        for group,p in enumerate(loaded.parts):
+-            # Bounded write chunks avoid peak copies for the terrain.
+-            for begin in range(0,len(p.faces),100000):
+-                faces=p.faces[begin:begin+100000];a=np.empty((len(faces),20),dtype='<f4')
+-                a[:,:9]=(p.vertices[faces]*.001).reshape(-1,9);a[:,9:18]=p.normals[faces].reshape(-1,9)
+-                a[:,18]=p.material;a[:,19]=group;stream.write(a.tobytes())
+-    report=loaded.validate();report.update(counts=counts,triangles=total,seconds=time.time()-start,
+-        mesh_sha256=stream_hash(meshpath),actual_cybrgeo_save_load_roundtrip=True,image_generation=False)
++    meshpath=out/'scene.meshbin'
++    report=roundtrip_to_native(out/'scene',meshpath,total)
++    report.update(counts=counts,triangles=total,seconds=time.time()-start,
++        mesh_sha256=stream_hash(meshpath),memory_bounded_part_spooling=True,image_generation=False)
+     (out/'geometry_verification.json').write_text(json.dumps(report,indent=2)+'\n')
+     print(json.dumps(report,indent=2),flush=True)
+ if __name__=='__main__':main()
+--- a/engines/hot/cybr-geo/native/landscape_materials_v11.h
++++ b/engines/hot/cybr-geo/native/landscape_materials_v11.h
+@@ -18,7 +18,7 @@
+  return (frame.t*dx+frame.b*dy)*(amplitude*filter);
+ }
+ Surface shade(V p,V &n,int material,float footprint){
+- Surface m;m.kind=material;
++ Surface m;m.kind=material;V originalNormal=n;
+  float q0=poolQ(p,0),q1=poolQ(p,1);int pi=q0<q1?0:1;
+  float q=std::min(q0,q1),d=(q-1)*pools[pi].rx,level=pools[pi].level;
+  float macro=fbm(p*.53f),meso=fbm(p*17.1f);
+@@ -107,6 +107,15 @@
+   m.color=mixc(V(.185f,.222f,.131f),V(.31f,.283f,.171f),dry*.52f);
+   m.color*=1+.29f*noise(p*173);m.rough=.83f;
+  }else m.color=V(.3f);
++ // R2: new stochastic photographed microstructure on actual geometry.
++ if(material==1||material==2)cybr_detail::apply(p,originalNormal,n,m.color,m.rough,footprint,.86f,.58f,.85f);
++ if(material==0||material==4){
++  cybr_detail::apply(p,originalNormal,n,m.color,m.rough,footprint,2.7f,.16f,.30f);
++  float lamination=std::exp(-sqr((d-.10f)/.28f))*(.45f+.55f*patch);
++  float pore=smooth(.10f,.57f,noise(p*53.f))/(1+sqr(footprint*53.f));
++  m.color=mixc(m.color,V(.48f,.424f,.283f),lamination*pore*.20f);
++ }
++ if(dot(n,originalNormal)<.55f)n=unit(n+originalNormal);
+  m.color*=1-.29f*wet;
+  m.ior=(p.z<level&&q<1.1f)?1.48f/WATER_IOR:(wet>.2f?1.334f:1.48f);
+  m.color=vmin(vmax(m.color,V(.003f)),V(.91f));
+--- a/engines/hot/cybr-geo/native/spectral_desert.cpp
++++ b/engines/hot/cybr-geo/native/spectral_desert.cpp
+@@ -1,3 +1,4 @@
++#include "surface_detail.hpp"
+ #include <numeric>
+ #include <atomic>
+ #include <cstdint>
+@@ -397,7 +398,7 @@
+ }
+ Spec trace(Ray ray,RNG&rng,int maxDepth,float pixelCone){
+     Spec L,throughput(1);int waterPool=-1,scatterWater=-2,deltaCount=0;
+-    bool indirect=false;bool lastWaterReflection=false;bool waterReflectionNEE=false;float previousReflectionPDF=0;float totalPathLength=0;
++    bool indirect=false;bool lastWaterReflection=false;bool waterReflectionNEE=false;float previousReflectionPDF=0;float totalPathLength=0;bool previousSkyNEE=false;float previousSkyPDF=0;
+     for(int depth=0;depth<maxDepth;depth++){
+         Hit h;bool found=closest(ray,h);
+         if(waterPool>=0){
+@@ -416,7 +417,7 @@
+                         recordRadiance(L,throughput*solar*attenuation(dist)*factor,indirect);
+                     }
+                 }
+-                scatterWater=waterPool;deltaCount=0;waterReflectionNEE=false;indirect=true;
++                previousSkyNEE=false;scatterWater=waterPool;deltaCount=0;waterReflectionNEE=false;indirect=true;
+                 ray=Ray(p,sampleHG(ray.d,rng,WATER_PHASE_G));
+                 continue;
+             }
+@@ -439,14 +440,14 @@
+                 }
+             }
+             throughput*=.995f;
+-            scatterWater=-1;deltaCount=0;waterReflectionNEE=false;indirect=true;
++            previousSkyNEE=false;scatterWater=-1;deltaCount=0;waterReflectionNEE=false;indirect=true;
+             ray=Ray(p,sampleHG(ray.d,rng,g));
+             continue;
+         }
+         if(!found){
+             bool sunVisible=!(scatterWater==-1&&deltaCount==0)&&!(scatterWater>=0&&deltaCount==1)
+                 &&!(scatterWater==-1&&deltaCount==1&&lastWaterReflection);
+-            Spec incoming=physicalSky(ray.d);
++            Spec incoming=physicalSky(ray.d);if(previousSkyNEE&&ray.d.z>0)incoming*=powerWeight(previousSkyPDF,1/(2*PI));
+             if(sunVisible&&dot(ray.d,SUN)>=SUN_COS){
+                 float weight=waterReflectionNEE?powerWeight(previousReflectionPDF,1/SUN_SOLID):1.f;
+                 incoming+=solar*weight;
+@@ -458,7 +459,7 @@
+         const Tri &tri=tris[h.tri];V p=ray.o+ray.d*h.t;
+         V gn=unit(cross(tri.e1,tri.e2)),n=unit(tri.n0*(1-h.u-h.v)+tri.n1*h.u+tri.n2*h.v);
+         int material=tri.mat;waterReflectionNEE=false;
+-        if(useWater&&(material==6||material==7)){
++        if(useWater&&(material==6||material==7)){previousSkyNEE=false;
+             bool enter=dot(ray.d,gn)<0;
+             // Only top normals are smoothed. The closed buried side/bottom
+             // geometry still supplies the actual boundary orientations.
+@@ -497,6 +498,20 @@
+         if(dot(n,gn)<.1f)n=gn;
+         if(dot(n,-ray.d)<.01f)n=gn;
+         Spec base=rgbAnchors(m.color);V v=-ray.d,lAir=sampleSun(rng);
++        // Direct sky is sampled separately from the finite solar disc. The
++        // BSDF escape path receives the reciprocal MIS weight. Water and leaves
++        // are not transparent shortcuts in this environment path class.
++        bool sampleSkyHere=waterPool<0&&material!=3&&material!=9;
++        if(sampleSkyHere){
++            float z=rng.uniform(),phi=2*PI*rng.uniform(),r=std::sqrt(std::max(0.f,1-z*z));V light(r*std::cos(phi),r*std::sin(phi),z);
++            float nc=dot(n,light);if(nc>0&&dot(gn,light)>0){Ray shadow(p+gn*EPS*5,light);Hit blocker;
++                if(!meshHit(shadow,blocker,true)){float lp=1/(2*PI),bp=pdfBSDF(m,n,v,light),tr=airTransmittance(shadow,INF,rng);
++                    recordRadiance(L,throughput*evalBSDF(m,base,n,v,light)*physicalSky(light)*(nc*tr*powerWeight(lp,bp)/lp),indirect);
++                }
++            }
++        }
++        previousSkyNEE=false;
++
+         if(useWater&&waterPool<0){
+             for(int pool=0;pool<2;pool++){
+                 auto c=reflectedWaterConnection(p,lAir,pool);
+@@ -551,7 +566,7 @@
+         throughput*=evalBSDF(m,base,n,v,next)*(cosine/pdf);
+         if(!std::isfinite(throughput.maximum()))break;
+         if(depth>=3){float survive=clamp(throughput.maximum(),.05f,.94f);if(rng.uniform()>survive)break;throughput*=1/survive;}
+-        scatterWater=waterPool;deltaCount=0;indirect=true;
++        previousSkyNEE=sampleSkyHere;previousSkyPDF=pdf;scatterWater=waterPool;deltaCount=0;indirect=true;
+         ray=Ray(p+gn*EPS*5,unit(next));
+     }
+     return L;
+@@ -617,7 +632,7 @@
+ }
+ int main(int argc,char**argv){try{
+     if(argc==2&&std::string(argv[1])=="--self-test")return selftest();
+-    auto o=parse(argc,argv);if(!o.grain.empty())photographicGrain.load(o.grain);if(!o.relief.empty())granularRelief.load(o.relief);omp_set_num_threads(o.threads);initSpectra();initRipples();initClouds();initSteam();
++    auto o=parse(argc,argv);cybr_detail::load_from_environment();if(!o.grain.empty())photographicGrain.load(o.grain);if(!o.relief.empty())granularRelief.load(o.relief);omp_set_num_threads(o.threads);initSpectra();initRipples();initClouds();initSteam();
+     auto started=std::chrono::steady_clock::now();
+     std::ifstream input(o.mesh,std::ios::binary);if(!input)throw std::runtime_error("Cannot read CYBR GEO mesh "+o.mesh);
+     uint32_t count;input.read(reinterpret_cast<char*>(&count),4);
+@@ -686,7 +701,7 @@
+     {std::ofstream samples(o.out+".samples",std::ios::binary);samples.write(reinterpret_cast<char*>(dim),8);samples.write(reinterpret_cast<char*>(sampleCounts.data()),sampleCounts.size()*sizeof(uint16_t));}
+     uint64_t totalCameraSamples=std::accumulate(sampleCounts.begin(),sampleCounts.end(),uint64_t(0));
+     float sec=std::chrono::duration<float>(std::chrono::steady_clock::now()-started).count();
+-    std::ofstream meta(o.out+".json");meta<<std::setprecision(9)<<"{\n  \"renderer\": \"CYBR GEO native V11 scale-separated microgeometry and jointed ridge terrain\",\n  \"geometry_accelerator\": \"CYBR GEO native SAH BVH\",\n  \"view\": \""<<o.view<<"\",\n  \"width\": "<<o.width<<", \"height\": "<<o.height<<", \"spp\": "<<o.spp<<",\n  \"max_depth\": "<<o.depth<<", \"seed\": "<<o.seed<<", \"threads\": "<<o.threads<<",\n  \"triangles\": "<<tris.size()<<", \"bvh_nodes\": "<<nodes.size()<<",\n  \"spectral_bands\": 16, \"wavelength_range_nm\": [380,780],\n  \"spectral_method\": \"Jointly transported fixed midpoint wavelength quadrature, 25 nm bins\",\n  \"water_ior\": "<<WATER_IOR<<", \"dispersion\": false,\n  \"steam\": "<<(useSteam?"true":"false")<<", \"steam_model\": \"Authored heterogeneous trilinear density grid; grid-bounded delta and ratio tracking; HG phase\",\n  \"water_absorption_scale\": "<<waterStrength<<",\n  \"finite_difference_water_connection_step_radians\": 0.0001,\n  \"nonfinite_path_samples\": "<<nonfinite.load()<<",\n  \"exposure\": "<<o.exposure<<",\n  \"film_white_rgb\": ["<<whiteRGB.x<<","<<whiteRGB.y<<","<<whiteRGB.z<<"],\n  \"seconds\": "<<sec<<",\n  \"band_means\": [";
++    std::ofstream meta(o.out+".json");meta<<std::setprecision(9)<<"{\n  \"renderer\": \"CYBR SCENES R2 / Hot Springs: stochastic sinter/mineral surfaces and sky MIS\",\n  \"geometry_accelerator\": \"CYBR GEO native SAH BVH\",\n  \"view\": \""<<o.view<<"\",\n  \"width\": "<<o.width<<", \"height\": "<<o.height<<", \"spp\": "<<o.spp<<",\n  \"max_depth\": "<<o.depth<<", \"seed\": "<<o.seed<<", \"threads\": "<<o.threads<<",\n  \"triangles\": "<<tris.size()<<", \"bvh_nodes\": "<<nodes.size()<<",\n  \"spectral_bands\": 16, \"wavelength_range_nm\": [380,780],\n  \"spectral_method\": \"Jointly transported fixed midpoint wavelength quadrature, 25 nm bins\",\n  \"water_ior\": "<<WATER_IOR<<", \"dispersion\": false,\n  \"steam\": "<<(useSteam?"true":"false")<<", \"steam_model\": \"Authored heterogeneous trilinear density grid; grid-bounded delta and ratio tracking; HG phase\",\n  \"water_absorption_scale\": "<<waterStrength<<",\n  \"finite_difference_water_connection_step_radians\": 0.0001,\n  \"nonfinite_path_samples\": "<<nonfinite.load()<<",\n  \"exposure\": "<<o.exposure<<",\n  \"film_white_rgb\": ["<<whiteRGB.x<<","<<whiteRGB.y<<","<<whiteRGB.z<<"],\n  \"seconds\": "<<sec<<",\n  \"band_means\": [";
+     for(int k=0;k<NBANDS;k++)meta<<(k?",":"")<<means.v[k];
+     meta<<"],\n  \"water_scattering_coefficient_per_m\": "<<WATER_SIGMA_S<<",\n  \"water_scattering_HG_g\": "<<WATER_PHASE_G<<",\n  \"ripple_modes\": "<<RIPPLE_COUNT<<",\n  \"camera_origin_m\": ["<<camera.x<<","<<camera.y<<","<<camera.z<<"],\n  \"camera_target_m\": ["<<target.x<<","<<target.y<<","<<target.z<<"],\n  \"horizontal_fov_degrees\": "<<hfov<<",\n  \"aperture_radius_m\": "<<o.aperture<<",\n  \"sun_direction\": ["<<SUN.x<<","<<SUN.y<<","<<SUN.z<<"],\n  \"photographic_grayscale_albedo_detail\": "<<(!photographicGrain.levels.empty()?"true":"false")<<",\n  \"photographic_backplate\": false,\n  \"image_generation\": false,\n  \"sky_model\": \"Single-scattering spherical Rayleigh/aerosol spectral LUT, not reference-validated\",\n  \"material_spectra\": \"Reference-illuminant-calibrated RGB-anchor reflectance, not measured mineral spectra\",\n  \"clouds\": "<<(useClouds?"true":"false")<<",\n  \"cloud_model\": \"Bounded 3D extinction grid; conservative column-majorant DDA; delta-tracked scattering and ratio-tracked shadows\",\n  \"cloud_grid\": ["<<CLOUD_NX<<","<<CLOUD_NY<<","<<CLOUD_NZ<<"],\n  \"water_spp\": "<<o.waterSpp<<",\n  \"total_camera_samples\": "<<totalCameraSamples<<",\n  \"indirect_contribution_clamp_Y\": "<<indirectClamp<<",\n  \"clamped_indirect_contributions\": "<<clampedIndirectContributions.load()<<",\n  \"water_microfacet_alpha\": "<<WATER_MICRO_ALPHA<<",\n  \"water_reflection_estimator\": \"Primary: GGX VNDF and solar-disc MIS; indirect: one-root macro reflection manifold with exclusive path ownership\",\n  \"underwater_direct_light_approximation\": \"One-root macro-surface manifolds approximate indirect reflected and transmitted caustics; primary reflection uses GGX\"\n}\n";
+     std::cerr<<"WROTE "<<o.out<<"; "<<sec<<" seconds; invalid paths "<<nonfinite<<"\n";
+--- a/engines/obsidian/src/render.cpp
++++ b/engines/obsidian/src/render.cpp
+@@ -11,6 +11,7 @@
+ #include <cstring>
+ #include <iomanip>
+ #include <omp.h>
++#include <cstdlib>
+ using namespace cybr;
+ #ifndef CYBR_SEQUENCE_BASE
+ #define CYBR_SEQUENCE_BASE 933719
+@@ -40,6 +41,7 @@
+ 
+ Vec3 sky(Vec3 d){if(skyLUT.empty())return clear_sky(d);double x=(std::atan2(d.z,d.x)/(2*pi))*SW-.5;if(x<0)x+=SW;double y=std::acos(clamp(d.y,-1.,1.))/pi*SH-.5;int x0=int(std::floor(x)),y0=std::clamp(int(std::floor(y)),0,SH-1);double u=frac(x),v=frac(y);int x1=(x0+1)%SW,y1=std::min(SH-1,y0+1);Vec3 c=skyLUT[y0*SW+x0]*(1-u)*(1-v)+skyLUT[y0*SW+x1]*u*(1-v)+skyLUT[y1*SW+x0]*(1-u)*v+skyLUT[y1*SW+x1]*u*v;return (c*.96+Vec3(lum(c))*.04  )*.84;}
+ 
++#include "environment_sampler.hpp"
+ #include "scene_maps.hpp"
+ Vec3 emitted(const Mat&m,Vec3 p){return m.kind==10000?skin_at(p).e:m.emission;}
+ 
+@@ -167,13 +169,18 @@
+ struct Sample {Vec3 color,albedo,normal,emission;double distance=30000;};
+ Sample trace(Ray ray,RNG&r,int maxdepth){Sample out;Vec3 result,throughput(1),prev;double lastpdf=0;bool first=true;double traveled=0;
+  for(int depth=0;depth<maxdepth;depth++){
+-  Hit h;if(!bvh.hit(ray,h)){result+=throughput*sky(ray.d);break;}
++  Hit h;if(!bvh.hit(ray,h)){double mis=first?1.:power_heuristic(lastpdf,environment_pdf(ray.d));result+=throughput*sky(ray.d)*mis;break;}
+   traveled+=h.t;double footprint=traveled*pixel_angle;
+   auto surf=surface(materials[h.material],h,-ray.d,footprint);const Mat&m=surf.m;Vec3 albedo=surf.albedo,n=surf.n,wo=-ray.d;
+   if(first){out.albedo=albedo;out.normal=n;out.emission=surf.emission;out.distance=h.t;}
+   if(m.kind==10000||lum(m.emission)>0){double w=1;if(!first){double cs=std::abs(dot(h.gn,-ray.d));double pdf=area_pdf(prev,h.primitive)*h.t*h.t/std::max(cs,1e-10);w=power_heuristic(lastpdf,pdf);}result+=throughput*surf.emission*w;}
+   int id=choose_light(h.p,r);if(id>=0){Vec3 p,ln;primitives[id].sample(r,ray.time,p,ln);Vec3 d=p-h.p;double dist=norm(d);d=d/dist;double cosine=std::abs(dot(ln,-d)),pdf=area_pdf(h.p,id)*dist*dist/std::max(cosine,1e-10);auto e=bsdf(m,albedo,n,wo,d);if(e.pdf>0&&pdf>0&&!bvh.occluded({offset(h.p,h.gn,d),d},dist-3e-4)){result+=throughput*e.f*emitted(materials[primitives[id].material],p)*(std::max(0.,dot(n,d))*power_heuristic(pdf,e.pdf)/pdf);}}
+   auto disk=concentric_disk(r.uniform(),r.uniform());Frame sf(sun);Vec3 sd=normalize(sun+(sf.x*disk[0]+sf.y*disk[1] )*.024);auto se=bsdf(m,albedo,n,wo,sd);if(dot(n,sd)>0&&!bvh.occluded({offset(h.p,h.gn,sd),sd},1000))result+=throughput*se.f*sunColor*dot(n,sd);
++  // R2: explicit HDR-environment next-event sampling; the escape path uses
++  // the matching PDF above. No screen-space ambient term replaces transport.
++  double epdf=0;Vec3 ed=sample_environment(r,epdf);auto ee=bsdf(m,albedo,n,wo,ed);
++  if(epdf>0&&dot(h.gn,ed)>0&&dot(n,ed)>0&&ee.pdf>0&&!bvh.occluded({offset(h.p,h.gn,ed),ed},1e8))
++      result+=throughput*ee.f*sky(ed)*(dot(n,ed)*power_heuristic(epdf,ee.pdf)/epdf);
+   Vec3 wi=sample_bsdf(m,n,wo,r);auto e=bsdf(m,albedo,n,wo,wi);if(e.pdf<=0||dot(wi,h.gn)<=0)break;
+   throughput=throughput*e.f*(std::max(0.,dot(n,wi))/e.pdf);prev=h.p;lastpdf=e.pdf;first=false;ray={offset(h.p,h.gn,wi),wi};
+   if(depth>=2){double survive=std::clamp(std::max({throughput.x,throughput.y,throughput.z}),.1,.85);if(r.uniform()>survive)break;throughput=throughput/survive;}
+@@ -215,11 +222,11 @@
+ int main(int argc,char**argv){try{
+  if(argc<7){std::cerr<<"usage: render scene.bin output_prefix width height spp camera[0/1] [maxdepth]\n";return 2;}
+  int W=std::stoi(argv[3]),H=std::stoi(argv[4]),SPP=std::stoi(argv[5]),cam=std::stoi(argv[6]),depth=argc>7?std::stoi(argv[7]):4;
+- if(W<16||H<16||SPP<1)throw std::runtime_error("Invalid image settings");omp_set_num_threads(4);
++ if(W<16||H<16||SPP<1)throw std::runtime_error("Invalid image settings");const char* threads=std::getenv("OMP_NUM_THREADS");omp_set_num_threads(threads?std::max(1,std::atoi(threads)):4);
+  std::ifstream f(argv[1],std::ios::binary);if(!f)throw std::runtime_error("Cannot open scene");uint32_t magic=read<uint32_t>(f);if(magic!=0x3253424f)throw std::runtime_error("Not an OBS2 scene stream");uint32_t nm=read<uint32_t>(f),np=read<uint32_t>(f),stride=read<uint32_t>(f);if(stride!=104)throw std::runtime_error("Invalid triangle stride");if(nm>10000||np>12000000)throw std::runtime_error("Invalid scene counts");
+  materials.resize(nm);for(auto&m:materials){m.color=readv(f);m.emission=readv(f);m.rough=read<float>(f);m.spec=read<float>(f);m.kind=read<int32_t>(f);}
+  uv_density.resize(np,240);uv_sign.resize(np,1);primitives.resize(np);int prim_id=0;for(auto&p:primitives){p.shape=Shape::Triangle;p.a=readv(f);p.b=readv(f);p.c=readv(f);p.na=readv(f);p.nb=readv(f);p.nc=readv(f);p.ta={read<float>(f),read<float>(f),0};p.tb={read<float>(f),read<float>(f),0};p.tc={read<float>(f),read<float>(f),0};p.material=read<int32_t>(f);p.object=read<int32_t>(f);p.smooth=true;if(p.material<0||p.material>=int(nm))throw std::runtime_error("Bad material");p.has_uv=materials[p.material].kind<0||materials[p.material].kind==10000;if(p.has_uv){Vec3 d1=p.tb-p.ta,d2=p.tc-p.ta;double det=d1.x*d2.y-d1.y*d2.x;uv_density[prim_id]=2048*std::sqrt(std::abs(det)*.5/std::max(p.area(),1e-15));uv_sign[prim_id]=det>0?1:-1;}prim_id++;}
+- auto start=std::chrono::steady_clock::now();std::cerr<<"Building "<<np<<" CYBR LIGHT primitives\n";load_texture("assets/rock_texture.bin");prepare_maps();bvh.build(primitives);prepare_lights();prepare_sky();std::cerr<<"BVH "<<bvh.node_count()<<" nodes; rendering "<<W<<"x"<<H<<" @ "<<SPP<<" spp\n";
++ auto start=std::chrono::steady_clock::now();std::cerr<<"Building "<<np<<" CYBR LIGHT primitives\n";load_texture("assets/rock_texture.bin");prepare_maps();bvh.build(primitives);prepare_lights();prepare_sky();prepare_environment_sampler();std::cerr<<"BVH "<<bvh.node_count()<<" nodes; rendering "<<W<<"x"<<H<<" @ "<<SPP<<" spp\n";
+  Camera camera;camera.origin=cam==0?Vec3(-2.8,7.0,-15):Vec3(.3,9.0,-21);camera.target=cam==0?Vec3(.5,1.8,12):Vec3(1.0,2.3,16);camera.fov=cam==0?41:38;pixel_angle=2*std::tan(camera.fov*pi/360)/H;
+  std::vector<Vec3>film(size_t(W)*H),normal(film.size()),alb(film.size()),dist(film.size()),variance(film.size()),emission(film.size());std::atomic<int>done{0};std::atomic<uint64_t> nonfinite_samples{0};std::atomic<uint64_t> total_camera_paths{0};
+  std::vector<uint16_t> budget;
+@@ -242,5 +249,5 @@
+  }
+ 
+  std::string prefix=argv[2];pfm(prefix+".pfm",film,W,H);pfm(prefix+"_normal.pfm",normal,W,H);pfm(prefix+"_albedo.pfm",alb,W,H);pfm(prefix+"_depth.pfm",dist,W,H);pfm(prefix+"_variance.pfm",variance,W,H);pfm(prefix+"_emission.pfm",emission,W,H);
+- double elapsed=std::chrono::duration<double>(std::chrono::steady_clock::now()-start).count();std::ofstream meta(prefix+"_render.json");meta<<"{\"renderer\":\"CYBR LIGHT core / scene-specific CPU bridge\",\"width\":"<<W<<",\"height\":"<<H<<",\"spp\":"<<SPP<<",\"triangles\":"<<np<<",\"seconds\":"<<elapsed<<",\"path_depth\":"<<depth<<",\"gpu\":false,\"temperature_spectrum_preintegrated\":true,\"fluid_simulation\":false}";std::ofstream sr(prefix+"_sampling.json");sr<<"{\"total_camera_paths\":"<<total_camera_paths.load()<<",\"mean_spp\":"<<double(total_camera_paths.load())/(W*H)<<",\"guided_budget\":"<<(budget.empty()?"false":"true")<<"}";std::cerr<<"NONFINITE_SAMPLES "<<nonfinite_samples.load()<<"\n";std::cerr<<"DONE "<<elapsed<<" seconds\n";return 0;
++ double elapsed=std::chrono::duration<double>(std::chrono::steady_clock::now()-start).count();std::ofstream meta(prefix+"_render.json");meta<<"{\"renderer\":\"CYBR SCENES R2 / CYBR LIGHT CPU bridge, explicit HDR MIS\",\"width\":"<<W<<",\"height\":"<<H<<",\"spp\":"<<SPP<<",\"triangles\":"<<np<<",\"seconds\":"<<elapsed<<",\"path_depth\":"<<depth<<",\"gpu\":false,\"image_generation\":false,\"nonfinite_path_samples\":"<<nonfinite_samples.load()<<",\"temperature_spectrum_preintegrated\":true,\"fluid_simulation\":false}";std::ofstream sr(prefix+"_sampling.json");sr<<"{\"total_camera_paths\":"<<total_camera_paths.load()<<",\"mean_spp\":"<<double(total_camera_paths.load())/(W*H)<<",\"guided_budget\":"<<(budget.empty()?"false":"true")<<"}";std::cerr<<"NONFINITE_SAMPLES "<<nonfinite_samples.load()<<"\n";std::cerr<<"DONE "<<elapsed<<" seconds\n";return 0;
+  }catch(const std::exception&e){std::cerr<<e.what()<<"\n";return 1;}}
+--- a/engines/obsidian/src/scene_maps.hpp
++++ b/engines/obsidian/src/scene_maps.hpp
+@@ -23,7 +23,7 @@
+ SceneMap lava_map;std::array<SceneMap,2> scan_maps;
+ std::vector<Vec3> thermal_table;
+ float skin_bounds[4];double pixel_angle=.001;
+-constexpr double emission_gain=28.0;
++constexpr double emission_gain=19.0;
+ double river_center(double z){return 3.7*std::sin(z*.090)+1.10*std::sin(z*.153+.7);}
+ double river_center_derivative(double z){return 3.7*.090*std::cos(z*.090)+1.10*.153*std::cos(z*.153+.7);}
+ Vec3 thermal(double T){double t=clamp(T-500,0,1499.);int i=int(t);return thermal_table[i]*(1-(t-i))+thermal_table[i+1]*(t-i);}

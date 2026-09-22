@@ -1,0 +1,46 @@
+--- a/engines/hot/cybr-geo/examples/desert_hot_springs/build_scene.py
++++ b/engines/hot/cybr-geo/examples/desert_hot_springs/build_scene.py
+@@ -41,6 +41,8 @@
+     ap.add_argument('--seed',type=int,default=SEED);ap.add_argument('--no-glb',action='store_true')
+     args=ap.parse_args();out=args.out;out.mkdir(parents=True,exist_ok=True)
+     start=time.time();rng=np.random.default_rng(args.seed);parts=[]
++    from stream_scene_r2 import PartSpool,roundtrip_to_native
++    spool=PartSpool(out/".part-spool")
+     mats=[Material('Mixed sand and carbonate sediment',(.50,.40,.29),0,.86),
+           Material('Weathered pale carbonate',(.58,.53,.44),0,.81),
+           Material('Jointed desert rock',(.29,.235,.17),0,.82),
+@@ -52,8 +54,8 @@
+           Material('Dry branch wood',(.14,.092,.05),0,.93),
+           Material('Sparse grey olive leaves',(.21,.23,.14),0,.88)]
+     def add(name,v,f,n,mat,group='landscape',**meta):
+-        parts.append(Part(name,np.asarray(v)*1000,np.asarray(f),np.asarray(n),material=mat,group=group,
+-                          role='Authored environmental mesh; not a surveyed or simulated landform',metadata=meta))
++        parts.append(spool.store(Part(name,np.asarray(v)*1000,np.asarray(f),np.asarray(n),material=mat,group=group,
++                          role='Authored environmental mesh; not a surveyed or simulated landform',metadata=meta)))
+     # ~1 cm foreground geometry; a smoothly graded density budget rather than
+     # millions of distant gravel triangles with almost no projected area.
+     xs=np.unique(np.r_[np.linspace(-180,-14,65),np.linspace(-14,-7,130),np.linspace(-7,8,1201),np.linspace(8,20,130),np.linspace(20,180,65)])
+@@ -233,18 +235,12 @@
+         'limitations':['Authored landscape, not a site scan','Authored steam, not CFD','Authored reflectance, not measured spectra']})
+     assembly.save(out/'scene')
+     if not args.no_glb:assembly.export_glb(out/'scene.glb')
++    total=sum(len(p.faces) for p in parts)
+     del assembly,parts,stones,grass,wood,leaves,chips,templates;gc.collect()
+-    loaded=Assembly.load(out/'scene');meshpath=out/'scene.meshbin';total=sum(len(p.faces) for p in loaded.parts)
+-    with meshpath.open('wb') as stream:
+-        stream.write(np.uint32(total).tobytes())
+-        for group,p in enumerate(loaded.parts):
+-            # Bounded write chunks avoid peak copies for the terrain.
+-            for begin in range(0,len(p.faces),100000):
+-                faces=p.faces[begin:begin+100000];a=np.empty((len(faces),20),dtype='<f4')
+-                a[:,:9]=(p.vertices[faces]*.001).reshape(-1,9);a[:,9:18]=p.normals[faces].reshape(-1,9)
+-                a[:,18]=p.material;a[:,19]=group;stream.write(a.tobytes())
+-    report=loaded.validate();report.update(counts=counts,triangles=total,seconds=time.time()-start,
+-        mesh_sha256=stream_hash(meshpath),actual_cybrgeo_save_load_roundtrip=True,image_generation=False)
++    meshpath=out/'scene.meshbin'
++    report=roundtrip_to_native(out/'scene',meshpath,total)
++    report.update(counts=counts,triangles=total,seconds=time.time()-start,
++        mesh_sha256=stream_hash(meshpath),memory_bounded_part_spooling=True,image_generation=False)
+     (out/'geometry_verification.json').write_text(json.dumps(report,indent=2)+'\n')
+     print(json.dumps(report,indent=2),flush=True)
+ if __name__=='__main__':main()

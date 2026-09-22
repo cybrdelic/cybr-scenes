@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "state": "succeeded",
+  "command": [
+    "/mnt/data/execution_repair/CYBR_SCENES_R2/build/obsidian_r2",
+    "/mnt/data/execution_repair/CYBR_SCENES_R2/geometry-r2/obsidian/scene.bin",
+    "/mnt/data/execution_repair/CYBR_SCENES_R2/renders/execution-proof/obsidian-reach/hero/hero",
+    "384",
+    "168",
+    "8",
+    "0",
+    "7"
+  ],
+  "cwd": "/mnt/data/execution_repair/CYBR_SCENES_R2/engines/obsidian",
+  "started_at": "2026-09-21T21:31:00.462470+00:00",
+  "started_unix": 1790026260.4624763,
+  "supervisor": {
+    "pid": 1557,
+    "start_ticks": 64517,
+    "boot_id": "6d4adc15-175c-4a7b-ab22-618f70e77433",
+    "pid_namespace": "pid:[4026532199]"
+  },
+  "log": "/mnt/data/execution_repair/CYBR_SCENES_R2/renders/execution-proof/obsidian-reach/hero/render.log",
+  "timeout_seconds": 180,
+  "memory_budget_bytes": null,
+  "peak_tree_rss_bytes": 2960297984,
+  "returncode": 0,
+  "completed": true,
+  "child": {
+    "pid": 1564,
+    "start_ticks": 64570,
+    "boot_id": "6d4adc15-175c-4a7b-ab22-618f70e77433",
+    "pid_namespace": "pid:[4026532199]"
+  },
+  "pid": 1564,
+  "heartbeat_at": "2026-09-21T21:31:34.401942+00:00",
+  "elapsed_seconds": 33.93963320700004,
+  "tree_rss_bytes": 0,
+  "descendant_count": 0,
+  "log_bytes": 175,
+  "log_silent_seconds": 0.513270378112793,
+  "finished_at": "2026-09-21T21:31:34.402097+00:00",
+  "log_sha256": "055edd4c5a951f6d4a7f919bf4ad3c6cf0d177a84d93041538a94f4322663043",
+  "seconds": 33.93963320700004,
+  "environment": {
+    "OMP_NUM_THREADS": "4",
+    "NUMBA_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CYBR_SURFACE_ATLAS": "/mnt/data/execution_repair/CYBR_SCENES_R2/assets/mineral_detail.cdt"
+  },
+  "executed_command": [
+    "/mnt/data/execution_repair/CYBR_SCENES_R2/build/obsidian_r2",
+    "/mnt/data/execution_repair/CYBR_SCENES_R2/geometry-r2/obsidian/scene.bin",
+    "/mnt/data/execution_repair/CYBR_SCENES_R2/renders/execution-proof/obsidian-reach/hero/hero",
+    "384",
+    "168",
+    "8",
+    "0",
+    "7"
+  ]
+}

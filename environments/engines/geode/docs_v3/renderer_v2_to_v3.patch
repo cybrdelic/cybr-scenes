@@ -1,0 +1,204 @@
+--- v2/src/cavern.cpp
++++ v3/src/cathedral_v3.cpp
+@@ -28,7 +28,7 @@
+ };
+ std::array<V,NBANDS> matching;
+ Spec solar,skyBlue,skyHorizon,waterSigma;
+-V whiteRGB, SUN=unit(V(-.24f,.55f,.80f));
++V whiteRGB, SUN=unit(V(-.205f,.59f,.78f));
+ constexpr float SUN_RADIUS=.008f;
+ const float SUN_COS=std::cos(SUN_RADIUS), SUN_SOLID=2*PI*(1-SUN_COS);
+ bool useSteam=true,useWater=true;float waterStrength=1.f;
+@@ -68,7 +68,7 @@
+     float y=0;
+     for(int k=0;k<NBANDS;k++){matching[k]=cie1931(WL0+(k+.5f)*DL)*DL;y+=matching[k].y;}
+     for(auto &c:matching)c=c/y;
+-    solar=blackbody(5000.f)*(8.0f/SUN_SOLID);
++    solar=blackbody(5650.f)*(6.8f/SUN_SOLID);
+     skyBlue=blackbody(6500.f);
+     for(int k=0;k<NBANDS;k++)skyBlue.v[k]*=std::pow(550.f/(WL0+(k+.5f)*DL),2.5f);
+     skyBlue*=1.f/xyz(skyBlue).y;skyHorizon=blackbody(7600.f);
+@@ -99,15 +99,15 @@
+ float noise(float x,float y){return noise(V(x,y,0));}
+ float fbm(V p){return noise(p)+.5f*noise(p*2.07f+V(11,-7,.31f))+.25f*noise(p*4.2849f+V(22,-14,.62f));}
+ struct Pool{float x,y,rx,ry,level,depth;};
+-std::array<Pool,2> pools={Pool{0,10,12,30,.075f,2.25f},Pool{0,10,12,30,.075f,2.25f}};
++std::array<Pool,2> pools={Pool{.5f,18.5f,18.5f,36.5f,.075f,2.8f},Pool{.5f,18.5f,18.5f,36.5f,.075f,2.8f}};
+ float poolQ(V p,int i){
+     auto a=pools[i];float x=(p.x-a.x)/a.rx,y=(p.y-a.y)/a.ry;
+     float ang=std::atan2(y,x);
+     float edge=1+.082f*std::sin(3*ang+.7f+i)+.044f*std::sin(7*ang-1.4f)+.019f*std::sin(13*ang+i)+.021f*noise(p.x*1.7f,p.y*1.7f);
+     return std::sqrt(x*x+y*y)/edge;
+ }
+-float waterHeight(float x,float y,int){return .075f+.010f*std::sin(1.25f*x+1.7f*y)+.004f*std::sin(-2.8f*x+3.3f*y+1.2f)+.0012f*std::sin(8.5f*x-2.3f*y+.4f);}
+-V waterNormal(float x,float y,int){float a=.010f*std::cos(1.25f*x+1.7f*y),b=.004f*std::cos(-2.8f*x+3.3f*y+1.2f),c=.0012f*std::cos(8.5f*x-2.3f*y+.4f);return unit(V(-(1.25f*a-2.8f*b+8.5f*c),-(1.7f*a+3.3f*b-2.3f*c),1));}
++float waterHeight(float x,float y,int){return .075f+.012f*std::sin(1.08f*x+1.48f*y)+.006f*std::sin(-2.31f*x+2.05f*y+1.2f)+.002f*std::sin(5.7f*x-3.2f*y+.4f);}
++V waterNormal(float x,float y,int){float a=.012f*std::cos(1.08f*x+1.48f*y),b=.006f*std::cos(-2.31f*x+2.05f*y+1.2f),c=.002f*std::cos(5.7f*x-3.2f*y+.4f);return unit(V(-(1.08f*a-2.31f*b+5.7f*c),-(1.48f*a+2.05f*b-3.2f*c),1));}
+ float fresnelD(float cosine,float ei,float et){
+     cosine=clamp(cosine);float sin2=ei*ei/(et*et)*(1-cosine*cosine);if(sin2>=1)return 1;
+     float ct=std::sqrt(1-sin2),rs=(ei*cosine-et*ct)/(ei*cosine+et*ct),rp=(et*cosine-ei*ct)/(et*cosine+ei*ct);
+@@ -126,7 +126,7 @@
+ V sampleSun(RNG&rng){Frame f(SUN);float c=1-rng.uniform()*(1-SUN_COS),s=std::sqrt(std::max(0.f,1-c*c)),a=2*PI*rng.uniform();return unit(f.world(V(s*std::cos(a),s*std::sin(a),c)));}
+ Spec environment(V d,bool solarVisible){
+     float elevation=clamp(d.z),h=std::pow(1-elevation,3.5f);
+-    Spec s=skyBlue*(.62f+.28f*elevation)+skyHorizon*(.34f*h);
++    Spec s=skyBlue*(.85f+.40f*elevation)+skyHorizon*(.40f*h);
+     if(d.z<0)s=skyHorizon*.18f;
+     if(solarVisible&&dot(d,SUN)>=SUN_COS)s+=solar;
+     return s;
+@@ -147,8 +147,8 @@
+ 
+ // Bounded, genuinely ray-integrated participating medium. This is a procedural
+ // density field, NOT a Navier-Stokes/thermal plume simulation or a 2-D overlay.
+-const V FOG_LO(-10,-14,.085f),FOG_HI(10,34,13.5f);
+-constexpr float STEAM_SCALE=1.f,MAJORANT=.009f,PHASE_G=.49f,FOG_SIGMA=.0075f;
++const V FOG_LO(-17,-19,.085f),FOG_HI(18,53,25.f);
++constexpr float STEAM_SCALE=1.f,MAJORANT=.009f,PHASE_G=.49f,FOG_SIGMA=.0028f;
+ bool fogInterval(const Ray&r,float maximum,float &a,float &b){
+     a=0;b=maximum;
+     for(int k=0;k<3;k++){
+@@ -252,17 +252,20 @@
+   tex.color=tx.color*weights.x+ty.color*weights.y+tz.color*weights.z;
+   tex.rough=tx.rough*weights.x+ty.rough*weights.y+tz.rough*weights.z;
+   tex.normal=tx.normal*weights.x+ty.normal*weights.y+tz.normal*weights.z;
++  // Triplanar tangent-space normals from the paired photographed height map.
++  V perturb=V(0,tx.normal.x,-tx.normal.y)*weights.x+V(ty.normal.x,0,-ty.normal.y)*weights.y+V(tz.normal.x,-tz.normal.y,0)*weights.z;
++  n=unit(n+(perturb-n*dot(perturb,n))*.68f);
+   // Low-strength mesoscopic relief is evaluated in object space, bandwidth-limited.
+-  Frame frame(n);float f=17.f,filter=1/(1+sqr(footprint*f));
++  Frame frame(n);float f=29.f,filter=1/(1+sqr(footprint*f));
+   V q=p*f;float dt=noise(q+frame.t*.025f)-noise(q-frame.t*.025f),db=noise(q+frame.b*.025f)-noise(q-frame.b*.025f);
+-  n=unit(n+(frame.t*dt+frame.b*db)*(2.6f*filter));
++  n=unit(n+(frame.t*dt+frame.b*db)*(1.7f*filter));
+  }
+  m.color=tex.color*tint;m.rough=clamp(tex.rough,.4f,.93f);
+  if(material==0){
+   float weather=noise(V(p.x*.29f,p.y*.29f,p.z*.36f));
+   m.color*=.98f+.21f*weather;
+   float z=p.z+.18f*fbm(V(p.x*.32f,p.y*.25f,p.z*.22f))+.07f*p.y;
+-  float mineral=std::exp(-sqr(std::sin(z*3.25f))/.030f)*.17f;
++  float mineral=std::exp(-sqr(std::sin(z*.85f+.35f*noise(p*.4f)))/.013f)*.12f;
+   m.color=m.color*(1-mineral)+V(.34f,.30f,.24f)*mineral;
+   // Green staining occurs only near the water. It is not an emissive material.
+   float algae=std::exp(-sqr((p.z-.45f)/.70f))*clamp(.5f+noise(p*.78f))*.27f;
+@@ -273,9 +276,12 @@
+  if(material==0)wet=std::max(wet,.26f*clamp(.35f+noise(V(p.x*1.4f,p.y*.55f,p.z*.075f))*1.6f));
+  m.color*=1-.2f*wet;m.rough=m.rough*(1-wet)+.31f*wet;
+  if(submerged){m.ior=1.5f/WATER_IOR;
+-  if(material==1){float silt=.64f+.12f*noise(p*.7f);m.color=m.color*(1-silt)+V(.20f,.225f,.215f)*silt;m.rough=.78f;}
++  if(material==1){float silt=.40f+.14f*noise(p*.7f);m.color=m.color*(1-silt)+V(.25f,.28f,.26f)*silt;m.rough=.78f;}
+  }
+- if(material==3){m.color=tint;m.rough=.36f;}
++ if(material==3){m.color=tint;m.rough=.48f;}
++ if(material==4){m.color=tint;m.rough=.63f;}
++ if(material==5){m.color=m.color*.6f+V(.26f,.24f,.19f)*.4f;m.rough=.61f;}
++
+  m.color=vmin(vmax(m.color,V(.002f)),V(.93f));return m;
+ }
+ 
+@@ -310,18 +316,20 @@
+ // Finite geometry-aware sky portals: no lighting cards are visible or emissive.
+ // Both merely importance-sample the actual sky through the real cave apertures.
+ struct Portal{V center,u,v,n;float area;};
+-std::array<Portal,2> portals={Portal{V(1.2f,10.8f,14.0f),V(5.5f,0,0),V(0,8.0f,0),V(0,0,1),176.f},
+- Portal{V(0,-15.1f,6.f),V(8.5f,0,0),V(0,0,6.f),V(0,-1,0),204.f}};
++std::array<Portal,3> portals={
++ Portal{V(1.2f,12.8f,15.5f),V(7.1f,0,0),V(0,9.2f,0),V(0,0,1),261.28f},
++ Portal{V(-4.8f,2.f,14.5f),V(3.f,0,0),V(0,4.7f,0),V(0,0,1),56.4f},
++ Portal{V(-1.5f,-20.1f,4.2f),V(7.2f,0,0),V(0,0,7.5f),V(0,-1,0),216.f}};
+ float portalPDF(V p,V d){float sum=0;for(const auto&a:portals){
+  float dn=dot(d,a.n);if(std::fabs(dn)<1e-8f)continue;float t=dot(a.center-p,a.n)/dn;if(t<=EPS)continue;
+  V q=p+d*t-a.center;if(std::fabs(dot(q,a.u)/dot(a.u,a.u))>1||std::fabs(dot(q,a.v)/dot(a.v,a.v))>1)continue;
+- sum+=.5f*t*t/(std::fabs(dn)*a.area);
++ sum+=(1.f/3.f)*t*t/(std::fabs(dn)*a.area);
+  }return sum;}
+-V samplePortal(V p,RNG&rng){const auto&a=portals[rng.uniform()<.5f?0:1];return unit(a.center+a.u*(2*rng.uniform()-1)+a.v*(2*rng.uniform()-1)-p);}
++V samplePortal(V p,RNG&rng){const auto&a=portals[std::min(2,int(rng.uniform()*3))];return unit(a.center+a.u*(2*rng.uniform()-1)+a.v*(2*rng.uniform()-1)-p);}
+ float misPower(float a,float b){return a*a/(a*a+b*b+1e-30f);}
+ float quartzIndex(float wavelength){float l2=sqr(wavelength*.001f);return std::sqrt(1.28604141f+1.07044083f*l2/(l2-.0100585997f)+1.10202242f*l2/(l2-100.f));}
+-Spec quartzAttenuation(float metres){Spec s;for(int k=0;k<NBANDS;k++){float w=WL0+(k+.5f)*DL;s.v[k]=std::exp(-metres*(.024f+.035f*std::exp(-.5f*sqr((w-430)/90))));}return s;}
+-constexpr float WATER_SCATTER_RATE=.055f;
++Spec quartzAttenuation(float metres){Spec s;for(int k=0;k<NBANDS;k++){float w=WL0+(k+.5f)*DL;s.v[k]=std::exp(-metres*(.055f+.12f*std::exp(-.5f*sqr((w-420)/100))));}return s;}
++constexpr float WATER_SCATTER_RATE=.033f;
+ struct WaterSkySample{V dir;Spec radiance;float pdf=1/(2*PI),branchProbability=0;bool valid=false;};
+ WaterSkySample sampleWaterSky(V p,RNG&rng){
+  WaterSkySample o;float z=rng.uniform(),phi=2*PI*rng.uniform(),rr=std::sqrt(1-z*z);o.dir=V(rr*std::cos(phi),rr*std::sin(phi),z);
+@@ -334,6 +342,7 @@
+  o.branchProbability=(1-f)*std::exp(-WATER_SCATTER_RATE*hit.t);
+  o.radiance=environment(air,false)*attenuation(hit.t)*(sqr(WATER_IOR)*o.branchProbability*airTransmittance(r,INF,rng));o.valid=true;return o;
+ }
++#include "rough_quartz_v3.h"
+ bool splitting=true,clay=false;
+ Spec trace(Ray ray,RNG&rng,int maxDepth,float pixelCone,int band=-1,int startWater=-1,int startQuartz=0,int previousScatter=-2,int previousDelta=0,V previousPoint=V(),float previousPDF=0,int primarySplit=0,bool skipFirstFog=false,float travelled=0,Spec *reflectionOut=nullptr){
+  Spec L,throughput(1);if(band>=0){throughput=Spec();throughput.v[band]=1;}
+@@ -384,7 +393,38 @@
+   if(quartzDepth>0)throughput*=quartzAttenuation(h.t);
+   const auto &tri=tris[h.tri];V p=ray.o+ray.d*h.t,gn=unit(cross(tri.e1,tri.e2));
+   V n=unit(tri.n0*(1-h.u-h.v)+tri.n1*h.u+tri.n2*h.v);int mat=tri.mat;
+-  if(!clay&&(mat==6||mat==8||mat==9)){
++  if(!clay&&(mat==8||mat==9)){
++   bool entering=dot(ray.d,gn)<0;
++   // Intergrown crystals of the same ordinary-index material have no optical
++   // discontinuity at an internal overlap boundary. Track occupancy rather
++   // than inventing an air layer between intersecting quartz meshes.
++   if((entering&&quartzDepth>0)||(!entering&&quartzDepth>1)){
++    quartzDepth=std::max(0,quartzDepth+(entering?1:-1));
++    travelled+=h.t;ray=Ray(p+ray.d*EPS*8,ray.d);continue;
++   }
++   if(dot(n,gn)<0)n=-n;if(dot(n,ray.d)>0)n=-n;
++   V v=-ray.d;
++   float index=quartzIndex(band>=0?WL0+(band+.5f)*DL:550.f);
++   float ratio=entering?index:1.f/index;
++   float alpha=(mat==8?.022f:.042f)*(1+.22f*noise(p*8.f));
++   V light=sampleSun(rng);auto direct=roughGlass(n,v,light,ratio,alpha);
++   V origin=p+gn*(dot(light,gn)>0?EPS*8:-EPS*8);
++   if(direct.f>0&&!opaqueShadow(Ray(origin,light),INF))
++    L+=throughput*solar*(direct.f*std::fabs(dot(n,light))*SUN_SOLID*airTransmittance(Ray(origin,light),INF,rng));
++   V sky=samplePortal(p,rng);float spdf=portalPDF(p,sky);auto se=roughGlass(n,v,sky,ratio,alpha);
++   origin=p+gn*(dot(sky,gn)>0?EPS*8:-EPS*8);
++   if(se.f>0&&spdf>1e-12f&&!opaqueShadow(Ray(origin,sky),INF))
++    L+=throughput*environment(sky,false)*(se.f*std::fabs(dot(n,sky))*airTransmittance(Ray(origin,sky),INF,rng)*misPower(spdf,se.pdf)/spdf);
++   bool crossed=false;V next=sampleRoughGlass(n,v,ratio,alpha,rng,crossed);
++   if(dot(next,next)<.5f)break;
++   auto e=roughGlass(n,v,next,ratio,alpha);if(e.pdf<1e-18f||!std::isfinite(e.pdf)||!std::isfinite(e.f))break;
++   if((dot(next,gn)*dot(v,gn)<0)!=crossed)break;
++   throughput*=e.f*std::fabs(dot(n,next))/e.pdf;
++   if(crossed)quartzDepth=std::max(0,quartzDepth+(entering?1:-1));
++   travelled+=h.t;prev=p;prevPdf=e.pdf;deltaCount=0;scatterWater=-1;exitSkyMIS=1.f;
++   ray=Ray(p+gn*(dot(next,gn)>0?EPS*8:-EPS*8),next);continue;
++  }
++  if(!clay&&mat==6){
+    bool enter=dot(ray.d,gn)<0;if(dot(n,gn)<0)n=-n;if(dot(n,ray.d)>0)n=-n;
+    if(mat==8||mat==9){Frame f(n);float q=std::sin(p.z*380.f+p.x*12.f)*.00016f;n=unit(n+f.t*q+f.b*(.00008f*std::sin(p.y*510.f+p.x*240.f)));}
+    float index=mat==6?WATER_IOR:quartzIndex(band>=0?WL0+(band+.5f)*DL:550.f);
+@@ -561,9 +601,9 @@
+     if(traversalErrors)throw std::runtime_error("BVH equivalence failure");
+     std::cerr<<"BVH equivalence: 5000 rays passed\n";
+     std::cerr<<"CYBR GEO BVH: "<<tris.size()<<" actual triangles; "<<nodes.size()<<" nodes\n";
+-    V camera(.3f,-6.0f,1.6f),target(1.0f,9.0f,3.5f);float hfov=82;
+-    if(o.view=="detail"){camera=V(1.2f,-4.6f,2.35f);target=V(4.15f,.3f,1.0f);hfov=45;}
+-    else if(o.view=="reverse"){camera=V(-3.1f,3.6f,2.2f);target=V(2.3f,13.2f,4.3f);hfov=84;}
++    V camera(-3.8f,-10.3f,2.6f),target(.6f,12.8f,6.3f);float hfov=82;
++    if(o.view=="detail"){camera=V(.4f,-4.2f,2.55f);target=V(3.3f,.25f,1.35f);hfov=49;}
++    else if(o.view=="reverse"){camera=V(1.1f,12.f,2.0f);target=V(-1.6f,34.f,4.8f);hfov=76;}
+     else if(o.view!="hero")throw std::runtime_error("Unknown camera view");
+     V forward=unit(target-camera),right=unit(cross(forward,V(0,0,1))),up=cross(right,forward);
+     float tanHalf=std::tan(hfov*PI/360.f),aspect=float(o.width)/o.height,focus=len(target-camera),cone=2*tanHalf/o.width;
+@@ -580,7 +620,7 @@
+             if(o.adaptive){
+              if(first.material<0)pixelSpp=std::max(8,o.spp/8);
+              else if((first.material==0||first.material==3)&&first.depth>7)pixelSpp=std::max(16,o.spp/2);
+-             else if(first.material==8||first.material==9)pixelSpp=std::max(256,o.spp*4);
++             else if(first.material==8||first.material==9)pixelSpp=std::max(128,o.spp*2);
+             }
+             sampleCounts[index]=pixelSpp;Spec sum,reflectionSum,volumeSum;double lum2=0;
+             for(int s=0;s<pixelSpp;s++){
+@@ -622,7 +662,7 @@
+     {std::ofstream f(o.out+".samples",std::ios::binary);f.write((char*)dim,8);f.write((char*)sampleCounts.data(),sampleCounts.size()*sizeof(uint32_t));}
+     if(o.bands){std::ofstream sp(o.out+".spectral",std::ios::binary);uint32_t header[]={0x36315053,uint32_t(o.width),uint32_t(o.height),NBANDS};sp.write(reinterpret_cast<char*>(header),16);sp.write(reinterpret_cast<char*>(film.data()),film.size()*sizeof(Spec));}
+     float sec=std::chrono::duration<float>(std::chrono::steady_clock::now()-started).count();
+-    std::ofstream meta(o.out+".json");meta<<std::setprecision(9)<<"{\n  \"renderer\": \"CYBR GEO native cavern V2 - split-transport spectral CPU\",\n  \"geometry_accelerator\": \"CYBR GEO native SAH BVH4 / AVX2 triangle packets\",\n  \"view\": \""<<o.view<<"\",\n  \"width\": "<<o.width<<", \"height\": "<<o.height<<", \"spp\": "<<o.spp<<",\n  \"max_depth\": "<<o.depth<<", \"seed\": "<<o.seed<<", \"threads\": "<<o.threads<<",\n  \"triangles\": "<<tris.size()<<", \"bvh_nodes\": "<<nodes.size()<<",\n  \"spectral_bands\": 16, \"wavelength_range_nm\": [380,780],\n  \"spectral_method\": \"Jointly transported fixed midpoint wavelength quadrature, 25 nm bins\",\n  \"water_ior\": "<<WATER_IOR<<", \"dispersion\": "<<((splitting&&!clay)?"true":"false")<<",\n  \"steam\": "<<(useSteam?"true":"false")<<", \"steam_model\": \"Bounded homogeneous haze; analytic transmittance; forced first collision; full continuation\",\n  \"water_absorption_scale\": "<<waterStrength<<",\n  \"finite_difference_water_connection_step_radians\": 0.002,\n  \"nonfinite_path_samples\": "<<nonfinite.load()<<",\n  \"exposure\": "<<o.exposure<<",\n  \"film_white_rgb\": ["<<whiteRGB.x<<","<<whiteRGB.y<<","<<whiteRGB.z<<"],\n  \"seconds\": "<<sec<<",\n  \"band_means\": [";
++    std::ofstream meta(o.out+".json");meta<<std::setprecision(9)<<"{\n  \"renderer\": \"CYBR GEO native cavern V3 - rough-quartz NEE spectral CPU\",\n  \"geometry_accelerator\": \"CYBR GEO native SAH BVH4 / AVX2 triangle packets\",\n  \"view\": \""<<o.view<<"\",\n  \"width\": "<<o.width<<", \"height\": "<<o.height<<", \"spp\": "<<o.spp<<",\n  \"max_depth\": "<<o.depth<<", \"seed\": "<<o.seed<<", \"threads\": "<<o.threads<<",\n  \"triangles\": "<<tris.size()<<", \"bvh_nodes\": "<<nodes.size()<<",\n  \"spectral_bands\": 16, \"wavelength_range_nm\": [380,780],\n  \"spectral_method\": \"Jointly transported fixed midpoint wavelength quadrature, 25 nm bins\",\n  \"water_ior\": "<<WATER_IOR<<", \"dispersion\": "<<((splitting&&!clay)?"true":"false")<<",\n  \"steam\": "<<(useSteam?"true":"false")<<", \"steam_model\": \"Bounded homogeneous haze; analytic transmittance; forced first collision; full continuation\",\n  \"water_absorption_scale\": "<<waterStrength<<",\n  \"finite_difference_water_connection_step_radians\": 0.002,\n  \"nonfinite_path_samples\": "<<nonfinite.load()<<",\n  \"exposure\": "<<o.exposure<<",\n  \"film_white_rgb\": ["<<whiteRGB.x<<","<<whiteRGB.y<<","<<whiteRGB.z<<"],\n  \"seconds\": "<<sec<<",\n  \"band_means\": [";
+     for(int k=0;k<NBANDS;k++)meta<<(k?",":"")<<means.v[k];meta<<"]\n}\n";
+     std::cerr<<"WROTE "<<o.out<<"; "<<sec<<" seconds; invalid paths "<<nonfinite<<"\n";
+     return nonfinite?2:0;

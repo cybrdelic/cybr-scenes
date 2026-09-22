@@ -1,0 +1,72 @@
++ /mnt/data/CYBR_Hot_Springs_V11/work/spectral_desert_0a01ac2f3df04c41 /mnt/data/CYBR_Hot_Springs_V11/work/scene.meshbin /mnt/data/CYBR_Hot_Springs_V11/work/final --w 1920 --h 1280 --spp 128 --depth 12 --water-spp 320 --indirect-clamp 0.0 --threads 5 --view hero --seed 20260914 --exposure 1.9 --aperture 0.001 --water-absorption 1.0 --grain /mnt/data/CYBR_Hot_Springs_V11/cybr-geo/examples/desert_hot_springs/assets/gravel_periodic.pgm --relief /mnt/data/CYBR_Hot_Springs_V11/cybr-geo/examples/desert_hot_springs/assets/granular_relief.bin --no-clouds --sun -0.80,0.40,0.28
+CYBR GEO BVH: 23690858 actual triangles; 13672423 nodes
+5% 36.5019 s
+10% 39.5262 s
+15% 47.0611 s
+20% 61.1283 s
+25% 77.2344 s
+30% 92.7016 s
+35% 109.767 s
+40% 145.019 s
+45% 179.606 s
+50% 232.76 s
+55% 347.512 s
+60% 493.332 s
+65% 646.9 s
+70% 792.478 s
+75% 922.723 s
+80% 1026.92 s
+85% 1113.51 s
+90% 1180.21 s
+95% 1216.19 s
+100% 1239.26 s
+WROTE /mnt/data/CYBR_Hot_Springs_V11/work/final; 1240.16 seconds; invalid paths 0
++ /opt/pyvenv/bin/python /mnt/data/CYBR_Hot_Springs_V11/cybr-geo/examples/desert_hot_springs/finish.py /mnt/data/CYBR_Hot_Springs_V11/work/final --passes 2 --white-balance 5750.0 --opaque-filter-strength 0.5
+{
+  "source": "Native spectral radiance, not an image-generation model",
+  "resolution": [
+    1920,
+    1280
+  ],
+  "guided_filter_steps": [
+    1,
+    2
+  ],
+  "sky_only_filter_steps": [
+    2,
+    4,
+    8
+  ],
+  "sky_filter_pixel_count": 375045,
+  "sky_filter_mask": "Negative first-opaque-surface material guide only; no landscape pixel changes in sky-only passes",
+  "filter_space": "Linear scene-referred RGB after 16-band CIE integration",
+  "opaque_filter_strength": 0.5,
+  "opaque_residual_preserved_fraction": 0.5,
+  "opaque_policy_pixel_count": 667089,
+  "opaque_mask": "Center-ray budget equals ordinary spp and sediment/crust material 0 or 4; disabled if water budget is not higher",
+  "opaque_policy": "Sediment/crust only: convex native/filtered radiance blend, not sharpening or detail synthesis; other materials retain full filtering",
+  "postprocess_source_sha256": "25841de9e92f92792fe4fe99bb19bf29b2fc160219797a3cfe054e14f4711650",
+  "raw_radiance_finite": true,
+  "raw_radiance_min": 0.0009005297324620187,
+  "raw_radiance_max": 82.71952056884766,
+  "mean_linear_rgb": [
+    0.19748355448246002,
+    0.17197668552398682,
+    0.13116523623466492
+  ],
+  "png_round_trip_exact": true,
+  "png_sha256": "1a2fba20de75ca540562b631b4275820c11622bf7f160775de64f664b706a9d4",
+  "exposure": 1.89999998,
+  "camera_white_balance_K": 5750.0,
+  "display_white_rgb": [
+    1.1147017919323665,
+    0.9763938573539243,
+    0.8966954151524217
+  ],
+  "toe_parameter": 0.035,
+  "added_grain": false,
+  "upscaling": false,
+  "photo_compositing": false,
+  "mean_linear_filter_change": 0.009214495308697224
+}
+Completed: /mnt/data/CYBR_Hot_Springs_V11/work/final.png

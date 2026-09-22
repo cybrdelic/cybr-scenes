@@ -1,0 +1,138 @@
+{
+  "passed": true,
+  "checked_at": "2026-09-21T17:41:57.474124+00:00",
+  "scenes": [
+    {
+      "scene": "sandstone-passage",
+      "passed": true,
+      "checks": {
+        "mesh_matches_execution_receipt": true,
+        "mesh_matches_upgrade_record": true,
+        "executable_matches_execution_receipt": true,
+        "source_matches_compiled_snapshot": true,
+        "native_count_within_stream": true,
+        "renderer_reported_zero_invalid": true
+      },
+      "input_mesh_triangles": 8108728,
+      "native_traced_triangles": 8108728,
+      "loader_rejected_near_degenerate_triangles": 0,
+      "assets": {
+        "engines/geo/cybr-geo/examples/desert_hot_springs/assets/gravel_periodic.pgm": "1a25e996869d39d4963082b41a353fa227378e17efc844c3e639c16ec8b6f5b3",
+        "engines/geo/cybr-geo/examples/desert_hot_springs/assets/granular_relief.bin": "babbb2aa418d669003be4b6bac9f53a1da9d0f2533bcc3677c4f2f4b712e8c11",
+        "assets/mineral_detail.cdt": "0678c4adeaa1d853f982f4e5a3ff8a747d59984937426d4db57ccb418ac99045"
+      },
+      "scope": "Actual compiled source, executable, geometry, and loaded material/lighting sidecars; not an aesthetic score."
+    },
+    {
+      "scene": "basalt-tide",
+      "passed": true,
+      "checks": {
+        "mesh_matches_execution_receipt": true,
+        "mesh_matches_upgrade_record": true,
+        "executable_matches_execution_receipt": true,
+        "source_matches_compiled_snapshot": true,
+        "native_count_within_stream": true,
+        "renderer_reported_zero_invalid": true
+      },
+      "input_mesh_triangles": 11644696,
+      "native_traced_triangles": 11644696,
+      "loader_rejected_near_degenerate_triangles": 0,
+      "assets": {
+        "engines/geo/cybr-geo/examples/desert_hot_springs/assets/gravel_periodic.pgm": "1a25e996869d39d4963082b41a353fa227378e17efc844c3e639c16ec8b6f5b3",
+        "engines/geo/cybr-geo/examples/desert_hot_springs/assets/granular_relief.bin": "babbb2aa418d669003be4b6bac9f53a1da9d0f2533bcc3677c4f2f4b712e8c11",
+        "assets/mineral_detail.cdt": "0678c4adeaa1d853f982f4e5a3ff8a747d59984937426d4db57ccb418ac99045"
+      },
+      "scope": "Actual compiled source, executable, geometry, and loaded material/lighting sidecars; not an aesthetic score."
+    },
+    {
+      "scene": "fernwater",
+      "passed": true,
+      "checks": {
+        "mesh_matches_execution_receipt": true,
+        "mesh_matches_upgrade_record": true,
+        "executable_matches_execution_receipt": true,
+        "source_matches_compiled_snapshot": true,
+        "native_count_within_stream": true,
+        "renderer_reported_zero_invalid": true
+      },
+      "input_mesh_triangles": 20400257,
+      "native_traced_triangles": 20400077,
+      "loader_rejected_near_degenerate_triangles": 180,
+      "assets": {
+        "engines/geo/cybr-geo/examples/desert_hot_springs/assets/gravel_periodic.pgm": "1a25e996869d39d4963082b41a353fa227378e17efc844c3e639c16ec8b6f5b3",
+        "engines/geo/cybr-geo/examples/desert_hot_springs/assets/granular_relief.bin": "babbb2aa418d669003be4b6bac9f53a1da9d0f2533bcc3677c4f2f4b712e8c11",
+        "assets/mineral_detail.cdt": "0678c4adeaa1d853f982f4e5a3ff8a747d59984937426d4db57ccb418ac99045",
+        "geometry-r2/forest/surface_frames.bin": "1b1eeb1701e5d372eb85bec727a3753df6a8ce150c608820efaf64ee6c0a4800"
+      },
+      "scope": "Actual compiled source, executable, geometry, and loaded material/lighting sidecars; not an aesthetic score."
+    },
+    {
+      "scene": "desert-hot-springs",
+      "passed": true,
+      "checks": {
+        "mesh_matches_execution_receipt": true,
+        "mesh_matches_upgrade_record": true,
+        "executable_matches_execution_receipt": true,
+        "source_matches_compiled_snapshot": true,
+        "native_count_within_stream": true,
+        "renderer_reported_zero_invalid": true
+      },
+      "input_mesh_triangles": 23690858,
+      "native_traced_triangles": 23690858,
+      "loader_rejected_near_degenerate_triangles": 0,
+      "assets": {
+        "engines/hot/cybr-geo/examples/desert_hot_springs/assets/gravel_periodic.pgm": "1a25e996869d39d4963082b41a353fa227378e17efc844c3e639c16ec8b6f5b3",
+        "engines/hot/cybr-geo/examples/desert_hot_springs/assets/granular_relief.bin": "babbb2aa418d669003be4b6bac9f53a1da9d0f2533bcc3677c4f2f4b712e8c11",
+        "assets/mineral_detail.cdt": "0678c4adeaa1d853f982f4e5a3ff8a747d59984937426d4db57ccb418ac99045"
+      },
+      "scope": "Actual compiled source, executable, geometry, and loaded material/lighting sidecars; not an aesthetic score."
+    },
+    {
+      "scene": "obsidian-reach",
+      "passed": true,
+      "checks": {
+        "mesh_matches_execution_receipt": true,
+        "mesh_matches_upgrade_record": true,
+        "executable_matches_execution_receipt": true,
+        "source_matches_compiled_snapshot": true,
+        "native_count_within_stream": true,
+        "renderer_reported_zero_invalid": true
+      },
+      "input_mesh_triangles": 6210833,
+      "native_traced_triangles": 6210833,
+      "loader_rejected_near_degenerate_triangles": 0,
+      "assets": {
+        "engines/obsidian/assets/rock_texture.bin": "c12533eec02bd8a8aea460e1025c86d8b55417925eb581e74cb4fc3a77b82bc4",
+        "engines/obsidian/assets/scan_texture_0.bin": "9a5039e2f77b0f73c031049a358d837a0c27af2ae3ed0c4ca0e8f3938cdd633c",
+        "engines/obsidian/assets/scan_texture_1.bin": "9659f9019e53633f00a899b8e0b60369ae3629a9ccbe25ac06b1b372d1e54ecd",
+        "engines/obsidian/assets/lava_skin.bin": "08fc406f8b26f2ed8ddd70bd4f8170cb68e3ee153e38d512f673f9a0eebab361",
+        "engines/obsidian/assets/sky.bin": "405a297c5d2f48dbea85bf0ed30aff8cca78000be4ca865de426612c9dc3949c"
+      },
+      "scope": "Actual compiled source, executable, geometry, and loaded material/lighting sidecars; not an aesthetic score."
+    },
+    {
+      "scene": "drowned-geode",
+      "passed": true,
+      "checks": {
+        "mesh_matches_execution_receipt": true,
+        "mesh_matches_upgrade_record": true,
+        "executable_matches_execution_receipt": true,
+        "source_matches_compiled_snapshot": true,
+        "native_count_within_stream": true,
+        "renderer_reported_zero_invalid": true
+      },
+      "input_mesh_triangles": 3655632,
+      "native_traced_triangles": 3655632,
+      "loader_rejected_near_degenerate_triangles": 0,
+      "assets": {
+        "geometry-r2/geode/textures/2.cvtex": "4ea8f5711e47285d917906d9e22f04926210c751c30d80be97428511d3846e9e",
+        "geometry-r2/geode/textures/3.cvtex": "e97d0cf591e06460ca44e913d5a01eecf5e64182e642dbe175097ea46731ef78",
+        "geometry-r2/geode/textures/4.cvtex": "ab9b6d1a022606021e5b2dce6a23fc94f6888a0e459870e876975f70ca68a283",
+        "geometry-r2/geode/textures/1.cvtex": "bbe7fd60f7f4505c7313f2aaf7ecc5e6343936705549f09e07f9934a94692d77",
+        "geometry-r2/geode/textures/0.cvtex": "e66d58f2884cfe8ffd0d0188274141f1b79529ec5906485bcb5109760654ee38",
+        "assets/mineral_detail.cdt": "0678c4adeaa1d853f982f4e5a3ff8a747d59984937426d4db57ccb418ac99045"
+      },
+      "scope": "Actual compiled source, executable, geometry, and loaded material/lighting sidecars; not an aesthetic score."
+    }
+  ]
+}

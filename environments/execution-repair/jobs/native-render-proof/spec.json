@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "created_at": "2026-09-21T21:26:36.964352+00:00",
+  "created_unix": 1790025996.9643722,
+  "job_id": "native-render-proof",
+  "cwd": "/mnt/data/execution_repair/CYBR_SCENES_R2",
+  "command": [
+    "python",
+    "cybr_scenes.py",
+    "render",
+    "obsidian-reach",
+    "--width",
+    "384",
+    "--height",
+    "168",
+    "--spp",
+    "8",
+    "--water-spp",
+    "8",
+    "--threads",
+    "4",
+    "--timeout",
+    "300",
+    "--output",
+    "renders/execution-proof"
+  ],
+  "threads": 4,
+  "timeout": 600.0,
+  "memory_bytes": 3521873182
+}

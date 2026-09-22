@@ -1,0 +1,39 @@
+{
+  "scope": "Explicit comparison-setting alignment, not an image-realism score or geometry-only ablation",
+  "camera": {
+    "camera_origin_m": {
+      "wide_matches": true,
+      "comparison_matches": true
+    },
+    "camera_target_m": {
+      "wide_matches": true,
+      "comparison_matches": true
+    },
+    "horizontal_fov_degrees": {
+      "wide_matches": true,
+      "comparison_matches": true
+    },
+    "aperture_radius_m": {
+      "wide_matches": true,
+      "comparison_matches": true
+    }
+  },
+  "sample_and_resolution_settings": {
+    "width": true,
+    "height": true,
+    "spp": true,
+    "water_spp": true,
+    "seed": true,
+    "max_depth": true
+  },
+  "sun_direction_matches": true,
+  "exposure_matches": true,
+  "white_balance_matches": true,
+  "opaque_filter_strength_matches": true,
+  "geometry_matches": false,
+  "materials_match": false,
+  "atmosphere_implementation_matches": false,
+  "baseline_png_sha256": "ff5280bfa4cfb2f419e836b9e450c611e273f4d87347e0094e5de32c6241a5d0",
+  "comparison_png_sha256": "579cba13531dcf192241a81792060995768b543685ba09009ea895aaee945e1f",
+  "stated_setting_checks_passed": true
+}
