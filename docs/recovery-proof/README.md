@@ -15,4 +15,12 @@ These 480-pixel, 24-sample/48-water-sample images prove complete execution of fu
 
 ![Drowned Geode fresh proof](drowned-geode/hero.png)
 
+## New creation: Amber Passage
+
+[Successful creation run](https://github.com/cybrdelic/cybr-scenes/actions/runs/35671674210) · [Camera changes and verification](amber-passage/creation.json) · [Native receipt](amber-passage/receipt.json)
+
+This is a new camera/finishing composition using the recovered geometry, not a new geometry generator. Rendered at 640 × 400 and 32 samples per pixel. The default sandstone preset was not modified.
+
+![Amber Passage](amber-passage/hero.png)
+
 Tests: 36 Python tests passed; geo, hot, geode and obsidian C++ engines compiled; the first three also passed their implemented native self-tests. The existing Observatory IV was preserved without source changes; its separate pre-existing workflow remains available.
