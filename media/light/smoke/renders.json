@@ -1,0 +1,455 @@
+{
+  "renderer": "CYBR LIGHT 0.2",
+  "image_generation_used": false,
+  "records": [
+    {
+      "scene": "basalt-tide",
+      "dimensions": [
+        64,
+        43
+      ],
+      "settings": {
+        "width": 64,
+        "height": 43,
+        "spp": 4,
+        "bands": 4,
+        "depth": 12,
+        "threads": 2,
+        "mesh": "03bbb8420c81331e76324397d7ca4163bd3833b282797e4905b2d02179d22426",
+        "adapter": "4a70b26f6264479b4f2ce23f2eb988ce65da95d5b95d6026bce2c46a486e303c",
+        "runtime": "fb06efb29daddcd734904eca0bd0924b5269b708ed8695b3563b72de90c52ef4",
+        "finishing": "ab2f7a796def898e6e794c29929fd694bb87117590311c1508026676ec971392",
+        "engine": "951c769135c5dd306c1dbf892366caf8c45401c1f1e89ddc1c9ffe91fc44e484",
+        "scene_configuration": {
+          "preset": {
+            "id": "basalt-tide",
+            "title": "Basalt Tide",
+            "engine": "geo",
+            "member": "coast",
+            "mesh": "geometry/coast/scene.meshbin",
+            "upgraded_mesh": "geometry-r2/coast/scene.meshbin",
+            "camera": "geometry/coast/camera.json",
+            "aspect": [
+              3,
+              2
+            ],
+            "spp": 96,
+            "water_spp": 192,
+            "depth": 12,
+            "reference": "references/basalt-tide.png"
+          },
+          "camera_sha256": "796ad93adaf1ac86d91a480f88fa787039821b183edc8e84da9c093d9ec10926"
+        },
+        "material_inputs": {
+          "environments/engines/geo/cybr-geo/examples/desert_hot_springs/assets/granular_relief.bin": "babbb2aa418d669003be4b6bac9f53a1da9d0f2533bcc3677c4f2f4b712e8c11"
+        }
+      },
+      "geometry": {
+        "triangles": 11644696,
+        "meshlets": 334070,
+        "indexed_vertices": 17114383,
+        "bytes": 882460804,
+        "unindexed_bytes": 1676836240
+      },
+      "invalid_path_samples": 0,
+      "files": {
+        "basalt-tide.png": {
+          "sha256": "7698ea6ed189e2ed20145c39dcb122e12e169c07e6314bef13c9a2f3517022d8",
+          "bytes": 7602
+        },
+        "basalt-tide_unfiltered.png": {
+          "sha256": "d24c47f4c3349385b3f0833de0f605606cf552be82243348872576045557c5c7",
+          "bytes": 7967
+        }
+      },
+      "kind": "64-pixel full-geometry smoke validation; finite sampling, not a presentation render"
+    },
+    {
+      "scene": "desert-hot-springs",
+      "dimensions": [
+        64,
+        43
+      ],
+      "settings": {
+        "width": 64,
+        "height": 43,
+        "spp": 4,
+        "bands": 4,
+        "depth": 12,
+        "threads": 4,
+        "mesh": "c6a5a08662ae4293bc34936f713d7335bb06e9446d851afe590e2fd9a3a1e27c",
+        "adapter": "fae9018ff8ff7e8d03538d242b6c30cd3177e95dbf0ebefc81eef73e91020223",
+        "runtime": "0e25632aeaa65b32c613f4d797aeabdd952a2df3b1c6cace1acefd294c60c0ea",
+        "finishing": "ab2f7a796def898e6e794c29929fd694bb87117590311c1508026676ec971392",
+        "engine": "951c769135c5dd306c1dbf892366caf8c45401c1f1e89ddc1c9ffe91fc44e484",
+        "scene_configuration": {
+          "preset": {
+            "id": "desert-hot-springs",
+            "title": "Desert Hot Springs",
+            "engine": "hot",
+            "mesh": "geometry/hot/scene.meshbin",
+            "upgraded_mesh": "geometry-r2/hot/scene.meshbin",
+            "aspect": [
+              3,
+              2
+            ],
+            "spp": 96,
+            "water_spp": 192,
+            "depth": 12,
+            "exposure": 1.9,
+            "reference": "references/desert-hot-springs.png"
+          },
+          "camera_sha256": null
+        },
+        "material_inputs": {
+          "environments/engines/hot/cybr-geo/examples/desert_hot_springs/assets/granular_relief.bin": "babbb2aa418d669003be4b6bac9f53a1da9d0f2533bcc3677c4f2f4b712e8c11"
+        }
+      },
+      "geometry": {
+        "triangles": 23690858,
+        "meshlets": 666298,
+        "indexed_vertices": 34557795,
+        "bytes": 1783807626,
+        "unindexed_bytes": 3411483568
+      },
+      "invalid_path_samples": 0,
+      "files": {
+        "desert-hot-springs.png": {
+          "sha256": "418a0d8191b1a31cd3efac3dfab0868982bfbcc599e0f69a864426e20fcb85dd",
+          "bytes": 7869
+        },
+        "desert-hot-springs_unfiltered.png": {
+          "sha256": "7d702aacd0ba450a26f1d83571b2ba4b702ff95a9e4b57c839916a416baa9c7d",
+          "bytes": 8275
+        }
+      },
+      "kind": "64-pixel full-geometry smoke validation; finite sampling, not a presentation render"
+    },
+    {
+      "scene": "drowned-geode",
+      "dimensions": [
+        64,
+        43
+      ],
+      "settings": {
+        "width": 64,
+        "height": 43,
+        "spp": 4,
+        "bands": 4,
+        "depth": 24,
+        "threads": 4,
+        "mesh": "c1252381a8745e97a83dc619410ccea4185494aaf0dbd82eff5c6d69847052b9",
+        "adapter": "f82744e756a88bc7d1931cb421e69e36ef16e1132b3dcc495c33ab6c70c3cbee",
+        "runtime": "96322e6cf8269090a434a2f8edfc87e6a3c4a110d3dd6f2e54b78c69190e6e81",
+        "finishing": "ab2f7a796def898e6e794c29929fd694bb87117590311c1508026676ec971392",
+        "engine": "951c769135c5dd306c1dbf892366caf8c45401c1f1e89ddc1c9ffe91fc44e484",
+        "scene_configuration": {
+          "preset": {
+            "id": "drowned-geode",
+            "title": "Drowned Geode",
+            "engine": "geode",
+            "mesh": "engines/geode/assets/built_v3/scene.meshbin",
+            "upgraded_mesh": "geometry-r2/geode/scene.meshbin",
+            "aspect": [
+              3,
+              2
+            ],
+            "spp": 64,
+            "water_spp": 64,
+            "depth": 24,
+            "exposure": 1.4,
+            "reference": "references/drowned-geode.png"
+          },
+          "camera_sha256": null
+        },
+        "material_inputs": {
+          "environments/engines/geode/assets/built_v3/textures/0.cvtex": "e66d58f2884cfe8ffd0d0188274141f1b79529ec5906485bcb5109760654ee38",
+          "environments/engines/geode/assets/built_v3/textures/1.cvtex": "bbe7fd60f7f4505c7313f2aaf7ecc5e6343936705549f09e07f9934a94692d77",
+          "environments/engines/geode/assets/built_v3/textures/2.cvtex": "4ea8f5711e47285d917906d9e22f04926210c751c30d80be97428511d3846e9e",
+          "environments/engines/geode/assets/built_v3/textures/3.cvtex": "e97d0cf591e06460ca44e913d5a01eecf5e64182e642dbe175097ea46731ef78",
+          "environments/engines/geode/assets/built_v3/textures/4.cvtex": "ab9b6d1a022606021e5b2dce6a23fc94f6888a0e459870e876975f70ca68a283",
+          "environments/engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/boulder_01/boulder_01.bin": "7f5b06503d62bd95bfe9c6b8a354a5cc8ff04a4d271a8cf87a3e3125db4232d7",
+          "environments/engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/namaqualand_boulder_02/namaqualand_boulder_02.bin": "0f6daa7ec9b1a92207c0b09b737ff1eec904aebc1c1eada778afa6e5eacd55c0",
+          "environments/engines/geode/assets/inputs/cybr-geo/examples/desert_hot_springs_v3/assets/namaqualand_boulder_03/namaqualand_boulder_03.bin": "d24151021ed310fe3207f1b5964bff22b583e77d2617427a88b5dcbc0447a475"
+        }
+      },
+      "geometry": {
+        "triangles": 3655632,
+        "meshlets": 124999,
+        "indexed_vertices": 6292628,
+        "bytes": 317587596,
+        "unindexed_bytes": 526411024
+      },
+      "invalid_path_samples": 0,
+      "files": {
+        "drowned-geode.png": {
+          "sha256": "669a6e2cd9cd014cb256e8387ae8b4baf62073c3b50c803b786256a700d7fdae",
+          "bytes": 6337
+        },
+        "drowned-geode_unfiltered.png": {
+          "sha256": "50fb00bdeb6de112a84d6795c4e017330b6e1c79f3e7d172f5099740ae5a2890",
+          "bytes": 5210
+        }
+      },
+      "kind": "64-pixel full-geometry smoke validation; finite sampling, not a presentation render"
+    },
+    {
+      "scene": "fernwater",
+      "dimensions": [
+        64,
+        43
+      ],
+      "settings": {
+        "width": 64,
+        "height": 43,
+        "spp": 4,
+        "bands": 4,
+        "depth": 12,
+        "threads": 4,
+        "mesh": "d59afa214380c3a2d30763e5f3593111c76346919c95d9570953affaa44e380a",
+        "adapter": "fae9018ff8ff7e8d03538d242b6c30cd3177e95dbf0ebefc81eef73e91020223",
+        "runtime": "fb06efb29daddcd734904eca0bd0924b5269b708ed8695b3563b72de90c52ef4",
+        "finishing": "ab2f7a796def898e6e794c29929fd694bb87117590311c1508026676ec971392",
+        "engine": "951c769135c5dd306c1dbf892366caf8c45401c1f1e89ddc1c9ffe91fc44e484",
+        "scene_configuration": {
+          "preset": {
+            "id": "fernwater",
+            "title": "Fernwater",
+            "engine": "geo",
+            "member": "forest",
+            "mesh": "geometry/forest/scene.meshbin",
+            "upgraded_mesh": "geometry-r2/forest/scene.meshbin",
+            "camera": "geometry/forest/camera.json",
+            "aspect": [
+              3,
+              2
+            ],
+            "spp": 128,
+            "water_spp": 256,
+            "depth": 12,
+            "reference": "references/fernwater.png"
+          },
+          "camera_sha256": "47a9e6258c730ac239ee70bde6b977456b6cf432bddac409cc71f47d6d736b35"
+        },
+        "material_inputs": {
+          "environments/engines/geo/cybr-geo/examples/desert_hot_springs/assets/granular_relief.bin": "babbb2aa418d669003be4b6bac9f53a1da9d0f2533bcc3677c4f2f4b712e8c11"
+        }
+      },
+      "geometry": {
+        "triangles": 20400257,
+        "meshlets": 563798,
+        "indexed_vertices": 26958257,
+        "bytes": 1412821343,
+        "unindexed_bytes": 2937637024
+      },
+      "invalid_path_samples": 0,
+      "files": {
+        "fernwater.png": {
+          "sha256": "0a5d69bfe53958dbabcee5283435bb183cfa2e6ea74c50d6c49e276585d0e577",
+          "bytes": 7199
+        },
+        "fernwater_unfiltered.png": {
+          "sha256": "0f6eaeec72048cb5f9113a5ae8bd49955b60edc15980571aeef6ffd0f31079df",
+          "bytes": 6775
+        }
+      },
+      "kind": "64-pixel full-geometry smoke validation; finite sampling, not a presentation render"
+    },
+    {
+      "scene": "observatory-iv",
+      "dimensions": [
+        64,
+        43
+      ],
+      "settings": {
+        "width": 64,
+        "height": 43,
+        "spp": 4,
+        "bands": 4,
+        "depth": 14,
+        "threads": 4,
+        "mesh": "1cad20e08992074214b9006066139ac4217aa10f4773cf591f0315d5f64d8726",
+        "adapter": "f82744e756a88bc7d1931cb421e69e36ef16e1132b3dcc495c33ab6c70c3cbee",
+        "runtime": "96322e6cf8269090a434a2f8edfc87e6a3c4a110d3dd6f2e54b78c69190e6e81",
+        "finishing": "ab2f7a796def898e6e794c29929fd694bb87117590311c1508026676ec971392",
+        "engine": "951c769135c5dd306c1dbf892366caf8c45401c1f1e89ddc1c9ffe91fc44e484",
+        "scene_configuration": {
+          "preset": {
+            "aspect": [
+              3,
+              2
+            ],
+            "depth": 14,
+            "spp": 192
+          },
+          "camera_sha256": null
+        },
+        "material_inputs": {
+          "scenes/observatory-iv/build/scene/textures/0.cvtex": "ff6aba0bbbc45deefec47e1bc1f953f3e8047527cde146c96f9d143637e34b7d",
+          "scenes/observatory-iv/build/scene/textures/1.cvtex": "094b086af3ca2154b461d0d1439e8c0b895abceb0583ae38611e3bbbdfff850e",
+          "scenes/observatory-iv/build/scene/textures/10.cvtex": "7fa98b792e1881a1a4919d6430aef905a7d1c606d2c2728e56d7ed3db40141f2",
+          "scenes/observatory-iv/build/scene/textures/2.cvtex": "4b80672dd4a0d89d1f3f63398cc217776f8e1a59f94eb06b0c898fdd974c3aa1",
+          "scenes/observatory-iv/build/scene/textures/3.cvtex": "35dab9dc76e90dd24112c03de0af645947155f67600d31e5e9292dcc447d20c2",
+          "scenes/observatory-iv/build/scene/textures/4.cvtex": "9cca1be51209dc47610aa7aca0c75626085aa3fbc002b926984f42289f2b852e",
+          "scenes/observatory-iv/build/scene/textures/5.cvtex": "85d53de4b46833249a3084e78128d58cbe7f5054dc363748d98df119490c7d69",
+          "scenes/observatory-iv/build/scene/textures/6.cvtex": "fc74c39b9896b097011d81936d458092c2a9abc5ce58b41ae1c73a520468ba87",
+          "scenes/observatory-iv/build/scene/textures/7.cvtex": "0665a81cb0f7065f17c3de0ec331638f720ae9c5469b90b73a9b9b989f8372d4",
+          "scenes/observatory-iv/build/scene/textures/8.cvtex": "4e657ccbaa6b362541877ff4d85be8cd537e97a4d0a21f747eb1c615e123a54b",
+          "scenes/observatory-iv/build/scene/textures/9.cvtex": "1e5df882cd7bf6133c983dcbb85c853bc97d05552048cc20bc0a9a3713ad0950"
+        }
+      },
+      "geometry": {
+        "triangles": 1511194,
+        "meshlets": 41423,
+        "indexed_vertices": 2350858,
+        "bytes": 120226594,
+        "unindexed_bytes": 217611952
+      },
+      "invalid_path_samples": 0,
+      "files": {
+        "observatory-iv.png": {
+          "sha256": "b6acb2de85bd0153aa47bb67629c91dd272a6383cc939cb84743c0aec0756af7",
+          "bytes": 7319
+        },
+        "observatory-iv_unfiltered.png": {
+          "sha256": "d67716dc5438f542cf36329991e6ca0f4ae921629dc153f1c9b6f47b8c84fa8f",
+          "bytes": 7157
+        }
+      },
+      "kind": "64-pixel full-geometry smoke validation; finite sampling, not a presentation render"
+    },
+    {
+      "scene": "obsidian-reach",
+      "dimensions": [
+        64,
+        28
+      ],
+      "settings": {
+        "width": 64,
+        "height": 28,
+        "spp": 4,
+        "bands": 4,
+        "depth": 7,
+        "threads": 4,
+        "mesh": "002d180967afdc91a649deb33de85b62fc5d8d6d41fca9c4b6bf9e7dbfd62d23",
+        "adapter": "f82744e756a88bc7d1931cb421e69e36ef16e1132b3dcc495c33ab6c70c3cbee",
+        "runtime": "96322e6cf8269090a434a2f8edfc87e6a3c4a110d3dd6f2e54b78c69190e6e81",
+        "finishing": "ab2f7a796def898e6e794c29929fd694bb87117590311c1508026676ec971392",
+        "engine": "951c769135c5dd306c1dbf892366caf8c45401c1f1e89ddc1c9ffe91fc44e484",
+        "scene_configuration": {
+          "preset": {
+            "id": "obsidian-reach",
+            "title": "Obsidian Reach",
+            "engine": "obsidian",
+            "mesh": "engines/obsidian/assets/scene.bin",
+            "upgraded_mesh": "geometry-r2/obsidian/scene.bin",
+            "aspect": [
+              16,
+              7
+            ],
+            "spp": 96,
+            "water_spp": 96,
+            "depth": 7,
+            "exposure": 5.5,
+            "reference": "references/obsidian-reach.png",
+            "simulation": false
+          },
+          "camera_sha256": null
+        },
+        "material_inputs": {
+          "environments/engines/obsidian/assets/lava_skin.bin": "08fc406f8b26f2ed8ddd70bd4f8170cb68e3ee153e38d512f673f9a0eebab361",
+          "environments/engines/obsidian/assets/rock_texture.bin": "c12533eec02bd8a8aea460e1025c86d8b55417925eb581e74cb4fc3a77b82bc4",
+          "environments/engines/obsidian/assets/scan_texture_0.bin": "9a5039e2f77b0f73c031049a358d837a0c27af2ae3ed0c4ca0e8f3938cdd633c",
+          "environments/engines/obsidian/assets/scan_texture_1.bin": "9659f9019e53633f00a899b8e0b60369ae3629a9ccbe25ac06b1b372d1e54ecd",
+          "environments/engines/obsidian/assets/scans/boulder_01/boulder_01.bin": "7f5b06503d62bd95bfe9c6b8a354a5cc8ff04a4d271a8cf87a3e3125db4232d7",
+          "environments/engines/obsidian/assets/scans/namaqualand_boulder_03/namaqualand_boulder_03.bin": "d24151021ed310fe3207f1b5964bff22b583e77d2617427a88b5dcbc0447a475",
+          "environments/engines/obsidian/assets/scene.bin": "4bea76ac217cca720f4fc1acd857c0cf7eb0ce40927304a95e07dd6bc83310a3",
+          "environments/engines/obsidian/assets/sky.bin": "405a297c5d2f48dbea85bf0ed30aff8cca78000be4ca865de426612c9dc3949c",
+          "environments/engines/obsidian/reference/hero_budget.bin": "a9d6c6cddb8459529ef0e86285f1cb527551fc99029621904d6fcc7b516e0605"
+        }
+      },
+      "geometry": {
+        "triangles": 6210833,
+        "meshlets": 289734,
+        "indexed_vertices": 13169756,
+        "bytes": 648947379,
+        "unindexed_bytes": 894359968
+      },
+      "invalid_path_samples": 0,
+      "files": {
+        "obsidian-reach.png": {
+          "sha256": "608f55c5bf1cda23646e7d0d56c2d0a30d8a6a54f0722d1a6bf353f7fd1f4631",
+          "bytes": 4872
+        },
+        "obsidian-reach_unfiltered.png": {
+          "sha256": "b4922923d1ad2dd581f7906df786f12b75e813c89de8fbf72b958d21fe8a9836",
+          "bytes": 4767
+        }
+      },
+      "kind": "64-pixel full-geometry smoke validation; finite sampling, not a presentation render"
+    },
+    {
+      "scene": "sandstone-passage",
+      "dimensions": [
+        64,
+        43
+      ],
+      "settings": {
+        "width": 64,
+        "height": 43,
+        "spp": 4,
+        "bands": 4,
+        "depth": 12,
+        "threads": 2,
+        "mesh": "0b35bc8fa06153e30370ccf729f681a59c77f62d54dd066b5971a45cf774264f",
+        "adapter": "4a70b26f6264479b4f2ce23f2eb988ce65da95d5b95d6026bce2c46a486e303c",
+        "runtime": "50f01552d31a953e782f6de24471a618291c2333a742a1cf64658cb8371885b3",
+        "finishing": "ab2f7a796def898e6e794c29929fd694bb87117590311c1508026676ec971392",
+        "engine": "951c769135c5dd306c1dbf892366caf8c45401c1f1e89ddc1c9ffe91fc44e484",
+        "scene_configuration": {
+          "preset": {
+            "id": "sandstone-passage",
+            "title": "Sandstone Passage",
+            "engine": "geo",
+            "member": "canyon",
+            "mesh": "geometry/canyon/scene.meshbin",
+            "upgraded_mesh": "geometry-r2/canyon/scene.meshbin",
+            "camera": "geometry/canyon/camera.json",
+            "aspect": [
+              3,
+              2
+            ],
+            "spp": 96,
+            "water_spp": 96,
+            "depth": 12,
+            "reference": "references/sandstone-passage.png",
+            "baseline_note": "Recovered three-scene builder; exact historical native still revision is unresolved."
+          },
+          "camera_sha256": "23d7e4cca232e0b5fdbd718db40c05ba01bb036fb5afd399d3e61854ed2efe5a"
+        },
+        "material_inputs": {
+          "environments/engines/geo/cybr-geo/examples/desert_hot_springs/assets/granular_relief.bin": "babbb2aa418d669003be4b6bac9f53a1da9d0f2533bcc3677c4f2f4b712e8c11"
+        }
+      },
+      "geometry": {
+        "triangles": 8108728,
+        "meshlets": 251019,
+        "indexed_vertices": 15659148,
+        "bytes": 779202612,
+        "unindexed_bytes": 1167656848
+      },
+      "invalid_path_samples": 0,
+      "files": {
+        "sandstone-passage.png": {
+          "sha256": "829b4a46a2f9d57b6d8a2cd4bea913e0168725d2daa180f226c3b82f519ec470",
+          "bytes": 7272
+        },
+        "sandstone-passage_unfiltered.png": {
+          "sha256": "3f6f577df2ecc706e4daf5648fa1492c4a232db1557ebf466572e7499df22728",
+          "bytes": 7030
+        }
+      },
+      "kind": "64-pixel full-geometry smoke validation; finite sampling, not a presentation render"
+    }
+  ]
+}
