@@ -89,6 +89,10 @@ class AdapterTests(unittest.TestCase):
                 adapter.render_scene(args);self.assertEqual(convert.call_count,2)
                 receipt=json.loads(mesh.with_name('receipt.json').read_text())
                 self.assertTrue(receipt['passed']);self.assertEqual(receipt['settings']['width'],36)
+                report=json.loads(mesh.with_name('hero.json').read_text())
+                self.assertEqual(report['geometry'],receipt['geometry'])
+                self.assertTrue(report['engine_source_sha256'])
+                self.assertEqual(adapter.sha(mesh.with_name('hero.json')),receipt['files']['hero.json'])
 
 
 if __name__=='__main__':unittest.main()

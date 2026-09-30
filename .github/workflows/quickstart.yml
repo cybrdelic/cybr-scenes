@@ -51,6 +51,7 @@ jobs:
           report=json.loads(Path('outputs/observatory-iv/hero/hero.json').read_text())
           assert [report['width'],report['height']]==[64,43]
           assert report['invalid_path_samples']==0 and report['meshlets']>0
+          assert report['geometry']==receipt['geometry'] and report['engine_source_sha256']
           PY
           git diff --exit-code
       - uses: actions/upload-artifact@v4

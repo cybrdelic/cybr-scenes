@@ -229,10 +229,8 @@ def render_scene(args):
             scene.emit('volume',0,(-3.6,-3.6,0),(3.6,2.77,5),(.006,.006,.006),(.85,.85,.85),.36,1,1)
             scene.emit('phase',0,0)
         scene.mesh(target)
-        report=render(scene,stem,runner=lambda command:run_recorded(command,ROOT,ROOT/'build/logs'/f'light-{identifier}.log',args.threads,args.timeout))
-        report.update(scene=identifier,geometry=geometry,source_mesh_sha256=settings['mesh'],
-                      material_adapter='Preserved geometry, UVs, vertex tint and component IDs; general CYBR LIGHT BSDF/volume models replace bespoke transport estimators.')
-        atomic_json(stem.with_suffix('.json'),report)
+        report=render(scene,stem,runner=lambda command:run_recorded(command,ROOT,ROOT/'build/logs'/f'light-{identifier}.log',args.threads,args.timeout),metadata=dict(scene=identifier,geometry=geometry,source_mesh_sha256=settings['mesh'],
+                      material_adapter='Preserved geometry, UVs, vertex tint and component IDs; general CYBR LIGHT BSDF/volume models replace bespoke transport estimators.'))
         files={str(p.relative_to(out)):sha(p) for p in out.rglob('*') if p.is_file() and p!=receipt}
         atomic_json(receipt,{'passed':True,'renderer':'CYBR LIGHT 0.2','settings':settings,'geometry':geometry,'files':files})
     print(f'CYBR LIGHT: {identifier} {width}x{height} / {spp} packets x {bands} wavelengths -> {stem}.png')

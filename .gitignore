@@ -5,6 +5,11 @@ environments/geometry/
 environments/geometry-r2/
 environments/engines/geode/assets/built_v3/
 environments/engines/obsidian/assets/scene.bin
+environments/engines/obsidian/assets/scene.bin.build.json
+environments/engines/obsidian/assets/lava_skin.bin
+environments/engines/obsidian/assets/rock_texture.bin
+environments/engines/obsidian/assets/scan_texture_*.bin
+environments/engines/obsidian/assets/generated_build_record.json
 *.py[cod]
 .venv/
 build/

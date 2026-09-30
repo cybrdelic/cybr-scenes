@@ -239,5 +239,5 @@ with (A/'scene.bin').open('wb') as out:
         packet['uv']=uv[fc] if uv is not None else 0;packet['mat']=p.material;packet['obj']=obj;out.write(packet.tobytes())
 record={'seconds':time.monotonic()-t0,'triangles':count,'parts':len(parts),'separate_folded_crust_bodies':raftcount,
         'lava_texture_dimensions':[LW,LH],'image_generation':False,'fluid_simulation':False}
-(A/'build_record.json').write_text(json.dumps(record,indent=2))
+(A/'generated_build_record.json').write_text(json.dumps(record,indent=2))
 print(json.dumps(record),flush=True)
