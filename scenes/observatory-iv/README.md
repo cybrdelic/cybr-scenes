@@ -1,3 +1,5 @@
+> **Current entry point:** from the repository root, run `python cybr_scenes.py render observatory-iv --quality preview`. It prepares assets, compiles, renders, finishes and checks output automatically. New files go to `outputs/observatory-iv/`; see [running guide](../../docs/RUNNING.md). The detailed commands below document the direct scene workflow and original delivery.
+
 # CYBR — Quiet Observatory IV
 
 A real, offline-rendered 3D scene. The project uses a native C++ spectral path tracer and the retained CYBR GEO triangle-intersection/BVH kernel. It does not use image generation, image editing models, neural textures, neural denoising, rendered-image upscaling, photography as a scene background, or painted fixes to the finished frame.

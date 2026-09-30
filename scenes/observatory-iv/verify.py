@@ -16,8 +16,9 @@ def sha(p):
         for a in iter(lambda:f.read(1<<20),b''):h.update(a)
     return h.hexdigest()
 
-def geometry():
-    p=ROOT/'scene/observatory.cvr2';manifest=json.loads((ROOT/'scene/manifest.json').read_text())
+def geometry(scene_dir=None):
+    scene_dir=Path(scene_dir) if scene_dir else ROOT/'scene'
+    p=scene_dir/'observatory.cvr2';manifest=json.loads((scene_dir/'manifest.json').read_text())
     with p.open('rb') as f:magic=f.read(4);count=struct.unpack('<I',f.read(4))[0]
     assert magic==b'CVR2' and p.stat().st_size==8+count*144
     assert count==manifest['triangles'] and sha(p)==manifest['mesh_sha256']
@@ -40,12 +41,12 @@ def geometry():
             dielectric.append(test)
         start=end
     assert all(q['passed'] for q in dielectric),dielectric
-    groups=ROOT/'scene/observatory.groups'
+    groups=scene_dir/'observatory.groups'
     with groups.open('rb') as f:ng=struct.unpack('<I',f.read(4))[0];g=np.frombuffer(f.read(),'<f4').reshape(ng,7)
     assert ng==manifest['parts'] and np.isfinite(g).all() and np.allclose(np.linalg.norm(g[:,3:6],axis=1),1,atol=1e-5)
     tex=[]
-    for r in json.loads((ROOT/'scene/texture_manifest.json').read_text()):
-        t=ROOT/'scene/textures'/f"{r['index']}.cvtex"
+    for r in json.loads((scene_dir/'texture_manifest.json').read_text()):
+        t=scene_dir/'textures'/f"{r['index']}.cvtex"
         with t.open('rb') as f:w,h,c=struct.unpack('<III',f.read(12))
         q=np.memmap(t,'<f4',mode='r',offset=12,shape=(h,w,7))
         norms=np.linalg.norm(q[:,:,3:6],axis=-1);passed=bool(np.isfinite(q).all() and np.min(q[:,:,:3])>=0 and np.max(q[:,:,:3])<=.941 and np.allclose(norms,1,atol=1e-5) and np.min(q[:,:,6])>0 and np.max(q[:,:,6])<=1)
@@ -71,10 +72,11 @@ def render(stem):
     return {'passed':True,'image_dimensions':image.size,'png_sha256':sha(str(p)+'.png'),'raw_sha256':sha(str(p)+'_raw.exr'),'finite_raw':True,'aov_sum_max_abs_error':err,'aov_sum_relative_error':relative,'raw_exr_roundtrip_max_error':roundtrip,'raw_not_clamped':True,'dominant_transmitted_guide_pixels':int((guides[:,:,8]==8).sum()),'native_resolution':True,'sampling':meta['sampling'],'seconds':meta['seconds'],'triangles_actually_traced':meta['triangles']}
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--geometry-only',action='store_true');ap.add_argument('--stem',type=Path,default=ROOT/'renders/Observatory_IV');args=ap.parse_args()
-    report={'geometry':geometry()}
+    ap=argparse.ArgumentParser();ap.add_argument('--geometry-only',action='store_true');ap.add_argument('--stem',type=Path,default=ROOT/'renders/Observatory_IV');ap.add_argument('--scene-dir',type=Path);ap.add_argument('--out',type=Path,help='Write report separately from historical delivery evidence');args=ap.parse_args()
+    report={'geometry':geometry(args.scene_dir)}
     report['numeric_transport']=json.loads(subprocess.check_output([str(ROOT/'build/observatory'),'--self-test'],text=True))
     if not args.geometry_only:report['render']=render(args.stem)
     report['passed']=all(v['passed'] for v in report.values());report['scope']='Explicit geometry/material/numerical/raw-output tests; not a photorealism or convergence certification'
-    out=ROOT/'verification'/('geometry_and_transport.json' if args.geometry_only else 'delivery_verification.json');out.write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2),flush=True)
-if __name__=='__main__':main()
+    out=args.out or ROOT/'build/verification'/('geometry_and_transport.json' if args.geometry_only else 'delivery_verification.json');out.parent.mkdir(parents=True,exist_ok=True);out.write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2),flush=True)
+    return 0 if report['passed'] else 1
+if __name__=='__main__':raise SystemExit(main())

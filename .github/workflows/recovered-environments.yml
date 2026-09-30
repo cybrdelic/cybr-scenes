@@ -1,5 +1,5 @@
 name: Recovered environment verification
-on: [push, workflow_dispatch]
+on: [push, pull_request, workflow_dispatch]
 permissions:
   contents: read
 jobs:
@@ -43,4 +43,5 @@ jobs:
             environments/demo-output/**/*.png
             environments/demo-output/**/*.json
             environments/demo-output/**/*.log
-            environments/evidence/render-batch.json
+            environments/build/logs/render-batch.json
+            environments/build/logs/

@@ -1,0 +1,5 @@
+# One compatible environment for all seven scenes. Keep OpenCV's EXR codec.
+-r scenes/observatory-iv/requirements-tested.txt
+numba==0.65.1
+scikit-image==0.26.0
+shapely==2.1.2

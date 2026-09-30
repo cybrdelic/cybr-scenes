@@ -21,29 +21,26 @@ The four recovered native implementations are preserved as distinct backends;
 this is a unified project/asset workflow, **not** a claim that their transport models
 have been rewritten into a single identical integrator.
 
+From the repository root, install the shared requirements once and render a scene:
+
 ```bash
-python -m venv .venv
-source .venv/bin/activate
 python -m pip install -r requirements.txt
+python cybr_scenes.py render sandstone-passage --quality preview
+```
+
+The root workflow prepares geometry and the native backend, finishes the image and checks it automatically. New output is `outputs/sandstone-passage/hero/hero.png`. [Complete setup and settings](../docs/RUNNING.md).
+
+For backend-specific operations, run these from `environments/`:
+
+```bash
 python cybr_scenes.py doctor
-python tools/prepare_detail.py
 python cybr_scenes.py compile
-python cybr_scenes.py prepare all
-python cybr_scenes.py render all --quality preview --force
-python cybr_scenes.py render sandstone-passage --quality production --force
-python cybr_scenes.py verify
+python cybr_scenes.py prepare sandstone-passage
+python cybr_scenes.py render sandstone-passage --quality preview
 python cybr_scenes.py serve
 ```
 
-Open `gallery.html` via the local server for the six-scene comparison catalog.
-The source delivery excludes multi-gigabyte generated triangle streams; `prepare`
-rebuilds them from the included original procedural source and source assets,
-then writes upgraded meshes separately. It does not overwrite the recovered mesh.
-
-The delivery contains finished PNGs. Use `--force` to actually re-render over
-them, or choose `--output renders/my-run` to keep a separate run. Without
-`--force`, existing results are verified, not silently rendered again. If only
-the display PNGs are installed, also extract Raw Proof for verification.
+Open `gallery.html` via the local server for the retained six-scene comparison catalog. New renders default to the repository's ignored `outputs/` directory; bundled PNGs stay separate and need no raw archive to start a new run. Changed settings or inputs invalidate an old result, and incomplete output is rebuilt. `--force` requests an unconditional rerender. Preparing a scene happens automatically when needed; `prepare all` is an explicit expensive batch operation.
 
 The production defaults are 1280 pixels wide, with per-scene sample budgets in
 `scenes.json`. `--width`, `--height`, `--spp`, `--water-spp`, `--threads` and `--output`
