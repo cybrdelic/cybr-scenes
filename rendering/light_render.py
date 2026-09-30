@@ -156,7 +156,7 @@ def prepare(identifier,threads,timeout):
         module=environments();record=module.SCENES[identifier]
         return module.prepare_scene(record,threads,mesh_only=True),record
     directory=OBS/'build/scene';stamp=directory/'light-build.json'
-    inputs={str(p.relative_to(ROOT)):sha(p) for p in [OBS/'build_scene.py',OBS/'assets/observatory_interior_source.glb']}
+    inputs={str(p.relative_to(ROOT)):sha(p) for p in [OBS/'build_scene.py',OBS/'verify.py',OBS/'assets/observatory_interior_source.glb']}
     if stamp.exists():
         old=json.loads(stamp.read_text())
         if old.get('inputs')==inputs and old.get('files') and all((directory/name).is_file() and sha(directory/name)==digest for name,digest in old['files'].items()):return directory/'observatory.cvr2',{'aspect':[3,2],'depth':14,'spp':192}

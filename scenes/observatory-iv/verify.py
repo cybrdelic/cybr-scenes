@@ -74,9 +74,10 @@ def render(stem):
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--geometry-only',action='store_true');ap.add_argument('--stem',type=Path,default=ROOT/'renders/Observatory_IV');ap.add_argument('--scene-dir',type=Path);ap.add_argument('--out',type=Path,help='Write report separately from historical delivery evidence');args=ap.parse_args()
     report={'geometry':geometry(args.scene_dir)}
-    report['numeric_transport']=json.loads(subprocess.check_output([str(ROOT/'build/observatory'),'--self-test'],text=True))
-    if not args.geometry_only:report['render']=render(args.stem)
-    report['passed']=all(v['passed'] for v in report.values());report['scope']='Explicit geometry/material/numerical/raw-output tests; not a photorealism or convergence certification'
-    out=args.out or ROOT/'build/verification'/('geometry_and_transport.json' if args.geometry_only else 'delivery_verification.json');out.parent.mkdir(parents=True,exist_ok=True);out.write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2),flush=True)
+    if not args.geometry_only:
+        report['numeric_transport']=json.loads(subprocess.check_output([str(ROOT/'build/observatory'),'--self-test'],text=True))
+        report['render']=render(args.stem)
+    report['passed']=all(v['passed'] for v in report.values());report['scope']='Explicit geometry/material tests' if args.geometry_only else 'Explicit geometry/material/numerical/raw-output tests; not a photorealism or convergence certification'
+    out=args.out or ROOT/'build/verification'/('geometry.json' if args.geometry_only else 'delivery_verification.json');out.parent.mkdir(parents=True,exist_ok=True);out.write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2),flush=True)
     return 0 if report['passed'] else 1
 if __name__=='__main__':raise SystemExit(main())

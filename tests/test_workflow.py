@@ -81,6 +81,16 @@ class WorkflowTests(unittest.TestCase):
             self.assertEqual(set(records[:,19]),{0.,1.})
             self.assertFalse(mesh.with_suffix('.cvr2.partial').exists())
 
+    def test_geometry_only_verification_requires_no_authored_renderer(self):
+        import sys
+        verify=module('cybr_observatory_verify',ROOT/'scenes/observatory-iv/verify.py')
+        with tempfile.TemporaryDirectory() as directory:
+            out=Path(directory)/'geometry.json'
+            with patch.object(sys,'argv',['verify.py','--geometry-only','--out',str(out)]),patch.object(verify,'geometry',return_value={'passed':True}),patch.object(verify.subprocess,'check_output',side_effect=AssertionError('Authored renderer must not run')):
+                self.assertEqual(verify.main(),0)
+            report=json.loads(out.read_text())
+            self.assertTrue(report['passed']);self.assertNotIn('numeric_transport',report)
+
     def test_readme_local_targets_exist(self):
         import re
         for name in ['README.md','docs/RUNNING.md']:
