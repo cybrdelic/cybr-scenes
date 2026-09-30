@@ -1,0 +1,50 @@
+name: Observatory CYBR LIGHT adapter and preservation
+on:
+  push:
+    branches: [compare-observatory-cybr-light]
+  pull_request:
+    paths:
+      - 'experiments/observatory-cybr-light/**'
+      - 'engines/cybr-light'
+      - '.gitmodules'
+      - '.github/workflows/observatory-light-comparison.yml'
+permissions:
+  contents: read
+jobs:
+  adapter:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          submodules: false
+      - name: Check the untouched baseline and actual engine pin
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,subprocess
+          from pathlib import Path
+          pin=json.loads(Path('experiments/observatory-cybr-light/dependency.json').read_text())
+          def git(*a):return subprocess.check_output(['git',*a],text=True).strip()
+          actual=git('rev-parse','HEAD:scenes/observatory-iv')
+          assert actual==pin['preserved_scene_tree'],(actual,pin['preserved_scene_tree'])
+          assert git('rev-parse','HEAD:engines/cybr-light')==pin['commit']
+          archive=Path('downloads/CYBR_Observatory_IV_Source.zip')
+          assert hashlib.sha256(archive.read_bytes()).hexdigest()==pin['baseline_archive_sha256']
+          print('Original scene subtree and source ZIP unchanged; CYBR LIGHT gitlink matches lock.')
+          PY
+      - name: Install adapter-only dependencies
+        run: |
+          python3 -m venv .venv
+          .venv/bin/python -m pip install -r experiments/observatory-cybr-light/requirements.txt
+      - name: Test coordinates, cameras, interchange, and common display
+        working-directory: experiments/observatory-cybr-light
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+        run: |
+          ../../.venv/bin/python -m unittest -v test_adapter
+          ../../.venv/bin/python -m compileall -q .
+      - name: Record validation scope
+        run: |
+          echo 'This job validates the adapter and baseline preservation, not a new native production render.'
+          echo 'Native engine tests run in cybr-light; full matched rendering was executed in the delivery environment.'
+          echo 'Private cross-repository checkout requires a token authorized for cybr-light or an authenticated local submodule clone.'
