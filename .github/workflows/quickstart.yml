@@ -35,6 +35,8 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y g++ cmake
           python -m pip install -r requirements.txt
+      - name: Check active Python syntax on each supported interpreter
+        run: python -m compileall -q -x '/(provenance|execution-repair|evidence|build|archive)/' cybr_scenes.py tests environments scenes/observatory-iv
       - run: python -m unittest discover -s tests -v
       - run: python -m unittest discover -s environments/tests -v
       - name: Run root workflow from a fresh checkout
