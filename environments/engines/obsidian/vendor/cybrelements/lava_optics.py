@@ -1,6 +1,6 @@
 """CYBR ELEMENTS lava optics, ported to NumPy + CYBR LIGHT observer.
 Original modules: lava_radiation.py and lava_material_texture.py.
-The Mitsuba observer dependency is replaced by CYBR LIGHT's analytic fallback.
+Uses CYBR LIGHT's analytic observer fallback.
 No claim of a thermomechanical lava simulation is made by this scene.
 """
 import numpy as np

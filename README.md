@@ -2,7 +2,7 @@
 
 **Procedural environments and native spectral rendering.**
 
-Seven authored 3D scenes: vaulted architecture, woodland, sandstone, basalt coast, mineral pools, volcanic rock and a flooded quartz cavern. The repository includes the geometry builders, material recipes, native C++ renderers and finished images.
+Seven authored 3D scenes: vaulted architecture, woodland, sandstone, basalt coast, mineral pools, volcanic rock and a flooded quartz cavern. The repository includes the geometry builders, material recipes, a bundled CYBR LIGHT spectral renderer and finished images.
 
 [![Quiet Observatory IV](scenes/observatory-iv/renders/Observatory_IV.png)](scenes/observatory-iv/renders/Observatory_IV.png)
 
@@ -21,7 +21,7 @@ The displayed images are retained renders. New runs produce separate images and 
 
 ## Run it
 
-Linux or WSL2, Python **3.11–3.13**, g++/OpenMP and CMake. Observatory requires an x86-64 CPU with AVX2/FMA; Drowned Geode requires AVX2. Rendering runs on the CPU.
+Linux or WSL2, Python **3.11–3.13** and g++/OpenMP. CYBR LIGHT compiles once on demand and runs on the CPU; a GPU is not required.
 
 ```bash
 sudo apt-get update
@@ -44,7 +44,7 @@ python cybr_scenes.py render sandstone-passage --quality preview
 python cybr_scenes.py render drowned-geode --quality production --threads 4
 ```
 
-`smoke` renders a small frame for installation checks. `preview` is the default iteration budget. `production` uses each scene's authored sample budget and larger resolution. All three use the actual scene geometry. Full environment geometry can require several GB of RAM and minutes to prepare, especially the woodland. [Settings, platforms and troubleshooting](docs/RUNNING.md).
+`smoke` renders a small frame for installation checks. `preview` is the default iteration budget. `production` increases both resolution and spectral sampling. All three use the actual scene geometry. Full environment geometry can require several GB of RAM and minutes to prepare, especially the woodland. [Settings, platforms and troubleshooting](docs/RUNNING.md).
 
 Matching output can be reused after checking the settings and input/output hashes. Changed resolution, sampling, camera, source or geometry triggers the relevant rebuild. Logs, prepared meshes and fresh reports live in ignored build/output directories. Historical delivery evidence stays separate.
 
@@ -52,14 +52,16 @@ Matching output can be reused after checking the settings and input/output hashe
 
 | Area | Source to inspect |
 | --- | --- |
-| Spectral transport | [Observatory integrator](scenes/observatory-iv/src/observatory.cpp), [spectral model](scenes/observatory-iv/src/spectrum.h) |
-| Acceleration and sampling | [Wide BVH](scenes/observatory-iv/src/wide_bvh.h), [geometry kernel](scenes/observatory-iv/src/spectral_geometry.h), [Sobol directions](scenes/observatory-iv/src/sobol_directions.h) |
+| Spectral transport | [CYBR LIGHT engine](rendering/cybr_light/native), [scene adapter](rendering/light_render.py) |
+| Acceleration and sampling | [Indexed meshlets and SAH BVH](rendering/cybr_light/native/include/cybr/geometry.hpp), [packing and runtime](rendering/cybr_light/runtime.py) |
 | Geometry authoring | [Observatory builder](scenes/observatory-iv/build_scene.py), [environment engines](environments/engines) |
 | Surface detail | [Footprint-filtered material atlas](environments/shared/surface_detail.hpp), [continuous vertex/normal deformation](environments/tools/enhance_geometry.py) |
 | Optical reconstruction | [Separated illumination and transmitted guides](scenes/observatory-iv/finish.py), [environment reconstruction](environments/tools/finish_r2.py) |
 | Repeatable execution | [Root workflow](cybr_scenes.py), [backend adapters](environments/cybr_scenes.py), [durable process supervision](environments/execution_runtime.py) |
 
-The environments retain four distinct native backends. The common workflow coordinates them; their transport models remain scene-specific. Observatory uses sixteen spectral bins with wavelength-dependent quartz refraction, anisotropic metal shading and a bounded participating medium. Reconstruction uses geometry and variance guides.
+The root workflow now defaults to **CYBR LIGHT** for all seven scenes. Indexed meshlets share vertices during native BVH traversal, with at most 64 full-attribute vertices and 124 triangles per group. The adapter preserves actual geometry, normals, UVs, vertex tint and component IDs. Spectral glass, metals, normal maps and retained lava temperature fields use CYBR LIGHT transport. Linear PFM/EXR films and unfiltered images stay beside the finished PNG.
+
+The original scene-specific transport remains available with `--renderer authored` for historical reproduction, including its specialized water estimators. CYBR LIGHT uses its general BSDF/volume models; these are different optical implementations. [Renderer source and provenance](rendering/cybr_light/UPSTREAM.json).
 
 ## Development
 

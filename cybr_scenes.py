@@ -35,11 +35,13 @@ def parser():
     d.add_argument('scene',nargs='?',choices=[*SCENES,'all'],default='all')
     r=sub.add_parser('render',help='Prepare, compile, render, finish and check in one command')
     r.add_argument('scene',choices=[*SCENES,'all'])
+    r.add_argument('--renderer',choices=['light','authored'],default='light',help='CYBR LIGHT spectral engine; authored retains the scene-specific historical transport')
+    r.add_argument('--bands',type=positive_int,help='Wavelengths per CYBR LIGHT sample packet')
     r.add_argument('--quality',choices=['smoke','preview','production'],default='preview')
     r.add_argument('--width',type=positive_int);r.add_argument('--height',type=positive_int)
     r.add_argument('--spp',type=positive_int);r.add_argument('--water-spp',type=positive_int)
     r.add_argument('--threads',type=positive_int,default=2)
-    r.add_argument('--depth',type=positive_int,help='Observatory path depth (environment presets retain authored depth)')
+    r.add_argument('--depth',type=positive_int,help='CYBR LIGHT path depth; authored environment depth stays in its scene preset')
     r.add_argument('--output',type=Path,default=ROOT/'outputs')
     r.add_argument('--force',action='store_true');r.add_argument('--timeout',type=positive_int,default=14400)
     return p
@@ -56,16 +58,18 @@ def fingerprint(paths):
     return {str(p.relative_to(ROOT)):sha(p) for p in sorted(paths)}
 
 
-def doctor(scene='all'):
+def doctor(scene='all',renderer='light'):
     selected=list(SCENES) if scene=='all' else [scene]
     packages=['numpy','scipy','Pillow','trimesh','opencv-python-headless']
-    if any(name!='observatory-iv' for name in selected):packages+=['numba','scikit-image','shapely']
+    if renderer=='light':packages+=['numba']
+    if any(name!='observatory-iv' for name in selected):packages+=['scikit-image','shapely']
+    if renderer=='authored' and any(name!='observatory-iv' for name in selected):packages+=['numba']
     versions={}
     for name in packages:
         try:versions[name]=importlib.metadata.version(name)
         except importlib.metadata.PackageNotFoundError:versions[name]=None
     programs={'g++':shutil.which(os.environ.get('CXX','g++'))}
-    if 'observatory-iv' in selected:programs['cmake']=shutil.which('cmake')
+    if renderer=='authored' and 'observatory-iv' in selected:programs['cmake']=shutil.which('cmake')
     issues=[]
     if not sys.platform.startswith('linux'):issues.append('Use Linux or WSL2; native process supervision uses Linux /proc and flock.')
     if not (3,11)<=sys.version_info[:2]<(3,14):issues.append('Use Python 3.11, 3.12 or 3.13.')
@@ -74,11 +78,11 @@ def doctor(scene='all'):
     for name,path in programs.items():
         if not path:issues.append(f'Missing {name}; on Ubuntu/WSL run sudo apt install g++ cmake')
     flags=Path('/proc/cpuinfo').read_text() if Path('/proc/cpuinfo').exists() else ''
-    if any(name in selected for name in ['observatory-iv','drowned-geode']):
+    if renderer=='authored' and any(name in selected for name in ['observatory-iv','drowned-geode']):
         if 'avx2' not in flags or ('observatory-iv' in selected and 'fma' not in flags):
             issues.append('This scene requires an x86-64 CPU with AVX2 (and FMA for Observatory).')
     # The full finish/export pipeline requires a working EXR codec, not just import cv2.
-    if 'observatory-iv' in selected and versions.get('opencv-python-headless'):
+    if renderer=='authored' and 'observatory-iv' in selected and versions.get('opencv-python-headless'):
         os.environ['OPENCV_IO_ENABLE_OPENEXR']='1'
         try:
             import cv2
@@ -91,7 +95,7 @@ def doctor(scene='all'):
                      'Outputs and fresh logs go to ignored outputs/ and build/ directories.']}
 
 
-def observatory_render(args):
+def authored_observatory_render(args):
     # Use the existing durable execution controller for all stages and locks.
     sys.path.insert(0,str(ENVIRONMENTS))
     from execution_runtime import atomic_json,owned_lock,run_recorded
@@ -153,7 +157,7 @@ def observatory_render(args):
     print(f'RENDER VERIFIED: Observatory {width}x{height} {spp} spp -> {stem}.png')
 
 
-def environment_render(args):
+def authored_environment_render(args):
     command=[sys.executable,ENVIRONMENTS/'cybr_scenes.py','render',args.scene,
              '--quality','production' if args.quality=='production' else 'preview',
              '--threads',str(args.threads),'--timeout',str(args.timeout),'--output',str(args.output.expanduser().resolve())]
@@ -167,16 +171,39 @@ def environment_render(args):
     subprocess.run(command,cwd=ROOT,check=True)
 
 
+def light_render(args):
+    sys.path.insert(0,str(ROOT/'rendering'))
+    from light_render import render_scene
+    return render_scene(args)
+
+
+def observatory_render(args):
+    return light_render(args) if args.renderer=='light' else authored_observatory_render(args)
+
+
+def environment_render(args):
+    return light_render(args) if args.renderer=='light' else authored_environment_render(args)
+
+
 def main(argv=None):
     args=parser().parse_args(argv)
     if args.command=='list':
         for scene in SCENES.values():print(f'{scene["id"]:22} {scene["title"]} ({scene["engine"]})')
         return 0
-    report=doctor(args.scene)
+    if args.command=='render' and args.renderer=='light':
+        if args.water_spp is not None:
+            print('CYBR LIGHT uses one spectral packet budget; use --spp instead of --water-spp',file=sys.stderr);return 2
+        if args.bands is not None and args.bands>128:
+            print('--bands must be at most 128',file=sys.stderr);return 2
+        width=args.width or {'smoke':64,'preview':800,'production':1800}[args.quality]
+        selected=list(SCENES) if args.scene=='all' else [args.scene]
+        if any(width*(args.height or max(1,round(width*SCENES[name].get('aspect',[3,2])[1]/SCENES[name].get('aspect',[3,2])[0])))>8000000 for name in selected):
+            print('CYBR LIGHT supports at most 8 million pixels',file=sys.stderr);return 2
+    report=doctor(args.scene,getattr(args,'renderer','light'))
     if args.command=='doctor':print(json.dumps(report,indent=2));return 0 if report['ready'] else 2
     if not report['ready']:
         print('\n'.join(report['issues']),file=sys.stderr);return 2
-    if args.depth is not None and args.scene!='observatory-iv':
+    if args.renderer=='authored' and args.depth is not None and args.scene!='observatory-iv':
         print('--depth applies to observatory-iv; environment depth is in environments/scenes.json',file=sys.stderr);return 2
     try:
         if args.scene=='all':

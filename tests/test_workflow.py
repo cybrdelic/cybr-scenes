@@ -35,6 +35,14 @@ class WorkflowTests(unittest.TestCase):
             self.assertEqual(runner.main(['render','observatory-iv']),2)
             render.assert_not_called()
 
+    def test_light_preflight_uses_actual_scene_aspect(self):
+        with patch.object(runner,'doctor',return_value={'ready':True}),patch.object(runner,'observatory_render') as render:
+            self.assertEqual(runner.main(['render','observatory-iv','--width','3000']),0)
+            render.assert_called_once()
+            self.assertEqual(runner.main(['render','observatory-iv','--width','4000']),2)
+            self.assertEqual(runner.main(['render','observatory-iv','--bands','129']),2)
+            self.assertEqual(runner.main(['render','observatory-iv','--water-spp','4']),2)
+
     def test_all_scenes_continue_and_return_failure(self):
         names=[]
         def render(args):
@@ -45,7 +53,7 @@ class WorkflowTests(unittest.TestCase):
         self.assertEqual(names,list(runner.SCENES))
 
     def test_backend_output_is_explicit_and_keeps_requested_settings(self):
-        args=runner.parser().parse_args(['render','fernwater','--quality','smoke','--width','80','--spp','7'])
+        args=runner.parser().parse_args(['render','fernwater','--renderer','authored','--quality','smoke','--width','80','--spp','7'])
         with patch.object(runner.subprocess,'run') as run:
             runner.environment_render(args)
         command=run.call_args.args[0]
