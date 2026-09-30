@@ -172,12 +172,17 @@ class Builder:
             'scene':self.name,'seed':self.seed,'source':'Deterministic authored geometric recipe',
             'renderer':'Recovered CYBR GEO V11 native spectral transport extended with scene profiles',
             'image_generation':False,'measured_geometry':False,'material_spectra':'Authored RGB-anchor reconstruction'})
-        scene=assembly.save(out/'assembly')
-        # The transport adapter deliberately reads the saved CYBR GEO assembly.
-        part_count=len(assembly.parts)
-        del assembly,parts
-        restored=Assembly.load(scene)
-        assert len(restored.parts)==part_count
+        saved=not getattr(self,'mesh_only',False)
+        if saved:
+            scene=assembly.save(out/'assembly')
+            part_count=len(assembly.parts)
+            del assembly,parts
+            restored=Assembly.load(scene)
+            assert len(restored.parts)==part_count
+        else:
+            # Rendering needs the checked Part arrays, not a second compressed
+            # assembly archive and GLB. Explicit builder exports remain available.
+            restored=assembly
         total=sum(len(p.faces) for p in restored.parts)
         meshpath=out/'scene.meshbin'
         with meshpath.open('wb') as stream:
@@ -190,7 +195,7 @@ class Builder:
         if glb:restored.export_glb(out/(self.name+'.glb'))
         (out/'camera.json').write_text(json.dumps(config,indent=2)+'\n')
         report={'scene':self.name,'triangles':total,'parts':len(restored.parts),'components':self.counts,
-                'saved_and_reloaded_with_CYBR_GEO':True,'finite_vertices':all(np.isfinite(p.vertices).all() for p in restored.parts),
+                'saved_and_reloaded_with_CYBR_GEO':saved,'finite_vertices':all(np.isfinite(p.vertices).all() for p in restored.parts),
                 'valid_indices':all(p.faces.min()>=0 and p.faces.max()<len(p.vertices) for p in restored.parts),
                 'water_checks':self.water_checks,'tested_twig_roots':len(self.attachment_errors),'maximum_twig_root_centerline_error_m':max(self.attachment_errors,default=0.),'mesh_sha256':sha(meshpath),'image_generation':False}
         (out/'geometry.json').write_text(json.dumps(report,indent=2)+'\n')

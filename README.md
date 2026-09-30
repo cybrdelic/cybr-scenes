@@ -4,9 +4,9 @@
 
 Seven authored 3D scenes: vaulted architecture, woodland, sandstone, basalt coast, mineral pools, volcanic rock and a flooded quartz cavern. The repository includes the geometry builders, material recipes, a bundled CYBR LIGHT spectral renderer and finished images.
 
-[![Quiet Observatory IV](scenes/observatory-iv/renders/Observatory_IV.png)](scenes/observatory-iv/renders/Observatory_IV.png)
+[![Quiet Observatory IV](media/light/observatory_hero.png)](media/light/observatory_hero.png)
 
-*Quiet Observatory IV — 1800 × 1200 native render. Vaulted room, brass armillary, quartz optics, authored cloth and a two-lens optical bench.* [Scene source](scenes/observatory-iv) · [Unfiltered render](scenes/observatory-iv/renders/Observatory_IV_unfiltered.png)
+*Fresh CYBR LIGHT preview — 800 × 533, 96 spectral packets × 8 wavelengths. Actual vaulted architecture, brass armillary, quartz optics and authored cloth.* [Scene source](scenes/observatory-iv) · [Unfiltered render](media/light/observatory_hero_unfiltered.png) · [Reproduction record](media/light/README.md)
 
 ## Selected environments
 
@@ -17,7 +17,7 @@ Seven authored 3D scenes: vaulted architecture, woodland, sandstone, basalt coas
 
 [All six environment images](environments/gallery.html) · [Scene registry](environments/scenes.json) · [Environment source guide](environments/README.md)
 
-The displayed images are retained renders. New runs produce separate images and their own metadata; they do not replace these examples.
+The environment images above are retained renders. New runs produce separate images and their own metadata; they do not replace these examples.
 
 ## Run it
 

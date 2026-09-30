@@ -1,0 +1,77 @@
+{
+  "renderer": "CYBR LIGHT 0.2",
+  "image_generation_used": false,
+  "records": [
+    {
+      "title": "Quiet Observatory IV",
+      "command": "python cybr_scenes.py render observatory-iv --quality preview --width 800 --spp 96 --threads 6 --output outputs/light-final",
+      "render": {
+        "renderer": "CYBR LIGHT 0.2",
+        "backend": "C++17 OpenMP CPU",
+        "image_generation_used": false,
+        "denoising_used": true,
+        "clamping_used": false,
+        "width": 800,
+        "height": 533,
+        "packets_per_pixel": 96,
+        "resumed_from_samples": 0,
+        "wavelengths_per_packet": 8,
+        "spectral_paths_per_pixel": 768,
+        "wavelength_range_nm": [
+          360,
+          830
+        ],
+        "observer": "analytic CIE 1931 approximation",
+        "integrator": "volpath",
+        "filter": "tent",
+        "sampler": "random-shift Halton, first 64 dimensions",
+        "max_depth": 14,
+        "rr_depth": 5,
+        "seed": 20260915,
+        "primitives": 1510716,
+        "meshlets": 41423,
+        "indexed_vertices": 2350858,
+        "primitive_storage_bytes": 84600096,
+        "meshlet_vertex_bytes": 103437752,
+        "bvh_nodes": 904765,
+        "volumes": 1,
+        "polarized": false,
+        "forward_ad": false,
+        "invalid_path_samples": 0,
+        "photons_emitted": 0,
+        "photons_stored": 0,
+        "render_seconds": 1768.56313274,
+        "mean_linear_luminance": 1.88713868936,
+        "max_linear_channel": 28.0190242803,
+        "denoiser": "three camera-footprint, geometry/object/variance guided atrous display passes",
+        "engine_source_sha256": "951c769135c5dd306c1dbf892366caf8c45401c1f1e89ddc1c9ffe91fc44e484",
+        "mesh_input": "CLM1 indexed meshlets: 64 vertices / 124 triangles maximum",
+        "raw_film_preserved": true,
+        "scene": "observatory-iv",
+        "geometry": {
+          "triangles": 1511194,
+          "meshlets": 41423,
+          "indexed_vertices": 2350858,
+          "bytes": 120226594,
+          "unindexed_bytes": 217611952
+        },
+        "source_mesh_sha256": "1cad20e08992074214b9006066139ac4217aa10f4773cf591f0315d5f64d8726",
+        "material_adapter": "Preserved geometry, UVs, vertex tint and component IDs; general CYBR LIGHT BSDF/volume models replace bespoke transport estimators."
+      },
+      "display_processing": "Three camera-footprint/geometry/object/variance guided atrous passes and ACES; raw film retained in the generated output directory.",
+      "files": {
+        "observatory_hero.png": {
+          "sha256": "2dcea1ae590e26d46ecb016c24860afd702d75e285294c3d41dd12d240b40ae3",
+          "bytes": 571963
+        },
+        "observatory_hero_unfiltered.png": {
+          "sha256": "fb3de48753a2c31652570793a910571cac751ccdf4b50051298fce1f5c67074b",
+          "bytes": 1029731
+        }
+      },
+      "raw_film_sha256": "d5caaf57c642286421fdc8931d7bb06aad8340fe6c603508995c59b0dc6cacb2",
+      "native_scene_sha256": "c7e40451c5fcda1ecbd52384741475c6cf1e6308263f2ceb2ddc44a10c879ff7",
+      "display_finishing_runtime_sha256": "fb06efb29daddcd734904eca0bd0924b5269b708ed8695b3563b72de90c52ef4"
+    }
+  ]
+}

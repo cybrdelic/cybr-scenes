@@ -154,7 +154,7 @@ def convert_obsidian(source,target,scene):
 def prepare(identifier,threads,timeout):
     if identifier!='observatory-iv':
         module=environments();record=module.SCENES[identifier]
-        return module.prepare_scene(record,threads),record
+        return module.prepare_scene(record,threads,mesh_only=True),record
     directory=OBS/'build/scene';stamp=directory/'light-build.json'
     inputs={str(p.relative_to(ROOT)):sha(p) for p in [OBS/'build_scene.py',OBS/'assets/observatory_interior_source.glb']}
     if stamp.exists():

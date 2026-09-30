@@ -39,9 +39,10 @@ def stem(p,q,radius,sides=5):
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--out',type=Path,default=REPO.parent/'output')
     ap.add_argument('--seed',type=int,default=SEED);ap.add_argument('--no-glb',action='store_true')
+    ap.add_argument('--mesh-only',action='store_true',help='Export checked transport geometry without optional assembly/GLB files')
     args=ap.parse_args();out=args.out;out.mkdir(parents=True,exist_ok=True)
     start=time.time();rng=np.random.default_rng(args.seed);parts=[]
-    from stream_scene_r2 import PartSpool,roundtrip_to_native
+    from stream_scene_r2 import PartSpool,roundtrip_to_native,parts_to_native
     spool=PartSpool(out/".part-spool")
     mats=[Material('Mixed sand and carbonate sediment',(.50,.40,.29),0,.86),
           Material('Weathered pale carbonate',(.58,.53,.44),0,.81),
@@ -233,14 +234,17 @@ def main():
         'geometry_source':'CYBR GEO Assembly and Part','pools_m':POOLS,'counts':counts,
         'ripples':'128 prescribed directional modes; 0.6 mm RMS; not CFD',
         'limitations':['Authored landscape, not a site scan','Authored steam, not CFD','Authored reflectance, not measured spectra']})
-    assembly.save(out/'scene')
-    if not args.no_glb:assembly.export_glb(out/'scene.glb')
+    if not args.mesh_only:assembly.save(out/'scene')
+    if not args.no_glb and not args.mesh_only:assembly.export_glb(out/'scene.glb')
     total=sum(len(p.faces) for p in parts)
-    del assembly,parts,stones,grass,wood,leaves,chips,templates;gc.collect()
     meshpath=out/'scene.meshbin'
-    report=roundtrip_to_native(out/'scene',meshpath,total)
+    if args.mesh_only:report=parts_to_native(parts,mats,meshpath,assembly.name)
+    del assembly,parts,stones,grass,wood,leaves,chips,templates;gc.collect()
+    if not args.mesh_only:report=roundtrip_to_native(out/'scene',meshpath,total)
     report.update(counts=counts,triangles=total,seconds=time.time()-start,
         mesh_sha256=stream_hash(meshpath),memory_bounded_part_spooling=True,image_generation=False)
     (out/'geometry_verification.json').write_text(json.dumps(report,indent=2)+'\n')
+    import shutil
+    shutil.rmtree(spool.directory)
     print(json.dumps(report,indent=2),flush=True)
 if __name__=='__main__':main()
