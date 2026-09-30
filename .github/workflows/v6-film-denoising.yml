@@ -1,0 +1,26 @@
+name: V6 film denoising dependency
+on:
+  push:
+    branches: [feature/mythic-elemental-combat]
+    paths: [.github/workflows/v6-film-denoising.yml]
+permissions:
+  contents: read
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Fetch official pinned reconstruction filter
+        shell: python
+        run: |
+          import urllib.request,pathlib,hashlib,json,tarfile,io
+          root=pathlib.Path('oidn-input');root.mkdir()
+          url='https://github.com/RenderKit/oidn/releases/download/v2.3.3/oidn-2.3.3.x86_64.linux.tar.gz'
+          with urllib.request.urlopen(url,timeout=90) as r:data=r.read()
+          with tarfile.open(fileobj=io.BytesIO(data),mode='r:gz') as t:t.extractall(root,filter='data')
+          (root/'receipt.json').write_text(json.dumps(dict(url=url,version='2.3.3',bytes=len(data),sha256=hashlib.sha256(data).hexdigest(),purpose='Monte Carlo render denoising, not image generation'),indent=2))
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v6-oidn-runtime
+          path: oidn-input/
+          retention-days: 3

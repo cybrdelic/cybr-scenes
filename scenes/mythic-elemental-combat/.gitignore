@@ -1,0 +1,5 @@
+assets/CesiumMan.glb
+assets/CesiumMan.provenance.json
+build/
+renders/
+*.mp4

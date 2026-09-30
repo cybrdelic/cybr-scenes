@@ -1,0 +1,45 @@
+name: V6 native dependencies
+on:
+  push:
+    branches: [feature/mythic-elemental-combat]
+    paths: [.github/workflows/v6-native-dependencies.yml]
+permissions:
+  contents: read
+jobs:
+  dependencies:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Download pinned public dependencies
+        shell: python
+        run: |
+          import urllib.request,pathlib,json,hashlib,tarfile,io
+          root=pathlib.Path('v6-dependencies');root.mkdir()
+          receipts=[]
+          def get(url):
+            with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'CYBR-V6-native-delivery'}),timeout=100) as r:return r.read()
+          url='https://github.com/RenderKit/embree/releases/download/v4.4.1/embree-4.4.1.x86_64.linux.tar.gz'
+          data=get(url)
+          expected='aa506a55a581055e30cdc8819557dd4163ed514fc63ce4c1d66a6df82631be3f'
+          assert hashlib.sha256(data).hexdigest()==expected,'Embree archive checksum mismatch'
+          with tarfile.open(fileobj=io.BytesIO(data),mode='r:gz') as tf:
+            tf.extractall(root/'embree',filter='data')
+          receipts.append(dict(component='Embree',version='4.4.1',url=url,sha256=expected))
+          commit='280770daa8b78274339d26ad45a58f62aeeda39b'
+          tree=json.loads(get('https://api.github.com/repos/cybrdelic/cybr-elements/git/trees/'+commit+'?recursive=1'))
+          prefix='work/flip-lettering/vendor/src/'
+          extras=['LICENSE','work/element-motion/sigil_02_fire_v2.py','work/element-motion/sigil_02_active_water.mjs','work/flip-lettering/vendor/LICENSE']
+          for f in tree['tree']:
+            path=f['path']
+            if f['type']!='blob' or not(path.startswith(prefix) or path in extras):continue
+            if f.get('size',0)>3000000:continue
+            url='https://raw.githubusercontent.com/cybrdelic/cybr-elements/'+commit+'/'+path
+            data=get(url);dest=root/'cybr-elements'/path;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(data)
+            receipts.append(dict(component='CYBR ELEMENTS',commit=commit,path=path,sha256=hashlib.sha256(data).hexdigest(),bytes=len(data)))
+          (root/'receipts.json').write_text(json.dumps(receipts,indent=2))
+          print('Downloaded',len(receipts),'pinned inputs')
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v6-native-dependencies
+          path: v6-dependencies/
+          retention-days: 3

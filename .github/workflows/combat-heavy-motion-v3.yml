@@ -1,0 +1,55 @@
+name: Combat heavy motion V3 source conversion
+on:
+  push:
+    branches: [feature/mythic-elemental-combat]
+    paths: [.github/workflows/combat-heavy-motion-v3.yml]
+permissions:
+  contents: read
+jobs:
+  motion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --ignore-scripts --no-audit --no-fund three@0.180.0
+      - name: Convert pinned source clips, retaining provenance
+        shell: bash
+        run: |
+          cat > convert.mjs <<'JS'
+          import fs from 'node:fs';import crypto from 'node:crypto';
+          import {AnimationMixer,LoopOnce,TextureLoader,Texture} from 'three';
+          import {FBXLoader} from 'three/addons/loaders/FBXLoader.js';
+          globalThis.window={URL:globalThis.URL};TextureLoader.prototype.load=function(){return new Texture()};
+          const root='heavy-motion';fs.mkdirSync(root,{recursive:true});const records=[];
+          const ref='8887b87c06e5d53a00f8d90ab364972fcb59d63b';
+          const path='FinalGame/Assets/Animations/NPC Animations/Two Handed/';
+          const list=[['Combo','Two Hand Sword Combo.fbx'],['Spin','Great Sword High Spin Attack.fbx'],['HeavySlash','Great Sword Single Slash.fbx']];
+          for(const [k,n] of list){
+            try{
+              const url='https://media.githubusercontent.com/media/RosieMable/Final_Game/'+ref+'/'+path.split('/').map(encodeURIComponent).join('/')+encodeURIComponent(n);
+              const res=await fetch(url);if(!res.ok)throw Error('HTTP '+res.status);
+              const raw=await res.arrayBuffer();if(raw.byteLength<1000||raw.byteLength>25000000)throw Error('Unexpected FBX size');
+              const scene=new FBXLoader().parse(raw,'');scene.updateMatrixWorld(true);
+              const nodes=[];scene.traverse(o=>{if(o.isBone)nodes.push(o)});
+              const rest=nodes.map(o=>({name:o.name,parent:o.parent?.name,position:o.position.toArray(),quaternion:o.quaternion.toArray(),scale:o.scale.toArray(),world:o.matrixWorld.toArray()}));
+              const clip=scene.animations[0];if(!clip)throw Error('No animation');
+              const mixer=new AnimationMixer(scene),action=mixer.clipAction(clip);action.setLoop(LoopOnce,1);action.clampWhenFinished=true;action.play();
+              const frames=[];for(let f=0;f<=Math.ceil(clip.duration*60);f++){
+                const time=Math.min(f/60,clip.duration);mixer.setTime(time);scene.updateMatrixWorld(true);
+                frames.push({time,position:nodes.map(o=>o.position.toArray()),quaternion:nodes.map(o=>o.quaternion.toArray()),world:nodes.map(o=>o.matrixWorld.toArray())});
+              }
+              fs.writeFileSync(`${root}/${k}.json`,JSON.stringify({source:url,name:k,duration:clip.duration,fps:60,rest,frames}));
+              records.push({name:k,url,bytes:raw.byteLength,sha256:crypto.createHash('sha256').update(Buffer.from(raw)).digest('hex'),duration:clip.duration,joints:nodes.length});
+            }catch(e){records.push({name:k,error:String(e)})}
+          }
+          fs.writeFileSync(root+'/receipts.json',JSON.stringify(records,null,2));fs.copyFileSync('convert.mjs',root+'/convert_heavy.mjs');console.log(records);
+          JS
+          node convert.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: combat-heavy-motion-v3-tracks
+          path: heavy-motion/
+          retention-days: 3
