@@ -35,6 +35,14 @@ class WorkflowTests(unittest.TestCase):
             self.assertEqual(runner.main(['render','observatory-iv']),2)
             render.assert_not_called()
 
+    def test_light_preflight_uses_actual_scene_aspect(self):
+        with patch.object(runner,'doctor',return_value={'ready':True}),patch.object(runner,'observatory_render') as render:
+            self.assertEqual(runner.main(['render','observatory-iv','--width','3000']),0)
+            render.assert_called_once()
+            self.assertEqual(runner.main(['render','observatory-iv','--width','4000']),2)
+            self.assertEqual(runner.main(['render','observatory-iv','--bands','129']),2)
+            self.assertEqual(runner.main(['render','observatory-iv','--water-spp','4']),2)
+
     def test_all_scenes_continue_and_return_failure(self):
         names=[]
         def render(args):
@@ -45,7 +53,7 @@ class WorkflowTests(unittest.TestCase):
         self.assertEqual(names,list(runner.SCENES))
 
     def test_backend_output_is_explicit_and_keeps_requested_settings(self):
-        args=runner.parser().parse_args(['render','fernwater','--quality','smoke','--width','80','--spp','7'])
+        args=runner.parser().parse_args(['render','fernwater','--renderer','authored','--quality','smoke','--width','80','--spp','7'])
         with patch.object(runner.subprocess,'run') as run:
             runner.environment_render(args)
         command=run.call_args.args[0]
@@ -72,6 +80,16 @@ class WorkflowTests(unittest.TestCase):
             self.assertEqual(count,2*len(part.faces))
             self.assertEqual(set(records[:,19]),{0.,1.})
             self.assertFalse(mesh.with_suffix('.cvr2.partial').exists())
+
+    def test_geometry_only_verification_requires_no_authored_renderer(self):
+        import sys
+        verify=module('cybr_observatory_verify',ROOT/'scenes/observatory-iv/verify.py')
+        with tempfile.TemporaryDirectory() as directory:
+            out=Path(directory)/'geometry.json'
+            with patch.object(sys,'argv',['verify.py','--geometry-only','--out',str(out)]),patch.object(verify,'geometry',return_value={'passed':True}),patch.object(verify.subprocess,'check_output',side_effect=AssertionError('Authored renderer must not run')):
+                self.assertEqual(verify.main(),0)
+            report=json.loads(out.read_text())
+            self.assertTrue(report['passed']);self.assertNotIn('numeric_transport',report)
 
     def test_readme_local_targets_exist(self):
         import re

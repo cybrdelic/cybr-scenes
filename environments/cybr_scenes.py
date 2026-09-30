@@ -109,7 +109,7 @@ def mesh_valid(scene:dict,path:Path)->bool:
     except (ValueError,struct.error):return False
 
 
-def build_geometry(scene,threads=4):
+def build_geometry(scene,threads=4,mesh_only=False):
     path=ROOT/scene['mesh']
     stamp=path.with_suffix(path.suffix+'.build.json');fingerprint=builder_fingerprint(scene)
     camera=ROOT/scene['camera'] if scene.get('camera') else None
@@ -124,6 +124,7 @@ def build_geometry(scene,threads=4):
     elif engine=='hot':cmd=[sys.executable,prefix/'cybr-geo/examples/desert_hot_springs/build_scene.py','--out',ROOT/'geometry/hot','--seed','20260914','--no-glb']
     elif engine=='obsidian':cmd=[sys.executable,prefix/'build_scene.py']
     else:cmd=[sys.executable,prefix/'build_v3.py']
+    if mesh_only and engine in ('geo','hot'):cmd.append('--mesh-only')
     with exclusive(ROOT/'build'/f'.geometry-{scene["id"]}.lock'):
         run(cmd,prefix,ROOT/'build/logs'/f'build-{scene["id"]}.log',threads)
         if not mesh_valid(scene,path):raise RuntimeError(f'Builder returned an invalid mesh: {path}')
@@ -131,8 +132,8 @@ def build_geometry(scene,threads=4):
     return path
 
 
-def prepare_scene(scene,threads=4):
-    original=build_geometry(scene,threads)
+def prepare_scene(scene,threads=4,mesh_only=False):
+    original=build_geometry(scene,threads,mesh_only=True) if mesh_only else build_geometry(scene,threads)
     from tools.enhance_geometry import enhance
     target=ROOT/scene['upgraded_mesh']
     enhance(scene['id'],original,target)

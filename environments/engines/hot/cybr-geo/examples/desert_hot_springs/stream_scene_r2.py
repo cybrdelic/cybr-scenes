@@ -25,6 +25,25 @@ class PartSpool:
    setattr(part,field,np.load(path,mmap_mode='r',allow_pickle=False))
   return part
 
+def parts_to_native(parts,materials,meshpath,name):
+ """Export the checked, read-only Part arrays without an extra ZIP roundtrip."""
+ count=sum(len(p.faces) for p in parts);seen=set();lo=np.full(3,np.inf);hi=-lo
+ with Path(meshpath).open('wb') as stream:
+  stream.write(np.asarray([count],'<u4').tobytes())
+  for group,p in enumerate(parts):
+   if p.name in seen or not 0<=p.material<len(materials):raise ValueError('Invalid material or duplicate part')
+   seen.add(p.name);bounds=p.bounds;lo=np.minimum(lo,bounds[0]);hi=np.maximum(hi,bounds[1])
+   for begin in range(0,len(p.faces),24000):
+    faces=p.faces[begin:begin+24000];a=np.empty((len(faces),20),dtype='<f4')
+    a[:,:9]=(p.vertices[faces]*.001).reshape(-1,9);a[:,9:18]=p.normals[faces].reshape(-1,9)
+    a[:,18]=p.material;a[:,19]=group
+    if not np.isfinite(a).all():raise ValueError('Nonfinite native geometry')
+    stream.write(a.tobytes())
+ return {'schema':'cybrgeo.validation/1','name':name,'part_count':len(seen),'triangles':count,
+    'bounds_mm':[lo.tolist(),hi.tolist()],'unique_names':True,'finite_vertices':True,'valid_indices':True,
+    'actual_cybrgeo_part_roundtrip':False,'roundtrip_method':'Checked read-only Part arrays; optional assembly archive skipped',
+    'array_dtypes_preserved':True,'geometry_decimation':False,'image_generation':False}
+
 def roundtrip_to_native(directory,meshpath,triangle_count):
  from cybrgeo import Part
  directory=Path(directory);info=json.loads((directory/'scene.json').read_text())

@@ -1,47 +1,45 @@
-# Working with CYBR Scenes
+# Render CYBR Scenes
 
-Run the root `cybr_scenes.py` entry point from the checkout, or invoke it by absolute path from another directory. It supports all seven scenes with the same install and command surface. The older entry point inside `environments/` remains available for baseline comparison, explicit preparation and the local gallery server.
-
-## Settings
+Use the root `cybr_scenes.py` entry point. It prepares real geometry, compiles the bundled CYBR LIGHT engine, packs indexed meshlets, renders linear films, finishes the PNG and writes the success receipt in one invocation.
 
 ```bash
-python cybr_scenes.py render observatory-iv --quality preview --width 960 --spp 48 --threads 4
-python cybr_scenes.py render fernwater --quality preview --width 640 --spp 24 --water-spp 48
+python cybr_scenes.py render observatory-iv --quality preview
+python cybr_scenes.py render fernwater --width 960 --spp 128 --bands 12 --threads 4
 python cybr_scenes.py render observatory-iv --quality production --output outputs/final
 ```
 
-| Quality | Observatory | Six environment presets |
-| --- | --- | --- |
-| `smoke` | 64 × 48, 4 spp, depth 6 | 64 pixels wide, 4/4 surface/water spp |
-| `preview` | 640 × 426, 24 spp, depth 8 | 640 pixels wide, 24/48 spp |
-| `production` | 1800 × 1200, 96 spp, depth 12, adaptive spectral-band output | 1280 pixels wide, per-scene sample budgets in `environments/scenes.json` |
+| Quality | Width | Spectral packets per pixel | Wavelengths per packet |
+| --- | --- | --- | --- |
+| `smoke` | 64 | 4 | 4 |
+| `preview` | 800 | 64 | 8 |
+| `production` | 1800 | 192 | 12 |
 
-These are iteration budgets, not image-quality guarantees. `--width`, `--height`, `--spp`, `--water-spp`, `--threads`, `--timeout` and `--output` override applicable defaults. `--depth` is Observatory-only; environment path depths are part of their authored presets. All frames are traced at the requested dimensions, with no upscaling. `--force` repeats the rendering even if a matching result exists.
+Height follows the scene's aspect ratio. `--width`, `--height`, `--spp`, `--bands`, `--threads`, `--depth`, `--timeout` and `--output` override settings. Samples count wavelength packets, not RGB paths. These budgets do not guarantee convergence. Dimensions are traced directly; no upscaling occurs. CYBR LIGHT uses one packet budget for the complete scene, so use `--spp` instead of `--water-spp`.
 
-`render all` attempts every scene sequentially and returns failure if any scene fails. Start with a single scene; full geometry preparation is substantial. Increasing samples increases render cost. `doctor <scene>` checks prerequisites before geometry creation, including Observatory's EXR encoder.
+`render all --quality smoke` attempts all seven scenes sequentially and returns failure if any scene fails. `--force` repeats a matching run. Full geometry preparation can be substantial, especially the forest; meshlets reduce native vertex storage but do not eliminate the builder's memory or disk requirements.
 
 ## Outputs and reuse
 
-Default new output is `outputs/<scene>/hero/hero.png`. Native radiance, metadata, guides and verification reports sit beside it. `receipt.json` is a completed-run record, written only after output checks pass. A failed replacement removes the old success receipt; it cannot look like a completed new run.
+Open `outputs/<scene>/hero/hero.png`. `_unfiltered.png`, `.pfm`, `.exr`, diagnostic PFM passes, `.cys`, `scene.clm` and `.json` sit beside it. Raw linear films are retained unchanged. The PNG uses three non-neural camera-footprint/geometry/object/variance guided filtering passes followed by an ACES display transform.
 
-The environment path compares source/build inputs, geometry, camera, atlas, renderer executable, finishing sources and requested settings before reusing a result. Matching cached outputs are checked again against their recorded native/PNG/spectral hashes. A partial or invalid run is rebuilt. Bundled gallery PNGs are not treated as new run caches.
+CLM1 meshlets hold at most 64 full-attribute vertices and 124 triangles. Normals, UVs and tint participate in deduplication; material/component IDs remain per triangle. Native triangle references share float32 vertex blocks through the CPU SAH BVH. Intersection math remains double precision. Exact ray-cache keys reuse visibility across wavelengths without quantization. There is no GPU mesh-shader backend.
 
-Observatory uses separate fingerprints for source/executable and geometry/material inputs. It checks generated asset hashes before reuse, and records settings and output hashes for the completed render. Changing finishing or verification code also invalidates the output cache. Fresh geometry and material previews are created under `scenes/observatory-iv/build/scene/`; historical manifests, material previews and verification files remain untouched.
+A completed `receipt.json` records settings, geometry/material inputs, engine source, adapter/finishing source and output hashes. It is written last. Sampling/resolution changes reuse the independently checked meshlet pack; geometry, converter and material changes rebuild it. Changed inputs/settings invalidate render reuse, and changed output bytes prevent cache acceptance. A failed replacement removes the prior success receipt. Engine compile failures retain a log in `CYBR_LIGHT_CACHE`; stage logs are in `build/logs/`. Fresh meshes and outputs are ignored by Git.
 
-Fresh stage logs and process state are in `scenes/observatory-iv/build/logs/` or `environments/build/logs/`. The environment batch report is `environments/build/logs/render-batch.json`. These and `outputs/` are ignored by Git.
+## Platforms
 
-## Platforms and dependencies
+Linux/WSL2, Python 3.11–3.13 and g++/OpenMP are supported. Install root `requirements.txt`. The process controller uses `/proc`, process groups and `flock`. CYBR LIGHT writes its own float32 EXR; its native path needs no OpenCV EXR codec, CMake, AVX2/FMA, FFmpeg, GPU or network renderer download.
 
-Linux/WSL2 is supported. The process controller uses `/proc`, POSIX process groups and `flock`; native Windows and macOS are not currently supported by that controller. Drowned Geode uses AVX2. Observatory uses AVX2/FMA. Build binaries on the machine that will run them; some backends use `-march=native`.
+## Materials and historical reproduction
 
-Use Python 3.11–3.13 in a virtual environment and install the root `requirements.txt`. Its pinned OpenCV 4.13 build supports EXR. Installing an unbounded newer OpenCV version can lose that codec. If `doctor` reports EXR unavailable, reinstall the root requirements in a clean venv rather than skipping raw output checks.
+The adapter preserves geometry, vertex normals, UVs, vertex tint and component IDs. CVR2 surface maps become linear texture inputs and normal-map BSDFs. Lava's retained temperature field drives wavelength-dependent Planck emission. Authored RGB values are spectral controls, not measured reflectance. CYBR LIGHT uses its general glass/BSDF/volume models; scene-specific water manifolds, atmosphere estimators and layered material models do not transfer exactly.
 
-The root workflow does not require FFmpeg, a GPU, Blender or a remote rendering service. Full geometry can take several GB of RAM and disk. Fernwater builds the complete procedural forest; the workflow does not replace it with a small primitive stand-in to pass a check.
+Use `--renderer authored` for the original scene-specific transport and its historical sample budgets. Observatory then requires CMake and AVX2/FMA; Drowned Geode requires AVX2. `--water-spp` and the original EXR codec checks belong to that path. The older environment CLI remains available for baseline comparisons and gallery serving:
 
-## Advanced / legacy paths
+```bash
+python cybr_scenes.py render observatory-iv --renderer authored --quality preview
+cd environments
+python cybr_scenes.py serve
+```
 
-`cd environments && python cybr_scenes.py serve` serves the retained six-scene gallery. `compile`, `prepare` and `render --baseline` remain available through that backend CLI. New backend renders also default to the repository's `outputs/`; use `--output` to select another destination.
-
-Observatory's direct `build_scene.py`, `render.sh`, native binary and `finish.py` remain available. `render.sh` is the original delivered-camera reproduction path and assumes prepared assets. The root command performs preparation automatically. `verify.py --scene-dir <dir> --stem <stem> --out <report>` supports custom generated geometry and separate reports. Without `--out`, new reports go under `build/verification/`.
-
-Original PNGs, evidence and the compact source archive are retained. The large original EXR/spectral films and prepared transport archives are not bundled; rendering creates new ones. [Original import manifest](observatory-iv-import.json), [environment provenance](../environments/provenance).
+The retained gallery images keep their original provenance. Newly published CYBR LIGHT renders have their own reproduction records. [Pinned engine and patches](../rendering/cybr_light/UPSTREAM.json) · [Original import record](observatory-iv-import.json).

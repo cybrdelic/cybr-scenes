@@ -504,5 +504,6 @@ def build(out,seed=20260916):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--out',type=Path,required=True);p.add_argument('--seed',type=int,default=20260916)
-    a=p.parse_args();base.prepare_waves();print(json.dumps(build(a.out/'forest',a.seed),indent=2))
+    p.add_argument('--mesh-only',action='store_true',help='Export checked transport geometry without the optional assembly archive')
+    a=p.parse_args();base.Builder.mesh_only=a.mesh_only;base.prepare_waves();print(json.dumps(build(a.out/'forest',a.seed),indent=2))
 if __name__=='__main__':main()

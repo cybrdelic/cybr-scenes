@@ -672,11 +672,12 @@ def main():
     p.add_argument('--scene',choices=['canyon','coast','forest','all'],default='all')
     p.add_argument('--out',type=Path,required=True);p.add_argument('--seed',type=int,default=20260916)
     p.add_argument('--no-glb',action='store_true');p.add_argument('--prepare-only',action='store_true')
-    a=p.parse_args();base.prepare_waves()
+    p.add_argument('--mesh-only',action='store_true',help='Export transport geometry without the optional assembly archive')
+    a=p.parse_args();base.Builder.mesh_only=a.mesh_only;base.prepare_waves()
     if a.prepare_only:return
     for i,name in enumerate(['canyon','coast','forest']):
         if a.scene not in ['all',name]:continue
-        start=time.monotonic();globals()[name](a.out/name,a.seed+i*1000,not a.no_glb)
+        start=time.monotonic();globals()[name](a.out/name,a.seed+i*1000,not a.no_glb and not a.mesh_only)
         print(f'NEW_BUILD_COMPLETED {name} {time.monotonic()-start:.2f}s',flush=True)
 
 if __name__=='__main__':main()

@@ -45,7 +45,7 @@ class StreamAssemblyTests(unittest.TestCase):
   sys.path.insert(0,str(root/'engines/hot/cybr-geo/src'))
   sys.path.insert(0,str(root/'engines/hot/cybr-geo/examples/desert_hot_springs'))
   from cybrgeo import Part,Assembly,Material
-  from stream_scene_r2 import PartSpool,roundtrip_to_native
+  from stream_scene_r2 import PartSpool,roundtrip_to_native,parts_to_native
   with tempfile.TemporaryDirectory() as directory:
    d=Path(directory);v=np.array([[0.,0,0],[1000,0,0],[0,1000,0]],dtype='f8');f=np.array([[0,1,2]],dtype='i8');n=np.tile([0.,0,1],(3,1))
    p=Part('Known_triangle',v.copy(),f.copy(),n.copy());p=PartSpool(d/'spool').store(p)
@@ -56,6 +56,9 @@ class StreamAssemblyTests(unittest.TestCase):
    a=np.fromfile(d/'scene.meshbin',dtype='<f4',offset=4).reshape(1,20)
    np.testing.assert_array_equal(a[0,:9],(v*.001).astype('f4').ravel());np.testing.assert_array_equal(a[0,9:18],n.ravel())
    self.assertTrue(report['actual_cybrgeo_part_roundtrip']);self.assertEqual(report['triangles'],1)
+   direct=parts_to_native([p],[Material()],d/'direct.meshbin','Spool_test')
+   self.assertEqual((d/'direct.meshbin').read_bytes(),(d/'scene.meshbin').read_bytes())
+   self.assertFalse(direct['actual_cybrgeo_part_roundtrip']);self.assertEqual(direct['triangles'],1)
    with (d/'scene/meshes.npz').open('ab') as out:out.write(b'bad')
    with self.assertRaises(ValueError):roundtrip_to_native(d/'scene',d/'bad.meshbin',1)
 if __name__=='__main__':unittest.main(verbosity=2)
