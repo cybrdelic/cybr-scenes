@@ -13,7 +13,7 @@ from PIL import Image, ImageDraw, ImageFont
 from scipy.ndimage import gaussian_filter, zoom
 
 ROOT=Path(__file__).resolve().parent
-SCENE=ROOT/'scene'; ASSETS=ROOT/'assets'
+SCENE=ROOT/'scene'; ASSETS=ROOT/'assets'; PREVIEWS=ASSETS
 RNG=np.random.default_rng(449173)
 PARTS=[]
 
@@ -40,7 +40,7 @@ def save_texture(index, name, color, height, rough, metres, strength=1.):
     p=SCENE/'textures'/f'{index}.cvtex'
     with p.open('wb') as f:
         f.write(struct.pack('<III',n,n,7));f.write(out.tobytes())
-    Image.fromarray(np.uint8(np.clip(linear_to_srgb(color),0,1)*255+.5)).save(ASSETS/f'{name}_albedo.png')
+    Image.fromarray(np.uint8(np.clip(linear_to_srgb(color),0,1)*255+.5)).save(PREVIEWS/f'{name}_albedo.png')
     return {'index':index,'name':name,'resolution':n,'physical_size_m':metres,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()}
 
 def fonts(size):
@@ -380,7 +380,8 @@ def uv_coordinates(name,m,faces,mat,tex,explicit):
 def export_scene():
     total=sum(len(p[1].faces) for p in PARTS);out=SCENE/'observatory.cvr2'
     stats=[];unique={};inspection=trimesh.Scene();machining=[]
-    with out.open('wb') as f:
+    temporary=out.with_suffix('.cvr2.partial')
+    with temporary.open('wb') as f:
         f.write(b'CVR2'+struct.pack('<I',total))
         for group,(name,m,mat,tex,tint,explicit) in enumerate(PARTS):
             faces=m.faces;v=m.vertices[faces].astype(np.float32);norm=np.asarray(m.vertex_normals)[faces].astype(np.float32)
@@ -388,7 +389,10 @@ def export_scene():
             a=np.zeros((len(faces),36),'<f4');a[:,:9]=v.reshape(-1,9);a[:,9:18]=norm.reshape(-1,9);a[:,18]=mat;a[:,19]=group
             uv=uv_coordinates(name,m,faces,mat,tex,explicit);a[:,20:26]=uv.reshape(-1,6);a[:,26:35]=np.tile(tint,3);a[:,35]=tex
             if not np.isfinite(a).all():raise ValueError('Nonfinite geometry '+name)
-            f.write(a.tobytes())
+            # Bound serialization memory and reject partial writes immediately.
+            for first in range(0,len(a),24000):
+                block=a[first:first+24000].tobytes()
+                if f.write(block)!=len(block):raise OSError('Incomplete transport mesh write')
             stats.append({'name':name,'triangles':len(faces),'material':mat,'texture':tex,'bounds_m':np.asarray(m.bounds).tolist()})
             center=m.vertices.mean(axis=0);q=m.vertices-center
             values,vectors=np.linalg.eigh(q.T@q/max(1,len(q)));axis=np.array([0.,0.,1.]);aniso=0.
@@ -402,6 +406,9 @@ def export_scene():
             # the spectral renderer's physical texture/BRDF definitions.
             mesh=m.copy();rgb={0:[.65,.6,.51],1:[.52,.47,.39],2:[.33,.2,.1],3:[.77,.60,.30],4:[.32,.24,.12],5:[.13,.14,.15],6:[.80,.73,.58],7:[.12,.24,.23],8:[.78,.86,.89],9:[.15,.08,.04],10:[.05,.04,.03],11:[.19,.29,.16],12:[.76,.71,.60]}.get(mat,[.5]*3)
             mesh.visual=trimesh.visual.ColorVisuals(mesh,vertex_colors=np.tile(np.array(rgb+[1.])*255,(len(mesh.vertices),1)).astype(np.uint8));inspection.add_geometry(mesh,node_name=key,geom_name=key)
+    if temporary.stat().st_size!=8+total*144:
+        raise ValueError('Transport mesh byte count does not match authored triangles')
+    temporary.replace(out)
     # Z-up -> Y-up only at the exported scene's root.
     inspection.apply_transform(trimesh.transformations.rotation_matrix(-np.pi/2,[1,0,0]));inspection.export(SCENE/'observatory_v4_inspection.glb')
     manifest={'scene':'Quiet Observatory IV','parts':len(PARTS),'triangles':total,'mesh_bytes':out.stat().st_size,'mesh_sha256':hashlib.sha256(out.read_bytes()).hexdigest(),'source_glb_sha256':hashlib.sha256((ASSETS/'observatory_interior_source.glb').read_bytes()).hexdigest(),'image_generation':False,'mesh_coordinate_system':'metres, Z up','geometry_changes':['Off-camera wall and window, replacing open-front fill','New curved folio leaves and visible covers','New authored linen drape and gathered curtain','Optical rail and focusing stages with two closed quartz lenses','Real horizon division strokes','Geometric surface weathering','Continuous valley floor and distant eroded escarpment'],'objects':stats}
@@ -411,7 +418,11 @@ def export_scene():
 
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--textures-only',action='store_true');ap.add_argument('--geometry-only',action='store_true');args=ap.parse_args()
+    global SCENE,PREVIEWS
+    ap=argparse.ArgumentParser();ap.add_argument('--textures-only',action='store_true');ap.add_argument('--geometry-only',action='store_true');ap.add_argument('--out',type=Path,help='Separate generated geometry, textures and material previews from source assets');args=ap.parse_args()
+    if args.out:
+        SCENE=args.out.expanduser().resolve();SCENE.mkdir(parents=True,exist_ok=True)
+        PREVIEWS=SCENE/'previews';PREVIEWS.mkdir(exist_ok=True)
     if not args.geometry_only:make_textures()
     if args.textures_only:return
     import_room();paper_and_cloth();instruments();landscape();export_scene()

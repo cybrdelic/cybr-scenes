@@ -46,9 +46,6 @@ jobs:
           print('Verified', len(manifest['imported_files']), 'archived file hashes and original source ZIP.')
           print('Current working source is tested below; this provenance check does not forbid future source edits.')
           PY
-      - name: Remove historical reports from this disposable checkout
-        run: |
-          rm -f scenes/observatory-iv/verification/geometry_and_transport.json scenes/observatory-iv/verification/delivery_verification.json
       - name: Install Python dependencies
         run: |
           python3 -m venv .venv
@@ -82,7 +79,7 @@ jobs:
           name: observatory-iv-smoke-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
             scenes/observatory-iv/renders/ci_smoke*
-            scenes/observatory-iv/verification/geometry_and_transport.json
-            scenes/observatory-iv/verification/delivery_verification.json
+            scenes/observatory-iv/build/verification/geometry_and_transport.json
+            scenes/observatory-iv/build/verification/delivery_verification.json
           if-no-files-found: warn
           retention-days: 14

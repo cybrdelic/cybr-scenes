@@ -93,7 +93,8 @@ class ExecutionTests(unittest.TestCase):
         token=ex.identity(os.getpid());self.assertTrue(ex.alive(token))
         token['start_ticks']+=1;self.assertFalse(ex.alive(token))
     def test_detached_job_survives_short_launcher(self):
-        script=f'import sys;sys.path.insert(0,{str(Path(ex.__file__).parent)!r});import execution_runtime as e;e.start_job({str(self.root/"jobs")!r},"detach",{self.command("import time;time.sleep(.3);print('FINISHED')")!r},{str(self.root)!r})'
+        child_command=self.command("import time;time.sleep(.3);print('FINISHED')")
+        script=f'import sys;sys.path.insert(0,{str(Path(ex.__file__).parent)!r});import execution_runtime as e;e.start_job({str(self.root/"jobs")!r},"detach",{child_command!r},{str(self.root)!r})'
         subprocess.run(self.command(script),check=True,timeout=5)
         r=self.wait_job('detach');self.assertEqual(r['state'],'succeeded');self.assertIn('FINISHED',r['tail'])
     def test_duplicate_job_and_path_traversal_refused(self):

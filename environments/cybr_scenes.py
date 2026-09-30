@@ -19,6 +19,26 @@ SOURCES={
  'obsidian':'engines/obsidian/src/render.cpp',
 }
 
+OUTPUTS=ROOT.parent/'outputs'
+
+
+def positive_int(value):
+    number=int(value)
+    if number<1:raise argparse.ArgumentTypeError('Value must be positive')
+    return number
+
+
+def builder_fingerprint(scene):
+    """Invalidate prepared geometry when its builder or retained input changes."""
+    prefix=ROOT/'engines'/scene['engine'];h=hashlib.sha256()
+    for path in sorted(prefix.rglob('*')):
+        if not path.is_file():continue
+        parts=path.relative_to(prefix).parts
+        if any(part in {'__pycache__','build','built_v3','renders','evidence','provenance'} for part in parts):continue
+        if path.suffix=='.py' or path.suffix in {'.glb','.obj','.npz'}:
+            h.update(str(path.relative_to(prefix)).encode());h.update(path.read_bytes())
+    return h.hexdigest()
+
 def now(): return datetime.datetime.now(datetime.timezone.utc).isoformat()
 
 def sha(path:Path)->str:
@@ -71,11 +91,12 @@ def compile_engine(engine:str,threads:int=4,force=False):
         info=json.loads(receipt.read_text())
         if info.get('source_fingerprint')==fingerprint and info.get('executable_sha256')==sha(binary):return binary
     with exclusive(ROOT/'build'/f'.{engine}.lock'):
-        result=run(command,ROOT,ROOT/'evidence'/f'compile-{engine}.log',threads)
+        receipt.unlink(missing_ok=True)
+        result=run(command,ROOT,ROOT/'build/logs'/f'compile-{engine}.log',threads)
         result.update(source_fingerprint=fingerprint,executable_sha256=sha(binary),
              compiler_version=subprocess.check_output([compiler,'--version'],text=True).splitlines()[0])
+        if engine!='obsidian':run([binary,'--self-test'],ROOT,ROOT/'build/logs'/f'self-test-{engine}.log',threads)
         atomic_json(receipt,result)
-        if engine!='obsidian':run([binary,'--self-test'],ROOT,ROOT/'evidence'/f'self-test-{engine}.log',threads)
     return binary
 
 
@@ -90,7 +111,11 @@ def mesh_valid(scene:dict,path:Path)->bool:
 
 def build_geometry(scene,threads=4):
     path=ROOT/scene['mesh']
-    if mesh_valid(scene,path):return path
+    stamp=path.with_suffix(path.suffix+'.build.json');fingerprint=builder_fingerprint(scene)
+    camera=ROOT/scene['camera'] if scene.get('camera') else None
+    if mesh_valid(scene,path) and (camera is None or camera.is_file()) and stamp.exists():
+        record=json.loads(stamp.read_text())
+        if record.get('builder_fingerprint')==fingerprint and record.get('mesh_sha256')==sha(path):return path
     engine=scene['engine'];prefix=ROOT/'engines'/engine
     if engine=='geo':
         examples=prefix/'cybr-geo/examples/three_scenes'
@@ -100,8 +125,9 @@ def build_geometry(scene,threads=4):
     elif engine=='obsidian':cmd=[sys.executable,prefix/'build_scene.py']
     else:cmd=[sys.executable,prefix/'build_v3.py']
     with exclusive(ROOT/'build'/f'.geometry-{scene["id"]}.lock'):
-        run(cmd,prefix,ROOT/'evidence'/f'build-{scene["id"]}.log',threads)
+        run(cmd,prefix,ROOT/'build/logs'/f'build-{scene["id"]}.log',threads)
         if not mesh_valid(scene,path):raise RuntimeError(f'Builder returned an invalid mesh: {path}')
+        atomic_json(stamp,{'builder_fingerprint':fingerprint,'mesh_sha256':sha(path)})
     return path
 
 
@@ -194,45 +220,45 @@ def verify_render(stem:Path,width=None,height=None):
 
 def render_scene(scene,args):
     label='baseline' if args.baseline else 'hero'
-    out=ROOT/'renders'/scene['id']/label if args.output is None else args.output.expanduser().resolve()/scene['id']/label
+    out=OUTPUTS/scene['id']/label if args.output is None else args.output.expanduser().resolve()/scene['id']/label
     out.mkdir(parents=True,exist_ok=True);stem=out/label
-    if stem.with_suffix('.png').exists() and not args.force:
-        if not stem.with_suffix('.pfm').exists():
-            raise RuntimeError('A display PNG is installed without its native film. Extract the Raw Proof archive to verify it, or pass --force to render afresh (or --output renders/my-run for a separate run).')
-        print(f'Existing result: {stem}.png (use --force to rerender)',flush=True)
-        verification=verify_render(stem)
-        if not (out/'receipt.json').exists():
-            mesh=ROOT/scene['mesh'] if args.baseline else ROOT/scene['upgraded_mesh']
-            binary=ROOT/'build'/f'{scene["engine"]}_{"original" if args.baseline else "r2"}'
-            command_file=out/'render.command.json'
-            if not command_file.exists():raise RuntimeError('Missing execution record; cannot reconstruct a receipt')
-            record=json.loads(command_file.read_text())
-            if record.get('returncode')!=0:raise RuntimeError('Native execution did not complete successfully')
-            build=json.loads(binary.with_suffix('.build.json').read_text())
-            if build.get('executable_sha256')!=sha(binary):raise RuntimeError('Executable no longer matches its build record')
-            receipt={'scene':scene['id'],'revision':'baseline' if args.baseline else 'R2',
-                'started_at':record['started_at'],'native_finished_at':record.get('finished_at'),
-                'receipt_created_at':now(),'receipt_reconstructed_after_verifier_fix':True,
-                'mesh_sha256':sha(mesh),'executable_sha256':sha(binary),
-                'source_fingerprint':build['source_fingerprint'],
-                'material_atlas_sha256':sha(ROOT/'assets/mineral_detail.cdt'),'render':record,'verification':verification,
-                'reference_image_used_as_render_input':False,'camera_orbit_animation':False,'simulation':scene.get('simulation',False)}
-            atomic_json(out/'receipt.json',receipt)
-        return verification
-    mesh=ROOT/scene['mesh'] if args.baseline else ROOT/scene['upgraded_mesh']
-    if not mesh_valid(scene,mesh):
-        mesh=build_geometry(scene,args.threads) if args.baseline else prepare_scene(scene,args.threads)
-    if args.baseline:
-        binary=ROOT/'build'/f'{scene["engine"]}_original'
-        if not binary.exists():raise RuntimeError('Compile the preserved originals with python tools/compile_originals.py first.')
-    else:binary=compile_engine(scene['engine'],args.threads)
     width=args.width if args.width is not None else (640 if args.quality=='preview' else 1280)
     height=args.height if args.height is not None else (round(width*scene['aspect'][1]/scene['aspect'][0]/2)*2)
     spp=args.spp if args.spp is not None else (24 if args.quality=='preview' else scene['spp'])
     water=args.water_spp if args.water_spp is not None else (48 if args.quality=='preview' else scene['water_spp'])
-    if min(width,height,spp,water,args.threads)<1:raise ValueError('Dimensions, sample budgets and threads must be positive')
+    if min(width,height,spp,water,args.threads,args.timeout)<1:raise ValueError('Dimensions, sample budgets, timeout and threads must be positive')
+    atlas=ROOT/'assets/mineral_detail.cdt'
+    if not atlas.exists():
+        from tools.prepare_detail import build
+        build()
+    mesh=build_geometry(scene,args.threads) if args.baseline else prepare_scene(scene,args.threads)
+    if args.baseline:
+        binary=ROOT/'build'/f'{scene["engine"]}_original'
+        if not binary.exists():raise RuntimeError('Compile the preserved originals with python tools/compile_originals.py first.')
+    else:binary=compile_engine(scene['engine'],args.threads)
     command,cwd,finish=render_command(scene,binary,mesh,stem,width,height,spp,water,args.threads,args.baseline)
+    finishing_sources=[ROOT/'cybr_scenes.py',ROOT/'tools/finish_r2.py']
+    finishing_sources += list((ROOT/'engines'/scene['engine']).rglob('finish*.py'))
+    request={'schema':1,'scene':scene,'width':width,'height':height,'spp':spp,'water_spp':water,
+             'command':list(map(str,command)),'finish':list(map(str,finish)),
+             'mesh_sha256':sha(mesh),'executable_sha256':sha(binary),'atlas_sha256':sha(atlas),
+             'finishing_sha256':{relative(p):sha(p) for p in sorted(finishing_sources)},
+             'camera_sha256':sha(ROOT/scene['camera']) if scene.get('camera') else None}
     with exclusive(out/'.render.lock'):
+        request_path=out/'render-request.json';receipt_path=out/'receipt.json'
+        if not args.force and request_path.exists() and receipt_path.exists() and stem.with_suffix('.pfm').exists() and stem.with_suffix('.png').exists():
+            try:
+                if json.loads(request_path.read_text())==request:
+                    verified=verify_render(stem,width,height)
+                    old=json.loads(receipt_path.read_text())['verification']
+                    if all(verified[key]==old[key] for key in ('png_sha256','raw_pfm_sha256','native_metadata_sha256','spectral_film')):
+                        print(f'Cached matching render: {stem}.png',flush=True)
+                        return verified
+            except (ValueError,RuntimeError,OSError,KeyError) as exc:
+                print(f'Rebuilding incomplete or stale render: {exc}',flush=True)
+        # A previous receipt must not imply success for a failed replacement.
+        receipt_path.unlink(missing_ok=True);request_path.unlink(missing_ok=True)
+        stem.with_suffix('.spectral').unlink(missing_ok=True)
         started=now();record=run(command,cwd,out/'render.log',args.threads,args.timeout)
         native_meta=Path(str(stem)+'_render.json') if scene['engine']=='obsidian' else stem.with_suffix('.json')
         shutil.copy2(native_meta,out/'native-metadata.json')
@@ -255,6 +281,7 @@ def render_scene(scene,args):
             'material_atlas_sha256':sha(ROOT/'assets/mineral_detail.cdt'),'render':record,'postprocess':finish_record,'verification':verification,
             'reference_image_used_as_render_input':False,'camera_orbit_animation':False,'simulation':scene.get('simulation',False)}
         atomic_json(out/'receipt.json',receipt)
+        atomic_json(request_path,request)
     allocation=f'{spp}/{water}' if scene['engine'] in ['geo','hot'] else str(spp)
     print(f'RENDER VERIFIED: {scene["id"]} {width}x{height} {allocation} spp -> {stem}.png',flush=True)
     return verification
@@ -277,12 +304,12 @@ def doctor():
 def main():
     p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='command',required=True)
     sub.add_parser('list');sub.add_parser('doctor');a=sub.add_parser('compile');a.add_argument('--force',action='store_true')
-    a=sub.add_parser('prepare');a.add_argument('scene',choices=[*SCENES,'all']);a.add_argument('--threads',type=int,default=4)
-    a=sub.add_parser('verify');a.add_argument('--root',type=Path,default=ROOT/'renders')
+    a=sub.add_parser('prepare');a.add_argument('scene',choices=[*SCENES,'all']);a.add_argument('--threads',type=positive_int,default=4)
+    a=sub.add_parser('verify');a.add_argument('--root',type=Path,default=OUTPUTS)
     a=sub.add_parser('serve');a.add_argument('--host',default='127.0.0.1');a.add_argument('--port',type=int,default=8000)
     a=sub.add_parser('render');a.add_argument('scene',choices=[*SCENES,'all']);a.add_argument('--quality',choices=['preview','production'],default='production')
-    a.add_argument('--width',type=int);a.add_argument('--height',type=int);a.add_argument('--spp',type=int);a.add_argument('--water-spp',type=int)
-    a.add_argument('--threads',type=int,default=4);a.add_argument('--timeout',type=int,default=14400);a.add_argument('--force',action='store_true')
+    a.add_argument('--width',type=positive_int);a.add_argument('--height',type=positive_int);a.add_argument('--spp',type=positive_int);a.add_argument('--water-spp',type=positive_int)
+    a.add_argument('--threads',type=positive_int,default=4);a.add_argument('--timeout',type=positive_int,default=14400);a.add_argument('--force',action='store_true')
     a.add_argument('--baseline',action='store_true');a.add_argument('--output',type=Path)
     args=p.parse_args()
     try:
@@ -297,7 +324,7 @@ def main():
             for scene in selected:
                 outcome={'scene':scene['id'], 'state':'running', 'started_at':now()}
                 outcomes.append(outcome)
-                atomic_json(ROOT/'evidence'/f'{args.command}-batch.json',outcomes)
+                atomic_json(ROOT/'build/logs'/f'{args.command}-batch.json',outcomes)
                 try:
                     result=prepare_scene(scene,args.threads) if args.command=='prepare' else render_scene(scene,args)
                     outcome.update(state='succeeded',result=str(result) if isinstance(result,Path) else result)
@@ -307,13 +334,13 @@ def main():
                     print(f'FAILED {scene["id"]}: {exc}',file=sys.stderr,flush=True)
                 finally:
                     outcome['finished_at']=now()
-                    atomic_json(ROOT/'evidence'/f'{args.command}-batch.json',outcomes)
+                    atomic_json(ROOT/'build/logs'/f'{args.command}-batch.json',outcomes)
             if failed:return 1
         elif args.command=='verify':
             verified=[]
             for path in sorted(args.root.glob('*/hero/hero.png')):verified.append({'scene':path.parent.parent.name,'result':verify_render(path.with_suffix(''))})
             result={'passed':len(verified)==6 and all(x['result']['passed'] for x in verified),'scenes':verified}
-            atomic_json(ROOT/'evidence/all-scenes-verification.json',result);print(json.dumps(result,indent=2));return 0 if result['passed'] else 1
+            atomic_json(args.root/'all-scenes-verification.json',result);print(json.dumps(result,indent=2));return 0 if result['passed'] else 1
         elif args.command=='serve':
             import functools
             handler=functools.partial(http.server.SimpleHTTPRequestHandler,directory=str(ROOT))
