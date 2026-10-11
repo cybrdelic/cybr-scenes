@@ -1,0 +1,7 @@
+{
+  "qualitative_soil_bounds": [
+    "https://soilseries.sc.egov.usda.gov/OSD_Docs/B/BRYMAN.html",
+    "https://soilseries.sc.egov.usda.gov/OSD_Docs/C/CAJON.html"
+  ],
+  "local_daylight_observation": "https://files.ceqanet.lci.ca.gov/265991-2/attachment/-lCYzSVeuOa63EhjdZ5TCjE6fe4kVsskfuCSQ7yTdHvqaREjP7c9eHqqgqm95A9MlP-3ctw8XqOFc09E0"
+}
