@@ -1,0 +1,20 @@
+{
+  "status": "USEFUL_FINAL_CLAY_AND_EXACT_CN_CANDIDATE_WITH_SCENE_CONTACT_SANITY_PASS",
+  "visual_limitations": [
+    "Clean rounded margins and restrained relief remain visible.",
+    "Not a photorealism qualification or measured Victorville morphology."
+  ],
+  "final_manifest_sha256": "6ba7b8aa87ecaa9cd0758e1b850c3839a2dde3c0d37e793f9ff66b916f36a563",
+  "final_adapter_sha256": "dcf7965b8a8702c7dafacb663b428afee878e4d8815c3f5b3cc80ca9756d32f7",
+  "all_final_specimen_arrays_byte_equal_on_portable_replay": true,
+  "current_CN_graph_preserved": true,
+  "new_susceptibility_drives_shader": false,
+  "isolated_fixture_guard_passed": true,
+  "portable_replay_guard_passed": true,
+  "separate_scene_contact_bodies": 18,
+  "separate_scene_contact_settled_bodies": 0,
+  "full_collision_equilibrium_proof": false,
+  "CI_candidate_exposure_estimate": null,
+  "historical_transport_ledgers_modified": false,
+  "recommended_final_inputs": "Use volume_final/CANDIDATE_MANIFEST.json only; earlier candidates and v3 before CG calibration are preserved history."
+}

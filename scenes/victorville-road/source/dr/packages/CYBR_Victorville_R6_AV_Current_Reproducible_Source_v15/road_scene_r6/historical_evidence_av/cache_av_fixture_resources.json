@@ -1,0 +1,21 @@
+{
+  "RSS_cap_MiB": 512.0,
+  "command": [
+    "blender",
+    "--factory-startup",
+    "-b",
+    "-t",
+    "1",
+    "--python-exit-code",
+    "1",
+    "--python",
+    "src/probe_assembled_cache_av.py"
+  ],
+  "elapsed_seconds": 1.421522068005288,
+  "exit_code": 0,
+  "kernel_max_child_RSS_MiB": 203.58984375,
+  "peak_process_tree_RSS_MiB": 199.41015625,
+  "rendered": false,
+  "resource_contract_passed": true,
+  "stop_reason": null
+}

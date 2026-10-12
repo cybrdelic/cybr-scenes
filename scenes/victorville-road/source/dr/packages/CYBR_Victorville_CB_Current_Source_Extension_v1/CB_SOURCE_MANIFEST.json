@@ -1,0 +1,888 @@
+{
+  "revision": "CB",
+  "files": {
+    "apply_current_cb_blender.py": {
+      "bytes": 2379,
+      "sha256": "407c31d67f67920f821722a1728f3c428a3f828f273dbca5777682dde4d45cf7"
+    },
+    "README.txt": {
+      "bytes": 5136,
+      "sha256": "69bc0555c9c9b793550407bfd276a0e4aafe70b00274288290dc67d6d81fd316"
+    },
+    "verify_cb_extension.py": {
+      "bytes": 1075,
+      "sha256": "6944876273c59e67d348170a944fbd941a793da8c6341b55c37a785b660628ae"
+    },
+    "ca_source/apply_by_with_fresh_load.py": {
+      "bytes": 10588,
+      "sha256": "b701674a6a573fbcea76ff6d946681a488f685c11e8c17f61447317ff1a16b78"
+    },
+    "ca_source/apply_current_ca_blender.py": {
+      "bytes": 2360,
+      "sha256": "d30e94fdb23ee7a0c8867002d10b002654e4d718bc5a15155c58c357e5f98542"
+    },
+    "ca_source/README.txt": {
+      "bytes": 6326,
+      "sha256": "1be9387e2b996532b9efd1965873af16a496736e6cefa56268b1f1513521d50c"
+    },
+    "ca_source/CA_SOURCE_MANIFEST.json": {
+      "bytes": 31471,
+      "sha256": "9462c3d617c14f71244253884e6afce9c18c3d96a75f749025d0aaa535a817b5"
+    },
+    "ca_source/verify_ca_extension.py": {
+      "bytes": 1092,
+      "sha256": "3158881476b74ce225a6f6062dce9b9022afaa4ffde1d5e8abcc1a47e819a6f4"
+    },
+    "captured_pipeline/road_wear_field_by.py": {
+      "bytes": 2497,
+      "sha256": "dea85cb888222b6ca9faf034c98c204427f0ef172d17844a3ba38f0df2f48077"
+    },
+    "captured_pipeline/affine_tile_adapter.py": {
+      "bytes": 5015,
+      "sha256": "b16cb2fc070a98fcb9ab8e0d0ed268f278b1ce01bc8cb3bb8bb4349b9574847c"
+    },
+    "captured_pipeline/transport_components.py": {
+      "bytes": 4070,
+      "sha256": "9232c7679b68c763273ebc51aa78296ae67a0a6891b71ef713f461e9d86816d4"
+    },
+    "captured_pipeline/verify_pipeline_snapshot.py": {
+      "bytes": 1192,
+      "sha256": "6ffcdffc991dc7b9cb345645bb919d82da6f221c1f0138e485b886f7099b9d1b"
+    },
+    "captured_pipeline/tiled_relief_math.py": {
+      "bytes": 6987,
+      "sha256": "e67f95a1ac6ca78b8471702ce4317437c454fa6818592fd922bd093c299a0047"
+    },
+    "captured_pipeline/render_landform_candidate.py": {
+      "bytes": 52441,
+      "sha256": "d7bf595f0794d617507004a3cb45a258804323e01eb3d4247fe781d25aa91db8"
+    },
+    "captured_pipeline/fine_coating_az.py": {
+      "bytes": 17771,
+      "sha256": "98bab05aaf660d33691886e6cc95309b3650e8949134fdc716e48a040ff95907"
+    },
+    "captured_pipeline/preview_mesh_cull.py": {
+      "bytes": 8133,
+      "sha256": "c3d9793f03caababc6894b4e49e64d1f37a741b912a1ee8ebdeb7f55e145e0f5"
+    },
+    "captured_pipeline/capture_modes.py": {
+      "bytes": 1527,
+      "sha256": "c3d1ff01c580a8f63f1fe3658697ec711525f2e8032a82e2fb008c8f8339bbf8"
+    },
+    "captured_pipeline/manifest.json": {
+      "bytes": 2867,
+      "sha256": "c1bb1a824fe52e6c4ccf05360688c4f81210d81f042ef1b051abab4a0692f5e5"
+    },
+    "captured_pipeline/fine_response.py": {
+      "bytes": 13025,
+      "sha256": "163927b3f5edcd556e03c59f3170bd791d8c9bc930f85d0638bb499fbbeef202"
+    },
+    "captured_pipeline/relief_math.py": {
+      "bytes": 10326,
+      "sha256": "2417aa37399010f79aa1b2239a4557a807e20605c014f29b6b6afdb146ad0c3b"
+    },
+    "captured_pipeline/road_surface_wear_by.py": {
+      "bytes": 9818,
+      "sha256": "2acfcd45778de7d709a863dca868213f9cbb463c03cd8c482ac7de8640325881"
+    },
+    "captured_pipeline/oidn_contract.py": {
+      "bytes": 1186,
+      "sha256": "c50d803b0d500905b03d8ccc24512e769d100b434dad96891d657986f8be5094"
+    },
+    "captured_pipeline/continuous_edge_top_adapter_cb.py": {
+      "bytes": 6488,
+      "sha256": "38ac6ce9ca1a71fae885423f3fce3e57d38011fc9dfd36c59aa46fe4eaf114de"
+    },
+    "captured_pipeline/align_context_daylight_bt.py": {
+      "bytes": 3507,
+      "sha256": "ce20cc98e4cdd5bf3069675d147fd3eb96e8ee6b30f9c9a69406cfca9483cfe5"
+    },
+    "captured_pipeline/png_precision_check.py": {
+      "bytes": 986,
+      "sha256": "fec3e732a7185e2ef5485af2f6db3963a151d6867e48c59c036509bfdad77f20"
+    },
+    "captured_pipeline/clean_render_landform_candidate.sh": {
+      "bytes": 4336,
+      "sha256": "d1b00a83d926769083eb35074f1c81e9fca47233812ba51c7827e8e76dca1ccb"
+    },
+    "captured_pipeline/component_image_bridge.py": {
+      "bytes": 9087,
+      "sha256": "74dca31a6739ef5b666ec4437d77297f138dc5bd8f63280c9d2cea8acfe74047"
+    },
+    "captured_pipeline/discard_unused_render_data.py": {
+      "bytes": 1911,
+      "sha256": "288afb19823e9e3d97f85d61f48daf214854e031cc77d079fe48c9822154f59b"
+    },
+    "captured_pipeline/metric_pavement_extension_ca.py": {
+      "bytes": 6863,
+      "sha256": "f5f4fb8aa73b68d8b5c47aa44c841bed15d43d7b41d92cdcbe35c34bdbfaa76b"
+    },
+    "captured_pipeline/allocator_policy_bx.py": {
+      "bytes": 2395,
+      "sha256": "bbf1e8a66e475b8fbf2336e7e295e1e1fbb6606242078e88ed21c5c8bf377f37"
+    },
+    "captured_pipeline/oidn_image_bridge.py": {
+      "bytes": 4434,
+      "sha256": "7d88792da6c53a47e3aacafa2b7a222f844ce458afa7b535f081faf9c5732bf6"
+    },
+    "captured_pipeline/render_landform_candidate.sh": {
+      "bytes": 326,
+      "sha256": "6c1d0086c4a7cc234448012606edcbb0d4385acb8d6c1a15fe302a6da1dcafd2"
+    },
+    "captured_pipeline/clean_render.sh": {
+      "bytes": 4336,
+      "sha256": "d1b00a83d926769083eb35074f1c81e9fca47233812ba51c7827e8e76dca1ccb"
+    },
+    "captured_pipeline/raw_receipt.py": {
+      "bytes": 2388,
+      "sha256": "af411eed5c7eb1855e6abc81838bab0a1ed1defeb2446094bb837017c266ec5d"
+    },
+    "captured_pipeline/historical_fine_area_bw.py": {
+      "bytes": 7174,
+      "sha256": "941643a3f684df33cd613074977fa13941192ec57a5f62111bff397ed7f398f0"
+    },
+    "captured_pipeline/component_receipt.py": {
+      "bytes": 2884,
+      "sha256": "5327a00bc7d9c2bc414fb6529ed7c4ccadd539ad96f69858c10f3bfd44796c35"
+    },
+    "captured_pipeline/render.py": {
+      "bytes": 52441,
+      "sha256": "d7bf595f0794d617507004a3cb45a258804323e01eb3d4247fe781d25aa91db8"
+    },
+    "captured_pipeline/render.sh": {
+      "bytes": 326,
+      "sha256": "6c1d0086c4a7cc234448012606edcbb0d4385acb8d6c1a15fe302a6da1dcafd2"
+    },
+    "captured_pipeline/clean_receipt.py": {
+      "bytes": 1791,
+      "sha256": "0746b04f053fdc7a9b0df1805961e5ae6ee5051d992784ed715e361d0d80d8de"
+    },
+    "inputs/GeometryHeight.npy": {
+      "bytes": 1052804,
+      "sha256": "9c6ebba3a109088842a73434cea02069aa3a5a98e1b871a3f7b7b5e246de0c83"
+    },
+    "evidence/CB_REGENERATION.json": {
+      "bytes": 1676,
+      "sha256": "ae9bdc18bee0ad8518ba0290d333dc427b72295b6be08207857b09c211435ec5"
+    },
+    "evidence/CYBR_Victorville_CB_Continuous_Edge_Detail.png": {
+      "bytes": 2387583,
+      "sha256": "bf59fef4ce1c389504e9236aac2e638dd0e457328b6898f378b435e5257638f5"
+    },
+    "evidence/CYBR_Victorville_CB_Continuous_Edge_Matched_Comparison.json": {
+      "bytes": 808,
+      "sha256": "5d077b1de6fd68ad7b06885a94e29368905804ffad51e7e99f8fbfc8aae25bac"
+    },
+    "evidence/CURRENT_CB_APPLICATION.json": {
+      "bytes": 30890,
+      "sha256": "5f8f58779eebc86a2f4e9ebc11ce8c20d75ead5854ab140f589f88cb20356a81"
+    },
+    "evidence/CYBR_Victorville_CB_Continuous_Edge_Matched_Comparison.png": {
+      "bytes": 1320334,
+      "sha256": "5547219c952199a957f5ea24f200e5530c193144dfb09019600584063edb0d4a"
+    },
+    "evidence/current_wrapper_resources.json": {
+      "bytes": 323,
+      "sha256": "65ec7a855ae5ad6604cde70b77ea569c35706b315bcb1c7b40c47611034457d2"
+    },
+    "ca_source/by_source/apply_extension_blender.py": {
+      "bytes": 10058,
+      "sha256": "a34ca8c0b36c8376f5731605af014ea39db595189da681a1fdf77e3f32950ec3"
+    },
+    "ca_source/by_source/EXTENSION_MANIFEST.json": {
+      "bytes": 10154,
+      "sha256": "d2ca4d9ff987ea03b0e7ecb0fb652e8f6c13638fe3ce4105dcf9ed8d88ea6ce3"
+    },
+    "ca_source/by_source/DEPENDENCY_CLOSURE.json": {
+      "bytes": 794,
+      "sha256": "b492bdefae7b81b0b6523db8a8d0358aacec98f66a185a54428be4f2bd460c6c"
+    },
+    "ca_source/by_source/verify_extension.py": {
+      "bytes": 2128,
+      "sha256": "d11d650095baf852474d42b79f3da0d66823884dbfb50e25b4a0b689eb9d0129"
+    },
+    "ca_source/by_source/README.txt": {
+      "bytes": 6201,
+      "sha256": "873dff378780c706ddf156ff4d398525ff6211d91147a08843a077d324ea52f3"
+    },
+    "ca_source/evidence/CYBR_Victorville_CA_Metric_Asphalt_Whole_Road_RAW_WIP.png": {
+      "bytes": 2716616,
+      "sha256": "894ef28b33abba4cc5bcc4706eb58e796a4fa143e1008d3d5ca97f429300f6a5"
+    },
+    "ca_source/evidence/retained_AV_payload_replay.json": {
+      "bytes": 1610,
+      "sha256": "7bc7338eaf163cc89fdec27af967a9d1ecc11dae75c4ffd69b8e4be819b1e5b7"
+    },
+    "ca_source/evidence/CYBR_Victorville_CA_Continuous_Metric_Asphalt_Detail.png": {
+      "bytes": 2377093,
+      "sha256": "a1cf769da8e8bd8502936bffe8a75fd852e3d4b6b53357457f405b2c3b114072"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/road_wear_field_by.py": {
+      "bytes": 2497,
+      "sha256": "dea85cb888222b6ca9faf034c98c204427f0ef172d17844a3ba38f0df2f48077"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/affine_tile_adapter.py": {
+      "bytes": 5015,
+      "sha256": "b16cb2fc070a98fcb9ab8e0d0ed268f278b1ce01bc8cb3bb8bb4349b9574847c"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/transport_components.py": {
+      "bytes": 4070,
+      "sha256": "9232c7679b68c763273ebc51aa78296ae67a0a6891b71ef713f461e9d86816d4"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/verify_pipeline_snapshot.py": {
+      "bytes": 1192,
+      "sha256": "6ffcdffc991dc7b9cb345645bb919d82da6f221c1f0138e485b886f7099b9d1b"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/tiled_relief_math.py": {
+      "bytes": 6987,
+      "sha256": "e67f95a1ac6ca78b8471702ce4317437c454fa6818592fd922bd093c299a0047"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/asphalt_context_lod.py": {
+      "bytes": 3019,
+      "sha256": "ebb7839002855e1b5158e9729c8e1ebe3df3dee3b6a87890485f93fd6958a946"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/render_landform_candidate.py": {
+      "bytes": 51487,
+      "sha256": "3e68c77e5bbe4f21be211487588485734ed51fabd485425d5293893e6bc16ed9"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/fine_coating_az.py": {
+      "bytes": 17771,
+      "sha256": "98bab05aaf660d33691886e6cc95309b3650e8949134fdc716e48a040ff95907"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/preview_mesh_cull.py": {
+      "bytes": 8133,
+      "sha256": "c3d9793f03caababc6894b4e49e64d1f37a741b912a1ee8ebdeb7f55e145e0f5"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/capture_modes.py": {
+      "bytes": 1527,
+      "sha256": "c3d1ff01c580a8f63f1fe3658697ec711525f2e8032a82e2fb008c8f8339bbf8"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/manifest.json": {
+      "bytes": 2856,
+      "sha256": "4857a0a40faefd47a09ad1e7ed42e40e1495bc781460b06f51a8d9ab9c6a0ede"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/fine_response.py": {
+      "bytes": 13025,
+      "sha256": "163927b3f5edcd556e03c59f3170bd791d8c9bc930f85d0638bb499fbbeef202"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/relief_math.py": {
+      "bytes": 10326,
+      "sha256": "2417aa37399010f79aa1b2239a4557a807e20605c014f29b6b6afdb146ad0c3b"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/road_surface_wear_by.py": {
+      "bytes": 9818,
+      "sha256": "2acfcd45778de7d709a863dca868213f9cbb463c03cd8c482ac7de8640325881"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/oidn_contract.py": {
+      "bytes": 1186,
+      "sha256": "c50d803b0d500905b03d8ccc24512e769d100b434dad96891d657986f8be5094"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/align_context_daylight_bt.py": {
+      "bytes": 3507,
+      "sha256": "ce20cc98e4cdd5bf3069675d147fd3eb96e8ee6b30f9c9a69406cfca9483cfe5"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/png_precision_check.py": {
+      "bytes": 986,
+      "sha256": "fec3e732a7185e2ef5485af2f6db3963a151d6867e48c59c036509bfdad77f20"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/clean_render_landform_candidate.sh": {
+      "bytes": 4336,
+      "sha256": "d1b00a83d926769083eb35074f1c81e9fca47233812ba51c7827e8e76dca1ccb"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/component_image_bridge.py": {
+      "bytes": 9087,
+      "sha256": "74dca31a6739ef5b666ec4437d77297f138dc5bd8f63280c9d2cea8acfe74047"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/discard_unused_render_data.py": {
+      "bytes": 1911,
+      "sha256": "288afb19823e9e3d97f85d61f48daf214854e031cc77d079fe48c9822154f59b"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/metric_pavement_extension_ca.py": {
+      "bytes": 6863,
+      "sha256": "f5f4fb8aa73b68d8b5c47aa44c841bed15d43d7b41d92cdcbe35c34bdbfaa76b"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/allocator_policy_bx.py": {
+      "bytes": 2395,
+      "sha256": "bbf1e8a66e475b8fbf2336e7e295e1e1fbb6606242078e88ed21c5c8bf377f37"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/oidn_image_bridge.py": {
+      "bytes": 4434,
+      "sha256": "7d88792da6c53a47e3aacafa2b7a222f844ce458afa7b535f081faf9c5732bf6"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/render_landform_candidate.sh": {
+      "bytes": 326,
+      "sha256": "6c1d0086c4a7cc234448012606edcbb0d4385acb8d6c1a15fe302a6da1dcafd2"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/clean_render.sh": {
+      "bytes": 4336,
+      "sha256": "d1b00a83d926769083eb35074f1c81e9fca47233812ba51c7827e8e76dca1ccb"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/raw_receipt.py": {
+      "bytes": 2388,
+      "sha256": "af411eed5c7eb1855e6abc81838bab0a1ed1defeb2446094bb837017c266ec5d"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/historical_fine_area_bw.py": {
+      "bytes": 7174,
+      "sha256": "941643a3f684df33cd613074977fa13941192ec57a5f62111bff397ed7f398f0"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/component_receipt.py": {
+      "bytes": 2884,
+      "sha256": "5327a00bc7d9c2bc414fb6529ed7c4ccadd539ad96f69858c10f3bfd44796c35"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/render.py": {
+      "bytes": 51487,
+      "sha256": "3e68c77e5bbe4f21be211487588485734ed51fabd485425d5293893e6bc16ed9"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/render.sh": {
+      "bytes": 326,
+      "sha256": "6c1d0086c4a7cc234448012606edcbb0d4385acb8d6c1a15fe302a6da1dcafd2"
+    },
+    "ca_source/capture_snapshots/51f5f3398723787d3ad9ad10eabf7ad888f9efdfc538cd299180fde6511063f3/clean_receipt.py": {
+      "bytes": 1791,
+      "sha256": "0746b04f053fdc7a9b0df1805961e5ae6ee5051d992784ed715e361d0d80d8de"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/road_wear_field_by.py": {
+      "bytes": 2497,
+      "sha256": "dea85cb888222b6ca9faf034c98c204427f0ef172d17844a3ba38f0df2f48077"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/affine_tile_adapter.py": {
+      "bytes": 5015,
+      "sha256": "b16cb2fc070a98fcb9ab8e0d0ed268f278b1ce01bc8cb3bb8bb4349b9574847c"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/transport_components.py": {
+      "bytes": 4070,
+      "sha256": "9232c7679b68c763273ebc51aa78296ae67a0a6891b71ef713f461e9d86816d4"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/verify_pipeline_snapshot.py": {
+      "bytes": 1192,
+      "sha256": "6ffcdffc991dc7b9cb345645bb919d82da6f221c1f0138e485b886f7099b9d1b"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/tiled_relief_math.py": {
+      "bytes": 6987,
+      "sha256": "e67f95a1ac6ca78b8471702ce4317437c454fa6818592fd922bd093c299a0047"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/render_landform_candidate.py": {
+      "bytes": 51487,
+      "sha256": "3e68c77e5bbe4f21be211487588485734ed51fabd485425d5293893e6bc16ed9"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/fine_coating_az.py": {
+      "bytes": 17771,
+      "sha256": "98bab05aaf660d33691886e6cc95309b3650e8949134fdc716e48a040ff95907"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/preview_mesh_cull.py": {
+      "bytes": 8133,
+      "sha256": "c3d9793f03caababc6894b4e49e64d1f37a741b912a1ee8ebdeb7f55e145e0f5"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/capture_modes.py": {
+      "bytes": 1527,
+      "sha256": "c3d1ff01c580a8f63f1fe3658697ec711525f2e8032a82e2fb008c8f8339bbf8"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/manifest.json": {
+      "bytes": 2760,
+      "sha256": "e119376e1fe607d65551968d32e61961e4fb25fb3e4c65b6fbd43ef1f942ac38"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/fine_response.py": {
+      "bytes": 13025,
+      "sha256": "163927b3f5edcd556e03c59f3170bd791d8c9bc930f85d0638bb499fbbeef202"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/relief_math.py": {
+      "bytes": 10326,
+      "sha256": "2417aa37399010f79aa1b2239a4557a807e20605c014f29b6b6afdb146ad0c3b"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/road_surface_wear_by.py": {
+      "bytes": 9818,
+      "sha256": "2acfcd45778de7d709a863dca868213f9cbb463c03cd8c482ac7de8640325881"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/oidn_contract.py": {
+      "bytes": 1186,
+      "sha256": "c50d803b0d500905b03d8ccc24512e769d100b434dad96891d657986f8be5094"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/align_context_daylight_bt.py": {
+      "bytes": 3507,
+      "sha256": "ce20cc98e4cdd5bf3069675d147fd3eb96e8ee6b30f9c9a69406cfca9483cfe5"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/png_precision_check.py": {
+      "bytes": 986,
+      "sha256": "fec3e732a7185e2ef5485af2f6db3963a151d6867e48c59c036509bfdad77f20"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/clean_render_landform_candidate.sh": {
+      "bytes": 4336,
+      "sha256": "d1b00a83d926769083eb35074f1c81e9fca47233812ba51c7827e8e76dca1ccb"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/component_image_bridge.py": {
+      "bytes": 9087,
+      "sha256": "74dca31a6739ef5b666ec4437d77297f138dc5bd8f63280c9d2cea8acfe74047"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/discard_unused_render_data.py": {
+      "bytes": 1911,
+      "sha256": "288afb19823e9e3d97f85d61f48daf214854e031cc77d079fe48c9822154f59b"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/metric_pavement_extension_ca.py": {
+      "bytes": 6863,
+      "sha256": "f5f4fb8aa73b68d8b5c47aa44c841bed15d43d7b41d92cdcbe35c34bdbfaa76b"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/allocator_policy_bx.py": {
+      "bytes": 2395,
+      "sha256": "bbf1e8a66e475b8fbf2336e7e295e1e1fbb6606242078e88ed21c5c8bf377f37"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/oidn_image_bridge.py": {
+      "bytes": 4434,
+      "sha256": "7d88792da6c53a47e3aacafa2b7a222f844ce458afa7b535f081faf9c5732bf6"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/render_landform_candidate.sh": {
+      "bytes": 326,
+      "sha256": "6c1d0086c4a7cc234448012606edcbb0d4385acb8d6c1a15fe302a6da1dcafd2"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/clean_render.sh": {
+      "bytes": 4336,
+      "sha256": "d1b00a83d926769083eb35074f1c81e9fca47233812ba51c7827e8e76dca1ccb"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/raw_receipt.py": {
+      "bytes": 2388,
+      "sha256": "af411eed5c7eb1855e6abc81838bab0a1ed1defeb2446094bb837017c266ec5d"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/historical_fine_area_bw.py": {
+      "bytes": 7174,
+      "sha256": "941643a3f684df33cd613074977fa13941192ec57a5f62111bff397ed7f398f0"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/component_receipt.py": {
+      "bytes": 2884,
+      "sha256": "5327a00bc7d9c2bc414fb6529ed7c4ccadd539ad96f69858c10f3bfd44796c35"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/render.py": {
+      "bytes": 51487,
+      "sha256": "3e68c77e5bbe4f21be211487588485734ed51fabd485425d5293893e6bc16ed9"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/render.sh": {
+      "bytes": 326,
+      "sha256": "6c1d0086c4a7cc234448012606edcbb0d4385acb8d6c1a15fe302a6da1dcafd2"
+    },
+    "ca_source/capture_snapshots/8e0f5591079829814513cc446890734fd8e64f8d8034b38384c45fb0394eaf8b/clean_receipt.py": {
+      "bytes": 1791,
+      "sha256": "0746b04f053fdc7a9b0df1805961e5ae6ee5051d992784ed715e361d0d80d8de"
+    },
+    "ca_source/by_source/src/road_wear_field_by.py": {
+      "bytes": 2497,
+      "sha256": "dea85cb888222b6ca9faf034c98c204427f0ef172d17844a3ba38f0df2f48077"
+    },
+    "ca_source/by_source/src/fine_coating_az.py": {
+      "bytes": 17771,
+      "sha256": "98bab05aaf660d33691886e6cc95309b3650e8949134fdc716e48a040ff95907"
+    },
+    "ca_source/by_source/src/fine_response.py": {
+      "bytes": 13025,
+      "sha256": "163927b3f5edcd556e03c59f3170bd791d8c9bc930f85d0638bb499fbbeef202"
+    },
+    "ca_source/by_source/src/road_surface_wear_by.py": {
+      "bytes": 9818,
+      "sha256": "2acfcd45778de7d709a863dca868213f9cbb463c03cd8c482ac7de8640325881"
+    },
+    "ca_source/by_source/src/align_context_daylight_bt.py": {
+      "bytes": 3507,
+      "sha256": "ce20cc98e4cdd5bf3069675d147fd3eb96e8ee6b30f9c9a69406cfca9483cfe5"
+    },
+    "ca_source/by_source/src/historical_fine_area_bw.py": {
+      "bytes": 7174,
+      "sha256": "941643a3f684df33cd613074977fa13941192ec57a5f62111bff397ed7f398f0"
+    },
+    "ca_source/by_source/src/test_road_wear_field_by.py": {
+      "bytes": 1129,
+      "sha256": "8c986649944208a9996210b1c535fc6420b7513ddb0f8e996b9b09fcceb32fa1"
+    },
+    "ca_source/by_source/inputs/microbed.npz": {
+      "bytes": 3913561,
+      "sha256": "7a09007d50e444c28231fd30cddda185d2f01146f3b1a47b014ebd25c0b415c4"
+    },
+    "ca_source/by_source/inputs/build_diagnostic.py": {
+      "bytes": 10205,
+      "sha256": "320dd02e5ac661f4f9f3b470d614e0b3fb103614b0d2cd740aded5964ffa4246"
+    },
+    "ca_source/by_source/evidence/material_fixture_resources.json": {
+      "bytes": 411,
+      "sha256": "63ad40fd89f11bd0b28bca0bbbc53ce89a7c9c5c9ef74810c7b1f61ff4b10234"
+    },
+    "ca_source/by_source/evidence/material_fixture.json": {
+      "bytes": 1270,
+      "sha256": "f78029de4f8e2ee5ac53e999535d239b12e635247cbc10da218d1e842fdf4984"
+    },
+    "ca_source/by_source/evidence/field_tests.log": {
+      "bytes": 540,
+      "sha256": "5ad6bb568d71ce84331125dd2ae912e8e942e84049c41237a5956ff3cef40d54"
+    },
+    "ca_source/by_source/evidence/SOURCE_NOTICE.json": {
+      "bytes": 586,
+      "sha256": "7b0471e661a6afcb5c4e27af249009d36d51884e832af6ed2a092873b47ffafd"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/road_wear_field_by.py": {
+      "bytes": 2497,
+      "sha256": "dea85cb888222b6ca9faf034c98c204427f0ef172d17844a3ba38f0df2f48077"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/transport_components.py": {
+      "bytes": 4070,
+      "sha256": "9232c7679b68c763273ebc51aa78296ae67a0a6891b71ef713f461e9d86816d4"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/verify_pipeline_snapshot.py": {
+      "bytes": 1192,
+      "sha256": "6ffcdffc991dc7b9cb345645bb919d82da6f221c1f0138e485b886f7099b9d1b"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/asphalt_context_lod.py": {
+      "bytes": 3019,
+      "sha256": "ebb7839002855e1b5158e9729c8e1ebe3df3dee3b6a87890485f93fd6958a946"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/render_landform_candidate.py": {
+      "bytes": 50203,
+      "sha256": "c5c9a138d344c388697240618aa2ae9c118375242e48abab3472a0672bf43f9c"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/fine_coating_az.py": {
+      "bytes": 17771,
+      "sha256": "98bab05aaf660d33691886e6cc95309b3650e8949134fdc716e48a040ff95907"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/preview_mesh_cull.py": {
+      "bytes": 8133,
+      "sha256": "c3d9793f03caababc6894b4e49e64d1f37a741b912a1ee8ebdeb7f55e145e0f5"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/capture_modes.py": {
+      "bytes": 1527,
+      "sha256": "c3d1ff01c580a8f63f1fe3658697ec711525f2e8032a82e2fb008c8f8339bbf8"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/manifest.json": {
+      "bytes": 2473,
+      "sha256": "d647b99f8bd866a94595d8db39263a6999c2db4b9d07d7c17c51fdc1f560a4eb"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/fine_response.py": {
+      "bytes": 13025,
+      "sha256": "163927b3f5edcd556e03c59f3170bd791d8c9bc930f85d0638bb499fbbeef202"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/road_surface_wear_by.py": {
+      "bytes": 9818,
+      "sha256": "2acfcd45778de7d709a863dca868213f9cbb463c03cd8c482ac7de8640325881"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/oidn_contract.py": {
+      "bytes": 1186,
+      "sha256": "c50d803b0d500905b03d8ccc24512e769d100b434dad96891d657986f8be5094"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/align_context_daylight_bt.py": {
+      "bytes": 3507,
+      "sha256": "ce20cc98e4cdd5bf3069675d147fd3eb96e8ee6b30f9c9a69406cfca9483cfe5"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/png_precision_check.py": {
+      "bytes": 986,
+      "sha256": "fec3e732a7185e2ef5485af2f6db3963a151d6867e48c59c036509bfdad77f20"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/clean_render_landform_candidate.sh": {
+      "bytes": 4336,
+      "sha256": "d1b00a83d926769083eb35074f1c81e9fca47233812ba51c7827e8e76dca1ccb"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/component_image_bridge.py": {
+      "bytes": 9087,
+      "sha256": "74dca31a6739ef5b666ec4437d77297f138dc5bd8f63280c9d2cea8acfe74047"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/discard_unused_render_data.py": {
+      "bytes": 1911,
+      "sha256": "288afb19823e9e3d97f85d61f48daf214854e031cc77d079fe48c9822154f59b"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/allocator_policy_bx.py": {
+      "bytes": 2395,
+      "sha256": "bbf1e8a66e475b8fbf2336e7e295e1e1fbb6606242078e88ed21c5c8bf377f37"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/oidn_image_bridge.py": {
+      "bytes": 4434,
+      "sha256": "7d88792da6c53a47e3aacafa2b7a222f844ce458afa7b535f081faf9c5732bf6"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/render_landform_candidate.sh": {
+      "bytes": 326,
+      "sha256": "6c1d0086c4a7cc234448012606edcbb0d4385acb8d6c1a15fe302a6da1dcafd2"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/clean_render.sh": {
+      "bytes": 4336,
+      "sha256": "d1b00a83d926769083eb35074f1c81e9fca47233812ba51c7827e8e76dca1ccb"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/raw_receipt.py": {
+      "bytes": 2388,
+      "sha256": "af411eed5c7eb1855e6abc81838bab0a1ed1defeb2446094bb837017c266ec5d"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/historical_fine_area_bw.py": {
+      "bytes": 7174,
+      "sha256": "941643a3f684df33cd613074977fa13941192ec57a5f62111bff397ed7f398f0"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/component_receipt.py": {
+      "bytes": 2884,
+      "sha256": "5327a00bc7d9c2bc414fb6529ed7c4ccadd539ad96f69858c10f3bfd44796c35"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/render.py": {
+      "bytes": 50203,
+      "sha256": "c5c9a138d344c388697240618aa2ae9c118375242e48abab3472a0672bf43f9c"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/render.sh": {
+      "bytes": 326,
+      "sha256": "6c1d0086c4a7cc234448012606edcbb0d4385acb8d6c1a15fe302a6da1dcafd2"
+    },
+    "ca_source/by_source/snapshots/3d8650e2004c7b7e8c13404e41717c67e15d5dd77f050f6eb70820206da9add5/clean_receipt.py": {
+      "bytes": 1791,
+      "sha256": "0746b04f053fdc7a9b0df1805961e5ae6ee5051d992784ed715e361d0d80d8de"
+    },
+    "ca_source/by_source/evidence/actual_candidate/job.json": {
+      "bytes": 2241,
+      "sha256": "9189e36c341a1adc5aef77a46afbd85e2902a7d2ae99f82fc9ba694bfb84e19f"
+    },
+    "ca_source/by_source/evidence/actual_candidate/resources.json": {
+      "bytes": 654,
+      "sha256": "0e1d33cda7385d6852756b32d22f9f0715484b726eeaab86c79cd5fa44a11ce5"
+    },
+    "ca_source/by_source/evidence/actual_candidate/DAYLIGHT_ALIGNMENT.json": {
+      "bytes": 921,
+      "sha256": "9ddaa635493e3ced35fa92127bc211a2539b5880bed8b12e4f329dfa8a6d3ea9"
+    },
+    "ca_source/by_source/evidence/actual_candidate/ROAD_SURFACE_WEAR_BY.json": {
+      "bytes": 5135,
+      "sha256": "c501dc3e4fd3c02726883525dd1d9dcc4e23685aa7c49a5f25682769da3d1930"
+    },
+    "ca_source/by_source/evidence/actual_candidate/HISTORICAL_FINE_AREA_BW.json": {
+      "bytes": 2138,
+      "sha256": "f59591e3b1f25653897f15adfb6a23a13d962c0ecc16d016e19183f9cedb95ff"
+    },
+    "ca_source/by_source/evidence/actual_candidate/UNFILTERED_PANEL.png.json": {
+      "bytes": 1738760,
+      "sha256": "154f2e001a0a459a1c92a29294343a06815efadb5971bc855f6122d6b1038751"
+    },
+    "ca_source/by_source/evidence/actual_candidate/FINE_COATING_AZ.json": {
+      "bytes": 3393,
+      "sha256": "f192a568ab65eacb6dcb95a92a452e295d975b9b297ce6f70e1c911d8bb5234a"
+    },
+    "ca_source/by_source/evidence/actual_candidate/INTERNAL_PANEL.png.json": {
+      "bytes": 1734923,
+      "sha256": "218e96337a25d3ce736a82b5b7296f72bd45e38c38fce414b3b1386efe9dca5b"
+    },
+    "ca_source/evidence/ca_metric_pavement_detail/METRIC_PAVEMENT_EXTENSION_CA.json": {
+      "bytes": 1464,
+      "sha256": "be51731549df260e74b9cc61a81b8a1f6f4e1dfd5814d50cfbac5ebefeb47439"
+    },
+    "ca_source/evidence/ca_metric_pavement_detail/job.json": {
+      "bytes": 2748,
+      "sha256": "a5ffc8f12b98f5223e4b919f8e05d6290e9b98a1035157c30f781044485a2046"
+    },
+    "ca_source/evidence/ca_metric_pavement_detail/PRE_RENDER_MEMORY_ADAPTATIONS.json": {
+      "bytes": 1806822,
+      "sha256": "5ae9a4d5f759c99d4f7b3c46dde8ab92d04b10968d83b0b05c6031c01e5b74b0"
+    },
+    "ca_source/evidence/ca_metric_pavement_detail/resources.json": {
+      "bytes": 644,
+      "sha256": "d5342839d7ff064e1306928028167393a95cea005bee43b6768a2bfb22674240"
+    },
+    "ca_source/evidence/ca_metric_pavement_detail/INTERNAL_PANEL.png.json": {
+      "bytes": 1813357,
+      "sha256": "5d1fafbf7d4d45f30ae65e77549696ac0c141256e3e5a7a26aaa4a6b9109f1e4"
+    },
+    "ca_source/evidence/ca_metric_pavement_context/METRIC_PAVEMENT_EXTENSION_CA.json": {
+      "bytes": 1464,
+      "sha256": "be51731549df260e74b9cc61a81b8a1f6f4e1dfd5814d50cfbac5ebefeb47439"
+    },
+    "ca_source/evidence/ca_metric_pavement_context/job.json": {
+      "bytes": 2698,
+      "sha256": "c6c698446044c277867b04dabbb86506401009b08fbbce2e40a2445055b11ef1"
+    },
+    "ca_source/evidence/ca_metric_pavement_context/PRE_RENDER_MEMORY_ADAPTATIONS.json": {
+      "bytes": 1806406,
+      "sha256": "1128537fcc26444326291aac68119a46072917c453b21e255278c1e553df5f67"
+    },
+    "ca_source/evidence/ca_metric_pavement_context/resources.json": {
+      "bytes": 644,
+      "sha256": "42332d984e246e4323199f2845b9f49aa4d71ac8aff5caa4c202634e688f8fe8"
+    },
+    "ca_source/evidence/ca_metric_pavement_context/INTERNAL_PANEL.png.json": {
+      "bytes": 1812503,
+      "sha256": "f5cc279944ca7229badb457f2a89342a4315bfb668c9f8d920f91ac68f65f1b5"
+    },
+    "ca_source/evidence/current_wrapper/METRIC_PAVEMENT_EXTENSION_CA.json": {
+      "bytes": 1464,
+      "sha256": "be51731549df260e74b9cc61a81b8a1f6f4e1dfd5814d50cfbac5ebefeb47439"
+    },
+    "ca_source/evidence/current_wrapper/CURRENT_CA_APPLICATION.json": {
+      "bytes": 3454,
+      "sha256": "87352a644ce80477b08ce22c5ce2fcf2ad0ffa9a076cccb7b36eec8e01890149"
+    },
+    "ca_source/evidence/current_wrapper/current_ca_wrapper_resources.json": {
+      "bytes": 330,
+      "sha256": "ff887108833a5a98ff21a42265e1a9884192ba77868d8af131238716749c1fba"
+    },
+    "ca_source/evidence/current_wrapper/source_admission_resources.json": {
+      "bytes": 251,
+      "sha256": "901499da75bdaa3a43c07dbae0e60a37b29bd23c784b2196f4dd05bef07fc19c"
+    },
+    "ca_source/evidence/current_wrapper/fresh_load_state_resources.json": {
+      "bytes": 328,
+      "sha256": "b85a6f21b24e9528c67c12fd2f929635d373ef11332488b6f0d5fc6cca9843ab"
+    },
+    "ca_source/evidence/current_wrapper/current_ca_wrapper_v2_resources.json": {
+      "bytes": 333,
+      "sha256": "40424d5c5df2480dafcbb62ae3a69f670bcd76aea3294ba77b3a6aa7f065461e"
+    },
+    "ca_source/evidence/current_wrapper/fresh_load_state.json": {
+      "bytes": 291,
+      "sha256": "309a5eadbbef1b3eb93d4a61c90c53a8390e15993166f59d4dd073fdecf2d057"
+    },
+    "ca_source/evidence/current_wrapper/source_admission.json": {
+      "bytes": 576,
+      "sha256": "d93cb0cb7048f7baf61088db31b41631137aca36da037eed0b76476211e7670e"
+    },
+    "ca_source/road_scene_r6/src/regenerate_metric_pavement_ca.py": {
+      "bytes": 2465,
+      "sha256": "ba373d3dc1469ea0f8b7754207618a485fcbf152006609006d881647cae7863b"
+    },
+    "ca_source/road_scene_r6/src/metric_extension_math_ca.py": {
+      "bytes": 10416,
+      "sha256": "08b4c8f9b3a0d1b7aef6c958b69d182e9f3a0f783e7ff13afa32a17d3a9d7853"
+    },
+    "ca_source/road_scene_r6/src/metric_pavement_extension_ca.py": {
+      "bytes": 6863,
+      "sha256": "f5f4fb8aa73b68d8b5c47aa44c841bed15d43d7b41d92cdcbe35c34bdbfaa76b"
+    },
+    "ca_source/road_scene_r6/relief_correction/affine_tile_adapter.py": {
+      "bytes": 5015,
+      "sha256": "b16cb2fc070a98fcb9ab8e0d0ed268f278b1ce01bc8cb3bb8bb4349b9574847c"
+    },
+    "ca_source/road_scene_r6/relief_correction/tiled_relief_math.py": {
+      "bytes": 6987,
+      "sha256": "e67f95a1ac6ca78b8471702ce4317437c454fa6818592fd922bd093c299a0047"
+    },
+    "ca_source/road_scene_r6/relief_correction/relief_math.py": {
+      "bytes": 10326,
+      "sha256": "2417aa37399010f79aa1b2239a4557a807e20605c014f29b6b6afdb146ad0c3b"
+    },
+    "ca_source/road_scene_r6/audits/metric_extension_ca/retained_AV_replay_resources.json": {
+      "bytes": 518,
+      "sha256": "1fcf4449e116f51da52ce9b6befd40743e5e2a1036900c8f9e55da0badd504dc"
+    },
+    "ca_source/road_scene_r6/audits/metric_extension_ca/existing_overlays.json": {
+      "bytes": 8916,
+      "sha256": "f28df759edd4fa87a01da4d1daebe3e1b5eaa07685ec9fcd51571896b31e0e84"
+    },
+    "ca_source/road_scene_r6/audits/metric_extension_ca/check_cut_contact.py": {
+      "bytes": 1361,
+      "sha256": "06220ab7bce3a3ec950621a0e74d76f089ea26ac06abdc0feeffc35606ab3d86"
+    },
+    "ca_source/road_scene_r6/audits/metric_extension_ca/overlays_resources.json": {
+      "bytes": 430,
+      "sha256": "817f5257b96901d00040385069509e2a524c11c328c20abc1952f847fb64a01d"
+    },
+    "ca_source/road_scene_r6/audits/metric_extension_ca/contact_check.json": {
+      "bytes": 189,
+      "sha256": "f163552cc3b36328097ef2ec10f7414e832287d9703faf1e35a697bd0e2e4a16"
+    },
+    "ca_source/road_scene_r6/audits/metric_extension_ca/export_source_fixture.py": {
+      "bytes": 3583,
+      "sha256": "d989d55bce2df1bc0541a7f467faf5fefb04ce8e609ac8c3d78e31a5ff077d84"
+    },
+    "ca_source/road_scene_r6/audits/metric_extension_ca/source_array_pins.json": {
+      "bytes": 925,
+      "sha256": "cff84e7438cf7e81897c9a42ce631f59f346643378d8b13a050d6f82002b2d28"
+    },
+    "ca_source/road_scene_r6/audits/metric_extension_ca/extension_payload.json": {
+      "bytes": 1370,
+      "sha256": "92c8173f79fc1d3dee6e64b5f2a69eadea23eb6a6e7a90f1f717ffbee738e452"
+    },
+    "ca_source/road_scene_r6/audits/metric_extension_ca/README.md": {
+      "bytes": 3173,
+      "sha256": "11b3807b451518f08c98817ecac5756adcd8a0c3220a04195d4437947265b781"
+    },
+    "ca_source/road_scene_r6/audits/metric_extension_ca/contact_check_v2_resources.json": {
+      "bytes": 341,
+      "sha256": "0a2a0269d8ed0db6a82ff0f5fd371848c551c25d4d94782b4f374c3d9294a1cf"
+    },
+    "evidence/capture/job.json": {
+      "bytes": 3436,
+      "sha256": "0fd76b4b827784899bb1803173b3e716c57c8ee91a9ca99db49516f75cfdea47"
+    },
+    "evidence/capture/CB_FINAL_MATERIAL_BINDING.json": {
+      "bytes": 280,
+      "sha256": "608f131a7c08ae51e484bf4ab1143cb770f211d46fdfaddc5e8e80b1b07d76a8"
+    },
+    "evidence/capture/resources.json": {
+      "bytes": 638,
+      "sha256": "c9a30c85c70a8ac323b6a758124af05feae1efbeb136a98726c1101a65f67bed"
+    },
+    "evidence/capture/INTERNAL_PANEL.png.json": {
+      "bytes": 1840197,
+      "sha256": "fa2890933c3d44e3e1ec74a1f318b094545f4ae0a942f01348cc7c108e848805"
+    },
+    "evidence/capture/CONTINUOUS_EDGE_TOP_CB.json": {
+      "bytes": 22286,
+      "sha256": "dac89c668772da1e906855f02596439af568610b9b678659155af3a96a0b960e"
+    },
+    "evidence/capture/CLEAN_OIDN_PANEL.png.json": {
+      "bytes": 1842877,
+      "sha256": "0013b5b890bdc817eb09051111a1f8233943c72c0a252d06e2a5dcedf2cb868b"
+    },
+    "road_scene_r6/src/metric_edge_strip_aa.py": {
+      "bytes": 36514,
+      "sha256": "ff93f29b6da102ad74aba5ff2f7abfa1f015612e5e10c3d29a3ad2fa5be753db"
+    },
+    "road_scene_r6/src/continuous_edge_top_adapter_cb.py": {
+      "bytes": 7113,
+      "sha256": "3e480ab8e8d74f210240ec04fb1987e4380f8b2976a44a72b7073bf50353bc4f"
+    },
+    "road_scene_r6/src/continuous_edge_top_cb.py": {
+      "bytes": 12566,
+      "sha256": "5f68aba4c34f0a606a5ef00c955a446c1d4e567dcc21a5f1d15d03b91f656ed1"
+    },
+    "road_scene_r6/src/regenerate_continuous_edge_cb.py": {
+      "bytes": 1874,
+      "sha256": "bfd882a23b72ca82f1bcb58908ad086dfab0b37647514a32b53676bce9f1cdf0"
+    },
+    "road_scene_r6/relief_correction/affine_tile_adapter.py": {
+      "bytes": 5015,
+      "sha256": "b16cb2fc070a98fcb9ab8e0d0ed268f278b1ce01bc8cb3bb8bb4349b9574847c"
+    },
+    "road_scene_r6/relief_correction/tiled_relief_math.py": {
+      "bytes": 6987,
+      "sha256": "e67f95a1ac6ca78b8471702ce4317437c454fa6818592fd922bd093c299a0047"
+    },
+    "road_scene_r6/relief_correction/relief_math.py": {
+      "bytes": 10326,
+      "sha256": "2417aa37399010f79aa1b2239a4557a807e20605c014f29b6b6afdb146ad0c3b"
+    },
+    "road_scene_r6/audits/edge_continuity_cb/ground_clearance_resources.json": {
+      "bytes": 345,
+      "sha256": "b31c5e4ff8ce27e1af6a9d457eaa09abe5527a72b8c02199e384c3ee3bdf8a42"
+    },
+    "road_scene_r6/audits/edge_continuity_cb/actual_left_outline.npz": {
+      "bytes": 160418,
+      "sha256": "8d7e80b7b5f709e9b4e8d6c90bb21ba5aced5285df106a4beb2fb6b2cbd96e5a"
+    },
+    "road_scene_r6/audits/edge_continuity_cb/ground_clearance.json": {
+      "bytes": 16847,
+      "sha256": "568ddac957aa95b563fbcda1ce03c35343b33d923bbc2ac9cb260dce8268a661"
+    },
+    "road_scene_r6/audits/edge_continuity_cb/actual_ground_contact.json": {
+      "bytes": 279,
+      "sha256": "aa622088ba4e44b88559c98dac91c33c92846b275a913339064f1660360976be"
+    },
+    "road_scene_r6/audits/edge_continuity_cb/build_step2_v2_resources.json": {
+      "bytes": 326,
+      "sha256": "d99ea57e3d71fdcf4b6a1ebfb69acbb780440d90426fddc3ed69d86816cbd19e"
+    },
+    "road_scene_r6/audits/edge_continuity_cb/replay_payload_resources.json": {
+      "bytes": 348,
+      "sha256": "24ce803c84c8a8414c5ab15a5736178f1ebb63fb1c3a9ae6f10e2786b03ee630"
+    },
+    "road_scene_r6/audits/edge_continuity_cb/edge_payload_step2.json": {
+      "bytes": 1528,
+      "sha256": "e8c32e2957d7a090ac13b188ded4fe7749943aa71270ed5a1aedb20f9a03e837"
+    },
+    "road_scene_r6/audits/edge_continuity_cb/outline.json": {
+      "bytes": 294,
+      "sha256": "a7a6757d1f34fa9644c485899925a5d5281541b643321e1addc524bdd93709b0"
+    },
+    "road_scene_r6/audits/edge_continuity_cb/replay_payload.json": {
+      "bytes": 517,
+      "sha256": "9b3f69bdf453c6c1ba1bdf9fdd869670eeb224613224b2f3af21a0a0349998af"
+    },
+    "road_scene_r6/audits/edge_continuity_cb/portable_cli_resources.json": {
+      "bytes": 603,
+      "sha256": "a3fd9649d675cff87a7891243e521556fec0937d7484936988d05b0e6a8870e5"
+    }
+  },
+  "full_source_dependency": "AV v15",
+  "complete_CA_extension_included": true,
+  "fresh_full_AV_regeneration_verified": false
+}

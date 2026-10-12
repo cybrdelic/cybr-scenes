@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "current_files": 220,
+  "CA_preflight": {
+    "passed": true,
+    "current_members": 155,
+    "BY_preflight": {
+      "passed": true,
+      "base_archive_sha256": "daae4846d4ef9506b01c40bfa9b1ecfd369fbd17f457d0a63c68f168a79aaa04",
+      "extension_members_verified": 52,
+      "fresh_AV_regeneration_verified": false,
+      "combined_delta_replay_verified": false,
+      "blender_wrapper_execution_verified": false
+    },
+    "retained_AV_payload_replay_verified": true,
+    "retained_AV_combined_application_verified": true,
+    "fresh_complete_AV_rebuild_verified": false
+  },
+  "exact_CB_payload_replay_verified": true,
+  "retained_AV_current_application_verified": true,
+  "fresh_complete_AV_regeneration_verified": false
+}

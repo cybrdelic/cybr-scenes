@@ -1,0 +1,27 @@
+{
+  "status": "R5D procedural work-in-progress. No final visual acceptance, no catalogue promotion.",
+  "references": [
+    {
+      "page": "https://www.nps.gov/moja/planyourvisit/mojave-road.htm",
+      "image": "https://www.nps.gov/moja/planyourvisit/images/NearMorningStarMine_2_Ogawa.jpg?autorotate=false&maxwidth=650",
+      "observed": "Patchy coarse fragments, connected tan track strips; landscape scale only."
+    },
+    {
+      "page": "https://home.nps.gov/jotr/blogs/april-6-2017.htm",
+      "image": "https://home.nps.gov/images/IMG_5974.JPG",
+      "observed": "Angular uneven and slab-like fragments, multiscale interstitial granules, cream/gray/tan colors. Too gravelly to set roadside coverage; no metric calibration."
+    },
+    {
+      "page": "https://soilseries.sc.egov.usda.gov/OSD_Docs/V/VICTORVILLE.html",
+      "use": "Text context: granitic-source sandy loam; not a site-specific reconstruction."
+    }
+  ],
+  "image_inputs": "No image pixels are used in geometry or materials. Public reference images were observed only.",
+  "generation": {
+    "seed": 501809,
+    "physical_units": "metres",
+    "fine_grain_min_m": 0.00016,
+    "coarse_grain_max_m": 0.0058
+  },
+  "source_sha256": "320dd02e5ac661f4f9f3b470d614e0b3fb103614b0d2cd740aded5964ffa4246"
+}

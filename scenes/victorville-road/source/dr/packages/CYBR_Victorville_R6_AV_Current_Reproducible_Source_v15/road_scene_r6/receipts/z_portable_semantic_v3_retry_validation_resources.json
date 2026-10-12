@@ -1,0 +1,11 @@
+{
+  "CPU_threads": 2,
+  "RSS_cap_MiB": 4096,
+  "elapsed_seconds": 53.69882926399441,
+  "exit_code": 1,
+  "kernel_max_child_RSS_MiB": 3670.37109375,
+  "peak_process_tree_RSS_MiB": 3669.859375,
+  "resource_contract_passed": false,
+  "script": "src/capture_test_y_semantic_source_v3.py",
+  "stop_reason": null
+}

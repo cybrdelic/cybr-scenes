@@ -1,0 +1,20 @@
+{
+  "command": [
+    "blender",
+    "-b",
+    "-t",
+    "1",
+    "--python-exit-code",
+    "1",
+    "--python",
+    "audits/metric_extension_ca/inspect_existing_overlays.py"
+  ],
+  "exit_code": 0,
+  "stop_reason": null,
+  "peak_process_tree_RSS_MiB": 225.0234375,
+  "kernel_max_child_RSS_MiB": 317.33984375,
+  "RSS_cap_MiB": 600.0,
+  "elapsed_seconds": 1.835066977000679,
+  "resource_contract_passed": true,
+  "rendered": false
+}

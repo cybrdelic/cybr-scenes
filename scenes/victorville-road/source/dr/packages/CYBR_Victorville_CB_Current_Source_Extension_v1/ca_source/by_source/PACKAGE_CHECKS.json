@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "base_archive_sha256": "daae4846d4ef9506b01c40bfa9b1ecfd369fbd17f457d0a63c68f168a79aaa04",
+  "extension_members_verified": 52,
+  "fresh_AV_regeneration_verified": false,
+  "combined_delta_replay_verified": false,
+  "blender_wrapper_execution_verified": false
+}

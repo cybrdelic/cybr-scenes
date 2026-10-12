@@ -1,0 +1,31 @@
+{
+  "command": [
+    "/usr/bin/blender",
+    "-b",
+    "-t",
+    "2",
+    "--python-exit-code",
+    "2",
+    "--python",
+    "current_cache_source/cache_driver.py",
+    "--",
+    "cached",
+    "--job",
+    "static_domain_dm/job_seam.json",
+    "--late-hook",
+    "static_domain_dm/after_dh_hook.py",
+    "--hook-key",
+    "geometry_soil_normals_db"
+  ],
+  "exit_code": -15,
+  "stop_reason": "Aggregate RSS cap exceeded",
+  "elapsed_seconds": 156.70389722000255,
+  "sampled_process_tree_peak_MiB": 4564.01171875,
+  "kernel_max_child_RSS_MiB": 4563.8125,
+  "cap_MiB": 4480.0,
+  "termination_scope": "Every owned descendant process group, including inner detached guard sessions",
+  "terminated_groups": [
+    6
+  ],
+  "passed": false
+}

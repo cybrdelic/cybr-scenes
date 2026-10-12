@@ -1,0 +1,128 @@
+{
+  "engine": "CYCLES",
+  "samples": 32,
+  "capture_mode": "unfiltered",
+  "save_guides": false,
+  "light_tree": false,
+  "color_depth": 16,
+  "dither_intensity": 0,
+  "use_adaptive_sampling": false,
+  "rss_cap_mib": 4480,
+  "compact_bvh": true,
+  "camera_cull_prefixes": [
+    "Original asphalt native tile "
+  ],
+  "camera_cull_margin": 0.12,
+  "asphalt_preview_map_size": 1024,
+  "preview_cull_terrain_faces": true,
+  "terrain_cull_margin": 0.2,
+  "release_unused_heap": true,
+  "lens": 32,
+  "width": 1000,
+  "height": 667,
+  "source": "/CYBR_INPUTS/source",
+  "source_sha256": "4b4bd0fcda46a001f6fe74f79bade3485a73d88b6e6512821cf222d7c7cd0d90",
+  "output": "/CYBR_INPUTS/output",
+  "time_limit_seconds": 600,
+  "sync_limit_seconds": 450,
+  "view_scope": "CO lighting-only candidate on exact frozen CN/CL scene and camera. One Nishita sun+sky model22deg145az, native solar diameter.545deg; separate Sun disabled. Horizontal diffuse-card luminance matched with one source scalar; native direct/sky ratio preserved. No CM plant changes, no atmosphere changes, no material/post-grade change.",
+  "fine_coating_az": {
+    "microbed_path": "/CYBR_INPUTS/fine_coating_az/microbed_path",
+    "builder_path": "/CYBR_INPUTS/fine_coating_az/builder_path"
+  },
+  "discard_unused_render_data": true,
+  "aligned_context_daylight": {
+    "mode": "align_sky_to_existing_sun"
+  },
+  "historical_fine_area_bw": {
+    "revision": 1
+  },
+  "camera_location": [
+    -5.5,
+    4.8,
+    0.65
+  ],
+  "camera_target": [
+    -3.5,
+    8.0,
+    0.15
+  ],
+  "allocator_policy_bx": {
+    "revision": 1
+  },
+  "road_surface_wear_by": {
+    "revision": 1
+  },
+  "asphalt_preview_grid_stride": 2,
+  "metric_pavement_extension_ca": {
+    "revision": 1,
+    "payload": "/CYBR_INPUTS/metric_pavement_extension_ca/payload",
+    "payload_sha256": "d1c7a52a2ca1845aa377eca3679135159e3c71762658a39488db0aa1cb472fd3",
+    "pins": "/CYBR_INPUTS/metric_pavement_extension_ca/pins",
+    "pins_sha256": "cff84e7438cf7e81897c9a42ce631f59f346643378d8b13a050d6f82002b2d28"
+  },
+  "continuous_edge_top_cb": {
+    "revision": 1,
+    "step": 2,
+    "payload": "/CYBR_INPUTS/continuous_edge_top_cb/payload",
+    "payload_sha256": "aef0aee3894aa18f3353faffc4f3f824e99f953779cbd8933dce5578daaee5ee",
+    "pins": "/CYBR_INPUTS/continuous_edge_top_cb/pins",
+    "pins_sha256": "e8c32e2957d7a090ac13b188ded4fe7749943aa71270ed5a1aedb20f9a03e837",
+    "clearance": "/CYBR_INPUTS/continuous_edge_top_cb/clearance",
+    "clearance_sha256": "568ddac957aa95b563fbcda1ce03c35343b33d923bbc2ac9cb260dce8268a661"
+  },
+  "historical_surface_authority_cc": {
+    "revision": 1,
+    "fields": "/CYBR_INPUTS/historical_surface_authority_cc/fields"
+  },
+  "coupled_shoulder_ce": {
+    "revision": 1,
+    "payload": "/CYBR_INPUTS/coupled_shoulder_ce/payload",
+    "payload_sha256": "05f32d7993c3e9b78d77c7d259d1d0c1fe1cc508ba7ae4598113359046274250",
+    "report": "/CYBR_INPUTS/coupled_shoulder_ce/report",
+    "safe_normal_transfer": true
+  },
+  "existing_gravel_cf": {
+    "revision": 1,
+    "terrain_payload": "/CYBR_INPUTS/existing_gravel_cf/terrain_payload",
+    "terrain_sha256": "05f32d7993c3e9b78d77c7d259d1d0c1fe1cc508ba7ae4598113359046274250"
+  },
+  "finite_historical_gravel_cg": {
+    "revision": 1,
+    "fractured_prototypes": "/CYBR_INPUTS/finite_historical_gravel_cg/fractured_prototypes",
+    "fractured_prototypes_sha256": "1e87f9414bf2e4460e344e1fe8d630a8f50dff965c3e2a4680af02db34bc814b",
+    "terrain_payload": "/CYBR_INPUTS/finite_historical_gravel_cg/terrain_payload",
+    "terrain_sha256": "05f32d7993c3e9b78d77c7d259d1d0c1fe1cc508ba7ae4598113359046274250",
+    "worked_edge_transition": true
+  },
+  "weathered_gravel_ch": {
+    "revision": 1,
+    "fractured_prototypes": "/CYBR_INPUTS/weathered_gravel_ch/fractured_prototypes"
+  },
+  "fixed_gravel_support_ci": {
+    "revision": 1,
+    "terrain_payload": "/CYBR_INPUTS/fixed_gravel_support_ci/terrain_payload",
+    "terrain_sha256": "05f32d7993c3e9b78d77c7d259d1d0c1fe1cc508ba7ae4598113359046274250",
+    "historical_fields": "/CYBR_INPUTS/fixed_gravel_support_ci/historical_fields",
+    "historical_fields_sha256": "cb13eb9f9422741f113d244f249e6b70cece71596934df63643a59412483dac3",
+    "fractured_prototypes": "/CYBR_INPUTS/fixed_gravel_support_ci/fractured_prototypes"
+  },
+  "raw_png_only": true,
+  "exact_image_memory_cache_ck": {
+    "revision": 1,
+    "map_tier": 1024
+  },
+  "frozen_architecture_layout_cl": {
+    "revision": 1,
+    "layout": "/CYBR_INPUTS/frozen_architecture_layout_cl/layout",
+    "layout_sha256": "619ca463fb2572cacaab6f8fa283fe3ad018c2c982d251c42f72b5e261302048"
+  },
+  "victorville_reflectance_cn": {
+    "revision": 1
+  },
+  "daylight_model_co": {
+    "revision": 1,
+    "card": "/CYBR_INPUTS/daylight_model_co/card",
+    "card_sha256": "2e1b1ae8c87d529f52380407b702ecb591f31c8723ef2ffd3f01111df797e4c4"
+  }
+}

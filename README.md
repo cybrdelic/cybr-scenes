@@ -86,3 +86,7 @@ python cybr_scenes.py render observatory-iv --quality smoke
 Geometry-driven native renders, with no image-generation step. Some materials use retained CC0 surface photographs; Observatory's maps are mathematically authored. These scenes are rendering studies: authored spectra, finite sampling and guided reconstruction have limits. [Scene limitations](scenes/observatory-iv/README.md#important-boundaries) · [Asset/dependency notices](scenes/observatory-iv/THIRD_PARTY_NOTICES.md) · [Original import record](docs/observatory-iv-import.json).
 
 GPL-2.0-only. Third-party assets retain their own rights. Created by [Alejandro Figueroa / cybrdelic](https://github.com/cybrdelic).
+
+## Victorville procedural source
+
+The [DR source checkpoint](scenes/victorville-road/source/dr/README.md) now includes the complete bounded original construction/input closure. Its clean recovered 2000 × 1334 Cycles CPU render matches the saved DR RGB pixels exactly, with all 220,000 selected grain IDs and positions preserved. The CQ gallery above remains a separately labeled earlier preview. Source reproduction, resource limits, split-input restoration and remaining visual limitations are documented with the source.

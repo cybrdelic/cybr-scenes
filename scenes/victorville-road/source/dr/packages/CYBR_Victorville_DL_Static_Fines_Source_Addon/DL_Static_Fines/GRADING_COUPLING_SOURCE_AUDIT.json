@@ -1,0 +1,191 @@
+{
+  "audit": "Retained grading and fine/coarse geometry coupling",
+  "mode": "Read-only source and existing receipt audit; no Blender load/render/export",
+  "retained_image": "dh_native_bodies_a/UNFILTERED_PANEL.png",
+  "retained_job": "dh_native_bodies_a/job.json",
+  "input_sha256": {
+    "unpacked/CYBR_Victorville_CH_Current_Source_Compact_v1/inputs/ce/payload.npz": "05f32d7993c3e9b78d77c7d259d1d0c1fe1cc508ba7ae4598113359046274250",
+    "unpacked/CYBR_Victorville_CH_Current_Source_Compact_v1/inputs/AH_FIELDS.npz": "cb13eb9f9422741f113d244f249e6b70cece71596934df63643a59412483dac3"
+  },
+  "domains": {
+    "AH": [
+      -6.2,
+      -3.25,
+      -0.6,
+      8.2
+    ],
+    "CE_active_support": [
+      -7,
+      -3.36,
+      -0.9,
+      18
+    ],
+    "CZ_rebuilt_bank": [
+      -7,
+      -3.52,
+      4.7,
+      11.5
+    ],
+    "CQ_relocated_AP": [
+      -6.4,
+      -3.5,
+      -0.65,
+      8
+    ],
+    "CG_worked_transition": [
+      -6.4,
+      -3.35,
+      -0.58,
+      10.8
+    ]
+  },
+  "CE_matrix_diagnostics": [
+    {
+      "region": "forward_envelope",
+      "x_bounds_m": [
+        -7,
+        -3.52
+      ],
+      "y_bounds_m": [
+        4.7,
+        11.5
+      ],
+      "CE_gate_min_exclusive": 0.999,
+      "vertices": 48745,
+      "lumped_XY_area_m2": 19.315332412719727,
+      "matrix_vertex_quantiles_0_25_50_75_100": [
+        0.0,
+        0.0,
+        0.19781067967414856,
+        0.25000014901161194,
+        0.7974695563316345
+      ],
+      "matrix_area_weighted_mean": 0.1530819982290268,
+      "XY_area_fraction_matrix_above": {
+        "0.01": 0.6197348237037659,
+        "0.05": 0.613679826259613,
+        "0.2": 0.5254977941513062,
+        "0.3": 0.06392616033554077,
+        "0.5": 0.006962993182241917
+      },
+      "compaction_area_weighted_mean": 0.8978767991065979
+    },
+    {
+      "region": "near_AH_y_overlap",
+      "x_bounds_m": [
+        -7,
+        -3.52
+      ],
+      "y_bounds_m": [
+        4.7,
+        8.2
+      ],
+      "CE_gate_min_exclusive": 0.999,
+      "vertices": 25486,
+      "lumped_XY_area_m2": 9.941410064697266,
+      "matrix_vertex_quantiles_0_25_50_75_100": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.7974695563316345
+      ],
+      "matrix_area_weighted_mean": 0.08678441494703293,
+      "XY_area_fraction_matrix_above": {
+        "0.01": 0.2708819508552551,
+        "0.05": 0.26726701855659485,
+        "0.2": 0.24528247117996216,
+        "0.3": 0.12420321255922318,
+        "0.5": 0.01352851651608944
+      },
+      "compaction_area_weighted_mean": 0.9413755536079407
+    },
+    {
+      "region": "beyond_AH_y",
+      "x_bounds_m": [
+        -7,
+        -3.52
+      ],
+      "y_bounds_m": [
+        8.2,
+        11.5
+      ],
+      "CE_gate_min_exclusive": 0.999,
+      "vertices": 23259,
+      "lumped_XY_area_m2": 9.373922348022461,
+      "matrix_vertex_quantiles_0_25_50_75_100": [
+        0.0,
+        0.20673461258411407,
+        0.25000014901161194,
+        0.25000014901161194,
+        0.25000014901161194
+      ],
+      "matrix_area_weighted_mean": 0.22339318692684174,
+      "XY_area_fraction_matrix_above": {
+        "0.01": 0.9897069931030273,
+        "0.05": 0.9810640811920166,
+        "0.2": 0.8226771354675293,
+        "0.3": 0.0,
+        "0.5": 0.0
+      },
+      "compaction_area_weighted_mean": 0.8517445921897888
+    }
+  ],
+  "CG_CI_diagnostic": {
+    "forward_y_min_m": 4.7,
+    "body_count": 6284,
+    "retained_cover_quantiles_0_25_50_75_90_100_m": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0015026009276004554,
+      0.012257367091336256
+    ],
+    "cover_above_1mm_count": 771,
+    "estimated_exposed_body_count": 6011,
+    "limitation": "Forward-Y diagnostic only, not frustum/occlusion-aware. CI exposure precedes DH prototype/contact replacement."
+  },
+  "exact_attribute_export_found": false,
+  "attribute_search": "NPZ ZIP-member names across recovery tree; no ap_fines/ap_coarse/ap_graded/graded/ak_historical_compaction named exports found. This does not prove no differently named dataset exists.",
+  "main_missing_couplings": [
+    {
+      "file": "dh_native_bodies_a/runtime/src/historical_grain_roles_dg.py",
+      "lines": "52-57",
+      "finding": "Restored supplement uses only current terrain minus retained net cover for static origins; original AI matrix*diameter*.30 burial is absent."
+    },
+    {
+      "file": "unpacked/CYBR_Victorville_R6_AV_Current_Reproducible_Source_v15/road_scene_r6/src/assemble_sediment_surface_ai.py",
+      "lines": "59-68",
+      "finding": "Exact original historical_matrix*diameter*.30 static burial; retained-deposit selected surface representatives subsequently override that datum."
+    },
+    {
+      "file": "unpacked/CYBR_Victorville_R6_AV_Current_Reproducible_Source_v15/road_scene_r6/src/assemble_road_margin_ap.py",
+      "lines": "88-96",
+      "finding": "Original AP coarse burial uses height*(.16+.58*fines); original chip/grit origins receive .00075*fines*(1-coarse) historical burial. CZ rebuild discards former supplement burial."
+    },
+    {
+      "file": "dh_native_bodies_a/runtime/src/correct_historical_gravel_domain_cq.py",
+      "lines": "219-226",
+      "finding": "CQ AP 7-31 mm subset is reseated on current terrain using CE deposited matrix alone; neither AH net cover nor historical matrix/compaction is used."
+    },
+    {
+      "file": "dh_native_bodies_a/runtime/src/fixed_gravel_support_ci.py",
+      "lines": "22-26",
+      "finding": "CG support subtracts max(max(AH net,0)+CE net,0); static historical matrix/compaction is not a support input."
+    },
+    {
+      "file": "dh_native_bodies_a/runtime/src/assemble_coupled_shoulder_ce.py",
+      "lines": "54-59",
+      "finding": "Current evaluated matrix and compaction already exist as terrain attributes. At full CE authority matrix derives from stock-removed, compaction from core and scour; deposited matrix is a separate ai_fine_coat path."
+    }
+  ],
+  "recommendation": "First restore exact original AI matrix*diameter*.30 burial only for non-selected rebuilt grit/chip origins, sampling the evaluated current terrain attribute; preserve DG finite-deposit representative override, DA original sand datum, XY/yaw/identity/count/materials and source ledger. Expect modest fine-grain exposure changes; this alone cannot change 7-60 mm gravel population.",
+  "limits": [
+    "No new scene, image or source mutation was made.",
+    "World-envelope matrix statistics are lumped horizontal-area diagnostics, not rendered pixel coverage or camera-frustum/occlusion metrics.",
+    "CE gate>.999 leaves at most 0.001 old-attribute mixture, so these diagnostics are not exact final interpolated per-instance attributes.",
+    "Original historical skin is already in the ground; do not treat it as added sediment.",
+    "CC/CE surface authority was deliberate and should remain; do not restore duplicate BW/AP optical overcoat."
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "purpose": "Visual observation of publicly accessible road construction and landscape relationships. No photographic bytes used in any material or scene.",
+  "specific_site_reconstruction": false,
+  "references": [
+    {
+      "page": "https://www.nps.gov/moja/planyourvisit/conditions.htm",
+      "credit": "NPS / J. Petruncio",
+      "photo": "673D14C1-F575-E2D5-CEFC0AF51F76CF60",
+      "observed_by": "reference worker in cloud browser",
+      "observations": "Raised fractured asphalt crust, irregular undercut bites and rubble, pale gravel shoulder and graded deposits, faded lines, sparse cracks, road rising toward a crest, asymmetric rocky slope.",
+      "limitation": "Documented damaged shoulder. Do not generalize severe washout over the whole everyday road."
+    },
+    {
+      "page": "https://www.nps.gov/moja/planyourvisit/conditions.htm",
+      "credit": "NPS / J. Petruncio",
+      "photo": "673E0773-D959-25A7-EE16BB3188B40E35",
+      "observed_by": "scene author and reference worker in cloud browser",
+      "observations": "Pale graded fill feathers onto asphalt, partly dusty edge marking, narrow berms, organized machine ruts, shrubs beyond the worked strip, visibly rough mixed surface.",
+      "limitation": "Fresh maintenance photograph; scene uses subtler traces rather than copying the equipment or tire tread."
+    },
+    {
+      "page": "https://www.nps.gov/moja/planyourvisit/placestogo.htm",
+      "credit": "NPS / K. Lewandowski",
+      "photo": "DSCN2783.JPG",
+      "observed_by": "scene author and reference worker in cloud browser",
+      "observations": "Narrow paved road, ragged edge line, bare fine roadside strip, twiggy rounded shrubs outside it, muted gray olive and ochre foliage, isolated rocky hill with lower open horizon.",
+      "limitation": "Mojave Preserve, not a verified Victorville site. Joshua tree density is not adopted as a default."
+    }
+  ],
+  "scene_inferences": "Representative high-desert earthworks, sediment sorting, shrub clustering and rock relief. Exact grading, erosion, vegetation and geology are authored, not surveyed."
+}

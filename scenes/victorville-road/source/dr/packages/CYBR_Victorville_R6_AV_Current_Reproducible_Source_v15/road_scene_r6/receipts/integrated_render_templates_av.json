@@ -1,0 +1,397 @@
+{
+  "cache_is_required_input": false,
+  "cache_output_is_optional": true,
+  "captures": [
+    {
+      "captured_pipeline_files_sha256": {
+        "approved_density_lod.py": "e436859c4658c269d68ce041299b0152595d7dfdd7e56ed472420fdf3c1dc658",
+        "assemble_graded_shoulder_ah.py": "c4306da264ce55f94edb3b5d9808aaae24ff66fd573a5ba3d36953fd8fedfc15",
+        "assemble_metric_fragments_as.py": "8565563d7a51e89e11e02903bdc1fec9ef76298c08e62581f185e57d9b371630",
+        "assemble_pavement_contact_ac.py": "e63a5951ac6ae51d9ff1dc9977cb5e22b7e18e7a53cce8a1cd1de72a3d2267c5",
+        "assemble_raveled_edge_aa.py": "eb088b9104f8fb290d10d06412d5de3a687e85aed6d4be402184eca558a8cdd7",
+        "assemble_road_margin_aq.py": "cf8022b952bb5b1afbda25fe0c5314551268c1527b630e4feae0daecff8ba7eb",
+        "assemble_sediment_surface_ai.py": "8318548a0cd79e7d432d387bfe65bf2a1175a68a90709108b8ac5bc961ad60c5",
+        "assemble_visible_shoulder_ad.py": "14beaa67d7c2e7c887bee5d2a2643889a43abd52b8199522d7f1d755838e8577",
+        "assembled_scene_cache_av.py": "8fb34eddec378e93105401696aa8df26dc6c976661279114c69e708867d294b0",
+        "capture_modes.py": "c3d1ff01c580a8f63f1fe3658697ec711525f2e8032a82e2fb008c8f8339bbf8",
+        "clean_receipt.py": "0746b04f053fdc7a9b0df1805961e5ae6ee5051d992784ed715e361d0d80d8de",
+        "clean_render.sh": "f02ed38052ecb82a1a90b6d16ea70776b03e0cb864f3d2952dc2970864a7c264",
+        "component_image_bridge.py": "74dca31a6739ef5b666ec4437d77297f138dc5bd8f63280c9d2cea8acfe74047",
+        "component_receipt.py": "5327a00bc7d9c2bc414fb6529ed7c4ccadd539ad96f69858c10f3bfd44796c35",
+        "contact_bank_continuity_al.py": "81f388656370db1a1281ad4b852a49efbc82c73818aa97b9cdbca63c7da61169",
+        "contact_triangle_clearance_al.py": "d57a3abdee8683aad22d5aec41d137dd6b9dae79626bcf74fc0ec3dc166b5e81",
+        "context_field_cache_ad.py": "f5b32357db8ee427b7c4fe603df1ca07688a13c07f186d51b31db72619e6dc98",
+        "context_mesh_refine_ab.py": "822366ed13e38914197f1316bab9b6433a0ba1b1485d66c2fa6aa13889060bf7",
+        "continuous_contact_aq.py": "777e4456774d77351ece52767b8a247a58eb88485a7edaa1215a829fa491dde7",
+        "current_contact_film_aq.py": "24ecd8bc9d654e85b64161368dffb1fed7bf4604f4576acb13c90162cb37393e",
+        "desert_scrub.py": "8f5840a371422effcf243dfb284f57241b219262386a1d7dc3b594264b1b2172",
+        "edge_ravel_field_aa.py": "50191ccb00336ee6a2b5da1bacf33035a885afc7c9b1eaf31a4d341387a56a36",
+        "flow_sediment_model_ao.py": "cbd4689b5be9faa988ccc2de7eef50f40828bad4ebf2233f70739209bfd517c8",
+        "flow_sediment_model_z.py": "00e1bd4d9e898eb6d2bca71fb8c3e7cf35a9fea7019f00d0559347efcede73e8",
+        "flow_transport_ae.py": "8077352d35f4b717e962a022f9cda3f5f38b87c7d341a25618d4645fb61e602f",
+        "fractured_boundary_ar.py": "2537e0b7b412baaf6c42673ab690314c5e78df47bea86c7769a6b60105477d98",
+        "graded_shoulder_foundation_ah.py": "e531b13f0e497ef6776493a8b53a6b3c103ed59d2f5cb74425fe02631b15e641",
+        "graded_shoulder_foundation_at.py": "94650bd9acc714c9bae2656c7b9a46bf2c5c92240c0251e75f3a4e45bb428958",
+        "integrate_fracture_ar.py": "554fe47311acf37836b58d476cdbe7843114b5ed506e4f1497c9d0d7e26db74b",
+        "layered_scrub_ap.py": "2e3b78bac8cbb8d5947dad0abb89d941aef22747b197c99ce8eeaeb1697a3e82",
+        "metric_edge_strip_aa.py": "ff93f29b6da102ad74aba5ff2f7abfa1f015612e5e10c3d29a3ad2fa5be753db",
+        "metric_margin_fragments_as.py": "3355ff85ed9381e3a878603dd7da929114db5228f950f089eb87d53b8ec7539b",
+        "metric_margin_fragments_as_fractured_candidate.py": "acab79b9c8e8c267f8af139cc6d9af06a88cd43b4750f01279d7bb610c17ee7a",
+        "oidn_contract.py": "c50d803b0d500905b03d8ccc24512e769d100b434dad96891d657986f8be5094",
+        "oidn_image_bridge.py": "7d88792da6c53a47e3aacafa2b7a222f844ce458afa7b535f081faf9c5732bf6",
+        "pavement_contact_ac.py": "311d5797851901edfa170238c8ba77e69fff9e4bfc3c30dba7b7ca2bbf4cd79b",
+        "png_precision_check.py": "fec3e732a7185e2ef5485af2f6db3963a151d6867e48c59c036509bfdad77f20",
+        "prepare_physical_lenses.py": "3d9dbd29990807a632632233343d32a2eef62676305404934716cf087b7b861b",
+        "preview_mesh_cull.py": "c3d9793f03caababc6894b4e49e64d1f37a741b912a1ee8ebdeb7f55e145e0f5",
+        "raw_receipt.py": "af411eed5c7eb1855e6abc81838bab0a1ed1defeb2446094bb837017c266ec5d",
+        "refined_film_event_an.py": "3acf2dcba1179e003dd226e3f963f10d20f40a8a16af309e28da87c766c69930",
+        "refresh_view_grains_au.py": "49e5ec3fd0d14c2078ad5b15ff1264787fc3f3b970a63c9a21fb8e5eb6bcc6ec",
+        "render.py": "d31c258d5a83fbc56e4c6871b18b82804b68f121f29ed63bd840e0c52f85db29",
+        "render.sh": "9ce9dc545650392dce69c9709c8acff188db95eec13c34b647c5e13be6e2688a",
+        "road_film_ownership_al.py": "f34b7a7a45b5a1881851c7085b9b387e3284c454487cabff7446a6bb3f4feed5",
+        "road_film_shader_z.py": "411aee9eebad6ca18388bbba1ade22e83670ba4dcae768c3884688d846f44bf4",
+        "road_margin_composition_ap.py": "5567fdc085f346310625ba25c75c29f82bfc801fff52e00ae4f76c424e87ae95",
+        "runoff_edge_support_ai.py": "f9b397f7637990aad99b732df5ce7ae7090a1aaa4df26bb2a1642baf1fc51c33",
+        "sample_final_surface_an.py": "02c719fae92f3b2c485445d5bc5e8609884829140be6651812c8bae8b2df271b",
+        "sediment_surface_ai.py": "5370552c85726932b7680f9c5ae235b9e0c3870d981fd67bf82b25ff046a0aca",
+        "soil_rim_bridge_ar.py": "9d318d793fc47338e2e984f063a869b59c643ba7fe291ad5fbd14b5c33e4f42e",
+        "substrate_history_ak.py": "92756fa0fb60be121b15cfce48712efc7f4f331b724cf88226a6db2870edb868",
+        "terrain_normal_transfer_ah.py": "baaad3c0dbb8186aa40f9adcb841999573db27eb2f1c37d4d161f7a783849e3f",
+        "transport_components.py": "9232c7679b68c763273ebc51aa78296ae67a0a6891b71ef713f461e9d86816d4",
+        "transported_grain_exposure.py": "0834619932c753f6335dd7c7883a7d1c0ff39ea23246ea12be0ab87f79a22c10",
+        "verify_pipeline_snapshot.py": "6ffcdffc991dc7b9cb345645bb919d82da6f221c1f0138e485b886f7099b9d1b",
+        "visible_shoulder_flow_ad.py": "64a90e7d98bc9577bde96c5c43a747c4e091d5585e5a8f2af3b413ea12628ebc"
+      },
+      "component_helper_names": [
+        "approved_density_lod.py",
+        "assemble_graded_shoulder_ah.py",
+        "assemble_metric_fragments_as.py",
+        "assemble_pavement_contact_ac.py",
+        "assemble_raveled_edge_aa.py",
+        "assemble_road_margin_aq.py",
+        "assemble_sediment_surface_ai.py",
+        "assemble_visible_shoulder_ad.py",
+        "assembled_scene_cache_av.py",
+        "contact_bank_continuity_al.py",
+        "contact_triangle_clearance_al.py",
+        "context_field_cache_ad.py",
+        "context_mesh_refine_ab.py",
+        "continuous_contact_aq.py",
+        "current_contact_film_aq.py",
+        "desert_scrub.py",
+        "edge_ravel_field_aa.py",
+        "flow_sediment_model_ao.py",
+        "flow_sediment_model_z.py",
+        "flow_transport_ae.py",
+        "fractured_boundary_ar.py",
+        "graded_shoulder_foundation_ah.py",
+        "graded_shoulder_foundation_at.py",
+        "integrate_fracture_ar.py",
+        "layered_scrub_ap.py",
+        "metric_edge_strip_aa.py",
+        "metric_margin_fragments_as.py",
+        "metric_margin_fragments_as_fractured_candidate.py",
+        "pavement_contact_ac.py",
+        "prepare_physical_lenses.py",
+        "refined_film_event_an.py",
+        "refresh_view_grains_au.py",
+        "road_film_ownership_al.py",
+        "road_film_shader_z.py",
+        "road_margin_composition_ap.py",
+        "runoff_edge_support_ai.py",
+        "sample_final_surface_an.py",
+        "sediment_surface_ai.py",
+        "soil_rim_bridge_ar.py",
+        "substrate_history_ak.py",
+        "terrain_normal_transfer_ah.py",
+        "transported_grain_exposure.py",
+        "visible_shoulder_flow_ad.py"
+      ],
+      "default_latest": true,
+      "generation": "AV",
+      "input_relocations": [
+        {
+          "job_key_path": [
+            "pavement_contact_ac",
+            "height_path"
+          ],
+          "package_path": "discrete_grains_r5/asphalt/native4096/GeometryHeight.npy",
+          "sha256": "9c6ebba3a109088842a73434cea02069aa3a5a98e1b871a3f7b7b5e246de0c83"
+        },
+        {
+          "job_key_path": [
+            "fractured_boundary_ar",
+            "height_path"
+          ],
+          "package_path": "discrete_grains_r5/asphalt/native4096/GeometryHeight.npy",
+          "sha256": "9c6ebba3a109088842a73434cea02069aa3a5a98e1b871a3f7b7b5e246de0c83"
+        },
+        {
+          "job_key_path": [
+            "road_film_ownership_al",
+            "fields_path"
+          ],
+          "package_path": "road_scene_r6/checkpoint_inputs_al/runoff_film_z_fields.npz",
+          "sha256": "bdd8176d29209c21d97aab02c44743ab6b2ff2a9f4f25989513f1dd5636400d2"
+        }
+      ],
+      "name": "av_integrated_road_outer_view",
+      "optional_output_relocations": [
+        [
+          "assembled_scene_cache_av",
+          "path"
+        ],
+        [
+          "assembled_scene_cache_av",
+          "allowed_directory"
+        ]
+      ],
+      "pipeline_files_sha256": {
+        "approved_density_lod.py": "e436859c4658c269d68ce041299b0152595d7dfdd7e56ed472420fdf3c1dc658",
+        "assemble_graded_shoulder_ah.py": "c4306da264ce55f94edb3b5d9808aaae24ff66fd573a5ba3d36953fd8fedfc15",
+        "assemble_metric_fragments_as.py": "8565563d7a51e89e11e02903bdc1fec9ef76298c08e62581f185e57d9b371630",
+        "assemble_pavement_contact_ac.py": "e63a5951ac6ae51d9ff1dc9977cb5e22b7e18e7a53cce8a1cd1de72a3d2267c5",
+        "assemble_raveled_edge_aa.py": "eb088b9104f8fb290d10d06412d5de3a687e85aed6d4be402184eca558a8cdd7",
+        "assemble_road_margin_aq.py": "cf8022b952bb5b1afbda25fe0c5314551268c1527b630e4feae0daecff8ba7eb",
+        "assemble_sediment_surface_ai.py": "8318548a0cd79e7d432d387bfe65bf2a1175a68a90709108b8ac5bc961ad60c5",
+        "assemble_visible_shoulder_ad.py": "14beaa67d7c2e7c887bee5d2a2643889a43abd52b8199522d7f1d755838e8577",
+        "assembled_scene_cache_av.py": "8fb34eddec378e93105401696aa8df26dc6c976661279114c69e708867d294b0",
+        "bounded_clean_run.py": "7d5421644f0188178ee29f4a732b4d5a608564de82b29cc47516b27794a486fe",
+        "capture_modes.py": "c3d1ff01c580a8f63f1fe3658697ec711525f2e8032a82e2fb008c8f8339bbf8",
+        "clean_receipt.py": "0746b04f053fdc7a9b0df1805961e5ae6ee5051d992784ed715e361d0d80d8de",
+        "clean_render.sh": "f02ed38052ecb82a1a90b6d16ea70776b03e0cb864f3d2952dc2970864a7c264",
+        "component_image_bridge.py": "74dca31a6739ef5b666ec4437d77297f138dc5bd8f63280c9d2cea8acfe74047",
+        "component_receipt.py": "5327a00bc7d9c2bc414fb6529ed7c4ccadd539ad96f69858c10f3bfd44796c35",
+        "contact_bank_continuity_al.py": "81f388656370db1a1281ad4b852a49efbc82c73818aa97b9cdbca63c7da61169",
+        "contact_triangle_clearance_al.py": "d57a3abdee8683aad22d5aec41d137dd6b9dae79626bcf74fc0ec3dc166b5e81",
+        "context_field_cache_ad.py": "f5b32357db8ee427b7c4fe603df1ca07688a13c07f186d51b31db72619e6dc98",
+        "context_mesh_refine_ab.py": "822366ed13e38914197f1316bab9b6433a0ba1b1485d66c2fa6aa13889060bf7",
+        "continuous_contact_aq.py": "777e4456774d77351ece52767b8a247a58eb88485a7edaa1215a829fa491dde7",
+        "current_contact_film_aq.py": "24ecd8bc9d654e85b64161368dffb1fed7bf4604f4576acb13c90162cb37393e",
+        "desert_scrub.py": "8f5840a371422effcf243dfb284f57241b219262386a1d7dc3b594264b1b2172",
+        "edge_ravel_field_aa.py": "50191ccb00336ee6a2b5da1bacf33035a885afc7c9b1eaf31a4d341387a56a36",
+        "flow_sediment_model_ao.py": "cbd4689b5be9faa988ccc2de7eef50f40828bad4ebf2233f70739209bfd517c8",
+        "flow_sediment_model_z.py": "00e1bd4d9e898eb6d2bca71fb8c3e7cf35a9fea7019f00d0559347efcede73e8",
+        "flow_transport_ae.py": "8077352d35f4b717e962a022f9cda3f5f38b87c7d341a25618d4645fb61e602f",
+        "fractured_boundary_ar.py": "2537e0b7b412baaf6c42673ab690314c5e78df47bea86c7769a6b60105477d98",
+        "graded_shoulder_foundation_ah.py": "e531b13f0e497ef6776493a8b53a6b3c103ed59d2f5cb74425fe02631b15e641",
+        "graded_shoulder_foundation_at.py": "94650bd9acc714c9bae2656c7b9a46bf2c5c92240c0251e75f3a4e45bb428958",
+        "integrate_fracture_ar.py": "554fe47311acf37836b58d476cdbe7843114b5ed506e4f1497c9d0d7e26db74b",
+        "layered_scrub_ap.py": "2e3b78bac8cbb8d5947dad0abb89d941aef22747b197c99ce8eeaeb1697a3e82",
+        "metric_edge_strip_aa.py": "ff93f29b6da102ad74aba5ff2f7abfa1f015612e5e10c3d29a3ad2fa5be753db",
+        "metric_margin_fragments_as.py": "3355ff85ed9381e3a878603dd7da929114db5228f950f089eb87d53b8ec7539b",
+        "metric_margin_fragments_as_fractured_candidate.py": "acab79b9c8e8c267f8af139cc6d9af06a88cd43b4750f01279d7bb610c17ee7a",
+        "oidn_contract.py": "c50d803b0d500905b03d8ccc24512e769d100b434dad96891d657986f8be5094",
+        "oidn_image_bridge.py": "7d88792da6c53a47e3aacafa2b7a222f844ce458afa7b535f081faf9c5732bf6",
+        "pavement_contact_ac.py": "311d5797851901edfa170238c8ba77e69fff9e4bfc3c30dba7b7ca2bbf4cd79b",
+        "png_precision_check.py": "fec3e732a7185e2ef5485af2f6db3963a151d6867e48c59c036509bfdad77f20",
+        "prepare_physical_lenses.py": "3d9dbd29990807a632632233343d32a2eef62676305404934716cf087b7b861b",
+        "preview_mesh_cull.py": "c3d9793f03caababc6894b4e49e64d1f37a741b912a1ee8ebdeb7f55e145e0f5",
+        "raw_receipt.py": "af411eed5c7eb1855e6abc81838bab0a1ed1defeb2446094bb837017c266ec5d",
+        "refined_film_event_an.py": "3acf2dcba1179e003dd226e3f963f10d20f40a8a16af309e28da87c766c69930",
+        "refresh_view_grains_au.py": "49e5ec3fd0d14c2078ad5b15ff1264787fc3f3b970a63c9a21fb8e5eb6bcc6ec",
+        "render.py": "d31c258d5a83fbc56e4c6871b18b82804b68f121f29ed63bd840e0c52f85db29",
+        "render.sh": "9ce9dc545650392dce69c9709c8acff188db95eec13c34b647c5e13be6e2688a",
+        "resource_contract.py": "a5d0a12482fcc48e06fa2680a879e0646e30fa580fe1abbdbff730f484324d8c",
+        "road_film_ownership_al.py": "f34b7a7a45b5a1881851c7085b9b387e3284c454487cabff7446a6bb3f4feed5",
+        "road_film_shader_z.py": "411aee9eebad6ca18388bbba1ade22e83670ba4dcae768c3884688d846f44bf4",
+        "road_margin_composition_ap.py": "5567fdc085f346310625ba25c75c29f82bfc801fff52e00ae4f76c424e87ae95",
+        "runoff_edge_support_ai.py": "f9b397f7637990aad99b732df5ce7ae7090a1aaa4df26bb2a1642baf1fc51c33",
+        "sample_final_surface_an.py": "02c719fae92f3b2c485445d5bc5e8609884829140be6651812c8bae8b2df271b",
+        "sediment_surface_ai.py": "5370552c85726932b7680f9c5ae235b9e0c3870d981fd67bf82b25ff046a0aca",
+        "soil_rim_bridge_ar.py": "9d318d793fc47338e2e984f063a869b59c643ba7fe291ad5fbd14b5c33e4f42e",
+        "substrate_history_ak.py": "92756fa0fb60be121b15cfce48712efc7f4f331b724cf88226a6db2870edb868",
+        "terrain_normal_transfer_ah.py": "baaad3c0dbb8186aa40f9adcb841999573db27eb2f1c37d4d161f7a783849e3f",
+        "transport_components.py": "9232c7679b68c763273ebc51aa78296ae67a0a6891b71ef713f461e9d86816d4",
+        "transported_grain_exposure.py": "0834619932c753f6335dd7c7883a7d1c0ff39ea23246ea12be0ab87f79a22c10",
+        "verify_pipeline_snapshot.py": "6ffcdffc991dc7b9cb345645bb919d82da6f221c1f0138e485b886f7099b9d1b",
+        "visible_shoulder_flow_ad.py": "64a90e7d98bc9577bde96c5c43a747c4e091d5585e5a8f2af3b413ea12628ebc"
+      },
+      "pipeline_sha256": "5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86",
+      "role": "av_outward",
+      "settings": {
+        "asphalt_preview_grid_stride": 2,
+        "asphalt_preview_map_size": 1024,
+        "assembled_scene_cache_av": {
+          "allowed_directory": "OUTPUT_CAPTURE",
+          "estimated_max_bytes": 838860800,
+          "path": "OUTPUT_CAPTURE/ASSEMBLED_SCENE_AV.blend",
+          "reserve_bytes": 125829120
+        },
+        "camera_cull_margin": 0.12,
+        "camera_cull_prefixes": [
+          "Original asphalt native tile "
+        ],
+        "camera_location": [
+          -5.12,
+          2.0,
+          0.4
+        ],
+        "camera_target": [
+          -3.6,
+          8.5,
+          0.1
+        ],
+        "capture_mode": "guided",
+        "color_depth": 16,
+        "compact_bvh": true,
+        "contact_bank_continuity_al": {
+          "enabled": true
+        },
+        "continuous_contact_aq": {
+          "enabled": true
+        },
+        "current_contact_film_aq": {
+          "enabled": true
+        },
+        "dither_intensity": 0,
+        "engine": "CYCLES",
+        "fractured_boundary_ar": {
+          "height_path": "discrete_grains_r5/asphalt/native4096/GeometryHeight.npy"
+        },
+        "graded_shoulder_ah": {
+          "bounds_m": [
+            -6.2,
+            -3.25,
+            -0.6,
+            8.2
+          ],
+          "foundation_revision": "AT",
+          "historical_substrate": true
+        },
+        "height": 667,
+        "lens": 26,
+        "light_tree": false,
+        "metric_fragments_as": {
+          "additional_views": [
+            {
+              "camera_location": [
+                -3.97,
+                -0.8,
+                0.35
+              ],
+              "camera_target": [
+                -0.5,
+                7,
+                -0.03
+              ],
+              "height": 667,
+              "lens": 26,
+              "width": 1000
+            }
+          ],
+          "camera_location": [
+            -5.12,
+            2.0,
+            0.4
+          ],
+          "camera_target": [
+            -3.6,
+            8.5,
+            0.1
+          ],
+          "enabled": true,
+          "geometry_revision": "fractured_candidate",
+          "lens": 26,
+          "projection_height": 667,
+          "projection_width": 1000
+        },
+        "pavement_contact_ac": {
+          "height_path": "discrete_grains_r5/asphalt/native4096/GeometryHeight.npy",
+          "runoff_support": true
+        },
+        "preview_cull_terrain_faces": true,
+        "refresh_view_grains_au": {
+          "additional_views": [
+            {
+              "camera_location": [
+                -3.97,
+                -0.8,
+                0.35
+              ],
+              "camera_target": [
+                -0.5,
+                7,
+                -0.03
+              ],
+              "height": 667,
+              "lens": 26,
+              "width": 1000
+            }
+          ],
+          "camera_location": [
+            -5.12,
+            2.0,
+            0.4
+          ],
+          "camera_target": [
+            -3.6,
+            8.5,
+            0.1
+          ],
+          "height": 667,
+          "lens": 26,
+          "max_instances": 294363,
+          "width": 1000
+        },
+        "release_unused_heap": true,
+        "road_film_ownership_al": {
+          "fields_path": "road_scene_r6/checkpoint_inputs_al/runoff_film_z_fields.npz"
+        },
+        "road_margin_aq": {
+          "enabled": true
+        },
+        "rss_cap_mib": 4480,
+        "samples": 24,
+        "save_guides": true,
+        "sediment_surface_ai": {
+          "enabled": true,
+          "include_net_eroded_retained": true,
+          "include_substrate_history": true
+        },
+        "sync_limit_seconds": 1400,
+        "terrain_cull_margin": 0.2,
+        "time_limit_seconds": 1500,
+        "use_adaptive_sampling": false,
+        "view_scope": "Combined candidate: proved AR fractured edge, AT graded foundation, revised unapproved coarse bodies, AU approved source-scale grain allocation for this outward and original whole-road view. Same outward camera/daylight; preview mip/cull limitations remain.",
+        "width": 1000
+      },
+      "status": "Combined progress candidate; no whole-scene acceptance",
+      "support_source_provenance": {
+        "bounded_clean_run.py": {
+          "included_in_render_manifest": false,
+          "role": "Exact bounded launch support; AV watchdog propagates recorded resource failure as process exit",
+          "sha256": "7d5421644f0188178ee29f4a732b4d5a608564de82b29cc47516b27794a486fe"
+        },
+        "resource_contract.py": {
+          "included_in_render_manifest": false,
+          "role": "Exact bounded launch support; AV watchdog propagates recorded resource failure as process exit",
+          "sha256": "a5d0a12482fcc48e06fa2680a879e0646e30fa580fe1abbdbff730f484324d8c"
+        }
+      },
+      "vegetation_helper_names": [
+        "layered_scrub_ap.py",
+        "desert_scrub.py"
+      ]
+    }
+  ],
+  "default_selection": "Current AV outward assembly replay only",
+  "immutable_numerical_inputs": [
+    {
+      "bytes": 2093642,
+      "package_path": "road_scene_r6/checkpoint_inputs_al/runoff_film_z_fields.npz",
+      "sha256": "bdd8176d29209c21d97aab02c44743ab6b2ff2a9f4f25989513f1dd5636400d2"
+    }
+  ],
+  "schema_version": 6,
+  "source_admission": {
+    "files_sha256": {
+      "road_scene_r6/receipts/z_semantic_source_guard_ah.json": "1ae290ca919b23b6426845bb59bf208fe144de161a516e13fbfbd1ee5bcb947f",
+      "road_scene_r6/src/prepare_physical_lenses.py": "3d9dbd29990807a632632233343d32a2eef62676305404934716cf087b7b861b",
+      "road_scene_r6/src/semantic_scene_guard_z.py": "193fb74be1acf7cdd5ff4ab60da0b78b7ed22034f33a0f78b6f804b507b85fa1"
+    },
+    "helper_path": "road_scene_r6/src/semantic_scene_guard_z.py",
+    "historical_source_sha256": "29a2e1ca28867182554594981482e704ccbc97d9fb2806b48bc0c06f8375231a",
+    "manifest_path": "road_scene_r6/receipts/z_semantic_source_guard_ah.json"
+  }
+}

@@ -1,0 +1,470 @@
+{
+  "blender_version": "4.3.2",
+  "seed": 260910,
+  "validation": "Passed geometry, dimensions, linked-instance visibility, material indices, deterministic build and no image imports",
+  "rendered": false,
+  "build_and_validation_seconds": 0.924,
+  "total_vertices": 139306,
+  "total_triangles": 179672,
+  "variants": [
+    {
+      "name": "Mojave prototype / Olive spreading A",
+      "family": "olive_open_scrub",
+      "vertices": 13646,
+      "polygons": 13113,
+      "triangles": 16704,
+      "leaves": 1208,
+      "branches": 231,
+      "blades": 0,
+      "bounds_min_m": [
+        -0.3578527569770813,
+        -0.4657055735588074,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.32153427600860596,
+        0.400749146938324,
+        0.4699999988079071
+      ],
+      "dimensions_m": [
+        0.6793870329856873,
+        0.8664547204971313,
+        0.4699999988079071
+      ],
+      "vertex_sha256": "f58623e860ccb4d9cf348de1be6a987285ec6c59f68d09aba1d206342b211df7",
+      "geometry_valid": true
+    },
+    {
+      "name": "Mojave prototype / Olive spreading B",
+      "family": "olive_open_scrub",
+      "vertices": 14181,
+      "polygons": 13565,
+      "triangles": 17694,
+      "leaves": 1199,
+      "branches": 269,
+      "blades": 0,
+      "bounds_min_m": [
+        -0.4197695255279541,
+        -0.34318339824676514,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.41537123918533325,
+        0.41841229796409607,
+        0.6399999856948853
+      ],
+      "dimensions_m": [
+        0.8351407647132874,
+        0.7615956962108612,
+        0.6399999856948853
+      ],
+      "vertex_sha256": "ac685c82d1caa1049bdf1aee88b8ab370545c8259bf0609a1d94fdefcb18f157",
+      "geometry_valid": true
+    },
+    {
+      "name": "Mojave prototype / Olive upright A",
+      "family": "olive_open_scrub",
+      "vertices": 16295,
+      "polygons": 15624,
+      "triangles": 20166,
+      "leaves": 1406,
+      "branches": 294,
+      "blades": 0,
+      "bounds_min_m": [
+        -0.453275591135025,
+        -0.38651949167251587,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.43198105692863464,
+        0.5007723569869995,
+        0.8399999737739563
+      ],
+      "dimensions_m": [
+        0.8852566480636597,
+        0.8872918486595154,
+        0.8399999737739563
+      ],
+      "vertex_sha256": "8091210eb0877dd749eb5b281f58981a5a9e61cec2340ed365c1654a61e67d32",
+      "geometry_valid": true
+    },
+    {
+      "name": "Mojave prototype / Olive upright B",
+      "family": "olive_open_scrub",
+      "vertices": 21753,
+      "polygons": 21013,
+      "triangles": 26002,
+      "leaves": 2028,
+      "branches": 320,
+      "blades": 0,
+      "bounds_min_m": [
+        -0.43539825081825256,
+        -0.39493802189826965,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.5779768824577332,
+        0.6706846356391907,
+        1.0800000429153442
+      ],
+      "dimensions_m": [
+        1.0133751332759857,
+        1.0656226575374603,
+        1.0800000429153442
+      ],
+      "vertex_sha256": "269c0a0740ffea5c9f3d43fd2e7735b82ee40dde03d704fa18dcbda1843d98e6",
+      "geometry_valid": true
+    },
+    {
+      "name": "Mojave prototype / Olive young open",
+      "family": "olive_open_scrub",
+      "vertices": 9458,
+      "polygons": 9059,
+      "triangles": 11728,
+      "leaves": 812,
+      "branches": 173,
+      "blades": 0,
+      "bounds_min_m": [
+        -0.18254250288009644,
+        -0.1896408647298813,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.1852356642484665,
+        0.2452736645936966,
+        0.3100000023841858
+      ],
+      "dimensions_m": [
+        0.3677781671285629,
+        0.4349145293235779,
+        0.3100000023841858
+      ],
+      "vertex_sha256": "692c01065e6c2bddd43d14d4668b914c87c89f2377d01def1ffbf8fdb84186ab",
+      "geometry_valid": true
+    },
+    {
+      "name": "Mojave prototype / Silver low A",
+      "family": "silver_low_scrub",
+      "vertices": 8682,
+      "polygons": 8161,
+      "triangles": 11676,
+      "leaves": 598,
+      "branches": 226,
+      "blades": 0,
+      "bounds_min_m": [
+        -0.29163968563079834,
+        -0.25277358293533325,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.28212958574295044,
+        0.24199523031711578,
+        0.33000001311302185
+      ],
+      "dimensions_m": [
+        0.5737692713737488,
+        0.49476881325244904,
+        0.33000001311302185
+      ],
+      "vertex_sha256": "98a59a3112700b44bc385d2ca6ffddb73950ff9089b5c83404c12ac39c0fdacc",
+      "geometry_valid": true
+    },
+    {
+      "name": "Mojave prototype / Silver low B",
+      "family": "silver_low_scrub",
+      "vertices": 9414,
+      "polygons": 8800,
+      "triangles": 12952,
+      "leaves": 601,
+      "branches": 267,
+      "blades": 0,
+      "bounds_min_m": [
+        -0.4215678870677948,
+        -0.3927152752876282,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.34717869758605957,
+        0.2770909070968628,
+        0.4399999976158142
+      ],
+      "dimensions_m": [
+        0.7687465846538544,
+        0.669806182384491,
+        0.4399999976158142
+      ],
+      "vertex_sha256": "650b282518b6981d0644607c8f4953840472ebc4b6fc0afd72527460a2158678",
+      "geometry_valid": true
+    },
+    {
+      "name": "Mojave prototype / Silver low asymmetric",
+      "family": "silver_low_scrub",
+      "vertices": 9744,
+      "polygons": 9076,
+      "triangles": 13584,
+      "leaves": 593,
+      "branches": 290,
+      "blades": 0,
+      "bounds_min_m": [
+        -0.40633198618888855,
+        -0.3734130859375,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.46919044852256775,
+        0.4404085576534271,
+        0.5799999833106995
+      ],
+      "dimensions_m": [
+        0.8755224347114563,
+        0.8138216435909271,
+        0.5799999833106995
+      ],
+      "vertex_sha256": "ac3f251d3ac84edbe7788fe0bfc987a338f1ada68277aa0ea19b7cac94e5f8d4",
+      "geometry_valid": true
+    },
+    {
+      "name": "Mojave prototype / Silver young low",
+      "family": "silver_low_scrub",
+      "vertices": 4995,
+      "polygons": 4596,
+      "triangles": 7286,
+      "leaves": 251,
+      "branches": 174,
+      "blades": 0,
+      "bounds_min_m": [
+        -0.140343576669693,
+        -0.16638247668743134,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.11841675639152527,
+        0.13705402612686157,
+        0.2199999988079071
+      ],
+      "dimensions_m": [
+        0.25876033306121826,
+        0.3034365028142929,
+        0.2199999988079071
+      ],
+      "vertex_sha256": "c554d05cb2fbb7ad2cff7df59e36345c038dbad6b9973d01c49cd15505b40a41",
+      "geometry_valid": true
+    },
+    {
+      "name": "Mojave prototype / Drought thinned spreading",
+      "family": "dry_open_scrub",
+      "vertices": 8306,
+      "polygons": 7799,
+      "triangles": 11184,
+      "leaves": 568,
+      "branches": 221,
+      "blades": 0,
+      "bounds_min_m": [
+        -0.2793315052986145,
+        -0.3580516576766968,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.3483597934246063,
+        0.3086102604866028,
+        0.41999998688697815
+      ],
+      "dimensions_m": [
+        0.6276912987232208,
+        0.6666619181632996,
+        0.41999998688697815
+      ],
+      "vertex_sha256": "e815b23e25735ffa01290f4efe4047bbc03149e0a2fc2398c376ad0bcfab7c62",
+      "geometry_valid": true
+    },
+    {
+      "name": "Mojave prototype / Drought thinned upright",
+      "family": "dry_open_scrub",
+      "vertices": 10010,
+      "polygons": 9369,
+      "triangles": 13620,
+      "leaves": 660,
+      "branches": 280,
+      "blades": 0,
+      "bounds_min_m": [
+        -0.3066900074481964,
+        -0.4442351162433624,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.4979759752750397,
+        0.4145740866661072,
+        0.7200000286102295
+      ],
+      "dimensions_m": [
+        0.8046659827232361,
+        0.8588092029094696,
+        0.7200000286102295
+      ],
+      "vertex_sha256": "d1400c6324d2356fe058288a726c2bb4ad7da59c14550a604c664bbf7d71b5da",
+      "geometry_valid": true
+    },
+    {
+      "name": "Mojave prototype / Low weathered skeleton",
+      "family": "dry_open_scrub",
+      "vertices": 4562,
+      "polygons": 4110,
+      "triangles": 7108,
+      "leaves": 153,
+      "branches": 198,
+      "blades": 0,
+      "bounds_min_m": [
+        -0.21033301949501038,
+        -0.23338493704795837,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.2725771963596344,
+        0.2564253509044647,
+        0.28999999165534973
+      ],
+      "dimensions_m": [
+        0.4829102158546448,
+        0.4898102879524231,
+        0.28999999165534973
+      ],
+      "vertex_sha256": "93eab4192e2e95339c741e9b95dc63d6c9d204b84c6f405087e20e8ca5a6adb3",
+      "geometry_valid": true
+    },
+    {
+      "name": "Mojave prototype / Fine upright straw",
+      "family": "upright_bunchgrass",
+      "vertices": 1838,
+      "polygons": 1391,
+      "triangles": 2232,
+      "leaves": 55,
+      "branches": 67,
+      "blades": 46,
+      "bounds_min_m": [
+        -0.04991168528795242,
+        -0.11860018968582153,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.1521327793598175,
+        0.06877126544713974,
+        0.38999998569488525
+      ],
+      "dimensions_m": [
+        0.20204446464776993,
+        0.18737145513296127,
+        0.38999998569488525
+      ],
+      "vertex_sha256": "a09fbf095ab7e1e4c5a4281e19afd1c6e122a592f897cc7401ccae6213478bbd",
+      "geometry_valid": true
+    },
+    {
+      "name": "Mojave prototype / Dry arching bunch",
+      "family": "arching_bunchgrass",
+      "vertices": 1732,
+      "polygons": 1306,
+      "triangles": 2112,
+      "leaves": 50,
+      "branches": 62,
+      "blades": 44,
+      "bounds_min_m": [
+        -0.15092909336090088,
+        -0.19081467390060425,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.15827013552188873,
+        0.14693868160247803,
+        0.2800000011920929
+      ],
+      "dimensions_m": [
+        0.3091992288827896,
+        0.3377533555030823,
+        0.2800000011920929
+      ],
+      "vertex_sha256": "4fe42b7e806a1d2c728c56c6b6be2fb341e016f88fa6a8bc09dcf99fc2f2b281",
+      "geometry_valid": true
+    },
+    {
+      "name": "Mojave prototype / Tall open seed grass",
+      "family": "upright_bunchgrass",
+      "vertices": 1822,
+      "polygons": 1304,
+      "triangles": 2168,
+      "leaves": 44,
+      "branches": 53,
+      "blades": 57,
+      "bounds_min_m": [
+        -0.0812816321849823,
+        -0.12155964970588684,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.1549905687570572,
+        0.11071019619703293,
+        0.4699999988079071
+      ],
+      "dimensions_m": [
+        0.2362722009420395,
+        0.23226984590291977,
+        0.4699999988079071
+      ],
+      "vertex_sha256": "1ca3a6da92184798a35f3bf1839af19ef0a6070b4bbe1605164283d16d8adf78",
+      "geometry_valid": true
+    },
+    {
+      "name": "Mojave prototype / Low dry stubble",
+      "family": "sparse_stubble",
+      "vertices": 930,
+      "polygons": 699,
+      "triangles": 1128,
+      "leaves": 27,
+      "branches": 33,
+      "blades": 24,
+      "bounds_min_m": [
+        -0.07657524198293686,
+        -0.0870884358882904,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.07316099852323532,
+        0.10776641219854355,
+        0.14000000059604645
+      ],
+      "dimensions_m": [
+        0.14973624050617218,
+        0.19485484808683395,
+        0.14000000059604645
+      ],
+      "vertex_sha256": "cd61b6cf21e73d8bc54f9b211b36f458693ed032aa70362e8ff945af6efe6987",
+      "geometry_valid": true
+    },
+    {
+      "name": "Mojave prototype / Wind-bent bunch",
+      "family": "arching_bunchgrass",
+      "vertices": 1938,
+      "polygons": 1424,
+      "triangles": 2328,
+      "leaves": 52,
+      "branches": 63,
+      "blades": 55,
+      "bounds_min_m": [
+        -0.11364006251096725,
+        -0.1717754453420639,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.15303343534469604,
+        0.10757393389940262,
+        0.23000000417232513
+      ],
+      "dimensions_m": [
+        0.2666734978556633,
+        0.2793493792414665,
+        0.23000000417232513
+      ],
+      "vertex_sha256": "6b7dad1a43b7ed8f8566cbad0c88bb60a38118122a013b408e7534e8a9ea37be",
+      "geometry_valid": true
+    }
+  ]
+}

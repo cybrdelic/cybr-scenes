@@ -1,0 +1,11 @@
+{
+  "asphalt_model": "Original dense packed-grain asphalt",
+  "asphalt_tile_m": 0.25,
+  "asphalt_height_scale_m": 0.004,
+  "ground_source": "R5D discrete particle diagnostic",
+  "true_boundary": "Jagged physical asphalt mesh; no color, height or normal blending band",
+  "dust": "Shelter-linked thin coating and independently placed fine-grain meshes; no continuous raised dust ribbon",
+  "edge_grains": 629,
+  "crop_width_m": 0.14,
+  "qualification": "Road-edge integration diagnostic only, not a wide road scene"
+}

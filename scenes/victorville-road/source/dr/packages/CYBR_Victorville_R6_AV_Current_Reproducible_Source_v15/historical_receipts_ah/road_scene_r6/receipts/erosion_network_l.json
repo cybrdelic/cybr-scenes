@@ -1,0 +1,45 @@
+{
+  "source_scene_sha256": "6384ad0d6fc46d83a6793adadbd9f1bb84a19e6a0e74d996fd30687d95bc03e1",
+  "scene_sha256": "48aa973bfc6fbebeb27d8ff0c7096bcc4ee021fac4c3cc05d968796e333848fc",
+  "terrain_mesh_counts": [
+    [
+      "Graded shoulder and alluvial plain -1",
+      1211247,
+      1207800
+    ],
+    [
+      "Graded shoulder and alluvial plain 1",
+      1211247,
+      1207800
+    ]
+  ],
+  "local_longitudinal_mesh_spacing_m": 0.035,
+  "channel_width_m": [
+    0.15,
+    0.48
+  ],
+  "maximum_authored_incision_m": 0.074,
+  "extra_channel_gravel_bodies": 2829,
+  "rigid_body_counts_repositioned": [
+    [
+      "Sparse physical 7\u201331 mm roadside mineral lag",
+      78
+    ],
+    [
+      "Gravel lag pockets beside shallow runoff arms",
+      13516
+    ]
+  ],
+  "references": [
+    {
+      "url": "https://pubs.usgs.gov/of/2004/1007/fans.html",
+      "use": "Indexed USGS description of braided low corridors and desert-pavement islands; page 403 respected."
+    },
+    {
+      "url": "https://www.usgs.gov/media/images/lake-mead-incised-stream-channels-alluvial-fan-deposits",
+      "use": "Accessible USGS reference photo visually inspected in the cloud browser: distinct incised channels and irregular bank slope breaks; regional analogue, no measured scene scale."
+    }
+  ],
+  "limits": "Art-directed shallow dimensions, not measured Victorville site reconstruction. No image pixels or scan assets used.",
+  "CPU_threads": 2
+}

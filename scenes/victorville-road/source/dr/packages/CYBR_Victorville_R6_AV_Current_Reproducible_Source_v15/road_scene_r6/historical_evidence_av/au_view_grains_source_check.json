@@ -1,0 +1,28 @@
+{
+  "actual_pinned_scene_run_by_worker": false,
+  "blender_api_run": true,
+  "blender_api_scope": "Tiny factory-empty synthetic 64-bank transaction fixture only; no pinned source scene opened",
+  "existing_pipeline_or_modules_edited_by_worker": false,
+  "files": {
+    "src/REFRESH_VIEW_GRAINS_AU.md": "172e65654b4422ca4ba4c3b253aa25b862ebb90baa924a05348c73df61819c03",
+    "src/refresh_view_grains_au.py": "49e5ec3fd0d14c2078ad5b15ff1264787fc3f3b970a63c9a21fb8e5eb6bcc6ec",
+    "src/test_refresh_view_grains_au.py": "809463d2624b48d94fa143a06ead5d5c00a01f423c96d1685ad426773457c23c",
+    "src/test_refresh_view_grains_au_blender.py": "e3cd80b70064d68687e0551ca1d352dcbc3fb85dedb85bf3e8fd05791f216955"
+  },
+  "pure_tests_passed": 14,
+  "related_AI_surface_tests_passed": 6,
+  "rendered": false,
+  "review_findings_fixed": [
+    "Approved ORIGINS empty FACE sharp_face is skipped read-only; empty non-POINT U metadata is preserved on replacement",
+    "Pinned source largest rigid bank passes receipt-backed global caps, with explicit local pre-union caps"
+  ],
+  "scope": "Source-only AU implementation and bounded synthetic pure tests; no actual scene count or render claim",
+  "source_blend_written": false,
+  "test_log": "receipts/au_view_grains_pure_tests.log",
+  "tiny_API_fixture_CPU_affinity": [
+    0
+  ],
+  "tiny_API_fixture_peak_RSS_MiB": 233.40234375,
+  "tiny_API_fixture_resource_receipt": "receipts/au_view_grains_blender_resources_b.json",
+  "tiny_API_fixture_result": "receipts/au_view_grains_blender_fixture.json"
+}

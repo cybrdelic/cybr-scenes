@@ -1,0 +1,89 @@
+{
+  "scope": "DL candidate exact finite layer, evaluated field inputs and additive source. Full preceding scene dependencies required.",
+  "files": {
+    "apply_static_layer.py": {
+      "sha256": "27d7832953ae02d3bc4fe09b5b49ec2e2060ff0664863397949121b7c67f3d51",
+      "bytes": 7311
+    },
+    "STATIC_FINE_LAYER.npz": {
+      "sha256": "c989d4ea7799f69b872504460055cb18529bc12d3128ee0774b8085a90bb492f",
+      "bytes": 8381743
+    },
+    "STATIC_FINE_LAYER.json": {
+      "sha256": "865c881d47126d4dfb51c928a042bf6e90c922ebbfb8e80be81ed0c21ed9a447",
+      "bytes": 2381
+    },
+    "CURRENT_EVALUATED_FIELDS.npz": {
+      "sha256": "1ca08b984edb665aa3731369eb1c554cf4b4dacce060eb86a4e28ffbe3000542",
+      "bytes": 6528432
+    },
+    "CURRENT_FIELDS_PROVENANCE.json": {
+      "sha256": "1d9cb7663b815b040d6fb09e19a08bda6036970d8467ff2d371cdf0c96686dac",
+      "bytes": 1334
+    },
+    "ACTUAL_CLOSE_COMPARISON.json": {
+      "sha256": "a19effc7546bcf12e42a8e55505d1b73af70491d8ebfcefad77dc0d6647369d9",
+      "bytes": 748
+    },
+    "ACTUAL_CROP_REVIEW.json": {
+      "sha256": "91135e030caff1205ef8b6ff029657a3007dcb84cc82a348459c2a56439d8dc7",
+      "bytes": 472
+    },
+    "GRADING_COUPLING_SOURCE_AUDIT.md": {
+      "sha256": "68692c64e3ff2e535752d4a7bb508d74f6f4f4464e8fa7a26640c92d56401d67",
+      "bytes": 7376
+    },
+    "GRADING_COUPLING_SOURCE_AUDIT.json": {
+      "sha256": "eebbff53e9329992b93cdb7a628f216ca45c823e281193f61aab16bb126f0851",
+      "bytes": 6891
+    },
+    "regenerate_layer.py": {
+      "sha256": "a12c9bcef4b8977b3d94fe5fa809ee2922bbf452bf91e33a84006ee03bd9f521",
+      "bytes": 4843
+    },
+    "prepare_scene.py": {
+      "sha256": "1aea958d9a25d977c102cae4bdc566e12c5706d8738be50f948cc2e4e5fd1eec",
+      "bytes": 2166
+    },
+    "README.md": {
+      "sha256": "d8a6219e71d1fe60d135c967abfd038ac16fee3463e4f8585d9fe89b9348b2a2",
+      "bytes": 3421
+    },
+    "REPLAY_RECEIPT.json": {
+      "sha256": "2547318f24bb291d57f9d62948e2399a4541aaf406135e075bc3b648fbf2a9ea",
+      "bytes": 952
+    },
+    "WHOLE_STAGE_ORDER_CORRECTION.json": {
+      "sha256": "74989b961490b8e8c022dbb54c529bb0674c71aed0a8c879c3458a51f903bc57",
+      "bytes": 431
+    },
+    "DOMAIN_LIMITATION.md": {
+      "sha256": "e9ade1c995332981cb01699ae9f5753b09384b0eff3b3901b7c13e383e4c55d8",
+      "bytes": 517
+    },
+    "proof/WHOLE_RESOURCE_RECEIPT.json": {
+      "sha256": "9b272add15ecf7b581bdff1975df2e80074bae39a52e29f3b3e3ffea72e0e038",
+      "bytes": 344
+    },
+    "proof/CLOSE_RESOURCE_RECEIPT.json": {
+      "sha256": "98dead0582c3c3fb9790b2ae4e68443ae299a12f1427e16b365fb45755a750b5",
+      "bytes": 349
+    },
+    "proof/WHOLE_VIEW_COMPARISON.json": {
+      "sha256": "009bbad56b313ac5e8cbce2755dbc7717c4bb0321bb57272c6277ce6d9d49b4e",
+      "bytes": 1239
+    },
+    "proof/STATIC_FINE_SUPPORT_DL.json": {
+      "sha256": "2772d70df340e7182062ac82f22da91c66c7a8231cd48ff17da8699e0a3c2434",
+      "bytes": 16532
+    },
+    "proof/WHOLE_NATIVE_PNG_RECEIPT.json": {
+      "sha256": "7a0be73b4409217b8b8733a5fcca7864f1da38358b790de6fff6702c6c04f4b4",
+      "bytes": 478
+    },
+    "WHOLE_VISUAL_REVIEW.md": {
+      "sha256": "b77ff1fe550a2476b72db71fd9d314d6dd1966d7b109f15b4f2797e3e70eb2f7",
+      "bytes": 787
+    }
+  }
+}

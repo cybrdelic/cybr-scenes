@@ -1,0 +1,20 @@
+{
+  "command": [
+    "blender",
+    "-b",
+    "-t",
+    "2",
+    "--python-exit-code",
+    "1",
+    "--python",
+    "src/qualify_daylight_co.py"
+  ],
+  "exit_code": 0,
+  "stop_reason": null,
+  "peak_process_tree_RSS_MiB": 568.109375,
+  "kernel_max_child_RSS_MiB": 567.9296875,
+  "RSS_cap_MiB": 850.0,
+  "elapsed_seconds": 5.966750780993607,
+  "resource_contract_passed": true,
+  "rendered": false
+}

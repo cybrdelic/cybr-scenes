@@ -1,0 +1,45 @@
+{
+  "bank_file_sha256": "8ad5c6795e064aa15bfc111d0693397c653ed8835fc153977bc27a2157c1b7cc",
+  "numpy": "2.3.5",
+  "bank_count": 64,
+  "source_counts": [
+    [
+      "chips",
+      297,
+      0.0016,
+      0.0058
+    ],
+    [
+      "grit",
+      8859,
+      0.0006,
+      0.0019
+    ],
+    [
+      "sand",
+      64577,
+      0.00016,
+      0.00064
+    ]
+  ],
+  "conservative_original_packing_fraction": 0.35925725,
+  "exact_builder_RNG_stream": true,
+  "watertight_all": true,
+  "actual_horizontal_diameter_mm": [
+    0.1588969535321801,
+    0.2627916016710533,
+    0.6414299983497143
+  ],
+  "nominal_class_range_mm": [
+    0.16,
+    0.64
+  ],
+  "volume_m3_range": [
+    1.7774232882312056e-13,
+    3.62251127246982e-11
+  ],
+  "limitations": [
+    "Independent source regeneration, not bytecomparison to original approved Blend mesh; deterministic source stream counts and source hash checked.",
+    "Original bank geometry includes aspect/lean, so actual XY diameter is reported separately from nominal recipe size."
+  ]
+}

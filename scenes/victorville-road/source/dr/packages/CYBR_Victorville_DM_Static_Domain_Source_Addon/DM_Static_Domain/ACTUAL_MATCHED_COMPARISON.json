@@ -1,0 +1,31 @@
+{
+  "baseline_sha256": "44149bed790293d144c0e5747fc1e23c1140e1051dedf1aa517d2667066b6d46",
+  "candidate_sha256": "6c9b380ebe28d098c2155367d56d9ab1cb3cb1918990394849cea889c1d0e3f7",
+  "same_source_grain_id_xy_yaw_and_before_support": true,
+  "fine_sand_bank_unchanged": true,
+  "terrain_unchanged": true,
+  "changed_job_keys": [
+    "output",
+    "static_fine_layer_dl",
+    "view_scope"
+  ],
+  "whole_dimensions": [
+    2000,
+    1334
+  ],
+  "samples": 32,
+  "comparison_native_crop_box_ltrb": [
+    150,
+    600,
+    1250,
+    1050
+  ],
+  "native_crop_box_xywh": [
+    720,
+    760,
+    1000,
+    574
+  ],
+  "interpretation": "Original cap total fixed; authored static geographic reassignment. No newly simulated transport.",
+  "cache_attempt": "Earlier wider cached crop hit own4480MiB guard before rendering; actual image uses established full-source path."
+}

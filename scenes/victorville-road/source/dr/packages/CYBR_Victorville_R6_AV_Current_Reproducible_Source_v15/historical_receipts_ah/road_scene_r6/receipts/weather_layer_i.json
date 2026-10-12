@@ -1,0 +1,9 @@
+{
+  "source_scene_sha256": "789680677d90adf1d75bc4ba49b4678457cf41ad2cdea6b2ac89a2e06fc10971",
+  "scene_sha256": "e948d74f1f470ff80e5b8b1f1394f4dff0bfa7e9eeb488c0536f65bb8ed838a2",
+  "changes": "Thin linked fines/aged binder, metric aggregate normals beneath markings, crisp paint losses, and a 0\u201355 mm contact-bank extension only where soil already covers the edge. Original material map bytes unchanged.",
+  "contact_vertices_adjusted": 2074,
+  "free_dust_sheets_removed": 140,
+  "deposit_representation": "Bounded thickness coverage on original road tessellation; exact shared-surface contact, no second geometry sheet",
+  "threads": 2
+}

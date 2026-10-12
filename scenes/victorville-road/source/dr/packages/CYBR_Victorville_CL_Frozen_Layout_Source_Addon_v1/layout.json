@@ -1,0 +1,2660 @@
+{
+  "revision": 1,
+  "source_placement_report_sha256": "248a234de9210b93399125a10b89c16cdb89a2ea7c41e39702ab235fcaa70798",
+  "workshop_source_sha256": "d4ec3b85500e21dcb2fcbc622b44bc7af453e47f38f977a42b3d17dde4715afb",
+  "original_palette": [
+    "Mojave scrub / weathered stem",
+    "Mojave scrub / fine grey twig",
+    "Mojave scrub / sun-bleached dead wood",
+    "Mojave scrub / olive leaf shadow",
+    "Mojave scrub / olive leaf dusty",
+    "Mojave scrub / olive leaf warm",
+    "Mojave scrub / sage leaf shadow",
+    "Mojave scrub / sage leaf silver",
+    "Mojave scrub / sage leaf warm",
+    "Mojave scrub / senescent leaf",
+    "Mojave scrub / dry grass dark",
+    "Mojave scrub / dry grass straw",
+    "Mojave scrub / dry grass bleached",
+    "Mojave scrub / grass basal muted"
+  ],
+  "hidden_names": [
+    "Sparse dry straw tufts.041",
+    "Sparse dry straw tufts.054",
+    "Sparse dry straw tufts.060",
+    "Sparse dry straw tufts.063",
+    "Sparse dry straw tufts.066",
+    "Sparse dry straw tufts.094",
+    "Sparse dry straw tufts.097",
+    "Sparse dry straw tufts.136",
+    "Sparse dry straw tufts.144",
+    "Sparse dry straw tufts.153",
+    "Sparse dry straw tufts.171",
+    "Sparse dry straw tufts.209",
+    "Sparse dry straw tufts.221",
+    "Sparse dry straw tufts.235",
+    "Sparse dry straw tufts.251",
+    "Sparse dry straw tufts.304",
+    "Sparse dry straw tufts.329",
+    "Sparse dry straw tufts.344",
+    "Sparse dry straw tufts.348",
+    "Sparse dry straw tufts.405",
+    "Sparse dry straw tufts.414",
+    "Scrub group / sediment wetting pocket.138",
+    "Scrub group / sediment wetting pocket.139",
+    "Scrub group / sediment wetting pocket.184",
+    "Scrub group / sediment wetting pocket.279",
+    "Scrub group / sediment wetting pocket.341",
+    "Scrub group / sediment wetting pocket.342",
+    "Scrub group / sediment wetting pocket.343",
+    "Scrub group / sediment wetting pocket.390",
+    "Scrub group / sediment wetting pocket.394",
+    "Scrub group / sediment wetting pocket.395",
+    "Scrub group / sediment wetting pocket.403",
+    "Scrub group / sediment wetting pocket.404",
+    "Scrub group / sediment wetting pocket.405",
+    "Scrub group / sediment wetting pocket.409",
+    "Scrub group / sediment wetting pocket.420",
+    "Scrub group / sediment wetting pocket.422",
+    "AP layered scrub / joint sediment pocket.087",
+    "AP layered scrub / joint sediment pocket.088",
+    "AP layered scrub / joint sediment pocket.089",
+    "AP layered scrub / joint sediment pocket.090",
+    "AP layered scrub / joint sediment pocket.091",
+    "AP layered scrub / joint sediment pocket.092",
+    "AP layered scrub / joint sediment pocket.093",
+    "AP layered scrub / joint sediment pocket.140",
+    "AP layered scrub / joint sediment pocket.141",
+    "AP layered scrub / joint sediment pocket.142",
+    "AP layered scrub / joint sediment pocket.143",
+    "AP layered scrub / joint sediment pocket.144",
+    "AP layered scrub / joint sediment pocket.145",
+    "AP layered scrub / joint sediment pocket.146",
+    "AP layered scrub / joint sediment pocket.161",
+    "AP layered scrub / joint sediment pocket.162",
+    "AP layered scrub / joint sediment pocket.163",
+    "AP layered scrub / joint sediment pocket.164",
+    "AP layered scrub / joint sediment pocket.165",
+    "AP layered scrub / joint sediment pocket.166",
+    "AP layered scrub / joint sediment pocket.167",
+    "AP layered scrub / joint sediment pocket.199",
+    "AP layered scrub / joint sediment pocket.200",
+    "AP layered scrub / joint sediment pocket.202",
+    "AQ layered scrub / opposite shoulder pocket.006",
+    "AQ layered scrub / opposite shoulder pocket.007",
+    "AQ layered scrub / opposite shoulder pocket.008",
+    "AQ layered scrub / opposite shoulder pocket.009",
+    "AQ layered scrub / opposite shoulder pocket.010",
+    "AQ layered scrub / opposite shoulder pocket.011",
+    "AQ layered scrub / opposite shoulder pocket.012",
+    "AQ layered scrub / opposite shoulder pocket.013",
+    "AQ layered scrub / opposite shoulder pocket.014",
+    "AQ layered scrub / opposite shoulder pocket.019",
+    "AQ layered scrub / opposite shoulder pocket.021",
+    "AQ layered scrub / opposite shoulder pocket.022",
+    "AQ layered scrub / opposite shoulder pocket.027",
+    "AQ layered scrub / opposite shoulder pocket.029",
+    "AQ layered scrub / opposite shoulder pocket.031"
+  ],
+  "preserved_near_left_names": [
+    "AP layered scrub / joint sediment pocket.040",
+    "AP layered scrub / joint sediment pocket.041",
+    "AP layered scrub / joint sediment pocket.042",
+    "AP layered scrub / joint sediment pocket.043",
+    "AP layered scrub / joint sediment pocket.044",
+    "AP layered scrub / joint sediment pocket.045",
+    "AP layered scrub / joint sediment pocket.046",
+    "AP layered scrub / joint sediment pocket.175",
+    "AP layered scrub / joint sediment pocket.176",
+    "AP layered scrub / joint sediment pocket.177",
+    "AP layered scrub / joint sediment pocket.178",
+    "AP layered scrub / joint sediment pocket.179",
+    "AP layered scrub / joint sediment pocket.180",
+    "AP layered scrub / joint sediment pocket.181",
+    "AP layered scrub / joint sediment pocket.182",
+    "AP layered scrub / joint sediment pocket.183"
+  ],
+  "placements": [
+    {
+      "name": "CK pocket / Pale low broken crown",
+      "patch": 0,
+      "architecture": 0,
+      "root_m": [
+        -5.280780792236328,
+        7.380538463592529,
+        0.08410808444023132
+      ],
+      "yaw_rad": 3.0497076851764264,
+      "scale": 1.0114835433940363,
+      "height_m": 0.32314873424751234,
+      "basal_clearance_m": [
+        -0.02362264275030837,
+        -0.00300000708616166
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.001",
+      "patch": 0,
+      "architecture": 0,
+      "root_m": [
+        -5.532375812530518,
+        5.961129665374756,
+        0.06355398148298264
+      ],
+      "yaw_rad": 2.636309253945769,
+      "scale": 0.8228319797926316,
+      "height_m": 0.26287833796696775,
+      "basal_clearance_m": [
+        -0.022414410405020846,
+        -0.0030000009686514395
+      ]
+    },
+    {
+      "name": "CK pocket / Drought-thinned divided crown",
+      "patch": 0,
+      "architecture": 3,
+      "root_m": [
+        -4.901731967926025,
+        6.297119140625,
+        0.07295592129230499
+      ],
+      "yaw_rad": 0.0962964472372137,
+      "scale": 1.0980164993858945,
+      "height_m": 0.6675055914205681,
+      "basal_clearance_m": [
+        -0.03240599218200807,
+        -0.0029999999177052483
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.002",
+      "patch": 1,
+      "architecture": 0,
+      "root_m": [
+        -5.643980979919434,
+        12.509227752685547,
+        0.13489797711372375
+      ],
+      "yaw_rad": 4.3997513559167825,
+      "scale": 1.1113634843521831,
+      "height_m": 0.3550583750005778,
+      "basal_clearance_m": [
+        -0.02735989642820108,
+        -0.002999992949109187
+      ]
+    },
+    {
+      "name": "CK pocket / Narrow leaning live crown",
+      "patch": 1,
+      "architecture": 2,
+      "root_m": [
+        -7.036189079284668,
+        11.801024436950684,
+        0.11771732568740845
+      ],
+      "yaw_rad": 4.952504041861451,
+      "scale": 1.0152503276031797,
+      "height_m": 0.8730823768444936,
+      "basal_clearance_m": [
+        -0.021926019193047402,
+        -0.0029999912777953774
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.003",
+      "patch": 1,
+      "architecture": 0,
+      "root_m": [
+        -5.772430419921875,
+        11.862035751342773,
+        0.12649524211883545
+      ],
+      "yaw_rad": 2.924119243679796,
+      "scale": 1.0639435699316695,
+      "height_m": 0.33990866206338494,
+      "basal_clearance_m": [
+        -0.025043584854953282,
+        -0.002999991876160013
+      ]
+    },
+    {
+      "name": "CK pocket / Drought-thinned divided crown.001",
+      "patch": 1,
+      "architecture": 3,
+      "root_m": [
+        -6.705667495727539,
+        13.826510429382324,
+        0.14931023120880127
+      ],
+      "yaw_rad": 3.02442709492423,
+      "scale": 0.7867113745324423,
+      "height_m": 0.47825714971338434,
+      "basal_clearance_m": [
+        -0.01896168168832152,
+        -0.002999997264828441
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.004",
+      "patch": 2,
+      "architecture": 0,
+      "root_m": [
+        -6.130702972412109,
+        25.795751571655273,
+        0.3132399916648865
+      ],
+      "yaw_rad": 0.29290010325312543,
+      "scale": 0.8005084804403733,
+      "height_m": 0.2557464270161959,
+      "basal_clearance_m": [
+        -0.017254367487496536,
+        -0.0030000036764523674
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.005",
+      "patch": 2,
+      "architecture": 0,
+      "root_m": [
+        -5.60914945602417,
+        24.58493995666504,
+        0.29761427640914917
+      ],
+      "yaw_rad": 2.8683207157960404,
+      "scale": 0.7923001397059323,
+      "height_m": 0.2531240265471716,
+      "basal_clearance_m": [
+        -0.018993863849937676,
+        -0.0029999796346045216
+      ]
+    },
+    {
+      "name": "CK pocket / Open woody creosote-inspired",
+      "patch": 3,
+      "architecture": 1,
+      "root_m": [
+        -9.019811630249023,
+        30.675851821899414,
+        0.36496540904045105
+      ],
+      "yaw_rad": 3.344546545970217,
+      "scale": 0.8258374033551517,
+      "height_m": 0.6249122781744956,
+      "basal_clearance_m": [
+        -0.0196928322187227,
+        -0.0030000025250758733
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.006",
+      "patch": 3,
+      "architecture": 0,
+      "root_m": [
+        -11.17325210571289,
+        33.266563415527344,
+        0.382660448551178
+      ],
+      "yaw_rad": 0.7991494062061493,
+      "scale": 1.1094921586133597,
+      "height_m": 0.3544605239057034,
+      "basal_clearance_m": [
+        -0.022755076678942665,
+        -0.0030000256746977594
+      ]
+    },
+    {
+      "name": "CK pocket / Drought-thinned divided crown.002",
+      "patch": 3,
+      "architecture": 3,
+      "root_m": [
+        -9.06979751586914,
+        33.214324951171875,
+        0.39694929122924805
+      ],
+      "yaw_rad": 0.24825955000251185,
+      "scale": 0.8104577403821076,
+      "height_m": 0.4926930274888414,
+      "basal_clearance_m": [
+        -0.022620438685165722,
+        -0.0029999992530997943
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.007",
+      "patch": 3,
+      "architecture": 0,
+      "root_m": [
+        -12.128235816955566,
+        32.94818115234375,
+        0.37166982889175415
+      ],
+      "yaw_rad": 6.010367253143301,
+      "scale": 1.0422074680714328,
+      "height_m": 0.3329644128469899,
+      "basal_clearance_m": [
+        -0.022900384230183923,
+        -0.0030000024744374354
+      ]
+    },
+    {
+      "name": "CK pocket / Narrow leaning live crown.001",
+      "patch": 3,
+      "architecture": 2,
+      "root_m": [
+        -10.000801086425781,
+        32.39560317993164,
+        0.3784630000591278
+      ],
+      "yaw_rad": 1.127989499341763,
+      "scale": 1.067814889369047,
+      "height_m": 0.9182861963130161,
+      "basal_clearance_m": [
+        -0.022226277079468504,
+        -0.0030000029538719275
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.008",
+      "patch": 3,
+      "architecture": 0,
+      "root_m": [
+        -12.166138648986816,
+        33.661216735839844,
+        0.3855178654193878
+      ],
+      "yaw_rad": 1.5145279181916345,
+      "scale": 0.9163317490229356,
+      "height_m": 0.292749641634275,
+      "basal_clearance_m": [
+        -0.019440599133281666,
+        -0.0029999874442400154
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.009",
+      "patch": 4,
+      "architecture": 0,
+      "root_m": [
+        -7.2994384765625,
+        57.94025421142578,
+        0.6286222338676453
+      ],
+      "yaw_rad": 2.448940877323286,
+      "scale": 0.9448044514712843,
+      "height_m": 0.30184609981877125,
+      "basal_clearance_m": [
+        -0.04165527080936926,
+        -0.0030000365507142357
+      ]
+    },
+    {
+      "name": "CK pocket / Drought-thinned divided crown.003",
+      "patch": 4,
+      "architecture": 3,
+      "root_m": [
+        -7.555498123168945,
+        56.17038345336914,
+        0.601651668548584
+      ],
+      "yaw_rad": 5.770322831753263,
+      "scale": 0.8729201460539988,
+      "height_m": 0.530665139076314,
+      "basal_clearance_m": [
+        -0.038409500490469095,
+        -0.0029999704629094515
+      ]
+    },
+    {
+      "name": "CK pocket / Narrow leaning live crown.002",
+      "patch": 4,
+      "architecture": 2,
+      "root_m": [
+        -6.443089962005615,
+        54.84633255004883,
+        0.6730931401252747
+      ],
+      "yaw_rad": 3.1204029949512653,
+      "scale": 0.9302956177550058,
+      "height_m": 0.8000240798100218,
+      "basal_clearance_m": [
+        -0.04103163818854194,
+        -0.002999977618684979
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.010",
+      "patch": 5,
+      "architecture": 0,
+      "root_m": [
+        -13.040756225585938,
+        83.19425201416016,
+        1.0814722776412964
+      ],
+      "yaw_rad": 2.4054203003940104,
+      "scale": 0.7597281312895248,
+      "height_m": 0.24271792220627175,
+      "basal_clearance_m": [
+        -0.018347130050404115,
+        -0.002999906858641266
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.011",
+      "patch": 5,
+      "architecture": 0,
+      "root_m": [
+        -14.962699890136719,
+        82.93968200683594,
+        1.0888304710388184
+      ],
+      "yaw_rad": 4.418405836872615,
+      "scale": 0.844758620318618,
+      "height_m": 0.26988346047098505,
+      "basal_clearance_m": [
+        -0.018405521522500745,
+        -0.002999950120778694
+      ]
+    },
+    {
+      "name": "CK pocket / Open woody creosote-inspired.001",
+      "patch": 5,
+      "architecture": 1,
+      "root_m": [
+        -14.128924369812012,
+        81.42494201660156,
+        1.0698548555374146
+      ],
+      "yaw_rad": 2.3079187438565385,
+      "scale": 1.0826852556435669,
+      "height_m": 0.8192693948002167,
+      "basal_clearance_m": [
+        -0.01857348656243385,
+        -0.0030000138189871794
+      ]
+    },
+    {
+      "name": "CK pocket / Drought-thinned divided crown.004",
+      "patch": 5,
+      "architecture": 3,
+      "root_m": [
+        -15.164436340332031,
+        79.5213623046875,
+        1.0266149044036865
+      ],
+      "yaw_rad": 4.078627432987882,
+      "scale": 0.7741054879855479,
+      "height_m": 0.4705937860393672,
+      "basal_clearance_m": [
+        -0.026238761018673618,
+        -0.0030000400314256215
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.012",
+      "patch": 6,
+      "architecture": 0,
+      "root_m": [
+        5.322207450866699,
+        4.636083126068115,
+        0.044936131685972214
+      ],
+      "yaw_rad": 3.0567680259516368,
+      "scale": 0.7897907828208134,
+      "height_m": 0.25232233727946435,
+      "basal_clearance_m": [
+        -0.018232817912039387,
+        -0.0030000015214068573
+      ]
+    },
+    {
+      "name": "CK pocket / Drought-thinned divided crown.005",
+      "patch": 6,
+      "architecture": 3,
+      "root_m": [
+        4.850654602050781,
+        3.911168336868286,
+        0.038538072258234024
+      ],
+      "yaw_rad": 3.840977876450919,
+      "scale": 1.0148159591360193,
+      "height_m": 0.6169263643715531,
+      "basal_clearance_m": [
+        -0.030275337386489715,
+        -0.0030000003614180787
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.013",
+      "patch": 6,
+      "architecture": 0,
+      "root_m": [
+        4.821589946746826,
+        4.537386417388916,
+        0.04826413467526436
+      ],
+      "yaw_rad": 0.13757159590873028,
+      "scale": 1.002683344751892,
+      "height_m": 0.3203372470306335,
+      "basal_clearance_m": [
+        -0.026105623812380463,
+        -0.0030000017988700695
+      ]
+    },
+    {
+      "name": "CK pocket / Narrow leaning live crown.003",
+      "patch": 7,
+      "architecture": 2,
+      "root_m": [
+        9.442584037780762,
+        8.349212646484375,
+        0.06493931263685226
+      ],
+      "yaw_rad": 0.9797261934109165,
+      "scale": 0.9535333385823468,
+      "height_m": 0.8200077665725574,
+      "basal_clearance_m": [
+        -0.02089039447164255,
+        -0.0030000062580553405
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.014",
+      "patch": 7,
+      "architecture": 0,
+      "root_m": [
+        8.75427532196045,
+        9.576874732971191,
+        0.08201389014720917
+      ],
+      "yaw_rad": 5.069655855390491,
+      "scale": 1.0049209676740212,
+      "height_m": 0.32105212273941963,
+      "basal_clearance_m": [
+        -0.021969122136648478,
+        -0.0029999964658335154
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.015",
+      "patch": 7,
+      "architecture": 0,
+      "root_m": [
+        7.312210559844971,
+        9.928767204284668,
+        0.09739421308040619
+      ],
+      "yaw_rad": 1.8364525041976818,
+      "scale": 0.8423659136164858,
+      "height_m": 0.2691190386004867,
+      "basal_clearance_m": [
+        -0.01800806801208485,
+        -0.003000001349256709
+      ]
+    },
+    {
+      "name": "CK pocket / Drought-thinned divided crown.006",
+      "patch": 7,
+      "architecture": 3,
+      "root_m": [
+        6.927751064300537,
+        7.735259532928467,
+        0.07048925012350082
+      ],
+      "yaw_rad": 5.833118253081862,
+      "scale": 1.0276187965196897,
+      "height_m": 0.6247094582908411,
+      "basal_clearance_m": [
+        -0.02297428019353008,
+        -0.0030000022399334914
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.016",
+      "patch": 7,
+      "architecture": 0,
+      "root_m": [
+        7.5859808921813965,
+        7.84344482421875,
+        0.06537827849388123
+      ],
+      "yaw_rad": 3.987983430310604,
+      "scale": 1.0571054859422833,
+      "height_m": 0.3377240311810736,
+      "basal_clearance_m": [
+        -0.023475330843365727,
+        -0.0030000004561458876
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.017",
+      "patch": 8,
+      "architecture": 0,
+      "root_m": [
+        5.59760856628418,
+        24.15837860107422,
+        0.2884187400341034
+      ],
+      "yaw_rad": 2.940317008353444,
+      "scale": 0.9945820362069497,
+      "height_m": 0.31774904120252667,
+      "basal_clearance_m": [
+        -0.022728856274390863,
+        -0.0029999840488963425
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.018",
+      "patch": 8,
+      "architecture": 0,
+      "root_m": [
+        5.736485958099365,
+        25.860200881958008,
+        0.30979377031326294
+      ],
+      "yaw_rad": 5.35686734079994,
+      "scale": 1.099920818832061,
+      "height_m": 0.35140267253918384,
+      "basal_clearance_m": [
+        -0.024595555649313205,
+        -0.0029999766606116363
+      ]
+    },
+    {
+      "name": "CK pocket / Open woody creosote-inspired.002",
+      "patch": 9,
+      "architecture": 1,
+      "root_m": [
+        11.892560005187988,
+        23.252748489379883,
+        0.24733354151248932
+      ],
+      "yaw_rad": 2.376840035391036,
+      "scale": 0.8734268980115774,
+      "height_m": 0.6609233130369243,
+      "basal_clearance_m": [
+        -0.016575552130304483,
+        -0.002999982990926464
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.019",
+      "patch": 9,
+      "architecture": 0,
+      "root_m": [
+        14.00057315826416,
+        18.959062576293945,
+        0.18311432003974915
+      ],
+      "yaw_rad": 0.0018602458273626482,
+      "scale": 0.8200918506110787,
+      "height_m": 0.26200292157242877,
+      "basal_clearance_m": [
+        -0.018459599818694272,
+        -0.0029999886004949683
+      ]
+    },
+    {
+      "name": "CK pocket / Drought-thinned divided crown.007",
+      "patch": 9,
+      "architecture": 3,
+      "root_m": [
+        12.648219108581543,
+        23.689205169677734,
+        0.24718284606933594
+      ],
+      "yaw_rad": 1.3853377145900556,
+      "scale": 0.7513044605369302,
+      "height_m": 0.4567325978690634,
+      "basal_clearance_m": [
+        -0.020040056424077746,
+        -0.002999998707524154
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.020",
+      "patch": 9,
+      "architecture": 0,
+      "root_m": [
+        10.38579273223877,
+        20.192901611328125,
+        0.2110689878463745
+      ],
+      "yaw_rad": 1.2492291729310212,
+      "scale": 0.8497887918561023,
+      "height_m": 0.27149049953355997,
+      "basal_clearance_m": [
+        -0.017971585480589802,
+        -0.003000007661826537
+      ]
+    },
+    {
+      "name": "CK pocket / Narrow leaning live crown.004",
+      "patch": 9,
+      "architecture": 2,
+      "root_m": [
+        11.495240211486816,
+        22.83189582824707,
+        0.23656406998634338
+      ],
+      "yaw_rad": 2.761498813556659,
+      "scale": 1.0196631531129667,
+      "height_m": 0.8768772637604925,
+      "basal_clearance_m": [
+        -0.021597528123178,
+        -0.002999999106020834
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.021",
+      "patch": 9,
+      "architecture": 0,
+      "root_m": [
+        11.917856216430664,
+        22.498035430908203,
+        0.23126855492591858
+      ],
+      "yaw_rad": 6.230432187978162,
+      "scale": 0.8120916725711181,
+      "height_m": 0.25944702491523436,
+      "basal_clearance_m": [
+        -0.018977296094501134,
+        -0.0030000088616014275
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.022",
+      "patch": 9,
+      "architecture": 0,
+      "root_m": [
+        12.319679260253906,
+        17.934431076049805,
+        0.16445544362068176
+      ],
+      "yaw_rad": 3.6143004799611487,
+      "scale": 1.120724475647755,
+      "height_m": 0.3580490242387411,
+      "basal_clearance_m": [
+        -0.024595602340909933,
+        -0.00300000042060547
+      ]
+    },
+    {
+      "name": "CK pocket / Drought-thinned divided crown.008",
+      "patch": 10,
+      "architecture": 3,
+      "root_m": [
+        7.997901916503906,
+        38.95576858520508,
+        0.4820652902126312
+      ],
+      "yaw_rad": 3.1446135108249096,
+      "scale": 1.0655919114040362,
+      "height_m": 0.6477940535798311,
+      "basal_clearance_m": [
+        -0.025113613558952363,
+        -0.0030000163775950606
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.023",
+      "patch": 10,
+      "architecture": 0,
+      "root_m": [
+        8.313761711120605,
+        39.96263122558594,
+        0.496728777885437
+      ],
+      "yaw_rad": 3.285855958251229,
+      "scale": 0.8703783350048192,
+      "height_m": 0.27806844620475996,
+      "basal_clearance_m": [
+        -0.018808716803899728,
+        -0.002999966123424569
+      ]
+    },
+    {
+      "name": "CK pocket / Narrow leaning live crown.005",
+      "patch": 10,
+      "architecture": 2,
+      "root_m": [
+        6.8766608238220215,
+        39.545955657958984,
+        0.4988545775413513
+      ],
+      "yaw_rad": 2.497437618152401,
+      "scale": 0.8200646797584836,
+      "height_m": 0.7052290457862375,
+      "basal_clearance_m": [
+        -0.0166326789703668,
+        -0.003000018252740544
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.024",
+      "patch": 11,
+      "architecture": 0,
+      "root_m": [
+        13.060181617736816,
+        53.28899002075195,
+        0.5934115648269653
+      ],
+      "yaw_rad": 4.344462954283377,
+      "scale": 0.9725402998147422,
+      "height_m": 0.3107071478743774,
+      "basal_clearance_m": [
+        -0.02417413746605157,
+        -0.0029999881368889536
+      ]
+    },
+    {
+      "name": "CK pocket / Open woody creosote-inspired.003",
+      "patch": 11,
+      "architecture": 1,
+      "root_m": [
+        14.068410873413086,
+        56.307613372802734,
+        0.6678560972213745
+      ],
+      "yaw_rad": 1.9911033628029042,
+      "scale": 0.7658101877648742,
+      "height_m": 0.5794896030878599,
+      "basal_clearance_m": [
+        -0.03422965912472975,
+        -0.0030000154122400424
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.025",
+      "patch": 11,
+      "architecture": 0,
+      "root_m": [
+        15.469026565551758,
+        56.404476165771484,
+        0.7270152568817139
+      ],
+      "yaw_rad": 5.902574504254633,
+      "scale": 0.7639896301424394,
+      "height_m": 0.2440793857410078,
+      "basal_clearance_m": [
+        -0.016865628151911838,
+        -0.0030000170055777264
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.026",
+      "patch": 11,
+      "architecture": 0,
+      "root_m": [
+        15.219027519226074,
+        53.33709716796875,
+        0.7134764194488525
+      ],
+      "yaw_rad": 2.0483320361352733,
+      "scale": 1.0728240971927077,
+      "height_m": 0.3427458126651887,
+      "basal_clearance_m": [
+        -0.025349546549432445,
+        -0.003000009541818449
+      ]
+    },
+    {
+      "name": "CK pocket / Drought-thinned divided crown.009",
+      "patch": 11,
+      "architecture": 3,
+      "root_m": [
+        16.29714012145996,
+        56.24551010131836,
+        0.7327703833580017
+      ],
+      "yaw_rad": 4.242145072937988,
+      "scale": 0.7586017077414382,
+      "height_m": 0.4611687364095238,
+      "basal_clearance_m": [
+        -0.02219363294051846,
+        -0.002999957660671515
+      ]
+    },
+    {
+      "name": "CK pocket / Narrow leaning live crown.006",
+      "patch": 11,
+      "architecture": 2,
+      "root_m": [
+        14.786469459533691,
+        51.96744918823242,
+        0.7135379910469055
+      ],
+      "yaw_rad": 0.9970755179287271,
+      "scale": 1.1273999866353006,
+      "height_m": 0.9695274487719513,
+      "basal_clearance_m": [
+        -0.026394303399815966,
+        -0.003000007028883367
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.027",
+      "patch": 11,
+      "architecture": 0,
+      "root_m": [
+        14.503730773925781,
+        52.419498443603516,
+        0.7001656293869019
+      ],
+      "yaw_rad": 0.3434736576641451,
+      "scale": 0.9122373447748308,
+      "height_m": 0.2914415614792257,
+      "basal_clearance_m": [
+        -0.028394653488715615,
+        -0.002999996726151144
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.028",
+      "patch": 12,
+      "architecture": 0,
+      "root_m": [
+        5.720687389373779,
+        76.4714126586914,
+        0.9535594582557678
+      ],
+      "yaw_rad": 0.7881765825881408,
+      "scale": 0.7915873796386094,
+      "height_m": 0.2528963139807321,
+      "basal_clearance_m": [
+        -0.017457206660677183,
+        -0.0029999619187304205
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.029",
+      "patch": 12,
+      "architecture": 0,
+      "root_m": [
+        5.845264911651611,
+        77.21178436279297,
+        0.9583583474159241
+      ],
+      "yaw_rad": 2.347231598259124,
+      "scale": 0.8855949468739212,
+      "height_m": 0.2829298489405239,
+      "basal_clearance_m": [
+        -0.02558890119996915,
+        -0.0029999992534694986
+      ]
+    },
+    {
+      "name": "CK pocket / Drought-thinned divided crown.010",
+      "patch": 12,
+      "architecture": 3,
+      "root_m": [
+        7.453393936157227,
+        78.43994140625,
+        0.9620391130447388
+      ],
+      "yaw_rad": 4.261661143345975,
+      "scale": 1.0206192647203107,
+      "height_m": 0.6204543067370852,
+      "basal_clearance_m": [
+        -0.043434010802059886,
+        -0.0029999565621484647
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.030",
+      "patch": 13,
+      "architecture": 0,
+      "root_m": [
+        21.98914909362793,
+        91.93128967285156,
+        1.1256741285324097
+      ],
+      "yaw_rad": 6.0835442655270935,
+      "scale": 0.8710991980816953,
+      "height_m": 0.2782987475204657,
+      "basal_clearance_m": [
+        -0.020025992587573205,
+        -0.003000018567845375
+      ]
+    },
+    {
+      "name": "CK pocket / Drought-thinned divided crown.011",
+      "patch": 13,
+      "architecture": 3,
+      "root_m": [
+        19.185585021972656,
+        91.8829574584961,
+        1.0644680261611938
+      ],
+      "yaw_rad": 2.6165559577705655,
+      "scale": 0.9996112779945983,
+      "height_m": 0.60768314290508,
+      "basal_clearance_m": [
+        -0.0312854003101668,
+        -0.003000030376008489
+      ]
+    },
+    {
+      "name": "CK pocket / Open woody creosote-inspired.004",
+      "patch": 13,
+      "architecture": 1,
+      "root_m": [
+        25.495763778686523,
+        89.76286315917969,
+        1.0725946426391602
+      ],
+      "yaw_rad": 5.442706857564413,
+      "scale": 0.9549622623101678,
+      "height_m": 0.7226212332917029,
+      "basal_clearance_m": [
+        -0.021918448508152055,
+        -0.0029999392256601087
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.031",
+      "patch": 13,
+      "architecture": 0,
+      "root_m": [
+        23.633037567138672,
+        91.86981964111328,
+        1.112202525138855
+      ],
+      "yaw_rad": 5.581298171164702,
+      "scale": 1.0741119775203272,
+      "height_m": 0.34315726463635576,
+      "basal_clearance_m": [
+        -0.025931551044621193,
+        -0.0030000010614892325
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.032",
+      "patch": 13,
+      "architecture": 0,
+      "root_m": [
+        20.25527000427246,
+        90.76360321044922,
+        1.067882776260376
+      ],
+      "yaw_rad": 1.190850646340993,
+      "scale": 1.1178544589730866,
+      "height_m": 0.3571321113915223,
+      "basal_clearance_m": [
+        -0.02839912276180523,
+        -0.0030000360507091983
+      ]
+    },
+    {
+      "name": "CK pocket / Narrow leaning live crown.007",
+      "patch": 13,
+      "architecture": 2,
+      "root_m": [
+        18.0781307220459,
+        90.58663940429688,
+        1.0439913272857666
+      ],
+      "yaw_rad": 4.797132937902689,
+      "scale": 1.0537883315386654,
+      "height_m": 0.9062238111883468,
+      "basal_clearance_m": [
+        -0.022619424485965656,
+        -0.003000063223188798
+      ]
+    },
+    {
+      "name": "CK pocket / Pale low broken crown.033",
+      "patch": 13,
+      "architecture": 0,
+      "root_m": [
+        24.103378295898438,
+        93.3427963256836,
+        1.116466760635376
+      ],
+      "yaw_rad": 4.590071179615162,
+      "scale": 1.0708600523332983,
+      "height_m": 0.3421183396682541,
+      "basal_clearance_m": [
+        -0.021916297046649547,
+        -0.00299998025150483
+      ]
+    }
+  ],
+  "matrices": {
+    "CK pocket / Pale low broken crown": [
+      [
+        -1.0072166919708252,
+        -0.09280944615602493,
+        0.0,
+        -5.280780792236328
+      ],
+      [
+        0.09280944615602493,
+        -1.0072166919708252,
+        0.0,
+        7.380538463592529
+      ],
+      [
+        0.0,
+        0.0,
+        1.0114835500717163,
+        0.08410808444023132
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.001": [
+      [
+        -0.7200086712837219,
+        -0.39829638600349426,
+        0.0,
+        -5.532375812530518
+      ],
+      [
+        0.39829638600349426,
+        -0.7200086712837219,
+        0.0,
+        5.961129665374756
+      ],
+      [
+        0.0,
+        0.0,
+        0.8228319883346558,
+        0.06355398148298264
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Drought-thinned divided crown": [
+      [
+        1.092929482460022,
+        -0.10557174682617188,
+        0.0,
+        -4.901731967926025
+      ],
+      [
+        0.10557174682617188,
+        1.092929482460022,
+        0.0,
+        6.297119140625
+      ],
+      [
+        0.0,
+        0.0,
+        1.0980165004730225,
+        0.07295592129230499
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.002": [
+      [
+        -0.34182167053222656,
+        1.0574908256530762,
+        0.0,
+        -5.643980979919434
+      ],
+      [
+        -1.0574908256530762,
+        -0.34182167053222656,
+        0.0,
+        12.509227752685547
+      ],
+      [
+        0.0,
+        0.0,
+        1.1113635301589966,
+        0.13489797711372375
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Narrow leaning live crown": [
+      [
+        0.2414412498474121,
+        0.9861234426498413,
+        0.0,
+        -7.036189079284668
+      ],
+      [
+        -0.9861234426498413,
+        0.2414412498474121,
+        0.0,
+        11.801024436950684
+      ],
+      [
+        0.0,
+        0.0,
+        1.015250325202942,
+        0.11771732568740845
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.003": [
+      [
+        -1.0388832092285156,
+        -0.22955992817878723,
+        0.0,
+        -5.772430419921875
+      ],
+      [
+        0.22955992817878723,
+        -1.0388832092285156,
+        0.0,
+        11.862035751342773
+      ],
+      [
+        0.0,
+        0.0,
+        1.06394362449646,
+        0.12649524211883545
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Drought-thinned divided crown.001": [
+      [
+        -0.7813177108764648,
+        -0.09196466952562332,
+        0.0,
+        -6.705667495727539
+      ],
+      [
+        0.09196466952562332,
+        -0.7813177108764648,
+        0.0,
+        13.826510429382324
+      ],
+      [
+        0.0,
+        0.0,
+        0.7867113947868347,
+        0.14931023120880127
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.004": [
+      [
+        0.7664152979850769,
+        -0.23113083839416504,
+        0.0,
+        -6.130702972412109
+      ],
+      [
+        0.23113083839416504,
+        0.7664152979850769,
+        0.0,
+        25.795751571655273
+      ],
+      [
+        0.0,
+        0.0,
+        0.8005084991455078,
+        0.3132399916648865
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.005": [
+      [
+        -0.7629002928733826,
+        -0.2138286828994751,
+        0.0,
+        -5.60914945602417
+      ],
+      [
+        0.2138286828994751,
+        -0.7629002928733826,
+        0.0,
+        24.58493995666504
+      ],
+      [
+        0.0,
+        0.0,
+        0.7923001646995544,
+        0.29761427640914917
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Open woody creosote-inspired": [
+      [
+        -0.8088874220848083,
+        0.16645865142345428,
+        0.0,
+        -9.019811630249023
+      ],
+      [
+        -0.16645865142345428,
+        -0.8088874220848083,
+        0.0,
+        30.675851821899414
+      ],
+      [
+        0.0,
+        0.0,
+        0.8258373737335205,
+        0.36496540904045105
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.006": [
+      [
+        0.7736673951148987,
+        -0.7952431440353394,
+        0.0,
+        -11.17325210571289
+      ],
+      [
+        0.7952431440353394,
+        0.7736673951148987,
+        0.0,
+        33.266563415527344
+      ],
+      [
+        0.0,
+        0.0,
+        1.1094921827316284,
+        0.382660448551178
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Drought-thinned divided crown.002": [
+      [
+        0.7856104373931885,
+        -0.1991434544324875,
+        0.0,
+        -9.06979751586914
+      ],
+      [
+        0.1991434544324875,
+        0.7856104373931885,
+        0.0,
+        33.214324951171875
+      ],
+      [
+        0.0,
+        0.0,
+        0.8104577660560608,
+        0.39694929122924805
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.007": [
+      [
+        1.003661870956421,
+        0.2808188498020172,
+        0.0,
+        -12.128235816955566
+      ],
+      [
+        -0.2808188498020172,
+        1.003661870956421,
+        0.0,
+        32.94818115234375
+      ],
+      [
+        0.0,
+        0.0,
+        1.0422074794769287,
+        0.37166982889175415
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Narrow leaning live crown.001": [
+      [
+        0.45753440260887146,
+        -0.9648269414901733,
+        0.0,
+        -10.000801086425781
+      ],
+      [
+        0.9648269414901733,
+        0.45753440260887146,
+        0.0,
+        32.39560317993164
+      ],
+      [
+        0.0,
+        0.0,
+        1.0678149461746216,
+        0.3784630000591278
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.008": [
+      [
+        0.051533326506614685,
+        -0.9148815870285034,
+        0.0,
+        -12.166138648986816
+      ],
+      [
+        0.9148815870285034,
+        0.051533326506614685,
+        0.0,
+        33.661216735839844
+      ],
+      [
+        0.0,
+        0.0,
+        0.9163317680358887,
+        0.3855178654193878
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.009": [
+      [
+        -0.7270793914794922,
+        -0.6033332347869873,
+        0.0,
+        -7.2994384765625
+      ],
+      [
+        0.6033332347869873,
+        -0.7270793914794922,
+        0.0,
+        57.94025421142578
+      ],
+      [
+        0.0,
+        0.0,
+        0.9448044300079346,
+        0.6286222338676453
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Drought-thinned divided crown.003": [
+      [
+        0.7606133222579956,
+        0.4283187687397003,
+        0.0,
+        -7.555498123168945
+      ],
+      [
+        -0.4283187687397003,
+        0.7606133222579956,
+        0.0,
+        56.17038345336914
+      ],
+      [
+        0.0,
+        0.0,
+        0.8729201555252075,
+        0.601651668548584
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Narrow leaning live crown.002": [
+      [
+        -0.9300868511199951,
+        -0.019711120054125786,
+        0.0,
+        -6.443089962005615
+      ],
+      [
+        0.019711120054125786,
+        -0.9300868511199951,
+        0.0,
+        54.84633255004883
+      ],
+      [
+        0.0,
+        0.0,
+        0.9302956461906433,
+        0.6730931401252747
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.010": [
+      [
+        -0.5629920363426208,
+        -0.5101243257522583,
+        0.0,
+        -13.040756225585938
+      ],
+      [
+        0.5101243257522583,
+        -0.5629920363426208,
+        0.0,
+        83.19425201416016
+      ],
+      [
+        0.0,
+        0.0,
+        0.7597281336784363,
+        1.0814722776412964
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.011": [
+      [
+        -0.24478285014629364,
+        0.808516263961792,
+        0.0,
+        -14.962699890136719
+      ],
+      [
+        -0.808516263961792,
+        -0.24478285014629364,
+        0.0,
+        82.93968200683594
+      ],
+      [
+        0.0,
+        0.0,
+        0.8447586297988892,
+        1.0888304710388184
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Open woody creosote-inspired.001": [
+      [
+        -0.7277378439903259,
+        -0.801626443862915,
+        0.0,
+        -14.128924369812012
+      ],
+      [
+        0.801626443862915,
+        -0.7277378439903259,
+        0.0,
+        81.42494201660156
+      ],
+      [
+        0.0,
+        0.0,
+        1.0826852321624756,
+        1.0698548555374146
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Drought-thinned divided crown.004": [
+      [
+        -0.45840969681739807,
+        0.6237787008285522,
+        0.0,
+        -15.164436340332031
+      ],
+      [
+        -0.6237787008285522,
+        -0.45840969681739807,
+        0.0,
+        79.5213623046875
+      ],
+      [
+        0.0,
+        0.0,
+        0.7741054892539978,
+        1.0266149044036865
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.012": [
+      [
+        -0.7869511246681213,
+        -0.06691347062587738,
+        0.0,
+        5.322207450866699
+      ],
+      [
+        0.06691347062587738,
+        -0.7869511246681213,
+        0.0,
+        4.636083126068115
+      ],
+      [
+        0.0,
+        0.0,
+        0.7897908091545105,
+        0.044936131685972214
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Drought-thinned divided crown.005": [
+      [
+        -0.7765757441520691,
+        0.6532850861549377,
+        0.0,
+        4.850654602050781
+      ],
+      [
+        -0.6532850861549377,
+        -0.7765757441520691,
+        0.0,
+        3.911168336868286
+      ],
+      [
+        0.0,
+        0.0,
+        1.0148159265518188,
+        0.038538072258234024
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.013": [
+      [
+        0.9932100176811218,
+        -0.13750606775283813,
+        0.0,
+        4.821589946746826
+      ],
+      [
+        0.13750606775283813,
+        0.9932100176811218,
+        0.0,
+        4.537386417388916
+      ],
+      [
+        0.0,
+        0.0,
+        1.002683401107788,
+        0.04826413467526436
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Narrow leaning live crown.003": [
+      [
+        0.5313563942909241,
+        -0.7917614579200745,
+        0.0,
+        9.442584037780762
+      ],
+      [
+        0.7917614579200745,
+        0.5313563942909241,
+        0.0,
+        8.349212646484375
+      ],
+      [
+        0.0,
+        0.0,
+        0.9535333514213562,
+        0.06493931263685226
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.014": [
+      [
+        0.35143595933914185,
+        0.9414663910865784,
+        0.0,
+        8.75427532196045
+      ],
+      [
+        -0.9414663910865784,
+        0.35143595933914185,
+        0.0,
+        9.576874732971191
+      ],
+      [
+        0.0,
+        0.0,
+        1.0049209594726562,
+        0.08201389014720917
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.015": [
+      [
+        -0.22115682065486908,
+        -0.8128160834312439,
+        0.0,
+        7.312210559844971
+      ],
+      [
+        0.8128160834312439,
+        -0.22115682065486908,
+        0.0,
+        9.928767204284668
+      ],
+      [
+        0.0,
+        0.0,
+        0.8423659205436707,
+        0.09739421308040619
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Drought-thinned divided crown.006": [
+      [
+        0.9252864718437195,
+        0.4470406174659729,
+        0.0,
+        6.927751064300537
+      ],
+      [
+        -0.4470406174659729,
+        0.9252864718437195,
+        0.0,
+        7.735259532928467
+      ],
+      [
+        0.0,
+        0.0,
+        1.0276187658309937,
+        0.07048925012350082
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.016": [
+      [
+        -0.7005336284637451,
+        0.7916594743728638,
+        0.0,
+        7.5859808921813965
+      ],
+      [
+        -0.7916594743728638,
+        -0.7005336284637451,
+        0.0,
+        7.84344482421875
+      ],
+      [
+        0.0,
+        0.0,
+        1.057105541229248,
+        0.06537827849388123
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.017": [
+      [
+        -0.974503755569458,
+        -0.1988363265991211,
+        0.0,
+        5.59760856628418
+      ],
+      [
+        0.1988363265991211,
+        -0.974503755569458,
+        0.0,
+        24.15837860107422
+      ],
+      [
+        0.0,
+        0.0,
+        0.9945820569992065,
+        0.2884187400341034
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.018": [
+      [
+        0.6608121395111084,
+        0.8792913556098938,
+        0.0,
+        5.736485958099365
+      ],
+      [
+        -0.8792913556098938,
+        0.6608121395111084,
+        0.0,
+        25.860200881958008
+      ],
+      [
+        0.0,
+        0.0,
+        1.0999208688735962,
+        0.30979377031326294
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Open woody creosote-inspired.002": [
+      [
+        -0.6302244067192078,
+        -0.6047244668006897,
+        0.0,
+        11.892560005187988
+      ],
+      [
+        0.6047244668006897,
+        -0.6302244067192078,
+        0.0,
+        23.252748489379883
+      ],
+      [
+        0.0,
+        0.0,
+        0.8734269142150879,
+        0.24733354151248932
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.019": [
+      [
+        0.8200904130935669,
+        -0.001525571569800377,
+        0.0,
+        14.00057315826416
+      ],
+      [
+        0.001525571569800377,
+        0.8200904130935669,
+        0.0,
+        18.959062576293945
+      ],
+      [
+        0.0,
+        0.0,
+        0.8200918436050415,
+        0.18311432003974915
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Drought-thinned divided crown.007": [
+      [
+        0.13853852450847626,
+        -0.7384209036827087,
+        0.0,
+        12.648219108581543
+      ],
+      [
+        0.7384209036827087,
+        0.13853852450847626,
+        0.0,
+        23.689205169677734
+      ],
+      [
+        0.0,
+        0.0,
+        0.7513044476509094,
+        0.24718284606933594
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.020": [
+      [
+        0.2685789167881012,
+        -0.8062296509742737,
+        0.0,
+        10.38579273223877
+      ],
+      [
+        0.8062296509742737,
+        0.2685789167881012,
+        0.0,
+        20.192901611328125
+      ],
+      [
+        0.0,
+        0.0,
+        0.8497887849807739,
+        0.2110689878463745
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Narrow leaning live crown.004": [
+      [
+        -0.9468896389007568,
+        -0.378302663564682,
+        0.0,
+        11.495240211486816
+      ],
+      [
+        0.378302663564682,
+        -0.9468896389007568,
+        0.0,
+        22.83189582824707
+      ],
+      [
+        0.0,
+        0.0,
+        1.0196630954742432,
+        0.23656406998634338
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.021": [
+      [
+        0.8109619617462158,
+        0.04282062500715256,
+        0.0,
+        11.917856216430664
+      ],
+      [
+        -0.04282062500715256,
+        0.8109619617462158,
+        0.0,
+        22.498035430908203
+      ],
+      [
+        0.0,
+        0.0,
+        0.8120916485786438,
+        0.23126855492591858
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.022": [
+      [
+        -0.9978243112564087,
+        0.51026451587677,
+        0.0,
+        12.319679260253906
+      ],
+      [
+        -0.51026451587677,
+        -0.9978243112564087,
+        0.0,
+        17.934431076049805
+      ],
+      [
+        0.0,
+        0.0,
+        1.1207244396209717,
+        0.16445544362068176
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Drought-thinned divided crown.008": [
+      [
+        -1.065587043762207,
+        0.0032189893536269665,
+        0.0,
+        7.997901916503906
+      ],
+      [
+        -0.0032189893536269665,
+        -1.065587043762207,
+        0.0,
+        38.95576858520508
+      ],
+      [
+        0.0,
+        0.0,
+        1.0655919313430786,
+        0.4820652902126312
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.023": [
+      [
+        -0.861336886882782,
+        0.1251286119222641,
+        0.0,
+        8.313761711120605
+      ],
+      [
+        -0.1251286119222641,
+        -0.861336886882782,
+        0.0,
+        39.96263122558594
+      ],
+      [
+        0.0,
+        0.0,
+        0.870378315448761,
+        0.496728777885437
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Narrow leaning live crown.005": [
+      [
+        -0.6557298898696899,
+        -0.49246764183044434,
+        0.0,
+        6.8766608238220215
+      ],
+      [
+        0.49246764183044434,
+        -0.6557298898696899,
+        0.0,
+        39.545955657958984
+      ],
+      [
+        0.0,
+        0.0,
+        0.8200646638870239,
+        0.4988545775413513
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.024": [
+      [
+        -0.3498043715953827,
+        0.9074533581733704,
+        0.0,
+        13.060181617736816
+      ],
+      [
+        -0.9074533581733704,
+        -0.3498043715953827,
+        0.0,
+        53.28899002075195
+      ],
+      [
+        0.0,
+        0.0,
+        0.9725403189659119,
+        0.5934115648269653
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Open woody creosote-inspired.003": [
+      [
+        -0.3124818205833435,
+        -0.6991568803787231,
+        0.0,
+        14.068410873413086
+      ],
+      [
+        0.6991568803787231,
+        -0.3124818205833435,
+        0.0,
+        56.307613372802734
+      ],
+      [
+        0.0,
+        0.0,
+        0.7658101916313171,
+        0.6678560972213745
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.025": [
+      [
+        0.7093169093132019,
+        0.28381267189979553,
+        0.0,
+        15.469026565551758
+      ],
+      [
+        -0.28381267189979553,
+        0.7093169093132019,
+        0.0,
+        56.404476165771484
+      ],
+      [
+        0.0,
+        0.0,
+        0.7639896273612976,
+        0.7270152568817139
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.026": [
+      [
+        -0.49306127429008484,
+        -0.9528074860572815,
+        0.0,
+        15.219027519226074
+      ],
+      [
+        0.9528074860572815,
+        -0.49306127429008484,
+        0.0,
+        53.33709716796875
+      ],
+      [
+        0.0,
+        0.0,
+        1.0728241205215454,
+        0.7134764194488525
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Drought-thinned divided crown.009": [
+      [
+        -0.3437252938747406,
+        0.6762614250183105,
+        0.0,
+        16.29714012145996
+      ],
+      [
+        -0.6762614250183105,
+        -0.3437252938747406,
+        0.0,
+        56.24551010131836
+      ],
+      [
+        0.0,
+        0.0,
+        0.758601725101471,
+        0.7327703833580017
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Narrow leaning live crown.006": [
+      [
+        0.6119086146354675,
+        -0.9468889236450195,
+        0.0,
+        14.786469459533691
+      ],
+      [
+        0.9468889236450195,
+        0.6119086146354675,
+        0.0,
+        51.96744918823242
+      ],
+      [
+        0.0,
+        0.0,
+        1.1274000406265259,
+        0.7135379910469055
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.027": [
+      [
+        0.8589540719985962,
+        -0.307204931974411,
+        0.0,
+        14.503730773925781
+      ],
+      [
+        0.307204931974411,
+        0.8589540719985962,
+        0.0,
+        52.419498443603516
+      ],
+      [
+        0.0,
+        0.0,
+        0.9122373461723328,
+        0.7001656293869019
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.028": [
+      [
+        0.5581794381141663,
+        -0.5612898468971252,
+        0.0,
+        5.720687389373779
+      ],
+      [
+        0.5612898468971252,
+        0.5581794381141663,
+        0.0,
+        76.4714126586914
+      ],
+      [
+        0.0,
+        0.0,
+        0.7915873527526855,
+        0.9535594582557678
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.029": [
+      [
+        -0.6205725073814392,
+        -0.6317976117134094,
+        0.0,
+        5.845264911651611
+      ],
+      [
+        0.6317976117134094,
+        -0.6205725073814392,
+        0.0,
+        77.21178436279297
+      ],
+      [
+        0.0,
+        0.0,
+        0.8855949640274048,
+        0.9583583474159241
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Drought-thinned divided crown.010": [
+      [
+        -0.4446030557155609,
+        0.9186902642250061,
+        0.0,
+        7.453393936157227
+      ],
+      [
+        -0.9186902642250061,
+        -0.4446030557155609,
+        0.0,
+        78.43994140625
+      ],
+      [
+        0.0,
+        0.0,
+        1.02061927318573,
+        0.9620391130447388
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.030": [
+      [
+        0.8537972569465637,
+        0.1727542281150818,
+        0.0,
+        21.98914909362793
+      ],
+      [
+        -0.1727542281150818,
+        0.8537972569465637,
+        0.0,
+        91.93128967285156
+      ],
+      [
+        0.0,
+        0.0,
+        0.8710991740226746,
+        1.1256741285324097
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Drought-thinned divided crown.011": [
+      [
+        -0.8649691343307495,
+        -0.5010499358177185,
+        0.0,
+        19.185585021972656
+      ],
+      [
+        0.5010499358177185,
+        -0.8649691343307495,
+        0.0,
+        91.8829574584961
+      ],
+      [
+        0.0,
+        0.0,
+        0.9996112585067749,
+        1.0644680261611938
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Open woody creosote-inspired.004": [
+      [
+        0.6370616555213928,
+        0.7114108800888062,
+        0.0,
+        25.495763778686523
+      ],
+      [
+        -0.7114108800888062,
+        0.6370616555213928,
+        0.0,
+        89.76286315917969
+      ],
+      [
+        0.0,
+        0.0,
+        0.9549622535705566,
+        1.0725946426391602
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.031": [
+      [
+        0.8202189207077026,
+        0.6935108304023743,
+        0.0,
+        23.633037567138672
+      ],
+      [
+        -0.6935108304023743,
+        0.8202189207077026,
+        0.0,
+        91.86981964111328
+      ],
+      [
+        0.0,
+        0.0,
+        1.0741119384765625,
+        1.112202525138855
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.032": [
+      [
+        0.41457873582839966,
+        -1.0381344556808472,
+        0.0,
+        20.25527000427246
+      ],
+      [
+        1.0381344556808472,
+        0.41457873582839966,
+        0.0,
+        90.76360321044922
+      ],
+      [
+        0.0,
+        0.0,
+        1.1178544759750366,
+        1.067882776260376
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Narrow leaning live crown.007": [
+      [
+        0.0891953781247139,
+        1.050006628036499,
+        0.0,
+        18.0781307220459
+      ],
+      [
+        -1.050006628036499,
+        0.0891953781247139,
+        0.0,
+        90.58663940429688
+      ],
+      [
+        0.0,
+        0.0,
+        1.0537883043289185,
+        1.0439913272857666
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "CK pocket / Pale low broken crown.033": [
+      [
+        -0.1306588351726532,
+        1.062859058380127,
+        0.0,
+        24.103378295898438
+      ],
+      [
+        -1.062859058380127,
+        -0.1306588351726532,
+        0.0,
+        93.3427963256836
+      ],
+      [
+        0.0,
+        0.0,
+        1.0708600282669067,
+        1.116466760635376
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "ci_identity_xy_yaw_sha256": "bd381650692a24ff20e76af503aeea34f2ab50754f573dd7c5693f46b64af499",
+  "contact_scope": "Retains exact root support from canonical CK on unchanged CI terrain, including original low basal contact witnesses. No rerolling or repositioning when camera changes."
+}

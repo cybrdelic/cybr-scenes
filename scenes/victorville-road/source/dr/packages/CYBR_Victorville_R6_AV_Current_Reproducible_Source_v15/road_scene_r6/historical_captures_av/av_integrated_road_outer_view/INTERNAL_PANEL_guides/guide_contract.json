@@ -1,0 +1,21 @@
+{
+  "documentation": "https://www.openimagedenoise.org/documentation.html",
+  "nonzero_coverage_required": false,
+  "policy": "Fail closed; retain untouched linear beauty and raw guides. No silent clipping or color-only fallback.",
+  "ranges": {
+    "albedo": {
+      "max": 0.8592421412467957,
+      "min": 0.045396484434604645
+    },
+    "beauty": {
+      "max": 0.8592421412467957,
+      "min": 0.0010339895961806178
+    },
+    "normal": {
+      "max": 0.9998953342437744,
+      "min": -0.9877187013626099
+    }
+  },
+  "valid": true,
+  "violations": []
+}

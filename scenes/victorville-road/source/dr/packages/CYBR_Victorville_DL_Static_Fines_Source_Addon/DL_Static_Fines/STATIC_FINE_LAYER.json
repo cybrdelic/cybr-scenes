@@ -1,0 +1,52 @@
+{
+  "revision": "DL static original-fine cap candidate",
+  "cap_bulk_volume_m3": 0.19181345165200087,
+  "original_surviving_bulk_m3": [
+    1.0962819472370189,
+    0.3979537862203023,
+    0.1299265355079276
+  ],
+  "event_surviving_bulk_m3": [
+    0.03157707932134836,
+    0.007377012597651817,
+    0.0010925521896029133
+  ],
+  "complementary_mixed_reserve_bulk_m3": [
+    0.9044684955849336,
+    0.3979537862203023,
+    0.1299265355079276
+  ],
+  "inventory_residual_m3": [
+    1.546067864163155e-21,
+    -2.9924089171866793e-22,
+    9.475874186339143e-22
+  ],
+  "maximum_float32_reconciliation_error_m": 1.734723475976807e-18,
+  "roundoff_correction_original_bulk_m3": [
+    1.1358777987012085e-13,
+    1.1050965231595221e-14,
+    1.6821596086310472e-14
+  ],
+  "roundoff_correction_after_debit_m3": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "cap_max_m": 0.012307215398468957,
+  "area_cap_gt_1mm_m2": 49.6866065883587,
+  "area_cap_gt_4mm_m2": 14.042648474656744,
+  "source_fields": [
+    "ap_fines evaluated on original AP geometry",
+    "CE gate/remaining original class stock",
+    "AH old deposited classes, debited first by CE removal"
+  ],
+  "model": "Authored static stratigraphy inside the already-retained current terrain. Spatially varying original fine stock is partitioned into an effective surface cap using existing historical fine-area coverage. Pre-existing clasts descend relative to that cap; recent finite deposited representatives keep their source roles. No new mass, terrain elevation, transport, rainfall or measured chronology.",
+  "optical_interpretation": "Original cap coverage is bounded ap_fines times current CE gate and finite-thickness saturation. It joins the existing event fine closure by bounded union; no independent BW overcoat is restored.",
+  "limits": [
+    "Mean-column support depth and area-fraction optics are authored approximations, not resolved grain packing or measured stratigraphy.",
+    "Original intrinsic embedding remains; this is a static support interpretation rather than an inferred weathering age.",
+    "Old original/matrix and event populations are separated on the same CE vertex basis before interpolating.",
+    "Roundoff corrections are reported explicitly; strict20nm per-class tolerance only covers float32 stock serialization."
+  ],
+  "output_sha256": "c989d4ea7799f69b872504460055cb18529bc12d3128ee0774b8085a90bb492f"
+}

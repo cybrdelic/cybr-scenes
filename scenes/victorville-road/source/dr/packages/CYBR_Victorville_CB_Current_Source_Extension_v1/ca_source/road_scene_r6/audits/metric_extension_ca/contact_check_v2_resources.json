@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python",
+    "audits/metric_extension_ca/check_cut_contact.py"
+  ],
+  "exit_code": 0,
+  "stop_reason": null,
+  "peak_process_tree_RSS_MiB": 102.63671875,
+  "kernel_max_child_RSS_MiB": 103.15625,
+  "RSS_cap_MiB": 1100.0,
+  "elapsed_seconds": 0.6120196419942658,
+  "resource_contract_passed": true,
+  "rendered": false
+}

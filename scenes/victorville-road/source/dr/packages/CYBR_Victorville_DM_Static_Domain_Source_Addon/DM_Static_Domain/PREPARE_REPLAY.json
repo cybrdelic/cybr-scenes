@@ -1,0 +1,10 @@
+{
+  "fresh_prepare_entrypoint_passed": true,
+  "compared_to_actual_job": "dm_static_domain_a/job.json",
+  "only_changed_job_keys": [
+    "view_scope",
+    "output"
+  ],
+  "adapter_sha256": "f6a9246ac315e8e3dafb92821fbb7a64fef00e19f7dc95b7b5a312441088c462",
+  "scope": "Fresh derivative preparation from retained prepared DL; no fresh public full-chain render replay."
+}

@@ -1,0 +1,79 @@
+{
+  "status": "SOURCE_BOUNDARY_CORRECTION_VISIBLE_UNSELECTED",
+  "actual_whole_dimensions": [
+    2000,
+    1334
+  ],
+  "actual_comparison": "CYBR_Victorville_DM_Static_Domain_Matched.png",
+  "observed_gain": "The conspicuous row-like gravel transition at the former cap boundary is reduced. The same finite static cap total now follows the continuous retained AP field.",
+  "remaining_visual_limits": [
+    "Broad inner worked sand remains smooth at this view and physical grain size.",
+    "Some small/medium stones retain faceted shapes.",
+    "Original mountains retained by user preference.",
+    "Existing CE terrain/matrix ownership was not changed; no claim of total domain-artifact removal."
+  ],
+  "geometry_account": [
+    {
+      "object": "U approved R5D density / projected chip and grit supplement",
+      "DL_burial_mm_quantiles": [
+        0.0,
+        0.0,
+        1.0906941372682761,
+        1.5110663228338852,
+        12.306768777681249
+      ],
+      "DM_burial_mm_quantiles": [
+        0.0,
+        0.0,
+        1.8479008763634566,
+        1.8797832746028404,
+        9.239503769909113
+      ],
+      "DL_lowered_gt1mm": 71541,
+      "DM_lowered_gt1mm": 80419
+    },
+    {
+      "object": "AP graded margin / exact metric lag instances",
+      "DL_burial_mm_quantiles": [
+        0.0,
+        0.0,
+        0.5325896658260578,
+        1.6403807688829122,
+        12.277651553755033
+      ],
+      "DM_burial_mm_quantiles": [
+        0.0,
+        0.0,
+        1.3617314726950622,
+        1.847900876363457,
+        9.239503769909112
+      ],
+      "DL_lowered_gt1mm": 2298,
+      "DM_lowered_gt1mm": 3212
+    },
+    {
+      "object": "CG finite 18\u201360 mm historical gravel pockets",
+      "DL_burial_mm_quantiles": [
+        0.0,
+        0.6644545369641072,
+        1.2174365362317874,
+        2.332800067961216,
+        12.282432036627293
+      ],
+      "DM_burial_mm_quantiles": [
+        0.0,
+        1.8467827874441618,
+        1.8479008763634568,
+        3.2681734973145846,
+        9.239503769909113
+      ],
+      "DL_lowered_gt1mm": 7483,
+      "DM_lowered_gt1mm": 11078
+    }
+  ],
+  "claim_limits": [
+    "Targeted continuity correction, not accepted photoreal whole-scene result.",
+    "No new transport or terrain; static original fine cap geographic reassignment recorded.",
+    "Subpixel sand is not all individually resolved in this whole-road frame."
+  ]
+}

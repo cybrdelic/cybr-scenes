@@ -1,0 +1,3756 @@
+{
+  "status": "Full physical candidate packing completed; downstream roles/contact and render integration pending",
+  "spec": {
+    "seed": 2610111556,
+    "cell_size": 0.18,
+    "bounds": [
+      -7.0,
+      -3.52,
+      4.7,
+      11.5
+    ],
+    "thinning_by_band": {
+      "0": 1.0,
+      "1": 1.0,
+      "2": 1.0
+    },
+    "catalog_epoch": "DQ-full-road-fixed-macro-v1",
+    "source_pins": {
+      "bank64": "53b03cc0dd838818446558cea84876c710458fd994bcfef6f3ce2da6a913f6c9",
+      "blockers": "11ffcb55b97f3b1cab4dd8833eabe01c289c46a6ee2ff658ee2f6fd50346ddbd",
+      "datums": "cb12da56f4cf2b259af126ec5b2d92d6c521d9a8bdccf686a152e6e9a9fdb693",
+      "historical_fields": "cb13eb9f9422741f113d244f249e6b70cece71596934df63643a59412483dac3",
+      "payload": "05f32d7993c3e9b78d77c7d259d1d0c1fe1cc508ba7ae4598113359046274250",
+      "sand_bank": "8ad5c6795e064aa15bfc111d0693397c653ed8835fc153977bc27a2157c1b7cc",
+      "static_cap": "d692f6513f6639332d774f0bbb46cb821fb32da3f4f54a56671867e13f7951be",
+      "frozen_macro_catalog": "5a8b20a1429e7d64b6f299d857c914238f7e0a879dec43308c9a6a527f3c1b3f",
+      "frozen_macro_status": "4c55488885795ce2c3a6ebbd475d57baabf320074be2501ddb6a169276064e91"
+    },
+    "max_virtual_candidates": 65000000,
+    "max_catalog_candidates": 60000000,
+    "max_cells": 10000,
+    "max_grid_bins": 4000000,
+    "chunk_size": 65536
+  },
+  "prototypes": [
+    {
+      "source_id": 13,
+      "prototype_id": 0,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.003106469855545366
+    },
+    {
+      "source_id": 23,
+      "prototype_id": 1,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0021301403218951568
+    },
+    {
+      "source_id": 26,
+      "prototype_id": 2,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0009186293282531451
+    },
+    {
+      "source_id": 32,
+      "prototype_id": 3,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.001626498287148763
+    },
+    {
+      "source_id": 35,
+      "prototype_id": 4,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0009542369213378685
+    },
+    {
+      "source_id": 36,
+      "prototype_id": 5,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.001972535782449239
+    },
+    {
+      "source_id": 50,
+      "prototype_id": 6,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0013807173215532526
+    },
+    {
+      "source_id": 52,
+      "prototype_id": 7,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.002233861194675612
+    },
+    {
+      "source_id": 61,
+      "prototype_id": 8,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0014464947309844405
+    },
+    {
+      "source_id": 62,
+      "prototype_id": 9,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0020392125776620366
+    },
+    {
+      "source_id": 63,
+      "prototype_id": 10,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0020815458975258446
+    },
+    {
+      "source_id": 64,
+      "prototype_id": 11,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.001192795797271191
+    },
+    {
+      "source_id": 70,
+      "prototype_id": 12,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0031968268611528004
+    },
+    {
+      "source_id": 78,
+      "prototype_id": 13,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0008799607008804177
+    },
+    {
+      "source_id": 79,
+      "prototype_id": 14,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0024268707554281443
+    },
+    {
+      "source_id": 83,
+      "prototype_id": 15,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0010234734296234657
+    },
+    {
+      "source_id": 88,
+      "prototype_id": 16,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0015955340589809287
+    },
+    {
+      "source_id": 90,
+      "prototype_id": 17,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0014071443503388414
+    },
+    {
+      "source_id": 93,
+      "prototype_id": 18,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0017796919309402783
+    },
+    {
+      "source_id": 98,
+      "prototype_id": 19,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0010113573762987294
+    },
+    {
+      "source_id": 108,
+      "prototype_id": 20,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0014840389462679273
+    },
+    {
+      "source_id": 116,
+      "prototype_id": 21,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0010236966793324036
+    },
+    {
+      "source_id": 117,
+      "prototype_id": 22,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0011891729385489743
+    },
+    {
+      "source_id": 129,
+      "prototype_id": 23,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0012148324442464796
+    },
+    {
+      "source_id": 136,
+      "prototype_id": 24,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.00267436117128524
+    },
+    {
+      "source_id": 143,
+      "prototype_id": 25,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.002668153424802949
+    },
+    {
+      "source_id": 149,
+      "prototype_id": 26,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0009170140734598406
+    },
+    {
+      "source_id": 151,
+      "prototype_id": 27,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0020812033118986707
+    },
+    {
+      "source_id": 167,
+      "prototype_id": 28,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.002345884754682329
+    },
+    {
+      "source_id": 168,
+      "prototype_id": 29,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0019611677950404235
+    },
+    {
+      "source_id": 172,
+      "prototype_id": 30,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0027868461024509153
+    },
+    {
+      "source_id": 179,
+      "prototype_id": 31,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0013831202841890437
+    },
+    {
+      "source_id": 199,
+      "prototype_id": 32,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0020818524479263305
+    },
+    {
+      "source_id": 206,
+      "prototype_id": 33,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0011492501205025375
+    },
+    {
+      "source_id": 210,
+      "prototype_id": 34,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.002568278610846224
+    },
+    {
+      "source_id": 211,
+      "prototype_id": 35,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0019487848779129284
+    },
+    {
+      "source_id": 222,
+      "prototype_id": 36,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0012139255875334304
+    },
+    {
+      "source_id": 226,
+      "prototype_id": 37,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0009295464087964829
+    },
+    {
+      "source_id": 230,
+      "prototype_id": 38,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0018197892200565162
+    },
+    {
+      "source_id": 247,
+      "prototype_id": 39,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.002173353508522142
+    },
+    {
+      "source_id": 250,
+      "prototype_id": 40,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0011004679259687933
+    },
+    {
+      "source_id": 256,
+      "prototype_id": 41,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0010241976441693968
+    },
+    {
+      "source_id": 261,
+      "prototype_id": 42,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0012718888653777969
+    },
+    {
+      "source_id": 265,
+      "prototype_id": 43,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0009882063227306768
+    },
+    {
+      "source_id": 266,
+      "prototype_id": 44,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0017590663009765437
+    },
+    {
+      "source_id": 273,
+      "prototype_id": 45,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.0015490368100131346
+    },
+    {
+      "source_id": 278,
+      "prototype_id": 46,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.002604652596424679
+    },
+    {
+      "source_id": 292,
+      "prototype_id": 47,
+      "band": 0,
+      "density_per_m2": 190.97222222222226,
+      "radius": 0.002361687857922797
+    },
+    {
+      "source_id": 328,
+      "prototype_id": 48,
+      "band": 1,
+      "density_per_m2": 17089.120370370372,
+      "radius": 0.0004102867715272305
+    },
+    {
+      "source_id": 784,
+      "prototype_id": 49,
+      "band": 1,
+      "density_per_m2": 17089.120370370372,
+      "radius": 0.00039622485468423846
+    },
+    {
+      "source_id": 2934,
+      "prototype_id": 50,
+      "band": 1,
+      "density_per_m2": 17089.120370370372,
+      "radius": 0.0006137617989074215
+    },
+    {
+      "source_id": 3077,
+      "prototype_id": 51,
+      "band": 1,
+      "density_per_m2": 17089.120370370372,
+      "radius": 0.0004920200259426413
+    },
+    {
+      "source_id": 3821,
+      "prototype_id": 52,
+      "band": 1,
+      "density_per_m2": 17089.120370370372,
+      "radius": 0.0006707225080507078
+    },
+    {
+      "source_id": 4243,
+      "prototype_id": 53,
+      "band": 1,
+      "density_per_m2": 17089.120370370372,
+      "radius": 0.0007498893920799998
+    },
+    {
+      "source_id": 4744,
+      "prototype_id": 54,
+      "band": 1,
+      "density_per_m2": 17089.120370370372,
+      "radius": 0.0005236204210825692
+    },
+    {
+      "source_id": 4975,
+      "prototype_id": 55,
+      "band": 1,
+      "density_per_m2": 17089.120370370372,
+      "radius": 0.0005874475690888516
+    },
+    {
+      "source_id": 5933,
+      "prototype_id": 56,
+      "band": 1,
+      "density_per_m2": 17089.120370370372,
+      "radius": 0.0007381198673939148
+    },
+    {
+      "source_id": 6351,
+      "prototype_id": 57,
+      "band": 1,
+      "density_per_m2": 17089.120370370372,
+      "radius": 0.0009291470595702556
+    },
+    {
+      "source_id": 6454,
+      "prototype_id": 58,
+      "band": 1,
+      "density_per_m2": 17089.120370370372,
+      "radius": 0.0004478350599962272
+    },
+    {
+      "source_id": 7589,
+      "prototype_id": 59,
+      "band": 1,
+      "density_per_m2": 17089.120370370372,
+      "radius": 0.0003986928885020845
+    },
+    {
+      "source_id": 7649,
+      "prototype_id": 60,
+      "band": 1,
+      "density_per_m2": 17089.120370370372,
+      "radius": 0.00040129191772043455
+    },
+    {
+      "source_id": 8453,
+      "prototype_id": 61,
+      "band": 1,
+      "density_per_m2": 17089.120370370372,
+      "radius": 0.00039648144204015623
+    },
+    {
+      "source_id": 9012,
+      "prototype_id": 62,
+      "band": 1,
+      "density_per_m2": 17089.120370370372,
+      "radius": 0.0005331456373361796
+    },
+    {
+      "source_id": 9033,
+      "prototype_id": 63,
+      "band": 1,
+      "density_per_m2": 17089.120370370372,
+      "radius": 0.00037419700530417176
+    },
+    {
+      "source_id": 9156,
+      "prototype_id": 64,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00021021175566202725
+    },
+    {
+      "source_id": 10181,
+      "prototype_id": 65,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.0003655553255982525
+    },
+    {
+      "source_id": 11206,
+      "prototype_id": 66,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00014392655685239135
+    },
+    {
+      "source_id": 12231,
+      "prototype_id": 67,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00014775662535261463
+    },
+    {
+      "source_id": 13256,
+      "prototype_id": 68,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00011818077423457293
+    },
+    {
+      "source_id": 14281,
+      "prototype_id": 69,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 8.688285064698567e-05
+    },
+    {
+      "source_id": 15306,
+      "prototype_id": 70,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 9.49876861747394e-05
+    },
+    {
+      "source_id": 16331,
+      "prototype_id": 71,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00017871353813276507
+    },
+    {
+      "source_id": 17356,
+      "prototype_id": 72,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00019523339124172454
+    },
+    {
+      "source_id": 18381,
+      "prototype_id": 73,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00010701090931992733
+    },
+    {
+      "source_id": 19406,
+      "prototype_id": 74,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00011697913793487886
+    },
+    {
+      "source_id": 20431,
+      "prototype_id": 75,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00014381804587294708
+    },
+    {
+      "source_id": 21456,
+      "prototype_id": 76,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00013538905688739036
+    },
+    {
+      "source_id": 22481,
+      "prototype_id": 77,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00015086883230792226
+    },
+    {
+      "source_id": 23506,
+      "prototype_id": 78,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 9.802257040285371e-05
+    },
+    {
+      "source_id": 24531,
+      "prototype_id": 79,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00014243352217383824
+    },
+    {
+      "source_id": 25556,
+      "prototype_id": 80,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00016226848311285777
+    },
+    {
+      "source_id": 26581,
+      "prototype_id": 81,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00011941726159286592
+    },
+    {
+      "source_id": 27606,
+      "prototype_id": 82,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.0002519049449490355
+    },
+    {
+      "source_id": 28631,
+      "prototype_id": 83,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 8.385148051033231e-05
+    },
+    {
+      "source_id": 29656,
+      "prototype_id": 84,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00017494597035044637
+    },
+    {
+      "source_id": 30681,
+      "prototype_id": 85,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00016378125368880366
+    },
+    {
+      "source_id": 31706,
+      "prototype_id": 86,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00014793724474909767
+    },
+    {
+      "source_id": 32731,
+      "prototype_id": 87,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00026304765186925164
+    },
+    {
+      "source_id": 33756,
+      "prototype_id": 88,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00011612640978020232
+    },
+    {
+      "source_id": 34781,
+      "prototype_id": 89,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00012456172270696407
+    },
+    {
+      "source_id": 35806,
+      "prototype_id": 90,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 9.64444374636939e-05
+    },
+    {
+      "source_id": 36831,
+      "prototype_id": 91,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00018579524797143738
+    },
+    {
+      "source_id": 37856,
+      "prototype_id": 92,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.0001029752416873836
+    },
+    {
+      "source_id": 38881,
+      "prototype_id": 93,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 9.40376974220784e-05
+    },
+    {
+      "source_id": 39906,
+      "prototype_id": 94,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.0003117439028801336
+    },
+    {
+      "source_id": 40931,
+      "prototype_id": 95,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00013226653887307536
+    },
+    {
+      "source_id": 41956,
+      "prototype_id": 96,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00013502895493996584
+    },
+    {
+      "source_id": 42981,
+      "prototype_id": 97,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00016484732742839286
+    },
+    {
+      "source_id": 44006,
+      "prototype_id": 98,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00012636787088552237
+    },
+    {
+      "source_id": 45031,
+      "prototype_id": 99,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00015889047806200935
+    },
+    {
+      "source_id": 46056,
+      "prototype_id": 100,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00012525738406580147
+    },
+    {
+      "source_id": 47081,
+      "prototype_id": 101,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.0002568005003348518
+    },
+    {
+      "source_id": 48106,
+      "prototype_id": 102,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.0001532015210741307
+    },
+    {
+      "source_id": 49131,
+      "prototype_id": 103,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.0002304313220826373
+    },
+    {
+      "source_id": 50156,
+      "prototype_id": 104,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00018686573565984108
+    },
+    {
+      "source_id": 51181,
+      "prototype_id": 105,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.0002819772227343906
+    },
+    {
+      "source_id": 52206,
+      "prototype_id": 106,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 8.101745303878653e-05
+    },
+    {
+      "source_id": 53231,
+      "prototype_id": 107,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00023648409156374416
+    },
+    {
+      "source_id": 54256,
+      "prototype_id": 108,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 9.271572616108509e-05
+    },
+    {
+      "source_id": 55281,
+      "prototype_id": 109,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.0001143533685888535
+    },
+    {
+      "source_id": 56306,
+      "prototype_id": 110,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00013296328405144127
+    },
+    {
+      "source_id": 57331,
+      "prototype_id": 111,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 8.847073057955398e-05
+    },
+    {
+      "source_id": 58356,
+      "prototype_id": 112,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.0002261396326560805
+    },
+    {
+      "source_id": 59381,
+      "prototype_id": 113,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00010473259644705829
+    },
+    {
+      "source_id": 60406,
+      "prototype_id": 114,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 9.724742322502859e-05
+    },
+    {
+      "source_id": 61431,
+      "prototype_id": 115,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 9.712529022917047e-05
+    },
+    {
+      "source_id": 62456,
+      "prototype_id": 116,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00017335698478573354
+    },
+    {
+      "source_id": 63481,
+      "prototype_id": 117,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 9.171968156250964e-05
+    },
+    {
+      "source_id": 64506,
+      "prototype_id": 118,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 8.49627731695977e-05
+    },
+    {
+      "source_id": 65531,
+      "prototype_id": 119,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.0001448661132854562
+    },
+    {
+      "source_id": 66556,
+      "prototype_id": 120,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00020058233812941353
+    },
+    {
+      "source_id": 67581,
+      "prototype_id": 121,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00024324666517627042
+    },
+    {
+      "source_id": 68606,
+      "prototype_id": 122,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00012207694849108481
+    },
+    {
+      "source_id": 69631,
+      "prototype_id": 123,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 9.153112464858096e-05
+    },
+    {
+      "source_id": 70656,
+      "prototype_id": 124,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.0002220799580087371
+    },
+    {
+      "source_id": 71681,
+      "prototype_id": 125,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.0002829583976773408
+    },
+    {
+      "source_id": 72706,
+      "prototype_id": 126,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.0002504015568805866
+    },
+    {
+      "source_id": 73732,
+      "prototype_id": 127,
+      "band": 2,
+      "density_per_m2": 31142.457561728395,
+      "radius": 0.00011298062217922775
+    }
+  ],
+  "report": {
+    "meaning": "Bounded display catalog, not a claim of complete physical packing or rendered coverage",
+    "scope_area_m2": 23.663999999999998,
+    "world_cell_count": 760,
+    "full_cell_virtual_count": 56036969,
+    "virtual_count_in_scope": 53852466,
+    "catalog_attempt_count": 53852466,
+    "packed_catalog_count": 27985061,
+    "original_blocker_rejections": 1109817,
+    "catalog_packing_rejections": 24757588,
+    "target_physical_density_per_m2": 2275709.87654321,
+    "achieved_display_catalog_density_per_m2": 1182600.6169709263,
+    "prototypes": [
+      {
+        "source_id": 13,
+        "prototype_id": 0,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4711,
+        "virtual_count_in_scope": 4511,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4511,
+        "packed_catalog_count": 3289,
+        "packing_shortfall": 1222,
+        "achieved_display_catalog_density_per_m2": 138.98749154834348
+      },
+      {
+        "source_id": 23,
+        "prototype_id": 1,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4706,
+        "virtual_count_in_scope": 4508,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4508,
+        "packed_catalog_count": 3587,
+        "packing_shortfall": 921,
+        "achieved_display_catalog_density_per_m2": 151.58045977011494
+      },
+      {
+        "source_id": 26,
+        "prototype_id": 2,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4684,
+        "virtual_count_in_scope": 4507,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4507,
+        "packed_catalog_count": 4027,
+        "packing_shortfall": 480,
+        "achieved_display_catalog_density_per_m2": 170.1741041244084
+      },
+      {
+        "source_id": 32,
+        "prototype_id": 3,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4693,
+        "virtual_count_in_scope": 4526,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4526,
+        "packed_catalog_count": 3764,
+        "packing_shortfall": 762,
+        "achieved_display_catalog_density_per_m2": 159.06017579445572
+      },
+      {
+        "source_id": 35,
+        "prototype_id": 4,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4700,
+        "virtual_count_in_scope": 4515,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4515,
+        "packed_catalog_count": 4030,
+        "packing_shortfall": 485,
+        "achieved_display_catalog_density_per_m2": 170.30087897227858
+      },
+      {
+        "source_id": 36,
+        "prototype_id": 5,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4704,
+        "virtual_count_in_scope": 4539,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4539,
+        "packed_catalog_count": 3707,
+        "packing_shortfall": 832,
+        "achieved_display_catalog_density_per_m2": 156.65145368492225
+      },
+      {
+        "source_id": 50,
+        "prototype_id": 6,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4714,
+        "virtual_count_in_scope": 4538,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4538,
+        "packed_catalog_count": 3922,
+        "packing_shortfall": 616,
+        "achieved_display_catalog_density_per_m2": 165.736984448952
+      },
+      {
+        "source_id": 52,
+        "prototype_id": 7,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4693,
+        "virtual_count_in_scope": 4504,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4504,
+        "packed_catalog_count": 3575,
+        "packing_shortfall": 929,
+        "achieved_display_catalog_density_per_m2": 151.07336037863422
+      },
+      {
+        "source_id": 61,
+        "prototype_id": 8,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4707,
+        "virtual_count_in_scope": 4513,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4513,
+        "packed_catalog_count": 3860,
+        "packing_shortfall": 653,
+        "achieved_display_catalog_density_per_m2": 163.11697092630158
+      },
+      {
+        "source_id": 62,
+        "prototype_id": 9,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4711,
+        "virtual_count_in_scope": 4535,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4535,
+        "packed_catalog_count": 3589,
+        "packing_shortfall": 946,
+        "achieved_display_catalog_density_per_m2": 151.66497633536176
+      },
+      {
+        "source_id": 63,
+        "prototype_id": 10,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4705,
+        "virtual_count_in_scope": 4520,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4520,
+        "packed_catalog_count": 3664,
+        "packing_shortfall": 856,
+        "achieved_display_catalog_density_per_m2": 154.8343475321163
+      },
+      {
+        "source_id": 64,
+        "prototype_id": 11,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4698,
+        "virtual_count_in_scope": 4523,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4523,
+        "packed_catalog_count": 3952,
+        "packing_shortfall": 571,
+        "achieved_display_catalog_density_per_m2": 167.00473292765383
+      },
+      {
+        "source_id": 70,
+        "prototype_id": 12,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4702,
+        "virtual_count_in_scope": 4507,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4507,
+        "packed_catalog_count": 3168,
+        "packing_shortfall": 1339,
+        "achieved_display_catalog_density_per_m2": 133.8742393509128
+      },
+      {
+        "source_id": 78,
+        "prototype_id": 13,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4696,
+        "virtual_count_in_scope": 4509,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4509,
+        "packed_catalog_count": 4042,
+        "packing_shortfall": 467,
+        "achieved_display_catalog_density_per_m2": 170.8079783637593
+      },
+      {
+        "source_id": 79,
+        "prototype_id": 14,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4695,
+        "virtual_count_in_scope": 4506,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4506,
+        "packed_catalog_count": 3525,
+        "packing_shortfall": 981,
+        "achieved_display_catalog_density_per_m2": 148.96044624746452
+      },
+      {
+        "source_id": 83,
+        "prototype_id": 15,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4700,
+        "virtual_count_in_scope": 4533,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4533,
+        "packed_catalog_count": 4020,
+        "packing_shortfall": 513,
+        "achieved_display_catalog_density_per_m2": 169.87829614604465
+      },
+      {
+        "source_id": 88,
+        "prototype_id": 16,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4703,
+        "virtual_count_in_scope": 4528,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4528,
+        "packed_catalog_count": 3818,
+        "packing_shortfall": 710,
+        "achieved_display_catalog_density_per_m2": 161.34212305611902
+      },
+      {
+        "source_id": 90,
+        "prototype_id": 17,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4720,
+        "virtual_count_in_scope": 4515,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4515,
+        "packed_catalog_count": 3873,
+        "packing_shortfall": 642,
+        "achieved_display_catalog_density_per_m2": 163.6663286004057
+      },
+      {
+        "source_id": 93,
+        "prototype_id": 18,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4674,
+        "virtual_count_in_scope": 4491,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4491,
+        "packed_catalog_count": 3697,
+        "packing_shortfall": 794,
+        "achieved_display_catalog_density_per_m2": 156.2288708586883
+      },
+      {
+        "source_id": 98,
+        "prototype_id": 19,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4704,
+        "virtual_count_in_scope": 4541,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4541,
+        "packed_catalog_count": 4009,
+        "packing_shortfall": 532,
+        "achieved_display_catalog_density_per_m2": 169.4134550371873
+      },
+      {
+        "source_id": 108,
+        "prototype_id": 20,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4706,
+        "virtual_count_in_scope": 4519,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4519,
+        "packed_catalog_count": 3831,
+        "packing_shortfall": 688,
+        "achieved_display_catalog_density_per_m2": 161.89148073022315
+      },
+      {
+        "source_id": 116,
+        "prototype_id": 21,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4699,
+        "virtual_count_in_scope": 4516,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4516,
+        "packed_catalog_count": 3973,
+        "packing_shortfall": 543,
+        "achieved_display_catalog_density_per_m2": 167.8921568627451
+      },
+      {
+        "source_id": 117,
+        "prototype_id": 22,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4706,
+        "virtual_count_in_scope": 4534,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4534,
+        "packed_catalog_count": 3941,
+        "packing_shortfall": 593,
+        "achieved_display_catalog_density_per_m2": 166.5398918187965
+      },
+      {
+        "source_id": 129,
+        "prototype_id": 23,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4705,
+        "virtual_count_in_scope": 4508,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4508,
+        "packed_catalog_count": 3951,
+        "packing_shortfall": 557,
+        "achieved_display_catalog_density_per_m2": 166.96247464503045
+      },
+      {
+        "source_id": 136,
+        "prototype_id": 24,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4691,
+        "virtual_count_in_scope": 4507,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4507,
+        "packed_catalog_count": 3447,
+        "packing_shortfall": 1060,
+        "achieved_display_catalog_density_per_m2": 145.66430020283977
+      },
+      {
+        "source_id": 143,
+        "prototype_id": 25,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4705,
+        "virtual_count_in_scope": 4509,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4509,
+        "packed_catalog_count": 3390,
+        "packing_shortfall": 1119,
+        "achieved_display_catalog_density_per_m2": 143.2555780933063
+      },
+      {
+        "source_id": 149,
+        "prototype_id": 26,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4701,
+        "virtual_count_in_scope": 4527,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4527,
+        "packed_catalog_count": 4024,
+        "packing_shortfall": 503,
+        "achieved_display_catalog_density_per_m2": 170.04732927653822
+      },
+      {
+        "source_id": 151,
+        "prototype_id": 27,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4685,
+        "virtual_count_in_scope": 4489,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4489,
+        "packed_catalog_count": 3617,
+        "packing_shortfall": 872,
+        "achieved_display_catalog_density_per_m2": 152.84820824881677
+      },
+      {
+        "source_id": 167,
+        "prototype_id": 28,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4691,
+        "virtual_count_in_scope": 4503,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4503,
+        "packed_catalog_count": 3546,
+        "packing_shortfall": 957,
+        "achieved_display_catalog_density_per_m2": 149.8478701825558
+      },
+      {
+        "source_id": 168,
+        "prototype_id": 29,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4701,
+        "virtual_count_in_scope": 4507,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4507,
+        "packed_catalog_count": 3640,
+        "packing_shortfall": 867,
+        "achieved_display_catalog_density_per_m2": 153.82014874915484
+      },
+      {
+        "source_id": 172,
+        "prototype_id": 30,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4694,
+        "virtual_count_in_scope": 4506,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4506,
+        "packed_catalog_count": 3381,
+        "packing_shortfall": 1125,
+        "achieved_display_catalog_density_per_m2": 142.87525354969574
+      },
+      {
+        "source_id": 179,
+        "prototype_id": 31,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4705,
+        "virtual_count_in_scope": 4527,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4527,
+        "packed_catalog_count": 3891,
+        "packing_shortfall": 636,
+        "achieved_display_catalog_density_per_m2": 164.4269776876268
+      },
+      {
+        "source_id": 199,
+        "prototype_id": 32,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4698,
+        "virtual_count_in_scope": 4534,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4534,
+        "packed_catalog_count": 3697,
+        "packing_shortfall": 837,
+        "achieved_display_catalog_density_per_m2": 156.2288708586883
+      },
+      {
+        "source_id": 206,
+        "prototype_id": 33,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4702,
+        "virtual_count_in_scope": 4497,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4497,
+        "packed_catalog_count": 3920,
+        "packing_shortfall": 577,
+        "achieved_display_catalog_density_per_m2": 165.6524678837052
+      },
+      {
+        "source_id": 210,
+        "prototype_id": 34,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4697,
+        "virtual_count_in_scope": 4517,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4517,
+        "packed_catalog_count": 3414,
+        "packing_shortfall": 1103,
+        "achieved_display_catalog_density_per_m2": 144.26977687626777
+      },
+      {
+        "source_id": 211,
+        "prototype_id": 35,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4677,
+        "virtual_count_in_scope": 4496,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4496,
+        "packed_catalog_count": 3673,
+        "packing_shortfall": 823,
+        "achieved_display_catalog_density_per_m2": 155.21467207572687
+      },
+      {
+        "source_id": 222,
+        "prototype_id": 36,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4691,
+        "virtual_count_in_scope": 4503,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4503,
+        "packed_catalog_count": 3922,
+        "packing_shortfall": 581,
+        "achieved_display_catalog_density_per_m2": 165.736984448952
+      },
+      {
+        "source_id": 226,
+        "prototype_id": 37,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4715,
+        "virtual_count_in_scope": 4541,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4541,
+        "packed_catalog_count": 4032,
+        "packing_shortfall": 509,
+        "achieved_display_catalog_density_per_m2": 170.38539553752537
+      },
+      {
+        "source_id": 230,
+        "prototype_id": 38,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4694,
+        "virtual_count_in_scope": 4495,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4495,
+        "packed_catalog_count": 3703,
+        "packing_shortfall": 792,
+        "achieved_display_catalog_density_per_m2": 156.48242055442867
+      },
+      {
+        "source_id": 247,
+        "prototype_id": 39,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4697,
+        "virtual_count_in_scope": 4515,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4515,
+        "packed_catalog_count": 3608,
+        "packing_shortfall": 907,
+        "achieved_display_catalog_density_per_m2": 152.46788370520625
+      },
+      {
+        "source_id": 250,
+        "prototype_id": 40,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4703,
+        "virtual_count_in_scope": 4527,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4527,
+        "packed_catalog_count": 4012,
+        "packing_shortfall": 515,
+        "achieved_display_catalog_density_per_m2": 169.5402298850575
+      },
+      {
+        "source_id": 256,
+        "prototype_id": 41,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4694,
+        "virtual_count_in_scope": 4504,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4504,
+        "packed_catalog_count": 3970,
+        "packing_shortfall": 534,
+        "achieved_display_catalog_density_per_m2": 167.76538201487492
+      },
+      {
+        "source_id": 261,
+        "prototype_id": 42,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4716,
+        "virtual_count_in_scope": 4536,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4536,
+        "packed_catalog_count": 3959,
+        "packing_shortfall": 577,
+        "achieved_display_catalog_density_per_m2": 167.3005409060176
+      },
+      {
+        "source_id": 265,
+        "prototype_id": 43,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4704,
+        "virtual_count_in_scope": 4509,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4509,
+        "packed_catalog_count": 4015,
+        "packing_shortfall": 494,
+        "achieved_display_catalog_density_per_m2": 169.66700473292767
+      },
+      {
+        "source_id": 266,
+        "prototype_id": 44,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4712,
+        "virtual_count_in_scope": 4533,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4533,
+        "packed_catalog_count": 3772,
+        "packing_shortfall": 761,
+        "achieved_display_catalog_density_per_m2": 159.3982420554429
+      },
+      {
+        "source_id": 273,
+        "prototype_id": 45,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4713,
+        "virtual_count_in_scope": 4527,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4527,
+        "packed_catalog_count": 3846,
+        "packing_shortfall": 681,
+        "achieved_display_catalog_density_per_m2": 162.52535496957404
+      },
+      {
+        "source_id": 278,
+        "prototype_id": 46,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4701,
+        "virtual_count_in_scope": 4526,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4526,
+        "packed_catalog_count": 3441,
+        "packing_shortfall": 1085,
+        "achieved_display_catalog_density_per_m2": 145.4107505070994
+      },
+      {
+        "source_id": 292,
+        "prototype_id": 47,
+        "band": 0,
+        "target_physical_density_per_m2": 190.97222222222226,
+        "expected_physical_count_in_scope": 4519.166666666667,
+        "full_cell_virtual_count": 4702,
+        "virtual_count_in_scope": 4519,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 4519,
+        "packed_catalog_count": 3547,
+        "packing_shortfall": 972,
+        "achieved_display_catalog_density_per_m2": 149.89012846517917
+      },
+      {
+        "source_id": 328,
+        "prototype_id": 48,
+        "band": 1,
+        "target_physical_density_per_m2": 17089.120370370372,
+        "expected_physical_count_in_scope": 404396.94444444444,
+        "full_cell_virtual_count": 420812,
+        "virtual_count_in_scope": 404562,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 404562,
+        "packed_catalog_count": 256589,
+        "packing_shortfall": 147973,
+        "achieved_display_catalog_density_per_m2": 10843.010480054092
+      },
+      {
+        "source_id": 784,
+        "prototype_id": 49,
+        "band": 1,
+        "target_physical_density_per_m2": 17089.120370370372,
+        "expected_physical_count_in_scope": 404396.94444444444,
+        "full_cell_virtual_count": 420806,
+        "virtual_count_in_scope": 404280,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 404280,
+        "packed_catalog_count": 259969,
+        "packing_shortfall": 144311,
+        "achieved_display_catalog_density_per_m2": 10985.843475321164
+      },
+      {
+        "source_id": 2934,
+        "prototype_id": 50,
+        "band": 1,
+        "target_physical_density_per_m2": 17089.120370370372,
+        "expected_physical_count_in_scope": 404396.94444444444,
+        "full_cell_virtual_count": 420776,
+        "virtual_count_in_scope": 404406,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 404406,
+        "packed_catalog_count": 216006,
+        "packing_shortfall": 188400,
+        "achieved_display_catalog_density_per_m2": 9128.042596348885
+      },
+      {
+        "source_id": 3077,
+        "prototype_id": 51,
+        "band": 1,
+        "target_physical_density_per_m2": 17089.120370370372,
+        "expected_physical_count_in_scope": 404396.94444444444,
+        "full_cell_virtual_count": 420820,
+        "virtual_count_in_scope": 404442,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 404442,
+        "packed_catalog_count": 240763,
+        "packing_shortfall": 163679,
+        "achieved_display_catalog_density_per_m2": 10174.230899256256
+      },
+      {
+        "source_id": 3821,
+        "prototype_id": 52,
+        "band": 1,
+        "target_physical_density_per_m2": 17089.120370370372,
+        "expected_physical_count_in_scope": 404396.94444444444,
+        "full_cell_virtual_count": 420797,
+        "virtual_count_in_scope": 404276,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 404276,
+        "packed_catalog_count": 205505,
+        "packing_shortfall": 198771,
+        "achieved_display_catalog_density_per_m2": 8684.288370520622
+      },
+      {
+        "source_id": 4243,
+        "prototype_id": 53,
+        "band": 1,
+        "target_physical_density_per_m2": 17089.120370370372,
+        "expected_physical_count_in_scope": 404396.94444444444,
+        "full_cell_virtual_count": 420810,
+        "virtual_count_in_scope": 404313,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 404313,
+        "packed_catalog_count": 190678,
+        "packing_shortfall": 213635,
+        "achieved_display_catalog_density_per_m2": 8057.7248140635575
+      },
+      {
+        "source_id": 4744,
+        "prototype_id": 54,
+        "band": 1,
+        "target_physical_density_per_m2": 17089.120370370372,
+        "expected_physical_count_in_scope": 404396.94444444444,
+        "full_cell_virtual_count": 420805,
+        "virtual_count_in_scope": 404349,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 404349,
+        "packed_catalog_count": 233858,
+        "packing_shortfall": 170491,
+        "achieved_display_catalog_density_per_m2": 9882.437457741718
+      },
+      {
+        "source_id": 4975,
+        "prototype_id": 55,
+        "band": 1,
+        "target_physical_density_per_m2": 17089.120370370372,
+        "expected_physical_count_in_scope": 404396.94444444444,
+        "full_cell_virtual_count": 420812,
+        "virtual_count_in_scope": 404619,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 404619,
+        "packed_catalog_count": 221283,
+        "packing_shortfall": 183336,
+        "achieved_display_catalog_density_per_m2": 9351.039553752536
+      },
+      {
+        "source_id": 5933,
+        "prototype_id": 56,
+        "band": 1,
+        "target_physical_density_per_m2": 17089.120370370372,
+        "expected_physical_count_in_scope": 404396.94444444444,
+        "full_cell_virtual_count": 420798,
+        "virtual_count_in_scope": 404271,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 404271,
+        "packed_catalog_count": 193016,
+        "packing_shortfall": 211255,
+        "achieved_display_catalog_density_per_m2": 8156.524678837053
+      },
+      {
+        "source_id": 6351,
+        "prototype_id": 57,
+        "band": 1,
+        "target_physical_density_per_m2": 17089.120370370372,
+        "expected_physical_count_in_scope": 404396.94444444444,
+        "full_cell_virtual_count": 420788,
+        "virtual_count_in_scope": 404315,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 404315,
+        "packed_catalog_count": 158976,
+        "packing_shortfall": 245339,
+        "achieved_display_catalog_density_per_m2": 6718.052738336714
+      },
+      {
+        "source_id": 6454,
+        "prototype_id": 58,
+        "band": 1,
+        "target_physical_density_per_m2": 17089.120370370372,
+        "expected_physical_count_in_scope": 404396.94444444444,
+        "full_cell_virtual_count": 420818,
+        "virtual_count_in_scope": 404362,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 404362,
+        "packed_catalog_count": 249747,
+        "packing_shortfall": 154615,
+        "achieved_display_catalog_density_per_m2": 10553.879310344828
+      },
+      {
+        "source_id": 7589,
+        "prototype_id": 59,
+        "band": 1,
+        "target_physical_density_per_m2": 17089.120370370372,
+        "expected_physical_count_in_scope": 404396.94444444444,
+        "full_cell_virtual_count": 420798,
+        "virtual_count_in_scope": 404618,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 404618,
+        "packed_catalog_count": 258890,
+        "packing_shortfall": 145728,
+        "achieved_display_catalog_density_per_m2": 10940.246788370521
+      },
+      {
+        "source_id": 7649,
+        "prototype_id": 60,
+        "band": 1,
+        "target_physical_density_per_m2": 17089.120370370372,
+        "expected_physical_count_in_scope": 404396.94444444444,
+        "full_cell_virtual_count": 420793,
+        "virtual_count_in_scope": 404313,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 404313,
+        "packed_catalog_count": 258396,
+        "packing_shortfall": 145917,
+        "achieved_display_catalog_density_per_m2": 10919.371196754564
+      },
+      {
+        "source_id": 8453,
+        "prototype_id": 61,
+        "band": 1,
+        "target_physical_density_per_m2": 17089.120370370372,
+        "expected_physical_count_in_scope": 404396.94444444444,
+        "full_cell_virtual_count": 420773,
+        "virtual_count_in_scope": 404593,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 404593,
+        "packed_catalog_count": 259746,
+        "packing_shortfall": 144847,
+        "achieved_display_catalog_density_per_m2": 10976.419878296147
+      },
+      {
+        "source_id": 9012,
+        "prototype_id": 62,
+        "band": 1,
+        "target_physical_density_per_m2": 17089.120370370372,
+        "expected_physical_count_in_scope": 404396.94444444444,
+        "full_cell_virtual_count": 420796,
+        "virtual_count_in_scope": 404354,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 404354,
+        "packed_catalog_count": 231893,
+        "packing_shortfall": 172461,
+        "achieved_display_catalog_density_per_m2": 9799.399932386748
+      },
+      {
+        "source_id": 9033,
+        "prototype_id": 63,
+        "band": 1,
+        "target_physical_density_per_m2": 17089.120370370372,
+        "expected_physical_count_in_scope": 404396.94444444444,
+        "full_cell_virtual_count": 420827,
+        "virtual_count_in_scope": 404260,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 404260,
+        "packed_catalog_count": 263914,
+        "packing_shortfall": 140346,
+        "achieved_display_catalog_density_per_m2": 11152.552400270453
+      },
+      {
+        "source_id": 9156,
+        "prototype_id": 64,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766856,
+        "virtual_count_in_scope": 736975,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736975,
+        "packed_catalog_count": 322944,
+        "packing_shortfall": 414031,
+        "achieved_display_catalog_density_per_m2": 13647.058823529413
+      },
+      {
+        "source_id": 10181,
+        "prototype_id": 65,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766857,
+        "virtual_count_in_scope": 736972,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736972,
+        "packed_catalog_count": 189010,
+        "packing_shortfall": 547962,
+        "achieved_display_catalog_density_per_m2": 7987.237998647735
+      },
+      {
+        "source_id": 11206,
+        "prototype_id": 66,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766847,
+        "virtual_count_in_scope": 737063,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 737063,
+        "packed_catalog_count": 389500,
+        "packing_shortfall": 347563,
+        "achieved_display_catalog_density_per_m2": 16459.601081812038
+      },
+      {
+        "source_id": 12231,
+        "prototype_id": 67,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766852,
+        "virtual_count_in_scope": 737282,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 737282,
+        "packed_catalog_count": 386069,
+        "packing_shortfall": 351213,
+        "achieved_display_catalog_density_per_m2": 16314.61291413117
+      },
+      {
+        "source_id": 13256,
+        "prototype_id": 68,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766850,
+        "virtual_count_in_scope": 736979,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736979,
+        "packed_catalog_count": 415935,
+        "packing_shortfall": 321044,
+        "achieved_display_catalog_density_per_m2": 17576.698782961463
+      },
+      {
+        "source_id": 14281,
+        "prototype_id": 69,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766850,
+        "virtual_count_in_scope": 736947,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736947,
+        "packed_catalog_count": 446880,
+        "packing_shortfall": 290067,
+        "achieved_display_catalog_density_per_m2": 18884.381338742394
+      },
+      {
+        "source_id": 15306,
+        "prototype_id": 70,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766849,
+        "virtual_count_in_scope": 736988,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736988,
+        "packed_catalog_count": 438999,
+        "packing_shortfall": 297989,
+        "achieved_display_catalog_density_per_m2": 18551.343813387426
+      },
+      {
+        "source_id": 16331,
+        "prototype_id": 71,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766851,
+        "virtual_count_in_scope": 736879,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736879,
+        "packed_catalog_count": 353995,
+        "packing_shortfall": 382884,
+        "achieved_display_catalog_density_per_m2": 14959.220757268426
+      },
+      {
+        "source_id": 17356,
+        "prototype_id": 72,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766851,
+        "virtual_count_in_scope": 736967,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736967,
+        "packed_catalog_count": 337418,
+        "packing_shortfall": 399549,
+        "achieved_display_catalog_density_per_m2": 14258.70520622042
+      },
+      {
+        "source_id": 18381,
+        "prototype_id": 73,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766848,
+        "virtual_count_in_scope": 736952,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736952,
+        "packed_catalog_count": 426390,
+        "packing_shortfall": 310562,
+        "achieved_display_catalog_density_per_m2": 18018.50912778905
+      },
+      {
+        "source_id": 19406,
+        "prototype_id": 74,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766849,
+        "virtual_count_in_scope": 736945,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736945,
+        "packed_catalog_count": 416939,
+        "packing_shortfall": 320006,
+        "achieved_display_catalog_density_per_m2": 17619.12609871535
+      },
+      {
+        "source_id": 20431,
+        "prototype_id": 75,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766851,
+        "virtual_count_in_scope": 737032,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 737032,
+        "packed_catalog_count": 389198,
+        "packing_shortfall": 347834,
+        "achieved_display_catalog_density_per_m2": 16446.839080459773
+      },
+      {
+        "source_id": 21456,
+        "prototype_id": 76,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766854,
+        "virtual_count_in_scope": 737167,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 737167,
+        "packed_catalog_count": 397736,
+        "packing_shortfall": 339431,
+        "achieved_display_catalog_density_per_m2": 16807.64029749831
+      },
+      {
+        "source_id": 22481,
+        "prototype_id": 77,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766845,
+        "virtual_count_in_scope": 736862,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736862,
+        "packed_catalog_count": 381844,
+        "packing_shortfall": 355018,
+        "achieved_display_catalog_density_per_m2": 16136.071670047331
+      },
+      {
+        "source_id": 23506,
+        "prototype_id": 78,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766849,
+        "virtual_count_in_scope": 736908,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736908,
+        "packed_catalog_count": 435416,
+        "packing_shortfall": 301492,
+        "achieved_display_catalog_density_per_m2": 18399.932386747805
+      },
+      {
+        "source_id": 24531,
+        "prototype_id": 79,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766852,
+        "virtual_count_in_scope": 737036,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 737036,
+        "packed_catalog_count": 391083,
+        "packing_shortfall": 345953,
+        "achieved_display_catalog_density_per_m2": 16526.49594320487
+      },
+      {
+        "source_id": 25556,
+        "prototype_id": 80,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766843,
+        "virtual_count_in_scope": 736743,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736743,
+        "packed_catalog_count": 369969,
+        "packing_shortfall": 366774,
+        "achieved_display_catalog_density_per_m2": 15634.254563894525
+      },
+      {
+        "source_id": 26581,
+        "prototype_id": 81,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766852,
+        "virtual_count_in_scope": 736896,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736896,
+        "packed_catalog_count": 413013,
+        "packing_shortfall": 323883,
+        "achieved_display_catalog_density_per_m2": 17453.220081135903
+      },
+      {
+        "source_id": 27606,
+        "prototype_id": 82,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766858,
+        "virtual_count_in_scope": 736840,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736840,
+        "packed_catalog_count": 282136,
+        "packing_shortfall": 454704,
+        "achieved_display_catalog_density_per_m2": 11922.582826233944
+      },
+      {
+        "source_id": 28631,
+        "prototype_id": 83,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766849,
+        "virtual_count_in_scope": 737048,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 737048,
+        "packed_catalog_count": 449970,
+        "packing_shortfall": 287078,
+        "achieved_display_catalog_density_per_m2": 19014.959432048683
+      },
+      {
+        "source_id": 29656,
+        "prototype_id": 84,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766854,
+        "virtual_count_in_scope": 736968,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736968,
+        "packed_catalog_count": 357169,
+        "packing_shortfall": 379799,
+        "achieved_display_catalog_density_per_m2": 15093.34854631508
+      },
+      {
+        "source_id": 30681,
+        "prototype_id": 85,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766851,
+        "virtual_count_in_scope": 736984,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736984,
+        "packed_catalog_count": 369620,
+        "packing_shortfall": 367364,
+        "achieved_display_catalog_density_per_m2": 15619.50642325896
+      },
+      {
+        "source_id": 31706,
+        "prototype_id": 86,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766854,
+        "virtual_count_in_scope": 736997,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736997,
+        "packed_catalog_count": 385376,
+        "packing_shortfall": 351621,
+        "achieved_display_catalog_density_per_m2": 16285.327924273159
+      },
+      {
+        "source_id": 32731,
+        "prototype_id": 87,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766849,
+        "virtual_count_in_scope": 737161,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 737161,
+        "packed_catalog_count": 273027,
+        "packing_shortfall": 464134,
+        "achieved_display_catalog_density_per_m2": 11537.652129817445
+      },
+      {
+        "source_id": 33756,
+        "prototype_id": 88,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766856,
+        "virtual_count_in_scope": 736944,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736944,
+        "packed_catalog_count": 417155,
+        "packing_shortfall": 319789,
+        "achieved_display_catalog_density_per_m2": 17628.253887762003
+      },
+      {
+        "source_id": 34781,
+        "prototype_id": 89,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766854,
+        "virtual_count_in_scope": 737109,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 737109,
+        "packed_catalog_count": 408737,
+        "packing_shortfall": 328372,
+        "achieved_display_catalog_density_per_m2": 17272.52366463827
+      },
+      {
+        "source_id": 35806,
+        "prototype_id": 90,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766862,
+        "virtual_count_in_scope": 736814,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736814,
+        "packed_catalog_count": 437343,
+        "packing_shortfall": 299471,
+        "achieved_display_catalog_density_per_m2": 18481.364097363086
+      },
+      {
+        "source_id": 36831,
+        "prototype_id": 91,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766863,
+        "virtual_count_in_scope": 736878,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736878,
+        "packed_catalog_count": 347135,
+        "packing_shortfall": 389743,
+        "achieved_display_catalog_density_per_m2": 14669.328938471941
+      },
+      {
+        "source_id": 37856,
+        "prototype_id": 92,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766849,
+        "virtual_count_in_scope": 736735,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736735,
+        "packed_catalog_count": 429881,
+        "packing_shortfall": 306854,
+        "achieved_display_catalog_density_per_m2": 18166.03279242732
+      },
+      {
+        "source_id": 38881,
+        "prototype_id": 93,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766852,
+        "virtual_count_in_scope": 737096,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 737096,
+        "packed_catalog_count": 439524,
+        "packing_shortfall": 297572,
+        "achieved_display_catalog_density_per_m2": 18573.529411764706
+      },
+      {
+        "source_id": 39906,
+        "prototype_id": 94,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766852,
+        "virtual_count_in_scope": 736963,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736963,
+        "packed_catalog_count": 230890,
+        "packing_shortfall": 506073,
+        "achieved_display_catalog_density_per_m2": 9757.014874915485
+      },
+      {
+        "source_id": 40931,
+        "prototype_id": 95,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766847,
+        "virtual_count_in_scope": 737103,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 737103,
+        "packed_catalog_count": 401541,
+        "packing_shortfall": 335562,
+        "achieved_display_catalog_density_per_m2": 16968.433062880325
+      },
+      {
+        "source_id": 41956,
+        "prototype_id": 96,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766849,
+        "virtual_count_in_scope": 736848,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736848,
+        "packed_catalog_count": 397798,
+        "packing_shortfall": 339050,
+        "achieved_display_catalog_density_per_m2": 16810.26031102096
+      },
+      {
+        "source_id": 42981,
+        "prototype_id": 97,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766858,
+        "virtual_count_in_scope": 736863,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736863,
+        "packed_catalog_count": 367509,
+        "packing_shortfall": 369354,
+        "achieved_display_catalog_density_per_m2": 15530.299188640975
+      },
+      {
+        "source_id": 44006,
+        "prototype_id": 98,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766850,
+        "virtual_count_in_scope": 736819,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736819,
+        "packed_catalog_count": 407219,
+        "packing_shortfall": 329600,
+        "achieved_display_catalog_density_per_m2": 17208.375591615957
+      },
+      {
+        "source_id": 45031,
+        "prototype_id": 99,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766847,
+        "virtual_count_in_scope": 737171,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 737171,
+        "packed_catalog_count": 374005,
+        "packing_shortfall": 363166,
+        "achieved_display_catalog_density_per_m2": 15804.808992562545
+      },
+      {
+        "source_id": 46056,
+        "prototype_id": 100,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766850,
+        "virtual_count_in_scope": 736717,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736717,
+        "packed_catalog_count": 407871,
+        "packing_shortfall": 328846,
+        "achieved_display_catalog_density_per_m2": 17235.927991886412
+      },
+      {
+        "source_id": 47081,
+        "prototype_id": 101,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766852,
+        "virtual_count_in_scope": 736893,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736893,
+        "packed_catalog_count": 279685,
+        "packing_shortfall": 457208,
+        "achieved_display_catalog_density_per_m2": 11819.007775524004
+      },
+      {
+        "source_id": 48106,
+        "prototype_id": 102,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766852,
+        "virtual_count_in_scope": 737183,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 737183,
+        "packed_catalog_count": 379331,
+        "packing_shortfall": 357852,
+        "achieved_display_catalog_density_per_m2": 16029.876605814741
+      },
+      {
+        "source_id": 49131,
+        "prototype_id": 103,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766856,
+        "virtual_count_in_scope": 737023,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 737023,
+        "packed_catalog_count": 303577,
+        "packing_shortfall": 433446,
+        "achieved_display_catalog_density_per_m2": 12828.642663962139
+      },
+      {
+        "source_id": 50156,
+        "prototype_id": 104,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766854,
+        "virtual_count_in_scope": 736947,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736947,
+        "packed_catalog_count": 345598,
+        "packing_shortfall": 391349,
+        "achieved_display_catalog_density_per_m2": 14604.377958079785
+      },
+      {
+        "source_id": 51181,
+        "prototype_id": 105,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766852,
+        "virtual_count_in_scope": 737086,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 737086,
+        "packed_catalog_count": 257276,
+        "packing_shortfall": 479810,
+        "achieved_display_catalog_density_per_m2": 10872.041920216363
+      },
+      {
+        "source_id": 52206,
+        "prototype_id": 106,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766848,
+        "virtual_count_in_scope": 736754,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736754,
+        "packed_catalog_count": 453160,
+        "packing_shortfall": 283594,
+        "achieved_display_catalog_density_per_m2": 19149.76335361731
+      },
+      {
+        "source_id": 53231,
+        "prototype_id": 107,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766849,
+        "virtual_count_in_scope": 736966,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736966,
+        "packed_catalog_count": 297525,
+        "packing_shortfall": 439441,
+        "achieved_display_catalog_density_per_m2": 12572.895537525355
+      },
+      {
+        "source_id": 54256,
+        "prototype_id": 108,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766855,
+        "virtual_count_in_scope": 736815,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736815,
+        "packed_catalog_count": 440984,
+        "packing_shortfall": 295831,
+        "achieved_display_catalog_density_per_m2": 18635.226504394865
+      },
+      {
+        "source_id": 55281,
+        "prototype_id": 109,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766852,
+        "virtual_count_in_scope": 736857,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736857,
+        "packed_catalog_count": 419119,
+        "packing_shortfall": 317738,
+        "achieved_display_catalog_density_per_m2": 17711.24915483435
+      },
+      {
+        "source_id": 56306,
+        "prototype_id": 110,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766847,
+        "virtual_count_in_scope": 737059,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 737059,
+        "packed_catalog_count": 399982,
+        "packing_shortfall": 337077,
+        "achieved_display_catalog_density_per_m2": 16902.552400270455
+      },
+      {
+        "source_id": 57331,
+        "prototype_id": 111,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766858,
+        "virtual_count_in_scope": 736994,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736994,
+        "packed_catalog_count": 445107,
+        "packing_shortfall": 291887,
+        "achieved_display_catalog_density_per_m2": 18809.45740365112
+      },
+      {
+        "source_id": 58356,
+        "prototype_id": 112,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766854,
+        "virtual_count_in_scope": 736978,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736978,
+        "packed_catalog_count": 307284,
+        "packing_shortfall": 429694,
+        "achieved_display_catalog_density_per_m2": 12985.29411764706
+      },
+      {
+        "source_id": 59381,
+        "prototype_id": 113,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766849,
+        "virtual_count_in_scope": 737051,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 737051,
+        "packed_catalog_count": 428185,
+        "packing_shortfall": 308866,
+        "achieved_display_catalog_density_per_m2": 18094.362745098042
+      },
+      {
+        "source_id": 60406,
+        "prototype_id": 114,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766853,
+        "virtual_count_in_scope": 736887,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736887,
+        "packed_catalog_count": 436302,
+        "packing_shortfall": 300585,
+        "achieved_display_catalog_density_per_m2": 18437.373225152132
+      },
+      {
+        "source_id": 61431,
+        "prototype_id": 115,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766857,
+        "virtual_count_in_scope": 736943,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736943,
+        "packed_catalog_count": 436515,
+        "packing_shortfall": 300428,
+        "achieved_display_catalog_density_per_m2": 18446.374239350913
+      },
+      {
+        "source_id": 62456,
+        "prototype_id": 116,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766848,
+        "virtual_count_in_scope": 736981,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736981,
+        "packed_catalog_count": 359838,
+        "packing_shortfall": 377143,
+        "achieved_display_catalog_density_per_m2": 15206.135902636917
+      },
+      {
+        "source_id": 63481,
+        "prototype_id": 117,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766851,
+        "virtual_count_in_scope": 737082,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 737082,
+        "packed_catalog_count": 442181,
+        "packing_shortfall": 294901,
+        "achieved_display_catalog_density_per_m2": 18685.809668695067
+      },
+      {
+        "source_id": 64506,
+        "prototype_id": 118,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766857,
+        "virtual_count_in_scope": 736827,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736827,
+        "packed_catalog_count": 449336,
+        "packing_shortfall": 287491,
+        "achieved_display_catalog_density_per_m2": 18988.167680865452
+      },
+      {
+        "source_id": 65531,
+        "prototype_id": 119,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766850,
+        "virtual_count_in_scope": 736816,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736816,
+        "packed_catalog_count": 388767,
+        "packing_shortfall": 348049,
+        "achieved_display_catalog_density_per_m2": 16428.625760649087
+      },
+      {
+        "source_id": 66556,
+        "prototype_id": 120,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766854,
+        "virtual_count_in_scope": 736927,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736927,
+        "packed_catalog_count": 332264,
+        "packing_shortfall": 404663,
+        "achieved_display_catalog_density_per_m2": 14040.906017579448
+      },
+      {
+        "source_id": 67581,
+        "prototype_id": 121,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766851,
+        "virtual_count_in_scope": 737200,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 737200,
+        "packed_catalog_count": 291479,
+        "packing_shortfall": 445721,
+        "achieved_display_catalog_density_per_m2": 12317.401960784315
+      },
+      {
+        "source_id": 68606,
+        "prototype_id": 122,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766851,
+        "virtual_count_in_scope": 737046,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 737046,
+        "packed_catalog_count": 411066,
+        "packing_shortfall": 325980,
+        "achieved_display_catalog_density_per_m2": 17370.943204868156
+      },
+      {
+        "source_id": 69631,
+        "prototype_id": 123,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766847,
+        "virtual_count_in_scope": 736961,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736961,
+        "packed_catalog_count": 442206,
+        "packing_shortfall": 294755,
+        "achieved_display_catalog_density_per_m2": 18686.86612576065
+      },
+      {
+        "source_id": 70656,
+        "prototype_id": 124,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766856,
+        "virtual_count_in_scope": 737094,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 737094,
+        "packed_catalog_count": 311741,
+        "packing_shortfall": 425353,
+        "achieved_display_catalog_density_per_m2": 13173.639283299528
+      },
+      {
+        "source_id": 71681,
+        "prototype_id": 125,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766851,
+        "virtual_count_in_scope": 736803,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736803,
+        "packed_catalog_count": 256079,
+        "packing_shortfall": 480724,
+        "achieved_display_catalog_density_per_m2": 10821.458755916161
+      },
+      {
+        "source_id": 72706,
+        "prototype_id": 126,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766851,
+        "virtual_count_in_scope": 736618,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736618,
+        "packed_catalog_count": 284370,
+        "packing_shortfall": 452248,
+        "achieved_display_catalog_density_per_m2": 12016.987829614605
+      },
+      {
+        "source_id": 73732,
+        "prototype_id": 127,
+        "band": 2,
+        "target_physical_density_per_m2": 31142.457561728395,
+        "expected_physical_count_in_scope": 736955.1157407407,
+        "full_cell_virtual_count": 766850,
+        "virtual_count_in_scope": 736891,
+        "fixed_catalog_thinning": 1.0,
+        "catalog_attempt_count": 736891,
+        "packed_catalog_count": 420350,
+        "packing_shortfall": 316541,
+        "achieved_display_catalog_density_per_m2": 17763.269100743746
+      }
+    ],
+    "packing": {
+      "backend": "numba",
+      "grid_bins": 3155056,
+      "grid_shapes": [
+        [
+          772,
+          1508
+        ],
+        [
+          850,
+          1660
+        ],
+        [
+          545,
+          1064
+        ]
+      ],
+      "grid_cell_sizes": [
+        0.004510695121130817,
+        0.004096790576677587,
+        0.006393653722305601
+      ],
+      "relevant_original_blockers": 587519,
+      "broadphase": "conservative three-radius-tier grid; unchanged strict squared-distance predicate"
+    }
+  },
+  "provenance": {
+    "algorithm": "world-cell-grain-catalog-v1",
+    "catalog_epoch": "DQ-full-road-fixed-macro-v1",
+    "source_pins": {
+      "bank64": "53b03cc0dd838818446558cea84876c710458fd994bcfef6f3ce2da6a913f6c9",
+      "blockers": "11ffcb55b97f3b1cab4dd8833eabe01c289c46a6ee2ff658ee2f6fd50346ddbd",
+      "datums": "cb12da56f4cf2b259af126ec5b2d92d6c521d9a8bdccf686a152e6e9a9fdb693",
+      "frozen_macro_catalog": "5a8b20a1429e7d64b6f299d857c914238f7e0a879dec43308c9a6a527f3c1b3f",
+      "frozen_macro_status": "4c55488885795ce2c3a6ebbd475d57baabf320074be2501ddb6a169276064e91",
+      "historical_fields": "cb13eb9f9422741f113d244f249e6b70cece71596934df63643a59412483dac3",
+      "payload": "05f32d7993c3e9b78d77c7d259d1d0c1fe1cc508ba7ae4598113359046274250",
+      "sand_bank": "8ad5c6795e064aa15bfc111d0693397c653ed8835fc153977bc27a2157c1b7cc",
+      "static_cap": "d692f6513f6639332d774f0bbb46cb821fb32da3f4f54a56671867e13f7951be"
+    },
+    "seed": 2610111556,
+    "world_origin": [
+      0.0,
+      0.0
+    ],
+    "cell_size": 0.18,
+    "bounds": [
+      -7.0,
+      -3.52,
+      4.7,
+      11.5
+    ],
+    "thinning_by_band": {
+      "0": 1.0,
+      "1": 1.0,
+      "2": 1.0
+    },
+    "prototypes": [
+      {
+        "source_id": 13,
+        "prototype_id": 0,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.003106469855545366
+      },
+      {
+        "source_id": 23,
+        "prototype_id": 1,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0021301403218951568
+      },
+      {
+        "source_id": 26,
+        "prototype_id": 2,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0009186293282531451
+      },
+      {
+        "source_id": 32,
+        "prototype_id": 3,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.001626498287148763
+      },
+      {
+        "source_id": 35,
+        "prototype_id": 4,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0009542369213378685
+      },
+      {
+        "source_id": 36,
+        "prototype_id": 5,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.001972535782449239
+      },
+      {
+        "source_id": 50,
+        "prototype_id": 6,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0013807173215532526
+      },
+      {
+        "source_id": 52,
+        "prototype_id": 7,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.002233861194675612
+      },
+      {
+        "source_id": 61,
+        "prototype_id": 8,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0014464947309844405
+      },
+      {
+        "source_id": 62,
+        "prototype_id": 9,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0020392125776620366
+      },
+      {
+        "source_id": 63,
+        "prototype_id": 10,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0020815458975258446
+      },
+      {
+        "source_id": 64,
+        "prototype_id": 11,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.001192795797271191
+      },
+      {
+        "source_id": 70,
+        "prototype_id": 12,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0031968268611528004
+      },
+      {
+        "source_id": 78,
+        "prototype_id": 13,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0008799607008804177
+      },
+      {
+        "source_id": 79,
+        "prototype_id": 14,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0024268707554281443
+      },
+      {
+        "source_id": 83,
+        "prototype_id": 15,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0010234734296234657
+      },
+      {
+        "source_id": 88,
+        "prototype_id": 16,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0015955340589809287
+      },
+      {
+        "source_id": 90,
+        "prototype_id": 17,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0014071443503388414
+      },
+      {
+        "source_id": 93,
+        "prototype_id": 18,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0017796919309402783
+      },
+      {
+        "source_id": 98,
+        "prototype_id": 19,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0010113573762987294
+      },
+      {
+        "source_id": 108,
+        "prototype_id": 20,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0014840389462679273
+      },
+      {
+        "source_id": 116,
+        "prototype_id": 21,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0010236966793324036
+      },
+      {
+        "source_id": 117,
+        "prototype_id": 22,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0011891729385489743
+      },
+      {
+        "source_id": 129,
+        "prototype_id": 23,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0012148324442464796
+      },
+      {
+        "source_id": 136,
+        "prototype_id": 24,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.00267436117128524
+      },
+      {
+        "source_id": 143,
+        "prototype_id": 25,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.002668153424802949
+      },
+      {
+        "source_id": 149,
+        "prototype_id": 26,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0009170140734598406
+      },
+      {
+        "source_id": 151,
+        "prototype_id": 27,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0020812033118986707
+      },
+      {
+        "source_id": 167,
+        "prototype_id": 28,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.002345884754682329
+      },
+      {
+        "source_id": 168,
+        "prototype_id": 29,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0019611677950404235
+      },
+      {
+        "source_id": 172,
+        "prototype_id": 30,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0027868461024509153
+      },
+      {
+        "source_id": 179,
+        "prototype_id": 31,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0013831202841890437
+      },
+      {
+        "source_id": 199,
+        "prototype_id": 32,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0020818524479263305
+      },
+      {
+        "source_id": 206,
+        "prototype_id": 33,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0011492501205025375
+      },
+      {
+        "source_id": 210,
+        "prototype_id": 34,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.002568278610846224
+      },
+      {
+        "source_id": 211,
+        "prototype_id": 35,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0019487848779129284
+      },
+      {
+        "source_id": 222,
+        "prototype_id": 36,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0012139255875334304
+      },
+      {
+        "source_id": 226,
+        "prototype_id": 37,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0009295464087964829
+      },
+      {
+        "source_id": 230,
+        "prototype_id": 38,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0018197892200565162
+      },
+      {
+        "source_id": 247,
+        "prototype_id": 39,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.002173353508522142
+      },
+      {
+        "source_id": 250,
+        "prototype_id": 40,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0011004679259687933
+      },
+      {
+        "source_id": 256,
+        "prototype_id": 41,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0010241976441693968
+      },
+      {
+        "source_id": 261,
+        "prototype_id": 42,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0012718888653777969
+      },
+      {
+        "source_id": 265,
+        "prototype_id": 43,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0009882063227306768
+      },
+      {
+        "source_id": 266,
+        "prototype_id": 44,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0017590663009765437
+      },
+      {
+        "source_id": 273,
+        "prototype_id": 45,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.0015490368100131346
+      },
+      {
+        "source_id": 278,
+        "prototype_id": 46,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.002604652596424679
+      },
+      {
+        "source_id": 292,
+        "prototype_id": 47,
+        "band": 0,
+        "density_per_m2": 190.97222222222226,
+        "radius": 0.002361687857922797
+      },
+      {
+        "source_id": 328,
+        "prototype_id": 48,
+        "band": 1,
+        "density_per_m2": 17089.120370370372,
+        "radius": 0.0004102867715272305
+      },
+      {
+        "source_id": 784,
+        "prototype_id": 49,
+        "band": 1,
+        "density_per_m2": 17089.120370370372,
+        "radius": 0.00039622485468423846
+      },
+      {
+        "source_id": 2934,
+        "prototype_id": 50,
+        "band": 1,
+        "density_per_m2": 17089.120370370372,
+        "radius": 0.0006137617989074215
+      },
+      {
+        "source_id": 3077,
+        "prototype_id": 51,
+        "band": 1,
+        "density_per_m2": 17089.120370370372,
+        "radius": 0.0004920200259426413
+      },
+      {
+        "source_id": 3821,
+        "prototype_id": 52,
+        "band": 1,
+        "density_per_m2": 17089.120370370372,
+        "radius": 0.0006707225080507078
+      },
+      {
+        "source_id": 4243,
+        "prototype_id": 53,
+        "band": 1,
+        "density_per_m2": 17089.120370370372,
+        "radius": 0.0007498893920799998
+      },
+      {
+        "source_id": 4744,
+        "prototype_id": 54,
+        "band": 1,
+        "density_per_m2": 17089.120370370372,
+        "radius": 0.0005236204210825692
+      },
+      {
+        "source_id": 4975,
+        "prototype_id": 55,
+        "band": 1,
+        "density_per_m2": 17089.120370370372,
+        "radius": 0.0005874475690888516
+      },
+      {
+        "source_id": 5933,
+        "prototype_id": 56,
+        "band": 1,
+        "density_per_m2": 17089.120370370372,
+        "radius": 0.0007381198673939148
+      },
+      {
+        "source_id": 6351,
+        "prototype_id": 57,
+        "band": 1,
+        "density_per_m2": 17089.120370370372,
+        "radius": 0.0009291470595702556
+      },
+      {
+        "source_id": 6454,
+        "prototype_id": 58,
+        "band": 1,
+        "density_per_m2": 17089.120370370372,
+        "radius": 0.0004478350599962272
+      },
+      {
+        "source_id": 7589,
+        "prototype_id": 59,
+        "band": 1,
+        "density_per_m2": 17089.120370370372,
+        "radius": 0.0003986928885020845
+      },
+      {
+        "source_id": 7649,
+        "prototype_id": 60,
+        "band": 1,
+        "density_per_m2": 17089.120370370372,
+        "radius": 0.00040129191772043455
+      },
+      {
+        "source_id": 8453,
+        "prototype_id": 61,
+        "band": 1,
+        "density_per_m2": 17089.120370370372,
+        "radius": 0.00039648144204015623
+      },
+      {
+        "source_id": 9012,
+        "prototype_id": 62,
+        "band": 1,
+        "density_per_m2": 17089.120370370372,
+        "radius": 0.0005331456373361796
+      },
+      {
+        "source_id": 9033,
+        "prototype_id": 63,
+        "band": 1,
+        "density_per_m2": 17089.120370370372,
+        "radius": 0.00037419700530417176
+      },
+      {
+        "source_id": 9156,
+        "prototype_id": 64,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00021021175566202725
+      },
+      {
+        "source_id": 10181,
+        "prototype_id": 65,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.0003655553255982525
+      },
+      {
+        "source_id": 11206,
+        "prototype_id": 66,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00014392655685239135
+      },
+      {
+        "source_id": 12231,
+        "prototype_id": 67,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00014775662535261463
+      },
+      {
+        "source_id": 13256,
+        "prototype_id": 68,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00011818077423457293
+      },
+      {
+        "source_id": 14281,
+        "prototype_id": 69,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 8.688285064698567e-05
+      },
+      {
+        "source_id": 15306,
+        "prototype_id": 70,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 9.49876861747394e-05
+      },
+      {
+        "source_id": 16331,
+        "prototype_id": 71,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00017871353813276507
+      },
+      {
+        "source_id": 17356,
+        "prototype_id": 72,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00019523339124172454
+      },
+      {
+        "source_id": 18381,
+        "prototype_id": 73,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00010701090931992733
+      },
+      {
+        "source_id": 19406,
+        "prototype_id": 74,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00011697913793487886
+      },
+      {
+        "source_id": 20431,
+        "prototype_id": 75,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00014381804587294708
+      },
+      {
+        "source_id": 21456,
+        "prototype_id": 76,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00013538905688739036
+      },
+      {
+        "source_id": 22481,
+        "prototype_id": 77,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00015086883230792226
+      },
+      {
+        "source_id": 23506,
+        "prototype_id": 78,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 9.802257040285371e-05
+      },
+      {
+        "source_id": 24531,
+        "prototype_id": 79,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00014243352217383824
+      },
+      {
+        "source_id": 25556,
+        "prototype_id": 80,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00016226848311285777
+      },
+      {
+        "source_id": 26581,
+        "prototype_id": 81,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00011941726159286592
+      },
+      {
+        "source_id": 27606,
+        "prototype_id": 82,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.0002519049449490355
+      },
+      {
+        "source_id": 28631,
+        "prototype_id": 83,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 8.385148051033231e-05
+      },
+      {
+        "source_id": 29656,
+        "prototype_id": 84,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00017494597035044637
+      },
+      {
+        "source_id": 30681,
+        "prototype_id": 85,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00016378125368880366
+      },
+      {
+        "source_id": 31706,
+        "prototype_id": 86,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00014793724474909767
+      },
+      {
+        "source_id": 32731,
+        "prototype_id": 87,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00026304765186925164
+      },
+      {
+        "source_id": 33756,
+        "prototype_id": 88,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00011612640978020232
+      },
+      {
+        "source_id": 34781,
+        "prototype_id": 89,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00012456172270696407
+      },
+      {
+        "source_id": 35806,
+        "prototype_id": 90,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 9.64444374636939e-05
+      },
+      {
+        "source_id": 36831,
+        "prototype_id": 91,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00018579524797143738
+      },
+      {
+        "source_id": 37856,
+        "prototype_id": 92,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.0001029752416873836
+      },
+      {
+        "source_id": 38881,
+        "prototype_id": 93,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 9.40376974220784e-05
+      },
+      {
+        "source_id": 39906,
+        "prototype_id": 94,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.0003117439028801336
+      },
+      {
+        "source_id": 40931,
+        "prototype_id": 95,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00013226653887307536
+      },
+      {
+        "source_id": 41956,
+        "prototype_id": 96,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00013502895493996584
+      },
+      {
+        "source_id": 42981,
+        "prototype_id": 97,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00016484732742839286
+      },
+      {
+        "source_id": 44006,
+        "prototype_id": 98,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00012636787088552237
+      },
+      {
+        "source_id": 45031,
+        "prototype_id": 99,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00015889047806200935
+      },
+      {
+        "source_id": 46056,
+        "prototype_id": 100,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00012525738406580147
+      },
+      {
+        "source_id": 47081,
+        "prototype_id": 101,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.0002568005003348518
+      },
+      {
+        "source_id": 48106,
+        "prototype_id": 102,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.0001532015210741307
+      },
+      {
+        "source_id": 49131,
+        "prototype_id": 103,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.0002304313220826373
+      },
+      {
+        "source_id": 50156,
+        "prototype_id": 104,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00018686573565984108
+      },
+      {
+        "source_id": 51181,
+        "prototype_id": 105,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.0002819772227343906
+      },
+      {
+        "source_id": 52206,
+        "prototype_id": 106,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 8.101745303878653e-05
+      },
+      {
+        "source_id": 53231,
+        "prototype_id": 107,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00023648409156374416
+      },
+      {
+        "source_id": 54256,
+        "prototype_id": 108,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 9.271572616108509e-05
+      },
+      {
+        "source_id": 55281,
+        "prototype_id": 109,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.0001143533685888535
+      },
+      {
+        "source_id": 56306,
+        "prototype_id": 110,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00013296328405144127
+      },
+      {
+        "source_id": 57331,
+        "prototype_id": 111,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 8.847073057955398e-05
+      },
+      {
+        "source_id": 58356,
+        "prototype_id": 112,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.0002261396326560805
+      },
+      {
+        "source_id": 59381,
+        "prototype_id": 113,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00010473259644705829
+      },
+      {
+        "source_id": 60406,
+        "prototype_id": 114,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 9.724742322502859e-05
+      },
+      {
+        "source_id": 61431,
+        "prototype_id": 115,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 9.712529022917047e-05
+      },
+      {
+        "source_id": 62456,
+        "prototype_id": 116,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00017335698478573354
+      },
+      {
+        "source_id": 63481,
+        "prototype_id": 117,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 9.171968156250964e-05
+      },
+      {
+        "source_id": 64506,
+        "prototype_id": 118,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 8.49627731695977e-05
+      },
+      {
+        "source_id": 65531,
+        "prototype_id": 119,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.0001448661132854562
+      },
+      {
+        "source_id": 66556,
+        "prototype_id": 120,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00020058233812941353
+      },
+      {
+        "source_id": 67581,
+        "prototype_id": 121,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00024324666517627042
+      },
+      {
+        "source_id": 68606,
+        "prototype_id": 122,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00012207694849108481
+      },
+      {
+        "source_id": 69631,
+        "prototype_id": 123,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 9.153112464858096e-05
+      },
+      {
+        "source_id": 70656,
+        "prototype_id": 124,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.0002220799580087371
+      },
+      {
+        "source_id": 71681,
+        "prototype_id": 125,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.0002829583976773408
+      },
+      {
+        "source_id": 72706,
+        "prototype_id": 126,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.0002504015568805866
+      },
+      {
+        "source_id": 73732,
+        "prototype_id": 127,
+        "band": 2,
+        "density_per_m2": 31142.457561728395,
+        "radius": 0.00011298062217922775
+      }
+    ],
+    "original_blocker_count": 587519,
+    "original_blockers_sha256": "cf4a2ad17fba2f8b9bb6a5ff53cd549d63b055b2b907809828171201ba14f131",
+    "canonical_order": "ascending numeric band, ascending uint64 candidate ID",
+    "id_tuple": "seed, band, source_id, absolute cell_x, absolute cell_y, physical ordinal",
+    "no_geometry_scaling": true,
+    "catalog_fingerprint_sha256": "001a51b9a8142eeb7c7dfd2cc1d4dc22f103a3080a5d1b849fbda25f25c30432"
+  },
+  "storage": {
+    "schema": "stable-grain-band-serial-status2-v1",
+    "serial_order": "numeric band, lexicographic absolute cell, source ID, physical ordinal",
+    "status_encoding": {
+      "0": "outside scope or fixed thinning",
+      "1": "accepted",
+      "2": "original blocker",
+      "3": "catalog blocker"
+    },
+    "status_bit_order": "two low bits first, four virtual serials per byte",
+    "prefix_sha256": "e9851972290e0871ad3868a090117789272aef306549608a47878847cdc10985",
+    "status_sha256": "f08abab5e8fcd7663a94358d9a0619ae01e067d70d2171e09019d1df4233b189",
+    "persistent_array_bytes": 16162595,
+    "memory_plan": {
+      "baseline_rss_bytes": 196923392,
+      "estimated_peak_rss_bytes": 2452894400,
+      "rss_bound_bytes": 4697620480,
+      "safety_headroom_bytes": 268435456,
+      "allocations": {
+        "records": 672443628,
+        "accepted_xy_prototype_next": 1176776349,
+        "status2": 14009243,
+        "head_grids": 32000000,
+        "blocker_arrays_and_copies": 58751900,
+        "chunk_scratch": 16777216,
+        "inplace_sort_reserve": 16777216
+      },
+      "virtual_count": 56036969,
+      "record_capacity": 56036969,
+      "accepted_slot_capacity": 56036969,
+      "accepted_prototype_bytes": 1,
+      "serial_map_bytes": 2153352,
+      "meaning": "Conservative allocation admission estimate, not an OS-enforced RSS limit"
+    },
+    "measured_process_peak_rss_bytes": 1550643200,
+    "seconds": {
+      "generation_and_mapping": 25.022667953002383,
+      "sort_and_duplicate_check": 76.83052996300103,
+      "packing": 171.70856266399642,
+      "total": 273.58071315700363
+    },
+    "downstream_Z_roles_burial_included": false
+  },
+  "frozen_macro_bodies": 587519,
+  "frozen_macro_catalog_sha256": "5a8b20a1429e7d64b6f299d857c914238f7e0a879dec43308c9a6a527f3c1b3f",
+  "elapsed_seconds": 279.0158415699989,
+  "radius_tier_parity_sha256": "eda30de9ceec8cb4967175c55b7de6edfd572a9afb651ee3287eb6da7e1737f0",
+  "status_file_sha256": "42da887a12afe15ef7afddf52bb46da3333213bb400268de2faf31b13ea971c7",
+  "status_file_bytes": 8287744,
+  "limits": [
+    "Existing macro identities, roles and contact stay in the exact retained18.48MB catalog. Their bodies block new placement.",
+    "Full-road status stores only additional outside packing; no new bulk sediment inventory or optical completeness claim.",
+    "A following budget stage must debit the frozen macro representatives before adding outside representatives.",
+    "World-domain packing is a fixed authored candidate field, not verified physical particle transport."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "CPU_affinity": [
+    0
+  ],
+  "after_count": 190,
+  "before_count": 256,
+  "blender_version": "4.3.2",
+  "cap": 190,
+  "checks": {
+    "camera_and_render_settings_preserved": true,
+    "duplicate_refresh_refused": true,
+    "exact_prototype_yaw_subset": true,
+    "no_duplicate_object": true,
+    "old_mesh_removed": true,
+    "original_origins_and_empty_FACE_attribute_preserved": true,
+    "post_assignment_rollback": true,
+    "shared_two_view_cap": true,
+    "successful_assignment": true
+  },
+  "passed": true,
+  "rendered": false,
+  "scene_saved": false,
+  "scope": "Tiny synthetic 64-bank Blender API transaction fixture only; no actual pinned-Z assembly",
+  "source_scene_opened": false
+}

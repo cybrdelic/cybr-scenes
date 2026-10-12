@@ -1,0 +1,2133 @@
+{
+  "active_static_source_files": [
+    "discrete_grains_r5/asphalt/source/generate_native4096.py",
+    "discrete_grains_r5/asphalt/source/height_normals.py",
+    "discrete_grains_r5/asphalt/vendor/mineral_construction.py",
+    "discrete_grains_r5/asphalt/vendor/surface_math.py",
+    "discrete_grains_r5/src/build_diagnostic.py",
+    "far_road_r5d/bake/bake_r5d.py",
+    "road_scene_r6/relief_correction/affine_tile_adapter.py",
+    "road_scene_r6/relief_correction/paint_shader_adapter.py",
+    "road_scene_r6/relief_correction/paint_shader_adapter_r2.py",
+    "road_scene_r6/relief_correction/prepare_interior_relief.py",
+    "road_scene_r6/relief_correction/prepare_tiled_relief.py",
+    "road_scene_r6/relief_correction/prepare_tiled_relief_r2.py",
+    "road_scene_r6/relief_correction/relief_math.py",
+    "road_scene_r6/relief_correction/tiled_relief_math.py",
+    "road_scene_r6/src/approved_density_lod.py",
+    "road_scene_r6/src/build_scene.py",
+    "road_scene_r6/src/flow_sediment_model_y.py",
+    "road_scene_r6/src/flow_sediment_model_z.py",
+    "road_scene_r6/src/prepare_eroded_ridges.py",
+    "road_scene_r6/src/prepare_erosion_network.py",
+    "road_scene_r6/src/prepare_physical_lenses.py",
+    "road_scene_r6/src/prepare_runoff_film_z_portable.py",
+    "road_scene_r6/src/prepare_runoff_shoulder_y.py",
+    "road_scene_r6/src/prepare_sediment_patches.py",
+    "road_scene_r6/src/prepare_shoulder_dust.py",
+    "road_scene_r6/src/prepare_weather_layer.py",
+    "road_scene_r6/src/render_checkpoint_ah.py",
+    "road_scene_r6/src/render_checkpoint_ap.py",
+    "road_scene_r6/src/road_film_shader_z.py",
+    "road_scene_r6/src/road_film_surface_z.py",
+    "road_scene_r6/src/semantic_scene_guard_z.py",
+    "road_scene_r6/src/transport_surface_scene_y.py",
+    "road_scene_r6/src/transported_grain_exposure.py",
+    "road_scene_r6/src/validate_checkpoint_source_ah.py",
+    "road_scene_r6/vegetation/desert_scrub.py"
+  ],
+  "additional_generated_dependency": "discrete_grains_r5/asphalt/native4096/GeometryHeight.npy",
+  "additional_height_consumer": "fractured_boundary_ar.height_path",
+  "all_non_snapshot_python_sources_retained": true,
+  "build_entrypoints": [
+    "discrete_grains_r5/src/build_diagnostic.py",
+    "discrete_grains_r5/asphalt/source/generate_native4096.py",
+    "far_road_r5d/bake/bake_r5d.py",
+    "road_scene_r6/src/build_scene.py",
+    "road_scene_r6/src/prepare_weather_layer.py",
+    "road_scene_r6/src/prepare_sediment_patches.py",
+    "road_scene_r6/src/prepare_erosion_network.py",
+    "road_scene_r6/src/prepare_eroded_ridges.py",
+    "road_scene_r6/src/prepare_shoulder_dust.py",
+    "road_scene_r6/relief_correction/prepare_tiled_relief_r2.py",
+    "road_scene_r6/src/prepare_runoff_shoulder_y.py",
+    "road_scene_r6/src/prepare_runoff_film_z_portable.py"
+  ],
+  "build_shell_chain": [
+    "regenerate.sh build-only",
+    "regenerate_z_v9.sh build-only",
+    "regenerate_y.sh build-only"
+  ],
+  "current_AP_v13_sha256": "d99ab7fbc3e88c6c585f009995d291c5bc8838f2bb8c078b1dc25b85d3b0d13c",
+  "current_AQ_v14_sha256": "7fbecac18a65f1911b6ce3372f441e2bbfecd9940cbea099abcf2bcf81e9f027",
+  "current_capture_dependency_edges": [
+    {
+      "module": "png_precision_check",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/oidn_image_bridge.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/png_precision_check.py"
+      ]
+    },
+    {
+      "module": "capture_modes",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/oidn_image_bridge.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/capture_modes.py"
+      ]
+    },
+    {
+      "module": "oidn_contract",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/oidn_image_bridge.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/oidn_contract.py"
+      ]
+    },
+    {
+      "module": "capture_modes",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/clean_receipt.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/capture_modes.py"
+      ]
+    },
+    {
+      "module": "capture_modes",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/raw_receipt.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/capture_modes.py"
+      ]
+    },
+    {
+      "module": "capture_modes",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/component_image_bridge.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/capture_modes.py"
+      ]
+    },
+    {
+      "module": "transport_components",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/component_image_bridge.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/transport_components.py"
+      ]
+    },
+    {
+      "module": "png_precision_check",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/component_image_bridge.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/png_precision_check.py"
+      ]
+    },
+    {
+      "module": "oidn_contract",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/component_image_bridge.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/oidn_contract.py"
+      ]
+    },
+    {
+      "module": "capture_modes",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/component_receipt.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/capture_modes.py"
+      ]
+    },
+    {
+      "module": "transport_components",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/component_receipt.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/transport_components.py"
+      ]
+    },
+    {
+      "module": "edge_ravel_field_aa",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_raveled_edge_aa.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/edge_ravel_field_aa.py"
+      ]
+    },
+    {
+      "module": "metric_edge_strip_aa",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_raveled_edge_aa.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/metric_edge_strip_aa.py"
+      ]
+    },
+    {
+      "module": "metric_edge_strip_aa",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/pavement_contact_ac.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/metric_edge_strip_aa.py"
+      ]
+    },
+    {
+      "module": "edge_ravel_field_aa",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_pavement_contact_ac.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/edge_ravel_field_aa.py"
+      ]
+    },
+    {
+      "module": "metric_edge_strip_aa",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_pavement_contact_ac.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/metric_edge_strip_aa.py"
+      ]
+    },
+    {
+      "module": "assemble_raveled_edge_aa",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_pavement_contact_ac.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_raveled_edge_aa.py"
+      ]
+    },
+    {
+      "module": "pavement_contact_ac",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_pavement_contact_ac.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/pavement_contact_ac.py"
+      ]
+    },
+    {
+      "module": "prepare_physical_lenses",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_pavement_contact_ac.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/prepare_physical_lenses.py"
+      ]
+    },
+    {
+      "module": "runoff_edge_support_ai",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_pavement_contact_ac.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/runoff_edge_support_ai.py"
+      ]
+    },
+    {
+      "module": "approved_density_lod",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/prepare_physical_lenses.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/approved_density_lod.py"
+      ]
+    },
+    {
+      "module": "context_mesh_refine_ab",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_graded_shoulder_ah.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_mesh_refine_ab.py"
+      ]
+    },
+    {
+      "module": "visible_shoulder_flow_ad",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_graded_shoulder_ah.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/visible_shoulder_flow_ad.py"
+      ]
+    },
+    {
+      "module": "flow_transport_ae",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_graded_shoulder_ah.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/flow_transport_ae.py"
+      ]
+    },
+    {
+      "module": "flow_sediment_model_z",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_graded_shoulder_ah.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/flow_sediment_model_z.py"
+      ]
+    },
+    {
+      "module": "graded_shoulder_foundation_ah",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_graded_shoulder_ah.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/graded_shoulder_foundation_ah.py"
+      ]
+    },
+    {
+      "module": "assemble_visible_shoulder_ad",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_graded_shoulder_ah.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_visible_shoulder_ad.py"
+      ]
+    },
+    {
+      "module": "terrain_normal_transfer_ah",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_graded_shoulder_ah.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/terrain_normal_transfer_ah.py"
+      ]
+    },
+    {
+      "module": "context_mesh_refine_ab",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_graded_shoulder_ah.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_mesh_refine_ab.py"
+      ]
+    },
+    {
+      "module": "prepare_physical_lenses",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_graded_shoulder_ah.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/prepare_physical_lenses.py"
+      ]
+    },
+    {
+      "module": "graded_shoulder_foundation_at",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_graded_shoulder_ah.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/graded_shoulder_foundation_at.py"
+      ]
+    },
+    {
+      "module": "substrate_history_ak",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_graded_shoulder_ah.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/substrate_history_ak.py"
+      ]
+    },
+    {
+      "module": "context_mesh_refine_ab",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/terrain_normal_transfer_ah.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_mesh_refine_ab.py"
+      ]
+    },
+    {
+      "module": "context_mesh_refine_ab",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_visible_shoulder_ad.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_mesh_refine_ab.py"
+      ]
+    },
+    {
+      "module": "visible_shoulder_flow_ad",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_visible_shoulder_ad.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/visible_shoulder_flow_ad.py"
+      ]
+    },
+    {
+      "module": "prepare_physical_lenses",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_visible_shoulder_ad.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/prepare_physical_lenses.py"
+      ]
+    },
+    {
+      "module": "context_field_cache_ad",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_visible_shoulder_ad.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_field_cache_ad.py"
+      ]
+    },
+    {
+      "module": "flow_sediment_model_z",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_visible_shoulder_ad.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/flow_sediment_model_z.py"
+      ]
+    },
+    {
+      "module": "flow_sediment_model_z",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/visible_shoulder_flow_ad.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/flow_sediment_model_z.py"
+      ]
+    },
+    {
+      "module": "flow_sediment_model_z",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/flow_transport_ae.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/flow_sediment_model_z.py"
+      ]
+    },
+    {
+      "module": "visible_shoulder_flow_ad",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/flow_transport_ae.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/visible_shoulder_flow_ad.py"
+      ]
+    },
+    {
+      "module": "visible_shoulder_flow_ad",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_field_cache_ad.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/visible_shoulder_flow_ad.py"
+      ]
+    },
+    {
+      "module": "graded_shoulder_foundation_ah",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/graded_shoulder_foundation_at.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/graded_shoulder_foundation_ah.py"
+      ]
+    },
+    {
+      "module": "approved_density_lod",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/refresh_view_grains_au.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/approved_density_lod.py"
+      ]
+    },
+    {
+      "module": "context_mesh_refine_ab",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/refresh_view_grains_au.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_mesh_refine_ab.py"
+      ]
+    },
+    {
+      "module": "visible_shoulder_flow_ad",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/refresh_view_grains_au.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/visible_shoulder_flow_ad.py"
+      ]
+    },
+    {
+      "module": "prepare_physical_lenses",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/refresh_view_grains_au.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/prepare_physical_lenses.py"
+      ]
+    },
+    {
+      "module": "prepare_physical_lenses",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/refresh_view_grains_au.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/prepare_physical_lenses.py"
+      ]
+    },
+    {
+      "module": "prepare_physical_lenses",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/refresh_view_grains_au.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/prepare_physical_lenses.py"
+      ]
+    },
+    {
+      "module": "approved_density_lod",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_sediment_surface_ai.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/approved_density_lod.py"
+      ]
+    },
+    {
+      "module": "context_mesh_refine_ab",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_sediment_surface_ai.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_mesh_refine_ab.py"
+      ]
+    },
+    {
+      "module": "visible_shoulder_flow_ad",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_sediment_surface_ai.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/visible_shoulder_flow_ad.py"
+      ]
+    },
+    {
+      "module": "sediment_surface_ai",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_sediment_surface_ai.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/sediment_surface_ai.py"
+      ]
+    },
+    {
+      "module": "transported_grain_exposure",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_sediment_surface_ai.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/transported_grain_exposure.py"
+      ]
+    },
+    {
+      "module": "visible_shoulder_flow_ad",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/sediment_surface_ai.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/visible_shoulder_flow_ad.py"
+      ]
+    },
+    {
+      "module": "transported_grain_exposure",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/sediment_surface_ai.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/transported_grain_exposure.py"
+      ]
+    },
+    {
+      "module": "context_mesh_refine_ab",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/contact_bank_continuity_al.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_mesh_refine_ab.py"
+      ]
+    },
+    {
+      "module": "metric_edge_strip_aa",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/contact_bank_continuity_al.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/metric_edge_strip_aa.py"
+      ]
+    },
+    {
+      "module": "runoff_edge_support_ai",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/contact_bank_continuity_al.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/runoff_edge_support_ai.py"
+      ]
+    },
+    {
+      "module": "contact_triangle_clearance_al",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/contact_bank_continuity_al.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/contact_triangle_clearance_al.py"
+      ]
+    },
+    {
+      "module": "prepare_physical_lenses",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/contact_bank_continuity_al.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/prepare_physical_lenses.py"
+      ]
+    },
+    {
+      "module": "context_mesh_refine_ab",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/contact_bank_continuity_al.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_mesh_refine_ab.py"
+      ]
+    },
+    {
+      "module": "terrain_normal_transfer_ah",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/contact_bank_continuity_al.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/terrain_normal_transfer_ah.py"
+      ]
+    },
+    {
+      "module": "approved_density_lod",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/contact_bank_continuity_al.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/approved_density_lod.py"
+      ]
+    },
+    {
+      "module": "context_mesh_refine_ab",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/continuous_contact_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_mesh_refine_ab.py"
+      ]
+    },
+    {
+      "module": "metric_edge_strip_aa",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/continuous_contact_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/metric_edge_strip_aa.py"
+      ]
+    },
+    {
+      "module": "contact_bank_continuity_al",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/continuous_contact_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/contact_bank_continuity_al.py"
+      ]
+    },
+    {
+      "module": "contact_triangle_clearance_al",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/continuous_contact_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/contact_triangle_clearance_al.py"
+      ]
+    },
+    {
+      "module": "road_margin_composition_ap",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/continuous_contact_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/road_margin_composition_ap.py"
+      ]
+    },
+    {
+      "module": "approved_density_lod",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/continuous_contact_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/approved_density_lod.py"
+      ]
+    },
+    {
+      "module": "prepare_physical_lenses",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/continuous_contact_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/prepare_physical_lenses.py"
+      ]
+    },
+    {
+      "module": "road_margin_composition_ap",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_road_margin_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/road_margin_composition_ap.py"
+      ]
+    },
+    {
+      "module": "sample_final_surface_an",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_road_margin_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/sample_final_surface_an.py"
+      ]
+    },
+    {
+      "module": "context_mesh_refine_ab",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_road_margin_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_mesh_refine_ab.py"
+      ]
+    },
+    {
+      "module": "approved_density_lod",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_road_margin_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/approved_density_lod.py"
+      ]
+    },
+    {
+      "module": "layered_scrub_ap",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_road_margin_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/layered_scrub_ap.py"
+      ]
+    },
+    {
+      "module": "sample_final_surface_an",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_road_margin_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/sample_final_surface_an.py"
+      ]
+    },
+    {
+      "module": "sample_final_surface_an",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/current_contact_film_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/sample_final_surface_an.py"
+      ]
+    },
+    {
+      "module": "refined_film_event_an",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/current_contact_film_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/refined_film_event_an.py"
+      ]
+    },
+    {
+      "module": "flow_sediment_model_ao",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/current_contact_film_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/flow_sediment_model_ao.py"
+      ]
+    },
+    {
+      "module": "road_film_shader_z",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/current_contact_film_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/road_film_shader_z.py"
+      ]
+    },
+    {
+      "module": "flow_sediment_model_z",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/refined_film_event_an.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/flow_sediment_model_z.py"
+      ]
+    },
+    {
+      "module": "desert_scrub",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/layered_scrub_ap.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/desert_scrub.py"
+      ]
+    },
+    {
+      "module": "metric_edge_strip_aa",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/fractured_boundary_ar.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/metric_edge_strip_aa.py"
+      ]
+    },
+    {
+      "module": "edge_ravel_field_aa",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/fractured_boundary_ar.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/edge_ravel_field_aa.py"
+      ]
+    },
+    {
+      "module": "fractured_boundary_ar",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/integrate_fracture_ar.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/fractured_boundary_ar.py"
+      ]
+    },
+    {
+      "module": "context_mesh_refine_ab",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/integrate_fracture_ar.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_mesh_refine_ab.py"
+      ]
+    },
+    {
+      "module": "soil_rim_bridge_ar",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/integrate_fracture_ar.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/soil_rim_bridge_ar.py"
+      ]
+    },
+    {
+      "module": "context_mesh_refine_ab",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/integrate_fracture_ar.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_mesh_refine_ab.py"
+      ]
+    },
+    {
+      "module": "continuous_contact_aq",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/integrate_fracture_ar.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/continuous_contact_aq.py"
+      ]
+    },
+    {
+      "module": "soil_rim_bridge_ar",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/integrate_fracture_ar.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/soil_rim_bridge_ar.py"
+      ]
+    },
+    {
+      "module": "metric_margin_fragments_as",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_metric_fragments_as.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/metric_margin_fragments_as.py"
+      ]
+    },
+    {
+      "module": "assemble_road_margin_aq",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_metric_fragments_as.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_road_margin_aq.py"
+      ]
+    },
+    {
+      "module": "approved_density_lod",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_metric_fragments_as.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/approved_density_lod.py"
+      ]
+    },
+    {
+      "module": "metric_margin_fragments_as_fractured_candidate",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_metric_fragments_as.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/metric_margin_fragments_as_fractured_candidate.py"
+      ]
+    },
+    {
+      "module": "metric_margin_fragments_as",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/metric_margin_fragments_as_fractured_candidate.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/metric_margin_fragments_as.py"
+      ]
+    },
+    {
+      "module": "resource_contract",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/bounded_clean_run.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/resource_contract.py"
+      ]
+    }
+  ],
+  "current_replay_entrypoint": "road_scene_r6/src/render_checkpoint_av.py",
+  "exact_generated_numerical_evidence": [
+    {
+      "bytes": 845289,
+      "package_path": "road_scene_r6/historical_numerical_av/AQ_FINAL_SURFACE.npz",
+      "role": "Exact actual AV generated evidence; never a replay input",
+      "sha256": "175710f7f0e26cb639a42444f8122cdcc5043cc94fdadabf1f799271d5684f0e"
+    },
+    {
+      "bytes": 3362541,
+      "package_path": "road_scene_r6/historical_numerical_av/AQ_CURRENT_FILM.npz",
+      "role": "Exact actual AV generated evidence; never a replay input",
+      "sha256": "c010c278c31d421d1f402925f3d67292fc756f4106cb53d6f6925540cdb4cb8d"
+    }
+  ],
+  "external_runtime_dependencies": [
+    "Blender 4.3.2 with Python/NumPy",
+    "Python 3 with NumPy/SciPy/Pillow",
+    "Linux bash and ps",
+    "Official OIDN 2.5.1"
+  ],
+  "full_v13_sha256": "8b813beb845bd7544575a4cdb1c5edff4573e90fedfe871f72ee346728f4ddde",
+  "generated_dependencies": [
+    "Native asphalt 4096 maps and GeometryHeight.npy",
+    "R5D bake maps",
+    "S/Y/Z scene outputs",
+    "Per-run AH_FIELDS.npz"
+  ],
+  "generated_numeric_evidence_used_as_replay_inputs": false,
+  "limitations": "Static import/path and exact-byte closure only. Arbitrary Python runtime paths and a complete fresh build remain unverified.",
+  "local_import_edges": [
+    {
+      "module": "render_checkpoint_ah",
+      "source": "road_scene_r6/src/render_checkpoint_ap.py",
+      "targets": [
+        "road_scene_r6/src/render_checkpoint_ah.py"
+      ]
+    },
+    {
+      "module": "prepare_physical_lenses",
+      "source": "road_scene_r6/src/prepare_runoff_film_z_portable.py",
+      "targets": [
+        "road_scene_r6/src/prepare_physical_lenses.py"
+      ]
+    },
+    {
+      "module": "road_film_surface_z",
+      "source": "road_scene_r6/src/prepare_runoff_film_z_portable.py",
+      "targets": [
+        "road_scene_r6/src/road_film_surface_z.py"
+      ]
+    },
+    {
+      "module": "road_film_shader_z",
+      "source": "road_scene_r6/src/prepare_runoff_film_z_portable.py",
+      "targets": [
+        "road_scene_r6/src/road_film_shader_z.py"
+      ]
+    },
+    {
+      "module": "flow_sediment_model_z",
+      "source": "road_scene_r6/src/prepare_runoff_film_z_portable.py",
+      "targets": [
+        "road_scene_r6/src/flow_sediment_model_z.py"
+      ]
+    },
+    {
+      "module": "semantic_scene_guard_z",
+      "source": "road_scene_r6/src/prepare_runoff_film_z_portable.py",
+      "targets": [
+        "road_scene_r6/src/semantic_scene_guard_z.py"
+      ]
+    },
+    {
+      "module": "prepare_physical_lenses",
+      "source": "road_scene_r6/src/semantic_scene_guard_z.py",
+      "targets": [
+        "road_scene_r6/src/prepare_physical_lenses.py"
+      ]
+    },
+    {
+      "module": "approved_density_lod",
+      "source": "road_scene_r6/src/prepare_physical_lenses.py",
+      "targets": [
+        "road_scene_r6/src/approved_density_lod.py"
+      ]
+    },
+    {
+      "module": "prepare_physical_lenses",
+      "source": "road_scene_r6/src/road_film_surface_z.py",
+      "targets": [
+        "road_scene_r6/src/prepare_physical_lenses.py"
+      ]
+    },
+    {
+      "module": "prepare_physical_lenses",
+      "source": "road_scene_r6/src/prepare_runoff_shoulder_y.py",
+      "targets": [
+        "road_scene_r6/src/prepare_physical_lenses.py"
+      ]
+    },
+    {
+      "module": "approved_density_lod",
+      "source": "road_scene_r6/src/prepare_runoff_shoulder_y.py",
+      "targets": [
+        "road_scene_r6/src/approved_density_lod.py"
+      ]
+    },
+    {
+      "module": "flow_sediment_model_y",
+      "source": "road_scene_r6/src/prepare_runoff_shoulder_y.py",
+      "targets": [
+        "road_scene_r6/src/flow_sediment_model_y.py"
+      ]
+    },
+    {
+      "module": "transport_surface_scene_y",
+      "source": "road_scene_r6/src/prepare_runoff_shoulder_y.py",
+      "targets": [
+        "road_scene_r6/src/transport_surface_scene_y.py"
+      ]
+    },
+    {
+      "module": "prepare_physical_lenses",
+      "source": "road_scene_r6/src/transport_surface_scene_y.py",
+      "targets": [
+        "road_scene_r6/src/prepare_physical_lenses.py"
+      ]
+    },
+    {
+      "module": "approved_density_lod",
+      "source": "road_scene_r6/src/transport_surface_scene_y.py",
+      "targets": [
+        "road_scene_r6/src/approved_density_lod.py"
+      ]
+    },
+    {
+      "module": "transported_grain_exposure",
+      "source": "road_scene_r6/src/transport_surface_scene_y.py",
+      "targets": [
+        "road_scene_r6/src/transported_grain_exposure.py"
+      ]
+    },
+    {
+      "module": "prepare_tiled_relief",
+      "source": "road_scene_r6/relief_correction/prepare_tiled_relief_r2.py",
+      "targets": [
+        "road_scene_r6/relief_correction/prepare_tiled_relief.py"
+      ]
+    },
+    {
+      "module": "paint_shader_adapter_r2",
+      "source": "road_scene_r6/relief_correction/prepare_tiled_relief_r2.py",
+      "targets": [
+        "road_scene_r6/relief_correction/paint_shader_adapter_r2.py"
+      ]
+    },
+    {
+      "module": "affine_tile_adapter",
+      "source": "road_scene_r6/relief_correction/prepare_tiled_relief_r2.py",
+      "targets": [
+        "road_scene_r6/relief_correction/affine_tile_adapter.py"
+      ]
+    },
+    {
+      "module": "tiled_relief_math",
+      "source": "road_scene_r6/relief_correction/affine_tile_adapter.py",
+      "targets": [
+        "road_scene_r6/relief_correction/tiled_relief_math.py"
+      ]
+    },
+    {
+      "module": "relief_math",
+      "source": "road_scene_r6/relief_correction/tiled_relief_math.py",
+      "targets": [
+        "road_scene_r6/relief_correction/relief_math.py"
+      ]
+    },
+    {
+      "module": "prepare_interior_relief",
+      "source": "road_scene_r6/relief_correction/prepare_tiled_relief.py",
+      "targets": [
+        "road_scene_r6/relief_correction/prepare_interior_relief.py"
+      ]
+    },
+    {
+      "module": "relief_math",
+      "source": "road_scene_r6/relief_correction/prepare_tiled_relief.py",
+      "targets": [
+        "road_scene_r6/relief_correction/relief_math.py"
+      ]
+    },
+    {
+      "module": "tiled_relief_math",
+      "source": "road_scene_r6/relief_correction/prepare_tiled_relief.py",
+      "targets": [
+        "road_scene_r6/relief_correction/tiled_relief_math.py"
+      ]
+    },
+    {
+      "module": "paint_shader_adapter",
+      "source": "road_scene_r6/relief_correction/prepare_tiled_relief.py",
+      "targets": [
+        "road_scene_r6/relief_correction/paint_shader_adapter.py"
+      ]
+    },
+    {
+      "module": "relief_math",
+      "source": "road_scene_r6/relief_correction/prepare_interior_relief.py",
+      "targets": [
+        "road_scene_r6/relief_correction/relief_math.py"
+      ]
+    },
+    {
+      "module": "desert_scrub",
+      "source": "road_scene_r6/src/build_scene.py",
+      "targets": [
+        "road_scene_r6/vegetation/desert_scrub.py"
+      ]
+    },
+    {
+      "module": "height_normals",
+      "source": "discrete_grains_r5/asphalt/source/generate_native4096.py",
+      "targets": [
+        "discrete_grains_r5/asphalt/source/height_normals.py"
+      ]
+    },
+    {
+      "module": "mineral_construction",
+      "source": "discrete_grains_r5/asphalt/source/generate_native4096.py",
+      "targets": [
+        "discrete_grains_r5/asphalt/vendor/mineral_construction.py"
+      ]
+    },
+    {
+      "module": "surface_math",
+      "source": "discrete_grains_r5/asphalt/vendor/mineral_construction.py",
+      "targets": [
+        "discrete_grains_r5/asphalt/vendor/surface_math.py"
+      ]
+    },
+    {
+      "module": "png_precision_check",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/oidn_image_bridge.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/png_precision_check.py"
+      ]
+    },
+    {
+      "module": "capture_modes",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/oidn_image_bridge.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/capture_modes.py"
+      ]
+    },
+    {
+      "module": "oidn_contract",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/oidn_image_bridge.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/oidn_contract.py"
+      ]
+    },
+    {
+      "module": "capture_modes",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/clean_receipt.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/capture_modes.py"
+      ]
+    },
+    {
+      "module": "capture_modes",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/raw_receipt.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/capture_modes.py"
+      ]
+    },
+    {
+      "module": "capture_modes",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/component_image_bridge.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/capture_modes.py"
+      ]
+    },
+    {
+      "module": "transport_components",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/component_image_bridge.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/transport_components.py"
+      ]
+    },
+    {
+      "module": "png_precision_check",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/component_image_bridge.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/png_precision_check.py"
+      ]
+    },
+    {
+      "module": "oidn_contract",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/component_image_bridge.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/oidn_contract.py"
+      ]
+    },
+    {
+      "module": "capture_modes",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/component_receipt.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/capture_modes.py"
+      ]
+    },
+    {
+      "module": "transport_components",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/component_receipt.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/transport_components.py"
+      ]
+    },
+    {
+      "module": "edge_ravel_field_aa",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_raveled_edge_aa.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/edge_ravel_field_aa.py"
+      ]
+    },
+    {
+      "module": "metric_edge_strip_aa",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_raveled_edge_aa.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/metric_edge_strip_aa.py"
+      ]
+    },
+    {
+      "module": "metric_edge_strip_aa",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/pavement_contact_ac.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/metric_edge_strip_aa.py"
+      ]
+    },
+    {
+      "module": "edge_ravel_field_aa",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_pavement_contact_ac.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/edge_ravel_field_aa.py"
+      ]
+    },
+    {
+      "module": "metric_edge_strip_aa",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_pavement_contact_ac.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/metric_edge_strip_aa.py"
+      ]
+    },
+    {
+      "module": "assemble_raveled_edge_aa",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_pavement_contact_ac.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_raveled_edge_aa.py"
+      ]
+    },
+    {
+      "module": "pavement_contact_ac",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_pavement_contact_ac.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/pavement_contact_ac.py"
+      ]
+    },
+    {
+      "module": "prepare_physical_lenses",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_pavement_contact_ac.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/prepare_physical_lenses.py"
+      ]
+    },
+    {
+      "module": "runoff_edge_support_ai",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_pavement_contact_ac.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/runoff_edge_support_ai.py"
+      ]
+    },
+    {
+      "module": "approved_density_lod",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/prepare_physical_lenses.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/approved_density_lod.py"
+      ]
+    },
+    {
+      "module": "context_mesh_refine_ab",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_graded_shoulder_ah.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_mesh_refine_ab.py"
+      ]
+    },
+    {
+      "module": "visible_shoulder_flow_ad",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_graded_shoulder_ah.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/visible_shoulder_flow_ad.py"
+      ]
+    },
+    {
+      "module": "flow_transport_ae",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_graded_shoulder_ah.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/flow_transport_ae.py"
+      ]
+    },
+    {
+      "module": "flow_sediment_model_z",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_graded_shoulder_ah.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/flow_sediment_model_z.py"
+      ]
+    },
+    {
+      "module": "graded_shoulder_foundation_ah",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_graded_shoulder_ah.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/graded_shoulder_foundation_ah.py"
+      ]
+    },
+    {
+      "module": "assemble_visible_shoulder_ad",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_graded_shoulder_ah.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_visible_shoulder_ad.py"
+      ]
+    },
+    {
+      "module": "terrain_normal_transfer_ah",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_graded_shoulder_ah.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/terrain_normal_transfer_ah.py"
+      ]
+    },
+    {
+      "module": "context_mesh_refine_ab",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_graded_shoulder_ah.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_mesh_refine_ab.py"
+      ]
+    },
+    {
+      "module": "prepare_physical_lenses",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_graded_shoulder_ah.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/prepare_physical_lenses.py"
+      ]
+    },
+    {
+      "module": "graded_shoulder_foundation_at",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_graded_shoulder_ah.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/graded_shoulder_foundation_at.py"
+      ]
+    },
+    {
+      "module": "substrate_history_ak",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_graded_shoulder_ah.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/substrate_history_ak.py"
+      ]
+    },
+    {
+      "module": "context_mesh_refine_ab",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/terrain_normal_transfer_ah.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_mesh_refine_ab.py"
+      ]
+    },
+    {
+      "module": "context_mesh_refine_ab",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_visible_shoulder_ad.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_mesh_refine_ab.py"
+      ]
+    },
+    {
+      "module": "visible_shoulder_flow_ad",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_visible_shoulder_ad.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/visible_shoulder_flow_ad.py"
+      ]
+    },
+    {
+      "module": "prepare_physical_lenses",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_visible_shoulder_ad.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/prepare_physical_lenses.py"
+      ]
+    },
+    {
+      "module": "context_field_cache_ad",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_visible_shoulder_ad.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_field_cache_ad.py"
+      ]
+    },
+    {
+      "module": "flow_sediment_model_z",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_visible_shoulder_ad.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/flow_sediment_model_z.py"
+      ]
+    },
+    {
+      "module": "flow_sediment_model_z",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/visible_shoulder_flow_ad.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/flow_sediment_model_z.py"
+      ]
+    },
+    {
+      "module": "flow_sediment_model_z",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/flow_transport_ae.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/flow_sediment_model_z.py"
+      ]
+    },
+    {
+      "module": "visible_shoulder_flow_ad",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/flow_transport_ae.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/visible_shoulder_flow_ad.py"
+      ]
+    },
+    {
+      "module": "visible_shoulder_flow_ad",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_field_cache_ad.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/visible_shoulder_flow_ad.py"
+      ]
+    },
+    {
+      "module": "graded_shoulder_foundation_ah",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/graded_shoulder_foundation_at.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/graded_shoulder_foundation_ah.py"
+      ]
+    },
+    {
+      "module": "approved_density_lod",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/refresh_view_grains_au.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/approved_density_lod.py"
+      ]
+    },
+    {
+      "module": "context_mesh_refine_ab",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/refresh_view_grains_au.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_mesh_refine_ab.py"
+      ]
+    },
+    {
+      "module": "visible_shoulder_flow_ad",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/refresh_view_grains_au.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/visible_shoulder_flow_ad.py"
+      ]
+    },
+    {
+      "module": "prepare_physical_lenses",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/refresh_view_grains_au.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/prepare_physical_lenses.py"
+      ]
+    },
+    {
+      "module": "prepare_physical_lenses",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/refresh_view_grains_au.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/prepare_physical_lenses.py"
+      ]
+    },
+    {
+      "module": "prepare_physical_lenses",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/refresh_view_grains_au.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/prepare_physical_lenses.py"
+      ]
+    },
+    {
+      "module": "approved_density_lod",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_sediment_surface_ai.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/approved_density_lod.py"
+      ]
+    },
+    {
+      "module": "context_mesh_refine_ab",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_sediment_surface_ai.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_mesh_refine_ab.py"
+      ]
+    },
+    {
+      "module": "visible_shoulder_flow_ad",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_sediment_surface_ai.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/visible_shoulder_flow_ad.py"
+      ]
+    },
+    {
+      "module": "sediment_surface_ai",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_sediment_surface_ai.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/sediment_surface_ai.py"
+      ]
+    },
+    {
+      "module": "transported_grain_exposure",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_sediment_surface_ai.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/transported_grain_exposure.py"
+      ]
+    },
+    {
+      "module": "visible_shoulder_flow_ad",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/sediment_surface_ai.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/visible_shoulder_flow_ad.py"
+      ]
+    },
+    {
+      "module": "transported_grain_exposure",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/sediment_surface_ai.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/transported_grain_exposure.py"
+      ]
+    },
+    {
+      "module": "context_mesh_refine_ab",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/contact_bank_continuity_al.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_mesh_refine_ab.py"
+      ]
+    },
+    {
+      "module": "metric_edge_strip_aa",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/contact_bank_continuity_al.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/metric_edge_strip_aa.py"
+      ]
+    },
+    {
+      "module": "runoff_edge_support_ai",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/contact_bank_continuity_al.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/runoff_edge_support_ai.py"
+      ]
+    },
+    {
+      "module": "contact_triangle_clearance_al",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/contact_bank_continuity_al.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/contact_triangle_clearance_al.py"
+      ]
+    },
+    {
+      "module": "prepare_physical_lenses",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/contact_bank_continuity_al.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/prepare_physical_lenses.py"
+      ]
+    },
+    {
+      "module": "context_mesh_refine_ab",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/contact_bank_continuity_al.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_mesh_refine_ab.py"
+      ]
+    },
+    {
+      "module": "terrain_normal_transfer_ah",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/contact_bank_continuity_al.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/terrain_normal_transfer_ah.py"
+      ]
+    },
+    {
+      "module": "approved_density_lod",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/contact_bank_continuity_al.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/approved_density_lod.py"
+      ]
+    },
+    {
+      "module": "context_mesh_refine_ab",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/continuous_contact_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_mesh_refine_ab.py"
+      ]
+    },
+    {
+      "module": "metric_edge_strip_aa",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/continuous_contact_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/metric_edge_strip_aa.py"
+      ]
+    },
+    {
+      "module": "contact_bank_continuity_al",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/continuous_contact_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/contact_bank_continuity_al.py"
+      ]
+    },
+    {
+      "module": "contact_triangle_clearance_al",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/continuous_contact_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/contact_triangle_clearance_al.py"
+      ]
+    },
+    {
+      "module": "road_margin_composition_ap",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/continuous_contact_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/road_margin_composition_ap.py"
+      ]
+    },
+    {
+      "module": "approved_density_lod",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/continuous_contact_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/approved_density_lod.py"
+      ]
+    },
+    {
+      "module": "prepare_physical_lenses",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/continuous_contact_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/prepare_physical_lenses.py"
+      ]
+    },
+    {
+      "module": "road_margin_composition_ap",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_road_margin_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/road_margin_composition_ap.py"
+      ]
+    },
+    {
+      "module": "sample_final_surface_an",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_road_margin_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/sample_final_surface_an.py"
+      ]
+    },
+    {
+      "module": "context_mesh_refine_ab",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_road_margin_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_mesh_refine_ab.py"
+      ]
+    },
+    {
+      "module": "approved_density_lod",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_road_margin_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/approved_density_lod.py"
+      ]
+    },
+    {
+      "module": "layered_scrub_ap",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_road_margin_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/layered_scrub_ap.py"
+      ]
+    },
+    {
+      "module": "sample_final_surface_an",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_road_margin_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/sample_final_surface_an.py"
+      ]
+    },
+    {
+      "module": "sample_final_surface_an",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/current_contact_film_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/sample_final_surface_an.py"
+      ]
+    },
+    {
+      "module": "refined_film_event_an",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/current_contact_film_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/refined_film_event_an.py"
+      ]
+    },
+    {
+      "module": "flow_sediment_model_ao",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/current_contact_film_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/flow_sediment_model_ao.py"
+      ]
+    },
+    {
+      "module": "road_film_shader_z",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/current_contact_film_aq.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/road_film_shader_z.py"
+      ]
+    },
+    {
+      "module": "flow_sediment_model_z",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/refined_film_event_an.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/flow_sediment_model_z.py"
+      ]
+    },
+    {
+      "module": "desert_scrub",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/layered_scrub_ap.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/desert_scrub.py"
+      ]
+    },
+    {
+      "module": "metric_edge_strip_aa",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/fractured_boundary_ar.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/metric_edge_strip_aa.py"
+      ]
+    },
+    {
+      "module": "edge_ravel_field_aa",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/fractured_boundary_ar.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/edge_ravel_field_aa.py"
+      ]
+    },
+    {
+      "module": "fractured_boundary_ar",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/integrate_fracture_ar.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/fractured_boundary_ar.py"
+      ]
+    },
+    {
+      "module": "context_mesh_refine_ab",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/integrate_fracture_ar.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_mesh_refine_ab.py"
+      ]
+    },
+    {
+      "module": "soil_rim_bridge_ar",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/integrate_fracture_ar.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/soil_rim_bridge_ar.py"
+      ]
+    },
+    {
+      "module": "context_mesh_refine_ab",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/integrate_fracture_ar.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_mesh_refine_ab.py"
+      ]
+    },
+    {
+      "module": "continuous_contact_aq",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/integrate_fracture_ar.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/continuous_contact_aq.py"
+      ]
+    },
+    {
+      "module": "soil_rim_bridge_ar",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/integrate_fracture_ar.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/soil_rim_bridge_ar.py"
+      ]
+    },
+    {
+      "module": "metric_margin_fragments_as",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_metric_fragments_as.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/metric_margin_fragments_as.py"
+      ]
+    },
+    {
+      "module": "assemble_road_margin_aq",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_metric_fragments_as.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_road_margin_aq.py"
+      ]
+    },
+    {
+      "module": "approved_density_lod",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_metric_fragments_as.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/approved_density_lod.py"
+      ]
+    },
+    {
+      "module": "metric_margin_fragments_as_fractured_candidate",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_metric_fragments_as.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/metric_margin_fragments_as_fractured_candidate.py"
+      ]
+    },
+    {
+      "module": "metric_margin_fragments_as",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/metric_margin_fragments_as_fractured_candidate.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/metric_margin_fragments_as.py"
+      ]
+    },
+    {
+      "module": "resource_contract",
+      "source": "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/bounded_clean_run.py",
+      "targets": [
+        "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/resource_contract.py"
+      ]
+    }
+  ],
+  "missing_static_dependencies": [],
+  "omitted_entries": {
+    "CURRENT_COMPONENT_EVIDENCE_AQ_V14.json": {
+      "reason": "Replaced current-version entrypoint or metadata",
+      "sha256": "ed38f9f113c0c249a2919149277ebe867de3b55d722d8f2f5433312d38c9a590"
+    },
+    "README.txt": {
+      "reason": "Replaced current-version entrypoint or metadata",
+      "sha256": "3c8768d8415600f0f834c6f1fe1d760c1e7b9e485068b4e4fedcdcdc63ae13c1"
+    },
+    "SOURCE_LOCK.json": {
+      "reason": "Replaced current-version entrypoint or metadata",
+      "sha256": "94588295105bd4e5d6044f5f1f571a7c2d3514b92730e118f57d84be8d108dfe"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/approved_density_lod.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "e436859c4658c269d68ce041299b0152595d7dfdd7e56ed472420fdf3c1dc658"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/assemble_graded_shoulder_ah.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "f8f0764d3e761a1b25c9909933cb912691a6093fc98d6ba9dfd78b7ca0dd75de"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/assemble_pavement_contact_ac.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "e63a5951ac6ae51d9ff1dc9977cb5e22b7e18e7a53cce8a1cd1de72a3d2267c5"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/assemble_raveled_edge_aa.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "eb088b9104f8fb290d10d06412d5de3a687e85aed6d4be402184eca558a8cdd7"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/assemble_road_margin_aq.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "cf8022b952bb5b1afbda25fe0c5314551268c1527b630e4feae0daecff8ba7eb"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/assemble_sediment_surface_ai.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "8318548a0cd79e7d432d387bfe65bf2a1175a68a90709108b8ac5bc961ad60c5"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/assemble_visible_shoulder_ad.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "14beaa67d7c2e7c887bee5d2a2643889a43abd52b8199522d7f1d755838e8577"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/bounded_clean_run.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "4946bea06422b9a77aa9d9a6e25be989630026ff9821809dddd752088ffe74de"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/capture_modes.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "c3d1ff01c580a8f63f1fe3658697ec711525f2e8032a82e2fb008c8f8339bbf8"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/clean_receipt.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "0746b04f053fdc7a9b0df1805961e5ae6ee5051d992784ed715e361d0d80d8de"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/clean_render.sh": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "f02ed38052ecb82a1a90b6d16ea70776b03e0cb864f3d2952dc2970864a7c264"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/component_image_bridge.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "74dca31a6739ef5b666ec4437d77297f138dc5bd8f63280c9d2cea8acfe74047"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/component_receipt.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "5327a00bc7d9c2bc414fb6529ed7c4ccadd539ad96f69858c10f3bfd44796c35"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/contact_bank_continuity_al.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "81f388656370db1a1281ad4b852a49efbc82c73818aa97b9cdbca63c7da61169"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/contact_triangle_clearance_al.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "d57a3abdee8683aad22d5aec41d137dd6b9dae79626bcf74fc0ec3dc166b5e81"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/context_field_cache_ad.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "f5b32357db8ee427b7c4fe603df1ca07688a13c07f186d51b31db72619e6dc98"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/context_mesh_refine_ab.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "822366ed13e38914197f1316bab9b6433a0ba1b1485d66c2fa6aa13889060bf7"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/continuous_contact_aq.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "777e4456774d77351ece52767b8a247a58eb88485a7edaa1215a829fa491dde7"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/current_contact_film_aq.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "24ecd8bc9d654e85b64161368dffb1fed7bf4604f4576acb13c90162cb37393e"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/desert_scrub.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "8f5840a371422effcf243dfb284f57241b219262386a1d7dc3b594264b1b2172"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/edge_ravel_field_aa.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "50191ccb00336ee6a2b5da1bacf33035a885afc7c9b1eaf31a4d341387a56a36"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/flow_sediment_model_ao.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "cbd4689b5be9faa988ccc2de7eef50f40828bad4ebf2233f70739209bfd517c8"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/flow_sediment_model_z.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "00e1bd4d9e898eb6d2bca71fb8c3e7cf35a9fea7019f00d0559347efcede73e8"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/flow_transport_ae.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "8077352d35f4b717e962a022f9cda3f5f38b87c7d341a25618d4645fb61e602f"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/graded_shoulder_foundation_ah.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "e531b13f0e497ef6776493a8b53a6b3c103ed59d2f5cb74425fe02631b15e641"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/layered_scrub_ap.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "2e3b78bac8cbb8d5947dad0abb89d941aef22747b197c99ce8eeaeb1697a3e82"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/metric_edge_strip_aa.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "ff93f29b6da102ad74aba5ff2f7abfa1f015612e5e10c3d29a3ad2fa5be753db"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/oidn_contract.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "c50d803b0d500905b03d8ccc24512e769d100b434dad96891d657986f8be5094"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/oidn_image_bridge.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "7d88792da6c53a47e3aacafa2b7a222f844ce458afa7b535f081faf9c5732bf6"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/pavement_contact_ac.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "311d5797851901edfa170238c8ba77e69fff9e4bfc3c30dba7b7ca2bbf4cd79b"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/png_precision_check.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "fec3e732a7185e2ef5485af2f6db3963a151d6867e48c59c036509bfdad77f20"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/prepare_physical_lenses.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "3d9dbd29990807a632632233343d32a2eef62676305404934716cf087b7b861b"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/preview_mesh_cull.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "c3d9793f03caababc6894b4e49e64d1f37a741b912a1ee8ebdeb7f55e145e0f5"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/raw_receipt.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "af411eed5c7eb1855e6abc81838bab0a1ed1defeb2446094bb837017c266ec5d"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/refined_film_event_an.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "3acf2dcba1179e003dd226e3f963f10d20f40a8a16af309e28da87c766c69930"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/render.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "ebea0d9461f32de4dd3b44b650d17f9107b74a12d80d0146d58b13ef934542d7"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/render.sh": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "9ce9dc545650392dce69c9709c8acff188db95eec13c34b647c5e13be6e2688a"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/resource_contract.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "a5d0a12482fcc48e06fa2680a879e0646e30fa580fe1abbdbff730f484324d8c"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/road_film_ownership_al.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "f34b7a7a45b5a1881851c7085b9b387e3284c454487cabff7446a6bb3f4feed5"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/road_film_shader_z.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "411aee9eebad6ca18388bbba1ade22e83670ba4dcae768c3884688d846f44bf4"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/road_margin_composition_ap.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "5567fdc085f346310625ba25c75c29f82bfc801fff52e00ae4f76c424e87ae95"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/runoff_edge_support_ai.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "f9b397f7637990aad99b732df5ce7ae7090a1aaa4df26bb2a1642baf1fc51c33"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/sample_final_surface_an.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "02c719fae92f3b2c485445d5bc5e8609884829140be6651812c8bae8b2df271b"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/sediment_surface_ai.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "5370552c85726932b7680f9c5ae235b9e0c3870d981fd67bf82b25ff046a0aca"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/substrate_history_ak.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "92756fa0fb60be121b15cfce48712efc7f4f331b724cf88226a6db2870edb868"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/terrain_normal_transfer_ah.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "baaad3c0dbb8186aa40f9adcb841999573db27eb2f1c37d4d161f7a783849e3f"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/transport_components.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "9232c7679b68c763273ebc51aa78296ae67a0a6891b71ef713f461e9d86816d4"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/transported_grain_exposure.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "0834619932c753f6335dd7c7883a7d1c0ff39ea23246ea12be0ab87f79a22c10"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/verify_pipeline_snapshot.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "6ffcdffc991dc7b9cb345645bb919d82da6f221c1f0138e485b886f7099b9d1b"
+    },
+    "road_scene_r6/checkpoint_pipeline_sources/4ba7dde63a09a70fa109d4b9b73d8b3c25ac7b74ad995a2b2fafb19e2001b2ad/visible_shoulder_flow_ad.py": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "64a90e7d98bc9577bde96c5c43a747c4e091d5585e5a8f2af3b413ea12628ebc"
+    },
+    "road_scene_r6/historical_captures_aq/aq_continuous_contact_context/AQ_CURRENT_FILM.json": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "6681e80696db43f4523b6001201e0a5ce14fd3d59d1317445263ec9551af018a"
+    },
+    "road_scene_r6/historical_captures_aq/aq_continuous_contact_context/CLEAN_OIDN_PANEL.png.json": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "f274359e61d1ff5480a0595f76d4ed11c04322344286ae3c927dae681a6ad72d"
+    },
+    "road_scene_r6/historical_captures_aq/aq_continuous_contact_context/CONTACT_BANK_CONTINUITY_AL.json": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "1505e0f3b39b8c958f231f8b33a1f45f1daf429536bee40fa85b5fa9e0860a45"
+    },
+    "road_scene_r6/historical_captures_aq/aq_continuous_contact_context/CONTINUOUS_CONTACT_AQ.json": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "0eb749c0e83dae02d9d7391428b2254f9fdd7546e2d2640c0a6f764c0699a1d2"
+    },
+    "road_scene_r6/historical_captures_aq/aq_continuous_contact_context/GRADED_SHOULDER_AH.json": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "d16e52045f1687aaf085c37b8f346370e891a51fd7e2f4e42ce2b36182872771"
+    },
+    "road_scene_r6/historical_captures_aq/aq_continuous_contact_context/INTERNAL_PANEL.png.json": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "0d811edaf3b9f6aaa95275ea194ce29a63f06ad8d469734355665e4853bf8eab"
+    },
+    "road_scene_r6/historical_captures_aq/aq_continuous_contact_context/INTERNAL_PANEL_guides/guide_contract.json": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "435b896c2fb7a1eb6ffe50bfe8ca6357e90410d02407936dbeb4272852fcf798"
+    },
+    "road_scene_r6/historical_captures_aq/aq_continuous_contact_context/INTERNAL_PANEL_guides/guide_stats.json": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "4fe9ced4b50c06c193510f0c9476d20050a50eebf4fe92065242465e5f3bbc32"
+    },
+    "road_scene_r6/historical_captures_aq/aq_continuous_contact_context/INTERNAL_PANEL_guides/png_roundtrip_check.json": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "57ed96f4ce815f67415d315c3926a8f032d62e652b7ce840557c7dae0439033a"
+    },
+    "road_scene_r6/historical_captures_aq/aq_continuous_contact_context/PAVEMENT_CONTACT_AC.json": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "722c854ca444ebb3c278aa87be7bd419f7096f1326a8b644577a4c66e4343d7a"
+    },
+    "road_scene_r6/historical_captures_aq/aq_continuous_contact_context/PRE_RENDER_MEMORY_ADAPTATIONS.json": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "7dde10f9a9d501e487bbf14c757039f0c7ecef4f408ef58aeab754d314dee54f"
+    },
+    "road_scene_r6/historical_captures_aq/aq_continuous_contact_context/ROAD_FILM_OWNERSHIP_AL.json": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "617f868840a5619d8d6a0ccf8875b2e8be36e49a6c0c3b5dc5a99cea51773891"
+    },
+    "road_scene_r6/historical_captures_aq/aq_continuous_contact_context/ROAD_MARGIN_AQ.json": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "312939ce1fee9023681d3087a308c3bfa807d58911c923cf7990eb9920735076"
+    },
+    "road_scene_r6/historical_captures_aq/aq_continuous_contact_context/SEDIMENT_SURFACE_AI.json": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "2572e75edd9aba799f10049fbb733dc73b882b34b8c9161de39749c16c5b4025"
+    },
+    "road_scene_r6/historical_captures_aq/aq_continuous_contact_context/SUBSTRATE_HISTORY_AK.json": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "277c176d5fa43395be978d7f2e0dad493efd074dc9654fff4221af402973b7bb"
+    },
+    "road_scene_r6/historical_captures_aq/aq_continuous_contact_context/job.json": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "ee498573e64bb41876c92965b3a3c1857449e81cb8f75ceb7b36c43e6b29b647"
+    },
+    "road_scene_r6/historical_captures_aq/aq_continuous_contact_context/resource_receipt.json": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "f466b3cb6a9501f4e68e5b85c647e5c1c5bd5008b73788716650ff1e380c30c8"
+    },
+    "road_scene_r6/historical_evidence_aq/continuous_contact_aq_source_tests.json": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "598fc108f5c06860d3a0de47af09a62a7758017213b344655560b60ac9287735"
+    },
+    "road_scene_r6/historical_numerical_aq/AQ_CURRENT_FILM.npz": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "d628dabc8caa6a38d1b5c7575f17a83f8082effbe56a65e9a73f3222abe4aed0"
+    },
+    "road_scene_r6/historical_numerical_aq/AQ_FINAL_SURFACE.npz": {
+      "reason": "Replaced previous capture snapshot/evidence; exact history remains in AQ v14",
+      "sha256": "b2d5af4da4c4df4b7a0a5d1c41724ade5a71ace756f53c9eff43092323014c47"
+    },
+    "road_scene_r6/receipts/current_dependency_closure_aq.json": {
+      "reason": "Replaced current-version entrypoint or metadata",
+      "sha256": "a42dcde75fb124fbf60715ab06990edccd536fcd4fa36cfa12598e2c40890c22"
+    },
+    "road_scene_r6/receipts/integrated_render_templates_aq.json": {
+      "reason": "Replaced current-version entrypoint or metadata",
+      "sha256": "384d9330b2b1ea72f5f011134b3e87f30ba6ec33f51d08157626a3a6c3f90102"
+    },
+    "test_source_current_aq.sh": {
+      "reason": "Replaced current-version entrypoint or metadata",
+      "sha256": "4083205a03b4a5e04f1b30334a4b212e3fee310b068e3d1a45848fae22136f65"
+    }
+  },
+  "optional_cache_output": "Fresh capture/ASSEMBLED_SCENE_AV.blend; never an input prerequisite",
+  "retained_exact_required_files_sha256": {
+    "PINNED_INPUTS.json": "5346c4334a040cb458f65f48623a80dc47ef9577b70aa066924fcc49294f73fc",
+    "discrete_grains_r5/PROVENANCE.json": "49535d6085c1f8afcc5f3e87172d6aded3c4bd2cf4b29168c578c54e152cce5a",
+    "discrete_grains_r5/README.txt": "55dca0e0f176be89e6b8e06c6f9144f3f898263fff6ab21d46e96890c1ba5755",
+    "discrete_grains_r5/SOURCE_LOCK.json": "3c3175cc33c0d6ab16b5e18aac2d7266ce64e9b47228d3547571ffc23b01175d",
+    "discrete_grains_r5/asphalt/material.json": "3cd4e38a5bf5cb3b39cd5eb527da6e4b8b87e9c08de3ca952a7a07379eb97eba",
+    "discrete_grains_r5/asphalt/source/generate_native4096.py": "3678b9667b93d6aa273024098ee703f080fa28c4ed86cace969f482eaa51fa71",
+    "discrete_grains_r5/asphalt/source/height_normals.py": "e50b1707ed664eb4342dad3eaeff4de965537ee833a14919a264b97f4cbe58ba",
+    "discrete_grains_r5/asphalt/vendor/mineral_construction.py": "470e18f9bec0fb933d788afd0c5587f7ad470a33fb0834a1586b9fff286bea5b",
+    "discrete_grains_r5/asphalt/vendor/surface_math.py": "3c09a5ebc9b860abb9783045bed7674e3917087b0c0d21376fbfd8cda12cafc0",
+    "discrete_grains_r5/pipeline/bounded_clean_run.py": "4946bea06422b9a77aa9d9a6e25be989630026ff9821809dddd752088ffe74de",
+    "discrete_grains_r5/pipeline/cache_validation.py": "1d476f28c104c90f3cb0774e75756d1b2f1d8fcfa8fa0a62e7ab56018b8721d4",
+    "discrete_grains_r5/pipeline/capture_modes.py": "c3d1ff01c580a8f63f1fe3658697ec711525f2e8032a82e2fb008c8f8339bbf8",
+    "discrete_grains_r5/pipeline/clean_receipt.py": "0746b04f053fdc7a9b0df1805961e5ae6ee5051d992784ed715e361d0d80d8de",
+    "discrete_grains_r5/pipeline/clean_render.sh": "f02ed38052ecb82a1a90b6d16ea70776b03e0cb864f3d2952dc2970864a7c264",
+    "discrete_grains_r5/pipeline/component_image_bridge.py": "74dca31a6739ef5b666ec4437d77297f138dc5bd8f63280c9d2cea8acfe74047",
+    "discrete_grains_r5/pipeline/component_receipt.py": "5327a00bc7d9c2bc414fb6529ed7c4ccadd539ad96f69858c10f3bfd44796c35",
+    "discrete_grains_r5/pipeline/oidn_contract.py": "c50d803b0d500905b03d8ccc24512e769d100b434dad96891d657986f8be5094",
+    "discrete_grains_r5/pipeline/oidn_image_bridge.py": "7d88792da6c53a47e3aacafa2b7a222f844ce458afa7b535f081faf9c5732bf6",
+    "discrete_grains_r5/pipeline/png_precision_check.py": "fec3e732a7185e2ef5485af2f6db3963a151d6867e48c59c036509bfdad77f20",
+    "discrete_grains_r5/pipeline/queue_paths.py": "d15bde4bbc62b004491ee5186bfd07e2fcadd5545ea6cea7e2c27929830c4aa9",
+    "discrete_grains_r5/pipeline/raw_receipt.py": "af411eed5c7eb1855e6abc81838bab0a1ed1defeb2446094bb837017c266ec5d",
+    "discrete_grains_r5/pipeline/render.py": "92aa1336ee8093998c3df59c100c5c46eea72288ab8384506149cefa962e2c84",
+    "discrete_grains_r5/pipeline/render.sh": "9ce9dc545650392dce69c9709c8acff188db95eec13c34b647c5e13be6e2688a",
+    "discrete_grains_r5/pipeline/resource_contract.py": "a5d0a12482fcc48e06fa2680a879e0646e30fa580fe1abbdbff730f484324d8c",
+    "discrete_grains_r5/pipeline/run_panel_queue.py": "0813eda63c3d604a3453741772db29849976568bf71b3ed99541c2f36861d0d4",
+    "discrete_grains_r5/pipeline/test_component_exr_roundtrip.py": "2bfafee42548d5dbd2520ec7290fc70f12ed779248874742024c3dc0e04ad55a",
+    "discrete_grains_r5/pipeline/transport_components.py": "9232c7679b68c763273ebc51aa78296ae67a0a6891b71ef713f461e9d86816d4",
+    "discrete_grains_r5/pipeline/verify_pipeline_snapshot.py": "6ffcdffc991dc7b9cb345645bb919d82da6f221c1f0138e485b886f7099b9d1b",
+    "discrete_grains_r5/prototypes/fracture_solids.json": "1e87f9414bf2e4460e344e1fe8d630a8f50dff965c3e2a4680af02db34bc814b",
+    "discrete_grains_r5/prototypes/microbed.npz": "7a09007d50e444c28231fd30cddda185d2f01146f3b1a47b014ebd25c0b415c4",
+    "discrete_grains_r5/receipts/edge_context_d.json": "1e671d59c8d86560800fed311d174e7e8625b7ee75deff6c00178c1dc367e7f4",
+    "discrete_grains_r5/receipts/geometry_d.json": "ab459cb81aeba9e2cfe823b448bbcbf7c816b0027c79c6bc5e13fe8f80d13c68",
+    "discrete_grains_r5/src/build_diagnostic.py": "320dd02e5ac661f4f9f3b470d614e0b3fb103614b0d2cd740aded5964ffa4246",
+    "discrete_grains_r5/src/build_edge_context.py": "b6aff900ac1146f477d714957d31529fc0b51efea1ec421d245b0d685770c158",
+    "discrete_grains_r5/src/compacted_microbed.py": "355576685bd6ef8492d0e4f2e5f7ab3963c58179a1335ec78ce924eecf378ec7",
+    "discrete_grains_r5/src/fracture_prototypes.py": "394bfc265be6e98cec9cd3f0bdbe8c2862a591bdfe0c0edd7262e3d92623c078",
+    "far_road_r5d/bake/bake_r5d.py": "e263d774ece75561069cce31f0e06b8845a87c655ca56ab9b61f901e778e8518",
+    "historical_receipts_ah/discrete_grains_r5/receipts/geometry_d.json": "ab459cb81aeba9e2cfe823b448bbcbf7c816b0027c79c6bc5e13fe8f80d13c68",
+    "historical_receipts_ah/road_scene_r6/receipts/erosion_network_l.json": "ecf72ed95b2e77e6839ae36314e81205e7fad25fd4be086bfcbff39c1501af52",
+    "historical_receipts_ah/road_scene_r6/receipts/rocky_ridges_o.json": "f1863a5ce794a3ab80d0ed434cac73011c49c358d93bd9900a6397a064793b97",
+    "historical_receipts_ah/road_scene_r6/receipts/scene_e.json": "16b67f6379da5cffa7845cc97912cb333dd4f4f220b71ff877b52db747ef5a6e",
+    "historical_receipts_ah/road_scene_r6/receipts/sediment_patches_k.json": "e33c6e3fe8e94180fb23f58c855e8c3de574d8b84e27046750ba39d1cd046a64",
+    "historical_receipts_ah/road_scene_r6/receipts/shoulder_dust_r2.json": "29bc362c3bc0654a528f7d3c96dcdd5bbd141901d0676b71b89f913d64c35421",
+    "historical_receipts_ah/road_scene_r6/receipts/weather_layer_i.json": "7291f79a69704fafabb7e79540edd839395d4e2b0ec39c31bee3b432d9d3a6d0",
+    "regenerate_y.sh": "19e048ea37ffe38429899c2d8cfcf01604b2960c839df5f69ee3d802a77ed798",
+    "regenerate_z_v9.sh": "8c0eec63896221fed499a9249572ccd1ad527288b04b5effd8f9dfe52648344c",
+    "road_scene_r6/checkpoint_inputs_al/runoff_film_z_fields.npz": "bdd8176d29209c21d97aab02c44743ab6b2ff2a9f4f25989513f1dd5636400d2",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/approved_density_lod.py": "e436859c4658c269d68ce041299b0152595d7dfdd7e56ed472420fdf3c1dc658",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_graded_shoulder_ah.py": "c4306da264ce55f94edb3b5d9808aaae24ff66fd573a5ba3d36953fd8fedfc15",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_metric_fragments_as.py": "8565563d7a51e89e11e02903bdc1fec9ef76298c08e62581f185e57d9b371630",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_pavement_contact_ac.py": "e63a5951ac6ae51d9ff1dc9977cb5e22b7e18e7a53cce8a1cd1de72a3d2267c5",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_raveled_edge_aa.py": "eb088b9104f8fb290d10d06412d5de3a687e85aed6d4be402184eca558a8cdd7",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_road_margin_aq.py": "cf8022b952bb5b1afbda25fe0c5314551268c1527b630e4feae0daecff8ba7eb",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_sediment_surface_ai.py": "8318548a0cd79e7d432d387bfe65bf2a1175a68a90709108b8ac5bc961ad60c5",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assemble_visible_shoulder_ad.py": "14beaa67d7c2e7c887bee5d2a2643889a43abd52b8199522d7f1d755838e8577",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/assembled_scene_cache_av.py": "8fb34eddec378e93105401696aa8df26dc6c976661279114c69e708867d294b0",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/bounded_clean_run.py": "7d5421644f0188178ee29f4a732b4d5a608564de82b29cc47516b27794a486fe",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/capture_modes.py": "c3d1ff01c580a8f63f1fe3658697ec711525f2e8032a82e2fb008c8f8339bbf8",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/clean_receipt.py": "0746b04f053fdc7a9b0df1805961e5ae6ee5051d992784ed715e361d0d80d8de",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/clean_render.sh": "f02ed38052ecb82a1a90b6d16ea70776b03e0cb864f3d2952dc2970864a7c264",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/component_image_bridge.py": "74dca31a6739ef5b666ec4437d77297f138dc5bd8f63280c9d2cea8acfe74047",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/component_receipt.py": "5327a00bc7d9c2bc414fb6529ed7c4ccadd539ad96f69858c10f3bfd44796c35",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/contact_bank_continuity_al.py": "81f388656370db1a1281ad4b852a49efbc82c73818aa97b9cdbca63c7da61169",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/contact_triangle_clearance_al.py": "d57a3abdee8683aad22d5aec41d137dd6b9dae79626bcf74fc0ec3dc166b5e81",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_field_cache_ad.py": "f5b32357db8ee427b7c4fe603df1ca07688a13c07f186d51b31db72619e6dc98",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/context_mesh_refine_ab.py": "822366ed13e38914197f1316bab9b6433a0ba1b1485d66c2fa6aa13889060bf7",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/continuous_contact_aq.py": "777e4456774d77351ece52767b8a247a58eb88485a7edaa1215a829fa491dde7",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/current_contact_film_aq.py": "24ecd8bc9d654e85b64161368dffb1fed7bf4604f4576acb13c90162cb37393e",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/desert_scrub.py": "8f5840a371422effcf243dfb284f57241b219262386a1d7dc3b594264b1b2172",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/edge_ravel_field_aa.py": "50191ccb00336ee6a2b5da1bacf33035a885afc7c9b1eaf31a4d341387a56a36",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/flow_sediment_model_ao.py": "cbd4689b5be9faa988ccc2de7eef50f40828bad4ebf2233f70739209bfd517c8",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/flow_sediment_model_z.py": "00e1bd4d9e898eb6d2bca71fb8c3e7cf35a9fea7019f00d0559347efcede73e8",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/flow_transport_ae.py": "8077352d35f4b717e962a022f9cda3f5f38b87c7d341a25618d4645fb61e602f",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/fractured_boundary_ar.py": "2537e0b7b412baaf6c42673ab690314c5e78df47bea86c7769a6b60105477d98",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/graded_shoulder_foundation_ah.py": "e531b13f0e497ef6776493a8b53a6b3c103ed59d2f5cb74425fe02631b15e641",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/graded_shoulder_foundation_at.py": "94650bd9acc714c9bae2656c7b9a46bf2c5c92240c0251e75f3a4e45bb428958",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/integrate_fracture_ar.py": "554fe47311acf37836b58d476cdbe7843114b5ed506e4f1497c9d0d7e26db74b",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/layered_scrub_ap.py": "2e3b78bac8cbb8d5947dad0abb89d941aef22747b197c99ce8eeaeb1697a3e82",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/metric_edge_strip_aa.py": "ff93f29b6da102ad74aba5ff2f7abfa1f015612e5e10c3d29a3ad2fa5be753db",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/metric_margin_fragments_as.py": "3355ff85ed9381e3a878603dd7da929114db5228f950f089eb87d53b8ec7539b",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/metric_margin_fragments_as_fractured_candidate.py": "acab79b9c8e8c267f8af139cc6d9af06a88cd43b4750f01279d7bb610c17ee7a",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/oidn_contract.py": "c50d803b0d500905b03d8ccc24512e769d100b434dad96891d657986f8be5094",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/oidn_image_bridge.py": "7d88792da6c53a47e3aacafa2b7a222f844ce458afa7b535f081faf9c5732bf6",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/pavement_contact_ac.py": "311d5797851901edfa170238c8ba77e69fff9e4bfc3c30dba7b7ca2bbf4cd79b",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/png_precision_check.py": "fec3e732a7185e2ef5485af2f6db3963a151d6867e48c59c036509bfdad77f20",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/prepare_physical_lenses.py": "3d9dbd29990807a632632233343d32a2eef62676305404934716cf087b7b861b",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/preview_mesh_cull.py": "c3d9793f03caababc6894b4e49e64d1f37a741b912a1ee8ebdeb7f55e145e0f5",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/raw_receipt.py": "af411eed5c7eb1855e6abc81838bab0a1ed1defeb2446094bb837017c266ec5d",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/refined_film_event_an.py": "3acf2dcba1179e003dd226e3f963f10d20f40a8a16af309e28da87c766c69930",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/refresh_view_grains_au.py": "49e5ec3fd0d14c2078ad5b15ff1264787fc3f3b970a63c9a21fb8e5eb6bcc6ec",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/render.py": "d31c258d5a83fbc56e4c6871b18b82804b68f121f29ed63bd840e0c52f85db29",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/render.sh": "9ce9dc545650392dce69c9709c8acff188db95eec13c34b647c5e13be6e2688a",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/resource_contract.py": "a5d0a12482fcc48e06fa2680a879e0646e30fa580fe1abbdbff730f484324d8c",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/road_film_ownership_al.py": "f34b7a7a45b5a1881851c7085b9b387e3284c454487cabff7446a6bb3f4feed5",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/road_film_shader_z.py": "411aee9eebad6ca18388bbba1ade22e83670ba4dcae768c3884688d846f44bf4",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/road_margin_composition_ap.py": "5567fdc085f346310625ba25c75c29f82bfc801fff52e00ae4f76c424e87ae95",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/runoff_edge_support_ai.py": "f9b397f7637990aad99b732df5ce7ae7090a1aaa4df26bb2a1642baf1fc51c33",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/sample_final_surface_an.py": "02c719fae92f3b2c485445d5bc5e8609884829140be6651812c8bae8b2df271b",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/sediment_surface_ai.py": "5370552c85726932b7680f9c5ae235b9e0c3870d981fd67bf82b25ff046a0aca",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/soil_rim_bridge_ar.py": "9d318d793fc47338e2e984f063a869b59c643ba7fe291ad5fbd14b5c33e4f42e",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/substrate_history_ak.py": "92756fa0fb60be121b15cfce48712efc7f4f331b724cf88226a6db2870edb868",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/terrain_normal_transfer_ah.py": "baaad3c0dbb8186aa40f9adcb841999573db27eb2f1c37d4d161f7a783849e3f",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/transport_components.py": "9232c7679b68c763273ebc51aa78296ae67a0a6891b71ef713f461e9d86816d4",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/transported_grain_exposure.py": "0834619932c753f6335dd7c7883a7d1c0ff39ea23246ea12be0ab87f79a22c10",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/verify_pipeline_snapshot.py": "6ffcdffc991dc7b9cb345645bb919d82da6f221c1f0138e485b886f7099b9d1b",
+    "road_scene_r6/checkpoint_pipeline_sources/5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86/visible_shoulder_flow_ad.py": "64a90e7d98bc9577bde96c5c43a747c4e091d5585e5a8f2af3b413ea12628ebc",
+    "road_scene_r6/receipts/flow_source_fingerprint.json": "15669184981c1fb407a826212d2ad2835e0ee43c149baffba80b7f16a267fb1b",
+    "road_scene_r6/receipts/y_semantic_source_guard_v3.json": "ade5e70e390fe6cd0b4bc3a6c5c338178aa6dbd79982cc32a46d6e79c2b86210",
+    "road_scene_r6/receipts/z_semantic_source_guard_ah.json": "1ae290ca919b23b6426845bb59bf208fe144de161a516e13fbfbd1ee5bcb947f",
+    "road_scene_r6/relief_correction/SOURCE_MANIFEST.json": "c2c84f0417324ab1f93cdbd03b39fc0c9a55ae8e0f3679be9b867f7695689a14",
+    "road_scene_r6/relief_correction/affine_tile_adapter.py": "b16cb2fc070a98fcb9ab8e0d0ed268f278b1ce01bc8cb3bb8bb4349b9574847c",
+    "road_scene_r6/relief_correction/paint_shader_adapter.py": "2d2bf63ae2e12250d9bf69f6c625c00575ac46e6ea01dac857e872206218fad5",
+    "road_scene_r6/relief_correction/paint_shader_adapter_r2.py": "57b3b2b13bcca6f2ddf08a21cf221472f059ebc52fcd88c8482144466b7b1e88",
+    "road_scene_r6/relief_correction/prepare_interior_relief.py": "34f97c2c3ffd7cea114d158431c0fe5ebe466fd27936a12bc5f3dec16ef65a49",
+    "road_scene_r6/relief_correction/prepare_tiled_relief.py": "ed726e9bc52964535d818991a54b7ad2500d511052ca213078d4d9e72034a286",
+    "road_scene_r6/relief_correction/prepare_tiled_relief_r2.py": "52dd135429abb30a72df775a6e587b8835c61cc0711b0cb9e8f0982ef4783121",
+    "road_scene_r6/relief_correction/relief_math.py": "2417aa37399010f79aa1b2239a4557a807e20605c014f29b6b6afdb146ad0c3b",
+    "road_scene_r6/relief_correction/tiled_relief_math.py": "e67f95a1ac6ca78b8471702ce4317437c454fa6818592fd922bd093c299a0047",
+    "road_scene_r6/src/approved_density_lod.py": "e436859c4658c269d68ce041299b0152595d7dfdd7e56ed472420fdf3c1dc658",
+    "road_scene_r6/src/assemble_road_margin_aq.py": "cf8022b952bb5b1afbda25fe0c5314551268c1527b630e4feae0daecff8ba7eb",
+    "road_scene_r6/src/build_scene.py": "89f28ddf2acead8bf74eac5e8be7e836003fd9f480cbd3ace8db53f3efe65985",
+    "road_scene_r6/src/check_av_numerical_evidence.py": "77b84d68b7b88f1f2fb0a4acb1cc59b01863964966187aa76ab3432480d9daab",
+    "road_scene_r6/src/continuous_contact_aq.py": "777e4456774d77351ece52767b8a247a58eb88485a7edaa1215a829fa491dde7",
+    "road_scene_r6/src/current_contact_film_aq.py": "24ecd8bc9d654e85b64161368dffb1fed7bf4604f4576acb13c90162cb37393e",
+    "road_scene_r6/src/flow_sediment_model_ao.py": "cbd4689b5be9faa988ccc2de7eef50f40828bad4ebf2233f70739209bfd517c8",
+    "road_scene_r6/src/flow_sediment_model_y.py": "fd7e7279492dd6c897454c86259a53b481ded3e78f0d2e56d5f7381a3fb7ae33",
+    "road_scene_r6/src/flow_sediment_model_z.py": "00e1bd4d9e898eb6d2bca71fb8c3e7cf35a9fea7019f00d0559347efcede73e8",
+    "road_scene_r6/src/package_current_checkpoint_av.py": "e3f2fab00d86ecff7279a3d681801aac6bbf5b0ba71feafb666960a8b846afec",
+    "road_scene_r6/src/prepare_cached_view_av.py": "7faeb9091d82a603bd424b442fc8bd9a916af894b5751868282c084fd837ff1a",
+    "road_scene_r6/src/prepare_eroded_ridges.py": "c5ef7f1195bc97869d7c9a0700da9e8753822f82f6fc52742de9192a5d8cdb53",
+    "road_scene_r6/src/prepare_erosion_network.py": "6c75ecc9beb7078d860b2ae636ffb37b1253ff7950425c19e7599189af4d6c88",
+    "road_scene_r6/src/prepare_physical_lenses.py": "3d9dbd29990807a632632233343d32a2eef62676305404934716cf087b7b861b",
+    "road_scene_r6/src/prepare_runoff_film_z_portable.py": "d4781845c5e25fe8ce2b0ff3c17293301c35f600442d225f4076abf3aadd0651",
+    "road_scene_r6/src/prepare_runoff_shoulder_y.py": "36294056cf78418e02765c92db73cd891e35dd4877438c89feb2fe99a4c761f3",
+    "road_scene_r6/src/prepare_sediment_patches.py": "46f5e9baf819d302a7f76513eb16c4df965b8b36f251ed30f236e2d6ef3359ee",
+    "road_scene_r6/src/prepare_shoulder_dust.py": "479d436fc8275d951fa2f585e822ea3536830038fe9b155064adc6b93db0bac5",
+    "road_scene_r6/src/prepare_weather_layer.py": "e36e1313d6467137948ed1b88291641b9581a6fee7997ce923d958911cc71f01",
+    "road_scene_r6/src/refined_film_event_an.py": "3acf2dcba1179e003dd226e3f963f10d20f40a8a16af309e28da87c766c69930",
+    "road_scene_r6/src/render_checkpoint_ah.py": "d98e5a0310681683ddd8d7807b3171a5e4a8fd9679751af0d51a183d9698659d",
+    "road_scene_r6/src/render_checkpoint_ap.py": "a84e9da203555e1543d2644399d7021d3ca7bd9f7bc023dd9c8c7994347b3671",
+    "road_scene_r6/src/render_checkpoint_av.py": "5a51c46ff28ec326b5b78fd3fc07e9066300bbe31437a0e649c8f58140f54788",
+    "road_scene_r6/src/road_film_shader_z.py": "411aee9eebad6ca18388bbba1ade22e83670ba4dcae768c3884688d846f44bf4",
+    "road_scene_r6/src/road_film_surface_z.py": "19a8d03cbdf742c6d9e54a23377552ff3087a0a547093bc66df3c3e1a934273d",
+    "road_scene_r6/src/roadside_clasts.py": "25e223a91a29cba499582f00f39a2edfdcd04f79e97183a42c50443728deefeb",
+    "road_scene_r6/src/semantic_scene_guard_z.py": "193fb74be1acf7cdd5ff4ab60da0b78b7ed22034f33a0f78b6f804b507b85fa1",
+    "road_scene_r6/src/transport_surface_scene_y.py": "96a50d2259c5a4c6c85e4e9176babbbb8eb0f0a5ba04973e07b23d396e932f5f",
+    "road_scene_r6/src/transported_grain_exposure.py": "33a3631987706390bec0b52cba80e9e2126f79c646695e10c7ff63a64dcc8066",
+    "road_scene_r6/src/validate_checkpoint_source_ah.py": "a0bbc6db4208d04ee7f3cb12621e722658da7e211faf1d600b117e5b13f83b90",
+    "road_scene_r6/src/validate_source_current_av.py": "1a1701f199ab948835ec28f3a44c5aeb8511ad4a3a4dc57784bbab7f52a71c2d",
+    "road_scene_r6/vegetation/README.md": "d0db521ea2c25c802f0343acc69d98b31e70aa2a8202acff6224d8df18f101b3",
+    "road_scene_r6/vegetation/blender_validation.log": "3a7b43ccc73e36fec2321582fee0de417b95e87605b4b3af1046ac8ef300a34a",
+    "road_scene_r6/vegetation/desert_scrub.py": "8f5840a371422effcf243dfb284f57241b219262386a1d7dc3b594264b1b2172",
+    "road_scene_r6/vegetation/layered_scrub_ap.py": "2e3b78bac8cbb8d5947dad0abb89d941aef22747b197c99ce8eeaeb1697a3e82",
+    "road_scene_r6/vegetation/offline_geometry_test.json": "dd0dc060f8c495648b35c4e4aa0f3d55075f1bb98776ea725322b4ce6dd53c6a",
+    "road_scene_r6/vegetation/test_geometry_offline.py": "b3cf329679e2371096611102c31215f54f15d9aedaba4a002f12e63b6a71e29b",
+    "road_scene_r6/vegetation/validate_variants.py": "1b9e0802ef01b354ac8b35cffc91a6cc39dd863fb62ca87a142cf3aabc21626c",
+    "road_scene_r6/vegetation/validation_report.json": "354c0e2efc2479fe4c74788b395d8e08296470b7f1b4d7ae72e2ede75861c15a",
+    "verify_pinned_inputs.py": "5feaa5490338eccdfe805028d94050bed90676535d16bfab1f61bb3545f5c19b"
+  }
+}

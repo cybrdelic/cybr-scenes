@@ -1,0 +1,70 @@
+{
+  "source_sha256": "97c95448d6b9fe2bae4118b4d5d632504254988894a2582964504eb9984a1f32",
+  "scene_sha256": "64b9a420fde75b909f5558e00ddb832af98c2923cac3d4e56d8544218e75dc4c",
+  "materials": [
+    "Road / Approved R5D soil + original dense asphalt / coupled sho",
+    "Faded ochre center paint / shoulder-fed fines",
+    "Worn pale edge marking / shoulder-fed fines"
+  ],
+  "patches_y_half_length_width_opacity": [
+    [
+      0.65,
+      0.62,
+      0.47,
+      0.82
+    ],
+    [
+      2.9,
+      1.0,
+      0.36,
+      0.7
+    ],
+    [
+      6.8,
+      0.65,
+      0.41,
+      0.75
+    ],
+    [
+      12.4,
+      1.7,
+      0.28,
+      0.64
+    ],
+    [
+      23.5,
+      1.2,
+      0.43,
+      0.77
+    ],
+    [
+      37.0,
+      1.8,
+      0.25,
+      0.62
+    ],
+    [
+      58.0,
+      2.7,
+      0.36,
+      0.68
+    ],
+    [
+      88.0,
+      3.2,
+      0.4,
+      0.74
+    ]
+  ],
+  "mean_dust_color_linear": [
+    0.308221809,
+    0.255643471,
+    0.18382835,
+    1
+  ],
+  "geometry_changed": false,
+  "dust_retention": "Original GeometryHeight low-pocket support, correct flipped row phase and texel-center mapping",
+  "height_source_sha256": "9c6ebba3a109088842a73434cea02069aa3a5a98e1b871a3f7b7b5e246de0c83",
+  "limitation": "Thin-film appearance prototype only; paint still uses the retained source sheets until the separate shared-surface relief pass is integrated.",
+  "reference_record": "road_surface_reference_observations.json"
+}

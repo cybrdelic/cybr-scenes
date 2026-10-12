@@ -1,0 +1,126 @@
+{
+  "test": "Pure geometry smoke test only; no Blender launched",
+  "status": "passed",
+  "variants": [
+    {
+      "family": "olive_open_scrub",
+      "height": 0.47,
+      "vertices": 13646,
+      "faces": 13113,
+      "triangles": 16704,
+      "leaves": 1208,
+      "branches": 231,
+      "dimensions": [
+        0.6793870664805703,
+        0.8664547505525804,
+        0.47
+      ]
+    },
+    {
+      "family": "olive_open_scrub",
+      "height": 1.08,
+      "vertices": 21027,
+      "faces": 20241,
+      "triangles": 25558,
+      "leaves": 1890,
+      "branches": 344,
+      "dimensions": [
+        1.0825119759316402,
+        1.2024454773298618,
+        1.08
+      ]
+    },
+    {
+      "family": "silver_low_scrub",
+      "height": 0.22,
+      "vertices": 5990,
+      "faces": 5618,
+      "triangles": 8120,
+      "leaves": 402,
+      "branches": 161,
+      "dimensions": [
+        0.3387523592453643,
+        0.330722435924207,
+        0.22000000000000003
+      ]
+    },
+    {
+      "family": "silver_low_scrub",
+      "height": 0.58,
+      "vertices": 10254,
+      "faces": 9571,
+      "triangles": 14184,
+      "leaves": 641,
+      "branches": 299,
+      "dimensions": [
+        0.8728033646741569,
+        0.8959894843054689,
+        0.58
+      ]
+    },
+    {
+      "family": "dry_open_scrub",
+      "height": 0.72,
+      "vertices": 9869,
+      "faces": 9256,
+      "triangles": 13322,
+      "leaves": 669,
+      "branches": 266,
+      "dimensions": [
+        0.8857444034563207,
+        0.9148899909430135,
+        0.72
+      ]
+    },
+    {
+      "family": "dry_open_scrub",
+      "height": 0.29,
+      "vertices": 9169,
+      "faces": 8713,
+      "triangles": 11762,
+      "leaves": 723,
+      "branches": 198,
+      "dimensions": [
+        0.4984969892513028,
+        0.5060632122958459,
+        0.29
+      ]
+    },
+    {
+      "family": "upright_bunchgrass",
+      "height": 0.47,
+      "vertices": 1790,
+      "faces": 1248,
+      "blades": 61,
+      "dimensions": [
+        0.23176040026619743,
+        0.26756031898426796,
+        0.47
+      ]
+    },
+    {
+      "family": "arching_bunchgrass",
+      "height": 0.28,
+      "vertices": 1572,
+      "faces": 1139,
+      "blades": 47,
+      "dimensions": [
+        0.3618990326250834,
+        0.32921224407041516,
+        0.28
+      ]
+    },
+    {
+      "family": "sparse_stubble",
+      "height": 0.14,
+      "vertices": 826,
+      "faces": 603,
+      "blades": 24,
+      "dimensions": [
+        0.13048744546623944,
+        0.162435905526698,
+        0.14
+      ]
+    }
+  ]
+}

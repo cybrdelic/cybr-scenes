@@ -1,0 +1,14 @@
+{
+  "actual_source_sha256": "b1896a6f5f243a959dfe9dc6dc834bc058e109fbee0ec23cc556759ebf0cff63",
+  "expected_original_Y_sha256": "b1896a6f5f243a959dfe9dc6dc834bc058e109fbee0ec23cc556759ebf0cff63",
+  "guard_file_sha256": "ade5e70e390fe6cd0b4bc3a6c5c338178aa6dbd79982cc32a46d6e79c2b86210",
+  "guard_helper_sha256": "193fb74be1acf7cdd5ff4ab60da0b78b7ed22034f33a0f78b6f804b507b85fa1",
+  "material_body_executed": false,
+  "model_executed": false,
+  "scene_written": false,
+  "semantic_match": true,
+  "semantic_sha256": "3337228c2121c338a13212cdaf132ae8683baf77136fb32faf03a6e6b1c6fe8d",
+  "serialized_byte_equality_required": false,
+  "source_serialization_matches_original": true,
+  "validation_only": true
+}

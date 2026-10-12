@@ -1,0 +1,77 @@
+{
+  "bounds_m": [
+    -7.0,
+    -3.36,
+    -0.9,
+    18.0
+  ],
+  "authored_foundation_volume_m3": 0.20585318861379093,
+  "authored_foundation_delta_range_m": [
+    -0.027797607105963636,
+    0.040442215314370755
+  ],
+  "sediment_delta_range_m": [
+    -0.003500000000000001,
+    0.005643336124451407
+  ],
+  "delta_range_m": [
+    -0.028726490435919204,
+    0.040442215314370755
+  ],
+  "initial_class_bulk_m3": [
+    1.1278590320694297,
+    0.4053308102436414,
+    0.13101908920840333
+  ],
+  "final_class_bulk_m3": [
+    1.1278590320694715,
+    0.40533081024365764,
+    0.13101908920840574
+  ],
+  "class_residual_m3": [
+    4.1744385725905886e-14,
+    1.6209256159527285e-14,
+    2.4147350785597155e-15
+  ],
+  "transferred_class_bulk_m3": [
+    0.014900384974348905,
+    0.0019033952514388107,
+    0.00017697879020029344
+  ],
+  "receiving_area_above_1mm_m2": 5.503842551806883,
+  "scoured_area_above_1mm_m2": 6.315627365995169,
+  "changed_area_m2": 47.576682277179316,
+  "inner_datum_coefficients": [
+    -6.663199739964219e-06,
+    0.0002048748459349064,
+    0.010572867482834416,
+    0.061637267289642264
+  ],
+  "outer_datum_coefficients": [
+    2.9604898750758527e-07,
+    0.0001584929435342315,
+    0.009160407519860391,
+    0.005166349073205001
+  ],
+  "source_triangles": 458343,
+  "source_vertices": 236812,
+  "maximum_authored_swale_depth_m": 0.037,
+  "model": "Authored road grading and shared AP reach hierarchy; finite class-preserving capacity redistribution within each connected reach group",
+  "physical_limits": "Bulk-volume conservation on actual triangle-lumped horizontal areas, not density-resolved sediment mass or validated hydraulics. Existing AH stock is carried onto new earthwork; old storm trajectory is not claimed valid on this new surface. Outside AH is declared18mm parent stock. No new rain simulation.",
+  "contact": "Exactly zero at x >= -3.36; existing pavement support union ends inside this boundary. New contact audit required before promotion.",
+  "payload_sha256": "05f32d7993c3e9b78d77c7d259d1d0c1fe1cc508ba7ae4598113359046274250",
+  "source": {
+    "source_full_co_sha256": "07eb9c84ee97224a82ca61243ea635e92a7a80d194f364bc969456b7617c3794",
+    "source_full_tri_sha256": "df6f2b4504334ff909dfadcc7a147507a5e7fffec0d44434c945666e25a03088",
+    "subset_vertices": 236812,
+    "subset_triangles": 458343,
+    "unchanged_source": true,
+    "edge_length_quantiles_m": [
+      0.0,
+      0.023000001907348633,
+      0.04093681648373604,
+      0.180935338139534,
+      0.19270291924476624
+    ]
+  }
+}

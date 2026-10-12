@@ -1,0 +1,102 @@
+{
+  "original": {
+    "sky": {
+      "sky_type": "NISHITA",
+      "sun_disc": false,
+      "sun_size": 0.009512044489383698,
+      "sun_intensity": 1.0,
+      "sun_elevation": 0.593411922454834,
+      "sun_rotation": 5.497786998748779,
+      "altitude": 800.0,
+      "air_density": 1.100000023841858,
+      "dust_density": 1.7000000476837158,
+      "ozone_density": 1.0
+    },
+    "sky_strength": 0.10999999940395355,
+    "sun": {
+      "energy": 3.4000000953674316,
+      "color": [
+        1.0,
+        0.9700000286102295,
+        0.8999999761581421
+      ],
+      "angle": 0.013089969754219055
+    }
+  },
+  "measurements": [
+    {
+      "name": "baseline_total",
+      "linear_mean_rgb": [
+        0.15050417184829712,
+        0.15864647924900055,
+        0.1735413670539856
+      ],
+      "luminance": 0.1579908355951309,
+      "seconds": 1.1701308199990308
+    },
+    {
+      "name": "baseline_sky_only",
+      "linear_mean_rgb": [
+        0.04157010093331337,
+        0.0529811754822731,
+        0.07550350576639175
+      ],
+      "luminance": 0.052181293279677625,
+      "seconds": 1.2477453229948878
+    },
+    {
+      "name": "baseline_sun_only",
+      "linear_mean_rgb": [
+        0.10893284529447556,
+        0.10566683858633041,
+        0.09803882241249084
+      ],
+      "luminance": 0.10581044884473086,
+      "seconds": 0.18201470100029837
+    },
+    {
+      "name": "single_model_22deg_raw",
+      "linear_mean_rgb": [
+        0.35437387228012085,
+        0.29120513796806335,
+        0.22403396666049957
+      ],
+      "luminance": 0.29978505231440067,
+      "seconds": 0.4110709259985015
+    },
+    {
+      "name": "single_model_22deg_card_matched",
+      "linear_mean_rgb": [
+        0.18675890564918518,
+        0.15346811711788177,
+        0.11806775629520416
+      ],
+      "luminance": 0.15798983270823955,
+      "seconds": 0.4139867949998006
+    },
+    {
+      "name": "single_model_22deg_sky_only",
+      "linear_mean_rgb": [
+        0.01964341290295124,
+        0.025081969797611237,
+        0.034508246928453445
+      ],
+      "luminance": 0.02460630981065333,
+      "seconds": 1.1627682309917873
+    }
+  ],
+  "candidate": {
+    "elevation_deg": 22,
+    "azimuth_deg": 145,
+    "sun_diameter_deg": 0.545,
+    "single_nishita_sun_and_sky": true,
+    "separate_sun_disabled": true,
+    "world_strength": 0.05797151103615761,
+    "altitude_m": 800.0,
+    "air_density": 1.100000023841858,
+    "dust_density": 1.7000000476837158,
+    "ozone_density": 1.0
+  },
+  "normalization": "One positive global source-radiance scalar selected to match baseline mean luminance on an unoccluded18% horizontal Lambertian card; output exposure fixed. No per-image color/contrast adjustment.",
+  "limits": "Monte Carlo128 samples,64px card; not measured Victorville irradiance or a weather/time reconstruction. Actual scene shadows need independent visual inspection."
+}

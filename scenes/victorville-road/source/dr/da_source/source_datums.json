@@ -1,0 +1,1421 @@
+{
+  "builder_sha256": "320dd02e5ac661f4f9f3b470d614e0b3fb103614b0d2cd740aded5964ffa4246",
+  "source_witnesses_sha256": "e56bbe1f5acf769b5d9e4ae9084236be4c5aee25698176f5b3b4e1cee453c20e",
+  "microbed_sha256": "7a09007d50e444c28231fd30cddda185d2f01146f3b1a47b014ebd25c0b415c4",
+  "method": "Original float32 R5D microbed sampled bilinearly at each source bank datum, less original analytic broad ground at that datum. Exact physical field; pointwise planar exposure approximation, not full footprint integration.",
+  "records": [
+    {
+      "source_id": 13,
+      "bed_reference_offset_m": 0.0001375329593429342,
+      "reference_xy_m": [
+        -0.0037405695766210556,
+        0.04935859143733978
+      ],
+      "nominal_diameter_m": 0.00548754319001676,
+      "before_top_m": 0.001471259878599085,
+      "after_top_to_reference_plane_m": 0.0013337269192561507
+    },
+    {
+      "source_id": 23,
+      "bed_reference_offset_m": 0.00012626406623894582,
+      "reference_xy_m": [
+        -0.022460734471678734,
+        -0.059749454259872437
+      ],
+      "nominal_diameter_m": 0.003892970060793292,
+      "before_top_m": 0.0007834762955098995,
+      "after_top_to_reference_plane_m": 0.0006572122292709537
+    },
+    {
+      "source_id": 26,
+      "bed_reference_offset_m": -4.696619180322159e-05,
+      "reference_xy_m": [
+        0.0330529622733593,
+        -0.06289850920438766
+      ],
+      "nominal_diameter_m": 0.0016540644423304433,
+      "before_top_m": 0.0002504922013031319,
+      "after_top_to_reference_plane_m": 0.00029745839310635347
+    },
+    {
+      "source_id": 32,
+      "bed_reference_offset_m": 7.333177563850768e-05,
+      "reference_xy_m": [
+        -0.01982537843286991,
+        -0.012406982481479645
+      ],
+      "nominal_diameter_m": 0.003026116665514876,
+      "before_top_m": 0.0003380292582733091,
+      "after_top_to_reference_plane_m": 0.0002646974826348014
+    },
+    {
+      "source_id": 35,
+      "bed_reference_offset_m": 0.00012898323620902374,
+      "reference_xy_m": [
+        0.07212471216917038,
+        -0.047954168170690536
+      ],
+      "nominal_diameter_m": 0.0017519270592991267,
+      "before_top_m": 0.0005207252761465497,
+      "after_top_to_reference_plane_m": 0.000391742039937526
+    },
+    {
+      "source_id": 36,
+      "bed_reference_offset_m": 0.00010522951924940571,
+      "reference_xy_m": [
+        0.010397421196103096,
+        -0.03692781180143356
+      ],
+      "nominal_diameter_m": 0.0033470085063800783,
+      "before_top_m": 0.0008373356322408654,
+      "after_top_to_reference_plane_m": 0.0007321061129914597
+    },
+    {
+      "source_id": 50,
+      "bed_reference_offset_m": 0.00011984710727119818,
+      "reference_xy_m": [
+        0.01914680004119873,
+        -0.011497367173433304
+      ],
+      "nominal_diameter_m": 0.0027954576225567157,
+      "before_top_m": 0.0006556877196999267,
+      "after_top_to_reference_plane_m": 0.0005358406124287285
+    },
+    {
+      "source_id": 52,
+      "bed_reference_offset_m": 4.060651554027572e-05,
+      "reference_xy_m": [
+        0.08236925303936005,
+        0.02608567476272583
+      ],
+      "nominal_diameter_m": 0.004419660706144305,
+      "before_top_m": 0.0010061854482046328,
+      "after_top_to_reference_plane_m": 0.0009655789326643571
+    },
+    {
+      "source_id": 61,
+      "bed_reference_offset_m": 0.00015587381130899303,
+      "reference_xy_m": [
+        0.08035824447870255,
+        0.06350584328174591
+      ],
+      "nominal_diameter_m": 0.0028718839460179784,
+      "before_top_m": 0.0005564972343563568,
+      "after_top_to_reference_plane_m": 0.00040062342304736376
+    },
+    {
+      "source_id": 62,
+      "bed_reference_offset_m": 8.634116966277361e-06,
+      "reference_xy_m": [
+        0.06016195937991142,
+        -0.04017791524529457
+      ],
+      "nominal_diameter_m": 0.0034998269028860686,
+      "before_top_m": 0.0004267963013262488,
+      "after_top_to_reference_plane_m": 0.00041816218435997143
+    },
+    {
+      "source_id": 63,
+      "bed_reference_offset_m": 5.669232996297069e-05,
+      "reference_xy_m": [
+        -0.005669263191521168,
+        0.05806540697813034
+      ],
+      "nominal_diameter_m": 0.004007298679109726,
+      "before_top_m": 0.0008530479644832667,
+      "after_top_to_reference_plane_m": 0.000796355634520296
+    },
+    {
+      "source_id": 64,
+      "bed_reference_offset_m": 1.761174644343555e-06,
+      "reference_xy_m": [
+        0.04864254966378212,
+        -0.062098678201436996
+      ],
+      "nominal_diameter_m": 0.0020550284457018946,
+      "before_top_m": 0.00031037322150950786,
+      "after_top_to_reference_plane_m": 0.0003086120468651643
+    },
+    {
+      "source_id": 70,
+      "bed_reference_offset_m": -3.373213257873431e-05,
+      "reference_xy_m": [
+        0.031303770840168,
+        -0.07569313794374466
+      ],
+      "nominal_diameter_m": 0.005625305663483024,
+      "before_top_m": 0.0003652084451459814,
+      "after_top_to_reference_plane_m": 0.0003989405777247157
+    },
+    {
+      "source_id": 78,
+      "bed_reference_offset_m": 0.00010451525122334715,
+      "reference_xy_m": [
+        -0.0173609908670187,
+        -0.003956107422709465
+      ],
+      "nominal_diameter_m": 0.001649815782556481,
+      "before_top_m": 0.00036633372474170756,
+      "after_top_to_reference_plane_m": 0.0002618184735183604
+    },
+    {
+      "source_id": 79,
+      "bed_reference_offset_m": 5.5177530157379806e-05,
+      "reference_xy_m": [
+        -0.0369904600083828,
+        -0.006506440695375204
+      ],
+      "nominal_diameter_m": 0.005274275151876434,
+      "before_top_m": 0.0013594349438790232,
+      "after_top_to_reference_plane_m": 0.0013042574137216434
+    },
+    {
+      "source_id": 83,
+      "bed_reference_offset_m": 3.101512083958369e-05,
+      "reference_xy_m": [
+        0.053723156452178955,
+        -0.021858759224414825
+      ],
+      "nominal_diameter_m": 0.001690457402623632,
+      "before_top_m": 0.0004254406358086271,
+      "after_top_to_reference_plane_m": 0.00039442551496904343
+    },
+    {
+      "source_id": 88,
+      "bed_reference_offset_m": 8.122493636619765e-05,
+      "reference_xy_m": [
+        0.049321893602609634,
+        0.017302101477980614
+      ],
+      "nominal_diameter_m": 0.003131167390165479,
+      "before_top_m": 0.0007106637222022982,
+      "after_top_to_reference_plane_m": 0.0006294387858361006
+    },
+    {
+      "source_id": 90,
+      "bed_reference_offset_m": 0.0001094365934477537,
+      "reference_xy_m": [
+        -0.004725540988147259,
+        -0.020334620028734207
+      ],
+      "nominal_diameter_m": 0.0025265440033475197,
+      "before_top_m": 0.000704942175616452,
+      "after_top_to_reference_plane_m": 0.0005955055821686983
+    },
+    {
+      "source_id": 93,
+      "bed_reference_offset_m": 3.880319854943082e-05,
+      "reference_xy_m": [
+        -0.07978858053684235,
+        -0.027077017351984978
+      ],
+      "nominal_diameter_m": 0.003426379573471349,
+      "before_top_m": 0.0008346956383320503,
+      "after_top_to_reference_plane_m": 0.0007958924397826195
+    },
+    {
+      "source_id": 98,
+      "bed_reference_offset_m": 9.94103611446917e-05,
+      "reference_xy_m": [
+        0.013935118913650513,
+        -0.029566125944256783
+      ],
+      "nominal_diameter_m": 0.0019249748705448808,
+      "before_top_m": 0.00027365067217033356,
+      "after_top_to_reference_plane_m": 0.00017424031102564186
+    },
+    {
+      "source_id": 108,
+      "bed_reference_offset_m": 2.03507797778002e-05,
+      "reference_xy_m": [
+        -0.038137540221214294,
+        -0.06820283830165863
+      ],
+      "nominal_diameter_m": 0.0028935166608197436,
+      "before_top_m": 0.0006900299258632003,
+      "after_top_to_reference_plane_m": 0.0006696791460854001
+    },
+    {
+      "source_id": 116,
+      "bed_reference_offset_m": 9.583191331330454e-05,
+      "reference_xy_m": [
+        -0.005206638481467962,
+        -0.041748154908418655
+      ],
+      "nominal_diameter_m": 0.00180243599402591,
+      "before_top_m": 0.000419602182773815,
+      "after_top_to_reference_plane_m": 0.00032377026946051046
+    },
+    {
+      "source_id": 117,
+      "bed_reference_offset_m": 9.739986194290395e-05,
+      "reference_xy_m": [
+        -0.047113094478845596,
+        0.0784435123205185
+      ],
+      "nominal_diameter_m": 0.0024237813582205937,
+      "before_top_m": 0.0006094458956340532,
+      "after_top_to_reference_plane_m": 0.0005120460336911492
+    },
+    {
+      "source_id": 129,
+      "bed_reference_offset_m": 2.4660366761963814e-05,
+      "reference_xy_m": [
+        -0.05005261301994324,
+        -0.03041604533791542
+      ],
+      "nominal_diameter_m": 0.0023246632660928438,
+      "before_top_m": 0.0002594061807030812,
+      "after_top_to_reference_plane_m": 0.00023474581394111738
+    },
+    {
+      "source_id": 136,
+      "bed_reference_offset_m": 0.0001759213482728228,
+      "reference_xy_m": [
+        0.027404237538576126,
+        -0.0199306420981884
+      ],
+      "nominal_diameter_m": 0.004814355750599254,
+      "before_top_m": 0.0008342866640305147,
+      "after_top_to_reference_plane_m": 0.0006583653157576919
+    },
+    {
+      "source_id": 143,
+      "bed_reference_offset_m": 0.00019387048814678565,
+      "reference_xy_m": [
+        -0.005643660202622414,
+        0.022272365167737007
+      ],
+      "nominal_diameter_m": 0.0047716279215773575,
+      "before_top_m": 0.000719165189366322,
+      "after_top_to_reference_plane_m": 0.0005252947012195364
+    },
+    {
+      "source_id": 149,
+      "bed_reference_offset_m": 0.00011966927559114993,
+      "reference_xy_m": [
+        0.008776706643402576,
+        0.020351730287075043
+      ],
+      "nominal_diameter_m": 0.0017549761312703584,
+      "before_top_m": 0.0006210268620634452,
+      "after_top_to_reference_plane_m": 0.0005013575864722952
+    },
+    {
+      "source_id": 151,
+      "bed_reference_offset_m": 6.840196147095412e-05,
+      "reference_xy_m": [
+        -0.06913971900939941,
+        -0.056198764592409134
+      ],
+      "nominal_diameter_m": 0.0033382721247386133,
+      "before_top_m": 0.00042682958155637607,
+      "after_top_to_reference_plane_m": 0.00035842762008542195
+    },
+    {
+      "source_id": 167,
+      "bed_reference_offset_m": 0.00010497348557692021,
+      "reference_xy_m": [
+        -0.050186481326818466,
+        -0.07387261837720871
+      ],
+      "nominal_diameter_m": 0.004786334885209507,
+      "before_top_m": 0.0016318607231369242,
+      "after_top_to_reference_plane_m": 0.001526887237560004
+    },
+    {
+      "source_id": 168,
+      "bed_reference_offset_m": 0.0001140360182034783,
+      "reference_xy_m": [
+        0.06513199955224991,
+        -0.07998816668987274
+      ],
+      "nominal_diameter_m": 0.0037399451931116137,
+      "before_top_m": 0.0007629550964338705,
+      "after_top_to_reference_plane_m": 0.0006489190782303922
+    },
+    {
+      "source_id": 172,
+      "bed_reference_offset_m": 6.822969589848071e-05,
+      "reference_xy_m": [
+        -0.03600005805492401,
+        -0.028665151447057724
+      ],
+      "nominal_diameter_m": 0.0049399526694767345,
+      "before_top_m": 0.0011038833763450384,
+      "after_top_to_reference_plane_m": 0.0010356536804465577
+    },
+    {
+      "source_id": 179,
+      "bed_reference_offset_m": 0.00011134236956422683,
+      "reference_xy_m": [
+        -0.015194759704172611,
+        0.08333959430456161
+      ],
+      "nominal_diameter_m": 0.002741814047494391,
+      "before_top_m": 0.00031681915243098047,
+      "after_top_to_reference_plane_m": 0.00020547678286675364
+    },
+    {
+      "source_id": 199,
+      "bed_reference_offset_m": -1.2481224985094741e-05,
+      "reference_xy_m": [
+        0.038989704102277756,
+        0.01705407164990902
+      ],
+      "nominal_diameter_m": 0.0038057180681889164,
+      "before_top_m": 0.0005470866963150911,
+      "after_top_to_reference_plane_m": 0.0005595679213001858
+    },
+    {
+      "source_id": 206,
+      "bed_reference_offset_m": 0.00013815769943903433,
+      "reference_xy_m": [
+        -0.05168323218822479,
+        -0.057602036744356155
+      ],
+      "nominal_diameter_m": 0.0022479955223282987,
+      "before_top_m": 0.0007736695088169654,
+      "after_top_to_reference_plane_m": 0.0006355118093779311
+    },
+    {
+      "source_id": 210,
+      "bed_reference_offset_m": 0.00011414643086027354,
+      "reference_xy_m": [
+        0.005902090109884739,
+        -0.030578220263123512
+      ],
+      "nominal_diameter_m": 0.004639581489013266,
+      "before_top_m": 0.0008286571319331415,
+      "after_top_to_reference_plane_m": 0.000714510701072868
+    },
+    {
+      "source_id": 211,
+      "bed_reference_offset_m": 5.3080384532222524e-05,
+      "reference_xy_m": [
+        0.05306508392095566,
+        -0.05686837062239647
+      ],
+      "nominal_diameter_m": 0.0034759781413513835,
+      "before_top_m": 0.0003958998895541299,
+      "after_top_to_reference_plane_m": 0.0003428195050219074
+    },
+    {
+      "source_id": 222,
+      "bed_reference_offset_m": 7.503221058868803e-05,
+      "reference_xy_m": [
+        0.06322082877159119,
+        0.027491023764014244
+      ],
+      "nominal_diameter_m": 0.0020446938337694057,
+      "before_top_m": 0.0005518303405551706,
+      "after_top_to_reference_plane_m": 0.0004767981299664825
+    },
+    {
+      "source_id": 226,
+      "bed_reference_offset_m": 9.770757606020197e-05,
+      "reference_xy_m": [
+        0.04049332067370415,
+        -0.04636877402663231
+      ],
+      "nominal_diameter_m": 0.0016523969379690874,
+      "before_top_m": 0.00026622210862115026,
+      "after_top_to_reference_plane_m": 0.00016851453256094828
+    },
+    {
+      "source_id": 230,
+      "bed_reference_offset_m": 3.1563828997605015e-05,
+      "reference_xy_m": [
+        0.06852753460407257,
+        -0.005941492505371571
+      ],
+      "nominal_diameter_m": 0.002830690000959082,
+      "before_top_m": 0.00045243418571772054,
+      "after_top_to_reference_plane_m": 0.0004208703567201155
+    },
+    {
+      "source_id": 247,
+      "bed_reference_offset_m": 1.4782588550588116e-05,
+      "reference_xy_m": [
+        -0.0488022044301033,
+        -0.023952806368470192
+      ],
+      "nominal_diameter_m": 0.005024269626548393,
+      "before_top_m": 0.0010538508722675033,
+      "after_top_to_reference_plane_m": 0.0010390682837169152
+    },
+    {
+      "source_id": 250,
+      "bed_reference_offset_m": 7.953022395668086e-05,
+      "reference_xy_m": [
+        0.005809538997709751,
+        0.07345394045114517
+      ],
+      "nominal_diameter_m": 0.0019290581903452834,
+      "before_top_m": 0.0005441153170977486,
+      "after_top_to_reference_plane_m": 0.0004645850931410678
+    },
+    {
+      "source_id": 256,
+      "bed_reference_offset_m": 9.88018000498414e-05,
+      "reference_xy_m": [
+        0.05909772962331772,
+        -0.06884308159351349
+      ],
+      "nominal_diameter_m": 0.001882574247906831,
+      "before_top_m": 0.00023691201931796968,
+      "after_top_to_reference_plane_m": 0.00013811021926812828
+    },
+    {
+      "source_id": 261,
+      "bed_reference_offset_m": 2.9409620765363798e-05,
+      "reference_xy_m": [
+        -0.023746956139802933,
+        -0.04328548535704613
+      ],
+      "nominal_diameter_m": 0.0021346776337608704,
+      "before_top_m": 0.0005354040185920894,
+      "after_top_to_reference_plane_m": 0.0005059943978267256
+    },
+    {
+      "source_id": 265,
+      "bed_reference_offset_m": 3.121793270111084e-06,
+      "reference_xy_m": [
+        0.06807595491409302,
+        -0.025667179375886917
+      ],
+      "nominal_diameter_m": 0.00211000680443677,
+      "before_top_m": 0.0004303416935727,
+      "after_top_to_reference_plane_m": 0.00042721990030258894
+    },
+    {
+      "source_id": 266,
+      "bed_reference_offset_m": 7.438733518938534e-05,
+      "reference_xy_m": [
+        0.0612991638481617,
+        -0.074408158659935
+      ],
+      "nominal_diameter_m": 0.0029610582267153396,
+      "before_top_m": 0.0006650603136222344,
+      "after_top_to_reference_plane_m": 0.000590672978432849
+    },
+    {
+      "source_id": 273,
+      "bed_reference_offset_m": 0.00010988729991368018,
+      "reference_xy_m": [
+        0.08005248755216599,
+        0.0808267816901207
+      ],
+      "nominal_diameter_m": 0.002811248408395392,
+      "before_top_m": 0.0006382893589034211,
+      "after_top_to_reference_plane_m": 0.0005284020589897409
+    },
+    {
+      "source_id": 278,
+      "bed_reference_offset_m": 0.00012888816672784742,
+      "reference_xy_m": [
+        0.04973922669887543,
+        0.08412106335163116
+      ],
+      "nominal_diameter_m": 0.005138907123724667,
+      "before_top_m": 0.001088218958102516,
+      "after_top_to_reference_plane_m": 0.0009593307913746685
+    },
+    {
+      "source_id": 292,
+      "bed_reference_offset_m": 2.6007670385297388e-05,
+      "reference_xy_m": [
+        0.028852667659521103,
+        0.053192347288131714
+      ],
+      "nominal_diameter_m": 0.004428047877105046,
+      "before_top_m": 0.0011950578846153803,
+      "after_top_to_reference_plane_m": 0.001169050214230083
+    },
+    {
+      "source_id": 328,
+      "bed_reference_offset_m": 3.0766914278501645e-05,
+      "reference_xy_m": [
+        -0.02602977864444256,
+        -0.037776846438646317
+      ],
+      "nominal_diameter_m": 0.0009340601492871857,
+      "before_top_m": 0.0003560640361683909,
+      "after_top_to_reference_plane_m": 0.00032529712188988924
+    },
+    {
+      "source_id": 784,
+      "bed_reference_offset_m": 4.617916056304239e-05,
+      "reference_xy_m": [
+        -0.08130495995283127,
+        -0.03245878592133522
+      ],
+      "nominal_diameter_m": 0.0007470739306801994,
+      "before_top_m": 0.0001850820735853631,
+      "after_top_to_reference_plane_m": 0.00013890291302232072
+    },
+    {
+      "source_id": 2934,
+      "bed_reference_offset_m": 6.99542106303852e-05,
+      "reference_xy_m": [
+        -0.06861351430416107,
+        -0.007454536855220795
+      ],
+      "nominal_diameter_m": 0.0009479138728349423,
+      "before_top_m": 0.00021479295537574217,
+      "after_top_to_reference_plane_m": 0.00014483874474535696
+    },
+    {
+      "source_id": 3077,
+      "bed_reference_offset_m": 3.654428292065859e-05,
+      "reference_xy_m": [
+        0.042124707251787186,
+        0.041562534868717194
+      ],
+      "nominal_diameter_m": 0.0009354291281385464,
+      "before_top_m": 0.00015056085248943418,
+      "after_top_to_reference_plane_m": 0.0001140165695687756
+    },
+    {
+      "source_id": 3821,
+      "bed_reference_offset_m": 4.42190303147072e-05,
+      "reference_xy_m": [
+        0.0634419247508049,
+        -0.08658921718597412
+      ],
+      "nominal_diameter_m": 0.0012725242439885498,
+      "before_top_m": 0.0002826792679115897,
+      "after_top_to_reference_plane_m": 0.0002384602375968825
+    },
+    {
+      "source_id": 4243,
+      "bed_reference_offset_m": 7.051042484818026e-05,
+      "reference_xy_m": [
+        0.07065591961145401,
+        -0.036269307136535645
+      ],
+      "nominal_diameter_m": 0.0010491511380990273,
+      "before_top_m": 0.00027239784685662016,
+      "after_top_to_reference_plane_m": 0.0002018874220084399
+    },
+    {
+      "source_id": 4744,
+      "bed_reference_offset_m": 3.227542765671387e-05,
+      "reference_xy_m": [
+        -0.08075135946273804,
+        0.02630561590194702
+      ],
+      "nominal_diameter_m": 0.0008643010225006943,
+      "before_top_m": 0.00013549329014495015,
+      "after_top_to_reference_plane_m": 0.00010321786248823628
+    },
+    {
+      "source_id": 4975,
+      "bed_reference_offset_m": 5.867359141120687e-05,
+      "reference_xy_m": [
+        0.05169641226530075,
+        -0.03637223318219185
+      ],
+      "nominal_diameter_m": 0.0014846714370441926,
+      "before_top_m": 0.00044384991633705795,
+      "after_top_to_reference_plane_m": 0.0003851763249258511
+    },
+    {
+      "source_id": 5933,
+      "bed_reference_offset_m": 0.00013422046322375536,
+      "reference_xy_m": [
+        0.06973017752170563,
+        -0.05369006469845772
+      ],
+      "nominal_diameter_m": 0.0014296713733763279,
+      "before_top_m": 0.0005134489692864008,
+      "after_top_to_reference_plane_m": 0.00037922850606264547
+    },
+    {
+      "source_id": 6351,
+      "bed_reference_offset_m": 0.00021475023095263168,
+      "reference_xy_m": [
+        -0.0005632501561194658,
+        0.035974740982055664
+      ],
+      "nominal_diameter_m": 0.0016667631070383358,
+      "before_top_m": 0.0005957488683634438,
+      "after_top_to_reference_plane_m": 0.0003809986374108121
+    },
+    {
+      "source_id": 6454,
+      "bed_reference_offset_m": 0.00011484567767183762,
+      "reference_xy_m": [
+        -0.0432327464222908,
+        0.045441146939992905
+      ],
+      "nominal_diameter_m": 0.0007561370490347817,
+      "before_top_m": 0.0002503099076420767,
+      "after_top_to_reference_plane_m": 0.0001354642299702391
+    },
+    {
+      "source_id": 7589,
+      "bed_reference_offset_m": 0.00015125530990189873,
+      "reference_xy_m": [
+        -0.007331648375838995,
+        0.01679116301238537
+      ],
+      "nominal_diameter_m": 0.0008010799748737545,
+      "before_top_m": 0.00032657343763276003,
+      "after_top_to_reference_plane_m": 0.0001753181277308613
+    },
+    {
+      "source_id": 7649,
+      "bed_reference_offset_m": 9.791879710974172e-05,
+      "reference_xy_m": [
+        -0.08627182245254517,
+        0.07572019100189209
+      ],
+      "nominal_diameter_m": 0.0007282778838228514,
+      "before_top_m": 0.0002837729552993551,
+      "after_top_to_reference_plane_m": 0.00018585415818961337
+    },
+    {
+      "source_id": 8453,
+      "bed_reference_offset_m": 3.2482563256053254e-05,
+      "reference_xy_m": [
+        -0.07150961458683014,
+        -0.01800418272614479
+      ],
+      "nominal_diameter_m": 0.0007786205468948952,
+      "before_top_m": 0.00012037103806505911,
+      "after_top_to_reference_plane_m": 8.788847480900586e-05
+    },
+    {
+      "source_id": 9012,
+      "bed_reference_offset_m": 1.3222672350821085e-05,
+      "reference_xy_m": [
+        -0.06321362406015396,
+        0.004030850250273943
+      ],
+      "nominal_diameter_m": 0.0011048198349663052,
+      "before_top_m": 0.00031578731068293564,
+      "after_top_to_reference_plane_m": 0.00030256463833211455
+    },
+    {
+      "source_id": 9033,
+      "bed_reference_offset_m": 9.510359450359829e-05,
+      "reference_xy_m": [
+        -0.057375241070985794,
+        0.046905580908060074
+      ],
+      "nominal_diameter_m": 0.0007159563013742518,
+      "before_top_m": 0.00012139666432631202,
+      "after_top_to_reference_plane_m": 2.6293069822713733e-05
+    },
+    {
+      "source_id": 9156,
+      "bed_reference_offset_m": 6.888336286707604e-05,
+      "reference_xy_m": [
+        -0.08139434725469431,
+        -0.04831683154946154
+      ],
+      "nominal_diameter_m": 0.00037666015193535694,
+      "before_top_m": 5.527065007542082e-05,
+      "after_top_to_reference_plane_m": -1.361271279165522e-05
+    },
+    {
+      "source_id": 10181,
+      "bed_reference_offset_m": 8.526566474667286e-05,
+      "reference_xy_m": [
+        0.022226627946261276,
+        0.06942683986002349
+      ],
+      "nominal_diameter_m": 0.0005093796760706832,
+      "before_top_m": 0.00021736063157642727,
+      "after_top_to_reference_plane_m": 0.0001320949668297544
+    },
+    {
+      "source_id": 11206,
+      "bed_reference_offset_m": 7.544414086695019e-05,
+      "reference_xy_m": [
+        0.07903367465081554,
+        0.04362018859519379
+      ],
+      "nominal_diameter_m": 0.0002809265633242674,
+      "before_top_m": 6.269704147669676e-05,
+      "after_top_to_reference_plane_m": -1.2747099390253425e-05
+    },
+    {
+      "source_id": 12231,
+      "bed_reference_offset_m": 6.940020100486138e-05,
+      "reference_xy_m": [
+        -0.05932915781163595,
+        -0.010584761297140158
+      ],
+      "nominal_diameter_m": 0.00023066478640468182,
+      "before_top_m": 8.988495389970624e-05,
+      "after_top_to_reference_plane_m": 2.048475289484486e-05
+    },
+    {
+      "source_id": 13256,
+      "bed_reference_offset_m": 6.568078156790299e-05,
+      "reference_xy_m": [
+        -0.08484504793598817,
+        -0.03899280975398754
+      ],
+      "nominal_diameter_m": 0.00021262018349064014,
+      "before_top_m": 2.181357472666142e-05,
+      "after_top_to_reference_plane_m": -4.386720684124157e-05
+    },
+    {
+      "source_id": 14281,
+      "bed_reference_offset_m": 7.593623821242177e-05,
+      "reference_xy_m": [
+        0.05060726412857394,
+        0.07437722463985144
+      ],
+      "nominal_diameter_m": 0.00017129406543982335,
+      "before_top_m": 2.3314468202557644e-05,
+      "after_top_to_reference_plane_m": -5.262177000986412e-05
+    },
+    {
+      "source_id": 15306,
+      "bed_reference_offset_m": 5.839483790034065e-05,
+      "reference_xy_m": [
+        0.06699975348852985,
+        -0.014006338632017973
+      ],
+      "nominal_diameter_m": 0.00018823716807883607,
+      "before_top_m": 3.8417517565466554e-05,
+      "after_top_to_reference_plane_m": -1.9977320334874094e-05
+    },
+    {
+      "source_id": 16331,
+      "bed_reference_offset_m": 6.0757842318926144e-05,
+      "reference_xy_m": [
+        -0.062161453471386185,
+        0.014500640577512353
+      ],
+      "nominal_diameter_m": 0.00036108041649731846,
+      "before_top_m": 0.00011967303008372257,
+      "after_top_to_reference_plane_m": 5.891518776479643e-05
+    },
+    {
+      "source_id": 17356,
+      "bed_reference_offset_m": 9.114529260306037e-05,
+      "reference_xy_m": [
+        0.0013216865479327017,
+        -0.03990899448882396
+      ],
+      "nominal_diameter_m": 0.00035772234362348865,
+      "before_top_m": 0.00011330638247646741,
+      "after_top_to_reference_plane_m": 2.2161089873407036e-05
+    },
+    {
+      "source_id": 18381,
+      "bed_reference_offset_m": 9.453954045024833e-05,
+      "reference_xy_m": [
+        -0.06361705328761057,
+        -0.07585839501558135
+      ],
+      "nominal_diameter_m": 0.00021055608753728003,
+      "before_top_m": 7.147003271679526e-05,
+      "after_top_to_reference_plane_m": -2.3069507733453065e-05
+    },
+    {
+      "source_id": 19406,
+      "bed_reference_offset_m": 6.101899035589018e-05,
+      "reference_xy_m": [
+        -0.041527129553765495,
+        0.027148793699453222
+      ],
+      "nominal_diameter_m": 0.0002804690742806016,
+      "before_top_m": 3.931769007199624e-05,
+      "after_top_to_reference_plane_m": -2.1701300283893943e-05
+    },
+    {
+      "source_id": 20431,
+      "bed_reference_offset_m": 7.661684490405204e-05,
+      "reference_xy_m": [
+        0.058798824341628975,
+        0.02288768401273511
+      ],
+      "nominal_diameter_m": 0.00030474928828270326,
+      "before_top_m": 6.982424370609404e-05,
+      "after_top_to_reference_plane_m": -6.7926011979579926e-06
+    },
+    {
+      "source_id": 21456,
+      "bed_reference_offset_m": 7.003426761772392e-05,
+      "reference_xy_m": [
+        -0.0053369021907379716,
+        -0.07026546697086689
+      ],
+      "nominal_diameter_m": 0.00025814544374413393,
+      "before_top_m": 3.483080544216467e-05,
+      "after_top_to_reference_plane_m": -3.520346217555925e-05
+    },
+    {
+      "source_id": 22481,
+      "bed_reference_offset_m": 3.4494207648445515e-05,
+      "reference_xy_m": [
+        0.0656905722905243,
+        -0.052533915365499916
+      ],
+      "nominal_diameter_m": 0.00026257344090849574,
+      "before_top_m": 8.308182295912564e-05,
+      "after_top_to_reference_plane_m": 4.858761531068012e-05
+    },
+    {
+      "source_id": 23506,
+      "bed_reference_offset_m": 9.102728979823758e-05,
+      "reference_xy_m": [
+        -0.07888735738506843,
+        0.06381312428322783
+      ],
+      "nominal_diameter_m": 0.00020800871551077542,
+      "before_top_m": 7.24329980385827e-05,
+      "after_top_to_reference_plane_m": -1.859429175965488e-05
+    },
+    {
+      "source_id": 24531,
+      "bed_reference_offset_m": 9.797701490733745e-05,
+      "reference_xy_m": [
+        -0.037464889750741165,
+        -0.0651718380630961
+      ],
+      "nominal_diameter_m": 0.0002899445695617232,
+      "before_top_m": 7.794098487047451e-05,
+      "after_top_to_reference_plane_m": -2.003603003686294e-05
+    },
+    {
+      "source_id": 25556,
+      "bed_reference_offset_m": 6.676589941985708e-05,
+      "reference_xy_m": [
+        0.055201941271781546,
+        0.010570197709606266
+      ],
+      "nominal_diameter_m": 0.00025063053036249107,
+      "before_top_m": 3.861875916396071e-05,
+      "after_top_to_reference_plane_m": -2.8147140255896368e-05
+    },
+    {
+      "source_id": 26581,
+      "bed_reference_offset_m": 5.241244757548538e-05,
+      "reference_xy_m": [
+        -0.030266599066079786,
+        0.04223022572471838
+      ],
+      "nominal_diameter_m": 0.0003058214307234661,
+      "before_top_m": 6.0679696206940385e-05,
+      "after_top_to_reference_plane_m": 8.267248631455004e-06
+    },
+    {
+      "source_id": 27606,
+      "bed_reference_offset_m": 5.119584949634167e-05,
+      "reference_xy_m": [
+        0.059632351104920794,
+        -0.0006366205329539493
+      ],
+      "nominal_diameter_m": 0.0005026881116277219,
+      "before_top_m": 0.00013547963937080362,
+      "after_top_to_reference_plane_m": 8.428378987446195e-05
+    },
+    {
+      "source_id": 28631,
+      "bed_reference_offset_m": 5.096702117725322e-05,
+      "reference_xy_m": [
+        0.06916701543648257,
+        -0.052141092534407546
+      ],
+      "nominal_diameter_m": 0.00021448013949416263,
+      "before_top_m": 6.105561662252107e-05,
+      "after_top_to_reference_plane_m": 1.0088595445267856e-05
+    },
+    {
+      "source_id": 29656,
+      "bed_reference_offset_m": 6.939434946193421e-05,
+      "reference_xy_m": [
+        0.010164237717387947,
+        -0.05754823747296771
+      ],
+      "nominal_diameter_m": 0.0003504985959207431,
+      "before_top_m": 5.927696305238703e-05,
+      "after_top_to_reference_plane_m": -1.011738640954718e-05
+    },
+    {
+      "source_id": 30681,
+      "bed_reference_offset_m": 8.92144322205259e-05,
+      "reference_xy_m": [
+        -0.08406617400329412,
+        0.05186922737495686
+      ],
+      "nominal_diameter_m": 0.0003242074225724182,
+      "before_top_m": 0.00011489312018229798,
+      "after_top_to_reference_plane_m": 2.5678687961772084e-05
+    },
+    {
+      "source_id": 31706,
+      "bed_reference_offset_m": 6.228395480080867e-05,
+      "reference_xy_m": [
+        -0.07532380977674102,
+        0.039655970816489444
+      ],
+      "nominal_diameter_m": 0.000263482392781561,
+      "before_top_m": 6.325491679250622e-05,
+      "after_top_to_reference_plane_m": 9.709619916975498e-07
+    },
+    {
+      "source_id": 32731,
+      "bed_reference_offset_m": 6.596148250357151e-05,
+      "reference_xy_m": [
+        -0.039712760975142876,
+        -0.08390465355591596
+      ],
+      "nominal_diameter_m": 0.0004910421128406638,
+      "before_top_m": 0.0001284586514866715,
+      "after_top_to_reference_plane_m": 6.249716898309998e-05
+    },
+    {
+      "source_id": 33756,
+      "bed_reference_offset_m": 2.9829399967806185e-05,
+      "reference_xy_m": [
+        -0.07801797077065249,
+        0.017712710960867947
+      ],
+      "nominal_diameter_m": 0.00020968317278210834,
+      "before_top_m": 6.709615637572272e-05,
+      "after_top_to_reference_plane_m": 3.726675640791654e-05
+    },
+    {
+      "source_id": 34781,
+      "bed_reference_offset_m": 2.6640324636260923e-05,
+      "reference_xy_m": [
+        0.04025300680979668,
+        0.02874981038809321
+      ],
+      "nominal_diameter_m": 0.00021459550529783636,
+      "before_top_m": 4.095671711665666e-05,
+      "after_top_to_reference_plane_m": 1.4316392480395734e-05
+    },
+    {
+      "source_id": 35806,
+      "bed_reference_offset_m": 5.244415657174492e-05,
+      "reference_xy_m": [
+        -0.041175609138198996,
+        0.039366524649677964
+      ],
+      "nominal_diameter_m": 0.0001623923132171613,
+      "before_top_m": 3.006926995980272e-05,
+      "after_top_to_reference_plane_m": -2.2374886611942202e-05
+    },
+    {
+      "source_id": 36831,
+      "bed_reference_offset_m": 7.162980783993423e-05,
+      "reference_xy_m": [
+        0.0754402567372989,
+        0.05128260282080657
+      ],
+      "nominal_diameter_m": 0.00038021722616757655,
+      "before_top_m": 0.00011964961469436109,
+      "after_top_to_reference_plane_m": 4.801980685442686e-05
+    },
+    {
+      "source_id": 37856,
+      "bed_reference_offset_m": 8.908400129692973e-05,
+      "reference_xy_m": [
+        -0.03315398471206477,
+        0.0012602118935212403
+      ],
+      "nominal_diameter_m": 0.00019929718563888035,
+      "before_top_m": 6.223148309326143e-05,
+      "after_top_to_reference_plane_m": -2.6852518203668296e-05
+    },
+    {
+      "source_id": 38881,
+      "bed_reference_offset_m": 3.311554030312195e-05,
+      "reference_xy_m": [
+        -0.06777173966779342,
+        0.006136264460034027
+      ],
+      "nominal_diameter_m": 0.00018568655960500655,
+      "before_top_m": 3.445138611220259e-05,
+      "after_top_to_reference_plane_m": 1.335845809080638e-06
+    },
+    {
+      "source_id": 39906,
+      "bed_reference_offset_m": 5.7615656014051956e-05,
+      "reference_xy_m": [
+        0.07736699485039497,
+        -0.001610151479952568
+      ],
+      "nominal_diameter_m": 0.000633909271266831,
+      "before_top_m": 0.00017782238840426758,
+      "after_top_to_reference_plane_m": 0.00012020673239021562
+    },
+    {
+      "source_id": 40931,
+      "bed_reference_offset_m": 6.937621980076976e-05,
+      "reference_xy_m": [
+        -0.0436605728897174,
+        0.06910053798382793
+      ],
+      "nominal_diameter_m": 0.000249125736415323,
+      "before_top_m": 9.178097421871818e-05,
+      "after_top_to_reference_plane_m": 2.2404754417948425e-05
+    },
+    {
+      "source_id": 41956,
+      "bed_reference_offset_m": 6.104203651352043e-05,
+      "reference_xy_m": [
+        -0.002638794722190224,
+        0.013688462230057513
+      ],
+      "nominal_diameter_m": 0.00020761302969504833,
+      "before_top_m": 6.085969373975138e-05,
+      "after_top_to_reference_plane_m": -1.8234277376904406e-07
+    },
+    {
+      "source_id": 42981,
+      "bed_reference_offset_m": 7.092897162259744e-05,
+      "reference_xy_m": [
+        -0.07441908415158514,
+        0.018182710977934835
+      ],
+      "nominal_diameter_m": 0.0003080026393738757,
+      "before_top_m": 8.326855190283806e-05,
+      "after_top_to_reference_plane_m": 1.2339580280240625e-05
+    },
+    {
+      "source_id": 44006,
+      "bed_reference_offset_m": 5.8060994106601545e-05,
+      "reference_xy_m": [
+        0.07599209801091819,
+        0.052839709770069465
+      ],
+      "nominal_diameter_m": 0.00021393861043049407,
+      "before_top_m": 5.365687879060916e-05,
+      "after_top_to_reference_plane_m": -4.404115315992385e-06
+    },
+    {
+      "source_id": 45031,
+      "bed_reference_offset_m": 7.010896736152046e-05,
+      "reference_xy_m": [
+        -0.07284293901370247,
+        0.009754540765398362
+      ],
+      "nominal_diameter_m": 0.00027544714591709493,
+      "before_top_m": 7.911307768641547e-05,
+      "after_top_to_reference_plane_m": 9.00411032489501e-06
+    },
+    {
+      "source_id": 46056,
+      "bed_reference_offset_m": 6.536143238710129e-05,
+      "reference_xy_m": [
+        -0.015552721926945165,
+        0.03526588377806597
+      ],
+      "nominal_diameter_m": 0.00022818763159059962,
+      "before_top_m": 7.01825182820473e-05,
+      "after_top_to_reference_plane_m": 4.821085894946009e-06
+    },
+    {
+      "source_id": 47081,
+      "bed_reference_offset_m": 7.059211663583499e-05,
+      "reference_xy_m": [
+        -0.06072764899715431,
+        -0.0049220457407464085
+      ],
+      "nominal_diameter_m": 0.0004678844292030657,
+      "before_top_m": 8.891868589709718e-05,
+      "after_top_to_reference_plane_m": 1.8326569261262193e-05
+    },
+    {
+      "source_id": 48106,
+      "bed_reference_offset_m": 9.250310371399488e-05,
+      "reference_xy_m": [
+        -0.07435746366618287,
+        0.05244059212851471
+      ],
+      "nominal_diameter_m": 0.00028741796350459115,
+      "before_top_m": 0.00010432077227861251,
+      "after_top_to_reference_plane_m": 1.1817668564617634e-05
+    },
+    {
+      "source_id": 49131,
+      "bed_reference_offset_m": 4.787377965512452e-05,
+      "reference_xy_m": [
+        -0.06037053185425764,
+        0.021929657879095468
+      ],
+      "nominal_diameter_m": 0.00045556782828331274,
+      "before_top_m": 4.407567157285986e-05,
+      "after_top_to_reference_plane_m": -3.798108082264662e-06
+    },
+    {
+      "source_id": 50156,
+      "bed_reference_offset_m": 0.0001013385357360536,
+      "reference_xy_m": [
+        -0.03967457340391583,
+        -0.049287093311231676
+      ],
+      "nominal_diameter_m": 0.00032194100590900014,
+      "before_top_m": 8.647229913875402e-05,
+      "after_top_to_reference_plane_m": -1.4866236597299576e-05
+    },
+    {
+      "source_id": 51181,
+      "bed_reference_offset_m": 6.414483352594113e-05,
+      "reference_xy_m": [
+        0.022083734815591005,
+        0.02606001857021975
+      ],
+      "nominal_diameter_m": 0.0005048317139368294,
+      "before_top_m": 0.00015864231529442627,
+      "after_top_to_reference_plane_m": 9.449748176848515e-05
+    },
+    {
+      "source_id": 52206,
+      "bed_reference_offset_m": 9.67726731705282e-05,
+      "reference_xy_m": [
+        0.0684536437358178,
+        0.007880565723391394
+      ],
+      "nominal_diameter_m": 0.00016522723216674416,
+      "before_top_m": 4.9079818747452284e-05,
+      "after_top_to_reference_plane_m": -4.769285442307592e-05
+    },
+    {
+      "source_id": 53231,
+      "bed_reference_offset_m": 3.97023378992879e-05,
+      "reference_xy_m": [
+        -0.07754812456718557,
+        0.01973729132536496
+      ],
+      "nominal_diameter_m": 0.0004645341437243013,
+      "before_top_m": 8.561476185619433e-05,
+      "after_top_to_reference_plane_m": 4.591242395690642e-05
+    },
+    {
+      "source_id": 54256,
+      "bed_reference_offset_m": 8.30527005579569e-05,
+      "reference_xy_m": [
+        0.0866950579909406,
+        0.03837299362015109
+      ],
+      "nominal_diameter_m": 0.00017539389878292396,
+      "before_top_m": 7.859016657828024e-05,
+      "after_top_to_reference_plane_m": -4.462533979676664e-06
+    },
+    {
+      "source_id": 55281,
+      "bed_reference_offset_m": 6.483606034334794e-05,
+      "reference_xy_m": [
+        0.047068083034691344,
+        -0.07999759867046666
+      ],
+      "nominal_diameter_m": 0.0002054749759046811,
+      "before_top_m": 7.423560077467978e-05,
+      "after_top_to_reference_plane_m": 9.399540431331843e-06
+    },
+    {
+      "source_id": 56306,
+      "bed_reference_offset_m": 7.335791129284552e-05,
+      "reference_xy_m": [
+        0.03434363951096134,
+        0.06112734748044438
+      ],
+      "nominal_diameter_m": 0.0002712447628303912,
+      "before_top_m": 7.259220406544408e-05,
+      "after_top_to_reference_plane_m": -7.657072274014354e-07
+    },
+    {
+      "source_id": 57331,
+      "bed_reference_offset_m": 6.1064031586323e-05,
+      "reference_xy_m": [
+        -0.002118959801479317,
+        -0.02677017359721639
+      ],
+      "nominal_diameter_m": 0.00016872626446715966,
+      "before_top_m": 3.480758165828146e-05,
+      "after_top_to_reference_plane_m": -2.6256449928041548e-05
+    },
+    {
+      "source_id": 58356,
+      "bed_reference_offset_m": 3.8069415164812106e-05,
+      "reference_xy_m": [
+        0.07075339041741316,
+        -0.049137083365925226
+      ],
+      "nominal_diameter_m": 0.0003859201950804533,
+      "before_top_m": 6.57224051213624e-05,
+      "after_top_to_reference_plane_m": 2.76529899565503e-05
+    },
+    {
+      "source_id": 59381,
+      "bed_reference_offset_m": 5.8376434643142215e-05,
+      "reference_xy_m": [
+        0.04382277053435096,
+        -0.04030983022341747
+      ],
+      "nominal_diameter_m": 0.00022042877199925814,
+      "before_top_m": 8.506610236348985e-05,
+      "after_top_to_reference_plane_m": 2.6689667720347636e-05
+    },
+    {
+      "source_id": 60406,
+      "bed_reference_offset_m": 5.05136433092568e-05,
+      "reference_xy_m": [
+        -0.02778497382065557,
+        -0.003994247233982576
+      ],
+      "nominal_diameter_m": 0.00020005046192209065,
+      "before_top_m": 3.28739644645404e-05,
+      "after_top_to_reference_plane_m": -1.76396788447164e-05
+    },
+    {
+      "source_id": 61431,
+      "bed_reference_offset_m": 5.125589879193478e-05,
+      "reference_xy_m": [
+        -0.055129655573221,
+        -0.03690168373578941
+      ],
+      "nominal_diameter_m": 0.0001626311709114168,
+      "before_top_m": 1.830379616316543e-05,
+      "after_top_to_reference_plane_m": -3.295210262876935e-05
+    },
+    {
+      "source_id": 62456,
+      "bed_reference_offset_m": 8.446123474758463e-05,
+      "reference_xy_m": [
+        0.0821163215446292,
+        -0.05154581086110103
+      ],
+      "nominal_diameter_m": 0.0003410403511128032,
+      "before_top_m": 8.356068947367715e-05,
+      "after_top_to_reference_plane_m": -9.005452739074826e-07
+    },
+    {
+      "source_id": 63481,
+      "bed_reference_offset_m": 9.046304611365537e-05,
+      "reference_xy_m": [
+        0.07273042291578435,
+        -0.05970072584633054
+      ],
+      "nominal_diameter_m": 0.00018143522001599514,
+      "before_top_m": 4.8668286659449727e-05,
+      "after_top_to_reference_plane_m": -4.179475945420564e-05
+    },
+    {
+      "source_id": 64506,
+      "bed_reference_offset_m": 9.162394037199783e-05,
+      "reference_xy_m": [
+        0.060456040013741524,
+        -0.03070528030680813
+      ],
+      "nominal_diameter_m": 0.00017248381217012873,
+      "before_top_m": 5.215945186288672e-05,
+      "after_top_to_reference_plane_m": -3.9464488509111106e-05
+    },
+    {
+      "source_id": 65531,
+      "bed_reference_offset_m": 5.280732426887534e-05,
+      "reference_xy_m": [
+        -0.07877512942175904,
+        -0.006962674960358767
+      ],
+      "nominal_diameter_m": 0.00026203044988583964,
+      "before_top_m": 3.8314944563686544e-05,
+      "after_top_to_reference_plane_m": -1.4492379705188796e-05
+    },
+    {
+      "source_id": 66556,
+      "bed_reference_offset_m": 5.163485513822e-05,
+      "reference_xy_m": [
+        -0.03246881917073456,
+        0.02872530955162647
+      ],
+      "nominal_diameter_m": 0.00038775385255717,
+      "before_top_m": 5.773829218287777e-05,
+      "after_top_to_reference_plane_m": 6.103437044657767e-06
+    },
+    {
+      "source_id": 67581,
+      "bed_reference_offset_m": 6.475902686730675e-05,
+      "reference_xy_m": [
+        0.0732271610062688,
+        0.060287503099555634
+      ],
+      "nominal_diameter_m": 0.00041087370824429965,
+      "before_top_m": 0.00010745606327333204,
+      "after_top_to_reference_plane_m": 4.269703640602529e-05
+    },
+    {
+      "source_id": 68606,
+      "bed_reference_offset_m": 8.433003772456364e-05,
+      "reference_xy_m": [
+        0.010082944850658845,
+        0.05325238532767532
+      ],
+      "nominal_diameter_m": 0.0002189194366528528,
+      "before_top_m": 0.00011047760294690893,
+      "after_top_to_reference_plane_m": 2.6147565222345293e-05
+    },
+    {
+      "source_id": 69631,
+      "bed_reference_offset_m": 7.216108958964826e-05,
+      "reference_xy_m": [
+        0.02342545947195436,
+        0.005680500305783695
+      ],
+      "nominal_diameter_m": 0.00019375721258447397,
+      "before_top_m": 7.412802831532092e-05,
+      "after_top_to_reference_plane_m": 1.9669387256726623e-06
+    },
+    {
+      "source_id": 70656,
+      "bed_reference_offset_m": 8.42815970039498e-05,
+      "reference_xy_m": [
+        -0.04748836663930925,
+        -0.03668290672797991
+      ],
+      "nominal_diameter_m": 0.0004154493344968736,
+      "before_top_m": 0.00019355018949988672,
+      "after_top_to_reference_plane_m": 0.00010926859249593691
+    },
+    {
+      "source_id": 71681,
+      "bed_reference_offset_m": 7.176830116952234e-05,
+      "reference_xy_m": [
+        -0.06487644662509427,
+        0.0029968918812853795
+      ],
+      "nominal_diameter_m": 0.00046797966755456695,
+      "before_top_m": 0.0001975755830168234,
+      "after_top_to_reference_plane_m": 0.00012580728184730106
+    },
+    {
+      "source_id": 72706,
+      "bed_reference_offset_m": 5.351173435573497e-05,
+      "reference_xy_m": [
+        0.03823152962861673,
+        -0.02650186698653017
+      ],
+      "nominal_diameter_m": 0.0004900634203604141,
+      "before_top_m": 0.00021798407228433559,
+      "after_top_to_reference_plane_m": 0.0001644723379286006
+    },
+    {
+      "source_id": 73732,
+      "bed_reference_offset_m": 7.538061904655669e-05,
+      "reference_xy_m": [
+        -0.07791352553085164,
+        -0.027655484732417787
+      ],
+      "nominal_diameter_m": 0.00019820073439485455,
+      "before_top_m": 4.365625059166822e-05,
+      "after_top_to_reference_plane_m": -3.172436845488847e-05
+    }
+  ],
+  "offset_um_min_median_max": [
+    -46.96619180322159,
+    69.67720581762329,
+    214.75023095263168
+  ]
+}

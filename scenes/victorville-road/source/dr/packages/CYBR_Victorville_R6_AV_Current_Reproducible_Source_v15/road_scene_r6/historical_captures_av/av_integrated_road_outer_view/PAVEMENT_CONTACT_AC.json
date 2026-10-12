@@ -1,0 +1,271 @@
+{
+  "contact": {
+    "ground": {
+      "added_vertices": 140208,
+      "all_original_vertices_retained": true,
+      "allocation_cap_vertices": 170000,
+      "contact_extent_m": [
+        -3.43,
+        -3.04,
+        0.0,
+        2.0
+      ],
+      "end_contact_preserves_original_soil_bank": true,
+      "exact_actual_soil_triangle_sampling": true,
+      "interior_contact_shared_with_wall": true,
+      "omitted_zero_footprint_source_triangles": 32,
+      "original_soil_under_new_patch": false,
+      "replaced_original_polygons": 2397,
+      "replacement_triangles": 278545,
+      "requires_existing_grain_reprojection": true,
+      "soil_z_change_range_m": [
+        -0.015091222162056425,
+        0.0
+      ],
+      "source_footprint_cross_threshold_m2": 1e-13,
+      "source_halo_triangles": 3057,
+      "source_sampling_triangles": 3025,
+      "three_seams_conforming": true,
+      "top_crown_unchanged": true
+    },
+    "limits": [
+      "Unmeasured diagnostic stratigraphy",
+      "No vertical overhang/undercut holes in the road-top graph",
+      "Subsurface clasts are procedural metric interpretations",
+      "Blender adapter has not run in source-only tests"
+    ],
+    "original_markings_changed": false,
+    "original_top_maps_changed": false,
+    "original_top_scale_changed": false,
+    "particles": {
+      "all_clasts_below_actual_crown": true,
+      "all_clasts_intersect_pavement": true,
+      "count": 622,
+      "diameter_bounds_m": [
+        0.0025,
+        0.0075
+      ],
+      "faces": 12440,
+      "free_floating_scatter": false,
+      "minimum_internal_anchor_m": 0.001264060743312978,
+      "nonoverlapping_bounding_spheres": true,
+      "provenance": "New packed subsurface fracture clasts at approved grading; top material untouched",
+      "vertices": 7464
+    },
+    "rendered": false,
+    "required_integration": [
+      "Replace original ground, do not overlay",
+      "Trim old wall over exact strip y bounds; do not also use AA gap fill",
+      "Re-seat or hide existing soil particles whose support changed",
+      "Inspect actual rendered pixels before acceptance"
+    ],
+    "saved": false,
+    "scene_assigned": false,
+    "section": {
+      "assumed_surface_course_m": 0.024,
+      "bulk_edge_from_actual_source": true,
+      "buried_section_depth_m": 0.038,
+      "continuous_visible_vertical_ribbon": null,
+      "crown_bulk_join_below_top_range_m": [
+        0.0034906966722611336,
+        0.004320572406050712
+      ],
+      "crown_lateral_microgeometry_extruded_through_course": false,
+      "crown_transfer_depth_m": 0.004,
+      "exact_soil_contact_is_wall_edge": true,
+      "explicit_bank_profile": true,
+      "exposed_subgrade_fraction": 0.0,
+      "exposure_range_m": [
+        0.0035568610512687017,
+        0.01139565922520039
+      ],
+      "interpretation": "Diagnostic shallow weathered surface course, not measured site stratigraphy",
+      "maximum_crown_to_bulk_lateral_m": 0.01159667369906403,
+      "nominal_exposure_over2mm_entire_length": true,
+      "supported_length_fraction": 0.0,
+      "top_material_or_stripe_modified": false,
+      "top_seam_exact": true,
+      "wall_faces": 27972,
+      "wall_under_soil_hidden": true
+    }
+  },
+  "limits": "Short bank-grade continuation crosses the unsimulated protected collar; it is a geometric interpretation, not an edge deposition ledger. A shallow continuous lip may remain. Crop inspection is required; surface support uses exact center contact, full footprint auditing is separate.",
+  "moved_existing": [
+    {
+      "moved_origins": 1327,
+      "newly_revealed_soil_origins": 0,
+      "object": "True approved R5D near-camera grain geometry",
+      "previously_supported": 1335,
+      "prototype_geometry_identity_and_scale_unchanged": true,
+      "shift_min_max_m": [
+        -0.01137423590972897,
+        3.7408869362563766e-06
+      ],
+      "still_under_pavement_unchanged": 11
+    },
+    {
+      "moved_origins": 2121,
+      "newly_revealed_soil_origins": 0,
+      "object": "U approved R5D density / projected chip and grit supplement",
+      "previously_supported": 2141,
+      "prototype_geometry_identity_and_scale_unchanged": true,
+      "shift_min_max_m": [
+        -0.010129755983928339,
+        8.5053123911015e-06
+      ],
+      "still_under_pavement_unchanged": 0
+    },
+    {
+      "moved_rigid_bodies": 3,
+      "newly_revealed_bodies": 0,
+      "object": "Sparse physical 7\u201331 mm roadside mineral lag",
+      "prototype_shape_unchanged": true
+    },
+    {
+      "moved_rigid_bodies": 0,
+      "newly_revealed_bodies": 0,
+      "object": "Gravel lag pockets beside shallow runoff arms",
+      "prototype_shape_unchanged": true
+    },
+    {
+      "moved_rigid_bodies": 0,
+      "newly_revealed_bodies": 0,
+      "object": "Connected drainage / margin gravel bars",
+      "prototype_shape_unchanged": true
+    }
+  ],
+  "moved_roots": [],
+  "old_wall": {
+    "new_faces": 1757,
+    "old_faces": 1822,
+    "partial_faces_clipped": true,
+    "range_y_m": [
+      0.0,
+      2.0
+    ]
+  },
+  "runoff_support": {
+    "anchor_flow_strength_range": [
+      0.011552405074027244,
+      0.862425356026563
+    ],
+    "anchor_net_sediment_delta_range_m": [
+      -0.002888539645822012,
+      1.2607348760453757e-06
+    ],
+    "anchor_retained_deposit_range_m": [
+      0.0,
+      3.9322032743161326e-05
+    ],
+    "authored_exposure_sectors": false,
+    "bank_clearance_m": 0.0008,
+    "bank_continuation_distance_range_m": [
+      0.2885684967040829,
+      0.32892799015573493
+    ],
+    "bounds_y_m": [
+      0.0,
+      2.0
+    ],
+    "clearance_constrained_knots": 0,
+    "conserves_or_introduces_sediment_mass": false,
+    "depth_constrained_knots": 0,
+    "distance_beyond_AH_grid_range_m": [
+      0.03856849670408291,
+      0.07892799015573493
+    ],
+    "excluded_authored_contact_x_min_m": -3.43,
+    "exposure_cap_m": 0.032,
+    "exposure_range_m": [
+      0.003974004900083969,
+      0.01119764984625922
+    ],
+    "flow_strength_role": "Diagnostic only; causal weathering is already encoded in net bed change",
+    "foundation_grade_range": [
+      0.0180783379413532,
+      0.02008286373049171
+    ],
+    "limits": "AH has no simulated stock at the road edge. This is a bounded geometric bank interpretation continued through its protected collar, not surveyed terrain, validated hydraulics, or an edge sediment-mass ledger. Actual mesh contact and visual quality require separate checks.",
+    "maximum_bank_constraint_adjustment_m": 0.0,
+    "model": "Short bank-grade continuation from actual AH foundation and finite-stock response",
+    "modeled_edge_deposition": false,
+    "original_top_or_material_modified": false,
+    "periodic_or_random_displacement": false,
+    "post_transport_smoothing": false,
+    "profile_knots": 1999,
+    "raw_exposure_range_m": [
+      0.003974004900083969,
+      0.01119764984625922
+    ],
+    "retained_deposition_added_twice": false,
+    "retained_deposition_already_in_net_delta": true,
+    "source_anchor_x_m": [
+      -3.7,
+      -3.5
+    ],
+    "source_grid_shape_yx": [
+      177,
+      60
+    ],
+    "source_spacing_xy_m": [
+      0.04999999999999982,
+      0.050000000000000044
+    ],
+    "structural_loss_m": 0.0
+  },
+  "scene_assigned": true,
+  "scope": "Actual supported cross-section diagnostic; original material recipe and metric grain scale retained",
+  "source_height_sha256": "9c6ebba3a109088842a73434cea02069aa3a5a98e1b871a3f7b7b5e246de0c83",
+  "strip": {
+    "attributes_preserved": [
+      "asphalt_share",
+      "road_edge_inset_m",
+      "road_deposit_depth_m",
+      "relief_original_left_paint_z",
+      "macro_tint",
+      "relief_original_broad_normal",
+      ".select_vert",
+      ".select_edge",
+      ".select_poly"
+    ],
+    "clipped_retained_triangles": 489,
+    "collar_m": 0.002,
+    "copied_material": "Road / Approved R5D soil + original dense asphalt / coupled.001",
+    "end_join_y": [
+      0.0,
+      2.0
+    ],
+    "fade_m": 0.008,
+    "fine_shape": [
+      1997,
+      141
+    ],
+    "fine_triangles": 558880,
+    "fine_vertices": 281577,
+    "height_phase_origin": [
+      0,
+      0
+    ],
+    "height_scale_m": 0.004,
+    "inner_join_x": -3.069999933242798,
+    "join_triangles": 2454,
+    "kept_original_polygons": 278198,
+    "max_actual_displacement_m": 0.0008867253505724531,
+    "max_grid_spacing_m": 0.001,
+    "max_inward_ravel_m": 0.0115966796875,
+    "new_mesh_polygons": 840021,
+    "new_mesh_vertices": 561662,
+    "old_asphalt_beneath_strip": false,
+    "old_edge_from": "Actual original triangle-union boundary",
+    "rendered": false,
+    "saved": false,
+    "scene_assigned": false,
+    "source_height_sha256": "9c6ebba3a109088842a73434cea02069aa3a5a98e1b871a3f7b7b5e246de0c83",
+    "source_normals_preserved": true,
+    "source_polygons": 278469,
+    "source_sampling": "Actual old loop triangles; no grid assumption or extrapolation",
+    "source_vertices": 279801,
+    "tile_m": 0.25,
+    "unreferenced_source_vertices_retained": true
+  }
+}

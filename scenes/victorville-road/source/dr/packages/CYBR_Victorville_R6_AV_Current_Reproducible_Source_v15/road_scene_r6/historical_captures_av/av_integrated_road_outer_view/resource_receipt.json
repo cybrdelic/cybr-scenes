@@ -1,0 +1,17 @@
+{
+  "RSS_cap_MiB": 4480,
+  "RSS_sample_interval_seconds": 0.2,
+  "actual_process_exit_code": 0,
+  "elapsed_seconds": 690.2626141240034,
+  "exit_code": 0,
+  "first_sample_observed_seconds": 640.4213827269996,
+  "job": "captures/av_integrated_road_outer_view/job.json",
+  "kernel_max_child_RSS_MiB": 4176.62890625,
+  "log": "captures/av_integrated_road_outer_view/run.log",
+  "peak_process_tree_RSS_MiB": 4178.8984375,
+  "resource_contract_passed": true,
+  "resource_contract_violations": [],
+  "sample_watchdog_enabled": true,
+  "scope": "Owned descendants via ps parent graph; sampled RSS plus kernel child high-water mark",
+  "stop_reason": null
+}

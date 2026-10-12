@@ -1,0 +1,11 @@
+{
+  "CPU_threads": 2,
+  "RSS_cap_MiB": 4096,
+  "elapsed_seconds": 45.565439926998806,
+  "exit_code": 1,
+  "kernel_max_child_RSS_MiB": 3048.828125,
+  "peak_process_tree_RSS_MiB": 2974.125,
+  "resource_contract_passed": false,
+  "script": "src/validate_y_semantic_source_v3_resume.py",
+  "stop_reason": null
+}

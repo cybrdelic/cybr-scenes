@@ -1,0 +1,114 @@
+{
+  "status": "passed",
+  "test": "Offline geometry only; no Blender launched",
+  "checks": [
+    "determinism",
+    "finite vertices",
+    "valid face/material indices",
+    "positive triangle area",
+    "exact heights and maximum horizontal spans",
+    "dense low crown fraction",
+    "six-prototype vertex budget"
+  ],
+  "blender_integration": "not run",
+  "visual_validation": "not run",
+  "total_vertices": 78296,
+  "variants": [
+    {
+      "name": "Low olive cushion",
+      "seed": 261010,
+      "vertices": 11097,
+      "polygons": 10704,
+      "triangles": 13454,
+      "leaves": 944,
+      "branches": 297,
+      "dimensions_m": [
+        0.2816151938253894,
+        0.29999999999999993,
+        0.14
+      ],
+      "vertices_below_half_height_fraction": 0.4423718122014959,
+      "minimum_triangle_area_m2": 8.926957351914359e-10
+    },
+    {
+      "name": "Split silver cushion",
+      "seed": 365739,
+      "vertices": 13084,
+      "polygons": 12648,
+      "triangles": 15692,
+      "leaves": 1146,
+      "branches": 327,
+      "dimensions_m": [
+        0.365463683052899,
+        0.42000000000000004,
+        0.21
+      ],
+      "vertices_below_half_height_fraction": 0.6527820238459187,
+      "minimum_triangle_area_m2": 6.297134488958464e-10
+    },
+    {
+      "name": "Wind-laid olive tangle",
+      "seed": 470468,
+      "vertices": 13099,
+      "polygons": 12662,
+      "triangles": 15722,
+      "leaves": 1146,
+      "branches": 327,
+      "dimensions_m": [
+        0.5338892333375383,
+        0.55,
+        0.2899999999999999
+      ],
+      "vertices_below_half_height_fraction": 0.8705244675166043,
+      "minimum_triangle_area_m2": 6.342454090379107e-10
+    },
+    {
+      "name": "Broken silver skirt",
+      "seed": 575197,
+      "vertices": 14283,
+      "polygons": 13798,
+      "triangles": 17182,
+      "leaves": 1242,
+      "branches": 362,
+      "dimensions_m": [
+        0.5999999999999999,
+        0.5508532847463367,
+        0.35
+      ],
+      "vertices_below_half_height_fraction": 0.9908982706714276,
+      "minimum_triangle_area_m2": 5.902955378209475e-10
+    },
+    {
+      "name": "Dry-root live islands",
+      "seed": 679926,
+      "vertices": 12430,
+      "polygons": 11988,
+      "triangles": 15088,
+      "leaves": 1056,
+      "branches": 331,
+      "dimensions_m": [
+        0.5486158818899012,
+        0.5900000000000001,
+        0.43999999999999995
+      ],
+      "vertices_below_half_height_fraction": 0.988897827835881,
+      "minimum_triangle_area_m2": 6.384133057074203e-10
+    },
+    {
+      "name": "Low silver with old shoots",
+      "seed": 784655,
+      "vertices": 14303,
+      "polygons": 13820,
+      "triangles": 17202,
+      "leaves": 1246,
+      "branches": 359,
+      "dimensions_m": [
+        0.5501279693606556,
+        0.6,
+        0.56
+      ],
+      "vertices_below_half_height_fraction": 0.9880444661959029,
+      "minimum_triangle_area_m2": 5.75802880480336e-10
+    }
+  ]
+}

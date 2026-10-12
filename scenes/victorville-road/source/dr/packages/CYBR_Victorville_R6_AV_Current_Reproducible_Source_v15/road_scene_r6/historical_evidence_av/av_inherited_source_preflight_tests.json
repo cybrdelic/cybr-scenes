@@ -1,0 +1,16 @@
+{
+  "CPU_affinity": [
+    0
+  ],
+  "blender_launched": false,
+  "elapsed_seconds": 26.720135707000736,
+  "kernel_max_child_RSS_MiB": 40.26953125,
+  "packaged": false,
+  "passed_generations": [
+    "ak",
+    "al",
+    "ap",
+    "aq"
+  ],
+  "rendered": false
+}

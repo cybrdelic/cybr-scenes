@@ -1,0 +1,12 @@
+{
+  "files": {
+    "discrete_grains_r5/prototypes/microbed.npz": {
+      "bytes": 3913561,
+      "sha256": "7a09007d50e444c28231fd30cddda185d2f01146f3b1a47b014ebd25c0b415c4"
+    }
+  },
+  "optional_generator": "discrete_grains_r5/src/compacted_microbed.py is retained for separate explicit re-evaluation only.",
+  "policy": "Verify approved bytes before building; missing or changed inputs are fatal. Never regenerate automatically.",
+  "provenance": "Byte-identical approved R5D input retained from the S source checkpoint.",
+  "schema_version": 1
+}

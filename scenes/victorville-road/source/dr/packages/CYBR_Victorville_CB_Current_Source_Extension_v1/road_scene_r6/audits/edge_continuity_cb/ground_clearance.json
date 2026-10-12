@@ -1,0 +1,621 @@
+{
+  "segments": [
+    {
+      "y_bounds": [
+        -0.004001,
+        0.1
+      ],
+      "triangle_pairs_proven_by_vertex_range": 14906,
+      "exact_overlap_polygons": 0,
+      "minimum_proven_clearance_m": 0.0003941357135772705,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        0.1,
+        0.2
+      ],
+      "triangle_pairs_proven_by_vertex_range": 14911,
+      "exact_overlap_polygons": 0,
+      "minimum_proven_clearance_m": 0.00035163015127182007,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        0.2,
+        0.30000000000000004
+      ],
+      "triangle_pairs_proven_by_vertex_range": 16282,
+      "exact_overlap_polygons": 0,
+      "minimum_proven_clearance_m": 0.0003984719514846802,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        0.30000000000000004,
+        0.4
+      ],
+      "triangle_pairs_proven_by_vertex_range": 16543,
+      "exact_overlap_polygons": 0,
+      "minimum_proven_clearance_m": 0.004493549171973407,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        0.4,
+        0.5
+      ],
+      "triangle_pairs_proven_by_vertex_range": 16618,
+      "exact_overlap_polygons": 0,
+      "minimum_proven_clearance_m": 0.0003258064389228821,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        0.5,
+        0.6000000000000001
+      ],
+      "triangle_pairs_proven_by_vertex_range": 16387,
+      "exact_overlap_polygons": 0,
+      "minimum_proven_clearance_m": 0.00032211095094680786,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        0.6000000000000001,
+        0.7000000000000001
+      ],
+      "triangle_pairs_proven_by_vertex_range": 16507,
+      "exact_overlap_polygons": 0,
+      "minimum_proven_clearance_m": 0.0003267750144004822,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        0.7000000000000001,
+        0.8
+      ],
+      "triangle_pairs_proven_by_vertex_range": 16142,
+      "exact_overlap_polygons": 0,
+      "minimum_proven_clearance_m": 0.00033465027809143066,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        0.8,
+        0.9
+      ],
+      "triangle_pairs_proven_by_vertex_range": 15863,
+      "exact_overlap_polygons": 0,
+      "minimum_proven_clearance_m": 0.00029946863651275635,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        0.9,
+        1.0
+      ],
+      "triangle_pairs_proven_by_vertex_range": 15884,
+      "exact_overlap_polygons": 0,
+      "minimum_proven_clearance_m": 0.0003299340605735779,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        1.0,
+        1.1
+      ],
+      "triangle_pairs_proven_by_vertex_range": 14727,
+      "exact_overlap_polygons": 0,
+      "minimum_proven_clearance_m": 0.0003646165132522583,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        1.1,
+        1.2000000000000002
+      ],
+      "triangle_pairs_proven_by_vertex_range": 14248,
+      "exact_overlap_polygons": 0,
+      "minimum_proven_clearance_m": 0.00037641823291778564,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        1.2000000000000002,
+        1.3
+      ],
+      "triangle_pairs_proven_by_vertex_range": 13505,
+      "exact_overlap_polygons": 0,
+      "minimum_proven_clearance_m": 0.00035890936851501465,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        1.3,
+        1.4000000000000001
+      ],
+      "triangle_pairs_proven_by_vertex_range": 12899,
+      "exact_overlap_polygons": 0,
+      "minimum_proven_clearance_m": 0.0003449469804763794,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        1.4000000000000001,
+        1.5
+      ],
+      "triangle_pairs_proven_by_vertex_range": 12885,
+      "exact_overlap_polygons": 0,
+      "minimum_proven_clearance_m": 0.00032072514295578003,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        1.5,
+        1.6
+      ],
+      "triangle_pairs_proven_by_vertex_range": 13459,
+      "exact_overlap_polygons": 0,
+      "minimum_proven_clearance_m": 0.0003602355718612671,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        1.6,
+        1.7000000000000002
+      ],
+      "triangle_pairs_proven_by_vertex_range": 13080,
+      "exact_overlap_polygons": 0,
+      "minimum_proven_clearance_m": 0.00040862709283828735,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        1.7000000000000002,
+        1.8
+      ],
+      "triangle_pairs_proven_by_vertex_range": 13851,
+      "exact_overlap_polygons": 0,
+      "minimum_proven_clearance_m": 0.0003893449902534485,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        1.8,
+        1.9000000000000001
+      ],
+      "triangle_pairs_proven_by_vertex_range": 14029,
+      "exact_overlap_polygons": 0,
+      "minimum_proven_clearance_m": 0.0003880634903907776,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        1.9000000000000001,
+        2.0
+      ],
+      "triangle_pairs_proven_by_vertex_range": 14316,
+      "exact_overlap_polygons": 0,
+      "minimum_proven_clearance_m": 0.00018828362226486206,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        2.0,
+        2.1
+      ],
+      "triangle_pairs_proven_by_vertex_range": 3274,
+      "exact_overlap_polygons": 867,
+      "minimum_proven_clearance_m": 6.750226020812988e-06,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        2.1,
+        2.2
+      ],
+      "triangle_pairs_proven_by_vertex_range": 3159,
+      "exact_overlap_polygons": 1030,
+      "minimum_proven_clearance_m": 1.385807991027832e-06,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        2.2,
+        2.3000000000000003
+      ],
+      "triangle_pairs_proven_by_vertex_range": 3235,
+      "exact_overlap_polygons": 155,
+      "minimum_proven_clearance_m": 3.956258296966553e-06,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        2.3000000000000003,
+        2.4000000000000004
+      ],
+      "triangle_pairs_proven_by_vertex_range": 3064,
+      "exact_overlap_polygons": 640,
+      "minimum_proven_clearance_m": 1.989305019378662e-06,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        2.4000000000000004,
+        2.5
+      ],
+      "triangle_pairs_proven_by_vertex_range": 3356,
+      "exact_overlap_polygons": 148,
+      "minimum_proven_clearance_m": 1.5497207641601562e-06,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        2.5,
+        2.6
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2433,
+      "exact_overlap_polygons": 6,
+      "minimum_proven_clearance_m": 1.7881393432617188e-06,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        2.6,
+        2.7
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2170,
+      "exact_overlap_polygons": 5,
+      "minimum_proven_clearance_m": 3.822147846221924e-06,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        2.7,
+        2.8000000000000003
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2131,
+      "exact_overlap_polygons": 5,
+      "minimum_proven_clearance_m": 1.564621925354004e-06,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        2.8000000000000003,
+        2.9000000000000004
+      ],
+      "triangle_pairs_proven_by_vertex_range": 1969,
+      "exact_overlap_polygons": 81,
+      "minimum_proven_clearance_m": 2.4959444999694824e-06,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        2.9000000000000004,
+        3.0
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2291,
+      "exact_overlap_polygons": 0,
+      "minimum_proven_clearance_m": 2.1979212760925293e-06,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        3.0,
+        3.1
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2243,
+      "exact_overlap_polygons": 42,
+      "minimum_proven_clearance_m": 4.343688488006592e-06,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        3.1,
+        3.2
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2233,
+      "exact_overlap_polygons": 22,
+      "minimum_proven_clearance_m": 6.429851055145264e-06,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        3.2,
+        3.3000000000000003
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2203,
+      "exact_overlap_polygons": 20,
+      "minimum_proven_clearance_m": 5.535781383514404e-06,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        3.3000000000000003,
+        3.4000000000000004
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2726,
+      "exact_overlap_polygons": 85,
+      "minimum_proven_clearance_m": 1.1280179023742676e-05,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        3.4000000000000004,
+        3.5
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2584,
+      "exact_overlap_polygons": 107,
+      "minimum_proven_clearance_m": 7.37607479095459e-06,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        3.5,
+        3.6
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2795,
+      "exact_overlap_polygons": 0,
+      "minimum_proven_clearance_m": 1.043081283569336e-06,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        3.6,
+        3.7
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2822,
+      "exact_overlap_polygons": 0,
+      "minimum_proven_clearance_m": 0.0024600485118990573,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        3.7,
+        3.8000000000000003
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2515,
+      "exact_overlap_polygons": 34,
+      "minimum_proven_clearance_m": 5.289912223815918e-07,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        3.8000000000000003,
+        3.9000000000000004
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2767,
+      "exact_overlap_polygons": 14,
+      "minimum_proven_clearance_m": 1.0207295417785645e-06,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        3.9000000000000004,
+        4.0
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2440,
+      "exact_overlap_polygons": 108,
+      "minimum_proven_clearance_m": 7.897615432739258e-07,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        4.0,
+        4.1000000000000005
+      ],
+      "triangle_pairs_proven_by_vertex_range": 3308,
+      "exact_overlap_polygons": 85,
+      "minimum_proven_clearance_m": 2.9206275939941406e-06,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        4.1000000000000005,
+        4.2
+      ],
+      "triangle_pairs_proven_by_vertex_range": 3155,
+      "exact_overlap_polygons": 1060,
+      "minimum_proven_clearance_m": 1.1920928955078125e-07,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        4.2,
+        4.3
+      ],
+      "triangle_pairs_proven_by_vertex_range": 3247,
+      "exact_overlap_polygons": 1279,
+      "minimum_proven_clearance_m": 5.885958671569824e-07,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        4.3,
+        4.4
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2608,
+      "exact_overlap_polygons": 1181,
+      "minimum_proven_clearance_m": 3.3229589462280273e-06,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        4.4,
+        4.5
+      ],
+      "triangle_pairs_proven_by_vertex_range": 3121,
+      "exact_overlap_polygons": 1296,
+      "minimum_proven_clearance_m": 7.599592208862305e-07,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        4.5,
+        4.6000000000000005
+      ],
+      "triangle_pairs_proven_by_vertex_range": 3042,
+      "exact_overlap_polygons": 1101,
+      "minimum_proven_clearance_m": 2.4586915969848633e-07,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        4.6000000000000005,
+        4.7
+      ],
+      "triangle_pairs_proven_by_vertex_range": 3192,
+      "exact_overlap_polygons": 179,
+      "minimum_proven_clearance_m": 1.5422701835632324e-06,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        4.7,
+        4.800000000000001
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2418,
+      "exact_overlap_polygons": 5,
+      "minimum_proven_clearance_m": 1.455843448638916e-05,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        4.800000000000001,
+        4.9
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2347,
+      "exact_overlap_polygons": 24,
+      "minimum_proven_clearance_m": 1.780688762664795e-06,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        4.9,
+        5.0
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2297,
+      "exact_overlap_polygons": 18,
+      "minimum_proven_clearance_m": 1.2680888175964355e-05,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        5.0,
+        5.1000000000000005
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2720,
+      "exact_overlap_polygons": 0,
+      "minimum_proven_clearance_m": 1.5214085578918457e-05,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        5.1000000000000005,
+        5.2
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2353,
+      "exact_overlap_polygons": 59,
+      "minimum_proven_clearance_m": 5.21540641784668e-07,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        5.2,
+        5.300000000000001
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2258,
+      "exact_overlap_polygons": 42,
+      "minimum_proven_clearance_m": 8.642673492431641e-07,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        5.300000000000001,
+        5.4
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2313,
+      "exact_overlap_polygons": 22,
+      "minimum_proven_clearance_m": 2.1457672119140625e-06,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        5.4,
+        5.5
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2269,
+      "exact_overlap_polygons": 54,
+      "minimum_proven_clearance_m": 1.341104507446289e-06,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        5.5,
+        5.6000000000000005
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2468,
+      "exact_overlap_polygons": 23,
+      "minimum_proven_clearance_m": 7.766897507754944e-06,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        5.6000000000000005,
+        5.7
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2744,
+      "exact_overlap_polygons": 5,
+      "minimum_proven_clearance_m": 5.066394805908203e-06,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        5.7,
+        5.800000000000001
+      ],
+      "triangle_pairs_proven_by_vertex_range": 2630,
+      "exact_overlap_polygons": 6,
+      "minimum_proven_clearance_m": 3.37064266204834e-05,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        5.800000000000001,
+        5.9
+      ],
+      "triangle_pairs_proven_by_vertex_range": 3057,
+      "exact_overlap_polygons": 543,
+      "minimum_proven_clearance_m": 1.0785752718456276e-06,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        5.9,
+        6.0
+      ],
+      "triangle_pairs_proven_by_vertex_range": 3997,
+      "exact_overlap_polygons": 170,
+      "minimum_proven_clearance_m": 1.1160969734191895e-05,
+      "penetrating_overlap_polygons": 0
+    },
+    {
+      "y_bounds": [
+        6.0,
+        6.004001
+      ],
+      "triangle_pairs_proven_by_vertex_range": 75,
+      "exact_overlap_polygons": 0,
+      "minimum_proven_clearance_m": 0.00027723395987280797,
+      "penetrating_overlap_polygons": 0
+    }
+  ],
+  "penetrating_overlap_polygons": 0,
+  "minimum_proven_clearance_m": 1.1920928955078125e-07,
+  "elapsed_seconds": 23.979406347993063,
+  "method": "Each actual road/soil triangle pair passing XY bounds is either proven separated by its full vertex Z ranges, or tested at every exact XY overlap polygon vertex. No ground displacement or sampled-vertex-only clearance assertion.",
+  "soil_geometry_changed": false,
+  "physical_outer_rim_xyz_unchanged": true,
+  "scope": "Current road strip versus current ground surface only; excludes discrete particles and shader normals."
+}

@@ -1,0 +1,45 @@
+{
+  "source": "Verified COMMON_THROUGH_CM immutable cache",
+  "cache_sha256": "e7e0ac8a1bcc1a03872296f1c6dabc711040bc956163bdcdb76a807a938d27ca",
+  "post_CE_geometry_matches_payload_exactly": true,
+  "mesh": "Graded shoulder and alluvial plain -1 / resolved connected ",
+  "stats": {
+    "ap_fines": {
+      "min": 0.0,
+      "max": 0.8999999761581421,
+      "mean_vertex_not_area": 0.38855892419815063
+    },
+    "ap_coarse": {
+      "min": 0.0,
+      "max": 1.0,
+      "mean_vertex_not_area": 0.32486504316329956
+    },
+    "ak_historical_matrix": {
+      "min": 0.0,
+      "max": 1.0,
+      "mean_vertex_not_area": 0.1705649495124817
+    },
+    "ak_historical_compaction": {
+      "min": 0.0,
+      "max": 1.0,
+      "mean_vertex_not_area": 0.7257908582687378
+    },
+    "ai_fine_coat": {
+      "min": 0.0,
+      "max": 1.0,
+      "mean_vertex_not_area": 0.2470402717590332
+    },
+    "ai_coarse_lag": {
+      "min": 0.0,
+      "max": 0.9998763799667358,
+      "mean_vertex_not_area": 0.08936154842376709
+    },
+    "ce_surface_domain": {
+      "min": 0.0,
+      "max": 1.0,
+      "mean_vertex_not_area": 0.5121238231658936
+    }
+  },
+  "output_sha256": "1ca08b984edb665aa3731369eb1c554cf4b4dacce060eb86a4e28ffbe3000542",
+  "scope": "Export actual retained evaluated grading/fine/compaction fields; no scene or material changes"
+}

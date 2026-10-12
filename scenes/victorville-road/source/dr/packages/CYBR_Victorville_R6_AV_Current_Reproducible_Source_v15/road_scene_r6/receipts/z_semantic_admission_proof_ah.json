@@ -1,0 +1,20 @@
+{
+  "base_helper_sha256": "3d9dbd29990807a632632233343d32a2eef62676305404934716cf087b7b861b",
+  "complete_clean_rebuild_verified": false,
+  "different_serialized_bytes_qualified": false,
+  "elapsed_seconds": 41.08725304800464,
+  "geometry_mutation_rejected": true,
+  "helper_sha256": "193fb74be1acf7cdd5ff4ab60da0b78b7ed22034f33a0f78b6f804b507b85fa1",
+  "manifest_sha256": "1ae290ca919b23b6426845bb59bf208fe144de161a516e13fbfbd1ee5bcb947f",
+  "material_mutation_rejected": true,
+  "passed": true,
+  "rejections": {
+    "material_graph_default": "Rebuilt Y semantic source differs: graphs",
+    "road_geometry_1mm": "Rebuilt Y semantic source differs: mesh_corner_normals, meshes"
+  },
+  "rendered": false,
+  "scene_saved": false,
+  "semantic_sha256": "304f48487aaf336fb8678870903e5f947d6917e91343f692f0699c48ca128425",
+  "source_sha256": "29a2e1ca28867182554594981482e704ccbc97d9fb2806b48bc0c06f8375231a",
+  "unchanged_source_admitted": true
+}

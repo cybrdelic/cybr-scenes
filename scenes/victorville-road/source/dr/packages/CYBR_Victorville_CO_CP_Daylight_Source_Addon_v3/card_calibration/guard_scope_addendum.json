@@ -1,0 +1,5 @@
+{
+  "generic_guard_rendered_field": false,
+  "actual_operation": "Six actual64px Cycles128sample card renders; logs and exact EXRs retained. The generic pure-Python guard hardcodes rendered:false; it is not actual render evidence.",
+  "proof": "measurement.json and native Blender run.log"
+}

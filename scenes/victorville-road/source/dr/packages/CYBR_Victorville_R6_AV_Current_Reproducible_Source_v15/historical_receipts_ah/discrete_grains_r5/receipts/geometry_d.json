@@ -1,0 +1,33 @@
+{
+  "version": "R5D fractured mineral grains and compacted microbed",
+  "seed": 501809,
+  "extent_m": 0.18,
+  "frame_width_m": 0.105,
+  "representation": "separate bounded particle meshes and fines substrate",
+  "bands": [
+    [
+      "chips",
+      297,
+      0.0016,
+      0.0058
+    ],
+    [
+      "grit",
+      8859,
+      0.0006,
+      0.0019
+    ],
+    [
+      "sand",
+      64577,
+      0.00016,
+      0.00064
+    ]
+  ],
+  "particle_count": 73733,
+  "particle_vertices": 1767228,
+  "particle_triangles": 3239524,
+  "occupied_conservative_mask_fraction": 0.35925725,
+  "note": "One diagnostic only. No road context rebuilt. No site reconstruction claim.",
+  "build_seconds": 49.77365684509277
+}
