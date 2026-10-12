@@ -54,6 +54,13 @@ jobs:
         # Stage 1 has its own 900-second, sampled 4,480 MiB RSS and disk guard.
         # No coastal archives, later stages, or full renders run in this job.
         run: ./run.sh build 1 1
+      - name: Verify decoded diagnostic controls
+        run: python tools/test_base_semantics.py
+      - name: Record strict decoded geometry and texture comparison
+        run: |
+          python tools/inspect_base_semantics.py \
+            --baseline proof/BASE_DECODED_SEMANTICS.json \
+            --report evidence/whole-iv-recovery-stages/CI_DECODED_SEMANTICS.json
       - name: Check generated geography and geometry counts
         run: |
           python - <<'PY'
