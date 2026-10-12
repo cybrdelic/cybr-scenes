@@ -155,3 +155,7 @@ mapped width while reducing the foreground walk crossfall and reconciling its
 closed edges. See [SABADO_PROFILE.md](SABADO_PROFILE.md) for the bounded source
 replay, numerical proof and explicit limits. It is separate from the original
 coverage-recovery views above.
+
+## Reusable facade construction v2
+
+See [FACADE_V2.md](FACADE_V2.md) for the separate whole-stock construction candidate, source/estimate limits, replay commands, and actual matched native view. The original baseline remains the default.

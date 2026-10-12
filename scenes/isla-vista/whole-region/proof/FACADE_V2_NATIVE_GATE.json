@@ -1,0 +1,255 @@
+{
+  "scope": "Full local986-building generic facade rebuild and native matched Sabado view over existing verified whole-region input closure. No fresh64-stage extracted-source replay claimed for this patch.",
+  "base_scenes_commit": "a35854861cf17c64cc74084c5860cb6342ade5bd",
+  "serialized_verification": {
+    "passed": true,
+    "target_sha256": "ed2d54b442d617197e2c56589b6ddba4b0e552bed9178ff6ead6036e9feccab0",
+    "source_buildings_exact": true,
+    "source_floor_counts_exact": true,
+    "replaced_source_wall_components_exact": true,
+    "source_building_count": 986,
+    "maximum_serialized_wall_outside_source_plan_m": 3.3551596260543006e-05,
+    "maximum_serialized_component_projection_outside_source_plan_m": 0.08003082663885708,
+    "maximum_height_excess_above_serialized_source_roof_m": 0.0,
+    "triangles": 3720462,
+    "unique_objects": 4429,
+    "minimum_serialized_triangle_area_m2": 0.00012939708060645858,
+    "maximum_saved_vs_recomputed_normal_vector_error": 4.1950244825435824e-08,
+    "finite_positions_normals_uv_colors": true,
+    "nondegenerate_uvs": true,
+    "native_material_range": [
+      57,
+      71
+    ],
+    "source_receipt_sha256": "303a1b7aa37c230c3fe6fa1a92fafbcb6d5f291cd8cebed31cf164b80bb6050f",
+    "limits": "Checks identity, serialized topology/attributes and numerical health. Closed member and opposed reveal normals are independently checked in test_iv_facade_assemblies.py; the whole building mesh is not a watertight interior solid."
+  },
+  "authored_geometry_contract": {
+    "mapped_wall_footprints_and_eave_heights": "unchanged",
+    "roof_boundary_basis": "serialized original roof triangles, unchanged slope and upper height; no new roof type",
+    "maximum_authored_roof_edge_projection_m": 0.042,
+    "maximum_authored_window_sill_projection_m": 0.08,
+    "party_wall_rule": "each full proposed opening span at80mm exterior is tested against other sourced footprints within300mm; geographic mapping quality limits this heuristic",
+    "normal_export": "coordinates quantized to float32 before computing face normals",
+    "reveals": "opposed correct winding, 0.16 to 0.21 m",
+    "glazing": "behind closed frame members, separate dark backing",
+    "curtains": "bounded estimated side panels, 0.075 m fold pitch and0.012 m depth",
+    "materials": "byte-identical retained fields and slots, no extra grain or photographic textures"
+  },
+  "counts": {
+    "buildings": 986,
+    "opening_assemblies": 32164,
+    "roof_edge_segments": 7112,
+    "near_abutting_bays_without_openings": 1520
+  },
+  "native": {
+    "width": 600,
+    "height": 420,
+    "packets_per_pixel": 32,
+    "primitives": 11753129,
+    "render_seconds": 117.992985719,
+    "invalid_path_samples": 0,
+    "engine_source_sha256": "3d18ea79f2a34a48b21d75aaf7515f123c6b752614a80c29eaec6431e0430a9f",
+    "image_generation_used": false
+  },
+  "scene_contract": {
+    "source_baseline_scene_sha256": "c2d5e47b9be0a57d8e6fee7934de3d75b1fa4d4cf7afadcb128f1f2246e05d43",
+    "new_mesh_sha256": "ed2d54b442d617197e2c56589b6ddba4b0e552bed9178ff6ead6036e9feccab0",
+    "material_camera_lighting_and_dedicated_meshes_unchanged": true,
+    "dedicated_sources_exactly_excluded": true,
+    "excluded_generic_sources_for_dedicated_components": [
+      "osm:way:42753151",
+      "osm:way:42753162",
+      "osm:way:42753168",
+      "osm:way:42753169",
+      "osm:way:42753856",
+      "osm:way:42753857",
+      "osm:way:42753859"
+    ],
+    "active_mesh_inventory": [
+      {
+        "path": "evidence/full-iv-roofs/sector.clm",
+        "excluded_objects": 4126,
+        "sha256": "670464a83a954c31783eea02641bacbb627e4e86659afa35a1ddee0e6a8b44a3"
+      },
+      {
+        "path": "evidence/full-iv-house-component/house.clm",
+        "excluded_objects": 0,
+        "sha256": "98df77efa13595801325e55ae294b1bb62515031d86e5de33311a2b4a84715fa"
+      },
+      {
+        "path": "evidence/full-iv-botanical-dense/botanical.clm",
+        "excluded_objects": 189,
+        "sha256": "6a831f28bc47f29d086343505727cc71607d9bf52252c11145039ce2905d4d48"
+      },
+      {
+        "path": "evidence/full-iv-pardall/pardall.clm",
+        "excluded_objects": 0,
+        "sha256": "a74ac6d0362eb133cceafa90f5e2d56a1e4ef33612935fed73286d30de37bd56"
+      },
+      {
+        "path": "evidence/sabado-profile-closed-v2/contact.clm",
+        "excluded_objects": 0,
+        "sha256": "143b1350eb1d4358b07d762f0cf171d7edcc318e44eb84c37d6b6997dc96f0de"
+      },
+      {
+        "path": "evidence/full-iv-facades-v2/facades.clm",
+        "excluded_objects": 30,
+        "sha256": "ed2d54b442d617197e2c56589b6ddba4b0e552bed9178ff6ead6036e9feccab0"
+      },
+      {
+        "path": "evidence/full-iv-del-playa-finish-v2/architecture.clm",
+        "excluded_objects": 0,
+        "sha256": "2aaa6a593ac317721062782da8e975aef5da8433b4269adba4f43e56fba86da0"
+      },
+      {
+        "path": "evidence/full-iv-sabado-frontages/architecture.clm",
+        "excluded_objects": 0,
+        "sha256": "c9f616164f05afdbe4635719dd982ef83de2e940a9aff20880ef8d4b550ebd53"
+      },
+      {
+        "path": "evidence/full-iv-del-playa-walks/walks.clm",
+        "excluded_objects": 0,
+        "sha256": "a42196ae3b1b0f4c3f8fd2f05307cb1bd80f0550dbcbbbc49dedad63db2401fc"
+      },
+      {
+        "path": "evidence/full-iv-sabado-street-trees/vegetation.clm",
+        "excluded_objects": 0,
+        "sha256": "b05006c4cc496e187c22b7dc0752b9691c5d6f688f2e2d324ea1a75fd6193026"
+      }
+    ]
+  },
+  "image": {
+    "path": "images/sabado_facades_v2_600_32.png",
+    "sha256": "24ec0402daa361b583cc2bcd9d56442b49fed965d44c6032a61e22d46df61787"
+  },
+  "guards": {
+    "build": {
+      "exit_code": 0,
+      "stop_reason": null,
+      "elapsed_seconds": 200.56,
+      "peak_sampled_aggregate_rss_mib": 487.24,
+      "cap_mib": 4480.0,
+      "min_free_disk_gib": 5.285,
+      "disk_reserve_gib": 1,
+      "sample_seconds": 0.25,
+      "passed": true,
+      "scope": "Owned process tree; sampled user-space RSS guard, not kernel hard cap"
+    },
+    "serialized": {
+      "exit_code": 0,
+      "stop_reason": null,
+      "elapsed_seconds": 21.12,
+      "peak_sampled_aggregate_rss_mib": 542.84,
+      "cap_mib": 4480.0,
+      "min_free_disk_gib": 5.246,
+      "disk_reserve_gib": 1,
+      "sample_seconds": 0.25,
+      "passed": true,
+      "scope": "Owned process tree; sampled user-space RSS guard, not kernel hard cap"
+    },
+    "native": {
+      "exit_code": 0,
+      "stop_reason": null,
+      "elapsed_seconds": 208.58,
+      "peak_sampled_aggregate_rss_mib": 2989.98,
+      "cap_mib": 4480.0,
+      "min_free_disk_gib": 5.144,
+      "disk_reserve_gib": 1,
+      "sample_seconds": 0.25,
+      "passed": true,
+      "scope": "Owned process tree; sampled user-space RSS guard, not kernel hard cap"
+    }
+  },
+  "visual_review": "Actual pixels inspected. White/dark closed window construction and changed generic frontage rhythm are visible but modest at600px; large bare foreground, paving finish and repeated overall massing remain. Not a broad photoreal leap.",
+  "close_native": {
+    "image": "images/generic_6538_v2_700_32.png",
+    "image_sha256": "ecba38a1e92e281e5eb5fd1f9243cc9ee1e89a160c2fd84f5e7942a694588dea",
+    "camera_contract": {
+      "purpose": "Actual native close street view of an active generic building; facade detail is illustrative, not a surveyed reconstruction",
+      "source_id": "osm:way:42753147",
+      "source_address": "6538 Sabado Tarde Road",
+      "source_url": "https://www.openstreetmap.org/way/42753147",
+      "source_floor_count": 2,
+      "source_frontage_road": "osm:way:16262054",
+      "source_frontage_road_name": "Sabado Tarde Road",
+      "estimated_camera_origin_m": [
+        530.5363854743784,
+        -297.9253892251982,
+        14.622686340786366
+      ],
+      "estimated_camera_target_m": [
+        527.329926502629,
+        -287.82743790512905,
+        16.463033654244704
+      ],
+      "camera_rule": "Front-edge midpoint plus10m outward and3.5m along edge; eye1.70m above retained ground;48degree vertical field of view",
+      "camera_outside_mapped_buildings": true,
+      "variant": "v2",
+      "family": {
+        "name": "paired_slider",
+        "width": 1.55,
+        "height": 1.24,
+        "sill": 0.95,
+        "pitch": 3.05,
+        "reveal": 0.18,
+        "panes": 2,
+        "light_frame": true,
+        "basis": "Deterministic authored family informed by local reference proportions; not an observation of this building."
+      },
+      "scope": "Same light/material/dedicated meshes as matched Sabado. Only camera and700x490 film change from its selected original/v2 geometry variant. Source ID/address anchor the footprint only; window layout and finish remain authored estimates.",
+      "baseline_scene_sha256": "86128d594ab344f45c014af400ad2c9c9277a147e6734cd582804d8a5262f5fc",
+      "normal_serialization_gate": "ed2d54b442d617197e2c56589b6ddba4b0e552bed9178ff6ead6036e9feccab0"
+    },
+    "native": {
+      "width": 700,
+      "height": 490,
+      "packets_per_pixel": 32,
+      "primitives": 11753129,
+      "render_seconds": 256.814305138,
+      "invalid_path_samples": 0,
+      "engine_source_sha256": "3d18ea79f2a34a48b21d75aaf7515f123c6b752614a80c29eaec6431e0430a9f",
+      "clamping_used": false,
+      "image_generation_used": false
+    },
+    "guard": {
+      "exit_code": 0,
+      "stop_reason": null,
+      "elapsed_seconds": 334.1,
+      "peak_sampled_aggregate_rss_mib": 3178.0,
+      "cap_mib": 4480.0,
+      "min_free_disk_gib": 5.061,
+      "disk_reserve_gib": 1,
+      "sample_seconds": 0.25,
+      "passed": true,
+      "scope": "Owned process tree; sampled user-space RSS guard, not kernel hard cap"
+    },
+    "review": "Actual pixels inspected: reveals, projecting sills, volumetric members and roof-edge thickness are visible. Window/entry arrangement remains generic; not a photographic reconstruction of this address. Two isolated high-variance samples remain visible; raw film and uncertainty buffers preserved.",
+    "high_variance_samples": [
+      {
+        "pixel_xy": [
+          507,
+          225
+        ],
+        "linear_rgb": [
+          63.8803,
+          52.9398,
+          46.8451
+        ],
+        "luminance_stderr": 54.5544
+      },
+      {
+        "pixel_xy": [
+          613,
+          439
+        ],
+        "linear_rgb": [
+          273.457,
+          231.9508,
+          88.1518
+        ],
+        "luminance_stderr": 230.2274
+      }
+    ]
+  }
+}
