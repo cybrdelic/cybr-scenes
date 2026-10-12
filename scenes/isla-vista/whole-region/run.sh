@@ -10,6 +10,10 @@ if [[ "$action" == setup ]]; then
   exit
 fi
 PY="${CYBR_PYTHON:-$ROOT/.venv/bin/python}"
+# Pin CPU arithmetic before the first NumPy import, including direct build runs.
+export OPENBLAS_CORETYPE=Haswell
+export NPY_DISABLE_CPU_FEATURES=AVX512F,AVX512CD,AVX512_KNL,AVX512_KNM,AVX512_SKX,AVX512_CLX,AVX512_CNL,AVX512_ICL,AVX512_SPR
+"$PY" tools/check_replay_cpu_profile.py evidence/whole-iv-recovery-stages/CPU_PROFILE.json
 export CYBR_LIGHT_CACHE="$ROOT/native-cache"
 export OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 MKL_NUM_THREADS=2 NUMBA_NUM_THREADS=2
 export CYBR_HEAVY_LOCK="${CYBR_HEAVY_LOCK:-$ROOT/../cybr-heavy.lock}"

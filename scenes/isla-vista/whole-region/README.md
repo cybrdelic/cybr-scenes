@@ -14,8 +14,8 @@ distinguishable from estimated façades, dimensions, species forms and optics.
 
 ## Reproduction
 
-Use Linux, Python 3.12, a C++17 compiler, and sufficient disk space for the
-generated scene. No private Library item or GitHub credential is needed.
+Use Linux x86-64 with AVX2 and FMA, Python 3.12, a C++17 compiler, and
+sufficient disk space for the generated scene. No private Library item or GitHub credential is needed.
 
 ```sh
 ./run.sh setup
@@ -47,6 +47,36 @@ Ten required GEO/TERRAIN files are fetched from public commit
 bytes. MATERIAL construction is fetched from public commit
 `12848c82f60bc58fa88640545868009b90298b32`. No alternate soil/asphalt recipe
 is introduced. Scene-specific optical adaptations remain explicit estimates.
+
+## Exact CPU-dispatch profile
+
+`run.sh` sets `OPENBLAS_CORETYPE=Haswell` and disables all NumPy AVX512
+kernels before Python imports NumPy. `tools/check_replay_cpu_profile.py`
+checks Linux x86-64, hardware AVX2/FMA, active NumPy dispatch and the actual
+bundled OpenBLAS core. It fails clearly on unsupported hosts. This is an
+explicit supported replay profile, not a claim of bitwise identity on ARM
+or every processor/library build. The direct multi-stage build inherits it.
+
+The original unpinned AVX512/SkylakeX baseline remains unchanged in
+`proof/FRESH_PUBLIC_BASE_REPLAY.json` and `proof/BASE_DECODED_SEMANTICS.json`.
+The profile-specific exact baseline is `proof/BASE_AVX2_DECODED_SEMANTICS.json`.
+CI checks both raw bytes and every decoded accessor/image/binding against
+the latter; no numerical tolerance has replaced these checks.
+
+`proof/QUALIFIED_AVX2_REPLAY_COMPARISON.json` records why this profile was
+introduced. An independent bounded rebuild reproduced the formerly failing
+CI GLB byte-for-byte. Only four near-zero terrain coordinates (at most
+4.46e-14 m), four UV values (3.57e-14), 385 near-zero bark normal components
+(5.94e-17) and six 8-bit albedo channel values (one level each) differ from
+the original dispatch. Six roof triangles are reordered/cyclically rotated
+within five tagged-roof parts: winding-preserving per-corner geometry, UV,
+normal and color payloads are exactly equal. Part layout, IDs, bindings,
+all remaining decoded values and terrain state remain exact. No geographic
+source, authored physical parameter or export precision was changed.
+
+The full 64-stage chain has not been freshly rerun under this new profile;
+its fresh CI qualification is stage 1. Earlier coverage renders retain
+their original runtime/dispatch provenance.
 
 ## Inputs and access limits
 

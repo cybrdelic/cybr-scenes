@@ -32,6 +32,8 @@ jobs:
       CYBR_PYTHON: python
       # Every bounded build stage in this job uses this same explicit lock.
       CYBR_HEAVY_LOCK: /tmp/cybr-heavy.lock
+      OPENBLAS_CORETYPE: Haswell
+      NPY_DISABLE_CPU_FEATURES: AVX512F,AVX512CD,AVX512_KNL,AVX512_KNM,AVX512_SKX,AVX512_CLX,AVX512_CNL,AVX512_ICL,AVX512_SPR
       OMP_NUM_THREADS: "2"
       OPENBLAS_NUM_THREADS: "2"
       MKL_NUM_THREADS: "2"
@@ -59,7 +61,7 @@ jobs:
       - name: Record strict decoded geometry and texture comparison
         run: |
           python tools/inspect_base_semantics.py \
-            --baseline proof/BASE_DECODED_SEMANTICS.json \
+            --baseline proof/BASE_AVX2_DECODED_SEMANTICS.json \
             --report evidence/whole-iv-recovery-stages/CI_DECODED_SEMANTICS.json
       - name: Check generated geography and geometry counts
         run: |
@@ -110,21 +112,21 @@ jobs:
           assert geometry["image_generation_used"] is False
           assert guard["passed"] is True and guard["exit_code"] == 0 and guard["stop_reason"] is None
 
-          # Qualified against the independent fresh public-source base replay.
+          # Exact explicit AVX2/Haswell replay profile; the original native baseline is retained separately.
           hashes = {}
           for name in ("sector.glb", "measured-terrain-state.npz"):
               path = output / name
               assert path.stat().st_size > 0, path
               with path.open("rb") as stream:
                   hashes[name] = hashlib.file_digest(stream, "sha256").hexdigest()
-          baseline = read(root / "proof/FRESH_PUBLIC_BASE_REPLAY.json")
+          baseline = read(root / "proof/BASE_AVX2_DECODED_SEMANTICS.json")
           for name, actual in hashes.items():
-              assert actual == baseline["files"][name]["fresh_public_sha256"], (name, actual)
+              assert actual == baseline[name]["raw_sha256"], (name, actual)
           summary = {
               "passed": True, "stage": "01_roofs", "counts": expected_counts,
               "building_sources": dict(sources), "geometry": actual_geometry,
               "observed_output_sha256": hashes,
-              "hash_qualification": "Byte-identical to the independently rebuilt public-source geometry baseline.",
+              "hash_qualification": "Byte-identical to the independently qualified Linux x86-64 AVX2/Haswell base replay. Original unpinned baseline retained separately.",
               "scope": "Pinned public fetch, tiny path-chart test, and base geography rebuild. No coastal download or render.",
           }
           (root / "evidence/whole-iv-recovery-stages/CI_SOURCE_REPLAY.json").write_text(json.dumps(summary, indent=2) + "\n")
