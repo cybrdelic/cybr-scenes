@@ -1,0 +1,15 @@
+{
+  "repository": "cybrdelic/cybr-material",
+  "profile": "victorville_du5_optical_matrix",
+  "files": [
+    {
+      "path": "source/granular_matrix.py",
+      "sha256": "5692875e575392cfd404fb438392e669938f83a946e45120ed8089a1dd94acbe"
+    },
+    {
+      "path": "source/granular_matrix_profiles.json",
+      "sha256": "cf534cc2119f697a05ec6fa8ec1f111004f3e876e1c42e3d0720a65a2324ac54"
+    }
+  ],
+  "commit": "85af551411994757395d6a490d8ae649cb25412e"
+}

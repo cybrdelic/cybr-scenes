@@ -1,0 +1,92 @@
+{
+  "revision": "DU5",
+  "review_status": "Useful material improvement reviewed in native crop and full normal context. Not photoreal completion.",
+  "retained_selected_DR_unchanged": true,
+  "normal_context": {
+    "image_size": [
+      2000,
+      1334
+    ],
+    "render_sha256": "ab6f64d9df3a6ecaa6b6c78420738d678a9584d97a3c7c3713742183782d6b74",
+    "engine": "Blender 4.3.2 Cycles CPU",
+    "samples": 32,
+    "stage_elapsed_seconds": 692.3235230720002,
+    "sampled_process_tree_peak_MiB": 4008.4921875,
+    "cap_MiB": 4480,
+    "guard_passed": true,
+    "same_source_camera_lights_world": true
+  },
+  "crop_matches_normal": {
+    "crop_RGB_exact": true,
+    "max_difference": 0,
+    "mean_difference": 0.0,
+    "fraction_identical_pixels": 1.0
+  },
+  "body_banks_between_crop_and_normal": {
+    "rows": [
+      {
+        "bank": "DU_BODY_1.npz",
+        "count": 24429,
+        "final_XYZ_exact_between_crop_and_normal": true
+      },
+      {
+        "bank": "DU_BODY_2.npz",
+        "count": 135000,
+        "final_XYZ_exact_between_crop_and_normal": true
+      },
+      {
+        "bank": "DU_BODY_3.npz",
+        "count": 85000,
+        "final_XYZ_exact_between_crop_and_normal": true
+      },
+      {
+        "bank": "DU_BODY_4.npz",
+        "count": 5939,
+        "final_XYZ_exact_between_crop_and_normal": true
+      },
+      {
+        "bank": "DU_BODY_5.npz",
+        "count": 11829,
+        "final_XYZ_exact_between_crop_and_normal": true
+      }
+    ],
+    "all_body_XYZ_exact": true,
+    "different_camera_render_scope_only": true
+  },
+  "fine_cap_bulk_m3": {
+    "before": 0.191813450899239,
+    "after": 0.1918134508992374,
+    "residual": -1.6544269204126474e-14
+  },
+  "material_dependency": {
+    "repository": "cybrdelic/cybr-material",
+    "profile": "victorville_du5_optical_matrix",
+    "files": [
+      {
+        "path": "source/granular_matrix.py",
+        "sha256": "5692875e575392cfd404fb438392e669938f83a946e45120ed8089a1dd94acbe"
+      },
+      {
+        "path": "source/granular_matrix_profiles.json",
+        "sha256": "cf534cc2119f697a05ec6fa8ec1f111004f3e876e1c42e3d0720a65a2324ac54"
+      }
+    ]
+  },
+  "source_contract_tests": {
+    "MATERIAL": 3,
+    "SCENES": 4,
+    "passed": true
+  },
+  "geometry_limits": [
+    "Straight foreground trunk and repetitive sparse leaves still look synthetic.",
+    "Large foreground clast still reads as a cut polyhedron.",
+    "Neither burial nor altered lighting is evidence that these geometry issues are solved."
+  ],
+  "not_claimed": [
+    "Photoreal completion",
+    "Measured soil BRDF",
+    "Validated sediment transport",
+    "Complete packed-grain contact",
+    "Separate 24 mm wider-lens validation"
+  ]
+}
