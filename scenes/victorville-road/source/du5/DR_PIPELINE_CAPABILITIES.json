@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "renderer_sources": {
+    "cdcde46a16a9c4382bc654d3d10ee74de7968860da516b2ba700937acb5290d6": {
+      "native_border_version": 1,
+      "label": "Published Victorville DR original renderer with admitted native border"
+    },
+    "6343708319c0283616fe70cf14235b17fcd0660255023b525ccd55cf8ffd7379": {
+      "native_border_version": 1,
+      "label": "Published Victorville DR original renderer with admitted native border"
+    }
+  },
+  "policy": "Exact admitted source hash plus AST handler-count agreement. Unknown or ambiguous renderer layouts fail before preparation."
+}

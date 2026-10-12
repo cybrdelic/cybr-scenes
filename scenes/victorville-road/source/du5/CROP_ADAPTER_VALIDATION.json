@@ -1,0 +1,57 @@
+{
+  "normal_path": {
+    "old_native_border_handlers": 2,
+    "fixed_native_border_handlers": 1,
+    "normal_path_outside_border_blocks_byte_exact": true,
+    "unsupported_renderer_sources_fail_closed": true,
+    "capability_detection": "Exact source SHA256 registry plus AST native-handler count",
+    "new_runtime_source_sha256": "9dc67bfb0124064b9da3d3365e38100be55b83018f53a376f3e051158eee2ebd"
+  },
+  "native_fixture": {
+    "renderer": "Blender 4.3.2 Cycles CPU",
+    "samples": 16,
+    "actual_admitted_handler_AST_executed": true,
+    "old_vs_fixed_normal_RGB_exact": true,
+    "fixed_native_crop_vs_full_RGB_exact": true,
+    "crop_edges_bottom_origin": [
+      8,
+      41,
+      7,
+      34
+    ],
+    "images": {
+      "old_normal": {
+        "size": [
+          64,
+          48
+        ],
+        "png_sha256": "0da321accbd8688e64e5a7c918847ed0f43091c8d50a498c5388499721ca55d3"
+      },
+      "fixed_normal": {
+        "size": [
+          64,
+          48
+        ],
+        "png_sha256": "d0fec0b3ccd263b3e272e0ca2ae9d68c62c0178533a1762dc050cd1fa9f704f1"
+      },
+      "fixed_crop": {
+        "size": [
+          33,
+          27
+        ],
+        "png_sha256": "be511d61594d47c439f531f43a645a7291a0806337fcbedd768e0d7261fe18c6"
+      }
+    },
+    "scope": "Tiny native-border regression; full normal DU5 render remains separately qualified."
+  },
+  "source_contract_tests": {
+    "tests": 5,
+    "passed": true,
+    "capability_subcases": [
+      "known native absent",
+      "known native v1",
+      "unknown source rejected",
+      "ambiguous handler count rejected"
+    ]
+  }
+}

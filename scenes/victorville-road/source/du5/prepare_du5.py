@@ -2,7 +2,7 @@
 Requires already prepared/admitted DR and the explicit CYBR MATERIAL checkout.
 """
 from pathlib import Path
-import argparse,hashlib,json,shutil
+import argparse,hashlib,json,shutil,ast
 R=Path(__file__).resolve().parent
 p=argparse.ArgumentParser();p.add_argument('--dr-root',type=Path,default=R.parent/'dr');p.add_argument('--material-root',required=True,type=Path);p.add_argument('--output-root',required=True,type=Path);p.add_argument('--view',choices=['normal','crop','wide'],default='normal');args=p.parse_args()
 D=args.dr_root.resolve();M=args.material_root.resolve();O=args.output_root.resolve();assert not O.exists(),'Use a fresh output directory'
@@ -17,8 +17,14 @@ for name in modules:shutil.copy2(R/name,runtime/'src'/name)
 for row in pins['files']:shutil.copy2(M/row['path'],runtime/'src'/Path(row['path']).name)
 # Only the copied runtime receives the additive adapters. Original recipes,
 # source bytes, baseline preparation and its selected outputs remain untouched.
+capabilities=json.loads((R/'DR_PIPELINE_CAPABILITIES.json').read_text());assert capabilities['schema_version']==1
 for name in ['render.py','render_landform_candidate.py']:
- path=runtime/'pipeline'/name;s=path.read_text();key='  pipeline=pipeline_snapshot(extra_sources)';assert s.count(key)==1
+ path=runtime/'pipeline'/name;s=path.read_text();renderer_sha=sha(path)
+ assert renderer_sha in capabilities['renderer_sources'], 'Unsupported DR renderer source capability: '+renderer_sha
+ capability=capabilities['renderer_sources'][renderer_sha];border_version=capability['native_border_version'];assert border_version in (0,1)
+ native_handlers=[n for n in ast.walk(ast.parse(s)) if isinstance(n,ast.If) and isinstance(n.test,ast.Compare) and isinstance(n.test.left,ast.Constant) and n.test.left.value=='render_border' and len(n.test.ops)==1 and isinstance(n.test.ops[0],ast.In) and len(n.test.comparators)==1 and isinstance(n.test.comparators[0],ast.Name) and n.test.comparators[0].id=='job']
+ assert len(native_handlers)==border_version, 'Ambiguous or inconsistent native-border capability'
+ key='  pipeline=pipeline_snapshot(extra_sources)';assert s.count(key)==1
  s=s.replace(key,"  if job.get('du_connected_interspaces'):\n   for name in "+repr(tuple(modules+['granular_matrix.py','granular_matrix_profiles.json']))+":extra_sources[name]=pathlib.Path(__file__).resolve().parent.parent/'src'/name\n"+key)
  key=" if job.get('daylight_model_co'):\n  from daylight_model_co import apply as apply_daylight_model_co";assert s.count(key)==1
  s=s.replace(key," if job.get('du_connected_interspaces'):\n  from apply_du import material as du_material\n  report=du_material(s,job['du_connected_interspaces'],pathlib.Path(job['output']).parent);adaptations.append({'DU_material':report})\n"+key)
@@ -35,7 +41,9 @@ for name in ['render.py','render_landform_candidate.py']:
   border_capture={'full_projection_resolution':projection_resolution,'normalized_bounds':[xmin,xmax,ymin,ymax],'native_pixel_bounds_xy':pixels,'output_resolution':[width,height],'camera_geometry_material_scale_changed':False}
   adaptations.append({'native_render_border':border_capture})
 '''
- s=s.replace(key,border+key)
+ # Preserve the exact admitted versioned native adapter, or install version1
+ # only for a registry-admitted renderer explicitly declaring no native handler.
+ if border_version==0:s=s.replace(key,border+key)
  key=" report['pipeline']=pipeline;";assert s.count(key)==1;s=s.replace(key," report['projection_resolution']=projection_resolution;report['render_border']=border_capture\n"+key);path.write_text(s)
 hook=D/'stable_grains_dq/after_da_hook.py';bridge=f'''from pathlib import Path
 import importlib.util,hashlib
