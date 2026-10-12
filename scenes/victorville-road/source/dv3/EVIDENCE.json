@@ -1,0 +1,167 @@
+{
+  "qualification": "Matched actual road crop reviewed as a useful plant-form improvement; not photoreal completion.",
+  "render": {
+    "renderer": "Blender 4.3.2 Cycles CPU",
+    "full_camera_pixels": [
+      2000,
+      1334
+    ],
+    "native_crop_pixels": [
+      850,
+      780
+    ],
+    "native_crop_rect_top_left": [
+      450,
+      520,
+      1300,
+      1300
+    ],
+    "samples": 32,
+    "denoised": false,
+    "resized": false,
+    "graded": false,
+    "raw_png_sha256": "a348c1936dd9a8f639b4f7ff7992454ff915eaa5e6d7c31d46d4d3e3a7b1d15b",
+    "elapsed_seconds": 445.34901666299993,
+    "sampled_process_tree_peak_MiB": 4111.48046875,
+    "cap_MiB": 4480,
+    "passed": true
+  },
+  "morphology": {
+    "leaf_budget": 1481,
+    "root_crowns": 3,
+    "major_axes": 7,
+    "attached_axes": 593,
+    "maximum_order": 4,
+    "branch_attachment_max_error_m": 6.188917057900187e-08,
+    "fused_wood_closed_two_manifold": true,
+    "fused_wood_components": 2,
+    "every_coarse_component_reaches_basal_datum": true,
+    "authored_basal_caps_checked": 3,
+    "coarse_wood_union_voxel_m": 0.0006,
+    "fused_coarse_vertices": 175136,
+    "fused_coarse_polygons": 175132,
+    "geometry_candidate": "DV2 low connected forks, fused coarse wood and curved laminae",
+    "leaf_budget_unchanged": true,
+    "metric_bark_max_nominal_depth_m": 0.00055,
+    "placement_authority_unchanged": true,
+    "limits": "Authored scene morphology, not measured botany or growth mechanics. Coarse wood is voxel-fused; fine branch tubes retain overlapping axis attachments."
+  },
+  "target_instance_count": 12,
+  "basal_contact": {
+    "authored_caps_per_instance": 3,
+    "cap_instance_witnesses": 36,
+    "total_actual_surface_samples": 60504,
+    "minimum_clearance_m": -0.06857043397156679,
+    "maximum_clearance_m": -0.02461577347165944,
+    "all_caps_below_current_substrate": true,
+    "placement_changed": false,
+    "limits": "These are existing DU5 placements and burial. No new burial or terrain change was introduced. Sampled cap support is not a complete grain/root collision proof."
+  },
+  "protected_mesh_coordinate_hashes": {
+    "Graded shoulder and alluvial plain -1": "5a3ea08463fb44b4a3e8aa2c5f093d6aa50195e10330ec99503675123fa7a8e4",
+    "Graded shoulder and alluvial plain 1": "d038bf323ab9370bdcb1ffde27b95b78fe2e8c3b01f5c5f899a140d60c1a9361",
+    "True approved R5D near-camera grain geometry": "6c40d7aadf94afbb39fd8e9c57c807df81733695d716b7afaa5f88787270526c",
+    "U approved R5D density / projected chip and grit supplement": "239cbd8ee125679af92b062ff71d71929aa95f2528d950ede125113af8ae2844",
+    "CZ current-view original sand instances": "8950b7302b2320d927eefc09f3b2fac49c895bfa44536570db54ec9754cf2337",
+    "AP graded margin / exact metric lag instances": "7f62f3b11ca474745cca703991c5b68b212aefa8cc1e1dad5d999c920adcb27b",
+    "CG finite 18\u201360 mm historical gravel pockets": "b71ef793d9eb7ca89eb3ca50d50ed235957d2248ed0c84d6c334f48eb6461147"
+  },
+  "soil_and_five_grain_banks_byte_exact": true,
+  "all_existing_object_matrices_byte_exact": true,
+  "all_five_DU5_bank_arrays_exact_to_completed_normal_view": [
+    {
+      "bank": 1,
+      "keys_exact": true,
+      "arrays": {
+        "old_xyz": true,
+        "new_xyz": true,
+        "stage": true
+      }
+    },
+    {
+      "bank": 2,
+      "keys_exact": true,
+      "arrays": {
+        "old_xyz": true,
+        "new_xyz": true,
+        "stage": true
+      }
+    },
+    {
+      "bank": 3,
+      "keys_exact": true,
+      "arrays": {
+        "old_xyz": true,
+        "new_xyz": true,
+        "stage": true
+      }
+    },
+    {
+      "bank": 4,
+      "keys_exact": true,
+      "arrays": {
+        "old_xyz": true,
+        "new_xyz": true,
+        "stage": true
+      }
+    },
+    {
+      "bank": 5,
+      "keys_exact": true,
+      "arrays": {
+        "old_xyz": true,
+        "new_xyz": true,
+        "stage": true
+      }
+    }
+  ],
+  "clast_candidates_installed": false,
+  "new_mineral_stock_m3": 0,
+  "public_owner_preparation": {
+    "public_preparer_ran": true,
+    "view": "native crop",
+    "job_scene_settings_exact_after_owner_binding_paths_removed": true,
+    "woody_geometry_module_byte_exact_to_road_render": true,
+    "scene_adapter_byte_exact_except_cfg_validation_and_material_binding_call": true,
+    "all_runtime_python_parsed": true,
+    "absolute_job_dependency_paths_checked": 54,
+    "missing_dependencies": [],
+    "owner_shader_four_render_RGB_parity": {
+      "comparisons": [
+        {
+          "file": "whole_baseline.png",
+          "RGB_equal": true,
+          "changed_RGB_samples": 0,
+          "sha256": "f2f5df1f804893357143d5c724ae098dc46ffff71254e353d77f42ad30c6cecd"
+        },
+        {
+          "file": "whole_candidate.png",
+          "RGB_equal": true,
+          "changed_RGB_samples": 0,
+          "sha256": "eed5ea94eb5f426397cabab9d6df5b7ed8652ec4c5f3a5586a33850126097db6"
+        },
+        {
+          "file": "basal_baseline.png",
+          "RGB_equal": true,
+          "changed_RGB_samples": 0,
+          "sha256": "2f003c85e2f8dc03234d14f3e05b85fb0cec86515fa6f81affec0472fb8dc984"
+        },
+        {
+          "file": "basal_candidate.png",
+          "RGB_equal": true,
+          "changed_RGB_samples": 0,
+          "sha256": "6047ed561929220cab218c29cc85f717b0a929831e31141af0021428bc1c54b9"
+        }
+      ],
+      "all_RGB_exact": true
+    },
+    "end_to_end_portable_road_render_repeated": false,
+    "qualification": "Completed experimental road assembly plus fresh public preparation, exact morphology/adapter comparison and actual owner-split shader render parity. No second full portable road render claimed."
+  },
+  "limits": [
+    "Only drought-thinned morphology changes. Crown repetition and sparse branching remain visible.",
+    "No DV3 full normal or wide view has been rendered.",
+    "The retained large foreground clast is still visibly artificial.",
+    "No botanical calibration, growth mechanics, measured BRDF or calibrated subpixel bark response is claimed."
+  ]
+}

@@ -1,0 +1,20 @@
+name: Validate Victorville DV3 source
+on:
+  pull_request:
+    paths: ['scenes/victorville-road/source/dv3/**', 'tests/test_victorville_dv3.py', '.github/workflows/victorville-dv3.yml']
+  push:
+    branches: [master]
+    paths: ['scenes/victorville-road/source/dv3/**', 'tests/test_victorville_dv3.py', '.github/workflows/victorville-dv3.yml']
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            scenes/victorville-road/source/dv3
+            tests/test_victorville_dv3.py
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m unittest discover -s tests -p test_victorville_dv3.py -v
