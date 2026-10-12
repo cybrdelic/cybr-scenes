@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python",
+    "src/continuous_edge_top_cb.py"
+  ],
+  "exit_code": 0,
+  "stop_reason": null,
+  "peak_process_tree_RSS_MiB": 575.28515625,
+  "kernel_max_child_RSS_MiB": 594.65234375,
+  "RSS_cap_MiB": 1100.0,
+  "elapsed_seconds": 15.485612213989953,
+  "resource_contract_passed": true,
+  "rendered": false
+}

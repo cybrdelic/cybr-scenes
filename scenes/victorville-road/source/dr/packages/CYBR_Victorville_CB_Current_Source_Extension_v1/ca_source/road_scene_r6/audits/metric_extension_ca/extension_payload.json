@@ -1,0 +1,63 @@
+{
+  "status": "pure actual-source construction passed",
+  "outer_bounds_m": [
+    -3.0399999618530273,
+    -0.20999999344348907,
+    2.0,
+    6.039999961853027
+  ],
+  "native_bounds_m": [
+    -3,
+    -0.25,
+    0,
+    6
+  ],
+  "old_native_bounds_m": [
+    -3,
+    -0.25,
+    0,
+    2
+  ],
+  "kept_source_triangles": 1177691,
+  "removed_inside_triangles": 22426,
+  "crossing_triangles": 851,
+  "new_clipped_triangles": 1374,
+  "new_collar_triangles": 22860,
+  "new_vertices": 22862,
+  "unchanged_original_lookup_rows": 1041,
+  "lookup_shape": [
+    3041,
+    1417,
+    4
+  ],
+  "lookup_pitch_m": [
+    0.001999999971985817,
+    0.001999999985456467
+  ],
+  "lookup_origin_m": [
+    -3.0409998893737793,
+    -0.04100000113248825
+  ],
+  "boundary": [
+    {
+      "side": "left",
+      "outer_vertices": 281,
+      "inner_vertices": 8193
+    },
+    {
+      "side": "right",
+      "outer_vertices": 283,
+      "inner_vertices": 8193
+    },
+    {
+      "side": "top",
+      "outer_vertices": 131,
+      "inner_vertices": 5633
+    }
+  ],
+  "all_existing_coordinates_unchanged": true,
+  "source_face_assignments_preserved": true,
+  "no_base_under_new_tiles": true,
+  "interpretation": "Same source geometry recipe/amplitude; extension is representation coverage, not new asphalt material.",
+  "payload_sha256": "d1c7a52a2ca1845aa377eca3679135159e3c71762658a39488db0aa1cb472fd3"
+}

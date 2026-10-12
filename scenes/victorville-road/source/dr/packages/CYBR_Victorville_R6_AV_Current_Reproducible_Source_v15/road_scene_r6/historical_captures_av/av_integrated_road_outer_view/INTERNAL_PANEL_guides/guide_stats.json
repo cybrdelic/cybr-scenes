@@ -1,0 +1,41 @@
+{
+  "albedo": {
+    "colorspace": "Linear Rec.709",
+    "finite": true,
+    "finite_value_count": 2001000,
+    "max": 0.8592421412467957,
+    "mean": 0.3479767441749573,
+    "min": 0.045396484434604645,
+    "nonzero_pixel_fraction": 1.0,
+    "size": [
+      1000,
+      667
+    ]
+  },
+  "beauty": {
+    "colorspace": "Linear Rec.709",
+    "finite": true,
+    "finite_value_count": 2001000,
+    "max": 0.8592421412467957,
+    "mean": 0.3188336193561554,
+    "min": 0.0010339895961806178,
+    "nonzero_pixel_fraction": 1.0,
+    "size": [
+      1000,
+      667
+    ]
+  },
+  "normal": {
+    "colorspace": "Linear Rec.709",
+    "finite": true,
+    "finite_value_count": 2001000,
+    "max": 0.9998953342437744,
+    "mean": 0.15355823934078217,
+    "min": -0.9877187013626099,
+    "nonzero_pixel_fraction": 0.601407796101949,
+    "size": [
+      1000,
+      667
+    ]
+  }
+}

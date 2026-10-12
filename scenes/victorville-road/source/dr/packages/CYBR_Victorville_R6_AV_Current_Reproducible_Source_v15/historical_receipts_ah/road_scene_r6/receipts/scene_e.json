@@ -1,0 +1,28 @@
+{
+  "scene": "road_scene_r6/preview/road_r6_e.blend",
+  "scene_sha256": "789680677d90adf1d75bc4ba49b4678457cf41ad2cdea6b2ac89a2e06fc10971",
+  "road_width_m": 6.4,
+  "camber_center_above_edge_m": 0.064,
+  "edge_top_m": 0.07,
+  "sky_strength": 0.11,
+  "sun_energy": 3.4,
+  "near_particle_instances": 24429,
+  "vegetation": {
+    "shrubs": 2599,
+    "grass": 416
+  },
+  "camera": [
+    -3.9700000286102295,
+    -0.800000011920929,
+    0.3499999940395355
+  ],
+  "target": [
+    -0.5,
+    7.0,
+    -0.3199999928474426
+  ],
+  "lens": 26,
+  "threads": 2,
+  "source_ground": "R5D exact source particles + physical 0.18m LOD",
+  "scene_interpretation": "Representative high-desert road interpretation, not a specific-site reconstruction"
+}

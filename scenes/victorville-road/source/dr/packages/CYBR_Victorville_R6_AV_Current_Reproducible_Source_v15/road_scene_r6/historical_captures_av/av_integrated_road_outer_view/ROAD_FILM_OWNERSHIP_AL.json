@@ -1,0 +1,54 @@
+{
+  "approved_intrinsic_images_modified": false,
+  "changed_material_nodes": [
+    {
+      "material": "Road / Approved R5D soil + original dense asphalt / coupled.002",
+      "nodes": [
+        "Z finite film final initial mobile matrix plus deposited matrix"
+      ]
+    },
+    {
+      "material": "Road / Approved R5D soil + original dense asphalt / coupled.001",
+      "nodes": [
+        "Z finite film final initial mobile matrix plus deposited matrix"
+      ]
+    },
+    {
+      "material": "Road / Approved R5D soil + original dense asphalt / coupled / Z",
+      "nodes": [
+        "Z finite film final initial mobile matrix plus deposited matrix"
+      ]
+    }
+  ],
+  "conserved_split": true,
+  "corrected_image": "AL pavement-owned Z film / metres",
+  "correction": "Source soil stock is no longer shaded as pavement film on newly exposed asphalt; pavement-owned stock is unchanged, no blur/noise/rescaling.",
+  "geometry_modified": false,
+  "grid_spacing_m": [
+    0.025000000000000355,
+    0.025000000000000022
+  ],
+  "limits": "Historical source ownership at 25 mm grid resolution, not new transport or exact subcell coverage. Soil stock remains in its ledger; this does not promise every grain has a separate visible representation.",
+  "original_image_retained": "Z finite surface-film inventory / metres",
+  "output_matrix_sha256": "e1f70bf9dfed1fec84ee8d6778a31d0b864672a7f7c0c0aaab6d3a70a505ed93",
+  "pavement_owned_by_class_m3": [
+    9.220960105313173e-06,
+    7.272861577806884e-07,
+    3.3767654794773496e-07
+  ],
+  "road_cells": 8241,
+  "soil_cells": 37296,
+  "soil_matrix_cells_removed_from_asphalt_representation": 32778,
+  "soil_owned_by_class_m3": [
+    0.005969106683672116,
+    0.0006067542494406575,
+    6.905163768313102e-05
+  ],
+  "source_field_sha256": "bdd8176d29209c21d97aab02c44743ab6b2ff2a9f4f25989513f1dd5636400d2",
+  "total_by_class_m3": [
+    0.0059783276437774275,
+    0.0006074815355984379,
+    6.93893142310787e-05
+  ],
+  "transport_inventory_modified": false
+}

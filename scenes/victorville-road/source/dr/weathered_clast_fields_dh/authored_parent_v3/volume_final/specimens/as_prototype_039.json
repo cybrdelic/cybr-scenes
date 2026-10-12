@@ -1,0 +1,228 @@
+{
+  "source_kind": "AS",
+  "prototype_index": 39,
+  "source_file_sha256": "328313edeb1b46dac770231f3bc6f8aa7b68fb5a24eaf2cb40970d47d4896c91",
+  "parent_coordinates_sha256": "2eee93ce669fb7f0db9d543555fa2809a08d31c1225597715d97cde6b2445a9f",
+  "parent_faces_sha256": "840fef86cf5ee44d69498be28303a7e17c910b2c59873fe7670b6cad819bf688",
+  "candidate_coordinates_sha256": "3f8b09bf6c265b6934710d274150651da023cfb0fc7049985f60a2b1943383b9",
+  "npz_sha256": "d41e6598f450756dd4b30b8d85a60913d94b102f2529b3607831409ed867a4cf",
+  "parameters": {
+    "kind": "AS",
+    "index": 39,
+    "file": "as_prototype_039.npz",
+    "burial": 0.025811180133229472,
+    "grain_spacing": 0.0028,
+    "depth_range": [
+      7.5e-05,
+      0.00036
+    ],
+    "boundary_depth": 4e-05,
+    "rare_weak_depth": 0.00042,
+    "seed": 261011039
+  },
+  "primary_authorship": {
+    "planes_in_normalized_metric_envelope_coordinates": [
+      [
+        0.7992011980034938,
+        -0.21978032945096077,
+        0.5594408386024456,
+        0.78
+      ],
+      [
+        -0.1500450202601303,
+        -0.8802641188594312,
+        0.450135060780391,
+        0.77
+      ],
+      [
+        -0.6380568852447793,
+        0.5084515804294335,
+        0.5782390522530813,
+        0.76
+      ],
+      [
+        0.31858543524773275,
+        0.90597733148574,
+        0.27876225584176617,
+        0.89
+      ]
+    ],
+    "edge_weathering_transition_m": 0.00065,
+    "intrinsic_body_axis_envelope_factors": [
+      0.9256239896819546,
+      0.8318502114112508,
+      1.0482738743181719
+    ],
+    "old_parent_radius_used_for_new_shape": false,
+    "minimum_pair_normal_dot": -0.7198208305166299
+  },
+  "level6": {
+    "vertices": 40962,
+    "triangles": 81920,
+    "oriented_closed_two_face_edges": true,
+    "euler_characteristic": 2,
+    "minimum_triangle_area_m2": 1.6996722251860774e-07,
+    "true_closed_volume_m3": 0.000367641922015293,
+    "parent_true_closed_volume_m3": 0.0005623880865819677,
+    "representation_reserve_per_body_m3": 0.00019474616456667467,
+    "reserve_sign_policy": "Positive replenishes representation reserve; negative is a withdrawal requiring separate feasibility review before integration",
+    "removed_fraction": 0.3462842994244163,
+    "dimensions_m": [
+      0.14289897680282593,
+      0.07754775881767273,
+      0.06858716160058975
+    ],
+    "parent_dimensions_m": [
+      0.15554659068584442,
+      0.08582314848899841,
+      0.07408490031957626
+    ],
+    "edge_lengths_mm_percentiles": [
+      0.5439952365122736,
+      0.6902043125592172,
+      0.8783356752246618,
+      1.2775334529578686,
+      2.0105810835957527
+    ],
+    "within_original_axis_aligned_metric_envelope": true,
+    "support": {
+      "datum_z_m": 0.025811180133229472,
+      "lowest_z_m": 0.004549425560981035,
+      "buried_depth_m": 0.021261755377054214,
+      "cross_section_area_m2": 0.007532048154626478,
+      "cross_section_is_convex_hull_for_support_only": true,
+      "volume_centroid_m": [
+        0.004211431974671544,
+        -0.0016475588882559316,
+        0.03741509154837611
+      ],
+      "centroid_projected_support_margin_m": 0.03490551971534393,
+      "stable_on_declared_horizontal_fixture": true,
+      "settling_translation_m": [
+        0,
+        0,
+        0
+      ],
+      "whole_road_contact_validated": false
+    }
+  },
+  "representation_overlap": {
+    "method": "Common-direction radial intersection of the actual parent triangles and the actual candidate polyhedron; two angular sampling densities. Candidate edge lifting preserves the level6 planar mesh, rather than re-evaluating the authored surface.",
+    "measurements": [
+      {
+        "sampling_level": 6,
+        "sample_directions": 40962,
+        "intersection_volume_estimate_m3": 0.0003565372783702881,
+        "added_representation_volume_estimate_m3": 1.1104643645004869e-05,
+        "removed_representation_volume_estimate_m3": 0.00020585080821167954,
+        "net_reserve_from_exact_closed_mesh_volumes_m3": 0.00019474616456667467,
+        "net_accounting_residual_m3": 0.0
+      },
+      {
+        "sampling_level": 7,
+        "sample_directions": 163842,
+        "intersection_volume_estimate_m3": 0.0003565492497996038,
+        "added_representation_volume_estimate_m3": 1.1092672215689181e-05,
+        "removed_representation_volume_estimate_m3": 0.00020583883678236385,
+        "net_reserve_from_exact_closed_mesh_volumes_m3": 0.00019474616456667467,
+        "net_accounting_residual_m3": 0.0
+      }
+    ],
+    "intersection_resolution_change_m3": 1.1971429315687978e-08,
+    "sampling_difference_is_not_rigorous_error_bound": true,
+    "sampled_source_nonstar_directions_level7": 0,
+    "candidate_polyhedron_edge_lift_volume_error_m3": 1.7953303774187468e-14,
+    "local_added_solid_is_representation_redistribution_not_physical_growth": true
+  },
+  "material_policy": "Current live original-parent mineral and grain_roughness attributes are interpolated using four-neighbor convex weights, including new space outside the old solid. This is an authored transfer, not a claim that old internal pigment was measured. CN graph stays unchanged.",
+  "old_silhouette_used": false,
+  "old_parent_envelope_and_attribute_sources_retained": true,
+  "new_and_old_transform_identical": true,
+  "whole_road_contact_validated": false,
+  "old_CI_exposure_baseline_only": true,
+  "full_road_or_bank_pass_run": false,
+  "limits": [
+    "New authored primary shape, not a geometry-only weathering simulation of the old body.",
+    "Dimensions, body lobes, fracture planes, grain field and relief are authored and uncalibrated. No physical time or sediment-transport claim.",
+    "Exact final and old closed polyhedral volumes; local gain/loss overlap is a two-density sampled measurement with its observed resolution change, not an exact Boolean or a rigorous bound.",
+    "No new mesh-convergence sweep. The two densities measure local overlap of the same actual level6 candidate mesh.",
+    "Horizontal fixture support only; actual terrain contact must be checked before integration."
+  ],
+  "generation_elapsed_seconds": 5.555599346997042,
+  "pre_calibration_level6": {
+    "vertices": 40962,
+    "triangles": 81920,
+    "oriented_closed_two_face_edges": true,
+    "euler_characteristic": 2,
+    "minimum_triangle_area_m2": 1.6996722251860774e-07,
+    "true_closed_volume_m3": 0.000367641922015293,
+    "parent_true_closed_volume_m3": 0.0005623880865819677,
+    "representation_reserve_per_body_m3": 0.00019474616456667467,
+    "reserve_sign_policy": "Positive replenishes representation reserve; negative is a withdrawal requiring separate feasibility review before integration",
+    "removed_fraction": 0.3462842994244163,
+    "dimensions_m": [
+      0.14289897680282593,
+      0.07754775881767273,
+      0.06858716160058975
+    ],
+    "parent_dimensions_m": [
+      0.15554659068584442,
+      0.08582314848899841,
+      0.07408490031957626
+    ],
+    "edge_lengths_mm_percentiles": [
+      0.5439952365122736,
+      0.6902043125592172,
+      0.8783356752246618,
+      1.2775334529578686,
+      2.0105810835957527
+    ],
+    "within_original_axis_aligned_metric_envelope": true,
+    "support": {
+      "datum_z_m": 0.025811180133229472,
+      "lowest_z_m": 0.004549425560981035,
+      "buried_depth_m": 0.021261755377054214,
+      "cross_section_area_m2": 0.007532048154626478,
+      "cross_section_is_convex_hull_for_support_only": true,
+      "volume_centroid_m": [
+        0.004211431974671544,
+        -0.0016475588882559316,
+        0.03741509154837611
+      ],
+      "centroid_projected_support_margin_m": 0.03490551971534393,
+      "stable_on_declared_horizontal_fixture": true,
+      "settling_translation_m": [
+        0,
+        0,
+        0
+      ],
+      "whole_road_contact_validated": false
+    },
+    "primary_no_relief_volume_m3": 0.00037159280363151535,
+    "mineral_relief_volume_difference_m3": 3.950881616222369e-06,
+    "actual_normal_relief_mm_percentiles": [
+      0.09201054168610051,
+      0.1050414693285567,
+      0.12255704374958401,
+      0.21369446018817853,
+      0.6985108627659077
+    ]
+  },
+  "uniform_volume_calibration": {
+    "linear_factor": 1,
+    "about_original_metric_envelope_center_m": [
+      0.0,
+      0.0,
+      0.03704245015978813
+    ],
+    "precalibration_true_volume_m3": 0.000367641922015293,
+    "postcalibration_true_volume_m3": 0.000367641922015293,
+    "old_parent_true_volume_m3": 0.0005623880865819677,
+    "target_for_overfull_body": ".9999 of old parent volume",
+    "object_transform_changed": false,
+    "old_silhouette_cap_used": false,
+    "field_physical_lengths_scaled_by_same_factor": true,
+    "effective_grain_domain_spacing_m": 0.0028,
+    "final_clay_image_required_for_changed_CG": false
+  }
+}

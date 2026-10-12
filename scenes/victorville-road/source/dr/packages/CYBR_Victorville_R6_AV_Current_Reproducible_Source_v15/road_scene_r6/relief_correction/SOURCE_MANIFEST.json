@@ -1,0 +1,56 @@
+{
+  "entrypoint": "prepare_tiled_relief_r2.py",
+  "runtime": "Blender 4.3.2 bundled Python, NumPy; CPU threads 2",
+  "files": [
+    {
+      "name": "prepare_tiled_relief_r2.py",
+      "sha256": "52dd135429abb30a72df775a6e587b8835c61cc0711b0cb9e8f0982ef4783121",
+      "bytes": 3759
+    },
+    {
+      "name": "affine_tile_adapter.py",
+      "sha256": "b16cb2fc070a98fcb9ab8e0d0ed268f278b1ce01bc8cb3bb8bb4349b9574847c",
+      "bytes": 5015
+    },
+    {
+      "name": "paint_shader_adapter_r2.py",
+      "sha256": "57b3b2b13bcca6f2ddf08a21cf221472f059ebc52fcd88c8482144466b7b1e88",
+      "bytes": 22746
+    },
+    {
+      "name": "prepare_tiled_relief.py",
+      "sha256": "ed726e9bc52964535d818991a54b7ad2500d511052ca213078d4d9e72034a286",
+      "bytes": 32419
+    },
+    {
+      "name": "paint_shader_adapter.py",
+      "sha256": "2d2bf63ae2e12250d9bf69f6c625c00575ac46e6ea01dac857e872206218fad5",
+      "bytes": 20369
+    },
+    {
+      "name": "prepare_interior_relief.py",
+      "sha256": "34f97c2c3ffd7cea114d158431c0fe5ebe466fd27936a12bc5f3dec16ef65a49",
+      "bytes": 21086
+    },
+    {
+      "name": "tiled_relief_math.py",
+      "sha256": "e67f95a1ac6ca78b8471702ce4317437c454fa6818592fd922bd093c299a0047",
+      "bytes": 6987
+    },
+    {
+      "name": "relief_math.py",
+      "sha256": "2417aa37399010f79aa1b2239a4557a807e20605c014f29b6b6afdb146ad0c3b",
+      "bytes": 10326
+    }
+  ],
+  "source_scene_policy": "Supplied via --source; arbitrary file hash accepted only if exact road/paint topology, source packed bitmap identities, original world sampling phase, POINT fields, and supported material graph pass. Its actual hash is recorded before loading and checked unchanged after save. Portable remapping does not require changing a scene hash constant.",
+  "height_input": "Supplied via --height. Original GeometryHeight.npy remains strictly pinned to 9c6ebba3a109088842a73434cea02069aa3a5a98e1b871a3f7b7b5e246de0c83.",
+  "output_policy": "A new .blend filename beside the eight Python files. EXR and receipt use the same stem. Existing output or sidecars are refused.",
+  "excluded": [
+    "Failed Q2 scene and EXR",
+    "repair_tiled_affine.py (one-off diagnostic only)",
+    "audit_saved_tile_transforms.py",
+    "All large scenes, generated arrays, previews and intermediate receipts"
+  ],
+  "validation": "Exact source hashes checked. Combined build, evaluated save/reload gates, actual paired previews and native close view passed. Complete portable rebuild has not been rerun."
+}

@@ -1,0 +1,263 @@
+{
+  "calibrated_physics": false,
+  "chronology": "Pre-existing spatial parent mixture, then same AE storms; no new bed layer added",
+  "class_mixtures_matrix_grit_chips": [
+    [
+      0.4,
+      0.34,
+      0.26
+    ],
+    [
+      0.76,
+      0.2,
+      0.04
+    ],
+    [
+      0.84,
+      0.15,
+      0.01
+    ]
+  ],
+  "conservation_claim": false,
+  "drainage_routes": [
+    {
+      "end_xy_m": [
+        -6.02,
+        0.15
+      ],
+      "maximum_local_uphill_increment_m": 0.002746519782584604,
+      "net_foundation_drop_m": 0.09011697786786402,
+      "note": "Centerline samples on present graded AH, not reconstructed historical topography",
+      "start_xy_m": [
+        -3.43,
+        3.3
+      ]
+    },
+    {
+      "end_xy_m": [
+        -5.3,
+        0.6
+      ],
+      "maximum_local_uphill_increment_m": 0.0005760647145930178,
+      "net_foundation_drop_m": 0.05979717847749916,
+      "note": "Centerline samples on present graded AH, not reconstructed historical topography",
+      "start_xy_m": [
+        -3.35,
+        1.15
+      ]
+    },
+    {
+      "end_xy_m": [
+        -4.5,
+        1.72
+      ],
+      "maximum_local_uphill_increment_m": 0.000861276480126405,
+      "net_foundation_drop_m": 0.03149020676330088,
+      "note": "Centerline samples on present graded AH, not reconstructed historical topography",
+      "start_xy_m": [
+        -3.46,
+        2.14
+      ]
+    }
+  ],
+  "geometry_height_added_m": 0.0,
+  "interpretation": "A graded pre-existing parent skin, older connected winnowing and thin receiving sand; no new sediment inventory or terrain displacement.",
+  "limits": "Non-surveyed art-directed chronology; width and settling are authored, gradients use actual AH foundation. Unit membership is a visual/exposure proxy, not a validated geomorphic reconstruction.",
+  "model": "AK illustrative historical substrate units",
+  "near_visible_world_roi": {
+    "area_m2": 4.799999999999999,
+    "armor_above_half_m2": 1.7174999999999996,
+    "cover_above_m2": {
+      "0.0002": 2.589999999999999,
+      "0.0006": 0.7074999999999997,
+      "0.0015": 0.18499999999999978
+    },
+    "dominant_unit_m2": {
+      "armor_grit": 1.8549999999999993,
+      "compacted_fines": 2.1349999999999993,
+      "thin_sandy_cover": 0.8099999999999998
+    },
+    "unassigned_boundary_baseline_fraction": 0.0,
+    "unit_composition_mean": {
+      "armor_grit": 0.3770282979304305,
+      "compacted_fines": 0.4657180988074347,
+      "thin_sandy_cover": 0.1572536032621348
+    }
+  },
+  "prior_fine_cover_min_max_m": [
+    2.803096064814522e-06,
+    0.0022504570477487433
+  ],
+  "recent_storm_inputs_used": false,
+  "spec": {
+    "boundary_feather_m": 0.12,
+    "drainage_reaches": [
+      [
+        [
+          -3.43,
+          3.3,
+          0.08,
+          0.0
+        ],
+        [
+          -3.81,
+          2.9,
+          0.16,
+          0.08
+        ],
+        [
+          -4.1,
+          2.22,
+          0.24,
+          0.13
+        ],
+        [
+          -4.5,
+          1.72,
+          0.39,
+          0.55
+        ],
+        [
+          -4.8,
+          1.15,
+          0.57,
+          0.9
+        ],
+        [
+          -5.3,
+          0.6,
+          0.48,
+          0.4
+        ],
+        [
+          -6.02,
+          0.15,
+          0.32,
+          0.08
+        ]
+      ],
+      [
+        [
+          -3.35,
+          1.15,
+          0.07,
+          0.0
+        ],
+        [
+          -3.6,
+          0.83,
+          0.14,
+          0.12
+        ],
+        [
+          -4.03,
+          0.61,
+          0.34,
+          0.9
+        ],
+        [
+          -4.57,
+          0.38,
+          0.52,
+          0.98
+        ],
+        [
+          -5.0,
+          0.39,
+          0.42,
+          0.5
+        ],
+        [
+          -5.3,
+          0.6,
+          0.48,
+          0.4
+        ]
+      ],
+      [
+        [
+          -3.46,
+          2.14,
+          0.065,
+          0.0
+        ],
+        [
+          -3.6,
+          1.92,
+          0.11,
+          0.08
+        ],
+        [
+          -3.96,
+          1.7,
+          0.23,
+          0.36
+        ],
+        [
+          -4.5,
+          1.72,
+          0.39,
+          0.55
+        ]
+      ]
+    ],
+    "grading_reach": [
+      [
+        -0.6,
+        -3.93
+      ],
+      [
+        0.05,
+        -3.76
+      ],
+      [
+        0.7,
+        -4.3
+      ],
+      [
+        1.8,
+        -4.63
+      ],
+      [
+        3.05,
+        -4.29
+      ],
+      [
+        4.4,
+        -4.47
+      ],
+      [
+        8.2,
+        -4.13
+      ]
+    ],
+    "grading_transition_m": 0.46,
+    "maximum_prior_cover_m": 0.0025
+  },
+  "surveyed_history": false,
+  "units": [
+    "armor_grit",
+    "compacted_fines",
+    "thin_sandy_cover"
+  ],
+  "whole_domain": {
+    "area_m2": 25.959999999999994,
+    "armor_above_half_m2": 14.787500000000003,
+    "cover_above_m2": {
+      "0.0002": 7.707499999999999,
+      "0.0006": 1.1525,
+      "0.0015": 0.31999999999999984
+    },
+    "dominant_unit_m2": {
+      "armor_grit": 16.409999999999997,
+      "compacted_fines": 8.2925,
+      "thin_sandy_cover": 1.2574999999999998
+    },
+    "unassigned_boundary_baseline_fraction": 0.05380049613365288,
+    "unit_composition_mean": {
+      "armor_grit": 0.5972527931109946,
+      "compacted_fines": 0.2997929995631885,
+      "thin_sandy_cover": 0.04915371119216421
+    }
+  }
+}

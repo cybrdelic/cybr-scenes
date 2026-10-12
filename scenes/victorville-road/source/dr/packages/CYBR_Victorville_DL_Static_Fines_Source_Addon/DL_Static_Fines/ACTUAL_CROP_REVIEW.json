@@ -1,0 +1,8 @@
+{
+  "status": "WORTH_MATCHED_WHOLE_SCENE_TEST",
+  "candidate_sha256": "af70476ea29604a2f7412edca63e105d53ddaf94bfc1beecc736451101f4d917",
+  "baseline": "Exact DH native500x400 crop",
+  "assessment": "Current loose chips and coarse stones become visibly embedded rather than uniformly perched. Fine sand remains resolved and granular. Full-scale spatial patch coherence remains to be evaluated in whole view.",
+  "not_user_accepted": true,
+  "no_final_scene_claim": true
+}

@@ -1,0 +1,887 @@
+{
+  "schema": "dq-full-virtual-serial-role1-v1",
+  "keyed_role_version": "dq-stock-role-v1",
+  "status": "Fixed full-world outside roles allocated before view selection",
+  "roles_ready": true,
+  "validation": "NONVALIDATED display-stock accounting, not new transport physics",
+  "config": {
+    "seed": 73181,
+    "availability_mode": "surviving_deposit_stock",
+    "solid_fraction": 0.62,
+    "active_layer_m": 0.0018,
+    "maximum_planar_area_proxy_fraction": 0.36,
+    "top_availability_by_class": [
+      1.0,
+      0.8,
+      0.35
+    ],
+    "representative_diameter_m": [
+      0.00022,
+      0.00108,
+      0.0033
+    ],
+    "within_class_settling_exponent": 0.8,
+    "exposure_depth_diameters": 0.6,
+    "protrusion_jitter_range": [
+      0.55,
+      0.95
+    ]
+  },
+  "virtual_count": 56036969,
+  "role_bit_order": "little within each byte",
+  "role_index": "original uint32 full virtual serial; not accepted-candidate rank",
+  "role_bytes": 7004622,
+  "role_sha256": "22810b0aca099cd9fffcf664882b7a0d28437e4e98a7a663b31eb9824a6172ff",
+  "grid_shape_yx": [
+    378,
+    73
+  ],
+  "stock_spacing_xy_m": [
+    0.05,
+    0.05
+  ],
+  "rows_per_band": 4,
+  "max_batch_candidates": 2000000,
+  "maximum_retrieved_batch_candidates": 842531,
+  "inside_grid_candidates_processed": 27780084,
+  "selected_count": 4710344,
+  "all_stock_rows_processed_once": true,
+  "complete_count_manifest_matched": true,
+  "exact_source_triangle_support": true,
+  "final_surface_equation": "float64(float32(float64(float32(height)) - offset)) + offset",
+  "physical_placement_and_contact_deferred": true,
+  "new_volume_by_class_m3": [
+    2.5055243838302648e-05,
+    0.00010385113958328055,
+    2.4187066614444006e-05
+  ],
+  "new_area_by_class_m2": [
+    0.02465581642843214,
+    0.08792591061238321,
+    0.004110529962499126
+  ],
+  "residual_volume_cap_by_class_m3": [
+    0.019471600170767902,
+    0.0045448724632994155,
+    0.0006703689597047999
+  ],
+  "residual_area_cap_by_class_m2": [
+    2.2552064714962508,
+    0.4098900169509794,
+    0.03455581417993367
+  ],
+  "unused_volume_by_class_m3": [
+    0.01944654492692963,
+    0.004441021323716141,
+    0.0006461818930903579
+  ],
+  "unused_area_by_class_m2": [
+    2.2305506550678107,
+    0.32196410633859424,
+    0.030445284217434723
+  ],
+  "maximum_volume_cap_exceedance_m3": 0.0,
+  "maximum_area_cap_exceedance_m2": 0.0,
+  "frozen_macro_area_overshoot_by_class_m2": [
+    1.8296820410921495e-08,
+    1.035140096231676e-06,
+    2.5270055996322325e-05
+  ],
+  "outside_grid_role_policy": "always static (zero role bit)",
+  "bands": [
+    {
+      "first_stock_row": 0,
+      "stop_stock_row": 4,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.004789028003870044
+    },
+    {
+      "first_stock_row": 4,
+      "stop_stock_row": 8,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.005444735004857648
+    },
+    {
+      "first_stock_row": 8,
+      "stop_stock_row": 12,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.005916605005040765
+    },
+    {
+      "first_stock_row": 12,
+      "stop_stock_row": 16,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.0063177490010275505
+    },
+    {
+      "first_stock_row": 16,
+      "stop_stock_row": 20,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.00676880800165236
+    },
+    {
+      "first_stock_row": 20,
+      "stop_stock_row": 24,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.007158244006859604
+    },
+    {
+      "first_stock_row": 24,
+      "stop_stock_row": 28,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.0075398380067781545
+    },
+    {
+      "first_stock_row": 28,
+      "stop_stock_row": 32,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.00795016600022791
+    },
+    {
+      "first_stock_row": 32,
+      "stop_stock_row": 36,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.008321594999870285
+    },
+    {
+      "first_stock_row": 36,
+      "stop_stock_row": 40,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.00872195700503653
+    },
+    {
+      "first_stock_row": 40,
+      "stop_stock_row": 44,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.009108879006817006
+    },
+    {
+      "first_stock_row": 44,
+      "stop_stock_row": 48,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.009482261004450265
+    },
+    {
+      "first_stock_row": 48,
+      "stop_stock_row": 52,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.009894692004309036
+    },
+    {
+      "first_stock_row": 52,
+      "stop_stock_row": 56,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.010271559003740549
+    },
+    {
+      "first_stock_row": 56,
+      "stop_stock_row": 60,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.010688727001252118
+    },
+    {
+      "first_stock_row": 60,
+      "stop_stock_row": 64,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.011076160000811797
+    },
+    {
+      "first_stock_row": 64,
+      "stop_stock_row": 68,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.011438004999945406
+    },
+    {
+      "first_stock_row": 68,
+      "stop_stock_row": 72,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.011835793004138395
+    },
+    {
+      "first_stock_row": 72,
+      "stop_stock_row": 76,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.012197848001960665
+    },
+    {
+      "first_stock_row": 76,
+      "stop_stock_row": 80,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.012553383006888907
+    },
+    {
+      "first_stock_row": 80,
+      "stop_stock_row": 84,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.012961107000592165
+    },
+    {
+      "first_stock_row": 84,
+      "stop_stock_row": 88,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.013329121000424493
+    },
+    {
+      "first_stock_row": 88,
+      "stop_stock_row": 92,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.013719747999857645
+    },
+    {
+      "first_stock_row": 92,
+      "stop_stock_row": 96,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.01410066200332949
+    },
+    {
+      "first_stock_row": 96,
+      "stop_stock_row": 100,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.014470418005657848
+    },
+    {
+      "first_stock_row": 100,
+      "stop_stock_row": 104,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.014909859004546888
+    },
+    {
+      "first_stock_row": 104,
+      "stop_stock_row": 108,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 0.015379546006442979
+    },
+    {
+      "first_stock_row": 108,
+      "stop_stock_row": 112,
+      "retrieved_candidates": 51,
+      "owned_candidates": 1,
+      "selected_count": 0,
+      "elapsed_seconds": 0.13309780900453916
+    },
+    {
+      "first_stock_row": 112,
+      "stop_stock_row": 116,
+      "retrieved_candidates": 840840,
+      "owned_candidates": 834789,
+      "selected_count": 196452,
+      "elapsed_seconds": 2.957867059005366
+    },
+    {
+      "first_stock_row": 116,
+      "stop_stock_row": 120,
+      "retrieved_candidates": 839943,
+      "owned_candidates": 833679,
+      "selected_count": 197230,
+      "elapsed_seconds": 5.874728412003606
+    },
+    {
+      "first_stock_row": 120,
+      "stop_stock_row": 124,
+      "retrieved_candidates": 683866,
+      "owned_candidates": 677804,
+      "selected_count": 131488,
+      "elapsed_seconds": 8.346861525002168
+    },
+    {
+      "first_stock_row": 124,
+      "stop_stock_row": 128,
+      "retrieved_candidates": 683575,
+      "owned_candidates": 677385,
+      "selected_count": 153595,
+      "elapsed_seconds": 10.954830984999717
+    },
+    {
+      "first_stock_row": 128,
+      "stop_stock_row": 132,
+      "retrieved_candidates": 683525,
+      "owned_candidates": 677625,
+      "selected_count": 104934,
+      "elapsed_seconds": 13.296150852002029
+    },
+    {
+      "first_stock_row": 132,
+      "stop_stock_row": 136,
+      "retrieved_candidates": 723549,
+      "owned_candidates": 717359,
+      "selected_count": 132449,
+      "elapsed_seconds": 15.892010440002196
+    },
+    {
+      "first_stock_row": 136,
+      "stop_stock_row": 140,
+      "retrieved_candidates": 839180,
+      "owned_candidates": 833131,
+      "selected_count": 135503,
+      "elapsed_seconds": 19.010288942001353
+    },
+    {
+      "first_stock_row": 140,
+      "stop_stock_row": 144,
+      "retrieved_candidates": 841880,
+      "owned_candidates": 835889,
+      "selected_count": 131853,
+      "elapsed_seconds": 22.087762916002248
+    },
+    {
+      "first_stock_row": 144,
+      "stop_stock_row": 148,
+      "retrieved_candidates": 840126,
+      "owned_candidates": 833953,
+      "selected_count": 102123,
+      "elapsed_seconds": 25.155120537005132
+    },
+    {
+      "first_stock_row": 148,
+      "stop_stock_row": 152,
+      "retrieved_candidates": 840256,
+      "owned_candidates": 834130,
+      "selected_count": 101131,
+      "elapsed_seconds": 28.14544226500584
+    },
+    {
+      "first_stock_row": 152,
+      "stop_stock_row": 156,
+      "retrieved_candidates": 839260,
+      "owned_candidates": 833116,
+      "selected_count": 104340,
+      "elapsed_seconds": 31.064815182005987
+    },
+    {
+      "first_stock_row": 156,
+      "stop_stock_row": 160,
+      "retrieved_candidates": 840231,
+      "owned_candidates": 834162,
+      "selected_count": 103250,
+      "elapsed_seconds": 34.18593484800658
+    },
+    {
+      "first_stock_row": 160,
+      "stop_stock_row": 164,
+      "retrieved_candidates": 840463,
+      "owned_candidates": 834238,
+      "selected_count": 89340,
+      "elapsed_seconds": 37.43283812700247
+    },
+    {
+      "first_stock_row": 164,
+      "stop_stock_row": 168,
+      "retrieved_candidates": 840880,
+      "owned_candidates": 834765,
+      "selected_count": 114729,
+      "elapsed_seconds": 40.5995659110049
+    },
+    {
+      "first_stock_row": 168,
+      "stop_stock_row": 172,
+      "retrieved_candidates": 838466,
+      "owned_candidates": 832272,
+      "selected_count": 117604,
+      "elapsed_seconds": 43.720147862004524
+    },
+    {
+      "first_stock_row": 172,
+      "stop_stock_row": 176,
+      "retrieved_candidates": 840409,
+      "owned_candidates": 834408,
+      "selected_count": 124546,
+      "elapsed_seconds": 46.57839877400693
+    },
+    {
+      "first_stock_row": 176,
+      "stop_stock_row": 180,
+      "retrieved_candidates": 840769,
+      "owned_candidates": 834668,
+      "selected_count": 129170,
+      "elapsed_seconds": 49.59664889400301
+    },
+    {
+      "first_stock_row": 180,
+      "stop_stock_row": 184,
+      "retrieved_candidates": 840445,
+      "owned_candidates": 834389,
+      "selected_count": 92722,
+      "elapsed_seconds": 52.404065473005176
+    },
+    {
+      "first_stock_row": 184,
+      "stop_stock_row": 188,
+      "retrieved_candidates": 841108,
+      "owned_candidates": 834936,
+      "selected_count": 102749,
+      "elapsed_seconds": 54.92190325700358
+    },
+    {
+      "first_stock_row": 188,
+      "stop_stock_row": 192,
+      "retrieved_candidates": 842531,
+      "owned_candidates": 836273,
+      "selected_count": 112387,
+      "elapsed_seconds": 57.53598142800183
+    },
+    {
+      "first_stock_row": 192,
+      "stop_stock_row": 196,
+      "retrieved_candidates": 839851,
+      "owned_candidates": 833955,
+      "selected_count": 118821,
+      "elapsed_seconds": 60.2848252640033
+    },
+    {
+      "first_stock_row": 196,
+      "stop_stock_row": 200,
+      "retrieved_candidates": 840437,
+      "owned_candidates": 834540,
+      "selected_count": 127143,
+      "elapsed_seconds": 63.139179213001626
+    },
+    {
+      "first_stock_row": 200,
+      "stop_stock_row": 204,
+      "retrieved_candidates": 839216,
+      "owned_candidates": 833178,
+      "selected_count": 131590,
+      "elapsed_seconds": 65.97293178100517
+    },
+    {
+      "first_stock_row": 204,
+      "stop_stock_row": 208,
+      "retrieved_candidates": 841782,
+      "owned_candidates": 835542,
+      "selected_count": 137326,
+      "elapsed_seconds": 68.99434417800512
+    },
+    {
+      "first_stock_row": 208,
+      "stop_stock_row": 212,
+      "retrieved_candidates": 840220,
+      "owned_candidates": 834209,
+      "selected_count": 142850,
+      "elapsed_seconds": 71.87635807800689
+    },
+    {
+      "first_stock_row": 212,
+      "stop_stock_row": 216,
+      "retrieved_candidates": 839895,
+      "owned_candidates": 833995,
+      "selected_count": 146911,
+      "elapsed_seconds": 74.83043549700233
+    },
+    {
+      "first_stock_row": 216,
+      "stop_stock_row": 220,
+      "retrieved_candidates": 841886,
+      "owned_candidates": 835669,
+      "selected_count": 150936,
+      "elapsed_seconds": 77.91074360500352
+    },
+    {
+      "first_stock_row": 220,
+      "stop_stock_row": 224,
+      "retrieved_candidates": 839885,
+      "owned_candidates": 833700,
+      "selected_count": 164221,
+      "elapsed_seconds": 80.9572037120015
+    },
+    {
+      "first_stock_row": 224,
+      "stop_stock_row": 228,
+      "retrieved_candidates": 841247,
+      "owned_candidates": 835194,
+      "selected_count": 168069,
+      "elapsed_seconds": 84.00634138800524
+    },
+    {
+      "first_stock_row": 228,
+      "stop_stock_row": 232,
+      "retrieved_candidates": 840371,
+      "owned_candidates": 834196,
+      "selected_count": 182102,
+      "elapsed_seconds": 86.99712163900404
+    },
+    {
+      "first_stock_row": 232,
+      "stop_stock_row": 236,
+      "retrieved_candidates": 839360,
+      "owned_candidates": 833210,
+      "selected_count": 201971,
+      "elapsed_seconds": 90.01018068700068
+    },
+    {
+      "first_stock_row": 236,
+      "stop_stock_row": 240,
+      "retrieved_candidates": 840088,
+      "owned_candidates": 834131,
+      "selected_count": 197611,
+      "elapsed_seconds": 93.04977146900637
+    },
+    {
+      "first_stock_row": 240,
+      "stop_stock_row": 244,
+      "retrieved_candidates": 840803,
+      "owned_candidates": 834829,
+      "selected_count": 194671,
+      "elapsed_seconds": 96.02168922500277
+    },
+    {
+      "first_stock_row": 244,
+      "stop_stock_row": 248,
+      "retrieved_candidates": 840835,
+      "owned_candidates": 834762,
+      "selected_count": 168526,
+      "elapsed_seconds": 98.90695963800681
+    },
+    {
+      "first_stock_row": 248,
+      "stop_stock_row": 252,
+      "retrieved_candidates": 47,
+      "owned_candidates": 2,
+      "selected_count": 1,
+      "elapsed_seconds": 99.03408946600393
+    },
+    {
+      "first_stock_row": 252,
+      "stop_stock_row": 256,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.03485258400178
+    },
+    {
+      "first_stock_row": 256,
+      "stop_stock_row": 260,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.03525866500422
+    },
+    {
+      "first_stock_row": 260,
+      "stop_stock_row": 264,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.03564364500198
+    },
+    {
+      "first_stock_row": 264,
+      "stop_stock_row": 268,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.03606261500681
+    },
+    {
+      "first_stock_row": 268,
+      "stop_stock_row": 272,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.03644363900094
+    },
+    {
+      "first_stock_row": 272,
+      "stop_stock_row": 276,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.0368431800016
+    },
+    {
+      "first_stock_row": 276,
+      "stop_stock_row": 280,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.03721875500196
+    },
+    {
+      "first_stock_row": 280,
+      "stop_stock_row": 284,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.03768176200538
+    },
+    {
+      "first_stock_row": 284,
+      "stop_stock_row": 288,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.03810898500524
+    },
+    {
+      "first_stock_row": 288,
+      "stop_stock_row": 292,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.03848198700143
+    },
+    {
+      "first_stock_row": 292,
+      "stop_stock_row": 296,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.0389166610039
+    },
+    {
+      "first_stock_row": 296,
+      "stop_stock_row": 300,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.03928508500394
+    },
+    {
+      "first_stock_row": 300,
+      "stop_stock_row": 304,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.0397011410023
+    },
+    {
+      "first_stock_row": 304,
+      "stop_stock_row": 308,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.04008569000143
+    },
+    {
+      "first_stock_row": 308,
+      "stop_stock_row": 312,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.04045171100006
+    },
+    {
+      "first_stock_row": 312,
+      "stop_stock_row": 316,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.04084738600068
+    },
+    {
+      "first_stock_row": 316,
+      "stop_stock_row": 320,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.0413712350055
+    },
+    {
+      "first_stock_row": 320,
+      "stop_stock_row": 324,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.0418180370034
+    },
+    {
+      "first_stock_row": 324,
+      "stop_stock_row": 328,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.04219853000541
+    },
+    {
+      "first_stock_row": 328,
+      "stop_stock_row": 332,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.04256661399995
+    },
+    {
+      "first_stock_row": 332,
+      "stop_stock_row": 336,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.04330161000689
+    },
+    {
+      "first_stock_row": 336,
+      "stop_stock_row": 340,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.04373454100278
+    },
+    {
+      "first_stock_row": 340,
+      "stop_stock_row": 344,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.04422558000078
+    },
+    {
+      "first_stock_row": 344,
+      "stop_stock_row": 348,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.0446098990069
+    },
+    {
+      "first_stock_row": 348,
+      "stop_stock_row": 352,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.04504074700526
+    },
+    {
+      "first_stock_row": 352,
+      "stop_stock_row": 356,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.04541929700645
+    },
+    {
+      "first_stock_row": 356,
+      "stop_stock_row": 360,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.04592201300693
+    },
+    {
+      "first_stock_row": 360,
+      "stop_stock_row": 364,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.04630924600497
+    },
+    {
+      "first_stock_row": 364,
+      "stop_stock_row": 368,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.04674978900584
+    },
+    {
+      "first_stock_row": 368,
+      "stop_stock_row": 372,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.04713913500018
+    },
+    {
+      "first_stock_row": 372,
+      "stop_stock_row": 376,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.04759899700002
+    },
+    {
+      "first_stock_row": 376,
+      "stop_stock_row": 378,
+      "retrieved_candidates": 0,
+      "owned_candidates": 0,
+      "selected_count": 0,
+      "elapsed_seconds": 99.04805854900042
+    }
+  ],
+  "elapsed_seconds": 99.07847374300036,
+  "limits": [
+    "Count manifest is an independent caller-supplied completeness guard, not authenticity proof.",
+    "Original macro roles, poses, and spent ledger are immutable and excluded from new candidates.",
+    "No full XYZ population is written; exact contact and placement are deferred to read-only view evaluation.",
+    "Nearest-origin cells, top mixtures, and projected area remain art-directed display proxies."
+  ],
+  "input_sha256": {
+    "WORLD_ROLE_BUDGET.npz": "a1964c4e736284568f3a4ca45c73ab2bb8f59406895adccd614c6690771aeaa3",
+    "WORLD_ROLE_BUDGET.json": "0b1ae87da8d318e92c3f578574e2997b94a190526ef6d10312f5035aaa8ee4fb",
+    "FULL_ROAD_PACKING_STATUS.npz": "42da887a12afe15ef7afddf52bb46da3333213bb400268de2faf31b13ea971c7",
+    "FULL_ROAD_PACKING_STATUS.json": "4e0046d126209b5ae591b7f58a5dcb9d7637b2953dea85fafb1532349b8e02a8",
+    "ACTUAL_CATALOG.npz": "5a8b20a1429e7d64b6f299d857c914238f7e0a879dec43308c9a6a527f3c1b3f",
+    "ACTUAL_CATALOG.json": "304447424f3591b51f4920ede5e2ceca43070812b9fc156a199b0fae418f5cd6",
+    "FIXED_DISPLAY_BUDGET.npz": "2d29308033fc1a8095ad20e3b1025391d8e1dc04df5999e0efca177a38f005b9",
+    "COMPACT_ACTUAL_STATUS.npz": "4c55488885795ce2c3a6ebbd475d57baabf320074be2501ddb6a169276064e91"
+  },
+  "field_pins": {
+    "payload": "05f32d7993c3e9b78d77c7d259d1d0c1fe1cc508ba7ae4598113359046274250",
+    "historical_fields": "cb13eb9f9422741f113d244f249e6b70cece71596934df63643a59412483dac3",
+    "sand_bank": "8ad5c6795e064aa15bfc111d0693397c653ed8835fc153977bc27a2157c1b7cc",
+    "datums": "cb12da56f4cf2b259af126ec5b2d92d6c521d9a8bdccf686a152e6e9a9fdb693",
+    "static_cap": "d692f6513f6639332d774f0bbb46cb821fb32da3f4f54a56671867e13f7951be"
+  },
+  "additional_accepted_candidates": 27985061,
+  "outside_grid_remain_static": 204977,
+  "input_inventory_changed": false,
+  "frozen_macro_inputs_unchanged": true,
+  "source_sha256": {
+    "build_world_roles.py": "27e0fe11c5751b654eccfd88e3e9fc6b047c2ea33741bb7a88cf21ebcb43e49b",
+    "transported_grain_exposure_dq.py": "2a67d3fb2613f98c407882e994cca35dd885176668d61e71666a4fee8299b9de"
+  },
+  "output_npz_sha256": "e680c5034e3e89e0236c1dd262adfd257c00858b22236cfae5a417ee5f4d20f4",
+  "output_npz_bytes": 1828951
+}

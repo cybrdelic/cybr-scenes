@@ -1,0 +1,23 @@
+{
+  "original_material_function_sha256": "5561323dfbfec95043b2ce30d00ed0d0ce97fd6836e358667e8ba582aff01060",
+  "CN": {
+    "source": "AS new metric rock / shared regional mineral palette",
+    "derivative": "CN Victorville coarse mineral / AS new metric rock / shared reg",
+    "source_graph_sha256": "2487e18c91dd6c665aca3f8da61b25c32cb8ed9cad8f4472c3522e3f9e545768",
+    "source_graph_unchanged": true,
+    "role": "coarse mineral",
+    "closures": [
+      {
+        "closure": "Principled BSDF",
+        "old_source": [
+          "Mix (Legacy)",
+          "Color"
+        ],
+        "new_multiplier_policy": "Original R-G difference selects warm-mineral-only tint; neutral/green mineral response preserved"
+      }
+    ]
+  },
+  "old_680_per_m_noise_and_3100_per_m_microbump_unchanged": true,
+  "new_susceptibility_field_drives_material": false,
+  "material_only_compatibility_fixture": true
+}

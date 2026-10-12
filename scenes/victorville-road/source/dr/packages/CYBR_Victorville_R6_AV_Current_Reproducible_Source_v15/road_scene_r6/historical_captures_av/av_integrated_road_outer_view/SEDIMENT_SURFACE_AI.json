@@ -1,0 +1,207 @@
+{
+  "elapsed_seconds": 13.318184557007044,
+  "field_sha256": "cb13eb9f9422741f113d244f249e6b70cece71596934df63643a59412483dac3",
+  "fields": {
+    "fine_coat_above_half_area_m2": 6.984999999999982,
+    "lag_above_half_area_m2": 4.549999999999988,
+    "limits": "Nonvalidated surface optics/retention proxy. Top fractions are solver mixtures without vertical stratigraphy; no new sediment is created.",
+    "maximum_fine_optical_depth_m": 0.001799999999999982,
+    "retained_bulk_by_class_m3": [
+      0.019896482518552406,
+      0.005998316915996997,
+      0.000968472101464448
+    ],
+    "spec": {
+      "base_coarse_fraction": 0.08,
+      "coarse_fraction_for_full_lag": 0.3,
+      "fine_optical_depth_m": 0.00035,
+      "include_net_eroded_retained": true,
+      "include_substrate_history": true,
+      "lag_active_depth_m": 0.001,
+      "maximum_lift_fraction_of_buried_depth": 0.55
+    }
+  },
+  "limits": "Lag retention and thin-film optical response are bounded illustrative mappings. Real grains remain exact size/shape; contact proof is a lowest-vertex check, not full rigid-body packing. No optical/physical/site validation claim.",
+  "new_particles": 0,
+  "particle_changes": [
+    {
+      "eligible": 23228,
+      "lowered": 5987,
+      "lowest_vertex_contact_max_m": -1.999677870774541e-05,
+      "moved_origins": 17261,
+      "object": "True approved R5D near-camera grain geometry",
+      "raised": 11274,
+      "shift_range_m": [
+        -0.0017146840691566467,
+        0.0009871982038021088
+      ],
+      "transported": null
+    },
+    {
+      "eligible": 105201,
+      "lowered": 34930,
+      "lowest_vertex_contact_max_m": -1.9996396794993987e-05,
+      "moved_origins": 98637,
+      "object": "U approved R5D density / projected chip and grit supplement",
+      "raised": 63707,
+      "shift_range_m": [
+        -0.0016895532608032227,
+        0.009447101503610611
+      ],
+      "transported": {
+        "area_target_overshoot_sum_by_class_m2": [
+          0.0,
+          7.068973240414714e-07,
+          0.0001379128944941126
+        ],
+        "area_target_shortfall_sum_by_class_m2": [
+          1.154158584695554,
+          0.28200238661062704,
+          0.03003829513446868
+        ],
+        "audit": {
+          "availability_mode": "surviving_deposit_stock",
+          "minimum_promoted_net_deposit_m": -0.008990202713471871,
+          "minimum_promoted_retained_deposit_m": 6.380561426584964e-08,
+          "minimum_promoted_top_above_final_surface_m": 7.74496524552637e-09,
+          "negative_remaining_inventory_entries": 0,
+          "net_sign_is_availability_gate": false,
+          "promoted_count": 25616,
+          "promoted_outside_grid": 0,
+          "promoted_unsupported_surface": 0,
+          "promoted_without_positive_net_deposit": 12916,
+          "promoted_without_retained_own_class": 0,
+          "solid_budget_exceedance_m3": 0.0,
+          "triangle_contact_audit": "Required in the scene adapter; origin proxies cannot prove triangle contact"
+        },
+        "candidate_count": 105201,
+        "candidate_count_by_class": [
+          0,
+          70227,
+          34974
+        ],
+        "cell_area_m2": 0.0025000000000000005,
+        "cell_size_xy_m": [
+          0.05,
+          0.05
+        ],
+        "class_names": [
+          "matrix",
+          "grit",
+          "chips"
+        ],
+        "config": {
+          "active_layer_m": 0.0018,
+          "availability_mode": "surviving_deposit_stock",
+          "exposure_depth_diameters": 0.6,
+          "maximum_planar_area_proxy_fraction": 0.36,
+          "protrusion_jitter_range": [
+            0.55,
+            0.95
+          ],
+          "representative_diameter_m": [
+            0.00022,
+            0.00108,
+            0.0033
+          ],
+          "seed": 73181,
+          "solid_fraction": 0.62,
+          "top_availability_by_class": [
+            1.0,
+            0.8,
+            0.35
+          ],
+          "within_class_settling_exponent": 0.8
+        },
+        "eligible_candidate_count": 70479,
+        "eligible_candidate_exposed_area_proxy_by_class_m2": [
+          0.0,
+          0.004473244513653599,
+          0.010493089778786515
+        ],
+        "eligible_candidate_solid_volume_by_class_m3": [
+          0.0,
+          1.2783393243765158e-05,
+          0.0001804327627815786
+        ],
+        "exposed_planar_area_proxy_by_class_m2": [
+          0.0,
+          0.004140510438805309,
+          0.0034087689196534154
+        ],
+        "extra_embedment_min_max_m": [
+          7.92999257402715e-06,
+          0.0016307501705627708
+        ],
+        "fractional_area_rounddowns": 269,
+        "fractional_area_roundups": 245,
+        "grid_shape_yx": [
+          177,
+          60
+        ],
+        "limits": [
+          "0.62 solid fraction is an explicit fixed, nonvalidated art-directed porosity assumption.",
+          "Candidate-origin nearest-cell bookkeeping approximates whole-body volume; individual mass transport and body/cell intersections are unresolved.",
+          "The solver has no vertical stratigraphy: top active-layer fractions are retained-class mixtures weighted by explicit selective-settling factors.",
+          "Convex-hull footprint times exposed vertical-height fraction is only an area proxy, not a measured visible silhouette or disjoint true coverage.",
+          "Area targets permit stochastic rounding by at most one candidate area per cell/class; solid-volume budgets permit no overshoot.",
+          "Existing finite candidates, packing, camera LOD and per-cell whole-body quantization may leave substantial target area and deposited volume unrepresented.",
+          "Matrix class has no supplied geometric candidates and remains unrepresented in this allocation.",
+          "Representation selection adds no new solver mass and makes no exact no-double-counting claim against the existing source bake or retained source geometry.",
+          "Surviving deposited stock may be represented in net-eroded cells; this is an explicit top-surface proxy without resolved stratigraphy.",
+          "Only selected supplemental origins may move vertically; retained originals, XY, metric prototype geometry, material, yaw and scale must stay unchanged."
+        ],
+        "model": "Retained-deposit budgeted supplemental transported-grain exposure",
+        "remaining_representation_volume_by_class_m3": [
+          0.012335819161502518,
+          0.003712226080982424,
+          0.0005730933182017268
+        ],
+        "retained_deposited_bulk_volume_by_class_m3": [
+          0.01989648251855246,
+          0.005998316915997014,
+          0.0009684721014644507
+        ],
+        "selected_count": 25616,
+        "selected_count_by_class": [
+          0,
+          21415,
+          4201
+        ],
+        "selected_solid_volume_by_class_m3": [
+          0.0,
+          6.7304069357515e-06,
+          2.735938470623337e-05
+        ],
+        "solid_budget_by_class_m3": [
+          0.012335819161502518,
+          0.00371895648791817,
+          0.0006004527029079597
+        ],
+        "status": "NONVALIDATED ART-DIRECTED representation selector; not a sediment solver",
+        "strict_budget_roundoff_deselections": 0,
+        "target_cells_with_insufficient_candidate_area": 14967,
+        "target_planar_area_proxy_by_class_m2": [
+          1.154158584695554,
+          0.2861421901521088,
+          0.03330915115962805
+        ],
+        "volume_rejected_attempts": 39192
+      }
+    }
+  ],
+  "particle_identity_materials_scale_unchanged": true,
+  "prototype_geometry_hash": "3a9c18953bcf6cc6ac797c5a2c5466e92b3a67c3413b9dcf1e81556b5daaa946",
+  "scope": "Finite-stock surface representation after actual graded geometry/contact",
+  "shader": {
+    "approved_input_nodes_copied": true,
+    "fine_color_linear_source": "Pinned approved compacted microbed mean RGB",
+    "fine_roughness": 0.84,
+    "layer": "Bounded thin retained fine coat and uncoated coarse-lag response",
+    "original_material": "Road / Approved R5D soil + original dense asphalt",
+    "recipe_images_unchanged": true,
+    "scene_material": "AI runoff-sorted surface / approved intrinsic R5D retained"
+  },
+  "terrain_geometry_changed": false,
+  "world_xy_changed": false
+}

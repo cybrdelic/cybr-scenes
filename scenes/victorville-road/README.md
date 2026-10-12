@@ -1,15 +1,11 @@
 # Victorville Road
 
-An original procedural high-desert road scene at the CQ revision. [Open the gallery](../../docs/victorville-road-gallery.html).
+An original procedural high-desert road study. [Open the retained CQ gallery](../../docs/victorville-road-gallery.html).
 
-Actual Blender 4.3.2 Cycles CPU preview: 1000 × 667, 32 samples per pixel, RGB16, AgX Medium High Contrast, no denoising or image generation. [Settings and image hash](scene.json).
+## Procedural source
 
-## Original source status
-
-The full original source and pinned inputs are being added to this draft branch. The gallery image and render/structure records are available now. Do not treat this intermediate draft as a complete source checkout.
+[DR source and reproduction commands](source/dr/README.md) include original scene builders, unchanged asphalt/mineral recipe dependencies, exact finite-grain catalogues, source guards and required inputs. Restore the split catalogue with the documented command before building. The recovered 2000 × 1334 DR render matches the saved DR RGB pixels exactly; the CQ gallery is an earlier revision. The final trimmed package passed preparation parity; a second complete from-zero rebuild of that trimmed folder was not run.
 
 ## Boundaries
 
-Work in progress: 1024px context textures, view-dependent allocation/culling and stride-2 asphalt. Candidate 22° Nishita daylight, not a measured site condition or local clock time. Original mountains, connected shrubs and warm soil. Far-ridge airlight is a surface approximation. No native CYBR LIGHT render or interactive road port is included.
-
-Original procedural project assets; no scans, downloaded meshes, photo textures or reference photographs are distributed. [Observation references](reference-links.json) · [Scene structure](structure.json) · [Existing repository license](../../LICENSE).
+Blender 4.3.2 Cycles CPU, authored geometry and materials, no scan or photograph textures. Work in progress: no surveyed reconstruction or final photorealism claim. No native CYBR LIGHT road render or interactive port is included. [CQ settings and image hash](scene.json), [observation references](reference-links.json), [scene structure](structure.json), [existing repository license](../../LICENSE).

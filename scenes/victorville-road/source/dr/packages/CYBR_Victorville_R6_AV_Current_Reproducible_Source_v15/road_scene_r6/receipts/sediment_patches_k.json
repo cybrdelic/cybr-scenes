@@ -1,0 +1,18 @@
+{
+  "source_scene_sha256": "e948d74f1f470ff80e5b8b1f1394f4dff0bfa7e9eeb488c0536f65bb8ed838a2",
+  "scene_sha256": "6384ad0d6fc46d83a6793adadbd9f1bb84a19e6a0e74d996fd30687d95bc03e1",
+  "shoulder_vertices_in_sorting_field": 231325,
+  "relief_delta_m": [
+    -0.021784896135316853,
+    0.002499057820244416
+  ],
+  "additional_sorted_clast_bodies": 13516,
+  "clast_diameter_m": [
+    0.006,
+    0.028
+  ],
+  "shrubs_removed": 1138,
+  "grouped_shrubs_added": 462,
+  "unchanged": "Approved R5D prototype shapes, mineral materials and metric sizes; original near-grain instance origins follow the edited broad ground datum. Road, fixed-contact deposit representation, cameras and lighting are unchanged.",
+  "CPU_threads": 2
+}

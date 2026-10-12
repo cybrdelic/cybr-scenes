@@ -1,0 +1,44 @@
+{
+  "source_scene_sha256": "48aa973bfc6fbebeb27d8ff0c7096bcc4ee021fac4c3cc05d968796e333848fc",
+  "scene_sha256": "97c95448d6b9fe2bae4118b4d5d632504254988894a2582964504eb9984a1f32",
+  "ridges": [
+    {
+      "index": 0,
+      "vertices": 78166,
+      "crest_scale_m": 124,
+      "mesh_spacing_m": 2.5,
+      "routing": "D8 recomputed at each of 18 stream-power incision steps",
+      "max_incision_m": 7.522201717521998,
+      "height_m": 120.57540892795,
+      "separate_outcrop_templates": 0
+    },
+    {
+      "index": 1,
+      "vertices": 82181,
+      "crest_scale_m": 133,
+      "mesh_spacing_m": 3.5,
+      "routing": "D8 recomputed at each of 18 stream-power incision steps",
+      "max_incision_m": 8.732264183166432,
+      "height_m": 137.0318077281758,
+      "separate_outcrop_templates": 0
+    },
+    {
+      "index": 2,
+      "vertices": 69768,
+      "crest_scale_m": 182,
+      "mesh_spacing_m": 5.0,
+      "routing": "D8 recomputed at each of 18 stream-power incision steps",
+      "max_incision_m": 11.013735275616156,
+      "height_m": 164.34233531346953,
+      "separate_outcrop_templates": 0
+    }
+  ],
+  "outcrop_vertices": 0,
+  "aerial_perspective": "Beer\u2013Lambert distance/airlight surface approximation with extinction .00022 per metre; no volume scattering claim.",
+  "near_materials_road_contact_camera_and_daylight": "unchanged from L",
+  "references": {
+    "url": "https://www.usgs.gov/media/images/granite-mountains",
+    "observed": "Public USGS image viewed in the cloud browser: pale massive granite, steep joints, rounded block shoulders, broken crests and detached blocks below.",
+    "limits": "Mojave National Preserve regional analogue, not a verified Victorville or Apple Valley site. No measured dimensions inferred; no horizontal sedimentary strata claimed; no image pixels used."
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "engine": "CYCLES",
+  "samples": 32,
+  "capture_mode": "unfiltered",
+  "save_guides": false,
+  "light_tree": false,
+  "color_depth": 16,
+  "dither_intensity": 0,
+  "use_adaptive_sampling": false,
+  "rss_cap_mib": 4480,
+  "compact_bvh": true,
+  "camera_cull_prefixes": [
+    "Original asphalt native tile "
+  ],
+  "camera_cull_margin": 0.12,
+  "asphalt_preview_map_size": 1024,
+  "preview_cull_terrain_faces": true,
+  "terrain_cull_margin": 0.2,
+  "release_unused_heap": true,
+  "lens": 32,
+  "width": 2000,
+  "height": 1334,
+  "source": "/CYBR_ROOT/unpacked/CYBR_Victorville_R6_AV_Current_Reproducible_Source_v15/road_scene_r6/captures/av_recovery_raw/av_outward/ASSEMBLED_SCENE_AV.blend",
+  "source_sha256": "03a35c760bb440cbbc19c4ccd223ec246b040640b063ba076b90f567a0368718",
+  "output": "/CYBR_ROOT/dq_world_normal_a/INTERNAL_PANEL.png",
+  "time_limit_seconds": 600,
+  "sync_limit_seconds": 450,
+  "view_scope": "DQ compact fixed foreground-world identities, roles and pure contact. Same DM terrain/material/light. Camera only selects immutable bodies. Bounded23.664m2 source domain; not full distant-landscape physical particle coverage.",
+  "fine_coating_az": {
+    "microbed_path": "/CYBR_ROOT/unpacked/CYBR_Victorville_CB_Current_Source_Extension_v1/ca_source/by_source/inputs/microbed.npz",
+    "builder_path": "/CYBR_ROOT/unpacked/CYBR_Victorville_CB_Current_Source_Extension_v1/ca_source/by_source/inputs/build_diagnostic.py"
+  },
+  "discard_unused_render_data": true,
+  "aligned_context_daylight": {
+    "mode": "align_sky_to_existing_sun"
+  },
+  "historical_fine_area_bw": {
+    "revision": 1
+  },
+  "camera_location": [
+    -5.5,
+    4.8,
+    0.65
+  ],
+  "camera_target": [
+    -3.5,
+    8.0,
+    0.15
+  ],
+  "allocator_policy_bx": {
+    "revision": 1
+  },
+  "road_surface_wear_by": {
+    "revision": 1
+  },
+  "asphalt_preview_grid_stride": 2,
+  "metric_pavement_extension_ca": {
+    "revision": 1,
+    "payload": "/CYBR_ROOT/generated_ca/extension_payload.npz",
+    "payload_sha256": "d1c7a52a2ca1845aa377eca3679135159e3c71762658a39488db0aa1cb472fd3",
+    "pins": "/CYBR_ROOT/unpacked/CYBR_Victorville_CB_Current_Source_Extension_v1/ca_source/road_scene_r6/audits/metric_extension_ca/source_array_pins.json",
+    "pins_sha256": "cff84e7438cf7e81897c9a42ce631f59f346643378d8b13a050d6f82002b2d28"
+  },
+  "continuous_edge_top_cb": {
+    "revision": 1,
+    "step": 2,
+    "payload": "/CYBR_ROOT/generated_cb/edge_payload_step2.npz",
+    "payload_sha256": "aef0aee3894aa18f3353faffc4f3f824e99f953779cbd8933dce5578daaee5ee",
+    "pins": "/CYBR_ROOT/unpacked/CYBR_Victorville_CB_Current_Source_Extension_v1/road_scene_r6/audits/edge_continuity_cb/edge_payload_step2.json",
+    "pins_sha256": "e8c32e2957d7a090ac13b188ded4fe7749943aa71270ed5a1aedb20f9a03e837",
+    "clearance": "/CYBR_ROOT/unpacked/CYBR_Victorville_CB_Current_Source_Extension_v1/road_scene_r6/audits/edge_continuity_cb/ground_clearance.json",
+    "clearance_sha256": "568ddac957aa95b563fbcda1ce03c35343b33d923bbc2ac9cb260dce8268a661"
+  },
+  "historical_surface_authority_cc": {
+    "revision": 1,
+    "fields": "/CYBR_ROOT/unpacked/CYBR_Victorville_CH_Current_Source_Compact_v1/inputs/AH_FIELDS.npz"
+  },
+  "coupled_shoulder_ce": {
+    "revision": 1,
+    "payload": "/CYBR_ROOT/unpacked/CYBR_Victorville_CH_Current_Source_Compact_v1/inputs/ce/payload.npz",
+    "payload_sha256": "05f32d7993c3e9b78d77c7d259d1d0c1fe1cc508ba7ae4598113359046274250",
+    "report": "/CYBR_ROOT/unpacked/CYBR_Victorville_CH_Current_Source_Compact_v1/inputs/ce/payload.json",
+    "safe_normal_transfer": true
+  },
+  "existing_gravel_cf": {
+    "revision": 1,
+    "terrain_payload": "/CYBR_ROOT/unpacked/CYBR_Victorville_CH_Current_Source_Compact_v1/inputs/ce/payload.npz",
+    "terrain_sha256": "05f32d7993c3e9b78d77c7d259d1d0c1fe1cc508ba7ae4598113359046274250"
+  },
+  "finite_historical_gravel_cg": {
+    "revision": 1,
+    "fractured_prototypes": "/CYBR_ROOT/unpacked/CYBR_Victorville_CH_Current_Source_Compact_v1/inputs/fracture_solids.json",
+    "fractured_prototypes_sha256": "1e87f9414bf2e4460e344e1fe8d630a8f50dff965c3e2a4680af02db34bc814b",
+    "terrain_payload": "/CYBR_ROOT/unpacked/CYBR_Victorville_CH_Current_Source_Compact_v1/inputs/ce/payload.npz",
+    "terrain_sha256": "05f32d7993c3e9b78d77c7d259d1d0c1fe1cc508ba7ae4598113359046274250",
+    "worked_edge_transition": true
+  },
+  "weathered_gravel_ch": {
+    "revision": 1,
+    "fractured_prototypes": "/CYBR_ROOT/unpacked/CYBR_Victorville_CH_Current_Source_Compact_v1/inputs/fracture_solids.json"
+  },
+  "fixed_gravel_support_ci": {
+    "revision": 1,
+    "terrain_payload": "/CYBR_ROOT/unpacked/CYBR_Victorville_CH_Current_Source_Compact_v1/inputs/ce/payload.npz",
+    "terrain_sha256": "05f32d7993c3e9b78d77c7d259d1d0c1fe1cc508ba7ae4598113359046274250",
+    "historical_fields": "/CYBR_ROOT/unpacked/CYBR_Victorville_CH_Current_Source_Compact_v1/inputs/AH_FIELDS.npz",
+    "historical_fields_sha256": "cb13eb9f9422741f113d244f249e6b70cece71596934df63643a59412483dac3",
+    "fractured_prototypes": "/CYBR_ROOT/unpacked/CYBR_Victorville_CH_Current_Source_Compact_v1/inputs/fracture_solids.json"
+  },
+  "raw_png_only": true,
+  "exact_image_memory_cache_ck": {
+    "revision": 1,
+    "map_tier": 1024
+  },
+  "frozen_architecture_layout_cl": {
+    "revision": 1,
+    "layout": "/CYBR_ROOT/unpacked/CYBR_Victorville_CL_Frozen_Layout_Source_Addon_v1/layout.json",
+    "layout_sha256": "619ca463fb2572cacaab6f8fa283fe3ad018c2c982d251c42f72b5e261302048"
+  },
+  "victorville_reflectance_cn": {
+    "revision": 1
+  },
+  "daylight_model_co": {
+    "revision": 1,
+    "card": "/CYBR_ROOT/unpacked/CYBR_Victorville_CO_CP_Daylight_Source_Addon_v2/card_calibration/measurement.json",
+    "card_sha256": "2e1b1ae8c87d529f52380407b702ecb591f31c8723ef2ffd3f01111df797e4c4"
+  },
+  "coherent_crown_cm": {
+    "revision": 1,
+    "layout": "/CYBR_ROOT/unpacked/CYBR_Victorville_CL_Frozen_Layout_Source_Addon_v1/layout.json",
+    "layout_sha256": "619ca463fb2572cacaab6f8fa283fe3ad018c2c982d251c42f72b5e261302048"
+  },
+  "correct_historical_gravel_domain_cq": {
+    "revision": 1,
+    "terrain_payload": "/CYBR_ROOT/unpacked/CYBR_Victorville_CH_Current_Source_Compact_v1/inputs/ce/payload.npz",
+    "terrain_sha256": "05f32d7993c3e9b78d77c7d259d1d0c1fe1cc508ba7ae4598113359046274250"
+  },
+  "visible_fine_grains_cz": {
+    "revision": 1,
+    "sand_bank": "/CYBR_ROOT/cz_source/sand_bank.json",
+    "sand_bank_sha256": "8ad5c6795e064aa15bfc111d0693397c653ed8835fc153977bc27a2157c1b7cc",
+    "width": 2000,
+    "height": 1334,
+    "grit_budget": 135000,
+    "sand_budget": 85000
+  },
+  "source_relative_burial_da": {
+    "datums": "/CYBR_ROOT/da_source/source_datums.json",
+    "datums_sha256": "cb12da56f4cf2b259af126ec5b2d92d6c521d9a8bdccf686a152e6e9a9fdb693",
+    "sand_bank": "/CYBR_ROOT/cz_source/sand_bank.json"
+  },
+  "shadow_probe_da": true,
+  "geometry_soil_normals_db": {
+    "revision": 1,
+    "source_pins": {
+      "/CYBR_ROOT/stable_grains_dq/after_da_hook.py": "f539182caefe4359569ade16b443c53945aecbb2cf08a224a8c6abf936b79e1c",
+      "/CYBR_ROOT/stable_grains_dq/install_world_view.py": "1540b1e3f361f5c3e601bcedddb9827bc91a7d7996f1f2511ac2d3a3b29d6ce1",
+      "/CYBR_ROOT/stable_grains_dq/install_catalog.py": "23b1fcabd0ed823141a73b7217539b8441e834dd6a12c41a5260181589f32f60",
+      "/CYBR_ROOT/stable_grains_dq/core/stable_catalog.py": "c50333339f4f4fe92c6ce03cf10704cec83812f7cb89db07b99906504f9e044c",
+      "/CYBR_ROOT/static_domain_dm/apply_static_layer.py": "f6a9246ac315e8e3dafb92821fbb7a64fef00e19f7dc95b7b5a312441088c462",
+      "/CYBR_ROOT/stable_grains_dq/VIEW_normal_2000.json": "8daba8ccdb3515ab6c6af332c31000d94535eee5bc1d1f75477f4bc540d89a61",
+      "/CYBR_ROOT/stable_grains_dq/WORLD_DISPLAY_BUDGET.npz": "b05387d729e08ce5c0c1f6a376a0d7ae3328bfe32c343a765b1b9ac732641b24"
+    },
+    "dh_hook": "/CYBR_ROOT/dh_coarse_source/after_history_hook.py",
+    "dh_config": {
+      "revision": 1,
+      "source_pins": {
+        "/CYBR_ROOT/db_source/geometry_soil_normals_db.py": "c23e3cff79afe2ce9b368eec53b3086e0776e0a53eb9b13ed5180312eb112298",
+        "/CYBR_ROOT/dg_history_source/historical_grain_roles_dg.py": "0b7cdbc4ec3daf32c7d9fd11d65354891230aac0a36074427a7184aa93b1f422",
+        "/CYBR_ROOT/dg_history_source/history_budget_dg.py": "18c5bc3b096c190ad889606508474e1ed24d3dc1823c9e0d46768a08e0410a98",
+        "/CYBR_ROOT/dg_history_source/transported_grain_exposure_dg.py": "0019380b537bf35309c25939b8fc1285e2a09036cea6a81e8024822bc788a587",
+        "/CYBR_ROOT/dh_coarse_source/after_history_hook.py": "7d15aff4cd260989dd5c85a4eb7fe34c63e59e836d393f520b0fcd8e59356a08",
+        "/CYBR_ROOT/dh_coarse_source/check_terrain_contact.py": "35971fed865a647534fde95fc013a88ce8a52256ed893d1f61a2d1e15553fac7",
+        "/CYBR_ROOT/weathered_clast_fields_dh/authored_parent_v3/volume_final/apply_weathered_fields.py": "dcf7965b8a8702c7dafacb663b428afee878e4d8815c3f5b3cc80ca9756d32f7",
+        "/CYBR_ROOT/weathered_clast_fields_dh/authored_parent_v3/volume_final/CANDIDATE_MANIFEST.json": "6ba7b8aa87ecaa9cd0758e1b850c3839a2dde3c0d37e793f9ff66b916f36a563",
+        "/CYBR_ROOT/dg_history_source/after_da_hook.py": "4f1fcac1c8de6ac8d0acbfd2864403aee7fad3314ab03d29346c6c5ce8541599"
+      },
+      "dg_hook": "/CYBR_ROOT/dg_history_source/after_da_hook.py",
+      "dg_config": {
+        "revision": 1,
+        "source_pins": {
+          "/CYBR_ROOT/db_source/geometry_soil_normals_db.py": "c23e3cff79afe2ce9b368eec53b3086e0776e0a53eb9b13ed5180312eb112298",
+          "/CYBR_ROOT/dg_history_source/historical_grain_roles_dg.py": "0b7cdbc4ec3daf32c7d9fd11d65354891230aac0a36074427a7184aa93b1f422",
+          "/CYBR_ROOT/dg_history_source/history_budget_dg.py": "18c5bc3b096c190ad889606508474e1ed24d3dc1823c9e0d46768a08e0410a98",
+          "/CYBR_ROOT/dg_history_source/transported_grain_exposure_dg.py": "0019380b537bf35309c25939b8fc1285e2a09036cea6a81e8024822bc788a587"
+        },
+        "db_source": "/CYBR_ROOT/db_source/geometry_soil_normals_db.py",
+        "dg_source": "/CYBR_ROOT/dg_history_source/historical_grain_roles_dg.py",
+        "history": {
+          "revision": 1,
+          "payload": "/CYBR_ROOT/unpacked/CYBR_Victorville_CH_Current_Source_Compact_v1/inputs/ce/payload.npz",
+          "payload_sha256": "05f32d7993c3e9b78d77c7d259d1d0c1fe1cc508ba7ae4598113359046274250",
+          "historical_fields": "/CYBR_ROOT/unpacked/CYBR_Victorville_CH_Current_Source_Compact_v1/inputs/AH_FIELDS.npz",
+          "historical_fields_sha256": "cb13eb9f9422741f113d244f249e6b70cece71596934df63643a59412483dac3",
+          "sand_bank": "/CYBR_ROOT/cz_source/sand_bank.json",
+          "sand_bank_sha256": "8ad5c6795e064aa15bfc111d0693397c653ed8835fc153977bc27a2157c1b7cc",
+          "datums": "/CYBR_ROOT/da_source/source_datums.json",
+          "datums_sha256": "cb12da56f4cf2b259af126ec5b2d92d6c521d9a8bdccf686a152e6e9a9fdb693"
+        },
+        "apply_history": false
+      },
+      "apply_coarse": true,
+      "coarse_source": "/CYBR_ROOT/weathered_clast_fields_dh/authored_parent_v3/volume_final/apply_weathered_fields.py",
+      "coarse_config": {
+        "revision": 1,
+        "manifest": "/CYBR_ROOT/weathered_clast_fields_dh/authored_parent_v3/volume_final/CANDIDATE_MANIFEST.json",
+        "manifest_sha256": "6ba7b8aa87ecaa9cd0758e1b850c3839a2dde3c0d37e793f9ff66b916f36a563"
+      },
+      "contact_source": "/CYBR_ROOT/dh_coarse_source/check_terrain_contact.py",
+      "contact_config": {
+        "revision": 1,
+        "payload": "/CYBR_ROOT/unpacked/CYBR_Victorville_CH_Current_Source_Compact_v1/inputs/ce/payload.npz",
+        "payload_sha256": "05f32d7993c3e9b78d77c7d259d1d0c1fe1cc508ba7ae4598113359046274250",
+        "settle_downward": true,
+        "embedding_m": 2e-05
+      }
+    },
+    "install_source": "/CYBR_ROOT/stable_grains_dq/install_world_view.py",
+    "catalog_config": {
+      "revision": 1,
+      "sand_bank": "/CYBR_ROOT/cz_source/sand_bank.json",
+      "sand_bank_sha256": "8ad5c6795e064aa15bfc111d0693397c653ed8835fc153977bc27a2157c1b7cc",
+      "width": 2000,
+      "height": 1334,
+      "grit_budget": 135000,
+      "sand_budget": 85000,
+      "catalog": "/CYBR_ROOT/stable_grains_dq/VIEW_normal_2000.npz",
+      "catalog_sha256": "f252185d80111e57f70ba7f245f8a2d5a95a71e089eca1ec5fb8d8d8fd20df83",
+      "catalog_receipt": "/CYBR_ROOT/stable_grains_dq/VIEW_normal_2000.json",
+      "budget": "/CYBR_ROOT/stable_grains_dq/WORLD_DISPLAY_BUDGET.npz",
+      "frozen_installer_sha256": "23b1fcabd0ed823141a73b7217539b8441e834dd6a12c41a5260181589f32f60"
+    },
+    "layer_source": "/CYBR_ROOT/static_domain_dm/apply_static_layer.py",
+    "layer": {
+      "field": "/CYBR_ROOT/static_domain_dm/STATIC_FINE_LAYER.npz",
+      "field_sha256": "d692f6513f6639332d774f0bbb46cb821fb32da3f4f54a56671867e13f7951be"
+    }
+  }
+}

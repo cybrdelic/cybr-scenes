@@ -1,0 +1,14 @@
+{
+  "source_full_co_sha256": "07eb9c84ee97224a82ca61243ea635e92a7a80d194f364bc969456b7617c3794",
+  "source_full_tri_sha256": "df6f2b4504334ff909dfadcc7a147507a5e7fffec0d44434c945666e25a03088",
+  "subset_vertices": 236812,
+  "subset_triangles": 458343,
+  "unchanged_source": true,
+  "edge_length_quantiles_m": [
+    0.0,
+    0.023000001907348633,
+    0.04093681648373604,
+    0.180935338139534,
+    0.19270291924476624
+  ]
+}

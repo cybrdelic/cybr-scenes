@@ -1,0 +1,5 @@
+{
+  "original_source_scene_sha256": "bc56aca669fe4fa01f4801a36aefe74d3f9eced5fdee4f32f01c470ab89706b6",
+  "policy": "Serialized bytes may differ only if the exact structural fingerprint passes. Never bypass.",
+  "source_scene_structural_sha256": "2eca9cc4abd933a18a2bad572566f29f833c5d91ddf7992b2ffbf2011497e281"
+}

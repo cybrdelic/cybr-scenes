@@ -1,0 +1,38 @@
+{
+  "status": "Exact frozen macro debit and full fixed-world count manifest prepared",
+  "macro_roles_bitwise_equal": true,
+  "macro_volume_ledger_bitwise_equal": true,
+  "additional_world_candidates": 27985061,
+  "inside_budget_grid_candidates": 27780084,
+  "outside_grid_remain_static": 204977,
+  "additional_class_counts": [
+    24105551,
+    3699229,
+    180281
+  ],
+  "elapsed_seconds": 24.722150385998248,
+  "field_pins": {
+    "payload": "05f32d7993c3e9b78d77c7d259d1d0c1fe1cc508ba7ae4598113359046274250",
+    "historical_fields": "cb13eb9f9422741f113d244f249e6b70cece71596934df63643a59412483dac3",
+    "sand_bank": "8ad5c6795e064aa15bfc111d0693397c653ed8835fc153977bc27a2157c1b7cc",
+    "datums": "cb12da56f4cf2b259af126ec5b2d92d6c521d9a8bdccf686a152e6e9a9fdb693",
+    "static_cap": "d692f6513f6639332d774f0bbb46cb821fb32da3f4f54a56671867e13f7951be"
+  },
+  "remaining_volume_by_class_m3": [
+    0.019471600170767902,
+    0.0045448724632994155,
+    0.0006703689597047999
+  ],
+  "remaining_area_by_class_m2": [
+    2.2552064714962508,
+    0.4098900169509794,
+    0.03455581417993367
+  ],
+  "frozen_macro_legacy_area_overshoot_m2": [
+    1.8296820410921495e-08,
+    1.035140096231676e-06,
+    2.5270055996322325e-05
+  ],
+  "input_inventory_changed": false,
+  "roles_not_yet_allocated_for_new_world": true
+}

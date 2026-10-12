@@ -1,0 +1,11 @@
+{
+  "CPU_affinity": [
+    0
+  ],
+  "blender_launched": false,
+  "elapsed_seconds": 9.198202036001021,
+  "exit_code": 0,
+  "kernel_max_child_RSS_MiB": 56.71484375,
+  "packaged": false,
+  "rendered": false
+}

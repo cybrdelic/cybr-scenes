@@ -1,0 +1,109 @@
+{
+  "AH_field_extrapolation": false,
+  "bounds_xy_m": [
+    -3.95,
+    -3.04,
+    -0.35,
+    15.65
+  ],
+  "changed_vertices": 172146,
+  "clipped_requested_vertices": 0,
+  "elapsed_seconds": 247.1567761990009,
+  "estimated_peak_added_buffer_mib": 191.21327209472656,
+  "exact_original_asphalt_world_xy_phase_m": 0.25,
+  "exact_triangle_clearance": {
+    "excludes": "Particles, section sidewalls and shader normal fields; no visible Y onset/fade exclusion",
+    "method": "All exact XY overlap polygon vertices; extrema of the actual linear road and soil facets",
+    "minimum_linear_mesh_clearance_m": 0.0008001925706687119,
+    "overlap_area_m2": 0.2605966615266423,
+    "overlap_polygons": 351428,
+    "overlap_vertices": 1291071,
+    "penetrating_overlap_polygons": 0,
+    "post_float32_storage": true,
+    "roi_xy_m": [
+      -3.3,
+      -3.04,
+      0.0,
+      15.0
+    ]
+  },
+  "existing_topology_unchanged": true,
+  "exposed_profile_fraction": 0.04868279716714913,
+  "limits": "Actual terrain anchors include existing AH/AC/AL history, with AP reach exposure as an authored geometric interpretation. No fresh erosion solve. Original asphalt planform, including inherited scallops, remains unchanged. Near-flush target is 0.8 mm; actual faceted contact may be lower after exact clearance correction. No claim of particle-footprint collision clearance or automatic visual acceptance.",
+  "local_ground_triangles": 346948,
+  "maximum_facet_correction_m": 0.0016664700412823686,
+  "model": "Continuous actual-triangle graded bank with exposure inherited from AP connected runoff chronology",
+  "moved_AP_instances": [],
+  "moved_existing": [
+    {
+      "moved_origins": 5996,
+      "object": "True approved R5D near-camera grain geometry",
+      "outside_actual_soil_support": 0,
+      "prototype_identity_xy_scale_materials_unchanged": true,
+      "shift_range_m": [
+        -0.010100179992792778,
+        0.01643816412587041
+      ]
+    },
+    {
+      "moved_origins": 34064,
+      "object": "U approved R5D density / projected chip and grit supplement",
+      "outside_actual_soil_support": 0,
+      "prototype_identity_xy_scale_materials_unchanged": true,
+      "shift_range_m": [
+        -0.008028179956909378,
+        0.01638998894571163
+      ]
+    },
+    {
+      "moved_complete_bodies": 14,
+      "object": "Sparse physical 7\u201331 mm roadside mineral lag",
+      "rigid_shape_xy_materials_unchanged": true
+    },
+    {
+      "moved_complete_bodies": 32,
+      "object": "Gravel lag pockets beside shallow runoff arms",
+      "rigid_shape_xy_materials_unchanged": true
+    },
+    {
+      "moved_complete_bodies": 0,
+      "object": "Connected drainage / margin gravel bars",
+      "rigid_shape_xy_materials_unchanged": true
+    }
+  ],
+  "moved_roots": [
+    {
+      "delta_m": -0.004423350920442571,
+      "object": "Sparse dry straw tufts.174"
+    }
+  ],
+  "near_flush_profile_fraction": 0.9224243086278151,
+  "new_meshes": 0,
+  "new_particles": 0,
+  "normals": {
+    "changed_corner_normals": 989250,
+    "maximum_broad_rotation_degrees": 97.61105707638929,
+    "policy": "Preserved pre-edit corner detail, shortest-arc rotation by actual old/new facet normals; one full corner buffer"
+  },
+  "original_asphalt_unchanged": true,
+  "original_materials_and_prototype_shapes_unchanged": true,
+  "overlap_constraint_corrected_vertices": 5763,
+  "peak_road_slab_triangles": 11398,
+  "periodic_or_random_edge_pattern": false,
+  "scene_assigned": true,
+  "sediment_mass_conservation_claim": false,
+  "source_grade_clipped_samples": 0,
+  "target_exposure_range_m": [
+    0.0008,
+    0.006
+  ],
+  "vertex_movement_range_m": [
+    -0.021104782819747925,
+    0.016564182937145233
+  ],
+  "visible_y_m": [
+    0.0,
+    15.0
+  ],
+  "world_xy_unchanged": true
+}

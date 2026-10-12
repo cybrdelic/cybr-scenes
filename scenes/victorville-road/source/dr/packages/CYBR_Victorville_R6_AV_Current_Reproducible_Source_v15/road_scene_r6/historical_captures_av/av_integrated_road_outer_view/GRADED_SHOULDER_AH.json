@@ -1,0 +1,514 @@
+{
+  "bounds_m": [
+    -6.2,
+    -3.25,
+    -0.6,
+    8.2
+  ],
+  "changed_vertices": 64304,
+  "elapsed_seconds": 36.52079762000358,
+  "field_sha256": "cb13eb9f9422741f113d244f249e6b70cece71596934df63643a59412483dac3",
+  "foundation": {
+    "boundary_zero_collar_m": 0.075,
+    "channels": [
+      [
+        [
+          -3.62,
+          7.7,
+          0.18,
+          0.005
+        ],
+        [
+          -3.88,
+          6.48,
+          0.26,
+          0.008
+        ],
+        [
+          -4.13,
+          5.31,
+          0.43,
+          0.011
+        ],
+        [
+          -4.67,
+          3.55,
+          0.39,
+          0.016
+        ],
+        [
+          -5.51,
+          1.67,
+          0.69,
+          0.021
+        ],
+        [
+          -6.1,
+          0.7,
+          0.82,
+          0.012
+        ]
+      ],
+      [
+        [
+          -3.56,
+          5.85,
+          0.12,
+          0.004
+        ],
+        [
+          -3.8,
+          5.62,
+          0.21,
+          0.007
+        ],
+        [
+          -4.13,
+          5.31,
+          0.43,
+          0.011
+        ]
+      ],
+      [
+        [
+          -3.78,
+          4.13,
+          0.16,
+          0.004
+        ],
+        [
+          -4.17,
+          3.92,
+          0.26,
+          0.008
+        ],
+        [
+          -4.67,
+          3.55,
+          0.39,
+          0.016
+        ]
+      ]
+    ],
+    "conservation_claim": false,
+    "contact_feather_m": 0.12,
+    "datum_profile_coefficients": [
+      -0.030378711507380227,
+      0.10000732475003142,
+      0.1090260505342288
+    ],
+    "datum_y_center_m": 3.7999999999999994,
+    "datum_y_scale_m": 8.799999999999999,
+    "evaluation": "Direct at actual mesh vertices before unchanged sediment event",
+    "limits": "Authored foundation, not measured site terrain or validated hydraulic prediction",
+    "maximum_channel_depth_m": 0.021,
+    "no_post_transport_smoothing": true,
+    "outer_datum_coefficients": [
+      0.006922359587817925,
+      0.09772484083149793,
+      0.04775391888551129
+    ],
+    "outer_existing_relief_retained": true,
+    "revision": "AT",
+    "role": "Worked inner shoulder blended into existing outer relief, connected shallow asymmetric receiving wash",
+    "vertex_delta_min_max_m": [
+      -0.015527496466028863,
+      0.027508672359246086
+    ],
+    "worked_full_width_m": 0.5,
+    "worked_transition_width_m": 0.9
+  },
+  "foundation_projection": {
+    "area_difference_m2": 5.684341886080802e-14,
+    "boundary_projection_contained": true,
+    "coarse_moving_triangle_area_m2": 0.0,
+    "max_moving_triangle_xy_edge_m": 0.04486025879416827,
+    "needs_refinement": false,
+    "note": "Exact clipped linear-triangle signed volume; absolute bounds may overcount sign changes/overlapping protected regions; no mass fix-up",
+    "outside_domain_absolute_volume_upper_bound_m3": 0.0,
+    "protected_absolute_volume_upper_bound_m3": 0.0,
+    "protected_projection_unchanged": true,
+    "rectangle_area_m2": 25.959999999999997,
+    "triangle_area_m2": 25.960000000000054,
+    "triangle_signed_volume_m3": 0.018396399832329453
+  },
+  "historical_substrate": true,
+  "limits": "Illustrative terrain construction, not surveyed Victorville or validated hydraulics. Earthwork volume is separate from conservative sediment mass. Existing particles follow all earthwork plus erosion/deposition burial; newly deposited-class population reallocation is not yet included. Visual acceptance separate.",
+  "material_sources_modified": false,
+  "moved_bodies": [
+    {
+      "moved_origins": 21716,
+      "object": "True approved R5D near-camera grain geometry",
+      "prototype_geometry_material_and_ids_preserved": true,
+      "shift_min_max_m": [
+        -0.01787797701598101,
+        0.018682179136373767
+      ]
+    },
+    {
+      "moved_origins": 284495,
+      "object": "U approved R5D density / projected chip and grit supplement",
+      "prototype_geometry_material_and_ids_preserved": true,
+      "shift_min_max_m": [
+        -0.01856295547847727,
+        0.0192197148307953
+      ]
+    },
+    {
+      "moved_complete_bodies": 50,
+      "object": "Sparse physical 7\u201331 mm roadside mineral lag",
+      "shape_preserved": true
+    },
+    {
+      "moved_complete_bodies": 121,
+      "object": "Gravel lag pockets beside shallow runoff arms",
+      "shape_preserved": true
+    },
+    {
+      "moved_complete_bodies": 225,
+      "object": "Connected drainage / margin gravel bars",
+      "shape_preserved": true
+    }
+  ],
+  "moved_roots": [
+    {
+      "object": "Established irregular roadside scrub group",
+      "z_shift_m": -0.0015550036924234928
+    },
+    {
+      "object": "Established irregular roadside scrub group.001",
+      "z_shift_m": -7.801389755703048e-05
+    }
+  ],
+  "new_ground_sheets": 0,
+  "new_particles": 0,
+  "normals": {
+    "changed_corner_normals": 363612,
+    "maximum_broad_rotation_degrees": 33.331360362766475,
+    "policy": "Preserved pre-deformation vectors; one shortest-arc rotation of preserved source corner normals by actual old/new local triangle normals"
+  },
+  "refinement": {
+    "active_rectangle_triangles": 130917,
+    "added_vertices": 2807,
+    "attribute_names_preserved": [
+      "asphalt_share",
+      "macro_tint",
+      ".select_vert",
+      ".select_edge",
+      ".select_poly"
+    ],
+    "blender_float32_storage": true,
+    "bounds_m": [
+      -6.2,
+      -3.25,
+      -0.6,
+      8.2
+    ],
+    "conformity_certificate": {
+      "all_boundary_segments_have_original_provenance": true,
+      "boundary_segments": 12577,
+      "interior_edges_have_two_uses": true,
+      "local_surface_edges": 214646,
+      "maximum_boundary_coverage_error_m": 0.0,
+      "zero_footprint_xy_cross_threshold_m2": 1e-13
+    },
+    "edge_limit_m": 0.07,
+    "excluded_protected_or_degenerate_rectangle_triangles": 10886,
+    "kept_original_polygons": 1135618,
+    "limits": {
+      "max_added_vertices": 240000,
+      "max_local_source_triangles": 450000,
+      "max_output_triangles": 800000,
+      "max_rounds": 12,
+      "max_source_triangles": 3000000,
+      "max_source_vertices": 1600000,
+      "scan_batch_size": 32768
+    },
+    "local_source_triangles": 144364,
+    "material_slots_unchanged": true,
+    "max_active_edge_m": 0.05669778953634686,
+    "neighbor_policy": "Original-edge one-ring parent closure; only selected sources request splits",
+    "omitted_zero_footprint_children": 11073,
+    "original_projected_area_m2": 28.88846764523482,
+    "original_triangle_barycentric_additions": true,
+    "original_vertices_bitwise_preserved": true,
+    "post_displacement_normals": "Caller must choose an explicit shading policy",
+    "protected_interface_edge_limit_m": 0.05,
+    "refined_projected_area_m2": 28.888467645234815,
+    "refinement_rounds": 2,
+    "rendered": false,
+    "replaced_polygons": 72182,
+    "replacement_triangles": 138905,
+    "required_extra_pretransport_inventory_guard_m": 0.05,
+    "sampler_degenerate_triangles_omitted": 10886,
+    "saved": false,
+    "scene_assigned": false,
+    "selected_source_triangles": 130966,
+    "shared_edge_midpoints": true,
+    "source_custom_normals_interpolated": true,
+    "source_polygons": 1207800,
+    "source_rectangle_triangles": 141803,
+    "source_sampler_triangles": 130917,
+    "source_triangles": 2415600,
+    "source_vertices": 1211247
+  },
+  "scope": "Authored coherent road grading and connected shallow wash, then restrained current-bed-supported sediment weathering",
+  "sediment_projection": {
+    "area_difference_m2": 5.684341886080802e-14,
+    "boundary_projection_contained": true,
+    "coarse_moving_triangle_area_m2": 0.0,
+    "max_moving_triangle_xy_edge_m": 0.04486025879416827,
+    "needs_refinement": false,
+    "note": "Exact clipped linear-triangle signed volume; absolute bounds may overcount sign changes/overlapping protected regions; no mass fix-up",
+    "outside_domain_absolute_volume_upper_bound_m3": 0.0,
+    "projection_relative_to_gross_exchange": 0.00031782624085543185,
+    "projection_volume_error_m3": 3.012985242901653e-05,
+    "protected_absolute_volume_upper_bound_m3": 0.0,
+    "protected_projection_unchanged": true,
+    "rectangle_area_m2": 25.959999999999997,
+    "solver_signed_volume_m3": -0.027822809235867656,
+    "triangle_area_m2": 25.960000000000054,
+    "triangle_signed_volume_m3": -0.02779267938343864
+  },
+  "total_displacement_min_max_m": [
+    -0.019282629833325723,
+    0.020566275351664734
+  ],
+  "total_projection": {
+    "area_difference_m2": 5.684341886080802e-14,
+    "boundary_projection_contained": true,
+    "coarse_moving_triangle_area_m2": 0.0,
+    "max_moving_triangle_xy_edge_m": 0.04486025879416827,
+    "needs_refinement": false,
+    "note": "Exact clipped linear-triangle signed volume; absolute bounds may overcount sign changes/overlapping protected regions; no mass fix-up",
+    "outside_domain_absolute_volume_upper_bound_m3": 0.0,
+    "protected_absolute_volume_upper_bound_m3": 0.0,
+    "protected_projection_unchanged": true,
+    "rectangle_area_m2": 25.959999999999997,
+    "triangle_area_m2": 25.960000000000054,
+    "triangle_signed_volume_m3": -0.00939627955110919
+  },
+  "transport": {
+    "bounds_m": [
+      -6.2,
+      -3.25,
+      -0.6,
+      8.2
+    ],
+    "initial_class_composition": "Spatial authored parent-unit mixture",
+    "initial_total_layer_unchanged": true,
+    "interface_transition_m": 0.3,
+    "interpolation_grid_guard_m": 0.05,
+    "interpolation_guard_m": 0.12000000000000001,
+    "inventory_layer_m": 0.018,
+    "mesh_projection_guard_m": 0.07,
+    "model": "AE current-bed supported transport on AD geometry guards",
+    "no_additional_height_sheets": true,
+    "no_material_or_grain_edits": true,
+    "protected_bounds_m": [
+      100.0,
+      101.0,
+      100.0,
+      101.0
+    ],
+    "protected_cells": 1386,
+    "protected_cells_unchanged": true,
+    "protected_contact_x_min_m": -3.25,
+    "retained_cap_m": 0.014,
+    "shape_yx": [
+      177,
+      60
+    ],
+    "solver": {
+      "active_area_m2": 26.550000000000004,
+      "ae_limit_note": "Repeated rejected requests are not unique sediment mass; no material was debited or subsequently smoothed",
+      "ae_limited_erosion_requests_m3": 0.7297746005016348,
+      "ae_max_local_erosion_step_m": 0.0015,
+      "ae_no_downhill_donor_contacts": 4109,
+      "ae_resistance": "World-metre-anchored hash lattice; invariant at coincident coordinates under crop/refinement",
+      "ae_routing_limitation": "Z MFD spill routing is retained; source-only diagnostic revision, not hydrodynamic validation",
+      "ae_scour_cfl": 0.45,
+      "ae_scour_support": "Current donor must have a lower shared-face bed; finite exchange cannot excavate below its own connected downhill support",
+      "boundary_band_cells": 4.0,
+      "boundary_band_m": 0.2,
+      "boundary_export_by_class_m3": [
+        0.022971947506618212,
+        0.0045398620745205655,
+        0.00031099965472895774
+      ],
+      "boundary_export_m3": 0.027822809235867735,
+      "boundary_treatment": "Smoothstep mobility scales local erosion/deposition bounds; rim locked, water/sediment pass through",
+      "bounds_m": [
+        -0.018,
+        0.018
+      ],
+      "cell_area_m2": 0.0025000000000000005,
+      "cell_size_xy_m": [
+        0.05,
+        0.05
+      ],
+      "class_names": [
+        "matrix_lt_0p69mm",
+        "grit_0p69_to_1p66mm",
+        "chips_1p66_to_5p9mm"
+      ],
+      "contact_connectivity": "Face-connected cells below current source water stage inside the existing finite footprint; no area renormalization",
+      "cumulative_deposition_m3": 0.03348847707201375,
+      "cumulative_erosion_m3": 0.06131128630788149,
+      "cumulative_slope_redistribution_m3": 9.952045171630173e-09,
+      "deposit_repose_slope": 0.3,
+      "deposition_length_m": [
+        0.14,
+        0.085,
+        0.045
+      ],
+      "erosion_length_m": 0.075,
+      "events": [
+        {
+          "absolute_class_balance_error_m3": 1.0928757898653885e-16,
+          "cumulative_net_bed_change_m3": -0.009625070320183211,
+          "cumulative_sediment_balance_error_m3": 1.734723475976807e-18,
+          "deposition_m3": 0.010740198221522954,
+          "erosion_m3": 0.020365268541706165,
+          "event": 1,
+          "infiltration_m3": 0.2761200000000001,
+          "rainfall_m": 0.02,
+          "rainfall_m3": 0.5310000000000001,
+          "roundoff_inventory_added_m3": 0.0,
+          "sediment_export_by_class_m3": [
+            0.008169174443193485,
+            0.0014062966065980058,
+            4.959927039172142e-05
+          ],
+          "slope_redistribution_m3": 3.0619906034894907e-09,
+          "upstream_water_m3": 0.28036800000000006,
+          "water_boundary_export_m3": 0.5352480000000001
+        },
+        {
+          "absolute_class_balance_error_m3": 2.42861286636753e-16,
+          "cumulative_net_bed_change_m3": -0.019152107897635714,
+          "cumulative_sediment_balance_error_m3": 3.469446951953614e-18,
+          "deposition_m3": 0.01282147565664877,
+          "erosion_m3": 0.022348513234101273,
+          "event": 2,
+          "infiltration_m3": 0.41418000000000005,
+          "rainfall_m": 0.03,
+          "rainfall_m3": 0.7965000000000001,
+          "roundoff_inventory_added_m3": 0.0,
+          "sediment_export_by_class_m3": [
+            0.007850493838981069,
+            0.0015286122392569731,
+            0.00014793149921446102
+          ],
+          "slope_redistribution_m3": 4.9172052162961855e-09,
+          "upstream_water_m3": 0.4205520000000001,
+          "water_boundary_export_m3": 0.8028719999999998
+        },
+        {
+          "absolute_class_balance_error_m3": 9.020562075079397e-17,
+          "cumulative_net_bed_change_m3": -0.027822809235867732,
+          "cumulative_sediment_balance_error_m3": 3.469446951953614e-18,
+          "deposition_m3": 0.009926803193842027,
+          "erosion_m3": 0.018597504532074052,
+          "event": 3,
+          "infiltration_m3": 0.3451500000000001,
+          "rainfall_m": 0.025,
+          "rainfall_m3": 0.6637500000000002,
+          "roundoff_inventory_added_m3": 0.0,
+          "sediment_export_by_class_m3": [
+            0.006952279224443656,
+            0.0016049532286655864,
+            0.0001134688851227753
+          ],
+          "slope_redistribution_m3": 1.9728493518444966e-09,
+          "upstream_water_m3": 0.3504600000000001,
+          "water_boundary_export_m3": 0.6690599999999997
+        }
+      ],
+      "exchange_diameter_m": 0.15,
+      "flow_routing": "Slope-weighted MFD; metric distance-to-outlet on filled flats",
+      "gross_volume_note": "Gross erosion/deposition include internal slope redistribution in equal amounts",
+      "head_cap_caveat": "Nonvalidated low-head contact approximation; no extra infiltration or water loss is introduced",
+      "hydraulic_footprint": "Cell-integrated compact disk; discharge per width averaged before bed exchange",
+      "infiltration_m3": 1.0354500000000002,
+      "initial_mobile_bed_layer_by_class_m3": [
+        0.18663060272250218,
+        0.10186158846365151,
+        0.06437075868933394
+      ],
+      "initial_mobile_bed_layer_m3": 0.35286294987548583,
+      "initial_mobile_inventory_source": "Supplied exact per-cell class thicknesses",
+      "integration": "Every sample is a cell centre with area dx*dy, including rim samples",
+      "invariants": "Finite nonnegative inventories, per-class absolute mass closure, and height bounds asserted before/after each storm slope transfer",
+      "maximum_contact_head_m": 0.004,
+      "maximum_height_delta_m": 0.013386526338003937,
+      "maximum_retained_deposit_cap_excess_m": 1.734723475976807e-18,
+      "maximum_retained_deposit_cap_m": 0.014,
+      "minimum_height_delta_m": -0.009000000000000006,
+      "minimum_remaining_initial_class_thickness_m": 0.0,
+      "minimum_retained_deposit_cap_m": 0.0,
+      "minimum_retained_deposit_class_thickness_m": 0.0,
+      "model": "AE current-bed donor-supported finite-inventory sediment transport",
+      "net_bed_plus_export_error_m3": 0.0,
+      "net_height_volume_m3": -0.027822809235867735,
+      "open_boundary": "Outer rectangle rim; invalid-mask holes closed",
+      "rainfall_m3": 1.9912500000000004,
+      "relative_sediment_balance_error": 5.658741091373287e-17,
+      "remaining_initial_bed_layer_by_class_m3": [
+        0.1437621726973353,
+        0.09132340947313719,
+        0.06309128693313648
+      ],
+      "remaining_initial_bed_layer_m3": 0.2981768691036042,
+      "representative_diameter_m": [
+        0.00022,
+        0.00108,
+        0.0033
+      ],
+      "retained_deposit_cap_interpretation": "Optional per-cell total transported stock cap, excluding remaining initial layer; also subject to Y net-height and wet-stage bounds",
+      "retained_transported_deposit_by_class_m3": [
+        0.019896482518552507,
+        0.005998316915997031,
+        0.0009684721014644467
+      ],
+      "retained_transported_deposit_m3": 0.02686327153601395,
+      "roundoff_corrected_entries": 0,
+      "roundoff_inventory_added_by_class_m3": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "roundoff_inventory_added_m3": 0.0,
+      "runtime_s": 8.988551646994893,
+      "sediment_balance_error_m3": 3.469446951953614e-18,
+      "seed": 73109,
+      "shape_yx": [
+        177,
+        60
+      ],
+      "source": "Actual supplied triangle Z; random heterogeneity only in resistance/erodibility",
+      "stage_blocked_receiver_contacts": 67248,
+      "status": "NONVALIDATED ART-DIRECTED PHYSICS; not an engineering prediction",
+      "stock_balance_by_class_m3": [
+        -3.837208328860697e-15,
+        -3.277760007858177e-15,
+        4.05166351857833e-15
+      ],
+      "suspended_end_m3": 0.0,
+      "unplaced_deposition_requests_m3": 0.1842678563075323,
+      "unplaced_request_note": "Repeated unaccepted attempts, not unique sediment volume; load remains routed and is conserved",
+      "upstream_contributing_width_m": 1.8,
+      "upstream_edge": "x_max",
+      "upstream_source": "Water-only runoff from explicit contributing strip; no imported sediment",
+      "upstream_water_m3": 1.0513800000000004,
+      "water_balance_error_m3": 1.3322676295501878e-15,
+      "water_boundary_export_m3": 2.0071799999999995,
+      "water_stage_interpretation": "Current source bed plus bounded shallow head, never above pre-storm source stage; numerical spill elevation is not permission to wet high crests"
+    },
+    "source": "Caller-supplied actual terrain samples; initial mobile stock already included",
+    "spacing_xy_m": [
+      0.05,
+      0.05
+    ]
+  }
+}

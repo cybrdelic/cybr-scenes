@@ -1,0 +1,118 @@
+{
+  "actual_scene_rendered": false,
+  "boundary_exactly_retained": true,
+  "boundary_zero_collar_m": 0.075,
+  "channels": [
+    [
+      [
+        -3.62,
+        7.7,
+        0.18,
+        0.005
+      ],
+      [
+        -3.88,
+        6.48,
+        0.26,
+        0.008
+      ],
+      [
+        -4.13,
+        5.31,
+        0.43,
+        0.011
+      ],
+      [
+        -4.67,
+        3.55,
+        0.39,
+        0.016
+      ],
+      [
+        -5.51,
+        1.67,
+        0.69,
+        0.021
+      ],
+      [
+        -6.1,
+        0.7,
+        0.82,
+        0.012
+      ]
+    ],
+    [
+      [
+        -3.56,
+        5.85,
+        0.12,
+        0.004
+      ],
+      [
+        -3.8,
+        5.62,
+        0.21,
+        0.007
+      ],
+      [
+        -4.13,
+        5.31,
+        0.43,
+        0.011
+      ]
+    ],
+    [
+      [
+        -3.78,
+        4.13,
+        0.16,
+        0.004
+      ],
+      [
+        -4.17,
+        3.92,
+        0.26,
+        0.008
+      ],
+      [
+        -4.67,
+        3.55,
+        0.39,
+        0.016
+      ]
+    ]
+  ],
+  "conservation_claim": false,
+  "contact_feather_m": 0.12,
+  "datum_profile_coefficients": [
+    -0.030378711507379565,
+    0.10000732475003142,
+    0.1090260505342287
+  ],
+  "datum_y_center_m": 3.7999999999999994,
+  "datum_y_scale_m": 8.799999999999999,
+  "evaluation": "Direct at actual mesh vertices before unchanged sediment event",
+  "limits": "Authored foundation, not measured site terrain or validated hydraulic prediction",
+  "maximum_channel_depth_m": 0.021,
+  "no_post_transport_smoothing": true,
+  "outer_band_max_raise_m": 0.0,
+  "outer_datum_coefficients": [
+    0.006922359587817843,
+    0.09772484083149799,
+    0.04775391888551127
+  ],
+  "outer_existing_relief_retained": true,
+  "role": "Worked inner shoulder blended into existing outer relief, connected shallow asymmetric receiving wash",
+  "sampled_change_min_max_m": [
+    -0.015340044662255359,
+    0.02606353006988031
+  ],
+  "source_sha256": "94650bd9acc714c9bae2656c7b9a46bf2c5c92240c0251e75f3a4e45bb428958",
+  "tests_passed": true,
+  "vertex_delta_min_max_m": [
+    -0.015340044662255359,
+    0.02606353006988031
+  ],
+  "worked_full_width_m": 0.5,
+  "worked_transition_width_m": 0.9
+}

@@ -1,0 +1,42 @@
+{
+  "actual_source_cached_vertex_check": {
+    "core_buried_vertices": 345,
+    "eligible_vertices": 6996,
+    "final_clearance_min_m": 0.0007999999999999952,
+    "movement_cap_clipped_vertices": 0,
+    "unblended_requested_movement_range_m": [
+      -0.018944978326313797,
+      0.01623828767779939
+    ],
+    "under_pavement_vertices": 376,
+    "vertex_movement_range_m": [
+      -0.01819886987856005,
+      0.01623828767779939
+    ],
+    "vertices": 6996
+  },
+  "blender_scene_loads": 0,
+  "command": [
+    "python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "src",
+    "-p",
+    "test_contact_bank_continuity_al.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "hashes": {
+    "src/contact_bank_continuity_al.py": "d3e21b7b3b8430153378784fd68187abcae427e6ded2c9d0cb635bf7af5f3c17",
+    "src/test_contact_bank_continuity_al.py": "ec6364a3d93adf79fe55de37081cd8d83402cf8f8541d58e34f1e0cc34c7fc9e"
+  },
+  "limits": "Pure fixture topology, exact cached road triangles, current AH fields, and cached inherited ground vertices. Actual post-AH/AC mesh-interior clearance is checked by apply during parent integration; visual acceptance separate.",
+  "passed": true,
+  "renders": 0,
+  "shared_pipeline_edits": 0,
+  "test_count": 12,
+  "timestamp_utc": "2026-10-10T07:30:35.391756+00:00",
+  "wall_seconds": 2.1439917809984763
+}

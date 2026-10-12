@@ -1,0 +1,182 @@
+{
+  "boundary_straddling_vertices_pinned": 435,
+  "bounds_xy_m": [
+    -3.75,
+    -3.04,
+    2.0,
+    8.2
+  ],
+  "changed_vertices": 9040,
+  "clearance": {
+    "finite_sample_audit_not_complete_intersection_proof": true,
+    "partial_onset_and_far_fade_excluded": true,
+    "sample_locations": "Every local triangle vertex, edge midpoint, and centroid",
+    "sampled_clearance_below_0_1mm": 0,
+    "sampled_full_strength_under_pavement_points": 2569,
+    "sampled_minimum_clearance_m": 0.0007999943424878975,
+    "sampled_penetrations": 0
+  },
+  "elapsed_seconds": 9.101836646994343,
+  "eligible_vertices": 9475,
+  "end_fade_m": 0.3,
+  "exact_triangle_clearance": {
+    "method": "Exact XY polygon intersections, extrema of linear road-minus-bank planes at every polygon vertex; tolerance1e-7m",
+    "minimum_linear_mesh_clearance_m": 0.0007999943424878697,
+    "overlap_area_m2": 0.16011410414726904,
+    "overlap_polygons": 1094,
+    "overlap_vertices": 4084,
+    "penetrating_overlap_polygons": 0,
+    "roi_xy_m": [
+      -3.45,
+      -3.04,
+      2.2,
+      7.8999999999999995
+    ],
+    "scope": "Full-strength mesh region only; excludes onset/fade, particles and subpixel shader normals"
+  },
+  "exact_zero_below_y_2": true,
+  "existing_topology_unchanged": true,
+  "final_vertex_movement_range_m": [
+    -0.018197856843471527,
+    0.015314832329750061
+  ],
+  "grain_movement_policy": "Full actual final-minus-old triangle datum for earthwork; no sediment burial multiplier",
+  "limits": "Bounded geometric earthwork/support, not a new erosion solve or conserved sediment. Original protruding soil XY stays beneath pavement. Onset/fade retain partial old support. Triangle/crown clearance and visual acceptance need scene review.",
+  "local_sampler_triangles": 30801,
+  "material_or_recipe_changes": false,
+  "maximum_moving_triangle_xy_edge_m": 0.08353202450992724,
+  "model": "Bounded actual AH-derived far bank support reconstruction",
+  "moved_existing": [
+    {
+      "moved_origins": 294,
+      "object": "True approved R5D near-camera grain geometry",
+      "outside_actual_soil_support": 0,
+      "prototype_identity_xy_scale_materials_unchanged": true,
+      "shift_range_m": [
+        -0.017795141290720025,
+        0.006011326910312007
+      ]
+    },
+    {
+      "moved_origins": 1923,
+      "object": "U approved R5D density / projected chip and grit supplement",
+      "outside_actual_soil_support": 0,
+      "prototype_identity_xy_scale_materials_unchanged": true,
+      "shift_range_m": [
+        -0.016266420851073625,
+        0.009783486447189401
+      ]
+    },
+    {
+      "moved_complete_bodies": 0,
+      "object": "Sparse physical 7\u201331 mm roadside mineral lag",
+      "rigid_shape_xy_materials_unchanged": true
+    },
+    {
+      "moved_complete_bodies": 1,
+      "object": "Gravel lag pockets beside shallow runoff arms",
+      "rigid_shape_xy_materials_unchanged": true
+    },
+    {
+      "moved_complete_bodies": 0,
+      "object": "Connected drainage / margin gravel bars",
+      "rigid_shape_xy_materials_unchanged": true
+    }
+  ],
+  "moved_roots": [],
+  "movement_cap_clipped_vertices": 0,
+  "new_ground_sheets": 0,
+  "new_particles": 0,
+  "normals": {
+    "changed_corner_normals": 51093,
+    "maximum_broad_rotation_degrees": 26.48487715155569,
+    "policy": "Preserved pre-deformation vectors; one shortest-arc rotation of preserved source corner normals by actual old/new local triangle normals"
+  },
+  "onset_m": 0.2,
+  "original_asphalt_unchanged": true,
+  "periodic_or_random_edge_pattern": false,
+  "scene_assigned": true,
+  "sediment_mass_conservation_claim": false,
+  "signed_earthwork_volume_m3": -0.00324955716682502,
+  "source_field_sha256": "cb13eb9f9422741f113d244f249e6b70cece71596934df63643a59412483dac3",
+  "support": {
+    "anchor_flow_strength_range": [
+      0.008090234871885904,
+      1.0
+    ],
+    "anchor_net_sediment_delta_range_m": [
+      -0.0005538196513573072,
+      0.0
+    ],
+    "anchor_retained_deposit_range_m": [
+      0.0,
+      8.065421824200965e-05
+    ],
+    "authored_exposure_sectors": false,
+    "bank_clearance_m": 0.0008,
+    "bank_continuation_distance_range_m": [
+      0.21474905014038104,
+      0.2824790000915529
+    ],
+    "bounds_y_m": [
+      2.0,
+      8.2
+    ],
+    "clearance_constrained_knots": 25,
+    "conserves_or_introduces_sediment_mass": false,
+    "depth_constrained_knots": 0,
+    "distance_beyond_AH_grid_range_m": [
+      0.01474905014038086,
+      0.08247900009155273
+    ],
+    "excluded_authored_contact_x_min_m": -3.43,
+    "exposure_cap_m": 0.032,
+    "exposure_range_m": [
+      0.0008,
+      0.010852438466679298
+    ],
+    "flow_strength_role": "Diagnostic only; causal weathering is already encoded in net bed change",
+    "foundation_grade_range": [
+      0.01724325174705361,
+      0.04765987605358284
+    ],
+    "limits": "AH has no simulated stock at the road edge. This is a bounded geometric bank interpretation continued through its protected collar, not surveyed terrain, validated hydraulics, or an edge sediment-mass ledger. Actual mesh contact and visual quality require separate checks.",
+    "maximum_bank_constraint_adjustment_m": 0.003157253016732725,
+    "model": "Short bank-grade continuation from actual AH foundation and finite-stock response",
+    "modeled_edge_deposition": false,
+    "original_top_or_material_modified": false,
+    "periodic_or_random_displacement": false,
+    "post_transport_smoothing": false,
+    "profile_knots": 332,
+    "raw_exposure_range_m": [
+      -0.00235725301673273,
+      0.010852438466679298
+    ],
+    "retained_deposition_added_twice": false,
+    "retained_deposition_already_in_net_delta": true,
+    "source_anchor_x_m": [
+      -3.75,
+      -3.45
+    ],
+    "source_grid_shape_yx": [
+      177,
+      60
+    ],
+    "source_spacing_xy_m": [
+      0.04999999999999982,
+      0.050000000000000044
+    ],
+    "structural_loss_m": 0.0
+  },
+  "triangle_boundary_leakage": false,
+  "unblended_requested_movement_range_m": [
+    -0.018944285272044267,
+    0.015314827955470373
+  ],
+  "under_pavement_vertices": 377,
+  "vertex_movement_range_m": [
+    -0.018197857279727402,
+    0.015314827955470373
+  ],
+  "world_xy_unchanged": true
+}

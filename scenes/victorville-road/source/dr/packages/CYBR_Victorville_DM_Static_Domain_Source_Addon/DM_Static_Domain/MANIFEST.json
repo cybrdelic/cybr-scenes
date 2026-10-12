@@ -1,0 +1,70 @@
+{
+  "revision": "DM authored static-domain correction",
+  "entries": {
+    "README.md": {
+      "bytes": 2880,
+      "sha256": "030f15713b7a66abe525be8b5bd0f2503cba2311b7b40bf6b67f53ba25d1df4e"
+    },
+    "OWNERSHIP_DECISION.md": {
+      "bytes": 3220,
+      "sha256": "c14c8c23086b8418a3384cdbafa9b7a1a653cc13b8098b2e081eeee7dccfb640"
+    },
+    "regenerate_layer.py": {
+      "bytes": 3573,
+      "sha256": "931d2a3754716dd3d68d478092609df75234b865766f48c6563c18038b0c5497"
+    },
+    "prepare_scene.py": {
+      "bytes": 1623,
+      "sha256": "ca8121ee79b98637534d2a5f420645d8820f9db059ca770fe025e74d35a79a94"
+    },
+    "apply_static_layer.py": {
+      "bytes": 7364,
+      "sha256": "f6a9246ac315e8e3dafb92821fbb7a64fef00e19f7dc95b7b5a312441088c462"
+    },
+    "STATIC_FINE_LAYER.npz": {
+      "bytes": 11305940,
+      "sha256": "d692f6513f6639332d774f0bbb46cb821fb32da3f4f54a56671867e13f7951be"
+    },
+    "STATIC_FINE_LAYER.json": {
+      "bytes": 2041,
+      "sha256": "3d6dfb0c2e66de9340373544ba2e8bb810de327cab46a1297bfd0ff16fe104a0"
+    },
+    "SEAM_SOURCE_CHECK.json": {
+      "bytes": 889,
+      "sha256": "133953f52e893ec03bf929c6c1a8696d0cce918d6d8ba45960bfad2e6ec12128"
+    },
+    "REPLAY_ARRAYS.json": {
+      "bytes": 565,
+      "sha256": "fd05d6238398a5983dc0cf9641c3d7eab8f33645f963fae67cb80bc1c1607ae4"
+    },
+    "PREPARE_REPLAY.json": {
+      "bytes": 370,
+      "sha256": "05ac600616100b3872fd0176b416662e3cd10b1f69358291b3d5e53857451b03"
+    },
+    "ACTUAL_MATCHED_COMPARISON.json": {
+      "bytes": 863,
+      "sha256": "cae0c43ca3e6f6e43c656f583c3121c6744457e408d10e69ddf34068836efb2a"
+    },
+    "ACTUAL_VISUAL_REVIEW.json": {
+      "bytes": 2397,
+      "sha256": "056d00d9a0d7208433537d46252188d86288940e269b905a12ea168bbeb85176"
+    },
+    "seam_a_guard.json": {
+      "bytes": 734,
+      "sha256": "01530cca86d868fdeb33091f61af010a6866635260ae46259410919f4352edc5"
+    },
+    "whole_a_guard.json": {
+      "bytes": 493,
+      "sha256": "53a67ecf60c701c24d22797e0e2f5ad76149fe4483346ed691e406f6efcd7749"
+    },
+    "evidence/STATIC_FINE_SUPPORT_DL.json": {
+      "bytes": 16226,
+      "sha256": "e1d8cf19eaea6acbf6d00a3aba45b2800f3b286e2912b868ed491a416fc0e217"
+    },
+    "evidence/INTERNAL_PANEL.png.native.json": {
+      "bytes": 478,
+      "sha256": "f138fed06b91be78a1e4de4705f130a4563e4699df942614c9f61ebf54256de1"
+    }
+  },
+  "fresh_full_chain_rebuild_verified": false
+}

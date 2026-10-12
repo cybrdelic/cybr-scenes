@@ -1,0 +1,6 @@
+{
+  "failure": "Whole path inserted DL after preview terrain culling while exact field vertex IDs address full pre-cull terrain. Index guard stopped before rendering.",
+  "correct_boundary": "Immediately after existing DG/DH/DB stages, before camera_cull_dense_offscreen and terrain culling; same boundary as qualified close hook.",
+  "field_adapter_material_and_light_changed": false,
+  "retry_requires_same4480MiB_guard": true
+}

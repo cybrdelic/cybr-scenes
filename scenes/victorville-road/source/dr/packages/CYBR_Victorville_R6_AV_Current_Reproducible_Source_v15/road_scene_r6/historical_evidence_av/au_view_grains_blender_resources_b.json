@@ -1,0 +1,21 @@
+{
+  "RSS_cap_MiB": 650.0,
+  "command": [
+    "blender",
+    "-b",
+    "--factory-startup",
+    "-t",
+    "1",
+    "--python-exit-code",
+    "1",
+    "--python",
+    "src/test_refresh_view_grains_au_blender.py"
+  ],
+  "elapsed_seconds": 1.6248078039934626,
+  "exit_code": 0,
+  "kernel_max_child_RSS_MiB": 233.40234375,
+  "peak_process_tree_RSS_MiB": 231.03515625,
+  "rendered": false,
+  "resource_contract_passed": true,
+  "stop_reason": null
+}

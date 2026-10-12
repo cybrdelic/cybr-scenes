@@ -1,0 +1,19 @@
+"""Debit exact frozen macro representatives before outside-world allocation."""
+from pathlib import Path
+import sys,json,time,hashlib
+import numpy as np
+O=Path(__file__).resolve().parent;sys.path.insert(0,str(O));from support_context import Support
+from stream_compact import Reader,c
+from transported_grain_exposure_dg import allocate_transported_grains,ExposureConfig,_axis
+start=time.monotonic();s=Support(build_budget=True);a=np.load(O/'ACTUAL_CATALOG.npz');xy=a['xy'];pi=a['prototype'];height,cover,cap=s.local_fields(xy);before=(height.astype('f4').astype(float)-s.arr('offset')[pi]).astype('f4')
+r=allocate_transported_grains(xy_m=xy,flow_class=s.arr('flow_class')[pi],solid_volume_m3=s.arr('volume')[pi],diameter_m=s.arr('diameter')[pi],footprint_area_m2=s.arr('footprint')[pi],local_z_bounds_m=np.c_[s.arr('minimum'),s.arr('maximum')][pi],final_surface_m=before.astype(float)+s.arr('offset')[pi],x_m=s.x,y_m=s.y,retained_deposit_by_class_m=s.available,net_deposit_m=s.cover_grid,local_net_deposit_m=cover,config=ExposureConfig(availability_mode='surviving_deposit_stock'))
+assert np.array_equal(r.transported,a['role']);old=np.load(O/'FIXED_DISPLAY_BUDGET.npz');assert np.array_equal(r.solid_budget_by_cell_class_m3,old['budget']);assert np.array_equal(r.selected_solid_volume_by_cell_class_m3,old['selected_volume']);print('FROZEN_MACRO_ROLE_LEDGER_REPLAY_EXACT',time.monotonic()-start,flush=True)
+remaining_volume=r.solid_budget_by_cell_class_m3-r.selected_solid_volume_by_cell_class_m3;remaining_area=np.maximum(r.target_planar_area_proxy_by_cell_class_m2-r.exposed_planar_area_proxy_by_cell_class_m2,0);assert np.min(remaining_volume)>=0
+reader=Reader();_,dx=_axis(s.x,'x');_,dy=_axis(s.y,'y');counts=np.zeros((len(s.y),len(s.x)),dtype='i8');class_counts=np.zeros(3,'i8');all_count=0;inside_count=0
+for start_serial in range(0,reader.map.virtual_count,131072):
+ serial=np.arange(start_serial,min(start_serial+131072,reader.map.virtual_count),dtype='u4');serial=serial[reader.status_at(serial)==1]
+ if not len(serial):continue
+ ids,xy,slots,cell,ordinal=c._decode(reader.map,serial,reader.spec.cell_size);xy=xy.astype('f4').astype('f8');inside=(xy[:,0]>=s.x[0])&(xy[:,0]<=s.x[-1])&(xy[:,1]>=s.y[0])&(xy[:,1]<=s.y[-1]);ix=np.floor(np.clip((xy[:,0]-s.x[0])/dx+.5,0,len(s.x)-1)).astype('i4');iy=np.floor(np.clip((xy[:,1]-s.y[0])/dy+.5,0,len(s.y)-1)).astype('i4');np.add.at(counts,(iy[inside],ix[inside]),1);pi=reader.proto[slots];class_counts+=np.bincount(s.arr('flow_class')[pi],minlength=3);all_count+=len(serial);inside_count+=int(inside.sum())
+assert all_count==reader.report['report']['packed_catalog_count'];assert counts.sum()==inside_count
+np.savez_compressed(O/'WORLD_ROLE_BUDGET.npz',x=s.x,y=s.y,available=s.available,cover_grid=s.cover_grid,original_budget=r.solid_budget_by_cell_class_m3,original_target=r.target_planar_area_proxy_by_cell_class_m2,macro_spent_volume=r.selected_solid_volume_by_cell_class_m3,macro_spent_area=r.exposed_planar_area_proxy_by_cell_class_m2,remaining_volume=remaining_volume,remaining_area=remaining_area,complete_counts=counts)
+rep={'status':'Exact frozen macro debit and full fixed-world count manifest prepared','macro_roles_bitwise_equal':True,'macro_volume_ledger_bitwise_equal':True,'additional_world_candidates':all_count,'inside_budget_grid_candidates':inside_count,'outside_grid_remain_static':all_count-inside_count,'additional_class_counts':class_counts.tolist(),'elapsed_seconds':time.monotonic()-start,'field_pins':s.pins,'remaining_volume_by_class_m3':remaining_volume.sum((0,1)).tolist(),'remaining_area_by_class_m2':remaining_area.sum((0,1)).tolist(),'frozen_macro_legacy_area_overshoot_m2':np.maximum(r.exposed_planar_area_proxy_by_cell_class_m2-r.target_planar_area_proxy_by_cell_class_m2,0).sum((0,1)).tolist(),'input_inventory_changed':False,'roles_not_yet_allocated_for_new_world':True};(O/'WORLD_ROLE_BUDGET.json').write_text(json.dumps(rep,indent=2)+'\n');print(json.dumps(rep),flush=True)

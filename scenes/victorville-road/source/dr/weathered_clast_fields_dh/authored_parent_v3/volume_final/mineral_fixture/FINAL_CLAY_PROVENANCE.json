@@ -1,0 +1,9 @@
+{
+  "image": "CG_146_final_clay.png",
+  "candidate_coordinates_sha256": "2d4cb615299e2444765a277ea6523c8e6d2fef629afeba5e7daba9e3e00b9574",
+  "final_candidate_bytes_used": true,
+  "neutral_clay_no_noise_bump_or_texture": true,
+  "before_reference": "../../clay_fixture/CG_146_before.png",
+  "AS_geometry_unchanged_from_v3_clay": true,
+  "AS_clay_reference": "../../clay_fixture/AS_039_after.png"
+}

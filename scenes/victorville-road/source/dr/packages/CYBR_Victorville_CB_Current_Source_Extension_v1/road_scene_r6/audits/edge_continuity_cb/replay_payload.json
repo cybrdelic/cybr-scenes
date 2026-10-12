@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "rebuilt_payload_sha256": "aef0aee3894aa18f3353faffc4f3f824e99f953779cbd8933dce5578daaee5ee",
+  "rebuilt_payload_bytes": 24936054,
+  "retained_payload_bytes": 24936054,
+  "build_seconds": 15.918220678999205,
+  "full_scene_regenerated": false,
+  "retained_AV_CA_fixture_used": true,
+  "source_scene_unmodified": true,
+  "limits": "Source-derived payload independently replayed from retained exact CA fixture, physical rim and original height. Full AV scene regeneration remains unverified."
+}

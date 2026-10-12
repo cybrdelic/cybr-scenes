@@ -1,0 +1,21 @@
+{
+  "reference_type": "Visual observation only; no photograph assets downloaded or used as maps",
+  "context_url": "https://home.nps.gov/moja/planyourvisit/conditions.htm",
+  "observed_images": [
+    "https://home.nps.gov/common/uploads/pwr/park/moja/673D14C1-F575-E2D5-CEFC0AF51F76CF60/673D14C1-F575-E2D5-CEFC0AF51F76CF60.jpg?autorotate=false&format=webp&maxHeight=1020&maxWidth=1300",
+    "https://www.nps.gov/common/uploads/pwr/park/moja/673E0773-D959-25A7-EE16BB3188B40E35/673E0773-D959-25A7-EE16BB3188B40E35.jpg?autorotate=false"
+  ],
+  "credit": "NPS / J. Petruncio",
+  "page_text": "Before and after shoulder maintenance at the same Mojave road near Hole-in-the-Wall.",
+  "pixels_observed": [
+    "Pale uneven dust/sand fringe spills onto asphalt; opacity and width vary and portions of the white line become faint while lane interior remains coarse.",
+    "Before maintenance, pavement loss occurs in irregular clusters with dark broken lips, exposed gravel beneath and loose pieces immediately below; adjacent lengths are comparatively intact.",
+    "Fine dark cracks cross the lane and join longer longitudinal lines; white edge paint has interruptions and uneven brightness."
+  ],
+  "modeling_inferences": [
+    "Use restrained variable-opacity shoulder-fed deposits with tongues and gaps, continuing over paint where geometrically plausible.",
+    "Cluster a few shallow edge losses with loose gravel and local shoulder relief; do not reproduce the severe maintenance example literally.",
+    "Use a sparse connected crack pattern and weak directional broad tonal wear while retaining the original dense aggregate."
+  ],
+  "limits": "Regional analogue, not a surveyed Victorville site or dimensional measurement. Any authored centimeter/metre values are procedural design parameters."
+}

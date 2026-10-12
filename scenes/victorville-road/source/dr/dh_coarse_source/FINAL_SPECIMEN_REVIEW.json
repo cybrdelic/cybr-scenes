@@ -1,0 +1,15 @@
+{
+  "status": "SUITABLE_FOR_MATCHED_SCENE_TEST",
+  "manifest_sha256": "6ba7b8aa87ecaa9cd0758e1b850c3839a2dde3c0d37e793f9ff66b916f36a563",
+  "basis": "Actual final CG clay and matched exact-CN mineral images inspected. Old box and socket removed; no closed cobbled network. Rounded clean margins and limited specimen diversity remain. This admits a scene contact/crop test only, not visual acceptance of the whole road.",
+  "geometry_limits": [
+    "Two new authored parent bodies inside original metric envelopes, not weathering-only deformation.",
+    "Local added/removed volume is sampled separately; true closed total and net reserve are explicit.",
+    "Whole-road contact not yet validated."
+  ],
+  "actual_images": [
+    "mineral_fixture/CG_146_final_clay.png",
+    "mineral_fixture/CG_146_after.png",
+    "mineral_fixture/AS_039_after.png"
+  ]
+}

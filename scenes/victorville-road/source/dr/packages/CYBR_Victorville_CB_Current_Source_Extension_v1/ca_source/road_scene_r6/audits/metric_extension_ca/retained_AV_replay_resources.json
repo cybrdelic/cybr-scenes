@@ -1,0 +1,19 @@
+{
+  "command": [
+    "python",
+    "src/regenerate_metric_pavement_ca.py",
+    "--av-scene",
+    "preview/road_r6_av_integrated_cache.blend",
+    "--output-dir",
+    "audits/metric_extension_ca/fresh_retained_AV_replay",
+    "--verify-payload-without-writing"
+  ],
+  "exit_code": 0,
+  "stop_reason": null,
+  "peak_process_tree_RSS_MiB": 665.09765625,
+  "kernel_max_child_RSS_MiB": 654.62890625,
+  "RSS_cap_MiB": 1100.0,
+  "elapsed_seconds": 18.31373211799655,
+  "resource_contract_passed": true,
+  "rendered": false
+}

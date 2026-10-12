@@ -1,0 +1,8 @@
+"""Create a derivative prepared DL scene using the DM exact-total static cap."""
+from pathlib import Path
+import argparse,json,hashlib,shutil
+p=argparse.ArgumentParser();p.add_argument('--baseline',type=Path,required=True,help='Prepared DL directory containing job.json and runtime/');p.add_argument('--out',type=Path,required=True);a=p.parse_args();B=a.baseline.resolve();O=a.out.resolve();D=Path(__file__).resolve().parent
+sha=lambda x:hashlib.sha256(Path(x).read_bytes()).hexdigest()
+j=json.loads((B/'job.json').read_text());old=j['static_fine_layer_dl'];assert sha(old['field'])==old['field_sha256']=='c989d4ea7799f69b872504460055cb18529bc12d3128ee0774b8085a90bb492f','Requires exact DL static cap baseline';assert not O.exists(),'Use a new derivative directory';O.mkdir(parents=True)
+shutil.copytree(B/'runtime',O/'runtime',ignore=shutil.ignore_patterns('__pycache__','pipeline_snapshots'));shutil.copy2(D/'apply_static_layer.py',O/'runtime/src/apply_static_layer.py');field=D/'STATIC_FINE_LAYER.npz';assert sha(field)=='d692f6513f6639332d774f0bbb46cb821fb32da3f4f54a56671867e13f7951be';j['static_fine_layer_dl']={'field':str(field),'field_sha256':sha(field)};j['output']=str(O/'INTERNAL_PANEL.png');j['view_scope']='DM continuous static cap allocation; unchanged original global class totals, mixed reserves and event arrays. Authored geographic reassignment, no new transport. Original mountains, physical grains and matched daylight retained.';(O/'job.json').write_text(json.dumps(j,indent=2)+'\n')
+print('Prepared',O);print('Render with: bash',O/'runtime/pipeline/clean_render_landform_candidate.sh',O/'job.json')

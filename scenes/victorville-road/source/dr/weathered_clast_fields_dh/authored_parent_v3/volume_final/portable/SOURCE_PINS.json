@@ -1,0 +1,7 @@
+{
+  "inputs": {
+    "prototype_146.npz": "af256fd94aeff8506df02d557aa9b48db9e317e93baeff7b1d2da45026a34efc",
+    "as_prototype_039.npz": "9119ba335f8231dec15698fd2ae5730cca6cde7fafdd6b80ff5fd3978edda74e"
+  },
+  "notes": "Exact original parent arrays and regenerated original parent point attributes. CN is a live shader-graph tint, not a point-attribute recolor. The portable geometry generator uses only these local inputs and NumPy/SciPy."
+}

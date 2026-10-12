@@ -1,0 +1,15 @@
+{
+  "captures": [],
+  "schema_version": 1,
+  "scope": "Strict inherited admission contract only; current replay uses AP template",
+  "source_admission": {
+    "files_sha256": {
+      "road_scene_r6/receipts/z_semantic_source_guard_ah.json": "1ae290ca919b23b6426845bb59bf208fe144de161a516e13fbfbd1ee5bcb947f",
+      "road_scene_r6/src/prepare_physical_lenses.py": "3d9dbd29990807a632632233343d32a2eef62676305404934716cf087b7b861b",
+      "road_scene_r6/src/semantic_scene_guard_z.py": "193fb74be1acf7cdd5ff4ab60da0b78b7ed22034f33a0f78b6f804b507b85fa1"
+    },
+    "helper_path": "road_scene_r6/src/semantic_scene_guard_z.py",
+    "historical_source_sha256": "29a2e1ca28867182554594981482e704ccbc97d9fb2806b48bc0c06f8375231a",
+    "manifest_path": "road_scene_r6/receipts/z_semantic_source_guard_ah.json"
+  }
+}

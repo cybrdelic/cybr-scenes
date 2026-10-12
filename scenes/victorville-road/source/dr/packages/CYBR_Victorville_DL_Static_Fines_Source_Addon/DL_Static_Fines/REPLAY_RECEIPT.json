@@ -1,0 +1,25 @@
+{
+  "status": "DECODED_STATIC_LAYER_REPLAY_EXACT",
+  "arrays": [
+    "co",
+    "tri",
+    "source_vertex_ids",
+    "cap_m",
+    "cap_area_fraction",
+    "original_surviving",
+    "original_mixed_reserve",
+    "surviving_event",
+    "historical_matrix",
+    "historical_compaction",
+    "gate",
+    "area"
+  ],
+  "scope": "Fresh extracted addon using existing prepared DH input references; not a fresh complete road rebuild",
+  "portable_scene_staging": "Corrected freshly extracted preparation wrapper completed; pre-cull stage ordering checked. Exact12-array numerical replay passed.",
+  "versions": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "actual_whole_corrected_pipeline": "Passed: full existing DH pipeline plus DL at the pre-cull boundary,2000x1334 raw32samples.503.704seconds,4053.438MiB kernel peak. Not a clean fresh public dependency-chain reconstruction."
+}

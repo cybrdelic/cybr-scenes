@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "specimen": "prototype_146.npz",
+      "all_arrays_byte_equal": true,
+      "coordinate_sha256": "2d4cb615299e2444765a277ea6523c8e6d2fef629afeba5e7daba9e3e00b9574"
+    },
+    {
+      "specimen": "as_prototype_039.npz",
+      "all_arrays_byte_equal": true,
+      "coordinate_sha256": "3f8b09bf6c265b6934710d274150651da023cfb0fc7049985f60a2b1943383b9"
+    }
+  ],
+  "original_coarse_audit_folder_used": false,
+  "road_scene_loaded": false
+}

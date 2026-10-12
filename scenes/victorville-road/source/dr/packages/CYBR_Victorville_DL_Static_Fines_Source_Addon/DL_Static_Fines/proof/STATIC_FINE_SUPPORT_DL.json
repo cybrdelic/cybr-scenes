@@ -1,0 +1,364 @@
+{
+  "revision": "DL shared original-fine support candidate",
+  "field_sha256": "c989d4ea7799f69b872504460055cb18529bc12d3128ee0774b8085a90bb492f",
+  "inventory": {
+    "revision": "DL static original-fine cap candidate",
+    "cap_bulk_volume_m3": 0.19181345165200087,
+    "original_surviving_bulk_m3": [
+      1.0962819472370189,
+      0.3979537862203023,
+      0.1299265355079276
+    ],
+    "event_surviving_bulk_m3": [
+      0.03157707932134836,
+      0.007377012597651817,
+      0.0010925521896029133
+    ],
+    "complementary_mixed_reserve_bulk_m3": [
+      0.9044684955849336,
+      0.3979537862203023,
+      0.1299265355079276
+    ],
+    "inventory_residual_m3": [
+      1.546067864163155e-21,
+      -2.9924089171866793e-22,
+      9.475874186339143e-22
+    ],
+    "maximum_float32_reconciliation_error_m": 1.734723475976807e-18,
+    "roundoff_correction_original_bulk_m3": [
+      1.1358777987012085e-13,
+      1.1050965231595221e-14,
+      1.6821596086310472e-14
+    ],
+    "roundoff_correction_after_debit_m3": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "cap_max_m": 0.012307215398468957,
+    "area_cap_gt_1mm_m2": 49.6866065883587,
+    "area_cap_gt_4mm_m2": 14.042648474656744,
+    "source_fields": [
+      "ap_fines evaluated on original AP geometry",
+      "CE gate/remaining original class stock",
+      "AH old deposited classes, debited first by CE removal"
+    ],
+    "model": "Authored static stratigraphy inside the already-retained current terrain. Spatially varying original fine stock is partitioned into an effective surface cap using existing historical fine-area coverage. Pre-existing clasts descend relative to that cap; recent finite deposited representatives keep their source roles. No new mass, terrain elevation, transport, rainfall or measured chronology.",
+    "optical_interpretation": "Original cap coverage is bounded ap_fines times current CE gate and finite-thickness saturation. It joins the existing event fine closure by bounded union; no independent BW overcoat is restored.",
+    "limits": [
+      "Mean-column support depth and area-fraction optics are authored approximations, not resolved grain packing or measured stratigraphy.",
+      "Original intrinsic embedding remains; this is a static support interpretation rather than an inferred weathering age.",
+      "Old original/matrix and event populations are separated on the same CE vertex basis before interpolating.",
+      "Roundoff corrections are reported explicitly; strict20nm per-class tolerance only covers float32 stock serialization."
+    ],
+    "output_sha256": "c989d4ea7799f69b872504460055cb18529bc12d3128ee0774b8085a90bb492f"
+  },
+  "point_banks": [
+    {
+      "object": "U approved R5D density / projected chip and grit supplement",
+      "bodies": 133865,
+      "lowered_gt_0p1mm": 79800,
+      "lowered_gt_1mm": 71541,
+      "finite_deposit_representatives_exempt": 52222,
+      "cap_depth_quantiles_m": [
+        0.0,
+        0.0,
+        0.001090694137268276,
+        0.0015110663228338852,
+        0.012306768777681248
+      ],
+      "identity_xy_prototype_yaw": "835d61ea66af4aff295a6f0834246ae21038dab84cc1ebbfeadbf15d2b7814f6724aead4f512c8507c19fa08ea48f4207df83608e6249492beeb77da018d649cf149a22598bae84818e8c8bb332812634e89b28b5a2b65a017169e979f401d26",
+      "before_z_sha256": "ceb7faac6779696a402a180faa2bc5f464761251fff465c1e46406a7e4a307d7",
+      "after_z_sha256": "b9e5414c17631945b3d37baa9c5de09ab5f2d7babbcfad295647d073c3a4be41"
+    },
+    {
+      "object": "AP graded margin / exact metric lag instances",
+      "bodies": 5939,
+      "lowered_gt_0p1mm": 3306,
+      "lowered_gt_1mm": 2298,
+      "finite_deposit_representatives_exempt": 0,
+      "cap_depth_quantiles_m": [
+        0.0,
+        0.0,
+        0.0005325896658260578,
+        0.001640380768882912,
+        0.012277651553755034
+      ],
+      "identity_xy_prototype_yaw": "29ad6667dd988318629aad1080a149db473f502b749b3a351fcf323ae9083ec66705ad4c68ea7936e4eca40b65e4ddbbc9cce7cc9a9e745733397e44dd4ba6d30d72f5eaa0e00c6c04ef3e75b0c0157505a647fae13d745740c3571a90c6b0b2",
+      "before_z_sha256": "0a3e840847b3ec3a55bb4b6f5a4862ed9373e1151111c519288036f40944b0cb",
+      "after_z_sha256": "00a2334956e466743b856de617d3a1c15855126eb0e7cb988c2ccf7b2883b006"
+    },
+    {
+      "object": "CG finite 18\u201360 mm historical gravel pockets",
+      "bodies": 11829,
+      "lowered_gt_0p1mm": 10165,
+      "lowered_gt_1mm": 7483,
+      "finite_deposit_representatives_exempt": 0,
+      "cap_depth_quantiles_m": [
+        0.0,
+        0.0006644545369641072,
+        0.0012174365362317874,
+        0.002332800067961216,
+        0.012282432036627293
+      ],
+      "identity_xy_prototype_yaw": "254c7b0ad484116f8feaf61d21aaeb64502cae01788cebbd31950783f8d9b52785748e36c4c5ac3d485b034b31fc4d3ab756679f9703001903e088c0b8c2b0c3374411112ee775eab0458e3302181daa3487a6470da958fb0bd492da5d1d00ed",
+      "before_z_sha256": "0bda41b064f2dcffa113e6007b9136e0ee9ce4226a2e747598716d47af2efbad",
+      "after_z_sha256": "9d8fbb3c37453e2010f5aa9551e85d41a5725d1874b88a4d8d883d9747a1e59a"
+    },
+    {
+      "object": "Sparse physical 7\u201331 mm roadside mineral lag",
+      "connected_bodies": 69,
+      "lowered_gt_0p1mm": 45,
+      "maximum_rigid_shift_m": 0.004883207112779502,
+      "rigid_translation_only": true
+    },
+    {
+      "object": "Gravel lag pockets beside shallow runoff arms",
+      "connected_bodies": 995,
+      "lowered_gt_0p1mm": 858,
+      "maximum_rigid_shift_m": 0.011663999408483505,
+      "rigid_translation_only": true
+    },
+    {
+      "object": "Connected drainage / margin gravel bars",
+      "connected_bodies": 1750,
+      "lowered_gt_0p1mm": 1287,
+      "maximum_rigid_shift_m": 0.009181264831140356,
+      "rigid_translation_only": true
+    }
+  ],
+  "AS_rigid_fragments": [
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.002",
+      "shift_m": 0.0023005995165382414,
+      "geometry_sha256": "a6fd7d979ed0f5ad1b5010bd454587b702cf21d3c64d4e331080dbf5f9f84b85"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.021",
+      "shift_m": 0.0005429408054841437,
+      "geometry_sha256": "aeddf5dfaa8837abc3dadd9dc8e9dfc26accedd069deacec40e66d372846aee1"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.029",
+      "shift_m": 1.1591674100756607e-05,
+      "geometry_sha256": "022bf2d88e33d83a55bfba3a24bfedef901ce7cf671a77374c7f9a043dbcf609"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.036",
+      "shift_m": 0.0008336630122014298,
+      "geometry_sha256": "2436293d78545e73abe3e067b3ee2545fffa72afe9cae5fcdbbc998cd5a3ea72"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.038",
+      "shift_m": 0.0021273791627816276,
+      "geometry_sha256": "3f8b09bf6c265b6934710d274150651da023cfb0fc7049985f60a2b1943383b9"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.040",
+      "shift_m": 0.0007396895815489366,
+      "geometry_sha256": "3cda2a8ed04fc31e69c822f1f156d962040147b712960d8745d89c3153468331"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.046",
+      "shift_m": 0.0023328000679612155,
+      "geometry_sha256": "3cda2a8ed04fc31e69c822f1f156d962040147b712960d8745d89c3153468331"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.047",
+      "shift_m": 0.0006950139814349218,
+      "geometry_sha256": "2d8bac772bf99ebd41745ce10058145b63ef024d5508416d60ad0c911de6a9ec"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.055",
+      "shift_m": 1.7474111136909685e-05,
+      "geometry_sha256": "9ddaa60ce67e7a659c1ae9d0dc4e1716c8f53c2a692f094f4d720f81beb4a3eb"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.077",
+      "shift_m": 0.0018532838738295784,
+      "geometry_sha256": "66cb6ea7e82bf0fcfee08e98884afac4c83bb17e7f3616c1d41fbab0abf60810"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.078",
+      "shift_m": 0.00331766551308936,
+      "geometry_sha256": "3d98ef9828d025130a3bb5938e2fdb88ddc9dde02ff9b70fee88a3f6287d78ce"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.082",
+      "shift_m": 0.0023328000679612155,
+      "geometry_sha256": "ddbd933a13a350067d66bd8c789c23a4446fbf732630c071a5252973db1a48e5"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.086",
+      "shift_m": 0.002116988104875969,
+      "geometry_sha256": "aeddf5dfaa8837abc3dadd9dc8e9dfc26accedd069deacec40e66d372846aee1"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.096",
+      "shift_m": 0.0006442384899055056,
+      "geometry_sha256": "3cda2a8ed04fc31e69c822f1f156d962040147b712960d8745d89c3153468331"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.105",
+      "shift_m": 0.002317376432016369,
+      "geometry_sha256": "30ce43d33498b48c2a44023d82a6c07b44b26e198101bec508be9df2300db0a9"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.107",
+      "shift_m": 0.0013939691159441762,
+      "geometry_sha256": "e2ad5e3537a820768f92fda34a9edf8cee1ca863ec62ebe6a792080ed26e85cd"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.112",
+      "shift_m": 0.0023328000679612155,
+      "geometry_sha256": "2d8bac772bf99ebd41745ce10058145b63ef024d5508416d60ad0c911de6a9ec"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.121",
+      "shift_m": 0.0022557886290498516,
+      "geometry_sha256": "a6399af025445e1560aae06c35a4ada8d2dd532ecc341a1d88cdc40a8e61690f"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.126",
+      "shift_m": 0.002228195730201813,
+      "geometry_sha256": "7397093c52767f01aecf3ac72b2b4d743f7bcdc0521729c582a9f963418b72ba"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.129",
+      "shift_m": 0.001875348760975395,
+      "geometry_sha256": "5a18bc949999a859e24cc744938bd927f389ffb5d72c28254295b919f7186e5d"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.144",
+      "shift_m": 0.0021506991444855583,
+      "geometry_sha256": "981a3e27375af8eb1fcb17246495f6ce1cf2a83ac5d48999a14fbcd876537317"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.145",
+      "shift_m": 0.0017803721590088956,
+      "geometry_sha256": "a0709e83de47b5e11841f6b6ccc3e368a603317b090b6ecd0186f20a42f1ce1a"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.150",
+      "shift_m": 0.0023090023431970846,
+      "geometry_sha256": "74ee08c7953370fe2769ef2a9ece923b61aec0453d85ac0250f61901bd7e5649"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.154",
+      "shift_m": 0.0011544203703239123,
+      "geometry_sha256": "3f8b09bf6c265b6934710d274150651da023cfb0fc7049985f60a2b1943383b9"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.157",
+      "shift_m": 0.0008817572802325286,
+      "geometry_sha256": "66cb6ea7e82bf0fcfee08e98884afac4c83bb17e7f3616c1d41fbab0abf60810"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.161",
+      "shift_m": 0.0009983806892770208,
+      "geometry_sha256": "ddbd933a13a350067d66bd8c789c23a4446fbf732630c071a5252973db1a48e5"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.170",
+      "shift_m": 0.0023328000679612155,
+      "geometry_sha256": "3d98ef9828d025130a3bb5938e2fdb88ddc9dde02ff9b70fee88a3f6287d78ce"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.175",
+      "shift_m": 0.001017279387133477,
+      "geometry_sha256": "b1aadd34f01c10803bc5b7face68e0e251fa62fe4a45cf51c4fe630c7a54dbc9"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.179",
+      "shift_m": 0.002321764253592625,
+      "geometry_sha256": "5a18bc949999a859e24cc744938bd927f389ffb5d72c28254295b919f7186e5d"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.190",
+      "shift_m": 0.0008450543252255301,
+      "geometry_sha256": "3d98ef9828d025130a3bb5938e2fdb88ddc9dde02ff9b70fee88a3f6287d78ce"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.195",
+      "shift_m": 0.0023328000679612155,
+      "geometry_sha256": "a6399af025445e1560aae06c35a4ada8d2dd532ecc341a1d88cdc40a8e61690f"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.203",
+      "shift_m": 0.0023328000679612155,
+      "geometry_sha256": "6a0065750944a5f036461c2df3c7cbb40f2fdb517a761961ae17d5c3acf9d574"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.235",
+      "shift_m": 0.0007959593012206088,
+      "geometry_sha256": "3d98ef9828d025130a3bb5938e2fdb88ddc9dde02ff9b70fee88a3f6287d78ce"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.237",
+      "shift_m": 0.0023045103597638446,
+      "geometry_sha256": "66cb6ea7e82bf0fcfee08e98884afac4c83bb17e7f3616c1d41fbab0abf60810"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.257",
+      "shift_m": 0.0019626661324986727,
+      "geometry_sha256": "6a0065750944a5f036461c2df3c7cbb40f2fdb517a761961ae17d5c3acf9d574"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.263",
+      "shift_m": 0.0011121740437966873,
+      "geometry_sha256": "e4447651a13c6dd203ebfd5951883ee1eba176518b4ba89df3ca427445f4cf6f"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.272",
+      "shift_m": 0.0022251577773688036,
+      "geometry_sha256": "022bf2d88e33d83a55bfba3a24bfedef901ce7cf671a77374c7f9a043dbcf609"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.277",
+      "shift_m": 0.0023012594062250267,
+      "geometry_sha256": "5a18bc949999a859e24cc744938bd927f389ffb5d72c28254295b919f7186e5d"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.280",
+      "shift_m": 0.0018775541627205046,
+      "geometry_sha256": "76d8b166597a78b08225b39d7592c5a04acc955890b72097b1eae639c3ca52ef"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.310",
+      "shift_m": 0.0023221196586716776,
+      "geometry_sha256": "5311ac07164de04e0974d4290db0d1729f7b216b8795693a9ad1a3aff05f9556"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.331",
+      "shift_m": 0.002054454297346473,
+      "geometry_sha256": "3d98ef9828d025130a3bb5938e2fdb88ddc9dde02ff9b70fee88a3f6287d78ce"
+    },
+    {
+      "object": "AS sparse outer fragment / actual metric dimensions.335",
+      "shift_m": 0.0022295157337067365,
+      "geometry_sha256": "3d98ef9828d025130a3bb5938e2fdb88ddc9dde02ff9b70fee88a3f6287d78ce"
+    }
+  ],
+  "fine_sand_bank_unchanged_sha256": "b8c96a80b1f2332055f6249124189b50f9f7abb98c07eaec62a65bb5fbb0eba2",
+  "terrain_geometry_unchanged_sha256": "aa3132c15be30fc1523793c781cb75322ad2c46ca57949442427f022e6c00bd4",
+  "materials": "Original recipes, pigment and metric normals unchanged. ai_fine_coat bounded union with the finite original cap coverage; existing CC/CE single-authority ordering retained.",
+  "old_fine_coat_range": [
+    0.0,
+    1.0
+  ],
+  "new_fine_coat_range": [
+    0.0,
+    1.0
+  ],
+  "new_mean_area_factor_lumped": 0.14336889360835092,
+  "physical_sizes_xy_ids_yaw_and_solid_geometry_unchanged": true,
+  "contact": "Only downward translations of already placed bodies. Actual terrain unchanged. No new floating contact can be introduced by vertical lowering; full packing/collision is not solved.",
+  "limits": [
+    "A new authored static vertical partition, not a newly recovered measured horizon.",
+    "Pre-existing heuristic intrinsic embedding is retained; added depth is the explicitly partitioned original fine cap, separate from event overburden.",
+    "Finite surface representatives are exempt; original source-size fine sand remains the visible fine-layer representation.",
+    "Merged/AS fragments use minimum cap depth on their actual footprint; not dynamic rigid-body settling.",
+    "This candidate changes geometry exposure and the corresponding finite surface field together; it is not an isolated material attribution proof."
+  ],
+  "elapsed_seconds": 24.034002227999736
+}

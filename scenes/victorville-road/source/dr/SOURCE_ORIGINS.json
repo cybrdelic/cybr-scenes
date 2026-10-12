@@ -1,0 +1,117 @@
+{
+  "selected_scene": "DR restored source selection, previously rendered; latest unsaved I lost",
+  "destination": "CYBR SCENES",
+  "required_saved_files": [
+    {
+      "filename": "CYBR_Victorville_CB_Current_Source_Extension_v1.zip",
+      "bytes": 16960287,
+      "sha256": "0ca83c7d1c23e45d9a1125d281915bb602fb3145d796a85eae122de06d314ca0"
+    },
+    {
+      "filename": "CYBR_Victorville_CH_Current_Source_Compact_v1.zip",
+      "bytes": 17497070,
+      "sha256": "1382346263350072414135e0cdd2d803bf97a923a0bd0a6106a0e85a48da1a2a"
+    },
+    {
+      "filename": "CYBR_Victorville_CI_Fixed_Support_Source_Addon_v1.zip",
+      "bytes": 5258879,
+      "sha256": "d8a0be64a18a3ebac87f70fd48aefcdd861bb790609ed79300f5664aca313aea"
+    },
+    {
+      "filename": "CYBR_Victorville_CK_Arid_Architecture_Source_Addon_v2.zip",
+      "bytes": 2990337,
+      "sha256": "ffca5e83eba1f559957aed5cd08e1f812a8b163b2ddda10641a42b21717569dd"
+    },
+    {
+      "filename": "CYBR_Victorville_CL_Frozen_Layout_Source_Addon_v1.zip",
+      "bytes": 607314,
+      "sha256": "0b420dfb8afb7114d2f153eea36aeebf35768644e736393555fad317357211b9"
+    },
+    {
+      "filename": "CYBR_Victorville_CM_Connected_Crown_Source_Addon_v3.zip",
+      "bytes": 935766,
+      "sha256": "9bdda0223c288cb3f783f19e26589d9f6380ea8259a629c2039767927261565a"
+    },
+    {
+      "filename": "CYBR_Victorville_CN_Local_Palette_Source_Addon_v2.zip",
+      "bytes": 1005970,
+      "sha256": "0599ea5ab3918da303a899671627b8d01cf1b42efbf05a981590b426d2af45eb"
+    },
+    {
+      "filename": "CYBR_Victorville_CO_CP_Daylight_Source_Addon_v3.zip",
+      "bytes": 2737452,
+      "sha256": "d41d1561722a525b435a01e2c8fe1013d502a4e2f3659c5d77254c28017fab4d"
+    },
+    {
+      "filename": "CYBR_Victorville_CQ_CR_Coherent_Surface_Source_v1.zip",
+      "bytes": 1107979,
+      "sha256": "bd7e5e081d68aeea9715c8a4a44a33a0b8f45a1de2facf42b9745398ee614473"
+    },
+    {
+      "filename": "CYBR_Victorville_DL_Static_Fines_Source_Addon.zip",
+      "bytes": 13097663,
+      "sha256": "af565079e68dfd611cff96e6842e8e615fa669deab67b45a7726b27b229de82a"
+    },
+    {
+      "filename": "CYBR_Victorville_DM_Static_Domain_Source_Addon.zip",
+      "bytes": 10376314,
+      "sha256": "d295dc50c97774706b3b66512fe8daa462d55a911b0aab64fc9605cd53e40f67"
+    },
+    {
+      "filename": "CYBR_Victorville_DR_Compact_Foreground_Source_Addon.zip",
+      "bytes": 12905063,
+      "sha256": "384f6d4efc5ff5e001ab9fd3d8b234bed2bda0d655d14b77046d9b00595d2956"
+    },
+    {
+      "filename": "CYBR_Victorville_DR_Exact_View.npz",
+      "bytes": 6685451,
+      "sha256": "f252185d80111e57f70ba7f245f8a2d5a95a71e089eca1ec5fb8d8d8fd20df83"
+    },
+    {
+      "filename": "CYBR_Victorville_DR_Whole_Road_2000px_WIP.png",
+      "bytes": 11549442,
+      "sha256": "4ee61d9f736b791a886fbfe201a1c8fd284434bd44b374f870dccee7a8b29e20"
+    },
+    {
+      "filename": "CYBR_Victorville_Ground_Current_Source_v8.zip",
+      "bytes": 16963588,
+      "sha256": "30c6dd020f03eeafed738787b863a7c1374b4370f2878cbc292db77e884db57c"
+    },
+    {
+      "filename": "CYBR_Victorville_R6_AV_Current_Reproducible_Source_v15.zip",
+      "bytes": 13559633,
+      "sha256": "daae4846d4ef9506b01c40bfa9b1ecfd369fbd17f457d0a63c68f168a79aaa04"
+    }
+  ],
+  "standalone_CYBR_MATERIAL_changes": [],
+  "materials_note": "Approved original dense asphalt and R5D source recipes remain unchanged. CN regional pigment response and finite-cap/burial coupling are scene-level configuration/adapters.",
+  "excluded": [
+    "DS optical-only study",
+    "DT rejected clean runnel",
+    "All unsaved DV/I work",
+    "Rejected coarse-body and mountain experiments"
+  ],
+  "current_validation": {
+    "saved_actual_DR_frame": true,
+    "20_pinned_current_sources_checked": true,
+    "fresh_source_layout_test_passed": true,
+    "base_stages_1_to_12_passed": true,
+    "Z_semantic_admission_passed": true,
+    "fresh_AV_assembly_in_progress": false,
+    "fresh_combined_DR_render_passed": false,
+    "fresh_AV_actual_raw_proof_passed": true
+  },
+  "merge_caveats": [
+    "CO22 is the displayed candidate daylight, not an explicit user-selected lighting preset.",
+    "Procedural regional-inspired scene; not a surveyed street reconstruction.",
+    "Finite sediment inventories are authored approximations, not validated hydraulics.",
+    "Public package must be assembled with portable paths and explicit dependencies; do not publish private recovery logs or reference-photo copies.",
+    "Native renderer of the saved road images is Blender Cycles CPU, not a CYBR LIGHT engine proof."
+  ],
+  "macro_catalog_for_new_views": {
+    "version": 0,
+    "bytes": 18480390,
+    "sha256": "5a8b20a1429e7d64b6f299d857c914238f7e0a879dec43308c9a6a527f3c1b3f",
+    "current_materialization": "restored; exact byte count and hash verified"
+  }
+}

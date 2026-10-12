@@ -1,0 +1,14 @@
+{
+  "files": {
+    "coherent_shrub_cm.py": "b309bedda2117358913f0a0c35d6b6cfbbb4d15489648a8610ec390b7998ad91",
+    "render_fixture.py": "9a6504d50e7a88536da13aa0ad4753f79d5b8f2cf43abb456ba602da7254dafb",
+    "cm_receipt.json": "09679732d57eeaf0693f3797db340b26a69603ee33414c002a95a1e6e9fa231b",
+    "guard.json": "c02ad2d4921dcad31843f5f808656ac85d0c8a2999b208fe2236e80962c56782",
+    "guard_scope_addendum.json": "a203427ef989da72eb5a4727ec7d47be6ba5cb5ebcfa7e64cc3f39ddfd4ad6a7",
+    "architectural_scrub_cj_v2.py": "d4ec3b85500e21dcb2fcbc622b44bc7af453e47f38f977a42b3d17dde4715afb",
+    "desert_scrub.py": "8f5840a371422effcf243dfb284f57241b219262386a1d7dc3b594264b1b2172",
+    "20261010_2052_NPS_branch_hierarchy.txt": "ff2d5aa6085c04f472187cf31dcacee9e4bc12d8a685dfc7d23faf29d7d89c80",
+    "README.txt": "5a95ffd58ec75d8d09d59000cf3ec4b1cc8d8dec93cb6cb7af0f2710777d4b9e"
+  },
+  "image_sha256": "3235b6a60cf17dd19e34547a40378de38b5a6416df6f15c29e3cd4beb150d8f5"
+}

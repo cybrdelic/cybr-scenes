@@ -1,0 +1,422 @@
+[
+  {
+    "name": "Worn marking following road profile.003",
+    "low": [
+      2.8575000762939453,
+      -15.0,
+      -0.06693530082702637
+    ],
+    "high": [
+      2.9625000953674316,
+      1797.0,
+      5.2075514793396
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Worn marking following road profile.002",
+    "low": [
+      -2.9625000953674316,
+      -15.0,
+      -0.06693530082702637
+    ],
+    "high": [
+      -2.8575000762939453,
+      1797.0,
+      5.2075514793396
+    ],
+    "hide_render": true,
+    "overlaps_extension": true
+  },
+  {
+    "name": "Worn marking following road profile.001",
+    "low": [
+      0.06499999761581421,
+      -15.0,
+      -0.011008105240762234
+    ],
+    "high": [
+      0.16500000655651093,
+      1797.0,
+      5.26334285736084
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Worn marking following road profile",
+    "low": [
+      -0.16500000655651093,
+      -15.0,
+      -0.011008105240762234
+    ],
+    "high": [
+      -0.06499999761581421,
+      1797.0,
+      5.26334285736084
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Sparse narrow transverse pavement fissure.023",
+    "low": [
+      -0.9364900588989258,
+      56.125125885009766,
+      0.8862584829330444
+    ],
+    "high": [
+      0.33164846897125244,
+      56.27555847167969,
+      0.9051470756530762
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Sparse narrow transverse pavement fissure.022",
+    "low": [
+      -0.20019522309303284,
+      73.99434661865234,
+      1.1150991916656494
+    ],
+    "high": [
+      1.731292724609375,
+      74.24037170410156,
+      1.1473404169082642
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Sparse narrow transverse pavement fissure.021",
+    "low": [
+      -0.49797070026397705,
+      87.11289978027344,
+      1.269743800163269
+    ],
+    "high": [
+      0.8736379742622375,
+      87.33460998535156,
+      1.2851206064224243
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Sparse narrow transverse pavement fissure.020",
+    "low": [
+      -2.4844393730163574,
+      77.76285552978516,
+      1.1420079469680786
+    ],
+    "high": [
+      -0.4881247580051422,
+      77.95609283447266,
+      1.1840107440948486
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Sparse narrow transverse pavement fissure.019",
+    "low": [
+      -2.1667819023132324,
+      37.11991882324219,
+      0.5772436857223511
+    ],
+    "high": [
+      0.028339313343167305,
+      37.44025421142578,
+      0.623417854309082
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Sparse narrow transverse pavement fissure.018",
+    "low": [
+      -2.7650909423828125,
+      24.210309982299805,
+      0.37796616554260254
+    ],
+    "high": [
+      -1.9810051918029785,
+      24.33165740966797,
+      0.39450156688690186
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Sparse narrow transverse pavement fissure.017",
+    "low": [
+      -2.2001869678497314,
+      39.434627532958984,
+      0.6108542084693909
+    ],
+    "high": [
+      -0.5801405906677246,
+      39.74003219604492,
+      0.6469895839691162
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Sparse narrow transverse pavement fissure.016",
+    "low": [
+      -1.4165509939193726,
+      84.98551177978516,
+      1.237968921661377
+    ],
+    "high": [
+      0.2844637632369995,
+      85.28569030761719,
+      1.2672700881958008
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Sparse narrow transverse pavement fissure.015",
+    "low": [
+      -2.951632499694824,
+      95.75869750976562,
+      1.291554570198059
+    ],
+    "high": [
+      -1.2677783966064453,
+      95.93842315673828,
+      1.3255146741867065
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Sparse narrow transverse pavement fissure.014",
+    "low": [
+      -2.8752658367156982,
+      75.40640258789062,
+      1.107239007949829
+    ],
+    "high": [
+      -1.6126552820205688,
+      75.53950500488281,
+      1.1338194608688354
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Sparse narrow transverse pavement fissure.013",
+    "low": [
+      -1.2735471725463867,
+      101.78504943847656,
+      1.356491208076477
+    ],
+    "high": [
+      -0.5544302463531494,
+      101.91326141357422,
+      1.3704960346221924
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Sparse narrow transverse pavement fissure.012",
+    "low": [
+      -1.5956997871398926,
+      29.26981544494629,
+      0.47218838334083557
+    ],
+    "high": [
+      -0.3599652647972107,
+      29.353939056396484,
+      0.4979301393032074
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Sparse narrow transverse pavement fissure.011",
+    "low": [
+      -2.448051929473877,
+      51.96189880371094,
+      0.794871985912323
+    ],
+    "high": [
+      -0.9432190656661987,
+      52.164669036865234,
+      0.8271465301513672
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Sparse narrow transverse pavement fissure.010",
+    "low": [
+      -1.2072482109069824,
+      19.484846115112305,
+      0.3440202474594116
+    ],
+    "high": [
+      1.0773959159851074,
+      19.74161720275879,
+      0.3693695366382599
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Sparse narrow transverse pavement fissure.009",
+    "low": [
+      -2.2376036643981934,
+      106.11893463134766,
+      1.3518953323364258
+    ],
+    "high": [
+      -0.8872711062431335,
+      106.25128173828125,
+      1.3790907859802246
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Sparse narrow transverse pavement fissure.008",
+    "low": [
+      -3.102337598800659,
+      49.728721618652344,
+      0.7475534081459045
+    ],
+    "high": [
+      -1.487425446510315,
+      49.93674850463867,
+      0.7827816605567932
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Sparse narrow transverse pavement fissure.007",
+    "low": [
+      -1.8478596210479736,
+      41.226505279541016,
+      0.6441574096679688
+    ],
+    "high": [
+      -0.8235628604888916,
+      41.41468811035156,
+      0.6673544049263
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Sparse narrow transverse pavement fissure.006",
+    "low": [
+      0.1846480369567871,
+      55.900421142578125,
+      0.8774750828742981
+    ],
+    "high": [
+      1.33096444606781,
+      56.13662338256836,
+      0.8979386687278748
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Sparse narrow transverse pavement fissure.005",
+    "low": [
+      -1.3855245113372803,
+      35.526206970214844,
+      0.5679498910903931
+    ],
+    "high": [
+      -0.6396790742874146,
+      35.70570373535156,
+      0.5854647755622864
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Sparse narrow transverse pavement fissure.004",
+    "low": [
+      -0.6691239476203918,
+      19.05883026123047,
+      0.34946367144584656
+    ],
+    "high": [
+      0.1799921989440918,
+      19.20368766784668,
+      0.3639293611049652
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Sparse narrow transverse pavement fissure.003",
+    "low": [
+      0.24805112183094025,
+      16.36530303955078,
+      0.2948417663574219
+    ],
+    "high": [
+      1.7346227169036865,
+      16.552547454833984,
+      0.32221516966819763
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Sparse narrow transverse pavement fissure.002",
+    "low": [
+      -2.2931718826293945,
+      106.08216857910156,
+      1.3509739637374878
+    ],
+    "high": [
+      -1.0400357246398926,
+      106.2370376586914,
+      1.3760714530944824
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Sparse narrow transverse pavement fissure.001",
+    "low": [
+      -2.385694742202759,
+      94.05199432373047,
+      1.291611671447754
+    ],
+    "high": [
+      -1.1294814348220825,
+      94.27396392822266,
+      1.3177411556243896
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  },
+  {
+    "name": "Sparse narrow transverse pavement fissure",
+    "low": [
+      -1.4270167350769043,
+      63.87471008300781,
+      0.9883094429969788
+    ],
+    "high": [
+      0.5750759840011597,
+      64.09485626220703,
+      1.0182498693466187
+    ],
+    "hide_render": false,
+    "overlaps_extension": false
+  }
+]

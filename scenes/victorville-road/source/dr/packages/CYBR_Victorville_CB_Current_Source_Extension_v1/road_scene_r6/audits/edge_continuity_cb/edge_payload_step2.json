@@ -1,0 +1,37 @@
+{
+  "step": 2,
+  "native_grid_pitch_m": 0.0009765625,
+  "near_metric_grid_max_m": 0.0009765625,
+  "far_metric_grid_max_m": 0.001953125,
+  "original_scene_road_co_sha256": "5f813dd9c08351a06fcd68f68b6fcaa7acef906cafd6100dd368d162f0740da9",
+  "original_scene_road_tri_sha256": "723a249ec2aa59da854c91158a7f0b93450aebc9cf17beb70cc8435f1bf12543",
+  "physical_rim_vertices_retained": 16072,
+  "physical_rim_xyz_exact": true,
+  "retained_float32_vertical_rim_steps": 1,
+  "new_strip_vertices": 556144,
+  "new_strip_triangles": 1089792,
+  "new_base_vertices": 332795,
+  "new_base_triangles": 625437,
+  "non_native_contact_mismatches": 0,
+  "overused_edges": 0,
+  "outer_join_width_min_m": 0.001,
+  "far_ends_m": [
+    -0.004000000189989805,
+    6.004000186920166
+  ],
+  "road_tile_phase_m": 0.25,
+  "height_scale_m": 0.004,
+  "source_maps_unchanged": true,
+  "old_left_tile_fade_removed": true,
+  "geometry_offset_for_field_sample_m": 0,
+  "field_limit_sample_inset_m": 1e-06,
+  "payload_sha256": "aef0aee3894aa18f3353faffc4f3f824e99f953779cbd8933dce5578daaee5ee",
+  "source_POINT_fields_sha256": [
+    "5a5e06b30d2b31f8496ade30e1f5cce163ea169f65bb7120ea38ce4b1c8eeb43",
+    "4877ab9e8eadb4819e7b018b11467bc6da0da3c08ac532ab646db76dc16bb6e1",
+    "cf477e7d77149631f958eb15a0ee39f19d36cdd50aa8d2b258ca215301de6b1f",
+    "c557c4c1a3587afecfc52a7675ff7dcf1664be1377938ba752d4161ee43e8317",
+    "a302192bd7b3e39a4231578b37e236e6361eb0a47e3bc8111a59854c412956f6",
+    "73270e9cd7e4cf9212d6e0295f4601323c4c407b70ac58ce393d55f0628f2eff"
+  ]
+}

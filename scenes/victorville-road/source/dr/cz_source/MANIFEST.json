@@ -1,0 +1,66 @@
+{
+  "extract_source_sand.py": {
+    "bytes": 2903,
+    "sha256": "f26f211778f61d304d66a96d410ba79531525942e374fc85c92532fe6e44cfd4"
+  },
+  "SAND_BANK_SOURCE_PROOF.json": {
+    "bytes": 1023,
+    "sha256": "4ec6ce95aa5796cad040b08cfe92b9ee96ac38eb303d32f82277ac73726bddf9"
+  },
+  "prepare_addon.py": {
+    "bytes": 3452,
+    "sha256": "ccde6401b9fb649dd1c962b0f67568fd731679eac97c94b739aef6b11df382d6"
+  },
+  "README.md": {
+    "bytes": 4103,
+    "sha256": "4533cb10511ef7ad256080954c65609a46b4dae4ae8959b93945bd39493d6d1b"
+  },
+  "sand_bank.json": {
+    "bytes": 233910,
+    "sha256": "8ad5c6795e064aa15bfc111d0693397c653ed8835fc153977bc27a2157c1b7cc"
+  },
+  "visible_fine_grains_cz.py": {
+    "bytes": 8169,
+    "sha256": "7dc50be696742819338e3991cff03bab2eed5ecdfaa149a73fd702d578413b33"
+  },
+  "inputs/fracture_solids.json": {
+    "bytes": 545871,
+    "sha256": "1e87f9414bf2e4460e344e1fe8d630a8f50dff965c3e2a4680af02db34bc814b"
+  },
+  "inputs/build_diagnostic.py": {
+    "bytes": 10205,
+    "sha256": "320dd02e5ac661f4f9f3b470d614e0b3fb103614b0d2cd740aded5964ffa4246"
+  },
+  "evidence/cz_wide_a_resources.json": {
+    "bytes": 350,
+    "sha256": "7e33ab412f61fca7d737c31e3139011579b235f3c35944a1b77d6ce96d5cf3d1"
+  },
+  "evidence/cz_wide_a_geometry.json": {
+    "bytes": 7747,
+    "sha256": "3a5205fb8854eb9efc19c0e7712b225dcb003182d31c22bad7d78678b31a3e76"
+  },
+  "evidence/sand_support_bound.json": {
+    "bytes": 704,
+    "sha256": "c5b39286c39449f2d52657725e8584ac2bd129ee2b43e240ad13082a61a79542"
+  },
+  "evidence/cz_close_b_resources.json": {
+    "bytes": 348,
+    "sha256": "6a4e120eb3def2e2c5ec26654b63bc6728484d09caac074eab180d8ff61f29ec"
+  },
+  "evidence/cz_close_baseline_b_geometry.json": {
+    "bytes": 1140,
+    "sha256": "c59436c06ba5e8cb7d2ce3dcfa850941299b1454b8b742d7263874402270f9d1"
+  },
+  "evidence/cz_close_baseline_b_resources.json": {
+    "bytes": 347,
+    "sha256": "c8b296e698b47eb5ab3cd15e090eb4d988de552f95c7c879477af903421cfa86"
+  },
+  "evidence/coarse_support.json": {
+    "bytes": 2988,
+    "sha256": "7104e2fffb5842c2b4559bcc3649934453df36776f079a002f791a795ac0d072"
+  },
+  "evidence/cz_close_b_geometry.json": {
+    "bytes": 7755,
+    "sha256": "0ad44dc6a58bd96f69ac747f332f49e5897b595c5011c615966fcac7a469a25a"
+  }
+}

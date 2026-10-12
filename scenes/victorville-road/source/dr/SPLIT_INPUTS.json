@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "inputs": [
+    {
+      "path": "stable_grains_dq/ACTUAL_CATALOG.npz",
+      "bytes": 18480390,
+      "sha256": "5a8b20a1429e7d64b6f299d857c914238f7e0a879dec43308c9a6a527f3c1b3f",
+      "parts": [
+        {
+          "path": "stable_grains_dq/split_inputs/ACTUAL_CATALOG.npz.part000",
+          "bytes": 6291456,
+          "sha256": "dfa765688c49194be0beccb3682faceb92efdb4965dca116ccfad03ec5ac32f2"
+        },
+        {
+          "path": "stable_grains_dq/split_inputs/ACTUAL_CATALOG.npz.part001",
+          "bytes": 6291456,
+          "sha256": "be872338091270c5e3ba8d226cbeeb4cd48db9a785072dfaf234f87eaec92858"
+        },
+        {
+          "path": "stable_grains_dq/split_inputs/ACTUAL_CATALOG.npz.part002",
+          "bytes": 5897478,
+          "sha256": "a5d628aa573be3fe7b0434bb0988e3ed5ae3ae59c7ba94ad320e4a951d1f3105"
+        }
+      ]
+    }
+  ]
+}

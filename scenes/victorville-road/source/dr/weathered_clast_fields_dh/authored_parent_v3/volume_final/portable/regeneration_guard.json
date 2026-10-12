@@ -1,0 +1,11 @@
+{
+  "exit_code": 0,
+  "stop_reason": null,
+  "elapsed_seconds": 10.36969268500252,
+  "sampled_process_tree_peak_MiB": 329.23828125,
+  "kernel_max_child_RSS_MiB": 340.0234375,
+  "cap_MiB": 4480.0,
+  "termination_scope": "Every owned descendant process group, including inner detached guard sessions",
+  "terminated_groups": [],
+  "passed": true
+}

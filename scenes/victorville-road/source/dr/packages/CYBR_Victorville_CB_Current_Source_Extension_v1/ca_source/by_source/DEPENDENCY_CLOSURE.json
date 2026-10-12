@@ -1,0 +1,21 @@
+{
+  "active_helpers": [
+    "fine_coating_az",
+    "fine_response",
+    "historical_fine_area_bw",
+    "road_surface_wear_by",
+    "road_wear_field_by",
+    "align_context_daylight_bt"
+  ],
+  "required_packages": [
+    "Blender4.3.2",
+    "Blender NumPy",
+    "Python standard library including lzma"
+  ],
+  "optional_historical_render_snapshot": "Exact active capture sources retained for tracing; original jobs need relocation and are not portable launchers.",
+  "pinned_microbed_sha256": "7a09007d50e444c28231fd30cddda185d2f01146f3b1a47b014ebd25c0b415c4",
+  "pinned_builder_sha256": "320dd02e5ac661f4f9f3b470d614e0b3fb103614b0d2cd740aded5964ffa4246",
+  "full_from_zero_rebuild_verified": false,
+  "wrapper_execution_verified": false,
+  "actual_adapter_execution_and_render_verified": true
+}

@@ -1,0 +1,21 @@
+{
+  "all_decoded_arrays_exact": true,
+  "arrays": {
+    "co": true,
+    "tri": true,
+    "source_vertex_ids": true,
+    "cap_m": true,
+    "cap_area_fraction": true,
+    "original_surviving": true,
+    "original_mixed_reserve": true,
+    "surviving_event": true,
+    "historical_matrix": true,
+    "historical_compaction": true,
+    "gate": true,
+    "area": true,
+    "optical_layer_thickness_m": true,
+    "previous_original_surviving": true,
+    "previous_cap_m": true
+  },
+  "scope": "Pure numerical DM cap regeneration only; no fresh combined scene replay."
+}

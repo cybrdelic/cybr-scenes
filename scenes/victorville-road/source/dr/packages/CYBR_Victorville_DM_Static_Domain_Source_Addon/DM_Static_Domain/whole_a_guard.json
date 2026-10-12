@@ -1,0 +1,16 @@
+{
+  "command": [
+    "bash",
+    "dm_static_domain_a/runtime/pipeline/clean_render_landform_candidate.sh",
+    "dm_static_domain_a/job.json"
+  ],
+  "exit_code": 0,
+  "stop_reason": null,
+  "elapsed_seconds": 518.0331605230022,
+  "sampled_process_tree_peak_MiB": 3913.86328125,
+  "kernel_max_child_RSS_MiB": 4032.50390625,
+  "cap_MiB": 4480.0,
+  "termination_scope": "Every owned descendant process group, including inner detached guard sessions",
+  "terminated_groups": [],
+  "passed": true
+}

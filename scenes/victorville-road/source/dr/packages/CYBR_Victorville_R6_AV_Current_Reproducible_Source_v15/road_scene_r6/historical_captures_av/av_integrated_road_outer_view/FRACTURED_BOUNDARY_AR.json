@@ -1,0 +1,285 @@
+{
+  "boundary": {
+    "boundary_vertices": 19704,
+    "crown_instances_removed": 2204,
+    "envelope_hull_vertices": 7,
+    "fine_policy": "Finite approved-relief crown loss at original world positions; approximate footprint labels",
+    "geometry_subset_only": true,
+    "integration_requires": [
+      "Clip every intersecting asphalt owner",
+      "Close new section from actual top rim",
+      "Extend AC soil through vacated XY footprint",
+      "Run AQ exact overlap and final film source coverage audits"
+    ],
+    "macro_policy": "Measured least concave majorant: inward removal of inherited scallops, no invented lateral waves",
+    "material_modified": false,
+    "maximum_envelope_loss_m": 0.06742601729937414,
+    "maximum_total_loss_m": 0.07703044955946403,
+    "phase_origin_m": [
+      0,
+      0
+    ],
+    "source_relief_modified": false,
+    "source_sha256": "9c6ebba3a109088842a73434cea02069aa3a5a98e1b871a3f7b7b5e246de0c83",
+    "visible_y_m": [
+      0,
+      15
+    ],
+    "world_tile_m": 0.25
+  },
+  "contact_audit_pending": true,
+  "elapsed_seconds": 178.61952030799876,
+  "geometry_counts_after": {
+    "AC supported pavement section": {
+      "loops": 400524,
+      "polygons": 133508,
+      "vertices": 100134
+    },
+    "Crowned asphalt crust / longitudinal rise": {
+      "loops": 3089493,
+      "polygons": 944260,
+      "vertices": 673531
+    },
+    "Graded shoulder and alluvial plain -1": {
+      "loops": 5805491,
+      "polygons": 1556661,
+      "vertices": 1357571
+    }
+  },
+  "ground_bridge": {
+    "AQ_local_triangle_bound_after": 346948,
+    "actual_rim_vertices": 2735,
+    "added_triangles": 5990,
+    "added_vertices": 3309,
+    "aq_right_audit_boundary_m": -3.04,
+    "area_m2": 0.3575480274130588,
+    "combined_source_boundary_knots": 3309,
+    "endpoint_collars_y_m": [
+      -0.12999999523162842,
+      15.130000114440918
+    ],
+    "estimated_peak_numeric_buffer_mib": 91.16129684448242,
+    "exact_xy_alias_seams": 52,
+    "exact_xyz_alias_seams": 51,
+    "exact_xyz_only_alias_seams": 2,
+    "final_support_x_max_m": -3.1221329441070558,
+    "generated_float32_storage_knot_aliases_collapsed": 2,
+    "id_watertight_bridge_claim": false,
+    "input_boundary_knots": 630,
+    "maximum_old_rim_dominance_m": 0.026518006702447305,
+    "maximum_preserved_source_seam_z_step_m": 1.4901161193847656e-08,
+    "maximum_target_adaptation_m": 0.027518006702447195,
+    "minimum_outward_append_width_m": 0.0009999999999998899,
+    "native_blender_clone_included_in_process_RSS_guard": true,
+    "new_corner_normals": "Exact source-corner interpolation plus shortest-arc source-facet to bridge-facet rotation; AQ transports final bank change",
+    "new_support_seam_vertex_ids_shared": true,
+    "nonzero_xy_gaps_bridged": 0,
+    "old_rim_dominance_count": 336,
+    "original_positive_y_rim_edges_each_gain_one_face": true,
+    "output_buffer_bytes": 757832,
+    "overlap_m": 0.004,
+    "requires_exact_road_soil_overlap_audit": true,
+    "road_clearance_m": 0.0008,
+    "source_attributes_unchanged": true,
+    "source_faces_unchanged": true,
+    "source_object": "Graded shoulder and alluvial plain -1",
+    "source_rim_positive_y_runs": 53,
+    "source_seam_topology_policy": "Original IDs and zero-XY seams retained; geometric XY coverage certified without welding",
+    "source_vertex_ids_welded": false,
+    "source_vertices_unchanged": true,
+    "source_zero_xy_edges": 50,
+    "source_zero_xy_path_seams": 0,
+    "support_contour": "Conservative continuous 25 mm bank support majorant, beneath full grain-scale asphalt boundary",
+    "target_adaptation_count": 353,
+    "world_coordinates": true,
+    "xy_alias_coverage_certificate": true
+  },
+  "limits": [
+    "Measured inward envelope is authored edge repair, not sediment mass or site reconstruction",
+    "Full AQ overlap and final-surface coverage audits must pass before any render or acceptance"
+  ],
+  "mandatory_next_hooks": [
+    "continuous_contact_aq",
+    "assemble_road_margin_aq",
+    "current_contact_film_aq"
+  ],
+  "old_film_inventory_reusable": false,
+  "original_source_materials_and_world_phase_unchanged": true,
+  "owner_edits": [
+    {
+      "added_vertices": 111869,
+      "boundary_report": {
+        "boundary_vertices": 19704,
+        "crown_instances_removed": 2204,
+        "envelope_hull_vertices": 7,
+        "fine_policy": "Finite approved-relief crown loss at original world positions; approximate footprint labels",
+        "geometry_subset_only": true,
+        "integration_requires": [
+          "Clip every intersecting asphalt owner",
+          "Close new section from actual top rim",
+          "Extend AC soil through vacated XY footprint",
+          "Run AQ exact overlap and final film source coverage audits"
+        ],
+        "macro_policy": "Measured least concave majorant: inward removal of inherited scallops, no invented lateral waves",
+        "material_modified": false,
+        "maximum_envelope_loss_m": 0.06742601729937414,
+        "maximum_total_loss_m": 0.07703044955946403,
+        "phase_origin_m": [
+          0,
+          0
+        ],
+        "source_relief_modified": false,
+        "source_sha256": "9c6ebba3a109088842a73434cea02069aa3a5a98e1b871a3f7b7b5e246de0c83",
+        "visible_y_m": [
+          0,
+          15
+        ],
+        "world_tile_m": 0.25
+      },
+      "changed_polygons": 96977,
+      "contact_complete": false,
+      "edge_metadata": {
+        "fields": [
+          ".select_edge",
+          "sharp_edge"
+        ],
+        "new_edges_with_creation_default": 275348,
+        "retained_source_edges": 1257620,
+        "split_edges_inherited": 37702
+      },
+      "estimated_added_buffer_mib": 106.3721694946289,
+      "exact_source_facets": true,
+      "fully_clipped_owner": false,
+      "materials_reused_verbatim": true,
+      "new_triangles": 201216,
+      "object": "Crowned asphalt crust / longitudinal rise",
+      "original_vertices_moved": 0,
+      "retained_polygons": 743044,
+      "scene_assigned": false,
+      "source_edge_splits": 10207
+    },
+    {
+      "added_vertices": 14,
+      "boundary_report": {
+        "boundary_vertices": 19704,
+        "crown_instances_removed": 2204,
+        "envelope_hull_vertices": 7,
+        "fine_policy": "Finite approved-relief crown loss at original world positions; approximate footprint labels",
+        "geometry_subset_only": true,
+        "integration_requires": [
+          "Clip every intersecting asphalt owner",
+          "Close new section from actual top rim",
+          "Extend AC soil through vacated XY footprint",
+          "Run AQ exact overlap and final film source coverage audits"
+        ],
+        "macro_policy": "Measured least concave majorant: inward removal of inherited scallops, no invented lateral waves",
+        "material_modified": false,
+        "maximum_envelope_loss_m": 0.06742601729937414,
+        "maximum_total_loss_m": 0.07703044955946403,
+        "phase_origin_m": [
+          0,
+          0
+        ],
+        "source_relief_modified": false,
+        "source_sha256": "9c6ebba3a109088842a73434cea02069aa3a5a98e1b871a3f7b7b5e246de0c83",
+        "visible_y_m": [
+          0,
+          15
+        ],
+        "world_tile_m": 0.25
+      },
+      "changed_polygons": 359,
+      "contact_complete": false,
+      "edge_metadata": {
+        "fields": [
+          ".select_edge"
+        ],
+        "new_edges_with_creation_default": 14,
+        "retained_source_edges": 4196,
+        "split_edges_inherited": 4
+      },
+      "estimated_added_buffer_mib": 47.50536346435547,
+      "exact_source_facets": true,
+      "fully_clipped_owner": false,
+      "materials_reused_verbatim": true,
+      "new_triangles": 10,
+      "object": "Broken exposed asphalt edge -1",
+      "original_vertices_moved": 0,
+      "retained_polygons": 1398,
+      "scene_assigned": false,
+      "source_edge_splits": 8
+    },
+    {
+      "added_vertices": 0,
+      "boundary_report": {
+        "boundary_vertices": 19704,
+        "crown_instances_removed": 2204,
+        "envelope_hull_vertices": 7,
+        "fine_policy": "Finite approved-relief crown loss at original world positions; approximate footprint labels",
+        "geometry_subset_only": true,
+        "integration_requires": [
+          "Clip every intersecting asphalt owner",
+          "Close new section from actual top rim",
+          "Extend AC soil through vacated XY footprint",
+          "Run AQ exact overlap and final film source coverage audits"
+        ],
+        "macro_policy": "Measured least concave majorant: inward removal of inherited scallops, no invented lateral waves",
+        "material_modified": false,
+        "maximum_envelope_loss_m": 0.06742601729937414,
+        "maximum_total_loss_m": 0.07703044955946403,
+        "phase_origin_m": [
+          0,
+          0
+        ],
+        "source_relief_modified": false,
+        "source_sha256": "9c6ebba3a109088842a73434cea02069aa3a5a98e1b871a3f7b7b5e246de0c83",
+        "visible_y_m": [
+          0,
+          15
+        ],
+        "world_tile_m": 0.25
+      },
+      "changed_polygons": 12440,
+      "contact_complete": false,
+      "edge_metadata": {
+        "fields": [
+          ".select_edge"
+        ],
+        "new_edges_with_creation_default": 0,
+        "retained_source_edges": 0,
+        "split_edges_inherited": 0
+      },
+      "estimated_added_buffer_mib": 48.033050537109375,
+      "exact_source_facets": true,
+      "fully_clipped_owner": true,
+      "materials_reused_verbatim": true,
+      "new_triangles": 0,
+      "object": "AC anchored subsurface aggregate",
+      "original_vertices_moved": 0,
+      "retained_polygons": 0,
+      "scene_assigned": false,
+      "source_edge_splits": 0
+    }
+  ],
+  "owners": {
+    "markings_tested": [
+      "Worn marking following road profile",
+      "Worn marking following road profile.001",
+      "Worn marking following road profile.003"
+    ],
+    "native_tile_loss_overlap_count": 0,
+    "native_tiles_tested": 88
+  },
+  "scene_assigned": true,
+  "section": {
+    "new_materials": 0,
+    "section_m": 0.038,
+    "source_materials": [
+      "Road / Approved R5D soil + original dense asphalt"
+    ],
+    "surface_course_m": 0.024,
+    "top_matches_actual_source": true,
+    "top_vertices": 33378,
+    "triangles": 133508
+  }
+}

@@ -1,0 +1,462 @@
+{
+  "selected_scene": "DR",
+  "omitted_source_lock_entries": {
+    "road_scene_r6/historical_evidence_al/al_bank_continuity_tests.log": "38d9e472c13c9f2672f95704aada52861c7e174135b2f26c540d38113b597bb9",
+    "road_scene_r6/historical_evidence_al/al_bank_with_exact_audit_tests.log": "15b456315dbdab00d75b20637c4db44c1336e250bcb733106f0e0e16cc0df78a",
+    "road_scene_r6/vegetation/blender_validation.log": "3a7b43ccc73e36fec2321582fee0de417b95e87605b4b3af1046ac8ef300a34a"
+  },
+  "geometry_semantic_guard_unchanged": true,
+  "material_recipe_bytes_unchanged": true,
+  "CO_job_input_path_values_only_replaced": true,
+  "CO_job_normalized_equivalence_verified": true,
+  "modified_optional_or_documentation_paths": [
+    "stable_grains_dq/check_radius_tiers.py",
+    "stable_grains_dq/build_full_compact_tiered.py",
+    "packages/CYBR_Victorville_Ground_Current_Source_v8/CYBR_Victorville_Ground_Current_Source_v8/dh_specimens/portable/regenerate_bounded.sh",
+    "packages/CYBR_Victorville_CM_Connected_Crown_Source_Addon_v3/integration/helpers/replay_av_raw.py",
+    "packages/CYBR_Victorville_CM_Connected_Crown_Source_Addon_v3/integration/helpers/continue_build_to_z.sh",
+    "packages/CYBR_Victorville_CM_Connected_Crown_Source_Addon_v3/integration/helpers/rebuild_ca_cb.sh",
+    "packages/CYBR_Victorville_DR_Compact_Foreground_Source_Addon/CYBR_Victorville_DR_Compact_Foreground_Source_Addon/source/check_radius_tiers.py",
+    "packages/CYBR_Victorville_DR_Compact_Foreground_Source_Addon/CYBR_Victorville_DR_Compact_Foreground_Source_Addon/source/build_full_compact_tiered.py",
+    "weathered_clast_fields_dh/authored_parent_v3/volume_final/portable/regenerate_bounded.sh"
+  ],
+  "fresh_complete_public_rebuild_verified": false,
+  "public_documentary_omissions": {
+    "count": 119,
+    "source_lock_documentary_entries_removed": [
+      {
+        "path": "road_scene_r6/receipts/ac_contact_tests.json",
+        "sha256": "593f076d6038f660d91c59ee097a354536bb5d9be98c48bf15dad6cf9154b712"
+      },
+      {
+        "path": "road_scene_r6/receipts/ac_d_supported_edge_preview_job.json",
+        "sha256": "fc6afe3b5089302c2ee23a140e0aa6895471db8dfa6869486fd979bc432418cf"
+      },
+      {
+        "path": "road_scene_r6/receipts/ac_d_supported_edge_preview_pavement_contact_ac.json",
+        "sha256": "d8141127a7568416529031516deb506cc60c2914cb4f927dd9d6ba8f2eb72376"
+      },
+      {
+        "path": "road_scene_r6/receipts/ac_d_supported_edge_preview_resources.json",
+        "sha256": "866ae1f2d7565b42561ddb4e3e64eb2249b82b29255e99138e360fe704063ba1"
+      },
+      {
+        "path": "road_scene_r6/receipts/ac_z_matched_baseline_preview_job.json",
+        "sha256": "5d572a65fed22e84fb21b86cdbac9790d924fccc77d18088410ac4135087add2"
+      },
+      {
+        "path": "road_scene_r6/receipts/ac_z_matched_baseline_preview_resources.json",
+        "sha256": "7cabb5f3010b2f86411a1e1039c699ed865f5fc0d0e7ccfbaae83af4136284a7"
+      },
+      {
+        "path": "road_scene_r6/receipts/ae_transport_api.json",
+        "sha256": "d54f18e1cb91c7d61fcbc99672eedc93e221325a6c2333556ef46c8666d6a1ed"
+      },
+      {
+        "path": "road_scene_r6/receipts/ae_transport_tests.json",
+        "sha256": "cf016d849ba2e29f20e4838c70d1060bd132266e85fb3f1958a88a3824ef46a4"
+      },
+      {
+        "path": "road_scene_r6/receipts/ah_d_integrated_bank_context_preview_graded_shoulder_ah.json",
+        "sha256": "8607f548463b6b1695996b54349153baf8d80371536e21cb057f955b09bf392b"
+      },
+      {
+        "path": "road_scene_r6/receipts/ah_d_integrated_bank_context_preview_job.json",
+        "sha256": "1bdf288c19350059a786e98aaf305065ca94a1cb033dd848662d9025b581dd9e"
+      },
+      {
+        "path": "road_scene_r6/receipts/ah_d_integrated_bank_context_preview_pavement_contact_ac.json",
+        "sha256": "a59f2ba4e30f7dd81b0dc69e5ccab2d0488952f6f149e0fe7d612c498d233cc0"
+      },
+      {
+        "path": "road_scene_r6/receipts/ah_d_integrated_bank_context_preview_resources.json",
+        "sha256": "388881b379ea08e64e30b3b5b2a88a3cebf98cf566366c76649eb5a36795ee43"
+      },
+      {
+        "path": "road_scene_r6/receipts/ai_edge_support_tests.json",
+        "sha256": "e3bb2c430edc6de2a51447ac172ec853f546081f863959ff89690ab180e59bb6"
+      },
+      {
+        "path": "road_scene_r6/receipts/ai_sorted_shoulder_detail_graded_shoulder_ah.json",
+        "sha256": "7a7799d4e69893d10ec5d6366ca20c051397d427a7cda79bf5d1594325a8c8a0"
+      },
+      {
+        "path": "road_scene_r6/receipts/ai_sorted_shoulder_detail_job.json",
+        "sha256": "fc5fee02d3d1008ceb386b8c5d4881e609d4c83197592081f4250fa0e395c39b"
+      },
+      {
+        "path": "road_scene_r6/receipts/ai_sorted_shoulder_detail_pavement_contact_ac.json",
+        "sha256": "2b1d1c3050a5eb95260748ce7484a970bb8151023079a2aeba3b2b6c7eb241e4"
+      },
+      {
+        "path": "road_scene_r6/receipts/ai_sorted_shoulder_detail_resource_receipt.json",
+        "sha256": "d5f723f65c0a423e4e73527cada26323dea02aad7fd975dd0d7250f20d8c87aa"
+      },
+      {
+        "path": "road_scene_r6/receipts/ai_sorted_shoulder_detail_sediment_surface_ai.json",
+        "sha256": "f057e5fb3de7f58945f9bb9cb3b29eae3b019ba79d8b36bad20ca4fc2f2aa308"
+      },
+      {
+        "path": "road_scene_r6/receipts/ai_sorted_support_context_preview_graded_shoulder_ah.json",
+        "sha256": "6768b6fdc14dcd2ec1fb5a15108eae177cfddfc7c870cb16aa0d0b52fac356df"
+      },
+      {
+        "path": "road_scene_r6/receipts/ai_sorted_support_context_preview_job.json",
+        "sha256": "151b6a1065c50c74e2b13c348d92419fefd9e5d9b3b3d875e4486c87fc7171f8"
+      },
+      {
+        "path": "road_scene_r6/receipts/ai_sorted_support_context_preview_pavement_contact_ac.json",
+        "sha256": "2b1d1c3050a5eb95260748ce7484a970bb8151023079a2aeba3b2b6c7eb241e4"
+      },
+      {
+        "path": "road_scene_r6/receipts/ai_sorted_support_context_preview_resource_receipt.json",
+        "sha256": "b47f0684eb00c356d5d87e7679080e9fc3663fbb46bdc598ac146b723cbec647"
+      },
+      {
+        "path": "road_scene_r6/receipts/ai_sorted_support_context_preview_sediment_surface_ai.json",
+        "sha256": "05a86750d4dae75947bf868e2ea7c69068bc4e5319d7566c4dbbf76aa8c71710"
+      },
+      {
+        "path": "road_scene_r6/receipts/ai_visual_review.json",
+        "sha256": "e727228c3d13d7b01b959c6689cbdada84279e14a2b86c28029aa3bc6a4eff74"
+      },
+      {
+        "path": "road_scene_r6/receipts/aj_inventory_correction.json",
+        "sha256": "8ba33a6012b2bb65466be2a293a9a43ce27ee2e070866abca5b3998c6c21b328"
+      },
+      {
+        "path": "road_scene_r6/receipts/aj_projected_coverage.json",
+        "sha256": "0a31791bb4ae8a6783bb4395c472005b0600e4fd5af9cf90c2c9b36bfef1a530"
+      },
+      {
+        "path": "road_scene_r6/receipts/aj_retained_stock_context_preview_graded_shoulder_ah.json",
+        "sha256": "cf011c535f1f898adc0947ebcd0519d92a5aad56e60259eed3a85ce673c56d0b"
+      },
+      {
+        "path": "road_scene_r6/receipts/aj_retained_stock_context_preview_job.json",
+        "sha256": "9dfdb8a17b31f0202e0d0176b62f83ef9e37a1418ec6718616c8b0cab7e30dfd"
+      },
+      {
+        "path": "road_scene_r6/receipts/aj_retained_stock_context_preview_pavement_contact_ac.json",
+        "sha256": "16fd86dffc3efb46327bdee218618d504b7b69b91500e31c886fd75ae1cb454c"
+      },
+      {
+        "path": "road_scene_r6/receipts/aj_retained_stock_context_preview_resource_receipt.json",
+        "sha256": "64663ef3ff852fece24ace88216103abd74e7a4584a4e29849a2df966be93eb0"
+      },
+      {
+        "path": "road_scene_r6/receipts/aj_retained_stock_context_preview_sediment_surface_ai.json",
+        "sha256": "93bf64d31ce6543a5e85b7a2aee4fca950844299fd49d5ff70670c7168acf284"
+      },
+      {
+        "path": "road_scene_r6/receipts/ak_initial_inventory_test.json",
+        "sha256": "2ab0bb72e9291a49aa6a3f08b4e3e8cf8c59ad3abe63cf2b1b669ece4c6c52f5"
+      },
+      {
+        "path": "road_scene_r6/receipts/ak_substrate_history/AK_SUBSTRATE_HISTORY.json",
+        "sha256": "a5ad74a70e91c2257c9258c0dbadfcdb026cae72910ce26107e820b0ed6f6d7a"
+      },
+      {
+        "path": "road_scene_r6/receipts/ak_substrate_units_context_preview_graded_shoulder_ah.json",
+        "sha256": "de72c4066399a74779dd135c44f94e80cf97cadf107fef9decfd976a41c80eea"
+      },
+      {
+        "path": "road_scene_r6/receipts/ak_substrate_units_context_preview_job.json",
+        "sha256": "b4ce0e1c1e8093c61791a891ced41ecd7ec1b5470eb73cf22bee2512be8ea567"
+      },
+      {
+        "path": "road_scene_r6/receipts/ak_substrate_units_context_preview_pavement_contact_ac.json",
+        "sha256": "722c854ca444ebb3c278aa87be7bd419f7096f1326a8b644577a4c66e4343d7a"
+      },
+      {
+        "path": "road_scene_r6/receipts/ak_substrate_units_context_preview_resource_receipt.json",
+        "sha256": "71ad1de95486621e61ff85b3e5655cd151111d7112905b00f548f3107d2e95bc"
+      },
+      {
+        "path": "road_scene_r6/receipts/ak_substrate_units_context_preview_sediment_surface_ai.json",
+        "sha256": "397e959df7a8e71240ad7f184b09f1ab5d94aad001747e546f1559cd39dd22ca"
+      },
+      {
+        "path": "road_scene_r6/receipts/ak_substrate_units_context_preview_substrate_history_ak.json",
+        "sha256": "277c176d5fa43395be978d7f2e0dad493efd074dc9654fff4221af402973b7bb"
+      },
+      {
+        "path": "road_scene_r6/receipts/ak_substrate_units_detail_graded_shoulder_ah.json",
+        "sha256": "b15db47738c6a4635a2a09da386d485c5b4e34d4019712a7a1b66d206359cc50"
+      },
+      {
+        "path": "road_scene_r6/receipts/ak_substrate_units_detail_job.json",
+        "sha256": "8c7e6427f4897e7fed9e53532d4dce01fc8400f9327039aaa4456f9395ccb48f"
+      },
+      {
+        "path": "road_scene_r6/receipts/ak_substrate_units_detail_pavement_contact_ac.json",
+        "sha256": "722c854ca444ebb3c278aa87be7bd419f7096f1326a8b644577a4c66e4343d7a"
+      },
+      {
+        "path": "road_scene_r6/receipts/ak_substrate_units_detail_resource_receipt.json",
+        "sha256": "46a6c609406a04cc496229fcff97d6927855306532eca451b7d8ce6276f51b65"
+      },
+      {
+        "path": "road_scene_r6/receipts/ak_substrate_units_detail_sediment_surface_ai.json",
+        "sha256": "551662b29c90ce2521552ae04709fb077e0135db9789515c550e0dcd7bb791e4"
+      },
+      {
+        "path": "road_scene_r6/receipts/ak_substrate_units_detail_substrate_history_ak.json",
+        "sha256": "277c176d5fa43395be978d7f2e0dad493efd074dc9654fff4221af402973b7bb"
+      },
+      {
+        "path": "road_scene_r6/receipts/ak_visual_review.json",
+        "sha256": "7c417da9a069259f19c914d3f3630348f1d2d6d7379a8cda60474f8952cfe25c"
+      },
+      {
+        "path": "road_scene_r6/receipts/approved_gn_identity_contract.json",
+        "sha256": "7862981278f5d392fdd79a718b7337e22ff05c060b0c3ba6534e3ef1c2936be3"
+      },
+      {
+        "path": "road_scene_r6/receipts/coupled_geometry.json",
+        "sha256": "d73341785a1a41e69ab36c9404c488d8076f7dac5f9f0d932ac003973d2ef8c8"
+      },
+      {
+        "path": "road_scene_r6/receipts/coupled_visual_review.json",
+        "sha256": "684c178a1f15fff84608b38526797f13a929cfad44104f96308334cfb1c36c19"
+      },
+      {
+        "path": "road_scene_r6/receipts/field_checks.json",
+        "sha256": "afd246da2efe984f83d325690e71750788144bbb792da74a4931bafab08c176e"
+      },
+      {
+        "path": "road_scene_r6/receipts/flow_package_evidence_y.json",
+        "sha256": "a6d96589da20176c8d203c827fb6482c96b2bb6000310e721d6dd1cb7e54f1d7"
+      },
+      {
+        "path": "road_scene_r6/receipts/flow_shoulder_y_checkpoint.json",
+        "sha256": "a8d573ba263b4ddece7ed935e1a5a78f9ebaf7fe026973586dd078250d987384"
+      },
+      {
+        "path": "road_scene_r6/receipts/flow_visual_review_y.json",
+        "sha256": "8fd4800585b3058505002c9f9bbfc46508d7da9a2d70e2056ff23b60b923c26b"
+      },
+      {
+        "path": "road_scene_r6/receipts/i_contact_native_pixels.json",
+        "sha256": "dadee95a595cd747ac96f57e5ecd0b16436c052dda4c2e4b77cf52ee7bde1ae4"
+      },
+      {
+        "path": "road_scene_r6/receipts/i_detail_resources.json",
+        "sha256": "5f8c3b50bca72123eda0fab0dc887d0889b201c56ba8fe231195a899050ef49e"
+      },
+      {
+        "path": "road_scene_r6/receipts/integrated_failed_attempts_ah.json",
+        "sha256": "007472a5fefd6e6600625675d560fdcea6fadd9222c2707cb26c989256181b1c"
+      },
+      {
+        "path": "road_scene_r6/receipts/integrated_visual_review_ah.json",
+        "sha256": "33ee04581356c9b415508674faf9bf55e2b617a5ede66f90c9669f51e769599f"
+      },
+      {
+        "path": "road_scene_r6/receipts/morphology_reference_review_y.json",
+        "sha256": "bbac473cf251f7b91f6fdb17ae4989a94043690c2df1ef5e322dd6d0a08a1fcd"
+      },
+      {
+        "path": "road_scene_r6/receipts/native_hero_o_resources.json",
+        "sha256": "af48204f73f0ba5dbe514ed9e0cbbacf39c9a382d8267c059d4031cb0ee72027"
+      },
+      {
+        "path": "road_scene_r6/receipts/portable_ai_tests_v11.json",
+        "sha256": "9227f48be8a048437487c8010e40e2134a36eb8c10c6cf89c12f34ef204bbf89"
+      },
+      {
+        "path": "road_scene_r6/receipts/portable_aj_tests_v11.json",
+        "sha256": "989ebedeaff502e9e140fc321ea0ae7d09c4a29d6a3e88a4516d74d92fafe900"
+      },
+      {
+        "path": "road_scene_r6/receipts/portable_ak_tests_v11.json",
+        "sha256": "24e507d6ac8aed1043dbdd9e054d9f6ef0062a02a08727441c29b26ba9032dbf"
+      },
+      {
+        "path": "road_scene_r6/receipts/portable_al_context_tests_v12.json",
+        "sha256": "f886eacea441f4b50548453dc58d4f276a9e6d0391c64cd3df24f92a62dc6235"
+      },
+      {
+        "path": "road_scene_r6/receipts/portable_al_detail_tests_v12.json",
+        "sha256": "3e55114847d7e1c7ad88b20c901f5834120de45ae42a8f070830bab7f2160b1f"
+      },
+      {
+        "path": "road_scene_r6/receipts/portable_ap_tests_v13.json",
+        "sha256": "b5f145cde92edc7bca4d73a585dc9846d721bcfcfecb2f1047878f9a772c0592"
+      },
+      {
+        "path": "road_scene_r6/receipts/portable_layout_ah_test.json",
+        "sha256": "8356fd54f07fa5090f0b4f15baee8d241cff1353d7acbdbf4361f8adbaedcddd"
+      },
+      {
+        "path": "road_scene_r6/receipts/portable_layout_ak_test_v11.json",
+        "sha256": "a7f5ff5429c624d3ae5469495ca1943880921ce03eae6e4668d6603f1022687e"
+      },
+      {
+        "path": "road_scene_r6/receipts/render_resource_scope.json",
+        "sha256": "b7682f976cf62a2abc587a5ce058dcde0324cebba858756922d62c09d9ce996b"
+      },
+      {
+        "path": "road_scene_r6/receipts/ridge_preview_o_resources.json",
+        "sha256": "dce2d2866f1750ec4d3993e34a3647c4a0a402db5fa7d6c5fd99ab1fb3f64499"
+      },
+      {
+        "path": "road_scene_r6/receipts/runoff_film_package_evidence_z.json",
+        "sha256": "3686b55af41bcdd9b0cc6327e1b7cf86c9a1b51ceee0de4a2ad4431c9dd7112b"
+      },
+      {
+        "path": "road_scene_r6/receipts/runoff_film_visual_review_z.json",
+        "sha256": "713eba4329be790212ac6be68c789b548d25d69a6f5f8c3fbbb2f65790618587"
+      },
+      {
+        "path": "road_scene_r6/receipts/runoff_film_z_checkpoint.json",
+        "sha256": "e02a17b2d55a61a69b6d50dbf241399bb47f5138cb1504605d2d164f9a746a6c"
+      },
+      {
+        "path": "road_scene_r6/receipts/s_context_preview_resources.json",
+        "sha256": "064bcb03ef873f87a2ea9da3fe643a921d00ab2d9bb3bf978bc7b51bc6d578be"
+      },
+      {
+        "path": "road_scene_r6/receipts/s_edge_native_resources.json",
+        "sha256": "fb0701e8216dbd4d8a4f2f6af1f187acc0bddd1bfeda1ad4633d9b0bb0debc71"
+      },
+      {
+        "path": "road_scene_r6/receipts/s_edge_preview_resources.json",
+        "sha256": "bf27dfc47f0910b9467154732c52887c1bcd0d33b2a841b64d7b83c3c86ed804"
+      },
+      {
+        "path": "road_scene_r6/receipts/sorting_comparison_k.json",
+        "sha256": "189b1f3bbaa7b6cebdfd513c526e989af5044e2e6a2368655ff602448cd01daf"
+      },
+      {
+        "path": "road_scene_r6/receipts/sorting_context_l_resources.json",
+        "sha256": "0fe8ddddba8e500b8b3823c46229ecbb2675545573b6eabf8f42e7b049821b54"
+      },
+      {
+        "path": "road_scene_r6/receipts/sorting_l_resources.json",
+        "sha256": "cbc31ffb3fbdb0388ece0e8ddd3da917569f2fe2340fb4b64c030e802dc60772"
+      },
+      {
+        "path": "road_scene_r6/receipts/weather_layer_h.json",
+        "sha256": "c303b911c7256740462cf356a4ff139c1f1e223a5ed42afcfa860ee14a70af31"
+      },
+      {
+        "path": "road_scene_r6/receipts/x_exposure_unit_tests.json",
+        "sha256": "e25b417d8e90ecd982ea81e8bc98a9417a3ed1a68d6fb96b8a2e912c5d79153e"
+      },
+      {
+        "path": "road_scene_r6/receipts/y_bounded_lenses_preview_job.json",
+        "sha256": "168ceb477ece67720a5e0624b9eccddb6d53d16f916f8265805ff53c7789007f"
+      },
+      {
+        "path": "road_scene_r6/receipts/y_bounded_lenses_preview_ready.json",
+        "sha256": "4951687871d503aa2686ace09cbc71899114e580845b07e6cf5a3fd7efbf232a"
+      },
+      {
+        "path": "road_scene_r6/receipts/y_bounded_lenses_preview_resources.json",
+        "sha256": "48373d6ff846d110279531abbf9237609eb57a67b7540a7146140b915483b989"
+      },
+      {
+        "path": "road_scene_r6/receipts/y_build_resources.json",
+        "sha256": "fbd5e062ee7b54cd944c0adc649f8dc7b2fb9a4e5053fc7833a833037c2c1f66"
+      },
+      {
+        "path": "road_scene_r6/receipts/y_exposure_extraction.json",
+        "sha256": "4451e11d6feb2bc9d943887c61ceb29e90ecf7e276563bd635f5c5e382938334"
+      },
+      {
+        "path": "road_scene_r6/receipts/y_failed_preview_diagnostics.json",
+        "sha256": "cb1ceb60d6ac37267ef4fc1cb0b57e3573e0f48ff9370aaa49219d280ea13d14"
+      },
+      {
+        "path": "road_scene_r6/receipts/y_focused_tests.json",
+        "sha256": "4288f354c9887c46c742386b26a568afc7526f7997d3f20f9b7ea28b1cdc778a"
+      },
+      {
+        "path": "road_scene_r6/receipts/y_lod_context_preview_job.json",
+        "sha256": "4ef79b4a5289c628b518af8a6dd33bf42b64f36e4303b86a94819bc26ba6eefd"
+      },
+      {
+        "path": "road_scene_r6/receipts/y_lod_context_preview_ready.json",
+        "sha256": "16f50031705b57285ed1b9531014776bfcd4b51880935c75c51a3102096c7535"
+      },
+      {
+        "path": "road_scene_r6/receipts/y_lod_context_preview_resources.json",
+        "sha256": "6d5a881298396724ac3db6a59c0511e0df3656edccf94758698a76f05830f100"
+      },
+      {
+        "path": "road_scene_r6/receipts/y_postprocess_recovery.json",
+        "sha256": "cbdd7377f7326640cd24387d162770e709f5b6eeb7ca573d2fb630e8e4d91466"
+      },
+      {
+        "path": "road_scene_r6/receipts/z_build_a.json",
+        "sha256": "d48b539eb4342d05d38479c36ace321101ac2e5e0639e083ba0e8c6ac0676d1f"
+      },
+      {
+        "path": "road_scene_r6/receipts/z_failed_preview_diagnostics.json",
+        "sha256": "406245e169fdd3c093092694a3a972c14bf983175c7581df86c8517b9a96ade2"
+      },
+      {
+        "path": "road_scene_r6/receipts/z_film_b_edge_preview_job.json",
+        "sha256": "a18021b29423cd2feaa353e731c677b776f14177c47c5d54241190d34cd48d30"
+      },
+      {
+        "path": "road_scene_r6/receipts/z_film_b_edge_preview_ready.json",
+        "sha256": "e2f6b067d457b5f586af7639efacb89af9206be325cedf2a370cbb59e5881044"
+      },
+      {
+        "path": "road_scene_r6/receipts/z_film_b_edge_preview_resources.json",
+        "sha256": "f12e6ddbb63a733964e68f97872a2965af9b0282b035fbf9915e2d4ad8835060"
+      },
+      {
+        "path": "road_scene_r6/receipts/z_film_context_preview_job.json",
+        "sha256": "7bc5b3bf6113e4f541a0514b6a3d24574ad3404bd09296a1681f4681c4bb3430"
+      },
+      {
+        "path": "road_scene_r6/receipts/z_film_context_preview_ready.json",
+        "sha256": "f07befd8cfbd0a7651e1e5b1c0a44aadcde05d10dbc33ba9b0ea8362cc4a9722"
+      },
+      {
+        "path": "road_scene_r6/receipts/z_film_context_preview_resources.json",
+        "sha256": "090ce58e8b8d546f4059a92b3c04796143a386a881801d94ece5845ba0589ea8"
+      },
+      {
+        "path": "road_scene_r6/receipts/z_finite_inventory_api.json",
+        "sha256": "14998ea24e4cb60edb5194b216a1315514110cc73fbd20408b7494af3990e195"
+      },
+      {
+        "path": "road_scene_r6/receipts/z_finite_inventory_focused_tests.json",
+        "sha256": "27f853e120d043c9508bb52d970807ac369af5b2837c67ba4c85a765fe3dd7e5"
+      },
+      {
+        "path": "road_scene_r6/receipts/z_portable_admission_validation.json",
+        "sha256": "07b361804ccb672906e6831b835f9363411be6917e54ca4a4debd303f1f9bece"
+      },
+      {
+        "path": "road_scene_r6/receipts/z_portable_builder_ast_proof.json",
+        "sha256": "08956c016716d674059fc1b4c4ca8c5460142f1fe36a9b2bf82238b63fc73ec4"
+      },
+      {
+        "path": "road_scene_r6/receipts/z_portable_semantic_v3_required_validation_resources.json",
+        "sha256": "124072f6c2b27cb8955d1b1f26e7288e2ff45e592b8676c369a9abfd99666fb6"
+      },
+      {
+        "path": "road_scene_r6/receipts/z_semantic_capture_ah_resource.json",
+        "sha256": "c8133253be81b53a18c8fb6de71626a86f5ed0015f73b47e6ec4411763557179"
+      }
+    ],
+    "reason": "Bytecode and unreferenced old JSON proof/resource reports are not executable scene inputs. Source, geometry/material semantic contracts, input identity checks and referenced build receipts remain unchanged."
+  },
+  "exact_binary_aliases": [
+    {
+      "alias": "packages/CYBR_Victorville_DM_Static_Domain_Source_Addon/DM_Static_Domain/STATIC_FINE_LAYER.npz",
+      "canonical": "static_domain_dm/STATIC_FINE_LAYER.npz",
+      "sha256": "d692f6513f6639332d774f0bbb46cb821fb32da3f4f54a56671867e13f7951be"
+    },
+    {
+      "alias": "da_source/inputs/microbed.npz",
+      "canonical": "packages/CYBR_Victorville_R6_AV_Current_Reproducible_Source_v15/discrete_grains_r5/prototypes/microbed.npz",
+      "sha256": "7a09007d50e444c28231fd30cddda185d2f01146f3b1a47b014ebd25c0b415c4"
+    }
+  ]
+}

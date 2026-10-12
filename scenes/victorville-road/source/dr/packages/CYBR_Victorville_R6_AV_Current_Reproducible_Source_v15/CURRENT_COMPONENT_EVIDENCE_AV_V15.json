@@ -1,0 +1,292 @@
+{
+  "base_AQ_v14_sha256": "7fbecac18a65f1911b6ce3372f441e2bbfecd9940cbea099abcf2bcf81e9f027",
+  "cache_bytes_included": false,
+  "cache_is_required_input": false,
+  "evidence_normalization_checks": [
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/AQ_CURRENT_FILM.json",
+      "path_values_or_keys_normalized": 0,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/CLEAN_OIDN_PANEL.png.json",
+      "path_values_or_keys_normalized": 27,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/CONTACT_BANK_CONTINUITY_AL.json",
+      "path_values_or_keys_normalized": 0,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/CONTINUOUS_CONTACT_AQ.json",
+      "path_values_or_keys_normalized": 0,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/FRACTURED_BOUNDARY_AR.json",
+      "path_values_or_keys_normalized": 0,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/GRADED_SHOULDER_AH.json",
+      "path_values_or_keys_normalized": 0,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/INTERNAL_PANEL.png.json",
+      "path_values_or_keys_normalized": 19,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/INTERNAL_PANEL_guides/guide_contract.json",
+      "path_values_or_keys_normalized": 0,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/INTERNAL_PANEL_guides/guide_stats.json",
+      "path_values_or_keys_normalized": 0,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/INTERNAL_PANEL_guides/png_roundtrip_check.json",
+      "path_values_or_keys_normalized": 0,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/METRIC_FRAGMENTS_AS.json",
+      "path_values_or_keys_normalized": 0,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/PAVEMENT_CONTACT_AC.json",
+      "path_values_or_keys_normalized": 0,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/PRE_RENDER_MEMORY_ADAPTATIONS.json",
+      "path_values_or_keys_normalized": 2,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/ROAD_FILM_OWNERSHIP_AL.json",
+      "path_values_or_keys_normalized": 0,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/ROAD_MARGIN_AQ.json",
+      "path_values_or_keys_normalized": 0,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/SEDIMENT_SURFACE_AI.json",
+      "path_values_or_keys_normalized": 0,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/SUBSTRATE_HISTORY_AK.json",
+      "path_values_or_keys_normalized": 0,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/VIEW_GRAIN_REFRESH_AU.json",
+      "path_values_or_keys_normalized": 0,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/job.json",
+      "path_values_or_keys_normalized": 7,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/resource_receipt.json",
+      "path_values_or_keys_normalized": 0,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/ASSEMBLED_SCENE_AV.blend.json",
+      "path_values_or_keys_normalized": 17,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_evidence_av/at_foundation_numerical.json",
+      "path_values_or_keys_normalized": 0,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_evidence_av/au_view_grains_source_check.json",
+      "path_values_or_keys_normalized": 0,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_evidence_av/au_view_grains_blender_fixture.json",
+      "path_values_or_keys_normalized": 0,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_evidence_av/au_view_grains_blender_resources_b.json",
+      "path_values_or_keys_normalized": 0,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_evidence_av/cache_av_fixture_resources.json",
+      "path_values_or_keys_normalized": 0,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_evidence_av/av_source_preflight_tests.json",
+      "path_values_or_keys_normalized": 0,
+      "semantic_changes_only_paths": true
+    },
+    {
+      "canonical_serialization": true,
+      "path": "road_scene_r6/historical_evidence_av/av_inherited_source_preflight_tests.json",
+      "path_values_or_keys_normalized": 0,
+      "semantic_changes_only_paths": true
+    }
+  ],
+  "exact_generated_numerical_evidence": [
+    {
+      "bytes": 845289,
+      "package_path": "road_scene_r6/historical_numerical_av/AQ_FINAL_SURFACE.npz",
+      "role": "Exact actual AV generated evidence; never a replay input",
+      "sha256": "175710f7f0e26cb639a42444f8122cdcc5043cc94fdadabf1f799271d5684f0e"
+    },
+    {
+      "bytes": 3362541,
+      "package_path": "road_scene_r6/historical_numerical_av/AQ_CURRENT_FILM.npz",
+      "role": "Exact actual AV generated evidence; never a replay input",
+      "sha256": "c010c278c31d421d1f402925f3d67292fc756f4106cb53d6f6925540cdb4cb8d"
+    }
+  ],
+  "exact_source_admission_contract": {
+    "files_sha256": {
+      "road_scene_r6/receipts/z_semantic_source_guard_ah.json": "1ae290ca919b23b6426845bb59bf208fe144de161a516e13fbfbd1ee5bcb947f",
+      "road_scene_r6/src/prepare_physical_lenses.py": "3d9dbd29990807a632632233343d32a2eef62676305404934716cf087b7b861b",
+      "road_scene_r6/src/semantic_scene_guard_z.py": "193fb74be1acf7cdd5ff4ab60da0b78b7ed22034f33a0f78b6f804b507b85fa1"
+    },
+    "helper_path": "road_scene_r6/src/semantic_scene_guard_z.py",
+    "historical_source_sha256": "29a2e1ca28867182554594981482e704ccbc97d9fb2806b48bc0c06f8375231a",
+    "manifest_path": "road_scene_r6/receipts/z_semantic_source_guard_ah.json"
+  },
+  "fresh_end_to_end_rebuild_verified": false,
+  "generated_evidence_used_as_replay_inputs": false,
+  "latest_roles": [
+    "av_outward"
+  ],
+  "material_quality_accepted": false,
+  "old_source_copies_retained_for_inherited_build_chain": true,
+  "original_local_evidence_sha256": {
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/AQ_CURRENT_FILM.json": "531453c652e296f3c5a0d9e992e89b45acba4a1da7e8c06a301b6b5752318447",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/ASSEMBLED_SCENE_AV.blend.json": "4be6ce43504e80d3999e9302def7ede3247a11cac29feda0bd3f02185ac4714f",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/CLEAN_OIDN_PANEL.png.json": "91645e7fa6aa18c64474fb5504e2cbe26102ed214b24a77d9b0bb81f26451377",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/CONTACT_BANK_CONTINUITY_AL.json": "9b1cbec35f59aa6efd27bc0c9c6a50636e6a4eda0de7253f8d814964203c5a57",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/CONTINUOUS_CONTACT_AQ.json": "1048eab2ada44007e2a02d06b8fae8b1946c66688629bdb2a81a1749c69a962f",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/FRACTURED_BOUNDARY_AR.json": "734343e56b48973d754e849035eab22745bce47708b601b1dcfe9b64d5afec9e",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/GRADED_SHOULDER_AH.json": "80c473db8229633e3bec4742b5db830b11707eb50151b69d8610887932f42b9d",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/INTERNAL_PANEL.png.json": "98f78a433ed4816d711c9d873e6f6e35e21feebeddc79b805b7071a6407e4bf5",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/INTERNAL_PANEL_guides/guide_contract.json": "5a5558303fc78de1eeed2aa4a6d9ce489a8979c169a691ef96a633b58f6adaf6",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/INTERNAL_PANEL_guides/guide_stats.json": "75ce458f431a5aa1a6a4de0033622366342c17b60550189b6245022a324a045b",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/INTERNAL_PANEL_guides/png_roundtrip_check.json": "4f3310d90d7488c10276b7867155f0e34ca3dd3deffa230ffbe6392fef6ee625",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/METRIC_FRAGMENTS_AS.json": "76e957dd0c4b2b842451e1db52c6cfb8394a9740c05beae7d70b170614525491",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/PAVEMENT_CONTACT_AC.json": "687daf159e26fff266bcda90311de24ee845e9987d4aaaf873c332679499db05",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/PRE_RENDER_MEMORY_ADAPTATIONS.json": "1392842619e457ed00d7fb86a59a432a92e10a065cf76c83caaf01b999c653b7",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/ROAD_FILM_OWNERSHIP_AL.json": "7c47e9e3ca1b796b8e2351c7f833f85a2cdedf9e9b9abdb088e0311c1ccab7b3",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/ROAD_MARGIN_AQ.json": "1b0500c8d2a533d6f6fd991aa670cd82b6275ca4421e60487bf437d7fa72a89d",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/SEDIMENT_SURFACE_AI.json": "00a6bdf02215a161b3768c1e0b56b63faf688c4e2db51f03be71cf34a71700a1",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/SUBSTRATE_HISTORY_AK.json": "68d0a08379e397fc1d22416a0188c32b54e2d39360f7fd0f7fe5e915d8ac78dd",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/VIEW_GRAIN_REFRESH_AU.json": "ef7d8c06ad8d821bbb1b78ed4b727a27504f2b5c325d173e1768e700b3f32c8e",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/job.json": "f17e44afd92bd89f1a71076bbbe1384e6a5daa0b1af7887d01f0898ac4c98315",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/resource_receipt.json": "7bb1175995ab1a48a37570f3b83ee15c45ca6569fd8dc00fe0fa56e8155b1f05",
+    "road_scene_r6/historical_evidence_av/at_foundation_numerical.json": "04aa8eb4c728606510ca75e07afdb405ecc5ef9cfb14f482d234a065b46ff155",
+    "road_scene_r6/historical_evidence_av/au_view_grains_blender_fixture.json": "6f2589d1446f803d63b0732572fadca7c2ad315e93585a143a5cf4dd80cc3b17",
+    "road_scene_r6/historical_evidence_av/au_view_grains_blender_resources_b.json": "c7ecf6397db3fb1790ba4b838a4a171e1450949add8a76c0028759112324c0ba",
+    "road_scene_r6/historical_evidence_av/au_view_grains_source_check.json": "e193884a2b12d4ce1beec10b610d2a76bb7978da4e8aa22699a525a377c1510e",
+    "road_scene_r6/historical_evidence_av/av_inherited_source_preflight_tests.json": "0462b3971aeeb93e6c2731cfcbbad30d8cc55026f00145e673a94edebca14a93",
+    "road_scene_r6/historical_evidence_av/av_source_preflight_tests.json": "06534ff4a13c9c0a716426e7d98f4d48063b30117f6cd52f1ee126aa6ad79cb3",
+    "road_scene_r6/historical_evidence_av/cache_av_fixture_resources.json": "caab855d7400cc7d16efcfdd7ba562e9e65202a71359f4c8755a51aa0dbf76ca"
+  },
+  "packaged_public_evidence_sha256": {
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/AQ_CURRENT_FILM.json": "3729589440a57d6b81c239603b72b4fe1687fed6dcb058fe1917cfa49e9b93dc",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/ASSEMBLED_SCENE_AV.blend.json": "51a8ff4e5d50ddce8867488218507ad74a9ff73d1484b10b384608ae3a45a8e5",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/CLEAN_OIDN_PANEL.png.json": "23170f8fd9130aad8e7ac6d0c27aaeca4d6db7150b74c57c2e02097d2072c477",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/CONTACT_BANK_CONTINUITY_AL.json": "1cf6176a93fb7f80fe04f8f38d26d97d1e82c8dd820de12292d3b2bb318cfbc1",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/CONTINUOUS_CONTACT_AQ.json": "afb8048ccdf9fe15572cdd00a810471e0bad5e4fbdbd13eae2548ef571ac0f29",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/FRACTURED_BOUNDARY_AR.json": "e5b608b17ac5ca778d517c3ae7394e4e72f6c8c8932a9ce86c7548b6159cf398",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/GRADED_SHOULDER_AH.json": "c4b3cb7e2e6baabc1086d8a8291f086dffb4628be06adcf77374e15606142e44",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/INTERNAL_PANEL.png.json": "ed3a7afd8ed87ca82b31b9e409b7000a654e55ed1d76d07486591169d79b6436",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/INTERNAL_PANEL_guides/guide_contract.json": "1776df360e8c001fb4a4d09cc530c25f515f7aaa20dd64216495ecbc9843472d",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/INTERNAL_PANEL_guides/guide_stats.json": "3816b8fa88d736ebd03d234663b4a3aae41efddea1db6908994b71a2e444029d",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/INTERNAL_PANEL_guides/png_roundtrip_check.json": "57ed96f4ce815f67415d315c3926a8f032d62e652b7ce840557c7dae0439033a",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/METRIC_FRAGMENTS_AS.json": "131728aaf93a7fffefe29731bfcf25c5afac9b7e7088327ff8c0bb29ace25821",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/PAVEMENT_CONTACT_AC.json": "de0fa7def63700e7c403506eedb0b8f2c885d75287aa427e72127f97429926da",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/PRE_RENDER_MEMORY_ADAPTATIONS.json": "f84ea71028f6ffe152bd2d1bce914b58f43f8821b5fa0edbebdecc15992d9705",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/ROAD_FILM_OWNERSHIP_AL.json": "617f868840a5619d8d6a0ccf8875b2e8be36e49a6c0c3b5dc5a99cea51773891",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/ROAD_MARGIN_AQ.json": "a1bf9c0cb76360ee99706166a7306b442d146bbf27a314126ee84791fb8841d9",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/SEDIMENT_SURFACE_AI.json": "d13159f3732237f096fe2dc6a994c0a8f48232960260baa37228265a4293cb89",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/SUBSTRATE_HISTORY_AK.json": "b80c47e6ea238ce3186e7af928eda2dd4e096990c14095c001ea6392ffeec867",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/VIEW_GRAIN_REFRESH_AU.json": "55f8984b16805991e294c22f17c53880b452adf2f7e304a4acfdd21d45f02a36",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/job.json": "024d4b1d8b491d8e09772a487bd8d6591e09ca5c24747ab4d28c2086298414f0",
+    "road_scene_r6/historical_captures_av/av_integrated_road_outer_view/resource_receipt.json": "b8500004bf35d22d5e3344a4c93f22c83af471b71b920cb0fe5747999b4f036d",
+    "road_scene_r6/historical_evidence_av/at_foundation_numerical.json": "9a740e606ac1bb5c8168bc0a3d10dbb6528ca163a895f1154f162557583f8f8f",
+    "road_scene_r6/historical_evidence_av/au_view_grains_blender_fixture.json": "caee1d28bdb130e71445c357eaa04c4aed580642ea19d9f464a81528cc62c7d4",
+    "road_scene_r6/historical_evidence_av/au_view_grains_blender_resources_b.json": "609ef7ca97ef0ed10cb76ae1153ced8fb9a413f2d201ab0f6359222376e3803e",
+    "road_scene_r6/historical_evidence_av/au_view_grains_source_check.json": "f7b91af0e6fe4513649442ed5da5001fe46a618cec35b0968565b8636db91aa6",
+    "road_scene_r6/historical_evidence_av/av_inherited_source_preflight_tests.json": "7b720cbb7cd196a302bf4198353c102c860c2fc6f1fbdafa04e6160264986845",
+    "road_scene_r6/historical_evidence_av/av_source_preflight_tests.json": "5630cddf17f9a481c8f5204860408c1eb93c8ba0ee379139adbc75f4d6584e2d",
+    "road_scene_r6/historical_evidence_av/cache_av_fixture_resources.json": "41d8021dd3f7390ba7e3cfa952b1c002808d6107e9f3e4effb807bb2bf2315e6"
+  },
+  "selected_current_capture": {
+    "cache_bytes": 471829643,
+    "cache_bytes_required_for_regeneration": false,
+    "cache_created_by_packager": false,
+    "cache_sha256": "4b4bd0fcda46a001f6fe74f79bade3485a73d88b6e6512821cf222d7c7cd0d90",
+    "clean_image_sha256": "1a482a768812c3bf26ae29024ed5ee2bf5a11bdfeac3940ff1e3e09631bd346e",
+    "declared_cap_MiB": 4480,
+    "elapsed_seconds": 690.2626141240034,
+    "historical_images_and_guides_verified": {
+      "CLEAN_OIDN_PANEL.png": "1a482a768812c3bf26ae29024ed5ee2bf5a11bdfeac3940ff1e3e09631bd346e",
+      "INTERNAL_PANEL.png": "433f5030facd6d8b750212b717ebb7f2d0bac682c166148ddf65340db75c556c",
+      "albedo_0001.exr": "e30e57b8f9e12e3bcdbd0e418635f6b2c2248bd10a8fda24b03a085bf89c15e6",
+      "beauty_0001.exr": "535fd85eba7670e6028100b223e32e62201d973cddfdc8bf0f55dce0e10859fb",
+      "denoised_linear.exr": "3b76e51a58c4fe952621958016e7fe86691ba3f3a31c8e427410e29a995be4b1",
+      "normal_0001.exr": "73a8f013a08ea50610c1fee0096287644624e7ea48fefc87fdd3563009c0a1dd"
+    },
+    "name": "av_integrated_road_outer_view",
+    "original_job_sha256": "f17e44afd92bd89f1a71076bbbe1384e6a5daa0b1af7887d01f0898ac4c98315",
+    "peak_MiB": 4178.8984375,
+    "pipeline_sha256": "5b16c6dcf685765ed2cb1c70bb55b4a535432638cb4c5c77265637aca24ddf86",
+    "resource_contract_passed": true,
+    "role": "av_outward",
+    "source_sha256": "29a2e1ca28867182554594981482e704ccbc97d9fb2806b48bc0c06f8375231a"
+  },
+  "snapshot_is_authoritative": true,
+  "whole_scene_user_approved": false
+}
