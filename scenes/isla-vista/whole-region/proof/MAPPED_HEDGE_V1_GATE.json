@@ -1,0 +1,286 @@
+{
+  "schema": "cybr-mapped-hedge-gate/1",
+  "base_commit": "46367c9561bad77917c8033baa21df5b706a75ab",
+  "source_id": "osm:way:822177699",
+  "source_geometry": {
+    "type": "LineString",
+    "coordinates": [
+      [
+        -728.3580415359465,
+        -101.12475012987852
+      ],
+      [
+        -714.1035326622077,
+        -103.02733918838203
+      ]
+    ]
+  },
+  "dimensions": {
+    "height_m": 1.2,
+    "height_basis": "authored missing-height estimate",
+    "width": {
+      "value_m": 0.8,
+      "basis": "authored missing-width estimate"
+    }
+  },
+  "leaf_length_m": [
+    0.04278050402420318,
+    0.07660555462299254
+  ],
+  "leaf_count": 60036,
+  "authored_plant_variation": {
+    "authored_plant_height_scale_range": [
+      0.8891597404818432,
+      0.987407834473328
+    ],
+    "authored_plant_branch_rotation_radians": [
+      -0.29497785808511756,
+      0.3394070959262452
+    ],
+    "plant_variation": "Per-root deterministic crown height and lateral branch orientation, bounded within source support; no camera-facing or per-frame noise"
+  },
+  "source_sha256": "03caca4ef6dd7646be11bae3db7d79440034e14663294e64de2039aadfd73632",
+  "capture_source_sha256": "a910a8ead72b82da128d9ec131f6a14c5fba115cdea55b3fdd647b9006d5605c",
+  "rendered_mesh_byte_identical_after_audit_only_source_updates": true,
+  "native_gate": {
+    "renderer": "CYBR LIGHT 0.2",
+    "backend": "C++17 OpenMP CPU",
+    "width": 700,
+    "height": 490,
+    "packets_per_pixel": 32,
+    "wavelengths_per_packet": 6,
+    "invalid_path_samples": 0,
+    "render_seconds": 270.811845192,
+    "image_generation_used": false
+  },
+  "guard": {
+    "command": [
+      ".venv/bin/python",
+      "tools/replay_retained_iv_script.py",
+      "capture_iv_mapped_hedges_v1.py",
+      "--spp",
+      "32"
+    ],
+    "exit_code": 0,
+    "stop_reason": null,
+    "elapsed_seconds": 287.16,
+    "peak_sampled_aggregate_rss_mib": 945.22,
+    "cap_mib": 4480.0,
+    "min_free_disk_gib": 24.215,
+    "disk_reserve_gib": 1,
+    "sample_seconds": 0.25,
+    "passed": true,
+    "scope": "Owned process tree; sampled user-space RSS guard, not kernel hard cap"
+  },
+  "final_source_rebuild_guard": {
+    "command": [
+      "bash",
+      "-c",
+      ".venv/bin/python tools/replay_retained_iv_script.py test_iv_mapped_hedges_v1.py && .venv/bin/python tools/replay_retained_iv_script.py iv_mapped_hedges_v1.py build --lai 4.5 && .venv/bin/python tools/replay_retained_iv_script.py iv_mapped_hedges_v1.py verify && .venv/bin/python tools/replay_retained_iv_script.py test_iv_mapped_hedge_coverage.py"
+    ],
+    "exit_code": 0,
+    "stop_reason": null,
+    "elapsed_seconds": 19.32,
+    "peak_sampled_aggregate_rss_mib": 454.43,
+    "cap_mib": 4480.0,
+    "min_free_disk_gib": 23.977,
+    "disk_reserve_gib": 1,
+    "sample_seconds": 0.25,
+    "passed": true,
+    "scope": "Owned process tree; sampled user-space RSS guard, not kernel hard cap"
+  },
+  "native_geometry_validation": {
+    "passed": true,
+    "source_identity_geometry_checks": 1,
+    "triangles": 272412,
+    "leaf_triangles": 240144,
+    "one_sided_leaf_area_m2": 54.029804172425706,
+    "zero_area_triangles": 0,
+    "native_normal_length_max_error": 4.9987697980924395e-08,
+    "native_normal_direction_max_error": 4.8845856692736334e-08,
+    "mesh_sha256": "61ffb274e8f5dbe21725cb519a980a88e71eead26ffe0e9c631a405a6ee203b9",
+    "baseline_glb_unchanged": true,
+    "all_native_triangle_envelope_checks": {
+      "leaves": {
+        "native_triangles_checked": 240144,
+        "min_certified_relative_height_m": 0.04975523910216947,
+        "max_certified_relative_height_m": 1.169642733786924
+      },
+      "basal_stem": {
+        "native_triangles_checked": 250,
+        "min_certified_relative_height_m": -0.0010870366802706078,
+        "max_certified_relative_height_m": 0.20494913395327877
+      },
+      "primary_branch": {
+        "native_triangles_checked": 2000,
+        "min_certified_relative_height_m": 0.12423863219291487,
+        "max_certified_relative_height_m": 1.0703089802243986
+      },
+      "twig": {
+        "native_triangles_checked": 30018,
+        "min_certified_relative_height_m": 0.10426717423787574,
+        "max_certified_relative_height_m": 1.1175247335560468
+      }
+    },
+    "support_tolerance_m": 0.0002,
+    "basal_stem_only_burial_allowance_m": 0.02,
+    "burial_basis": "Authored 20 mm root seating allowance for 14 mm radius basal cylinders on sloped terrain; no allowance for branches, twigs or blades. This is not a site root-depth measurement.",
+    "terrain_certificate": "Whole triangle support projection; continuous terrain/height bounds using exact SharedGround local affine-gradient Lipschitz maximum. Conservative failures remain failures.",
+    "scope": "Serialized single-sheet area, finite geometry and unchanged source identity. No measured biomass, species or photorealism claim."
+  },
+  "source_exclusion_validation": {
+    "passed": true,
+    "normalized_source_sha256": "e4cabea0167a81604844f892b9d1950e503080a99e7daff184c6b1f05161f104",
+    "coverage_sha256": "a5930b5eff4491b489d18738b724dced1f6efc4a4e6f898e953c575a603c051d",
+    "excluded_features_individually_refused": [
+      "osm:way:597861686",
+      "osm:way:627434750",
+      "osm:way:627434751",
+      "osm:way:627434753",
+      "osm:way:627434776",
+      "osm:way:627434808",
+      "osm:way:627434882",
+      "osm:way:760495541",
+      "osm:way:760495542",
+      "osm:way:822376172",
+      "osm:way:822427683",
+      "osm:way:822427699",
+      "osm:way:822560982",
+      "osm:way:822751656",
+      "osm:way:822751659",
+      "osm:way:822751660",
+      "osm:way:822751661",
+      "osm:way:822751663",
+      "osm:way:822751664"
+    ],
+    "preliminary_conflict_free_passes_selection_only": 84,
+    "building_conflict_classifications_independently_recomputed": {
+      "mapped polygon overlap": 1,
+      "estimated width only; mapped line clear of building interior": 8,
+      "mapped line crosses building interior": 1
+    },
+    "fixture_eligible": true,
+    "scope": "Exclusion checks only; no unbuilt feature claimed as geometrically or visually qualified."
+  },
+  "retained_grass_validation": {
+    "passed": true,
+    "native_object_id": 270,
+    "native_part_name": "mapped_landcover_270",
+    "source_id": "osm:way:601207132",
+    "source_tags": {
+      "landuse": "grass",
+      "osm_version": 2,
+      "osm_timestamp": "2020-01-12T02:47:41Z"
+    },
+    "source_geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -728.8510699694743,
+            -100.98865739442408
+          ],
+          [
+            -727.883566524717,
+            -91.84538893029094
+          ],
+          [
+            -725.3415801675874,
+            -91.76195573434234
+          ],
+          [
+            -725.3554060998722,
+            -92.25007454352453
+          ],
+          [
+            -719.8144717926043,
+            -92.51804456394166
+          ],
+          [
+            -719.7214927398018,
+            -94.10833693249151
+          ],
+          [
+            -719.2139156089979,
+            -95.35509218927473
+          ],
+          [
+            -718.2618764486397,
+            -96.50341132469475
+          ],
+          [
+            -716.8685992072569,
+            -97.34225521190092
+          ],
+          [
+            -715.4022465996677,
+            -97.55032565491274
+          ],
+          [
+            -713.2060988661251,
+            -97.65693870559335
+          ],
+          [
+            -713.5420600685757,
+            -103.02103709150106
+          ],
+          [
+            -728.8510699694743,
+            -100.98865739442408
+          ]
+        ]
+      ]
+    },
+    "area_m2": 117.66257897503674,
+    "sampled_world_position_pixels": 101,
+    "all_sampled_pixels_inside_source_polygon": true,
+    "object_guide_sha256": "b44232ede961626d0efc215f59e6d6c29e6b06be99eca3b18213ef68526e06c1",
+    "position_guide_sha256": "e8e709dea4264271360bcb7d33ae8d1229c1bac9eb8f6847225e9761523a2b4a",
+    "scope": "The green patch behind the mapped Pasado hedge is retained mapped grass, not an old hedge proxy. No change to its mesh or material."
+  },
+  "whole_feature_coverage": "MAPPED_HEDGE_V1_COVERAGE.json",
+  "total_mapped_hedges": 203,
+  "preliminary_conflict_free_count": 84,
+  "camera_origin_m": [
+    -720.9947720839452,
+    -106.73912271044276,
+    13.02113140458838
+  ],
+  "camera_target_m": [
+    -721.2307870990771,
+    -102.07604465913028,
+    11.992296082411132
+  ],
+  "baseline_mesh_sha256": "727a3330c3778a98eeb87ebe90e9eb4861132fd25b2b6e09c281108e05cf7bf0",
+  "matched_native_controls": [
+    "settings 700 490 32 6 8 5 2 20261012 1.05 0 0 -1 1 1",
+    "camera -720.9947721 -106.7391227 13.0211314 -721.2307871 -102.0760447 11.99229608 0 0 1 53 0 4.78105659 0 0 0 4",
+    "environment 0 0 0 1",
+    "envmap \"../../coherent-daylight/native_sky.pfm\" 0",
+    "environment_sun -0.4201100833 -0.4701231884 0.7762033919 3.658559708 3.884497645 3.140930073 0.00464257581"
+  ],
+  "comparison": {
+    "image": "../images/pasado_hedge_r1_r4_native_comparison.png",
+    "sha256": "bc0e393555341101d587448e02e1be649040bb067e98cadd4fe16ce369d31a63",
+    "panel_pixels_unmodified": true,
+    "panels": {
+      "r1": {
+        "native_png_sha256": "f34fbadc326387e0ff148683978ff4990d91fe832b6c905d1676e370a66c15a1",
+        "decoded_rgb_sha256": "c9899367bf99a7f54a5b1d2831b73b332a5a1a449458727b6b580ab2062a16ca",
+        "mesh_sha256": "1cc4963f26ad16049b5e725ee7339dcbe956ef0e62303056b28c0b7da1ab2af5",
+        "one_sided_lai": 2.7999986719111414,
+        "triangles": 168382
+      },
+      "r4": {
+        "native_png_sha256": "e965d6a4f4a21326425ae3099fa2f48a4d09e92780717e9ac65a62f9e047e70e",
+        "decoded_rgb_sha256": "86756ef378d07dd5b4b7abe38bc4540b19827008b83fbe763af841da11fe2d6e",
+        "mesh_sha256": "61ffb274e8f5dbe21725cb519a980a88e71eead26ffe0e9c631a405a6ee203b9",
+        "one_sided_lai": 4.500014676866017,
+        "triangles": 272412
+      }
+    },
+    "limits": "Combined branch-architecture and authored density comparison, not a single-variable experiment."
+  },
+  "cie_table_sha256": "fa663e3535a7e0763a745993a1f0a192eb0275ac46ad2d1befd7626841e713c1",
+  "qualification": "One optional mapped Pasado fixture accepted as hedge-geometry improvement. Surrounding ground, trees and architecture remain fresh-base context, not qualified scene appearance. No regional rollout, measured species/biomass or native texture-filtering equivalence claim."
+}
