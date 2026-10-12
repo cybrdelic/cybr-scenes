@@ -12,7 +12,7 @@ assert Path(j['source']).is_file();assert sha(j['source'])==j['source_sha256']
 for row in pins['files']:
  assert sha(M/row['path'])==row['sha256'],row['path']
 O.mkdir(parents=True);runtime=O/'runtime';shutil.copytree(base/'runtime',runtime,ignore=shutil.ignore_patterns('pipeline_snapshots','__pycache__','cache'))
-modules=['apply_du.py','field_du.py','exposure_du.py','root_contact_du.py','matrix_du.py']
+modules=['apply_du.py','field_du.py','exposure_du.py','root_contact_du.py','matrix_du.py','native_border.py']
 for name in modules:shutil.copy2(R/name,runtime/'src'/name)
 for row in pins['files']:shutil.copy2(M/row['path'],runtime/'src'/Path(row['path']).name)
 # Only the copied runtime receives the additive adapters. Original recipes,
@@ -30,20 +30,19 @@ for name in ['render.py','render_landform_candidate.py']:
  s=s.replace(key," if job.get('du_connected_interspaces'):\n  from apply_du import material as du_material\n  report=du_material(s,job['du_connected_interspaces'],pathlib.Path(job['output']).parent);adaptations.append({'DU_material':report})\n"+key)
  key="width=job.get('width',960);height=job.get('height',round(width*s.render.resolution_y/s.render.resolution_x));s.render.resolution_x=width;s.render.resolution_y=height;s.render.resolution_percentage=100";assert s.count(key)==1;s=s.replace(key,key+'\n projection_resolution=[width,height]')
  key=" out=pathlib.Path(job['output']);out.parent.mkdir(parents=True,exist_ok=True);s.render.filepath=str(out);s.render.image_settings.file_format='PNG'";assert s.count(key)==1
- border=''' border_capture=None
- if 'render_border' in job:
-  bounds=job['render_border'];assert isinstance(bounds,(list,tuple)) and len(bounds)==4
-  xmin,xmax,ymin,ymax=map(float,bounds);assert all(math.isfinite(v) for v in bounds) and 0<=xmin<xmax<=1 and 0<=ymin<ymax<=1
-  pixels=[xmin*width,xmax*width,ymin*height,ymax*height];assert all(abs(v-round(v))<1e-6 for v in pixels)
-  s.render.use_border=True;s.render.use_crop_to_border=True
-  s.render.border_min_x=xmin;s.render.border_max_x=xmax;s.render.border_min_y=ymin;s.render.border_max_y=ymax
-  width=round(pixels[1]-pixels[0]);height=round(pixels[3]-pixels[2])
-  border_capture={'full_projection_resolution':projection_resolution,'normalized_bounds':[xmin,xmax,ymin,ymax],'native_pixel_bounds_xy':pixels,'output_resolution':[width,height],'camera_geometry_material_scale_changed':False}
+ border=""" if 'render_border' in job or 'render_border_pixels' in job:
+  from native_border import configure as configure_native_border
+  width,height,border_capture=configure_native_border(s,job,width,height)
   adaptations.append({'native_render_border':border_capture})
-'''
- # Preserve the exact admitted versioned native adapter, or install version1
- # only for a registry-admitted renderer explicitly declaring no native handler.
- if border_version==0:s=s.replace(key,border+key)
+"""
+ # Replace exactly the admitted version1 AST span. Unknown layouts are rejected
+ # above by source SHA and capability/handler agreement, never substring guesses.
+ if border_version==1:
+  node=native_handlers[0];lines=s.splitlines(keepends=True)
+  # Earlier insertions change line numbers; find the sole admitted AST again.
+  node=next(n for n in ast.walk(ast.parse(s)) if isinstance(n,ast.If) and isinstance(n.test,ast.Compare) and isinstance(n.test.left,ast.Constant) and n.test.left.value=='render_border')
+  s=''.join(lines[:node.lineno-1])+border+''.join(lines[node.end_lineno:])
+ else:s=s.replace(key,' border_capture=None\n'+border+key)
  key=" report['pipeline']=pipeline;";assert s.count(key)==1;s=s.replace(key," report['projection_resolution']=projection_resolution;report['render_border']=border_capture\n"+key);path.write_text(s)
 hook=D/'stable_grains_dq/after_da_hook.py';bridge=f'''from pathlib import Path
 import importlib.util,hashlib
@@ -59,7 +58,7 @@ def apply(scene,cfg,out):
 cfg={'revision':5,'cap':str(D/'static_domain_dm/STATIC_FINE_LAYER.npz')}
 for key,name in [('matrix_source','granular_matrix.py'),('matrix_profile','granular_matrix_profiles.json')]:cfg[key]=str(runtime/'src'/name);cfg[key+'_sha256']=sha(runtime/'src'/name)
 j['geometry_soil_normals_db']['du']=cfg;j['du_connected_interspaces']=cfg;j['output']=str(O/'INTERNAL_PANEL.png');j['width']=2000;j['height']=1334;j['samples']=32;j['time_limit_seconds']=750;j['view_scope']='Opt-in DU5 original procedural soil improvement. Same AV mountains/CN chromatic endpoints/CO22 daylight. Not photoreal completion.'
-if args.view=='crop':j['render_border']=[.25,.9,0,680/1334]
+if args.view=='crop':j.pop('render_border',None);j['render_border_pixels']=[500,1800,0,680]
 if args.view=='wide':j['lens']=24
 (O/'job.json').write_text(json.dumps(j,indent=2)+'\n');assert sha(base/'job.json')==before
 (O/'PREPARATION.json').write_text(json.dumps({'dr_job_before_and_after_sha256':before,'material_dependencies':pins,'source_files':{n:sha(R/n)for n in modules},'selected_DR_unchanged':True,'view':args.view,'source_scene_sha256':j['source_sha256']},indent=2)+'\n');print(O/'job.json')
