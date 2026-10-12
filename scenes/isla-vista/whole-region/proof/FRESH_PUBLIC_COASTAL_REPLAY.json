@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "files": [
+    {
+      "path": "data/coastal-coned-20261011/coned_native_1m_iv_subset.tif",
+      "historical_raw_sha256": "d70c5d8610dc171d02cbf789589c9dcb07ea0c3da282a0dbd947ea466829b980",
+      "current_raw_sha256": "d70c5d8610dc171d02cbf789589c9dcb07ea0c3da282a0dbd947ea466829b980",
+      "band_crs_grid_contract_exact": true
+    },
+    {
+      "path": "data/urban-canopy-2022/iv_canopy_2022_native_060m.tif",
+      "historical_raw_sha256": "c59adfb35c8d500d8d7b600c41fd6ca4abebe1db562d24fd1d663f5827587d31",
+      "current_raw_sha256": "c59adfb35c8d500d8d7b600c41fd6ca4abebe1db562d24fd1d663f5827587d31",
+      "band_crs_grid_contract_exact": true
+    },
+    {
+      "path": "data/coastal-kelp-2016/iv_kelp_2016_local.geojson",
+      "raw_sha256": "4754511774b7b40626ca2b02d463cc5f26753398a59e79e6202c3c4c598709a3",
+      "exact": true
+    }
+  ],
+  "qualification": "Dated classifications/elevations, not current surveyed vegetation or coastline. Each provider retains its own attribution and conditions.",
+  "guard": {
+    "exit_code": 0,
+    "stop_reason": null,
+    "elapsed_seconds": 80.31,
+    "peak_sampled_aggregate_rss_mib": 383.89,
+    "cap_mib": 4480.0,
+    "min_free_disk_gib": 8.88,
+    "disk_reserve_gib": 1,
+    "sample_seconds": 0.25,
+    "passed": true,
+    "scope": "Owned process tree; sampled user-space RSS guard, not kernel hard cap"
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "original_raw_sha256": "50cd9043f9cb26230679b07070423a4dc6984b262e3c5f69d46681cf822d5a00",
+  "restricted_dispatch_raw_sha256": "572b09cb63471d4da1e299998b4272457edd4a8e28c45a9c342a6350bcbaaac9",
+  "equals_failed_ci_raw": true,
+  "accessor_differences": [
+    {
+      "accessor": 1,
+      "different_scalar_values": 4,
+      "total_scalar_values": 568506,
+      "max_abs_difference": 4.457509868486219e-14,
+      "rms_difference": 8.762790519333311e-17,
+      "largest_difference_index": [
+        177866,
+        0
+      ],
+      "largest_expected": -4.308703797938941e-14,
+      "largest_actual": -8.76621366642516e-14,
+      "actual_sha256": "84bf77f3a679ca3efd0ffb2183a0baab6aa70fbdaa4ee20c6035aa54b386a74b"
+    },
+    {
+      "accessor": 3,
+      "different_scalar_values": 4,
+      "total_scalar_values": 379004,
+      "max_abs_difference": 3.5660083691274255e-14,
+      "rms_difference": 8.58574715651038e-17,
+      "largest_difference_index": [
+        177866,
+        0
+      ],
+      "largest_expected": -3.446962970588517e-14,
+      "largest_actual": -7.012971339715943e-14,
+      "actual_sha256": "e1e81559ff05f74842f51ba6354a4433f5734229d5daef27297019415c4474f1"
+    },
+    {
+      "accessor": 11,
+      "different_scalar_values": 49,
+      "total_scalar_values": 211392,
+      "max_abs_difference": 12.221343994140625,
+      "rms_difference": 0.0635359721342407,
+      "largest_difference_index": [
+        41772,
+        2
+      ],
+      "largest_expected": -249.66510009765625,
+      "largest_actual": -237.44375610351562,
+      "actual_sha256": "01efcece1080176852af392039f14f343b077d33493c19f103dbd891a0b37f8f"
+    },
+    {
+      "accessor": 13,
+      "different_scalar_values": 34,
+      "total_scalar_values": 140928,
+      "max_abs_difference": 9.777069091796875,
+      "rms_difference": 0.06019133510306864,
+      "largest_difference_index": [
+        41772,
+        1
+      ],
+      "largest_expected": -198.73208618164062,
+      "largest_actual": -188.95501708984375,
+      "actual_sha256": "da60cc801cbb250f408711a06a8d9ee68aed79ff9b8404cff3b731993434637d"
+    },
+    {
+      "accessor": 44,
+      "different_scalar_values": 385,
+      "total_scalar_values": 428706,
+      "max_abs_difference": 5.939511493177401e-17,
+      "rms_difference": 1.0372694536307024e-18,
+      "largest_difference_index": [
+        10262,
+        2
+      ],
+      "largest_expected": -1.0988091497817864e-15,
+      "largest_actual": -1.0394140348500124e-15,
+      "actual_sha256": "bca7b1dff1357e701ccf1f9646961a77f029170b447a9590a150cfdf2a3d1795"
+    }
+  ],
+  "image_differences": [
+    {
+      "image": 0,
+      "different_channel_values": 2,
+      "different_pixels": 2,
+      "total_pixels": 262144,
+      "max_abs_8bit_channel_difference": 1,
+      "actual_rgba_sha256": "26b9cbf0355dd40bad63d8310d74d782b0c901cc0356574f8bfb7b9ee0c3b265"
+    },
+    {
+      "image": 6,
+      "different_channel_values": 1,
+      "different_pixels": 1,
+      "total_pixels": 65536,
+      "max_abs_8bit_channel_difference": 1,
+      "actual_rgba_sha256": "a665c0fc94a59ca164b5226e31fc7fa927ada67226580a94627b546c769b032d"
+    },
+    {
+      "image": 12,
+      "different_channel_values": 1,
+      "different_pixels": 1,
+      "total_pixels": 65536,
+      "max_abs_8bit_channel_difference": 1,
+      "actual_rgba_sha256": "c38563f9a3743fef0771ab606c36552fad4766abfece656b5fcff205cd2b52a1"
+    },
+    {
+      "image": 15,
+      "different_channel_values": 1,
+      "different_pixels": 1,
+      "total_pixels": 65536,
+      "max_abs_8bit_channel_difference": 1,
+      "actual_rgba_sha256": "0a363f93a61f7bb84319d0a0893476bf46357ac943525d9ea4c02a3da261f962"
+    },
+    {
+      "image": 24,
+      "different_channel_values": 1,
+      "different_pixels": 1,
+      "total_pixels": 65536,
+      "max_abs_8bit_channel_difference": 1,
+      "actual_rgba_sha256": "c25213f7fbc165d308e1f160d3e61285c427cf79512aeb648491c16b60c18cf1"
+    }
+  ],
+  "only_environment_change": {
+    "NPY_DISABLE_CPU_FEATURES": "AVX512F,AVX512CD,AVX512_SKX,AVX512_CLX,AVX512_CNL,AVX512_ICL",
+    "OPENBLAS_CORETYPE": "Haswell",
+    "physical_source_unchanged": true
+  },
+  "affected_roof_parts": [
+    {
+      "component": 2878,
+      "part": "osm_relation_8277982_roofcomponent_0_0_roof_tagged_5",
+      "first_face": 13923,
+      "face_count": 2,
+      "winding_preserved_corner_payload_sha256": "6c19e885847f75843167dd1d9ce2a5ef349f46bc35c47356295b3f3244634b00",
+      "exact_geometry_uv_normals_color_equal_up_to_triangle_order_and_cyclic_vertex_rotation": true
+    },
+    {
+      "component": 2883,
+      "part": "osm_relation_8277982_roofcomponent_0_0_roof_tagged_10",
+      "first_face": 13930,
+      "face_count": 1,
+      "winding_preserved_corner_payload_sha256": "f9bf46e7a97d125abcfa6283eb050629f7c592090ba6112cc7015fb9afc8550e",
+      "exact_geometry_uv_normals_color_equal_up_to_triangle_order_and_cyclic_vertex_rotation": true
+    },
+    {
+      "component": 4221,
+      "part": "osm_way_221406721_roofcomponent_0_0_roof_tagged_9",
+      "first_face": 16525,
+      "face_count": 3,
+      "winding_preserved_corner_payload_sha256": "9fce26b9b9f5badfd86471c2cb70efef4513769ce1d04fedfa19a557a61dbe28",
+      "exact_geometry_uv_normals_color_equal_up_to_triangle_order_and_cyclic_vertex_rotation": true
+    },
+    {
+      "component": 4224,
+      "part": "osm_way_221406721_roofcomponent_0_0_roof_tagged_12",
+      "first_face": 16530,
+      "face_count": 1,
+      "winding_preserved_corner_payload_sha256": "3688627333e1933947d6fb37e7eb8960a4f70a591a5a6ea7917d4a237886939d",
+      "exact_geometry_uv_normals_color_equal_up_to_triangle_order_and_cyclic_vertex_rotation": true
+    },
+    {
+      "component": 4833,
+      "part": "osm_way_42753143_roofcomponent_0_0_roof_tagged_11",
+      "first_face": 17390,
+      "face_count": 1,
+      "winding_preserved_corner_payload_sha256": "79aeb9d31fde16baa42878c1570c92b6530c1f2cc689bffbc54e410bb284e8f8",
+      "exact_geometry_uv_normals_color_equal_up_to_triangle_order_and_cyclic_vertex_rotation": true
+    }
+  ],
+  "unchanged_part_layout_raw_sha256": "04e0a96ab7be07ed3376a7a8ab76455f62d04461c7780c8b6321c9f1de39462f"
+}

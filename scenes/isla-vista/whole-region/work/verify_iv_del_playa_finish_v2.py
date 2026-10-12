@@ -1,0 +1,17 @@
+from pathlib import Path
+import json,struct,hashlib,numpy as np
+r=Path(__file__).resolve().parent.parent;out=r/'evidence/full-iv-del-playa-finish-v2';report=json.loads((out/'ARCHITECTURE_RECEIPT.json').read_text());features={f['id']:f for f in json.loads((r/'evidence/full-iv-roofs/normalized.geojson').read_text())['features']}
+for b in report['buildings']:assert b['footprint']==features[b['source_id']]['geometry']
+expected={p['object'] for p in report['parts']};seen=set();bad=0;normalerror=0.;bounds={};dtype=np.dtype([('indices','u1',(3,)),('material','<u4'),('object','<u4')]);normal_dot_min=1.;uvdet_min=float('inf');metric_gram_min=float('inf');bump_count=0
+with (out/'architecture.clm').open('rb') as f:
+ magic,total,packets=struct.unpack('<4sQI',f.read(16));assert magic==b'CLM1' and total==report['triangles']
+ for _ in range(packets):
+  nv,nt=struct.unpack('<HH',f.read(4));v=np.frombuffer(f.read(nv*44),'<f4').reshape(nv,11).astype(float);t=np.frombuffer(f.read(nt*11),dtype);assert np.isfinite(v).all();q=v[t['indices'],:3];cross=np.cross(q[:,1]-q[:,0],q[:,2]-q[:,0]);area=np.linalg.norm(cross,axis=1);bad+=int((area<=2e-15).sum());n=v[t['indices'],3:6];normal_dot_min=min(normal_dot_min,float(np.min(np.sum(n*cross[:,None,:]/area[:,None,None],axis=2))));normalerror=max(normalerror,float(np.max(abs(np.linalg.norm(v[:,3:6],axis=1)-1))));seen.update(t['object'].tolist());assert np.max(t['material'])<286
+  selected=np.isin(t['material'],[173,175,177,179]);bump_count+=int(selected.sum())
+  if np.any(selected):
+   qq=q[selected];uv=v[t['indices'][selected],6:8];du=uv[:,1]-uv[:,0];dv=uv[:,2]-uv[:,0];det=du[:,0]*dv[:,1]-du[:,1]*dv[:,0];uvdet_min=min(uvdet_min,float(np.min(abs(det))));assert np.min(abs(det))>1e-12
+   e=qq[:,1]-qq[:,0];g=qq[:,2]-qq[:,0];dpdu=(e*dv[:,1,None]-g*du[:,1,None])/det[:,None];dpdv=(g*du[:,0,None]-e*dv[:,0,None])/det[:,None];gram=np.sum(dpdu*dpdu,axis=1)*np.sum(dpdv*dpdv,axis=1)-np.sum(dpdu*dpdv,axis=1)**2;metric_gram_min=min(metric_gram_min,float(gram.min()));assert gram.min()>1e-20
+
+ assert not f.read(1)
+assert bad==0 and seen==expected and normalerror<1e-6 and normal_dot_min>.995
+result={'passed':True,'triangles':total,'meshlets':packets,'parts':len(expected),'zero_area_faces':bad,'source_footprints_exact':3,'normal_length_max_error':normalerror,'serialized_geometric_vs_authored_normal_min_dot':normal_dot_min,'negative_handedness_box_frame_winding_corrected':True,'precision_note':'Thin1.8mm fence wire at world coordinates near300m is float32; minimum actual serialized geometric/shading normal agreement is reported, not assumed exact.','metric_bump_triangles_checked':bump_count,'minimum_abs_serialized_UV_determinant':uvdet_min,'minimum_metric_Gram_determinant':metric_gram_min,'changed_floor_count':{'source_id':'osm:way:42753857','address':'6574 Del Playa Drive','retained_OSM_tag':2,'authored':1,'basis':'Manager explicit single-level description and exterior photo; unmeasured dimensional estimate retained separately'},'source_sha256':hashlib.sha256((r/'work/build_iv_del_playa_finish_v2.py').read_bytes()).hexdigest(),'mesh_sha256':hashlib.sha256((out/'architecture.clm').read_bytes()).hexdigest(),'limits':'Geometry checks do not establish survey accuracy, support design, measured materials, photo date or exact hidden elevations.'};(out/'ARCHITECTURE_VALIDATION.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))

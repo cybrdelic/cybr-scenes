@@ -1,0 +1,62 @@
+{
+  "source_url": "https://noaa-nos-coastal-lidar-pds.s3.amazonaws.com/dem/CA_Southern_CoNED_DEM_2016_8658/Southern_California_Topobathy_DEM_1m_A_03.tif",
+  "catalog_url": "https://coast.noaa.gov/htdata/raster2/elevation/CA_Southern_CoNED_DEM_2016_8658/",
+  "metadata_url": "https://www.fisheries.noaa.gov/inport/item/55359",
+  "retrieved_utc": "2026-10-11T13:03:46.666587+00:00",
+  "source_crs": "EPSG:26911",
+  "source_vertical_datum": "NAVD88 metres, source metadata; GEOID09 validation convention. No tide or geoid conversion applied here.",
+  "source_grid_spacing_m": [
+    1.0,
+    1.0
+  ],
+  "source_window": {
+    "col_off": 14027,
+    "row_off": 11868,
+    "width": 2601,
+    "height": 2601
+  },
+  "scene_bounds_epsg32611": [
+    235701.80699345336,
+    3810363.448398269,
+    238301.80699345336,
+    3812963.448398269
+  ],
+  "requested_bounds_epsg26911": [
+    235701.80699206446,
+    3810363.4482936985,
+    238301.80699208128,
+    3812963.4482936575
+  ],
+  "subset_transform": [
+    1.0,
+    0.0,
+    235700.99999999822,
+    0.0,
+    -1.0,
+    3812964.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "subset_shape": [
+    2601,
+    2601
+  ],
+  "pixel_values_preserved_exact": true,
+  "valid_fraction": 1.0,
+  "elevation_percentiles_m": [
+    -20.907249450683594,
+    -16.95807456970215,
+    -8.97062873840332,
+    5.035087585449219,
+    13.806771278381348,
+    16.31810188293457,
+    19.794235229492188
+  ],
+  "file_bytes": 16606272,
+  "sha256": "d70c5d8610dc171d02cbf789589c9dcb07ea0c3da282a0dbd947ea466829b980",
+  "horizontal_transform_description": "Inverse of UTM zone 11N + Inverse of NAD83 to WGS 84 (1) + UTM zone 11N",
+  "horizontal_transform_accuracy_m": 4.0,
+  "attribution": "USGS CoNED, NOAA Office for Coastal Management and original survey contributors. Compiled2016 from sources1930\u20132014.",
+  "limitations": "Grid spacing is not local survey accuracy. Source date and nearshore interpolation vary spatially; spatial metadata and current DEM/shoreline consistency must be checked before scene use. No current-scene input was replaced."
+}

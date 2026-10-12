@@ -1,0 +1,50 @@
+{
+  "scope": "Three neighboring source-identified buildings within complete Isla Vista scene; dimensions not surveyed.",
+  "references": [
+    {
+      "address": "6570 Del Playa Drive",
+      "source_id": "osm:way:42753859",
+      "source_page": "https://www.zillow.com/b/6570-del-playa-dr-goleta-ca-9N8HCy/",
+      "image_url": "https://photos.zillowstatic.com/fp/dbc15bc4f6e4a0fcd7208880dc3abc4e-cc_ft_960.jpg",
+      "local_reference": "6570-reference.jpg",
+      "observed": "Two-story, recessed broad glazed openings, continuous projecting balcony rail/deck, support posts, mansard-like sloped roof fascia, front lawn and low retaining edge.",
+      "estimated": "Dimensions, roof back/interior form, side/rear elevations, pigments, rail spacing and balcony connections.",
+      "reference_photo_date": "Not verified",
+      "retrieved_utc": "2026-10-11T12:08:00Z",
+      "photo_sha256": "b0ca72aef4f90bdc2123528ffbbe9a58a9a25d45a60882fc0de9c38fe0634a45",
+      "use": "Visual reference for original procedural geometry only. Never sampled as a texture. Reference photo excluded from portable source archive; URL and checksum retained."
+    },
+    {
+      "address": "6574 Del Playa Drive",
+      "source_id": "osm:way:42753857",
+      "source_page": "https://eipm.us.com/isla-vista-properties",
+      "image_url": "https://irp.cdn-website.com//efe5513b/dms3rep/multi/opt/6574-DP-Front-1920w.jpg",
+      "local_reference": "6574-manager-reference.jpg",
+      "observed": "Manager explicitly identifies single-level duplex with front unitA and rear unitB; exterior photo confirms low roof, wide overhang, exposed outriggers and asymmetrical front windows with contrasting infill panels.",
+      "source_conflict": {
+        "retained_OSM_building_levels": 2,
+        "authored_override": 1,
+        "reason": "Direct manager description and exterior image outweigh generic mapped floor tag for this candidate."
+      },
+      "estimated": "Wall height3.05m, roof maximum3.7m, pitch/hidden roof plan, unseen doors/windows, colors and exact dimensions.",
+      "reference_photo_date": "Not verified",
+      "retrieved_utc": "2026-10-11T12:08:00Z",
+      "photo_sha256": "5ef04c47b9b447c07069ab420d3f580117d8a72facdc9da90620ed72ba50553a",
+      "use": "Visual reference for original procedural geometry only. Never sampled as a texture. Reference photo excluded from portable source archive; URL and checksum retained."
+    },
+    {
+      "address": "6584 Del Playa Drive",
+      "source_id": "osm:way:42753856",
+      "source_page": "https://www.zillow.com/apartments/goleta-ca/6584-del-playa/5Z6Yyw/",
+      "image_url": "https://photos.zillowstatic.com/fp/ce8a0aa8d90d37136811029a5ba1fbae-cc_ft_960.jpg",
+      "local_reference": "6584-reference.jpg",
+      "observed": "Two stories, upper balcony with vertical railings, two broad front glazed openings per level, shallow overhanging roof, enclosed stucco front court, side gate and driveway.",
+      "estimated": "Mapped footprint retained; total6.6m height remains2\u00d73.3m massing estimate, eave5.8m, balcony depth1.05m, courtdepth3m, material controls and unseen elevations.",
+      "remaining": "Photo gravel/succulent front strip is not yet rebuilt; source groundcover remains unchanged.",
+      "reference_photo_date": "Not verified",
+      "retrieved_utc": "2026-10-11T12:08:00Z",
+      "photo_sha256": "9e9d46f1a4f4bdb5b52ce5935aa7dc765f38b619a64ee910d171a5816f5a0ceb",
+      "use": "Visual reference for original procedural geometry only. Never sampled as a texture. Reference photo excluded from portable source archive; URL and checksum retained."
+    }
+  ]
+}

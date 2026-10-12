@@ -1,0 +1,8 @@
+{
+  "light_canonical_commit": "ef2b14ec4e815db00509098cbdc48b2363d312b7",
+  "light_install": "Install the reviewed namespace snapshot at ../vendor/light-scene-compat. Canonical LIGHT remains private.",
+  "geo_commit": "c44aa00d50c38b7898fb63ac9e93959290b12445",
+  "material_commit": "12848c82f60bc58fa88640545868009b90298b32",
+  "geo_runtime_files": "Byte-checked public downloads in INPUTS.json",
+  "source_code_license": "GPL-2.0-only; data licenses are separate"
+}

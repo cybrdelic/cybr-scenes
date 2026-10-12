@@ -1,0 +1,149 @@
+name: Isla Vista whole-region source replay
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - scenes/isla-vista/whole-region/**
+      - scenes/isla-vista/vendor/light-scene-compat/**
+      - .github/workflows/isla-vista-whole-region-replay.yml
+  push:
+    paths:
+      - scenes/isla-vista/whole-region/**
+      - scenes/isla-vista/vendor/light-scene-compat/**
+      - .github/workflows/isla-vista-whole-region-replay.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: isla-vista-whole-region-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  source-replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    defaults:
+      run:
+        shell: bash
+        working-directory: scenes/isla-vista/whole-region
+    env:
+      CYBR_PYTHON: python
+      # Every bounded build stage in this job uses this same explicit lock.
+      CYBR_HEAVY_LOCK: /tmp/cybr-heavy.lock
+      OPENBLAS_CORETYPE: Haswell
+      NPY_DISABLE_CPU_FEATURES: AVX512F,AVX512CD,AVX512_KNL,AVX512_KNM,AVX512_SKX,AVX512_CLX,AVX512_CNL,AVX512_ICL,AVX512_SPR
+      OMP_NUM_THREADS: "2"
+      OPENBLAS_NUM_THREADS: "2"
+      MKL_NUM_THREADS: "2"
+      NUMBA_NUM_THREADS: "2"
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install public scene dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements.txt ../vendor/light-scene-compat
+      - name: Fetch and validate pinned public inputs
+        run: ./run.sh fetch
+      - name: Check metric path-chart adapter
+        run: python tools/test_path_chart_adapter.py
+      - name: Rebuild complete mapped geography only
+        # Stage 1 has its own 900-second, sampled 4,480 MiB RSS and disk guard.
+        # No coastal archives, later stages, or full renders run in this job.
+        run: ./run.sh build 1 1
+      - name: Verify decoded diagnostic controls
+        run: python tools/test_base_semantics.py
+      - name: Record strict decoded geometry and texture comparison
+        run: |
+          python tools/inspect_base_semantics.py \
+            --baseline proof/BASE_AVX2_DECODED_SEMANTICS.json \
+            --report evidence/whole-iv-recovery-stages/CI_DECODED_SEMANTICS.json
+      - name: Check generated geography and geometry counts
+        run: |
+          python - <<'PY'
+          from collections import Counter
+          from pathlib import Path
+          import hashlib
+          import json
+          import os
+
+          root = Path.cwd()
+          output = root / "evidence/full-iv-roofs"
+          read = lambda path: json.loads(path.read_text())
+          ingestion = read(output / "ingestion.json")
+          geometry = read(output / "geometry-provenance.json")
+          normalized = read(output / "normalized.geojson")
+          roofs = read(output / "TAGGED_ROOFS.json")
+          guard = read(root / "evidence/whole-iv-recovery-stages/01_roofs.guard.json")
+          manifest = read(root / "data/full-iv-20261011/manifest.json")
+
+          expected_counts = {
+              "building": 2103, "coastline": 4, "hedge": 203,
+              "landcover": 1291, "parking": 387, "path": 3105,
+              "pavement": 2, "recreation": 157, "road": 3827,
+              "roof": 371, "tree": 6498, "vegetation": 2312, "water": 10,
+          }
+          assert ingestion["counts"] == expected_counts, ingestion["counts"]
+          assert ingestion["source_files_verified"] == len(manifest["files"])
+          actual_counts = Counter(feature["properties"]["category"] for feature in normalized["features"])
+          assert dict(actual_counts) == expected_counts, actual_counts
+          buildings = [feature for feature in normalized["features"]
+                       if feature["properties"]["category"] == "building"]
+          assert len({feature["id"] for feature in buildings}) == 2103
+          sources = Counter(feature["id"].split(":", 1)[0] for feature in buildings)
+          assert dict(sources) == {"osm": 1698, "ucsb": 405}, sources
+
+          expected_geometry = {"part_count": 23913, "triangles": 1632753, "vertices": 1879858}
+          actual_geometry = {key: geometry[key] for key in expected_geometry}
+          assert actual_geometry == expected_geometry, actual_geometry
+          assert len(geometry["parts"]) == geometry["part_count"]
+          assert geometry["coordinate_contract"] == normalized["coordinate_contract"]
+          assert geometry["coordinate_contract"]["epsg"] == 32611
+          assert geometry["coordinate_contract"]["extent"] == 2600
+          assert geometry["terrain_height_max_error_m"] < 1e-9
+          assert max(abs(row["error_m2"]) for row in geometry["footprint_area_regressions"]) < 1e-6
+          assert roofs["count"] == len(roofs["details"]) == 162
+          assert ingestion["image_generation_used"] is False
+          assert geometry["image_generation_used"] is False
+          assert guard["passed"] is True and guard["exit_code"] == 0 and guard["stop_reason"] is None
+
+          # Exact explicit AVX2/Haswell replay profile; the original native baseline is retained separately.
+          hashes = {}
+          for name in ("sector.glb", "measured-terrain-state.npz"):
+              path = output / name
+              assert path.stat().st_size > 0, path
+              with path.open("rb") as stream:
+                  hashes[name] = hashlib.file_digest(stream, "sha256").hexdigest()
+          baseline = read(root / "proof/BASE_AVX2_DECODED_SEMANTICS.json")
+          for name, actual in hashes.items():
+              assert actual == baseline[name]["raw_sha256"], (name, actual)
+          summary = {
+              "passed": True, "stage": "01_roofs", "counts": expected_counts,
+              "building_sources": dict(sources), "geometry": actual_geometry,
+              "observed_output_sha256": hashes,
+              "hash_qualification": "Byte-identical to the independently qualified Linux x86-64 AVX2/Haswell base replay. Original unpinned baseline retained separately.",
+              "scope": "Pinned public fetch, tiny path-chart test, and base geography rebuild. No coastal download or render.",
+          }
+          (root / "evidence/whole-iv-recovery-stages/CI_SOURCE_REPLAY.json").write_text(json.dumps(summary, indent=2) + "\n")
+          print(json.dumps(summary, indent=2))
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as stream:
+              stream.write("Whole-region base replay passed: 2,103 mapped buildings (1,698 OSM, 405 UCSB), "
+                           "23,913 geometry parts, and 1,632,753 triangles. No full render or coastal downloads.\n")
+          PY
+      - name: Preserve replay diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: isla-vista-whole-region-source-replay
+          if-no-files-found: warn
+          retention-days: 7
+          # Only diagnostics are uploaded, not fetched GIS pages or scene meshes.
+          path: |
+            scenes/isla-vista/whole-region/evidence/whole-iv-recovery-stages/*.json
+            scenes/isla-vista/whole-region/evidence/whole-iv-recovery-stages/*.log
+            scenes/isla-vista/whole-region/PUBLIC_INPUT_VALIDATION.json

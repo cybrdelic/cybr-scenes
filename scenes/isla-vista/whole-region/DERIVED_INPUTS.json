@@ -1,0 +1,926 @@
+{
+  "rasters": [
+    {
+      "path": "data/coastal-coned-20261011/coned_native_1m_iv_subset.tif",
+      "sha256": "d70c5d8610dc171d02cbf789589c9dcb07ea0c3da282a0dbd947ea466829b980",
+      "bytes": 16606272,
+      "raster_contract": {
+        "epsg": 26911,
+        "transform": [
+          1.0,
+          0.0,
+          235700.99999999822,
+          0.0,
+          -1.0,
+          3812964.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          2601,
+          2601
+        ],
+        "dtype": "float32",
+        "nodata": -32767.0,
+        "ordered_band_sha256": "8b30885ae8235d43cd0370a62b828f15a90cc67c88c14949d7993072f78f1db8"
+      }
+    },
+    {
+      "path": "data/urban-canopy-2022/iv_canopy_2022_native_060m.tif",
+      "sha256": "c59adfb35c8d500d8d7b600c41fd6ca4abebe1db562d24fd1d663f5827587d31",
+      "bytes": 273416,
+      "raster_contract": {
+        "epsg": 3310,
+        "transform": [
+          0.6000000000000005,
+          0.0,
+          11400.392321903142,
+          0.0,
+          -0.6,
+          -398998.3961916783,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          4461,
+          4457
+        ],
+        "dtype": "uint8",
+        "nodata": 255.0,
+        "ordered_band_sha256": "49e73ca00fecdf3085644b48849deb44fde5ce27b88cc8837c68ff476ffe7ed6"
+      }
+    }
+  ],
+  "kelp": {
+    "passed": true,
+    "source_archive_sha256": "ae2e1e3bcd18af80d19c92cc1da676968bd7505fc9bf10ee5b3c8a4baddbf7e1",
+    "source_records_checked": 155,
+    "subset_features": 2,
+    "classes": {
+      "Kelp Subsurface": 1,
+      "Kelp Canopy": 1
+    },
+    "class_area_m2": {
+      "Kelp Subsurface": 43076.67523314057,
+      "Kelp Canopy": 55581.60566616853
+    },
+    "source_ring_topology_repairs": [
+      {
+        "record": 18,
+        "ring_start": 181,
+        "reason": "Ring Self-intersection[12892 -401622]",
+        "signed_ring_area_m2": -56.0,
+        "repaired_area_m2": 56.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 789,
+        "reason": "Ring Self-intersection[12764 -401592]",
+        "signed_ring_area_m2": -112.0,
+        "repaired_area_m2": 112.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 1176,
+        "reason": "Ring Self-intersection[12824 -401590]",
+        "signed_ring_area_m2": -128.0,
+        "repaired_area_m2": 128.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 1281,
+        "reason": "Ring Self-intersection[12832 -401582]",
+        "signed_ring_area_m2": -36.0,
+        "repaired_area_m2": 36.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 1870,
+        "reason": "Ring Self-intersection[12852 -401562]",
+        "signed_ring_area_m2": -36.0,
+        "repaired_area_m2": 36.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 2745,
+        "reason": "Ring Self-intersection[12854 -401542]",
+        "signed_ring_area_m2": -76.0,
+        "repaired_area_m2": 76.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 2816,
+        "reason": "Ring Self-intersection[13024 -401540]",
+        "signed_ring_area_m2": -48.0,
+        "repaired_area_m2": 48.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 3388,
+        "reason": "Ring Self-intersection[12962 -401536]",
+        "signed_ring_area_m2": -80.0,
+        "repaired_area_m2": 80.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 3777,
+        "reason": "Ring Self-intersection[12736 -401526]",
+        "signed_ring_area_m2": -128.0,
+        "repaired_area_m2": 128.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 4085,
+        "reason": "Ring Self-intersection[13014 -401522]",
+        "signed_ring_area_m2": -40.0,
+        "repaired_area_m2": 40.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 4471,
+        "reason": "Ring Self-intersection[12392 -401512]",
+        "signed_ring_area_m2": -52.0,
+        "repaired_area_m2": 52.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 4620,
+        "reason": "Ring Self-intersection[12368 -401516]",
+        "signed_ring_area_m2": -68.0,
+        "repaired_area_m2": 68.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 5227,
+        "reason": "Ring Self-intersection[12432 -401506]",
+        "signed_ring_area_m2": -96.0,
+        "repaired_area_m2": 96.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 5397,
+        "reason": "Ring Self-intersection[12398 -401502]",
+        "signed_ring_area_m2": -124.0,
+        "repaired_area_m2": 124.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 5845,
+        "reason": "Ring Self-intersection[12338 -401494]",
+        "signed_ring_area_m2": -60.0,
+        "repaired_area_m2": 60.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 6025,
+        "reason": "Ring Self-intersection[12886 -401514]",
+        "signed_ring_area_m2": -560.0,
+        "repaired_area_m2": 560.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 6166,
+        "reason": "Ring Self-intersection[12866 -401508]",
+        "signed_ring_area_m2": 16.0,
+        "repaired_area_m2": 16.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 6177,
+        "reason": "Ring Self-intersection[12876 -401518]",
+        "signed_ring_area_m2": 8.0,
+        "repaired_area_m2": 8.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 6290,
+        "reason": "Ring Self-intersection[12722 -401494]",
+        "signed_ring_area_m2": -220.0,
+        "repaired_area_m2": 220.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 6554,
+        "reason": "Ring Self-intersection[12408 -401490]",
+        "signed_ring_area_m2": -136.0,
+        "repaired_area_m2": 136.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 6597,
+        "reason": "Ring Self-intersection[12518 -401488]",
+        "signed_ring_area_m2": -60.0,
+        "repaired_area_m2": 60.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 6642,
+        "reason": "Ring Self-intersection[12666 -401494]",
+        "signed_ring_area_m2": -128.0,
+        "repaired_area_m2": 128.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 6861,
+        "reason": "Ring Self-intersection[12812 -401484]",
+        "signed_ring_area_m2": -56.0,
+        "repaired_area_m2": 56.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 6979,
+        "reason": "Ring Self-intersection[12366 -401486]",
+        "signed_ring_area_m2": -216.0,
+        "repaired_area_m2": 216.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 7129,
+        "reason": "Ring Self-intersection[12216 -401480]",
+        "signed_ring_area_m2": -84.0,
+        "repaired_area_m2": 84.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 7256,
+        "reason": "Ring Self-intersection[12230 -401482]",
+        "signed_ring_area_m2": -64.0,
+        "repaired_area_m2": 64.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 7403,
+        "reason": "Ring Self-intersection[12864 -401480]",
+        "signed_ring_area_m2": -68.0,
+        "repaired_area_m2": 68.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 7814,
+        "reason": "Ring Self-intersection[12834 -401494]",
+        "signed_ring_area_m2": -372.0,
+        "repaired_area_m2": 372.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 8650,
+        "reason": "Ring Self-intersection[12550 -401476]",
+        "signed_ring_area_m2": -200.0,
+        "repaired_area_m2": 200.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 8958,
+        "reason": "Ring Self-intersection[12716 -401458]",
+        "signed_ring_area_m2": -96.0,
+        "repaired_area_m2": 96.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 9106,
+        "reason": "Ring Self-intersection[12542 -401458]",
+        "signed_ring_area_m2": -156.0,
+        "repaired_area_m2": 156.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 9586,
+        "reason": "Ring Self-intersection[13158 -401456]",
+        "signed_ring_area_m2": -104.0,
+        "repaired_area_m2": 104.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 9674,
+        "reason": "Ring Self-intersection[12398 -401468]",
+        "signed_ring_area_m2": -848.0,
+        "repaired_area_m2": 848.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 10301,
+        "reason": "Ring Self-intersection[12794 -401440]",
+        "signed_ring_area_m2": -128.0,
+        "repaired_area_m2": 128.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 10559,
+        "reason": "Ring Self-intersection[12434 -401440]",
+        "signed_ring_area_m2": -92.0,
+        "repaired_area_m2": 92.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 10597,
+        "reason": "Ring Self-intersection[12478 -401456]",
+        "signed_ring_area_m2": -620.0,
+        "repaired_area_m2": 620.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 11045,
+        "reason": "Ring Self-intersection[12654 -401434]",
+        "signed_ring_area_m2": -88.0,
+        "repaired_area_m2": 88.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 11415,
+        "reason": "Ring Self-intersection[12354 -401434]",
+        "signed_ring_area_m2": -204.0,
+        "repaired_area_m2": 204.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 11663,
+        "reason": "Ring Self-intersection[13072 -401434]",
+        "signed_ring_area_m2": -348.0,
+        "repaired_area_m2": 348.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 11750,
+        "reason": "Ring Self-intersection[13098 -401432]",
+        "signed_ring_area_m2": -260.0,
+        "repaired_area_m2": 260.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 12126,
+        "reason": "Ring Self-intersection[12626 -401428]",
+        "signed_ring_area_m2": -152.0,
+        "repaired_area_m2": 152.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 12226,
+        "reason": "Ring Self-intersection[13034 -401426]",
+        "signed_ring_area_m2": -160.0,
+        "repaired_area_m2": 160.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 12412,
+        "reason": "Ring Self-intersection[12796 -401416]",
+        "signed_ring_area_m2": -152.0,
+        "repaired_area_m2": 152.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 12655,
+        "reason": "Ring Self-intersection[12646 -401414]",
+        "signed_ring_area_m2": -32.0,
+        "repaired_area_m2": 32.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 12941,
+        "reason": "Ring Self-intersection[12818 -401412]",
+        "signed_ring_area_m2": -236.0,
+        "repaired_area_m2": 236.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 13168,
+        "reason": "Ring Self-intersection[12442 -401408]",
+        "signed_ring_area_m2": -72.0,
+        "repaired_area_m2": 72.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 13395,
+        "reason": "Ring Self-intersection[13018 -401404]",
+        "signed_ring_area_m2": -116.0,
+        "repaired_area_m2": 116.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 13453,
+        "reason": "Ring Self-intersection[12430 -401410]",
+        "signed_ring_area_m2": -520.0,
+        "repaired_area_m2": 520.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 13907,
+        "reason": "Ring Self-intersection[12572 -401400]",
+        "signed_ring_area_m2": 24.0,
+        "repaired_area_m2": 24.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 14149,
+        "reason": "Ring Self-intersection[12488 -401410]",
+        "signed_ring_area_m2": -124.0,
+        "repaired_area_m2": 124.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 14448,
+        "reason": "Ring Self-intersection[12676 -401388]",
+        "signed_ring_area_m2": -60.0,
+        "repaired_area_m2": 60.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 14668,
+        "reason": "Ring Self-intersection[12394 -401388]",
+        "signed_ring_area_m2": -100.0,
+        "repaired_area_m2": 100.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 14879,
+        "reason": "Ring Self-intersection[12988 -401384]",
+        "signed_ring_area_m2": -132.0,
+        "repaired_area_m2": 132.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 14968,
+        "reason": "Ring Self-intersection[12526 -401378]",
+        "signed_ring_area_m2": -96.0,
+        "repaired_area_m2": 96.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 15563,
+        "reason": "Ring Self-intersection[12702 -401376]",
+        "signed_ring_area_m2": -80.0,
+        "repaired_area_m2": 80.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 15698,
+        "reason": "Ring Self-intersection[12350 -401370]",
+        "signed_ring_area_m2": -52.0,
+        "repaired_area_m2": 52.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 17001,
+        "reason": "Ring Self-intersection[12556 -401362]",
+        "signed_ring_area_m2": -112.0,
+        "repaired_area_m2": 112.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 17918,
+        "reason": "Ring Self-intersection[11408 -401338]",
+        "signed_ring_area_m2": -76.0,
+        "repaired_area_m2": 76.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 17977,
+        "reason": "Ring Self-intersection[12432 -401350]",
+        "signed_ring_area_m2": -268.0,
+        "repaired_area_m2": 268.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 18360,
+        "reason": "Ring Self-intersection[12602 -401336]",
+        "signed_ring_area_m2": -40.0,
+        "repaired_area_m2": 40.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 18469,
+        "reason": "Ring Self-intersection[11430 -401334]",
+        "signed_ring_area_m2": -164.0,
+        "repaired_area_m2": 164.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 18691,
+        "reason": "Ring Self-intersection[12494 -401336]",
+        "signed_ring_area_m2": -44.0,
+        "repaired_area_m2": 44.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 20442,
+        "reason": "Ring Self-intersection[11732 -401294]",
+        "signed_ring_area_m2": -40.0,
+        "repaired_area_m2": 40.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 21401,
+        "reason": "Ring Self-intersection[11444 -401286]",
+        "signed_ring_area_m2": -212.0,
+        "repaired_area_m2": 212.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 21668,
+        "reason": "Ring Self-intersection[11478 -401276]",
+        "signed_ring_area_m2": -124.0,
+        "repaired_area_m2": 124.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 21983,
+        "reason": "Ring Self-intersection[11712 -401262]",
+        "signed_ring_area_m2": -32.0,
+        "repaired_area_m2": 32.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 22056,
+        "reason": "Ring Self-intersection[11810 -401260]",
+        "signed_ring_area_m2": -40.0,
+        "repaired_area_m2": 40.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 22545,
+        "reason": "Ring Self-intersection[11520 -401252]",
+        "signed_ring_area_m2": -212.0,
+        "repaired_area_m2": 212.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 22821,
+        "reason": "Ring Self-intersection[11498 -401238]",
+        "signed_ring_area_m2": -68.0,
+        "repaired_area_m2": 68.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 22973,
+        "reason": "Ring Self-intersection[11598 -401228]",
+        "signed_ring_area_m2": -44.0,
+        "repaired_area_m2": 44.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 22991,
+        "reason": "Ring Self-intersection[11454 -401232]",
+        "signed_ring_area_m2": -240.0,
+        "repaired_area_m2": 240.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 23247,
+        "reason": "Ring Self-intersection[11528 -401230]",
+        "signed_ring_area_m2": -464.0,
+        "repaired_area_m2": 464.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 23571,
+        "reason": "Ring Self-intersection[11718 -401204]",
+        "signed_ring_area_m2": -128.0,
+        "repaired_area_m2": 128.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 18,
+        "ring_start": 23697,
+        "reason": "Ring Self-intersection[11532 -401190]",
+        "signed_ring_area_m2": -252.0,
+        "repaired_area_m2": 252.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 95,
+        "ring_start": 258,
+        "reason": "Ring Self-intersection[13204 -401590]",
+        "signed_ring_area_m2": -228.0,
+        "repaired_area_m2": 228.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 95,
+        "ring_start": 581,
+        "reason": "Ring Self-intersection[12984 -401554]",
+        "signed_ring_area_m2": -1436.0,
+        "repaired_area_m2": 1436.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 95,
+        "ring_start": 726,
+        "reason": "Ring Self-intersection[12994 -401536]",
+        "signed_ring_area_m2": 56.0,
+        "repaired_area_m2": 56.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 95,
+        "ring_start": 1143,
+        "reason": "Ring Self-intersection[12928 -401514]",
+        "signed_ring_area_m2": -1048.0,
+        "repaired_area_m2": 1048.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 95,
+        "ring_start": 1268,
+        "reason": "Ring Self-intersection[12370 -401508]",
+        "signed_ring_area_m2": -2156.0,
+        "repaired_area_m2": 2156.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 95,
+        "ring_start": 2343,
+        "reason": "Ring Self-intersection[12876 -401468]",
+        "signed_ring_area_m2": -1200.0,
+        "repaired_area_m2": 1200.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 95,
+        "ring_start": 3022,
+        "reason": "Ring Self-intersection[12536 -401478]",
+        "signed_ring_area_m2": -7840.0,
+        "repaired_area_m2": 7840.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 95,
+        "ring_start": 3812,
+        "reason": "Ring Self-intersection[12484 -401496]",
+        "signed_ring_area_m2": 44.0,
+        "repaired_area_m2": 44.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 95,
+        "ring_start": 3841,
+        "reason": "Ring Self-intersection[12466 -401504]",
+        "signed_ring_area_m2": 72.0,
+        "repaired_area_m2": 72.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 95,
+        "ring_start": 3925,
+        "reason": "Ring Self-intersection[12454 -401494]",
+        "signed_ring_area_m2": 8.0,
+        "repaired_area_m2": 8.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 95,
+        "ring_start": 4109,
+        "reason": "Ring Self-intersection[12448 -401438]",
+        "signed_ring_area_m2": -140.0,
+        "repaired_area_m2": 140.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 95,
+        "ring_start": 4995,
+        "reason": "Ring Self-intersection[13148 -401448]",
+        "signed_ring_area_m2": -1924.0,
+        "repaired_area_m2": 1924.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 95,
+        "ring_start": 5404,
+        "reason": "Ring Self-intersection[12576 -401406]",
+        "signed_ring_area_m2": -248.0,
+        "repaired_area_m2": 248.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 95,
+        "ring_start": 5565,
+        "reason": "Ring Self-intersection[12960 -401578]",
+        "signed_ring_area_m2": -18428.0,
+        "repaired_area_m2": 18428.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 95,
+        "ring_start": 6907,
+        "reason": "Ring Self-intersection[12750 -401416]",
+        "signed_ring_area_m2": 24.0,
+        "repaired_area_m2": 24.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 95,
+        "ring_start": 6932,
+        "reason": "Ring Self-intersection[12764 -401530]",
+        "signed_ring_area_m2": 28.0,
+        "repaired_area_m2": 28.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 95,
+        "ring_start": 6961,
+        "reason": "Ring Self-intersection[12870 -401554]",
+        "signed_ring_area_m2": 340.0,
+        "repaired_area_m2": 340.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 95,
+        "ring_start": 7110,
+        "reason": "Ring Self-intersection[12862 -401568]",
+        "signed_ring_area_m2": 556.0,
+        "repaired_area_m2": 556.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 95,
+        "ring_start": 7208,
+        "reason": "Ring Self-intersection[12794 -401578]",
+        "signed_ring_area_m2": 16.0,
+        "repaired_area_m2": 16.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      },
+      {
+        "record": 95,
+        "ring_start": 10502,
+        "reason": "Ring Self-intersection[11620 -401266]",
+        "signed_ring_area_m2": -180.0,
+        "repaired_area_m2": 180.0,
+        "area_change_m2": 0.0,
+        "method": "OGC make_valid resolves source self-touching ring topology; polygon area must remain equal within numerical tolerance."
+      }
+    ],
+    "subset_sha256": "4754511774b7b40626ca2b02d463cc5f26753398a59e79e6202c3c4c598709a3",
+    "subset_bytes": 1280164,
+    "horizontal_transform": "Inverse of California Albers + NAD83 to WGS 84 (1) + UTM zone 11N",
+    "horizontal_transform_accuracy_m": 4.0,
+    "survey_interval": "2016-09-03/2016-09-25",
+    "classification_grid_spacing_m": 2,
+    "attribution": "California Department of Fish and Wildlife (contract/database management), Sandoval & Associates LLC (collection/processing).",
+    "limitations": "Dated classified extents, not a present-day canopy map. Surface and subsurface classes remain distinct. The survey does not provide individual fronds, depth of the subsurface canopy, densities, blade dimensions, physiological state or present-day water conditions."
+  }
+}

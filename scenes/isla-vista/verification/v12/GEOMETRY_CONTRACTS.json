@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "ground_vertices_checked": 1036481,
+  "tinted_vertices": 69990,
+  "positions_normals_uv_indices_and_packet_headers_identical": true,
+  "minimum_tint_ratio": [
+    0.8215088248252869,
+    0.8512573838233948,
+    0.8016765117645264
+  ],
+  "maximum_tint_ratio": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "understory_vertices_checked": 3377586,
+  "minimum_serialized_support_offset_m": 0.000937202712520957,
+  "maximum_serialized_support_offset_m": 0.9903910951688886,
+  "support_sha256": "065733afda2188703ae3dfb6927fa3c142b5935e52eafd00daf043a100956e9f",
+  "qualification": "Deterministic mesh/contact validation; not an ecological inventory or visual realism certification."
+}

@@ -1,0 +1,93 @@
+{
+  "commit": "12848c82f60bc58fa88640545868009b90298b32",
+  "registry_path": "material-workspace/shared/material-production/registry.json",
+  "registry_blob_sha": "5a5832fc0ac35da1bb3b10d76760f620540d3616",
+  "entries": [
+    {
+      "id": "09_lime_plaster",
+      "name": "Lime Plaster / Troweled Skim",
+      "owner": "technical",
+      "units": "meters",
+      "quality": "retained appearance; not physically qualified",
+      "protected_appearance": false,
+      "geometry_contract": "Retain exact selected scene geometry, transforms, UVs and shader bindings; do not substitute a generic plane.",
+      "procedural_rebuild": "not qualified",
+      "dependencies_status": "scene inspection required",
+      "selected": {
+        "scene": "shared/material-aggregate-rebuild/detail-causal4k/lime-plaster/scenes/09_lime_process_v1_matched.blend",
+        "scene_sha256": "824b4e7c078d01824a104b0e6ba4177556521e192c4b022a0276f2357c5335ad",
+        "version": "09_lime_process_v1_matched",
+        "capture": {
+          "camera": "Slab / shared camera",
+          "engine": "CYCLES",
+          "width": 960,
+          "height": 960,
+          "samples": 128,
+          "color_depth": 16,
+          "dither_intensity": 0,
+          "save_guides": true,
+          "light_tree": false,
+          "studio_lights_downward": true,
+          "rss_cap_mib": 2560
+        },
+        "appearance_anchor": {
+          "image": "shared/cloud-eevee/previews/CLEAN_OIDN_PANEL_09_lime_plaster_new_model_r1_panel.png",
+          "sha256": "01fb0806ba96213ce3f944c9a4f8e9eb8ab83ad7b80a32479181df229e30bea0",
+          "receipt": "shared/cloud-eevee/previews/CLEAN_OIDN_PANEL_09_lime_plaster_new_model_r1_panel.png.json"
+        },
+        "source_selection": "Frozen delivered appearance; brass normal-transfer and porcelain audited fixes explicitly selected"
+      },
+      "pbr_contract": {
+        "workflow": "Preserve the selected Blender shader graph; no generic metallic-roughness replacement",
+        "units": "meters",
+        "color_data": "Color textures sRGB; normal/roughness/height/metallic/masks Non-Color",
+        "required_geometry": "Retain exact selected scene geometry, transforms, UVs and shader bindings; do not substitute a generic plane.",
+        "dependency_authority": "build.json inspection of the actual bound selected scene; missing dependency is a hard failure",
+        "native4k_requirement": "Mapped production inputs must remain native4096; analytic fibers/wires/blades retain actual geometry",
+        "qualification": "only brass and polished-concrete vertical slices executed in this cleanup"
+      }
+    },
+    {
+      "id": "10_natural_linen",
+      "name": "Natural Linen / Frayed",
+      "owner": "technical",
+      "units": "meters",
+      "quality": "retained appearance; not physically qualified",
+      "protected_appearance": false,
+      "geometry_contract": "Retain exact selected scene geometry, transforms, UVs and shader bindings; do not substitute a generic plane.",
+      "procedural_rebuild": "not qualified",
+      "dependencies_status": "scene inspection required",
+      "selected": {
+        "scene": "shared/material-slabs/scenes/10_natural_linen_selected_native4k_slab.blend",
+        "scene_sha256": "f0f48cae968ab27d13a632cca878126683b5ca9bf78ac3441be347b00fee7843",
+        "version": "10_natural_linen_selected_native4k_slab",
+        "capture": {
+          "camera": "Slab / shared camera",
+          "engine": "CYCLES",
+          "width": 960,
+          "height": 960,
+          "samples": 128,
+          "save_guides": true,
+          "light_tree": false,
+          "color_depth": 16,
+          "dither_intensity": 0
+        },
+        "appearance_anchor": {
+          "image": "shared/cloud-eevee/previews/CLEAN_OIDN_PANEL_10_natural_linen_native4k.png",
+          "sha256": "6fc128c9592477b1ad618f6fecf14e62db0ed416d66972816df0815086d1958c",
+          "receipt": "shared/cloud-eevee/previews/CLEAN_OIDN_PANEL_10_natural_linen_native4k.png.json"
+        },
+        "source_selection": "Frozen delivered appearance; brass normal-transfer and porcelain audited fixes explicitly selected"
+      },
+      "pbr_contract": {
+        "workflow": "Preserve the selected Blender shader graph; no generic metallic-roughness replacement",
+        "units": "meters",
+        "color_data": "Color textures sRGB; normal/roughness/height/metallic/masks Non-Color",
+        "required_geometry": "Retain exact selected scene geometry, transforms, UVs and shader bindings; do not substitute a generic plane.",
+        "dependency_authority": "build.json inspection of the actual bound selected scene; missing dependency is a hard failure",
+        "native4k_requirement": "Mapped production inputs must remain native4096; analytic fibers/wires/blades retain actual geometry",
+        "qualification": "only brass and polished-concrete vertical slices executed in this cleanup"
+      }
+    }
+  ]
+}

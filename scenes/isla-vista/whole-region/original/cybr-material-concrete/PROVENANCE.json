@@ -1,0 +1,25 @@
+{
+  "repository": "cybrdelic/cybr-material",
+  "current_master_checked_UTC": "2026-10-11T10:02:00Z",
+  "commit": "12848c82f60bc58fa88640545868009b90298b32",
+  "files": [
+    {
+      "path": "mineral_construction_bounded.py",
+      "git_blob_sha": "a775185955c9651aba3a037ee485279c618f484b",
+      "sha256": "c73f2fbd1ef87ddea44f4a590068d57c6fa0a99b1eaedb4a57422424ed35c072"
+    },
+    {
+      "path": "surface_math.py",
+      "git_blob_sha": "7b21321eef428d5b84a3c59ffd3a401e4230ceb3",
+      "sha256": "3c09a5ebc9b860abb9783045bed7674e3917087b0c0d21376fbfd8cda12cafc0"
+    },
+    {
+      "path": "grain_model.py",
+      "git_blob_sha": "4b381e9dff02ad54444c8a9a5db0859f8d652fa1",
+      "sha256": "fb096a0e6996eec7a41765a9c88292850d7da338e971b2f1b2c6cda89138d931"
+    }
+  ],
+  "catalog_blob_sha": "c850add3b07c07cdf3823eb8ecb473a471f7c417",
+  "source_prefix": "material-workspace/shared/material-production/vendor/aggregate/source",
+  "limits": "Source reuse is verified byte-for-byte against the current merged tree. The street-specific field/renderer adapter is experimental and does not claim the selected Blender native4096 appearance or material qualification."
+}

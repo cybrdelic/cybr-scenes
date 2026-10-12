@@ -1,0 +1,9 @@
+{
+  "commit": "12848c82f60bc58fa88640545868009b90298b32",
+  "source": "material-workspace/shared/material-production/vendor/asphalt-reviewed-20261009/source/reference_construction.py",
+  "git_blob_sha": "9176b33263d2543320df030b9279c726dc4c477a",
+  "relationship": "Retained dense aggregate base authoring recipe; subsequent selected fracture transform is intentionally not applied. Not selected-slab appearance parity.",
+  "local_reference_difference": "Same generated field as retained road dense recipe; current master additionally reports primitive list SHA without changing the construction fields.",
+  "prototype_resolution": 1024,
+  "physical_qualification": false
+}

@@ -1,0 +1,38 @@
+{
+  "scope": "Public replay adapters and retained authoring source; no current photographic-accuracy claim.",
+  "changes": [
+    {
+      "path": "work/cybr-iv-full/src/cybr_ucsb/sources.py",
+      "purpose": "Use pinned raw or ordered-feature/attribute/coordinate/CRS contracts for public GIS input verification. Differences outside the consumed contract do not silently refresh geometry."
+    },
+    {
+      "path": "tools/replay_retained_iv_script.py",
+      "purpose": "Resolve historical cybr_light imports to the byte-verified installed public scene_compat namespace snapshot. No renderer source change."
+    },
+    {
+      "path": "work/rebase_recovered_path_uv.py",
+      "purpose": "Preserve all serialized non-UV fields. Reconstruct top XY and closed-edge quantized arclength/height charts at original 1.25 metres/unit, then rebase by integer 0.32 metre texture periods to avoid float32 chart collapse."
+    },
+    {
+      "path": "work/capture_recovered_frontages.py",
+      "purpose": "Assemble retained authored geographic/frontage detail into bounded native Sabado and Del Playa inspection views, retaining mandatory serialized metric-chart preflight."
+    },
+    {
+      "path": "work/fit_coastal_daylight_portable.py",
+      "purpose": "Runnable fit-only adapter: preserves spectral-fit and normalization math, removes obsolete baseline-image/card API tail. Independent native render validation is explicitly not performed by this script."
+    },
+    {
+      "path": "tools/recover_whole_iv_stages.py",
+      "purpose": "Bound each selected original source stage and refuse automatic reuse of historical guard receipts as a substitute for source/output validity."
+    }
+  ],
+  "canonical_dependencies": {
+    "light_canonical_commit": "ef2b14ec4e815db00509098cbdc48b2363d312b7",
+    "light_install": "Install the reviewed namespace snapshot at ../vendor/light-scene-compat. Canonical LIGHT remains private.",
+    "geo_commit": "c44aa00d50c38b7898fb63ac9e93959290b12445",
+    "material_commit": "12848c82f60bc58fa88640545868009b90298b32",
+    "geo_runtime_files": "Byte-checked public downloads in INPUTS.json",
+    "source_code_license": "GPL-2.0-only; data licenses are separate"
+  },
+  "source_photography": "Reference links and observations only; no source-photo pixels bundled or used as image textures."
+}

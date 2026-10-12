@@ -1,0 +1,9 @@
+{
+  "url": "https://filelib.wildlife.ca.gov/Public/R7_MR/BIOLOGICAL/Kelp/BIO_CA_Kelp2016.zip",
+  "retrieved_utc": "2026-10-11T13:09:20.890285+00:00",
+  "bytes": 29838539,
+  "sha256": "ae2e1e3bcd18af80d19c92cc1da676968bd7505fc9bf10ee5b3c8a4baddbf7e1",
+  "survey_year": 2016,
+  "source_agency": "California Department of Fish and Wildlife",
+  "purpose": "Read dated canopy polygons and intersect exact current Isla Vista scene bounds. No individual kelp geometry or optical texture comes from this archive."
+}

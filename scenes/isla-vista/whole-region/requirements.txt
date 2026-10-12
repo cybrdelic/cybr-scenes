@@ -1,0 +1,10 @@
+numpy==2.3.5
+scipy==1.17.0
+Pillow==12.3.0
+numba==0.65.1
+llvmlite==0.47.0
+requests==2.34.2
+shapely==2.2.0
+pyproj==3.8.0
+rasterio==1.5.2
+trimesh==5.1.1

@@ -1,0 +1,18 @@
+[
+  {
+    "file": "east-depression-2009.jpg",
+    "url": "https://ccber.ucsb.edu/sites/default/files/images/2023-11/ED6_pot%20rest%202009.jpg",
+    "sha256": "7dbadb17b5f76a3809cc70cbc9dd0eca81b894b78484b645d3a93f132ee5e2fe",
+    "source_page": "https://ccber.ucsb.edu/restoration-area-campus-lagoon",
+    "use": "Historical site/habitat observation reference only, no projected image textures",
+    "date_basis": "2009 in east image filename; San Nicolas photo date not established. Website migration dates are not capture dates."
+  },
+  {
+    "file": "san-nicolas-restoration.jpg",
+    "url": "https://ccber.ucsb.edu/sites/default/files/images/2023-12/SN3_postrest.JPG",
+    "sha256": "b507646f84972c872684c6b9d5168570ab9bb1436ce08f81a3c99eb9f2076241",
+    "source_page": "https://ccber.ucsb.edu/restoration-area-campus-lagoon",
+    "use": "Historical site/habitat observation reference only, no projected image textures",
+    "date_basis": "2009 in east image filename; San Nicolas photo date not established. Website migration dates are not capture dates."
+  }
+]

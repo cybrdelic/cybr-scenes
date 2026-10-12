@@ -1,0 +1,21 @@
+{
+  "repository": "cybrdelic/cybr-material",
+  "commit": "12848c82f60bc58fa88640545868009b90298b32",
+  "source_path": "research/technical/original_technical_v1/CYBR_technical_cloud_review/source/expansion/geometry.py",
+  "git_blob": "bfbfe69374c90b17e3dbacf75883294457463996",
+  "sha256": "aafc89a1064b1bd8ed0deb39f1cfb021eebd0eb39c922218eb4384f4ca156500",
+  "reuse": "grass() tapered quadratic-bent blade construction, translated into native metric meshlets; authored bunchgrass dimensions and overview density. No scan or photograph projection.",
+  "catalogue_recipe": {
+    "id": "27_grass",
+    "blade_length_m": 0.04,
+    "blade_width_m": 0.0018,
+    "blade_count": 1600,
+    "color": [
+      0.12,
+      0.27,
+      0.045
+    ],
+    "roughness": 0.73
+  },
+  "limits": "Selected Blender sample appearance and physical validation do not transfer automatically to this regional native adapter."
+}

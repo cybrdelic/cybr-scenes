@@ -1,0 +1,125 @@
+{
+  "source": "Official UCSB geographic services and USGS 3DEP elevation export",
+  "local_target_bounds_m": [
+    800.0,
+    -1000.0,
+    1800.0,
+    150.0
+  ],
+  "aligned_export_bounds_epsg32611": [
+    237799.56309101434,
+    3810662.7654714393,
+    238804.05089589237,
+    3811814.375227537
+  ],
+  "aligned_export_shape": [
+    454,
+    396
+  ],
+  "files": {
+    "dem.tif": {
+      "url": "https://elevation.nationalmap.gov/arcgis/rest/services/3DEPElevation/ImageServer/exportImage?f=image&bbox=237799.56309101434%2C3810662.7654714393%2C238804.05089589237%2C3811814.375227537&bboxSR=32611&imageSR=32611&size=396%2C454&format=tiff&pixelType=F32&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&interpolation=RSP_BilinearInterpolation",
+      "bytes": 1049825,
+      "sha256": "7c3a100e193867e83ff57f14847ceda2b313cea8af84b126876f64cd11f3ea78",
+      "retrieved_utc": "2026-10-11T16:35:26.437255+00:00",
+      "http_date": null,
+      "etag": null,
+      "receipt_recovery": "First bounded request saved bytes before a tree pagination assertion. Timestamp recovered from file mtime; unavailable response headers are not invented."
+    },
+    "buildings-000.json": {
+      "url": "https://services1.arcgis.com/4TXrdeWh0RyCqPgB/ArcGIS/rest/services/Buildings2026/FeatureServer/0/query?where=1%3D1&outFields=%2A&outSR=4326&f=json&returnGeometry=true&orderByFields=OBJECTID&geometry=-119.85242376326943%2C34.40418940680547%2C-119.84185908392834%2C34.41481640635762&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&resultOffset=0&resultRecordCount=2000",
+      "bytes": 307740,
+      "sha256": "9ca35e6915ffb29d9e31b662b3b095a8359d4c7a7dcc57cb0e9bb6f37d065dfe",
+      "retrieved_utc": "2026-10-11T16:35:30.355648+00:00",
+      "http_date": null,
+      "etag": null,
+      "receipt_recovery": "First bounded request saved bytes before a tree pagination assertion. Timestamp recovered from file mtime; unavailable response headers are not invented.",
+      "consumed_features_sha256": "a96ac2bb5294c75427b39d7a0c8f5ff73dbcc32db25a907ee8f6718f458f3fcf"
+    },
+    "footpaths-000.json": {
+      "url": "https://services1.arcgis.com/4TXrdeWh0RyCqPgB/ArcGIS/rest/services/ucsb_icm.gdb/FeatureServer/18/query?where=1%3D1&outFields=%2A&outSR=4326&f=json&returnGeometry=true&orderByFields=OBJECTID&geometry=-119.85242376326943%2C34.40418940680547%2C-119.84185908392834%2C34.41481640635762&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&resultOffset=0&resultRecordCount=2000",
+      "bytes": 431408,
+      "sha256": "178e3a671b37e802ddf2e707eba7c1492973aebc396dc5d5713d045c5dd20935",
+      "retrieved_utc": "2026-10-11T16:35:31.600432+00:00",
+      "http_date": null,
+      "etag": null,
+      "receipt_recovery": "First bounded request saved bytes before a tree pagination assertion. Timestamp recovered from file mtime; unavailable response headers are not invented.",
+      "consumed_features_sha256": "d790b73ba0493e07c7179d0c461b6fac5f064dbdcfefc6d4034d0cf02b50e2c1"
+    },
+    "bike-paths-000.json": {
+      "url": "https://services1.arcgis.com/4TXrdeWh0RyCqPgB/ArcGIS/rest/services/ucsb_icm.gdb/FeatureServer/5/query?where=1%3D1&outFields=%2A&outSR=4326&f=json&returnGeometry=true&orderByFields=OBJECTID&geometry=-119.85242376326943%2C34.40418940680547%2C-119.84185908392834%2C34.41481640635762&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&resultOffset=0&resultRecordCount=2000",
+      "bytes": 105043,
+      "sha256": "83e4f57dc3de16f6097cbcb1dedd63480208bbcc7b701540831f546e6a261fbe",
+      "retrieved_utc": "2026-10-11T16:35:32.017621+00:00",
+      "http_date": null,
+      "etag": null,
+      "receipt_recovery": "First bounded request saved bytes before a tree pagination assertion. Timestamp recovered from file mtime; unavailable response headers are not invented.",
+      "consumed_features_sha256": "852006c537cbd7e8662c1d9a1dc8f6d54814a77b6dedbd9572ed9900fc7ef244"
+    },
+    "driving-surfaces-000.json": {
+      "url": "https://services1.arcgis.com/4TXrdeWh0RyCqPgB/ArcGIS/rest/services/ucsb_icm.gdb/FeatureServer/21/query?where=1%3D1&outFields=%2A&outSR=4326&f=json&returnGeometry=true&orderByFields=OBJECTID&geometry=-119.85242376326943%2C34.40418940680547%2C-119.84185908392834%2C34.41481640635762&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&resultOffset=0&resultRecordCount=2000",
+      "bytes": 428480,
+      "sha256": "37d47acd8c0be0236b404f991a78d7cc6c36654e181f1fa99ad28eb299ebdd8e",
+      "retrieved_utc": "2026-10-11T16:35:32.816916+00:00",
+      "http_date": null,
+      "etag": null,
+      "receipt_recovery": "First bounded request saved bytes before a tree pagination assertion. Timestamp recovered from file mtime; unavailable response headers are not invented.",
+      "consumed_features_sha256": "c4bf580d7ce2790fa31ccce4a58940f7ee6abcd24629970a007e6bb6830389c8"
+    },
+    "lawns-000.json": {
+      "url": "https://services1.arcgis.com/4TXrdeWh0RyCqPgB/ArcGIS/rest/services/ucsb_icm.gdb/FeatureServer/22/query?where=1%3D1&outFields=%2A&outSR=4326&f=json&returnGeometry=true&orderByFields=OBJECTID_1&geometry=-119.85242376326943%2C34.40418940680547%2C-119.84185908392834%2C34.41481640635762&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&resultOffset=0&resultRecordCount=2000",
+      "bytes": 379465,
+      "sha256": "2ec0fea82f460e611d4610f021cd1b44e2571d98df0f95d0f57e4f27c46fc863",
+      "retrieved_utc": "2026-10-11T16:35:33.859441+00:00",
+      "http_date": null,
+      "etag": null,
+      "receipt_recovery": "First bounded request saved bytes before a tree pagination assertion. Timestamp recovered from file mtime; unavailable response headers are not invented.",
+      "consumed_features_sha256": "267cd96204b1b839ddcbd41ae3aa7160cff5fbe12ade62aeb81ead629b9f93f3"
+    },
+    "trees-000.json": {
+      "url": "https://services1.arcgis.com/4TXrdeWh0RyCqPgB/ArcGIS/rest/services/ucsb_icm.gdb/FeatureServer/14/query?where=1%3D1&outFields=%2A&outSR=4326&f=json&returnGeometry=true&orderByFields=OBJECTID&geometry=-119.85242376326943%2C34.40418940680547%2C-119.84185908392834%2C34.41481640635762&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&resultOffset=0&resultRecordCount=2000",
+      "bytes": 1933489,
+      "sha256": "8a86d1c71a4eccf676065c6c5dae84b580206584ae32624676778e0ea79cfb8a",
+      "retrieved_utc": "2026-10-11T16:35:35.172847+00:00",
+      "http_date": null,
+      "etag": null,
+      "receipt_recovery": "First bounded request saved bytes before a tree pagination assertion. Timestamp recovered from file mtime; unavailable response headers are not invented.",
+      "consumed_features_sha256": "a397f6d2e81be18cd5d5a6e3f69c250b3306e7e3ce0cf0695c8b6707da25deb7"
+    },
+    "trees-001.json": {
+      "url": "https://services1.arcgis.com/4TXrdeWh0RyCqPgB/ArcGIS/rest/services/ucsb_icm.gdb/FeatureServer/14/query?where=1%3D1&outFields=%2A&outSR=4326&f=json&returnGeometry=true&orderByFields=OBJECTID&geometry=-119.85242376326943%2C34.40418940680547%2C-119.84185908392834%2C34.41481640635762&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&resultOffset=2000&resultRecordCount=2000",
+      "bytes": 727712,
+      "sha256": "25694fe1d159262e0b14f9eeba61894c2f534ebefc810087d05d9be045e26e33",
+      "retrieved_utc": "2026-10-11T16:38:09.088279+00:00",
+      "http_date": "Sun, 11 Oct 2026 16:38:08 GMT",
+      "etag": "sd6941_395659768",
+      "consumed_features_sha256": "c255222bdf595d1c28833c66e4118df3d41e7258467c4cc6b421001010c45cbc"
+    }
+  },
+  "limits": "Extension is a dated geographic context input. Output spacing does not establish native survey accuracy. Lagoon water elevations in the DEM are surface flattening, not bathymetry or a current water-level observation.",
+  "dem_grid_spacing_m": [
+    2.5365853658538504,
+    2.5365853658538837
+  ],
+  "dem_transform": [
+    2.5365853658538504,
+    0.0,
+    237799.56309101428,
+    0.0,
+    -2.5365853658538837,
+    3811814.375227537,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "layer_counts": {
+    "buildings": 104,
+    "footpaths": 149,
+    "bike-paths": 85,
+    "driving-surfaces": 1,
+    "lawns": 286,
+    "trees": 2747
+  },
+  "source_level_context": "Existing main tile catalogue includes USGS one-meter CA SoCal Wildfires B4 2018; export still uses the provider mosaic, so no single-source/date claim is made for every extension sample.",
+  "public_replay_scope": "Consumed inputs only. Unconsumed service metadata and reference HTML are omitted; source feature/CRS contracts are enforced."
+}

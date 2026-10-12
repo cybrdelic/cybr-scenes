@@ -1,0 +1,26 @@
+{
+  "triangles": 1317828,
+  "meshlets": 85116,
+  "clumps": 12837,
+  "curved_blades": 308088,
+  "wet_clumps": 656,
+  "contact_litter_leaves": 21369,
+  "patch_correlation_m": [
+    6,
+    1.5
+  ],
+  "bank_area_m2": 5871.494632081048,
+  "existing_support_unchanged": true,
+  "source_support_sha256": "065733afda2188703ae3dfb6927fa3c142b5935e52eafd00daf043a100956e9f",
+  "source_base_mesh_sha256": "bb86cc1fc2b9616bff1fc650ae9d5323096648f11a32a47d9548bad3b09c58b1",
+  "max_litter_corner_support_offset_m": 0.001,
+  "litter_fold_height_m": 0.003,
+  "authoring_limit": "Patch occupancy and organics are authored ecological appearance estimates. Geographic polygons, DEM, all base mesh positions and lagoon surface are unchanged. No exact present-day plant inventory, moisture solver or generated-image texture.",
+  "tinted_ground_vertices": 69990,
+  "ground_tint_limit": [
+    0.82,
+    0.85,
+    0.8
+  ],
+  "tint_contract": "Authored organic-contact reflectance variation correlated with same understory patches. Original metric microbed relief, roughness, all geometric support and UVs unchanged."
+}

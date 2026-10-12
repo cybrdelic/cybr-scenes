@@ -1,0 +1,17 @@
+{
+  "id": "28_asphalt",
+  "name": "Asphalt / Rolled mineral aggregate",
+  "family": "Asphalt",
+  "variant": "Rolled mineral aggregate",
+  "tile_m": 0.25,
+  "height_scale_m": 0.004,
+  "roughness": 0.88,
+  "color": [
+    0.048,
+    0.049,
+    0.045
+  ],
+  "seed": 1808,
+  "ior": 1.5,
+  "metallic": 0
+}

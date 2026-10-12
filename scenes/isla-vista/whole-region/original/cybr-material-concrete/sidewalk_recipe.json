@@ -1,0 +1,22 @@
+{
+  "id": "31_concrete_brushed",
+  "name": "Concrete / Brushed",
+  "family": "Concrete",
+  "variant": "Brushed",
+  "tile_m": 0.32,
+  "height_scale_m": 0.002,
+  "roughness": 0.77,
+  "color": [
+    0.49,
+    0.48,
+    0.44
+  ],
+  "seed": 2021,
+  "ior": 1.5,
+  "metallic": 0,
+  "representation": "solid displaced specimen",
+  "finish": "brushed",
+  "physical_values": "authored approximations, not measured material data",
+  "tiling": "periodic field",
+  "adaptation": "Retained catalogue brushed-concrete construction evaluated for a coastal sidewalk. Height encoding scale0.002m follows the retained registry map contract; native field evaluation is a1024 prototype, not selected4096 slab/renderer parity."
+}

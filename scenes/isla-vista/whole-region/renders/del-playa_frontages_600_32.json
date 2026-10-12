@@ -1,0 +1,63 @@
+{
+  "renderer": "CYBR LIGHT 0.2",
+  "backend": "C++17 OpenMP CPU",
+  "image_generation_used": false,
+  "denoising_used": true,
+  "clamping_used": false,
+  "width": 600,
+  "height": 420,
+  "packets_per_pixel": 32,
+  "wavelengths_per_packet": 6,
+  "spectral_paths_per_pixel": 192,
+  "wavelength_range_nm": [
+    360,
+    830
+  ],
+  "integrator": "volpath",
+  "filter": "tent",
+  "sampler": "random-shift Halton, first 64 dimensions",
+  "max_depth": 8,
+  "rr_depth": 5,
+  "seed": 20261012,
+  "primitives": 11908619,
+  "meshlets": 633704,
+  "invalid_path_samples": 0,
+  "render_seconds": 120.938792691,
+  "denoiser": "three camera-footprint, textured-albedo/shading-normal/object/variance guided atrous display passes",
+  "engine_source_sha256": "3d18ea79f2a34a48b21d75aaf7515f123c6b752614a80c29eaec6431e0430a9f",
+  "purpose": "Recovered original street/frontage assemblies, not a new photoreal improvement claim",
+  "view": "del-playa",
+  "camera_basis": "Retained bounded Del Playa frontage view at authored eye height above the source terrain.",
+  "camera_origin_m": [
+    318.0,
+    -395.0,
+    14.607450551119783
+  ],
+  "camera_target_m": [
+    318.0,
+    -365.0,
+    15.64572128131546
+  ],
+  "source_sha256": "e41007273e3aeb7f8a1b3f47eeca6f4d560c68763c74430f35f17fd73ebabbe6",
+  "replaced_building_source_ids": [
+    "osm:way:42753859",
+    "osm:way:42753857",
+    "osm:way:42753856",
+    "osm:way:42753162",
+    "osm:way:42753151",
+    "osm:way:42753168",
+    "osm:way:42753169"
+  ],
+  "material_count": 302,
+  "street_tree_tier": true,
+  "rendering": "Actual installed original CYBR LIGHT native CPU engine, with original GEO and MATERIAL source.",
+  "image_sha256": "37188f7d904f6489f21f83d041744c0e08a39b59eb662c78716f55493263afcb",
+  "status": "Recovered original scene coverage; not a new photorealism claim.",
+  "visible_limits": [
+    "Generic contextual buildings and estimated architecture",
+    "Coarse/grainy road appearance at this capture resolution",
+    "Plain or uneven-looking paving",
+    "Simple dark window and balcony-edge construction"
+  ],
+  "geographic_attribution": "\u00a9 OpenStreetMap contributors (ODbL 1.0); UCSB GIS. See THIRD_PARTY_NOTICES.md for all source-specific terms."
+}

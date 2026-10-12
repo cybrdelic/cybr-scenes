@@ -1,0 +1,190 @@
+{
+  "generator": "Blender 4.3.2 Cycles Nishita shader radiance",
+  "sun_direction": [
+    -0.4201100832646126,
+    -0.4701231884151617,
+    0.7762033919365223
+  ],
+  "sun_diameter_deg": 0.532,
+  "altitude_m": 10,
+  "air_density": 1.0,
+  "dust_density": 0.8,
+  "ozone_density": 1.0,
+  "sun_intensity": 1.0,
+  "solar_residual_irradiance_linear_rgb": [
+    149.167457991235,
+    122.79392351516807,
+    96.05221769903622
+  ],
+  "solar_probe_samples_per_pixel": 16,
+  "solar_probe_resolution": [
+    256,
+    256
+  ],
+  "solar_probe_fov_deg": 0.7,
+  "panorama_resolution": [
+    1024,
+    512
+  ],
+  "one_solar_source": true,
+  "sky_disc_enabled_in_export": false,
+  "color_space": "scene-linear Rec.709/sRGB primaries before view transform",
+  "normalization": "One positive global source scalar from the unoccluded horizontal18%Lambertian-card limit; same source scalar for sky and solar residual. No exposure, channel grading or material changes.",
+  "direction_probe_sign": -1,
+  "source_url": "https://github.com/blender/blender/blob/v4.3.2/intern/cycles/kernel/svm/sky.h",
+  "limitations": [
+    "Authored coastal clear daylight settings, not measured weather/time.",
+    "Native renderer uses a uniform disk matched to model residual irradiance; solar limb darkening is not retained.",
+    "RGB export must be colorimetrically fitted to native LIGHT spectral controls; it is not an original spectral radiance export.",
+    "Panoramic source is directionally resampled to native Y-pole texture coordinates."
+  ],
+  "maximum_nearest_direction_resampling_error_deg": 0.0002537235307590202,
+  "native_solar_irradiance_controls": [
+    3.658559708214015,
+    3.88449764526831,
+    3.1409300726263276
+  ],
+  "solar_radius_radians": 0.004642575810304917,
+  "native_basis_to_linear_rgb": [
+    [
+      1.2139475772668475,
+      0.006741884179006723,
+      -0.0158112005723121
+    ],
+    [
+      0.2345717197197716,
+      0.7221464602296891,
+      -0.008480776158164007
+    ],
+    [
+      -0.04424411830515248,
+      0.01603653433345685,
+      0.9374012998227117
+    ]
+  ],
+  "linear_rgb_to_native_basis": [
+    [
+      0.8258130298661529,
+      -0.008017412485648667,
+      0.013856500489428217
+    ],
+    [
+      -0.26773375141680067,
+      1.3870817906298027,
+      0.008033206415643203
+    ],
+    [
+      0.0435575360263288,
+      -0.024107826722171093,
+      1.0672955585251231
+    ]
+  ],
+  "minimum_unscaled_spectral_control": 0.0,
+  "colorimetric_roundtrip_max_absolute_error": 5.329070518200751e-15,
+  "one_source_luminance_scale": 0.02961655787006988,
+  "old_horizontal_irradiance_linear_rgb": [
+    3.0677875002779906,
+    3.141027816534514,
+    3.698026862800484
+  ],
+  "new_horizontal_irradiance_linear_rgb": [
+    3.6310245140246242,
+    3.084696186380112,
+    2.5965435255461777
+  ],
+  "luminance_ratio_after_scaling": 1.0,
+  "source_colorimetry": "Blender scene-linear RGB converted by inverse integrated LIGHT basis/CIE matrix. Nonnegative control and round-trip tests gate adoption.",
+  "native_sky_sha256": "a82d5ed6e94c72505044712208883059fbad564b21010818ac5c2ff48e6a2ee8",
+  "native_card_validation": {
+    "measurements": {
+      "baseline": {
+        "mean_linear_rgb": [
+          0.17579099535942078,
+          0.17997753620147705,
+          0.21187680959701538
+        ],
+        "mean_luminance": 0.1813895204747051,
+        "render": {
+          "renderer": "CYBR LIGHT 0.2",
+          "backend": "C++17 OpenMP CPU",
+          "image_generation_used": false,
+          "denoising_used": false,
+          "clamping_used": false,
+          "width": 48,
+          "height": 48,
+          "packets_per_pixel": 128,
+          "resumed_from_samples": 0,
+          "wavelengths_per_packet": 16,
+          "spectral_paths_per_pixel": 2048,
+          "wavelength_range_nm": [
+            360,
+            830
+          ],
+          "observer": "tabulated observer",
+          "integrator": "path",
+          "filter": "box",
+          "sampler": "random-shift Halton, first 64 dimensions",
+          "max_depth": 3,
+          "rr_depth": 3,
+          "seed": 6503,
+          "primitives": 1,
+          "bvh_nodes": 1,
+          "volumes": 0,
+          "polarized": false,
+          "forward_ad": false,
+          "invalid_path_samples": 0,
+          "photons_emitted": 0,
+          "photons_stored": 0,
+          "render_seconds": 2.239305527,
+          "mean_linear_luminance": 0.181390736581,
+          "max_linear_channel": 0.224463766093
+        }
+      },
+      "coherent": {
+        "mean_linear_rgb": [
+          0.20807380974292755,
+          0.17676125466823578,
+          0.1487852782011032
+        ],
+        "mean_luminance": 0.18140143813699036,
+        "render": {
+          "renderer": "CYBR LIGHT 0.2",
+          "backend": "C++17 OpenMP CPU",
+          "image_generation_used": false,
+          "denoising_used": false,
+          "clamping_used": false,
+          "width": 48,
+          "height": 48,
+          "packets_per_pixel": 128,
+          "resumed_from_samples": 0,
+          "wavelengths_per_packet": 16,
+          "spectral_paths_per_pixel": 2048,
+          "wavelength_range_nm": [
+            360,
+            830
+          ],
+          "observer": "tabulated observer",
+          "integrator": "path",
+          "filter": "box",
+          "sampler": "random-shift Halton, first 64 dimensions",
+          "max_depth": 3,
+          "rr_depth": 3,
+          "seed": 6503,
+          "primitives": 1,
+          "bvh_nodes": 1,
+          "volumes": 0,
+          "polarized": false,
+          "forward_ad": false,
+          "invalid_path_samples": 0,
+          "photons_emitted": 0,
+          "photons_stored": 0,
+          "render_seconds": 2.303564767,
+          "mean_linear_luminance": 0.18139843598,
+          "max_linear_channel": 0.216741794396
+        }
+      }
+    },
+    "luminance_ratio": 1.0000657020441648,
+    "passed_within_2_percent": true
+  }
+}

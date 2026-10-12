@@ -1,0 +1,106 @@
+{
+  "provenance": "Exact established whole-IV authored overview camera; copied to a portable contract to avoid requiring a prior rendered image.",
+  "original_scene_sha256": "971eba186054ae7ae61e30975c92988485e23bb7981b4740bf6046d5e96ffba2",
+  "controls": {
+    "settings": "settings 1000 700 24 6 8 5 2 20261011 1.05 0 0 -1 1 1",
+    "camera": "camera 20 -1370 1500 20 -70 0 0 0 1 45 0 1984.943324 0 0 1 1600"
+  },
+  "coordinate_contract": {
+    "name": "all-isla-vista-and-coastal-context",
+    "longitude": -119.8614,
+    "latitude": 34.413,
+    "extent": 2600,
+    "epsg": 32611,
+    "horizontal_crs": "EPSG:32611",
+    "input_axis_order": "longitude, latitude (always_xy=True)",
+    "local_origin_utm_m": [
+      237001.80699345336,
+      3811663.448398269
+    ],
+    "local_axes": "east, grid-north, up; metres",
+    "geo_axes": "east, grid-north, up; millimetres",
+    "gltf_axes": "east, up, minus-grid-north; metres",
+    "grid_convergence_degrees": -1.6180603640686249,
+    "vertical_policy": "Retain DEM datum; building heights are AGL offsets",
+    "utm_bounds": [
+      235701.80699345336,
+      3810363.448398269,
+      238301.80699345336,
+      3812963.448398269
+    ],
+    "wgs84_bounds": [
+      -119.87592940999984,
+      34.40095941399245,
+      -119.84687451802466,
+      34.42503921872043
+    ]
+  },
+  "coverage": {
+    "cdp_bounds_wgs84": [
+      -119.86980500009884,
+      34.40731099981008,
+      -119.85258100018348,
+      34.41740700014437
+    ],
+    "cdp_area_projected_m2": 1542906.5486758342,
+    "existing_sector_fraction_of_cdp_area": 0.7902381278557568,
+    "proposed_sector": {
+      "name": "isla-vista-west-campus",
+      "longitude": -119.8614,
+      "latitude": 34.413,
+      "extent": 2600,
+      "epsg": 32611,
+      "horizontal_crs": "EPSG:32611",
+      "input_axis_order": "longitude, latitude (always_xy=True)",
+      "local_origin_utm_m": [
+        237001.80699345336,
+        3811663.448398269
+      ],
+      "local_axes": "east, grid-north, up; metres",
+      "geo_axes": "east, grid-north, up; millimetres",
+      "gltf_axes": "east, up, minus-grid-north; metres",
+      "grid_convergence_degrees": -1.6180603640686249,
+      "vertical_policy": "Retain DEM datum; building heights are AGL offsets",
+      "utm_bounds": [
+        235701.80699345336,
+        3810363.448398269,
+        238301.80699345336,
+        3812963.448398269
+      ],
+      "wgs84_bounds": [
+        -119.87592940999984,
+        34.40095941399245,
+        -119.84687451802466,
+        34.42503921872043
+      ]
+    },
+    "proposed_sector_covers_cdp": true
+  },
+  "camera_coverage_check": {
+    "all_cdp_boundary_vertices_in_frame": true,
+    "maximum_abs_ndc": 0.6960238540778737,
+    "image_ground_footprint_local_m": [
+      [
+        -1122.857142857143,
+        -1128.6364395348915,
+        1.1368683772161603e-13
+      ],
+      [
+        -1122.857142857143,
+        988.6364395348909,
+        2.2737367544323206e-13
+      ],
+      [
+        1162.857142857143,
+        -1128.6364395348915,
+        1.1368683772161603e-13
+      ],
+      [
+        1162.857142857143,
+        988.6364395348909,
+        2.2737367544323206e-13
+      ]
+    ],
+    "whole_frame_within_source_tile_at_reference_plane": true
+  }
+}

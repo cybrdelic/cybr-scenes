@@ -1,0 +1,423 @@
+{
+  "scope": "Three neighboring source-identified residential properties on eastern Sabado Tarde, distinct from Del Playa and Pardall. Research only; no scene geometry changed.",
+  "retrieved_utc": "2026-10-11T16:45:00Z",
+  "coordinate_contract": {
+    "name": "all-isla-vista-and-coastal-context",
+    "longitude": -119.8614,
+    "latitude": 34.413,
+    "extent": 2600,
+    "epsg": 32611,
+    "horizontal_crs": "EPSG:32611",
+    "input_axis_order": "longitude, latitude (always_xy=True)",
+    "local_origin_utm_m": [
+      237001.80699345336,
+      3811663.448398269
+    ],
+    "local_axes": "east, grid-north, up; metres",
+    "geo_axes": "east, grid-north, up; millimetres",
+    "gltf_axes": "east, up, minus-grid-north; metres",
+    "grid_convergence_degrees": -1.6180603640686249,
+    "vertical_policy": "Retain DEM datum; building heights are AGL offsets",
+    "utm_bounds": [
+      235701.80699345336,
+      3810363.448398269,
+      238301.80699345336,
+      3812963.448398269
+    ],
+    "wgs84_bounds": [
+      -119.87592940999984,
+      34.40095941399245,
+      -119.84687451802466,
+      34.42503921872043
+    ]
+  },
+  "normalized_source": "evidence/full-iv-roofs/normalized.geojson",
+  "raw_osm_source": "data/full-iv-20261011/osm-*.osm",
+  "manager": "KAMAP Property Management",
+  "manager_reference_index": "https://www.kamap.net/availability_listing/",
+  "manager_image_address_index": "https://www.kamap.net/gridmedia/js/basescripts.js",
+  "manager_public_listing_data": "https://www.kamap.net/api/v3/corporations/homes/",
+  "use": "Visual observation for original procedural geometry only. Never sample, project or use these photographs as textures. Copyright remains with source holders. Exclude reference photos from the portable source archive; retain source URLs and checksums.",
+  "references": [
+    {
+      "address": "6515 Sabado Tarde Road",
+      "source_page": "https://www.kamap.net/available_homes/#6515%20Sabado%20Tarde",
+      "manager_listing_id": 2561,
+      "manager_property_point_lon_lat": [
+        -119.854371,
+        34.410217
+      ],
+      "footprints": [
+        {
+          "source_id": "osm:way:42753162",
+          "source_url": "https://www.openstreetmap.org/way/42753162",
+          "osm_version": 4,
+          "osm_timestamp": "2022-05-22T01:35:04Z",
+          "local_centroid_east_grid_north_m": [
+            634.3480307596609,
+            -324.5947064880063
+          ],
+          "local_footprint_vertices_m": [
+            [
+              640.6369533963152,
+              -314.97407079068944
+            ],
+            [
+              640.085259823245,
+              -334.55419440427795
+            ],
+            [
+              628.0590957991662,
+              -334.2153357286006
+            ],
+            [
+              628.6108147187042,
+              -314.63521130476147
+            ],
+            [
+              640.6369533963152,
+              -314.97407079068944
+            ]
+          ],
+          "wgs84_footprint_vertices_lon_lat": [
+            [
+              -119.8544719,
+              34.4103258
+            ],
+            [
+              -119.8543411,
+              34.4103258
+            ],
+            [
+              -119.8543411,
+              34.4101493
+            ],
+            [
+              -119.8544719,
+              34.4101493
+            ],
+            [
+              -119.8544719,
+              34.4103258
+            ]
+          ],
+          "mapped_levels": "2",
+          "existing_estimated_height_m": 6.6
+        }
+      ],
+      "photo": {
+        "image_url": "https://media.apts247.info/7b/7b876d22fb1f43fd9cb1c2f6504ea1b9/homes/corporation/06683d9c8f564ffd949c52054c1b5fee_IMG_0436.JPG",
+        "local_reference": "6515-Sabado-Tarde-front-reference.jpg",
+        "source_image_sha256": "dfd57dce1289dd2b7e9934740afd7cc83da961ed1717b56357a5f7f22a044d3d",
+        "source_image_pixels": [
+          2272,
+          1704
+        ],
+        "local_reference_sha256": "000b8e36a120ce83c70e0e2f2fa5b60d8e55c14445c6bda911347f62a2a6f863",
+        "local_reference_pixels": [
+          960,
+          720
+        ],
+        "reference_photo_date": "Not verified; image filename and rental availability dates are not capture dates."
+      },
+      "observed": "Two stories; shallow roof and broad fascia; one projecting front balcony with thin vertical metal railings and glazed slider; full-height irregular stone facing beside pale stucco; small paired windows; low block patio wall; side driveway.",
+      "construction_guidance": "North-facing frontage. Facing the front, balcony is on the left and stone strip on the right. Retain mapped footprint. Make balcony deck, rails, window recesses, roof overhang and court wall as geometry. Use original CYBR materials; author the stone shapes and variation independently.",
+      "uncertainty": "Roof pitch, wall and balcony heights/depths, exact stone layout, rail spacing and unseen elevations are not surveyed. The mapped 6.6 m height remains an estimate."
+    },
+    {
+      "address": "6522 Sabado Tarde Road (Seaside Apartments)",
+      "source_page": "https://www.kamap.net/available_homes/#Seaside/Three_and_Four_Person_Apartments",
+      "manager_listing_id": 2558,
+      "manager_property_point_lon_lat": [
+        -119.854786,
+        34.410639
+      ],
+      "footprints": [
+        {
+          "source_id": "osm:way:42753151",
+          "source_url": "https://www.openstreetmap.org/way/42753151",
+          "osm_version": 4,
+          "osm_timestamp": "2020-06-20T00:59:28Z",
+          "local_centroid_east_grid_north_m": [
+            596.1887630969006,
+            -279.80041496709856
+          ],
+          "local_footprint_vertices_m": [
+            [
+              582.9309110636241,
+              -270.6704471874982
+            ],
+            [
+              610.1139454853255,
+              -271.59193675545976
+            ],
+            [
+              609.4709178564372,
+              -290.4922473896295
+            ],
+            [
+              600.4988702997798,
+              -290.18390032835305
+            ],
+            [
+              600.7314791386598,
+              -283.5623426306993
+            ],
+            [
+              591.7594378106296,
+              -283.25398673769087
+            ],
+            [
+              591.5325778470724,
+              -289.997832831461
+            ],
+            [
+              582.2847016146989,
+              -289.6816948419437
+            ],
+            [
+              582.9309110636241,
+              -270.6704471874982
+            ]
+          ],
+          "wgs84_footprint_vertices_lon_lat": [
+            [
+              -119.854983,
+              34.4105388
+            ],
+            [
+              -119.8549818,
+              34.4107102
+            ],
+            [
+              -119.8546861,
+              34.4107088
+            ],
+            [
+              -119.8546873,
+              34.4105384
+            ],
+            [
+              -119.8547849,
+              34.4105389
+            ],
+            [
+              -119.8547844,
+              34.4105986
+            ],
+            [
+              -119.854882,
+              34.4105991
+            ],
+            [
+              -119.8548824,
+              34.4105383
+            ],
+            [
+              -119.854983,
+              34.4105388
+            ]
+          ],
+          "mapped_levels": "2",
+          "existing_estimated_height_m": 6.6
+        }
+      ],
+      "photo": {
+        "image_url": "https://www.kamap.net/gridmedia/img/communities/seaside.jpg",
+        "local_reference": "6522-Sabado-Tarde-manager-reference.jpg",
+        "source_image_sha256": "4ca95b35907f63d95f30244707c675ce1392f202c40adee9ef05acaacb9c6ccb",
+        "source_image_pixels": [
+          395,
+          226
+        ],
+        "local_reference_sha256": "4ca95b35907f63d95f30244707c675ce1392f202c40adee9ef05acaacb9c6ccb",
+        "local_reference_pixels": [
+          395,
+          226
+        ],
+        "reference_photo_date": "Not verified; image filename and rental availability dates are not capture dates."
+      },
+      "observed": "Two projecting two-story wings, shallow hip roofs and overhangs; recessed upper gallery with thin railings; shaded central ground-level vehicle opening; broad white-framed windows with contrasting shutters; pale front court wall with large curved cutouts.",
+      "construction_guidance": "South-facing frontage. The mapped U-shaped front recess supports separate wings and an upper center gallery. Model the central ground-level opening, eaves, rails, shutters, deep window reveals and curved court-wall profile.",
+      "uncertainty": "Photo supports the visible front opening, not the entire hidden passage plan. Hip slopes, gallery span/depth, heights, dimensions and unseen facades are authored estimates."
+    },
+    {
+      "address": "6531 Sabado Tarde Road (Laguna Apartments, A and B)",
+      "source_page": "https://www.kamap.net/available_homes/#Laguna",
+      "manager_listing_id": 2525,
+      "manager_property_point_lon_lat": [
+        -119.855284,
+        34.410079
+      ],
+      "footprints": [
+        {
+          "source_id": "osm:way:42753168",
+          "source_url": "https://www.openstreetmap.org/way/42753168",
+          "osm_version": 5,
+          "osm_timestamp": "2022-05-22T01:35:04Z",
+          "local_centroid_east_grid_north_m": [
+            557.1139927026,
+            -335.4844611204345
+          ],
+          "local_footprint_vertices_m": [
+            [
+              550.2464102460654,
+              -358.8346734321676
+            ],
+            [
+              551.8425589575199,
+              -311.67238143784925
+            ],
+            [
+              563.8864630401367,
+              -312.0340457512066
+            ],
+            [
+              562.4945270440076,
+              -359.1354757770896
+            ],
+            [
+              550.2464102460654,
+              -358.8346734321676
+            ]
+          ],
+          "wgs84_footprint_vertices_lon_lat": [
+            [
+              -119.8551768,
+              34.4099082
+            ],
+            [
+              -119.85531,
+              34.4099078
+            ],
+            [
+              -119.8553071,
+              34.410333
+            ],
+            [
+              -119.8551761,
+              34.4103328
+            ],
+            [
+              -119.8551768,
+              34.4099082
+            ]
+          ],
+          "mapped_levels": "3",
+          "existing_estimated_height_m": 9.899999999999999
+        },
+        {
+          "source_id": "osm:way:42753169",
+          "source_url": "https://www.openstreetmap.org/way/42753169",
+          "osm_version": 5,
+          "osm_timestamp": "2022-05-22T01:35:04Z",
+          "local_centroid_east_grid_north_m": [
+            541.0836747148776,
+            -334.9033470981856
+          ],
+          "local_footprint_vertices_m": [
+            [
+              534.1639384072041,
+              -358.4368780986406
+            ],
+            [
+              535.7299582797568,
+              -311.04058256931603
+            ],
+            [
+              548.0043455679552,
+              -311.38655949011445
+            ],
+            [
+              546.4393263798556,
+              -358.7495726486668
+            ],
+            [
+              534.1639384072041,
+              -358.4368780986406
+            ]
+          ],
+          "wgs84_footprint_vertices_lon_lat": [
+            [
+              -119.8553514,
+              34.4099076
+            ],
+            [
+              -119.8554849,
+              34.4099073
+            ],
+            [
+              -119.8554824,
+              34.4103346
+            ],
+            [
+              -119.8553489,
+              34.4103346
+            ],
+            [
+              -119.8553514,
+              34.4099076
+            ]
+          ],
+          "mapped_levels": "3",
+          "existing_estimated_height_m": 9.899999999999999
+        }
+      ],
+      "photo": {
+        "image_url": "https://www.kamap.net/gridmedia/img/communities/laguna.jpg",
+        "local_reference": "6531-Sabado-Tarde-manager-reference.jpg",
+        "source_image_sha256": "9607bce97e6dd8c20e57203576314e996603b703868aaf7d297f63fac4a92606",
+        "source_image_pixels": [
+          395,
+          226
+        ],
+        "local_reference_sha256": "9607bce97e6dd8c20e57203576314e996603b703868aaf7d297f63fac4a92606",
+        "local_reference_pixels": [
+          395,
+          226
+        ],
+        "reference_photo_date": "Not verified; image filename and rental availability dates are not capture dates."
+      },
+      "observed": "Three visible levels; stacked projecting end balconies split by a vertical reddish masonry panel; thin vertical railings; broad shallow gable and eaves; long exterior gallery, exposed stair and low front wall with piers.",
+      "construction_guidance": "Both mapped blocks have north street ends, three mapped levels and narrow long footprints. Photograph verifies the property and one clear end/side elevation. Use that elevation for a focal block, with separate balcony slabs, rails, stairs, gallery, masonry panel and gable.",
+      "uncertainty": "The photo is labeled for the whole property, not A/B. Its clear block appears consistent with B viewed from the northeast, but that assignment is unverified. Applying its details to A is an explicit architectural analogy, not an observation. End balconies on both blocks, rear sides and exact dimensions remain unverified."
+    }
+  ],
+  "camera_candidate": {
+    "name": "Sabado Tarde eastward from north sidewalk",
+    "support_source_id": "osm:way:592214516",
+    "support_source_url": "https://www.openstreetmap.org/way/592214516",
+    "support_node_id": "osm:node:5695821277",
+    "support_local_vertex_index": 15,
+    "support_local_xy_m": [
+      519.2692708155955,
+      -291.7469537849538
+    ],
+    "support_wgs84_lon_lat": [
+      -119.8556672,
+      34.4105042
+    ],
+    "support_tags": {
+      "footway": "sidewalk",
+      "highway": "footway",
+      "surface": "concrete",
+      "osm_version": 9,
+      "osm_timestamp": "2025-12-12T01:59:34Z"
+    },
+    "eye_height_above_sampled_ground_m": 1.7,
+    "look_at_local_xy_m": [
+      580.0,
+      -306.0
+    ],
+    "target_height_above_sampled_ground_m": 3.0,
+    "horizontal_fov_start_degrees": 75,
+    "framing_reason": "Existing mapped concrete north sidewalk, west of Laguna. Face east and slightly south along the street, with Laguna on the right, Seaside on the left farther ahead, and 6515 farther down the corridor.",
+    "validation_required": "Sample actual scene DEM at camera and target, then check occlusion and ground contact in a draft render. FOV, aim and target height are authored composition choices, not measured camera calibration."
+  },
+  "limitations": [
+    "All photograph capture dates are unknown. Current page availability is not proof that every photographed feature is current.",
+    "Building footprints and existing OSM attributes are mapped sources; apparent heights, facade dimensions, material appearance and unseen sides are not surveyed.",
+    "Property-manager coordinates are approximate listing points and must not override existing mapped footprints.",
+    "No private occupant information was collected."
+  ]
+}

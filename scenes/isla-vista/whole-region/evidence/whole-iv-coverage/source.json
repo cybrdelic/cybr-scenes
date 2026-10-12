@@ -1,0 +1,6 @@
+{
+  "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Places_CouSub_ConCity_SubMCD/MapServer/5/query?where=GEOID%3D%270636868%27&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+  "sha256": "d69df2efb01ab7a56cb19c208986c594a6d2cb76e6cf86033aaefe44748e52fc",
+  "source": "US Census TIGERweb current Census Designated Places",
+  "retrieved_utc": "2026-10-11T07:41:20Z"
+}

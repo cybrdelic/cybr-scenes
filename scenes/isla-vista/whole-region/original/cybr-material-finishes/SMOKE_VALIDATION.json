@@ -1,0 +1,143 @@
+{
+  "passed": true,
+  "source_bytes_match_all_git_blobs": true,
+  "imported_from_recovered_directory": true,
+  "final_plaster_override_verified": true,
+  "smoke_evaluations": [
+    {
+      "id": "09_lime_plaster",
+      "signature": "(x, y, n)",
+      "resolution": [
+        16,
+        16
+      ],
+      "return_shapes": [
+        [
+          16,
+          16,
+          3
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          16,
+          16
+        ]
+      ],
+      "all_finite": true,
+      "raw_field_min_max": [
+        [
+          0.7046371102333069,
+          0.7962802052497864
+        ],
+        [
+          0.45546072721481323,
+          0.6201443076133728
+        ],
+        [
+          0.6584290862083435,
+          0.7648119330406189
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.04781419038772583
+        ]
+      ],
+      "seconds": 0.02024650100065628
+    },
+    {
+      "id": "10_natural_linen",
+      "signature": "(x, y, n)",
+      "resolution": [
+        16,
+        16
+      ],
+      "return_shapes": [
+        [
+          16,
+          16,
+          3
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          16,
+          16
+        ]
+      ],
+      "all_finite": true,
+      "raw_field_min_max": [
+        [
+          0.5673462152481079,
+          0.7507912516593933
+        ],
+        [
+          0.17451729238033295,
+          0.5639673033359329
+        ],
+        [
+          0.7956839570972519,
+          0.8580000017881394
+        ],
+        [
+          0.78,
+          0.9906541734980702
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.03950068727135658,
+          0.8283710479736328
+        ],
+        [
+          0.3368011713027954,
+          1.0
+        ]
+      ],
+      "seconds": 0.36267895200580824
+    }
+  ],
+  "scope": "Only n=16 in-memory calls. No full-resolution field generation, export, rendering, appearance qualification or selected-scene parity test."
+}
