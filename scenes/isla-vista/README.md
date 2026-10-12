@@ -31,14 +31,16 @@ are corrected-light procedural intermediates, not a photoreal completion claim.
 No private file IDs or historical source archive is required. Use Linux,
 Python 3.12, a C++17/OpenMP compiler, `flock`, `taskset`, and at least 8 GiB disk
 space for regenerated geometry and outputs. Install `requirements.txt` in a
-virtual environment. Install the separate pinned CYBR LIGHT revision described
-in `LIGHT_DEPENDENCY.json` with its portable extra. The entrypoint verifies its
+virtual environment. Install the reviewed local LIGHT dependency snapshot described
+in `LIGHT_DEPENDENCY.json` with its portable extra. The canonical LIGHT repository
+is private; this exact source subset is distributed here for anonymous replay. The entrypoint verifies its
 namespaced `cybrlight.scene_compat` source manifest before execution; it does
-not substitute for or replace the current public LIGHT engine.
+not replace the canonical LIGHT engine or include unrelated private repository
+source. The runtime/notice bytes are pinned unchanged to the reviewed merge.
 
 ```
 python -m pip install -r requirements.txt
-# Install CYBR LIGHT at LIGHT_DEPENDENCY.json's exact commit with [portable].
+python -m pip install './vendor/light-scene-compat[portable]'
 python public_inputs.py fetch
 ./run.sh verify
 ./run.sh materials
@@ -84,3 +86,14 @@ passing checks do not establish photorealism, current-site accuracy, complete
 street-detail coverage or real-time performance. The display is native
 centre-hit guided atrous filtering, ACES fitted tone mapping and sRGB at exposure
 1.05. Neither reference-image projection nor per-image grading is used.
+
+## Fresh full rebuild proof
+
+The unmodified extracted source fetched and validated all 28 inputs, rebuilt all
+materials and geometry, and matched all 20 binary outputs plus `materials.cys`
+byte for byte. See `verification/PUBLIC_REPLAY_REBUILD_PROOF.json`. This local
+rebuild used the reviewed installed LIGHT package; the original anonymous git
+installation failed because that repository is private. The pinned namespace
+snapshot above corrects that access boundary without changing renderer bytes.
+The original failure is retained in
+`verification/PUBLIC_DEPENDENCY_ACCESS_CORRECTION.json`.

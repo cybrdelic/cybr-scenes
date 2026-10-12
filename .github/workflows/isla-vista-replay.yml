@@ -27,14 +27,13 @@ jobs:
       - name: Install recorded scene and separate renderer dependencies
         run: |
           python -m pip install -r requirements.txt
-          python - <<'PY'
-          import json, subprocess, sys
-          pin = json.load(open('LIGHT_DEPENDENCY.json'))['commit']
-          assert len(pin) == 40 and all(c in '0123456789abcdef' for c in pin)
-          subprocess.run([sys.executable, '-m', 'pip', 'install', 'cybr-light[portable] @ git+https://github.com/cybrdelic/cybr-light.git@' + pin], check=True)
-          PY
+          python -m pip install './vendor/light-scene-compat[portable]'
       - name: Reject changed source features and unsafe downloads
         run: python -m unittest discover -s verification -p 'test_*.py' -v
+      - name: Verify installed snapshot and native indexed-mesh replay
+        run: |
+          python verification/verify_light_snapshot.py
+          python verification/test_scene_compat_snapshot.py
       - name: Fetch and validate current public source contract
         run: python public_inputs.py fetch
       - name: Verify installed dependency and scene imports

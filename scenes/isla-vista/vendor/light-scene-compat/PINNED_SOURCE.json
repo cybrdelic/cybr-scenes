@@ -1,0 +1,115 @@
+{
+  "canonical_repository": "cybrdelic/cybr-light",
+  "canonical_repository_access": "private",
+  "canonical_commit": "ef2b14ec4e815db00509098cbdc48b2363d312b7",
+  "reviewed_pull_request": "https://github.com/cybrdelic/cybr-light/pull/9",
+  "namespace": "cybrlight.scene_compat",
+  "parent_init_included": false,
+  "runtime_modified": false,
+  "files": {
+    "DEPENDENCY_MANIFEST.json": {
+      "bytes": 4169,
+      "sha256": "d2044ee804fe8ad4cb41b1e60a0cdc312d3ea0c18963ea7ac674bc8ab3a8be14"
+    },
+    "README.md": {
+      "bytes": 1502,
+      "sha256": "d60d4176adc04c5d337701073b362bed5303ed26cc2b7a0f06fbee2122d62954"
+    },
+    "UPSTREAM.json": {
+      "bytes": 3571,
+      "sha256": "fe7cee5fe8bb7c46c5e11607538270c8922b7e979b47b07978b5dfefef5d6253"
+    },
+    "__init__.py": {
+      "bytes": 146,
+      "sha256": "7d529499c00ea88ff74ead984e5bcb7765b28f03e8bcfd2c928d92e4e1bfc295"
+    },
+    "finishing.py": {
+      "bytes": 6617,
+      "sha256": "9ff56f48b3640dd763dada5327d27df86b76128ff55fd11b22f65975083c0af0"
+    },
+    "native/LICENSE": {
+      "bytes": 18093,
+      "sha256": "640d90f6ee401241ff62834d0d1b33f83049e99b8bfdfa04ed1b0a1635dde3e7"
+    },
+    "native/LICENSES/CYBR_LIGHT_ORIGINAL_MIT.txt": {
+      "bytes": 1081,
+      "sha256": "68eb366e0200eed1e1cf9294151097970b3c05c0b9e2722b1ecd9cb844c2d2b3"
+    },
+    "native/include/cybr/exr.hpp": {
+      "bytes": 3743,
+      "sha256": "20451211e80c33946b0c27ad799f3a0da7003b3e92da0e01842eead4591fbe23"
+    },
+    "native/include/cybr/film.hpp": {
+      "bytes": 4513,
+      "sha256": "d3535421c1f15c89e7d43dd3b939fe483b1aa5d646afce1ee1b59d6dc579eb79"
+    },
+    "native/include/cybr/geometry.hpp": {
+      "bytes": 12847,
+      "sha256": "53aae95593e8cb9c550686498aad5dc7338a0b596db1090fc0999b2fd021171d"
+    },
+    "native/include/cybr/integrator.hpp": {
+      "bytes": 7053,
+      "sha256": "0c9913dede1a3e9937c908376cfc36e564ab970c33db0784328b7017e8f7269b"
+    },
+    "native/include/cybr/io.hpp": {
+      "bytes": 14744,
+      "sha256": "9dcfe8e794bdc6e0376be116ae39a78f23a7956a13ee38e66aa41453a77efd5e"
+    },
+    "native/include/cybr/material.hpp": {
+      "bytes": 16728,
+      "sha256": "a090a8e863537f29c9fcf82e4dfe7bc805e923d4e5e1d29ca472f1a92aac95bb"
+    },
+    "native/include/cybr/math.hpp": {
+      "bytes": 5975,
+      "sha256": "857659dbf041dec090f747091cc4e2758f5e8bf35fcbcf5bdba9bbb8ceca51cc"
+    },
+    "native/include/cybr/photonmap.hpp": {
+      "bytes": 6660,
+      "sha256": "e55419419ae6e893f67515127ab133a0d5ea05f8757994bc9afdb871a7bee9c0"
+    },
+    "native/include/cybr/polarization.hpp": {
+      "bytes": 2776,
+      "sha256": "52a79333e847aaf9dc2d0ccc0a31e95d6c9f7a373732a40b3b659f9ea08c6bd0"
+    },
+    "native/include/cybr/scene.hpp": {
+      "bytes": 10244,
+      "sha256": "b4d03d749abfef356d110dfb6288a9057f8df42a3b9f33120393f4b85a5a2a88"
+    },
+    "native/include/cybr/shader.hpp": {
+      "bytes": 1475,
+      "sha256": "4b0d0f9e7fdc1f068564e808428bd532498c6a83709b5670bbc2d24030f3cc2e"
+    },
+    "native/include/cybr/spectrum.hpp": {
+      "bytes": 4209,
+      "sha256": "32df7fe6638696cfb33a25d595c78864a490bc263be06c0420c01d589d1993b7"
+    },
+    "native/include/cybr/texture.hpp": {
+      "bytes": 1995,
+      "sha256": "2b20a33f2c3468c1df263b6ca00a0b534eee36f754c2ad35cf6680b646848b57"
+    },
+    "native/include/cybr/volume.hpp": {
+      "bytes": 5938,
+      "sha256": "c2a64d175204e0a2c087be8ca5a8b95bc3afa3ba771fa2abaab8be4c640c5ec1"
+    },
+    "native/src/main.cpp": {
+      "bytes": 9517,
+      "sha256": "5159763f167dcd1226de6edbd9313a40994aa570a062413189a3f4c608845c3d"
+    },
+    "native/tests/engine_numerical.cpp": {
+      "bytes": 12203,
+      "sha256": "c128942e1c3bbe258c68474d7bf0eecd834c025f01256ba1bc5090069a08ea0c"
+    },
+    "native/tests/numerical.cpp": {
+      "bytes": 5140,
+      "sha256": "8e5a2a78cf0e71d9f8c9f756224cb7a736062d95917cc74215bbc4cd4543231a"
+    },
+    "native/tests/surface_guides.cpp": {
+      "bytes": 6038,
+      "sha256": "137dabcd3f7c67d079ff774b1d8ff3e46de33d5828116def0164b220c824bb18"
+    },
+    "runtime.py": {
+      "bytes": 12176,
+      "sha256": "ce1df256a02905aa515f4bf0e6d6871f9b73a3ae0635f7ba54294f9562dbd395"
+    }
+  }
+}

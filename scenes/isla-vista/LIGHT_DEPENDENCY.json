@@ -5,5 +5,9 @@
   "commit": "ef2b14ec4e815db00509098cbdc48b2363d312b7",
   "public_engine_replaced": false,
   "purpose": "Explicit retained-runtime reproduction boundary; current main CYBR LIGHT remains unchanged.",
-  "merged_pull_request": "https://github.com/cybrdelic/cybr-light/pull/9"
+  "merged_pull_request": "https://github.com/cybrdelic/cybr-light/pull/9",
+  "canonical_repository_access": "private",
+  "public_snapshot": "vendor/light-scene-compat",
+  "installation": "python -m pip install './vendor/light-scene-compat[portable]'",
+  "snapshot_contract": "All 26 reviewed package files and 24 upstream manifest entries retain exact bytes; no cybrlight root __init__ or workflow included."
 }

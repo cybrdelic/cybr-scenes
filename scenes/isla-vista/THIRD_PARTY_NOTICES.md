@@ -32,8 +32,11 @@ weather state are explicit reconstruction estimates, not source measurements.
 
 The scene uses original CYBR coordinate, meshlet, polygon and facade construction.
 Exact helper extraction provenance is in `SCENE_SOURCE.json`. LIGHT transport is
-provided by the separately installed `cybrlight.scene_compat` package, with its
-GPL 2 and retained original MIT notices; no C++ renderer is duplicated here.
+provided by the pinned local `cybrlight.scene_compat` dependency snapshot, with its
+GPL 2 and retained original MIT notices. Canonical ownership remains the private
+CYBR LIGHT repository at commit ef2b14ec4e815db00509098cbdc48b2363d312b7.
+Only the reviewed runtime/notice subset is distributed for anonymous scene replay;
+no unrelated private source or credentials are included.
 
 Original material field recipes are fetched from the pinned CYBR MATERIAL commit
 12848c82f60bc58fa88640545868009b90298b32 and hash-checked. Coastal pigments, linked

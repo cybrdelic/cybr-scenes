@@ -1,0 +1,7 @@
+{
+  "original_candidate": "SCENES PR8 head 53cd576cc7d1fb005ef03fc3e8b9764ec40ee1d1",
+  "original_failure": "Anonymous CI git installation of canonical LIGHT ef2b14ec4e815db00509098cbdc48b2363d312b7 failed: git could not read Username, because repository is private. Authenticated connector visibility did not imply public availability.",
+  "correction": "Publicly distribute only the exact reviewed licensed scene_compat source subset as a local installable namespace snapshot. No credentials, repository-visibility change or unrelated LIGHT history.",
+  "failure_retained": true,
+  "no_test_weakened": "Same source-integrity, native scene fixture and daylight validation remain required."
+}
