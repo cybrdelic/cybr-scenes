@@ -1,0 +1,15 @@
+{
+  "repository": "cybrdelic/cybr-material",
+  "profile": "victorville_dv3_dry_bark",
+  "files": [
+    {
+      "path": "source/bark_flow.py",
+      "sha256": "26b766de9add50ccb67db1fe25c62f13b1da40c5fece66c4d2dcab045913dcd4"
+    },
+    {
+      "path": "source/bark_flow_profiles.json",
+      "sha256": "ab8ea0839facd6e6c55e8be2b453be78425b4981856f27ad780642c865b997f6"
+    }
+  ],
+  "commit": "bb834962787b3781232c5d35f2170bd6051ab5b6"
+}
