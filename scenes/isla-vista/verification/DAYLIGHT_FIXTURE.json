@@ -1,0 +1,54 @@
+{
+  "longitude_convention": "u = atan2(world_z,world_x)/(2*pi), wrapped into [0,1); phi = 2*pi*u",
+  "corrections_to_v11a": [
+    "Removed erroneous pi longitude offset; upper sky now occupies world_z > 0",
+    "Converted illuminant radiance directly through inverse observer matrix, without reflectance white scaling"
+  ],
+  "clear_fraction": 0.2,
+  "overcast_fraction": 0.8,
+  "upper_angular_luminance": "(1+2*world_z)/3",
+  "single_horizontal_luminance_scalar": 1.211129071913399,
+  "native_sun": [
+    0.8861976047897991,
+    0.9409256055927183,
+    0.7608143447609618
+  ],
+  "linear_rgb_irradiance": [
+    3.2470009031082125,
+    3.1501781747605215,
+    3.079284460151682
+  ],
+  "reference_linear_rgb_irradiance": [
+    3.631024514024459,
+    3.0846961863801923,
+    2.596543525597295
+  ],
+  "expected_gray_card_rgb": [
+    0.1860394478232673,
+    0.18049191412800294,
+    0.17643000348691149
+  ],
+  "direct_illuminant_colorimetric_error": 0.0,
+  "map_sha256": "27a50aa12c6df10e80341d227d325c0731928f79519c4d511ad6541516f833c3",
+  "source": "CIE overcast angular shape plus retained Nishita field; authored cloud mixture, no measured weather or volumetric cloud claim",
+  "exposure": 1.05,
+  "native_card": {
+    "mean_linear_rgb": [
+      0.1860790252685547,
+      0.18052516877651215,
+      0.1764582097530365
+    ],
+    "expected": [
+      0.1860394478232673,
+      0.18049191412800294,
+      0.17643000348691149
+    ],
+    "channel_ratios": [
+      1.0002127368456015,
+      1.0001842445334455,
+      1.000159872275506
+    ],
+    "passed": true,
+    "render_seconds": 4.696978694
+  }
+}

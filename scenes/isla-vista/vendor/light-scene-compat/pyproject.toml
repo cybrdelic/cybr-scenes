@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cybr-light-scene-compat-snapshot"
+version = "0.2.0.post20261012"
+description = "Pinned CYBR LIGHT scene_compat dependency snapshot for anonymous scene replay"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "python/cybrlight/scene_compat/native/LICENSE"}
+dependencies = ["numpy>=1.24", "Pillow>=9"]
+
+[project.optional-dependencies]
+portable = ["numba>=0.65", "llvmlite>=0.47"]
+
+[tool.setuptools]
+package-dir = {"" = "python"}
+
+[tool.setuptools.packages.find]
+where = ["python"]
+namespaces = true
+
+[tool.setuptools.package-data]
+"cybrlight.scene_compat" = ["README.md", "UPSTREAM.json", "DEPENDENCY_MANIFEST.json", "native/LICENSE", "native/LICENSES/*.txt", "native/include/cybr/*.hpp", "native/src/*.cpp", "native/tests/*.cpp"]

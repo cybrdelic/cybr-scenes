@@ -1,0 +1,44 @@
+{
+  "geometry_detail_origin_m": [
+    1388,
+    -489,
+    10
+  ],
+  "basin": {
+    "position_m": [
+      1388,
+      -489,
+      10
+    ],
+    "target_m": [
+      1347,
+      -444,
+      6.4
+    ],
+    "up": [
+      0,
+      0,
+      1
+    ],
+    "vertical_fov_degrees": 49
+  },
+  "lagoon-context": {
+    "position_m": [
+      1400,
+      -498,
+      11
+    ],
+    "target_m": [
+      1328,
+      -454,
+      6.8
+    ],
+    "up": [
+      0,
+      0,
+      1
+    ],
+    "vertical_fov_degrees": 55
+  },
+  "qualification": "Virtual authored viewpoints; neither pose is a surveyed or recovered photo camera. No geometry is moved by selecting a view."
+}

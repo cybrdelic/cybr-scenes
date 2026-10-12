@@ -1,0 +1,247 @@
+{
+  "checked_utc": "2026-10-12T05:36:03Z",
+  "purpose": "Fresh extracted public-input materials and geometry replay of the frozen source checkpoint",
+  "source_tree_sha256": "485d6147d8edf5133cb327b450285cee75b27fbdb427afc606a9e0a81bce26e5",
+  "light_dependency": {
+    "repository": "https://github.com/cybrdelic/cybr-light",
+    "required_module": "cybrlight.scene_compat",
+    "executed_source_hash": "3d18ea79f2a34a48b21d75aaf7515f123c6b752614a80c29eaec6431e0430a9f",
+    "commit": "ef2b14ec4e815db00509098cbdc48b2363d312b7",
+    "public_engine_replaced": false,
+    "purpose": "Explicit retained-runtime reproduction boundary; current main CYBR LIGHT remains unchanged.",
+    "merged_pull_request": "https://github.com/cybrdelic/cybr-light/pull/9"
+  },
+  "public_inputs": {
+    "downloaded_and_validated": 28,
+    "match_counts": {
+      "raw_sha256": 23,
+      "ordered_features_and_crs": 5
+    },
+    "private_library_dependency": false,
+    "live_service_limit": "ArcGIS URLs are mutable; all ordered features, attributes, coordinates and consumed CRS must remain equivalent."
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "source_contract": {
+      "module": "cybrlight.scene_compat",
+      "checked_files": 24,
+      "executed_source_hash": "3d18ea79f2a34a48b21d75aaf7515f123c6b752614a80c29eaec6431e0430a9f"
+    },
+    "package_versions": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "PIL": "12.3.0",
+      "numba": "0.65.1",
+      "llvmlite": "0.47.0",
+      "requests": "2.34.2",
+      "shapely": "2.2.0",
+      "pyproj": "3.8.0",
+      "rasterio": "1.5.2",
+      "trimesh": "5.1.1"
+    }
+  },
+  "resource_controls": {
+    "shared_landscape_flock": true,
+    "lock_wait_seconds": 1800,
+    "cpu_affinity": [
+      0,
+      1
+    ],
+    "omp_blas_numba_threads": 2,
+    "stage_deadline_seconds": 900,
+    "sampled_owned_process_rss_cap_mib": 4480,
+    "disk_reserve_gib": 1
+  },
+  "stages": {
+    "materials": {
+      "command": [
+        "python",
+        "replay.py",
+        "materials"
+      ],
+      "exit_code": 0,
+      "stop_reason": null,
+      "elapsed_seconds": 14.8,
+      "peak_sampled_aggregate_rss_mib": 368.41,
+      "cap_mib": 4480.0,
+      "min_free_disk_gib": 16.14,
+      "disk_reserve_gib": 1,
+      "sample_seconds": 0.25,
+      "passed": true,
+      "scope": "Owned process tree; sampled user-space RSS guard, not kernel hard cap"
+    },
+    "build": {
+      "command": [
+        "python",
+        "replay.py",
+        "build"
+      ],
+      "exit_code": 0,
+      "stop_reason": null,
+      "elapsed_seconds": 353.42,
+      "peak_sampled_aggregate_rss_mib": 999.7,
+      "cap_mib": 4480.0,
+      "min_free_disk_gib": 14.437,
+      "disk_reserve_gib": 1,
+      "sample_seconds": 0.25,
+      "passed": true,
+      "scope": "Owned process tree; sampled user-space RSS guard, not kernel hard cap"
+    },
+    "compare": {
+      "command": [
+        "python",
+        "../compare_replay.py"
+      ],
+      "exit_code": 0,
+      "stop_reason": null,
+      "elapsed_seconds": 3.51,
+      "peak_sampled_aggregate_rss_mib": 12.46,
+      "cap_mib": 4480.0,
+      "min_free_disk_gib": 14.236,
+      "disk_reserve_gib": 1,
+      "sample_seconds": 0.25,
+      "passed": true,
+      "scope": "Owned process tree; sampled user-space RSS guard, not kernel hard cap"
+    }
+  },
+  "binary_outputs": [
+    {
+      "path": "evidence/full-iv-materials/coastal_soil_color_native.pfm",
+      "bytes": 14546430,
+      "sha256": "087b2de4c31d376dd0a48513d1b0fbbbc4c0e3dbbf72668cdfe3b005a184d2a8",
+      "byte_identical_to_checkpoint": true
+    },
+    {
+      "path": "evidence/full-iv-materials/coastal_soil_height_metres.pfm",
+      "bytes": 14546430,
+      "sha256": "3142450eaecfc2e9a367b276af68a6d80fbe866a1aea99a7891225bf757c0fa3",
+      "byte_identical_to_checkpoint": true
+    },
+    {
+      "path": "evidence/full-iv-materials/coastal_soil_roughness.pfm",
+      "bytes": 14546430,
+      "sha256": "62d916d59158f3bf0d031d0cf838b7e542ab78d2252a7251257dc07d687921c9",
+      "byte_identical_to_checkpoint": true
+    },
+    {
+      "path": "evidence/full-iv-street-finishes/6570_tan_stucco_native.pfm",
+      "bytes": 3145744,
+      "sha256": "466a090e26260a8d5a9b388e466534ab838b4de8e06491a8f05198d8c01b6a17",
+      "byte_identical_to_checkpoint": true
+    },
+    {
+      "path": "evidence/full-iv-street-finishes/6574_cream_stucco_native.pfm",
+      "bytes": 3145744,
+      "sha256": "f33aff44c715d9a1c515f9e65a911e8b66fcee676c8def70e0acd5cb925c5369",
+      "byte_identical_to_checkpoint": true
+    },
+    {
+      "path": "evidence/full-iv-street-finishes/6574_panel_infill_native.pfm",
+      "bytes": 3145744,
+      "sha256": "bdc7818683f5f64912df40831a339fbb64169f34098d309ae2a5dc307cdfdc9f",
+      "byte_identical_to_checkpoint": true
+    },
+    {
+      "path": "evidence/full-iv-street-finishes/6584_gray_stucco_native.pfm",
+      "bytes": 3145744,
+      "sha256": "09c5aad99e0fc819ffeb6dcd8362adb39fcd06de07920f9997625f493e9e9af5",
+      "byte_identical_to_checkpoint": true
+    },
+    {
+      "path": "evidence/full-iv-street-finishes/lime_height_metres.pfm",
+      "bytes": 3145744,
+      "sha256": "5b52dc72e87422f3d1a6e508fdcfb5b562dc8b69c295cd6be4d4d5b2bb6ebe51",
+      "byte_identical_to_checkpoint": true
+    },
+    {
+      "path": "evidence/full-iv-street-finishes/lime_roughness.pfm",
+      "bytes": 3145744,
+      "sha256": "7eadd9f9c52713e31766f18df21a498c99ebdd15399f7a060363e7683104cd18",
+      "byte_identical_to_checkpoint": true
+    },
+    {
+      "path": "evidence/lagoon-restoration-v11b/coastal_diffuse_sky.pfm",
+      "bytes": 6291473,
+      "sha256": "27a50aa12c6df10e80341d227d325c0731928f79519c4d511ad6541516f833c3",
+      "byte_identical_to_checkpoint": true
+    },
+    {
+      "path": "evidence/lagoon-restoration-v11b/concrete_color.pfm",
+      "bytes": 3145744,
+      "sha256": "75e69a733f92e89319db01c7443e388f90fe60f8a5399f90d602192608a502c4",
+      "byte_identical_to_checkpoint": true
+    },
+    {
+      "path": "evidence/lagoon-restoration-v11b/concrete_height.pfm",
+      "bytes": 3145744,
+      "sha256": "2b93d0f5609f6bf936945f9169139bf4b585ff571ed940ef5350652ddade8262",
+      "byte_identical_to_checkpoint": true
+    },
+    {
+      "path": "evidence/lagoon-restoration-v11b/concrete_roughness.pfm",
+      "bytes": 3145744,
+      "sha256": "2e5a1a62e6790df3a64a9b95b9ae1d0b6673a133101927a86c8ea692dec0dd56",
+      "byte_identical_to_checkpoint": true
+    },
+    {
+      "path": "evidence/lagoon-restoration-v11b/ripple_metres.pfm",
+      "bytes": 3145744,
+      "sha256": "33fedd468d5242f553776c58697928965bd0fd5a3f94250b9a0e7bc93e7a411c",
+      "byte_identical_to_checkpoint": true
+    },
+    {
+      "path": "evidence/lagoon-restoration-v11b/tanwall.pfm",
+      "bytes": 3145744,
+      "sha256": "c806cbbfa32a44bf8415af9724045dc03c20056dafb0f8ade0050b3ad63cede1",
+      "byte_identical_to_checkpoint": true
+    },
+    {
+      "path": "evidence/lagoon-restoration-v11b/wall.pfm",
+      "bytes": 3145744,
+      "sha256": "d9e838dfe28235d6a4d076c3dc615720dc3b7d7246b349edc15fad9d5c163504",
+      "byte_identical_to_checkpoint": true
+    },
+    {
+      "path": "evidence/lagoon-restoration-v11b/ground.clm",
+      "bytes": 50226090,
+      "sha256": "bb86cc1fc2b9616bff1fc650ae9d5323096648f11a32a47d9548bad3b09c58b1",
+      "byte_identical_to_checkpoint": true
+    },
+    {
+      "path": "evidence/lagoon-restoration-v11b/architecture.clm",
+      "bytes": 60937649,
+      "sha256": "0f36eeca5a128013fdd8787f20db2bea1370d9b40d72c89ecb133a367f980312",
+      "byte_identical_to_checkpoint": true
+    },
+    {
+      "path": "evidence/lagoon-restoration-v11b/plants.clm",
+      "bytes": 1565174342,
+      "sha256": "e60dee98693c59d7e3d8add0572f64184ad50fe323eb52b7cbcad02f016eeb5b",
+      "byte_identical_to_checkpoint": true
+    },
+    {
+      "path": "evidence/lagoon-restoration-v11b/support.npz",
+      "bytes": 1673702,
+      "sha256": "065733afda2188703ae3dfb6927fa3c142b5935e52eafd00daf043a100956e9f",
+      "byte_identical_to_checkpoint": true
+    }
+  ],
+  "textual_outputs": [
+    {
+      "path": "evidence/lagoon-restoration-v11b/materials.cys",
+      "checkpoint_sha256": "c8f1e5c7b5ef29866b058d936b4a4a20303e4c6eff56797e6b97b6e20136beb1",
+      "fresh_sha256": "c8f1e5c7b5ef29866b058d936b4a4a20303e4c6eff56797e6b97b6e20136beb1",
+      "byte_identical": true,
+      "identical_after_output_path_normalization": true,
+      "normalized_diff": []
+    }
+  ],
+  "frozen_source_unchanged": true,
+  "validation_source_patches": [],
+  "exact_mismatches": [],
+  "passed": true,
+  "full_scene_render_repeated": false,
+  "render_reuse_basis": "Existing checkpoint already has native captures; byte-identical regenerated native geometry/material inputs and exact runtime source contract establish replay equivalence.",
+  "extra_contract_and_daylight_runs": "Not rerun; canceled before start at owner request because updated public-dependency CI covers them.",
+  "access_qualification": "This local extracted-source replay used the installed reviewed LIGHT package. The canonical repository is private. Anonymous CI is corrected separately by the exact public namespace dependency snapshot; this historical rebuild does not claim anonymous git access."
+}

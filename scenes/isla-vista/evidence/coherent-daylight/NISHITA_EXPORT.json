@@ -1,0 +1,41 @@
+{
+  "generator": "Blender 4.3.2 Cycles Nishita shader radiance",
+  "sun_direction": [
+    -0.4201100832646126,
+    -0.4701231884151617,
+    0.7762033919365223
+  ],
+  "sun_diameter_deg": 0.532,
+  "altitude_m": 10,
+  "air_density": 1.0,
+  "dust_density": 0.8,
+  "ozone_density": 1.0,
+  "sun_intensity": 1.0,
+  "solar_residual_irradiance_linear_rgb": [
+    149.167457991235,
+    122.79392351516807,
+    96.05221769903622
+  ],
+  "solar_probe_samples_per_pixel": 16,
+  "solar_probe_resolution": [
+    256,
+    256
+  ],
+  "solar_probe_fov_deg": 0.7,
+  "panorama_resolution": [
+    1024,
+    512
+  ],
+  "one_solar_source": true,
+  "sky_disc_enabled_in_export": false,
+  "color_space": "scene-linear Rec.709/sRGB primaries before view transform",
+  "normalization": "No source scaling applied at this export stage",
+  "direction_probe_sign": -1,
+  "source_url": "https://github.com/blender/blender/blob/v4.3.2/intern/cycles/kernel/svm/sky.h",
+  "limitations": [
+    "Authored coastal clear daylight settings, not measured weather/time.",
+    "Native renderer uses a uniform disk matched to model residual irradiance; solar limb darkening is not retained.",
+    "RGB export must be colorimetrically fitted to native LIGHT spectral controls; it is not an original spectral radiance export.",
+    "Panoramic source is directionally resampled to native Y-pole texture coordinates."
+  ]
+}

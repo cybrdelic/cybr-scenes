@@ -1,0 +1,58 @@
+{
+  "schema": "cybr-iv-scene-closure/1",
+  "source_lineage": "Original CYBR all-Isla-Vista v10, coordinated San Nicolas v11b revision2026-10-12",
+  "geographic_scope": "Complete mapped UCSB Lagoon, broad Isla Vista terrain/building context and bounded source-root vegetation. Current detail assembly is lagoon-facing, not a proof of every street.",
+  "extractions": [
+    {
+      "source_path": "work/build_iv_sabado_frontages.py",
+      "source_sha256": "044ab96d830b89522dfc57a912f6ff39084756eba4a948e5b330c633fc7b9f1e",
+      "definitions": [
+        "Buffer",
+        "Facade"
+      ],
+      "destination": "work/architecture_helpers.py",
+      "definition_ast_sha256": "83ca20def8086de86bcb03198e8086c843f30cad592282f2be7ba76636098ed7",
+      "policy": "Exact retained function/class bodies; imports narrowed to the executed closure."
+    },
+    {
+      "source_path": "work/cybr-iv-full/src/cybr_ucsb/ingest.py",
+      "source_sha256": "88868241560d2b5fc7ad5fd5444d3f51a54988028248bd17567ecd5717c38c34",
+      "definitions": [
+        "polygons",
+        "rings_geometry",
+        "arcgis_geometry",
+        "DEM",
+        "layer_rows"
+      ],
+      "destination": "work/cybr_ucsb/ingest.py",
+      "definition_ast_sha256": "dbd9d4f910ad93198a296cd3edd61a35cf6f62ec06bb1303be67fba9ec1f2cb8",
+      "policy": "Exact retained function/class bodies; imports narrowed to the executed closure."
+    },
+    {
+      "source_path": "work/cybr-iv-full/src/cybr_ucsb/geometry.py",
+      "source_sha256": "2eb213bd5f59938896cbe914b86826039639a58940a47efe6991c94fb6b00009",
+      "definitions": [
+        "stable_seed",
+        "triangulate_polygon"
+      ],
+      "destination": "work/cybr_ucsb/geometry.py",
+      "definition_ast_sha256": "9f552222524805ee2c74cc6e86923b4eb48ffda05c494009698bbd1d8070028c",
+      "policy": "Exact retained function/class bodies; imports narrowed to the executed closure."
+    },
+    {
+      "source_path": "whole-iv-vendor/cybr_terrain/materials.py",
+      "source_sha256": "4505b057988913668a5297cd224de6908592376ea735b10cacd85c3a37375177",
+      "definitions": [
+        "write_pfm"
+      ],
+      "destination": "work/scene_io.py",
+      "definition_ast_sha256": "3b636baba539852535861c005a44131e1ff29da16278e7d37aba48c9f9f7bb17",
+      "policy": "Exact retained function/class bodies; imports narrowed to the executed closure."
+    }
+  ],
+  "engine_dependency": "Installed cybrlight.scene_compat from separate CYBR LIGHT repository. No renderer implementation is copied in this scene.",
+  "material_dependency_commit": "12848c82f60bc58fa88640545868009b90298b32",
+  "private_library_dependency": false,
+  "no_reference_photo_pixels": true,
+  "no_image_generation": true
+}
