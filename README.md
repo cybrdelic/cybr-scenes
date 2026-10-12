@@ -1,8 +1,8 @@
 # CYBR Scenes
 
-**Procedural environments and native spectral rendering.**
+**Procedural environments and rendering studies.**
 
-Seven authored 3D scenes: vaulted architecture, woodland, sandstone, basalt coast, mineral pools, volcanic rock and a flooded quartz cavern. The repository includes the geometry builders, material recipes, native C++ renderers and finished images.
+Seven native-rendered 3D scenes: vaulted architecture, woodland, sandstone, basalt coast, mineral pools, volcanic rock and a flooded quartz cavern. The repository includes the geometry builders, material recipes, native C++ renderers and finished images.
 
 [![Quiet Observatory IV](scenes/observatory-iv/renders/Observatory_IV.png)](scenes/observatory-iv/renders/Observatory_IV.png)
 
@@ -18,6 +18,16 @@ Seven authored 3D scenes: vaulted architecture, woodland, sandstone, basalt coas
 [All six environment images](environments/gallery.html) · [Scene registry](environments/scenes.json) · [Environment source guide](environments/README.md)
 
 The displayed images are retained renders. New runs produce separate images and their own metadata; they do not replace these examples.
+
+## Victorville Road
+
+[![Original Victorville road and gravel-shoulder study](scenes/victorville-road/renders/victorville-road-cq.png)](docs/victorville-road-gallery.html)
+
+An additional original high-desert scene, rendered with **Blender 4.3.2 Cycles on CPU**. The retained CQ preview is 1000 × 667 at 32 samples per pixel, without denoising or image generation. Warm soil, finite gravel, connected shrubs and the original mountains; candidate 22° daylight. Work in progress, with 1024px context textures and documented culling/LOD limits.
+
+[Open the road gallery](docs/victorville-road-gallery.html) · [Original source and reproduction status](scenes/victorville-road/README.md) · [Render settings and hash](scenes/victorville-road/scene.json)
+
+The seven-scene native workflow below is unchanged. Victorville uses its separate Blender source workflow; this image is not a CYBR LIGHT render or an interactive port.
 
 ## Run it
 

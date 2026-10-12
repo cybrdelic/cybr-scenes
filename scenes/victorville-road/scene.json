@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "id": "victorville-road",
+  "title": "Victorville Road",
+  "revision": "CQ",
+  "status": "work-in-progress",
+  "description": "Original procedural high-desert road, gravel shoulder, connected shrubs and authored mountains.",
+  "renderer": {
+    "name": "Blender Cycles",
+    "version": "4.3.2",
+    "device": "CPU",
+    "samples_per_pixel": 32,
+    "seed": 1810,
+    "max_bounces": 8,
+    "denoised": false,
+    "image_generation": false
+  },
+  "render": {
+    "path": "renders/victorville-road-cq.png",
+    "width": 1000,
+    "height": 667,
+    "color_mode": "RGB",
+    "bits_per_channel": 16,
+    "sha256": "9c045c02f2f97952ba5410bcf8f3e7091bc55870bec6c1e110f5f97afb45c870",
+    "seconds": 71.28637392499968,
+    "display": {
+      "view_transform": "AgX",
+      "look": "AgX - Medium High Contrast",
+      "exposure": 0.0,
+      "gamma": 1.0
+    }
+  },
+  "scene": {
+    "objects": 3423,
+    "evaluated_triangles": null,
+    "source_revision": "CQ; connected CM crowns, CN palette, CO22 lighting, original AV mountains",
+    "adapter_pipeline_sha256": "067ceffd2795b5c059b8341dd179bdd11ddb53cfbaf669298c50ff4d97999168",
+    "camera_location": [
+      -5.5,
+      4.800000190734863,
+      0.6499999761581421
+    ],
+    "camera_rotation_euler": [
+      1.4390637874603271,
+      -4.8057891888220183e-08,
+      -0.5585992932319641
+    ],
+    "expanded_mesh_triangles_estimate": 74107211,
+    "mesh_instance_count": 129975,
+    "triangle_estimate_method": "Actual CQ assembly and original preview adaptations, stopped immediately before Cycles. Depsgraph meshes counted without realization or extra triangulation. Polygon n-2 count; non-mesh curve render tessellation excluded. Hidden-render objects excluded from summed instance triangle estimate."
+  },
+  "lighting": {
+    "model": "Nishita sky with solar disc",
+    "solar_elevation_degrees": 22,
+    "separate_sun_light": false,
+    "status": "Candidate lighting; elevation does not specify a local clock time or measured weather."
+  },
+  "limits": [
+    "1000x667 RGB16,32 raw samples",
+    "1024px context texture tier, not native4096 everywhere",
+    "View-dependent particle allocation and conservative culling; asphalt grid stride2",
+    "No denoising or image generation; accepted baseline material recipes retained",
+    "Unfinished regional-inspired original scene; no exact surveyed location claim",
+    "Far-ridge airlight is a surface approximation, not a full volumetric atmosphere.",
+    "No native CYBR LIGHT rendering or interactive port is included."
+  ],
+  "provenance": {
+    "geometry": "Original procedural project geometry; no downloaded meshes or scans.",
+    "materials": "Original procedural maps and material recipes; no photograph textures.",
+    "references": "reference-links.json contains observation sources only; no third-party reference images are distributed.",
+    "license": "Existing repository GPL-2.0-only notice is retained; external runtime dependencies retain their own licenses."
+  }
+}
