@@ -31,7 +31,7 @@ jobs:
     env:
       CYBR_PYTHON: python
       # Every bounded build stage in this job uses this same explicit lock.
-      CYBR_HEAVY_LOCK: ${{ runner.temp }}/cybr-heavy.lock
+      CYBR_HEAVY_LOCK: /tmp/cybr-heavy.lock
       OMP_NUM_THREADS: "2"
       OPENBLAS_NUM_THREADS: "2"
       MKL_NUM_THREADS: "2"
