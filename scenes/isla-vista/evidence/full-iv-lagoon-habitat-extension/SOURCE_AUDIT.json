@@ -1,0 +1,87 @@
+{
+  "source": "Full retained OSM feature rings, recovered before original tile clipping; no new polygon invention.",
+  "extension_bounds_m": [
+    1300.0,
+    -995.3125,
+    1795.0,
+    142.1875
+  ],
+  "features": [
+    {
+      "type": "Feature",
+      "id": "osm:way:446746847",
+      "properties": {
+        "class": "beach",
+        "source_properties": {
+          "lifeguard": "no",
+          "name": "Isla Vista Beach",
+          "natural": "beach",
+          "supervised": "no",
+          "surface": "sand",
+          "osm_version": 13,
+          "osm_timestamp": "2026-08-26T01:22:21Z"
+        },
+        "full_source_area_m2": 46689.65922947392,
+        "extension_area_m2": 7903.197782195795
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way:734920565",
+      "properties": {
+        "class": "scrub",
+        "source_properties": {
+          "natural": "scrub",
+          "osm_version": 7,
+          "osm_timestamp": "2021-05-25T04:52:31Z"
+        },
+        "full_source_area_m2": 18716.585996420126,
+        "extension_area_m2": 18283.05178940526
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way:734920566",
+      "properties": {
+        "class": "scrub",
+        "source_properties": {
+          "natural": "scrub",
+          "osm_version": 8,
+          "osm_timestamp": "2021-05-25T05:43:36Z"
+        },
+        "full_source_area_m2": 53703.919617753214,
+        "extension_area_m2": 22903.52251492108
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way:740497608",
+      "properties": {
+        "class": "scrub",
+        "source_properties": {
+          "natural": "scrub",
+          "osm_version": 4,
+          "osm_timestamp": "2020-07-24T22:31:01Z"
+        },
+        "full_source_area_m2": 7980.9930650125725,
+        "extension_area_m2": 5412.335538471599
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way:740497606",
+      "properties": {
+        "class": "woodland",
+        "source_properties": {
+          "leaf_type": "broadleaved",
+          "natural": "wood",
+          "osm_version": 4,
+          "osm_timestamp": "2026-10-05T02:11:54Z"
+        },
+        "full_source_area_m2": 1712.7252748458072,
+        "extension_area_m2": 293.27225688243067
+      }
+    }
+  ],
+  "redistribution_scope": "Only OSM-derived feature summary. Unconsumed UCSB path geometry omitted; consumer downloads campus GIS from public services."
+}

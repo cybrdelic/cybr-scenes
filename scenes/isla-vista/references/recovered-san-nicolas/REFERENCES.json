@@ -1,0 +1,27 @@
+{
+  "observation_reference": {
+    "url": "https://ccber.ucsb.edu/sites/default/files/images/2023-12/SN3_postrest.JPG",
+    "sha256": "b507646f84972c872684c6b9d5168570ab9bb1436ce08f81a3c99eb9f2076241",
+    "capture_date": "unknown; URL folder2023-12 is not capture-date evidence",
+    "use": "Morphology/material/community and composition reference only; never used as texture"
+  },
+  "primary_restoration_history": [
+    "https://ccber.ucsb.edu/restoration-area-campus-lagoon",
+    "https://ccber.ucsb.edu/sites/default/files/Cheadle_docs/Lagoon_Tour_2012.pdf",
+    "https://www.sustainability.ucsb.edu/sites/default/files/docs/plans-reports/UCSB-Water-Action-Plan-2013.pdf"
+  ],
+  "official_building_floor_count": [
+    "https://www.housing.ucsb.edu/housing-options/options-filter/san-nicolas",
+    "https://www.housing.ucsb.edu/housing-options/options-filter/san-miguel"
+  ],
+  "sky_model_basis": [
+    "https://www.radiance-online.org/learning/documentation/manual-pages/pdfs/genssky.pdf",
+    "https://www.radiance-online.org/community/workshops/2003-berkeley/presentations/Mardaljevic/rwr_ch6.pdf"
+  ],
+  "not_claimed": [
+    "Photograph-matched camera calibration",
+    "Surveyed restoration-basin outline/elevation",
+    "Measured current weather or vegetation",
+    "Downloaded/inspected NAIP image: only2022-05-13 service metadata was previously identified"
+  ]
+}

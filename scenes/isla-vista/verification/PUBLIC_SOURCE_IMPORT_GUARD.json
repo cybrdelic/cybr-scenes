@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python",
+    "verification/audit_source_imports.py"
+  ],
+  "exit_code": 0,
+  "stop_reason": null,
+  "elapsed_seconds": 4.52,
+  "peak_sampled_aggregate_rss_mib": 175.65,
+  "cap_mib": 4480.0,
+  "min_free_disk_gib": 16.353,
+  "disk_reserve_gib": 1,
+  "sample_seconds": 0.25,
+  "passed": true,
+  "scope": "Owned process tree; sampled user-space RSS guard, not kernel hard cap"
+}

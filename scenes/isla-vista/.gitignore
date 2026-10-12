@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.native-cache/
+PUBLIC_INPUT_VALIDATION.json
+data/*/*-[0-9][0-9][0-9].json
+original/cybr-material-finishes/source/
+original/cybr-material-concrete/*.py
+original/cybr-road-microbed/src/
+original/cybr-road-microbed/prototypes/
+evidence/stages/
+evidence/lagoon-restoration-v11b/
+evidence/full-iv-materials/
+evidence/full-iv-street-finishes/

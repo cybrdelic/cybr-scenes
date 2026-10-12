@@ -1,0 +1,23 @@
+{
+  "command": [
+    "python",
+    "work/replay_lagoon_repository.py",
+    "capture",
+    "--width",
+    "480",
+    "--spp",
+    "16",
+    "--view",
+    "lagoon-context"
+  ],
+  "exit_code": 0,
+  "stop_reason": null,
+  "elapsed_seconds": 175.1,
+  "peak_sampled_aggregate_rss_mib": 3504.05,
+  "cap_mib": 4480.0,
+  "min_free_disk_gib": 16.417,
+  "disk_reserve_gib": 1,
+  "sample_seconds": 0.25,
+  "passed": true,
+  "scope": "Owned process tree; sampled user-space RSS guard, not kernel hard cap"
+}

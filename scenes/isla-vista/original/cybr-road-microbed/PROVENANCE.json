@@ -1,0 +1,10 @@
+{
+  "source_archive": "CYBR_Victorville_R6_AV_Current_Reproducible_Source_v15",
+  "path_in_archive": "discrete_grains_r5/src/compacted_microbed.py",
+  "source_sha256": "355576685bd6ef8492d0e4f2e5f7ab3963c58179a1335ec78ce924eecf378ec7",
+  "reference_output_sha256": "7a09007d50e444c28231fd30cddda185d2f01146f3b1a47b014ebd25c0b415c4",
+  "status": "Original compacted microbed source is present unchanged at the pinned merged MATERIAL commit. Coastal pigment adaptation remains an explicitly authored scene estimate.",
+  "repository": "https://github.com/cybrdelic/cybr-material",
+  "commit": "12848c82f60bc58fa88640545868009b90298b32",
+  "repository_path": "material-workspace/shared/material-production/vendor/victorville-r5d-20261009/src/compacted_microbed.py"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "Corrected-light native checkpoint; broader photoreal visual work remains open",
+  "approved_facts": ["Two real native CYBR LIGHT CPU captures", "Source full lagoon area preserved", "Shared terrain support and metric UV checks passed", "Illuminant fixture agrees within 0.022 percent per channel", "Public consumed geographic inputs verified current", "Installed LIGHT namespaced runtime verified"],
+  "not_qualified": ["Photoreal appearance", "Photo-camera pose recovery", "Current surveyed plant inventory or basin dimensions", "Uniform realism across all IV streets", "Real-time performance", "Cloud-volume sky transport"],
+  "next_visual_targets": ["Connected fine understory on existing bank", "Ground-conforming organic litter and soil contact", "Less uniform shrub-spacing appearance", "More complete distant habitat silhouette", "Larger low-noise coordinated frame"],
+  "display": "Retained centre-hit guided atrous filtering, ACES fitted and sRGB at exposure 1.05. No per-image color grading or reference-image projection."
+}

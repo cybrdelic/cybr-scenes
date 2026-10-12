@@ -1,0 +1,9 @@
+{
+  "repository": "https://github.com/cybrdelic/cybr-light",
+  "required_module": "cybrlight.scene_compat",
+  "executed_source_hash": "3d18ea79f2a34a48b21d75aaf7515f123c6b752614a80c29eaec6431e0430a9f",
+  "commit": "ef2b14ec4e815db00509098cbdc48b2363d312b7",
+  "public_engine_replaced": false,
+  "purpose": "Explicit retained-runtime reproduction boundary; current main CYBR LIGHT remains unchanged.",
+  "merged_pull_request": "https://github.com/cybrdelic/cybr-light/pull/9"
+}

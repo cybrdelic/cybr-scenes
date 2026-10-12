@@ -1,0 +1,68 @@
+{
+  "renderer": "CYBR LIGHT 0.2",
+  "backend": "C++17 OpenMP CPU",
+  "image_generation_used": false,
+  "denoising_used": true,
+  "clamping_used": false,
+  "width": 480,
+  "height": 336,
+  "packets_per_pixel": 16,
+  "resumed_from_samples": 0,
+  "wavelengths_per_packet": 6,
+  "spectral_paths_per_pixel": 96,
+  "wavelength_range_nm": [
+    360,
+    830
+  ],
+  "observer": "tabulated observer",
+  "integrator": "volpath",
+  "filter": "tent",
+  "sampler": "random-shift Halton, first 64 dimensions",
+  "max_depth": 8,
+  "rr_depth": 5,
+  "seed": 20261012,
+  "primitives": 16606771,
+  "meshlets": 775466,
+  "indexed_vertices": 33876402,
+  "primitive_storage_bytes": 929979176,
+  "meshlet_vertex_bytes": 1490561688,
+  "bvh_nodes": 10383913,
+  "volumes": 0,
+  "polarized": false,
+  "forward_ad": false,
+  "invalid_path_samples": 0,
+  "photons_emitted": 0,
+  "photons_stored": 0,
+  "render_seconds": 58.613712961,
+  "mean_linear_luminance": 0.238784783969,
+  "max_linear_channel": 1.00456941372,
+  "denoiser": "Three centre-hit textured-albedo/shading-normal/object/variance guided atrous display passes; not footprint-integrated guides.",
+  "engine_source_sha256": "3d18ea79f2a34a48b21d75aaf7515f123c6b752614a80c29eaec6431e0430a9f",
+  "mesh_input": "CLM1 indexed meshlets: 64 vertices / 124 triangles maximum",
+  "raw_film_preserved": true,
+  "scope": "Geographic full lagoon and visible/reflected context of Isla Vista, source v10 reconstruction with original CYBR materials and procedural components.",
+  "source_image": "https://ccber.ucsb.edu/sites/default/files/images/2023-12/SN3_postrest.JPG",
+  "camera": "Virtual lower restoration-bank overlook chosen from mapped footprint projection; not a recovered source-photo pose or surveyed viewpoint.",
+  "new_estimates": [
+    "Small freshwater basin position/outline/level and microtopography",
+    "Photo-informed architectural sections/openings",
+    "Mixed species growth/flowering state",
+    "Diffuse coastal sky mixture"
+  ],
+  "rendering": "Actual native CYBR LIGHT CPU transport. No image-generation or photograph textures.",
+  "display": "Retained centre-hit guided atrous, ACES fitted curve and sRGB, exposure1.05.",
+  "files": {
+    "lagoon-context_480_16.png": {
+      "bytes": 290531,
+      "sha256": "19068e1cfbbc8c3ce5874920f22516d62ab094097d1667c038d02971ed858b3c"
+    },
+    "lagoon-context_480_16_unfiltered.png": {
+      "bytes": 374169,
+      "sha256": "0b83fc27053d3957ee5485345f1efce8a663204213311be31a13e3e47a5fb92f"
+    },
+    "lagoon-context_480_16.pfm": {
+      "bytes": 1935376,
+      "sha256": "8a3b386fcad555bda23e02180e4e644ee21a66b2d72ef5ade8bf50f109f269aa"
+    }
+  }
+}

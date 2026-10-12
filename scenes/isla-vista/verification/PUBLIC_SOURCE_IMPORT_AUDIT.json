@@ -1,0 +1,41 @@
+{
+  "runtime_contract": {
+    "module": "cybrlight.scene_compat",
+    "checked_files": 24,
+    "executed_source_hash": "3d18ea79f2a34a48b21d75aaf7515f123c6b752614a80c29eaec6431e0430a9f"
+  },
+  "source_features": 5291,
+  "source_height_samples": [
+    4.460010586962938,
+    13.703123092651367
+  ],
+  "module_origins": {
+    "architecture_helpers": "work/architecture_helpers.py",
+    "cybr_ucsb.ingest": "work/cybr_ucsb/ingest.py",
+    "cybr_ucsb.geometry": "work/cybr_ucsb/geometry.py",
+    "cybrlight.scene_compat.runtime": "installed dependency"
+  },
+  "legacy_module_imported": false,
+  "material_functions": {
+    "plaster": {
+      "function_module": "finish_structures",
+      "channels": 6,
+      "finite": true,
+      "height_range": [
+        0.454670786857605,
+        0.6230496764183044
+      ]
+    },
+    "linen": {
+      "function_module": "generate_materials",
+      "channels": 7,
+      "finite": true,
+      "height_range": [
+        0.16000000000182718,
+        0.569528634903918
+      ]
+    }
+  },
+  "retained_input_count": 28,
+  "passed": true
+}

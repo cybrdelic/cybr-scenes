@@ -1,0 +1,18 @@
+{
+  "record_type": "Official dataset metadata summary and local-byte verification",
+  "checked_utc": "2026-10-12T05:22:29.650009+00:00",
+  "source_page": "https://cie.co.at/datatable/cie-1931-colour-matching-functions-2-degree-observer",
+  "metadata_url": "https://files.cie.co.at/Publications-datasets/CIE_xyz_1931_2deg.csv_metadata.json",
+  "dataset_doi": "10.25039/CIE.DS.xvudnb9b",
+  "creator": "International Commission on Illumination (CIE)",
+  "publication_year": 2019,
+  "dataset": "CIE 1931 standard observer colour-matching functions, 2 degrees, 360\u2013830 nm in 1 nm steps",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "local_path": "work/cybr-light/data/CIE_xyz_1931_2deg.csv",
+  "official_md5": "17cca777db64b17170f06f67ce9d3ab7",
+  "official_sha256": "fa663e3535a7e0763a745993a1f0a192eb0275ac46ad2d1befd7626841e713c1",
+  "local_md5": "17cca777db64b17170f06f67ce9d3ab7",
+  "local_sha256": "fa663e3535a7e0763a745993a1f0a192eb0275ac46ad2d1befd7626841e713c1",
+  "unchanged": true
+}

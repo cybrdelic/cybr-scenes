@@ -1,0 +1,103 @@
+{
+  "repository": "https://github.com/cybrdelic/cybr-material",
+  "commit": "12848c82f60bc58fa88640545868009b90298b32",
+  "source_prefix": "material-workspace/shared/material-production/vendor/original/source",
+  "files": [
+    {
+      "local_path": "source/generate_materials.py",
+      "repository_path": "material-workspace/shared/material-production/vendor/original/source/generate_materials.py",
+      "git_blob_sha": "12406a4d2359b826c3ee3fcf412caabb0441e489",
+      "url": "https://github.com/cybrdelic/cybr-material/blob/12848c82f60bc58fa88640545868009b90298b32/material-workspace/shared/material-production/vendor/original/source/generate_materials.py",
+      "bytes": 23467,
+      "sha256": "85986fdde6a92c8026dd1e556d7a4a877a74fbff0be87782b5e2e4a12210cfa3",
+      "git_blob_verified": true
+    },
+    {
+      "local_path": "source/finish_structures.py",
+      "repository_path": "material-workspace/shared/material-production/vendor/original/source/finish_structures.py",
+      "git_blob_sha": "370153bb1c72b4f929cacb986ab720665e495adb",
+      "url": "https://github.com/cybrdelic/cybr-material/blob/12848c82f60bc58fa88640545868009b90298b32/material-workspace/shared/material-production/vendor/original/source/finish_structures.py",
+      "bytes": 4574,
+      "sha256": "3b613dabf120f936e01ab8d2c25658241b37c16a064d176a84077f80190455df",
+      "git_blob_verified": true
+    },
+    {
+      "local_path": "source/physical_features.py",
+      "repository_path": "material-workspace/shared/material-production/vendor/original/source/physical_features.py",
+      "git_blob_sha": "f7a7220836f95077b8502d070a17a789061bd46c",
+      "url": "https://github.com/cybrdelic/cybr-material/blob/12848c82f60bc58fa88640545868009b90298b32/material-workspace/shared/material-production/vendor/original/source/physical_features.py",
+      "bytes": 5736,
+      "sha256": "36cde6435a8e42e329b8e93438a4c4cdabe66382345b7a6a6e886541f25c9a23",
+      "git_blob_verified": true
+    },
+    {
+      "local_path": "source/surface_math.py",
+      "repository_path": "material-workspace/shared/material-production/vendor/original/source/surface_math.py",
+      "git_blob_sha": "ca14c92740b95d1ea33d1b6da4dd4d07a37ce75e",
+      "url": "https://github.com/cybrdelic/cybr-material/blob/12848c82f60bc58fa88640545868009b90298b32/material-workspace/shared/material-production/vendor/original/source/surface_math.py",
+      "bytes": 3877,
+      "sha256": "831000ff69ffe6c32681859500750f7204cafab424ba4c6beada1ddb17a9492c",
+      "git_blob_verified": true
+    },
+    {
+      "local_path": "source/wood_profiles.json",
+      "repository_path": "material-workspace/shared/material-production/vendor/original/source/wood_profiles.json",
+      "git_blob_sha": "8362cb5fc3f00b3d3e2f7d0a4c96c69f45c44746",
+      "url": "https://github.com/cybrdelic/cybr-material/blob/12848c82f60bc58fa88640545868009b90298b32/material-workspace/shared/material-production/vendor/original/source/wood_profiles.json",
+      "bytes": 1677,
+      "sha256": "e3d3c941fdfdad0e5a30322fe38d6de3e245c8b3b1eb7630b2a2ad815faa95bd",
+      "git_blob_verified": true
+    },
+    {
+      "local_path": "source/wood_anatomy.py",
+      "repository_path": "material-workspace/shared/material-production/vendor/original/source/wood_anatomy.py",
+      "git_blob_sha": "533f60f216759a80e462b61886239946e05fdfd3",
+      "url": "https://github.com/cybrdelic/cybr-material/blob/12848c82f60bc58fa88640545868009b90298b32/material-workspace/shared/material-production/vendor/original/source/wood_anatomy.py",
+      "bytes": 9117,
+      "sha256": "30c69e999b2cbf8e11ce1bcdbf0e6efbb17443e710062ecaccacc2626e15a961",
+      "git_blob_verified": true
+    }
+  ],
+  "registry": {
+    "path": "material-workspace/shared/material-production/registry.json",
+    "git_blob_sha": "5a5832fc0ac35da1bb3b10d76760f620540d3616"
+  },
+  "qualification": {
+    "source_reuse": "Exact original procedural authoring source at the pinned merged commit; no recipe changes.",
+    "catalogue_status": "Retained appearance; not physically qualified; procedural rebuild not qualified; actual selected scene dependency inspection required for selected appearance parity.",
+    "scene_adapter": "A bounded native field adaptation does not reproduce the selected Blender geometry, bindings, mapped native4096 inputs or optical graph.",
+    "plaster_selection": "Registry selects a later 09_lime_process_v1_matched specimen. The original troweled-skim source recovered here is not asserted to be that selected appearance.",
+    "linen_selection": "Registry retains 10_natural_linen_selected_native4k_slab. Source reuse is not a cotton species claim, a cloth simulation or exact selected-slab parity."
+  },
+  "layout_contract": "Preserve source/ subdirectory: generate_materials.py computes ROOT=Path(__file__).resolve().parents[1] and reads ROOT/source/wood_profiles.json.",
+  "callable_contract": {
+    "plaster": "generate_materials.plaster(x,y,n), which is finish_structures.plaster imported after the earlier definition; GENERATORS[8] points to that final implementation.",
+    "linen": "generate_materials.linen(x,y,n); GENERATORS[9].",
+    "inputs": "x=((np.arange(n,dtype=np.float32)+.5)/n)[None,:]; y=((np.arange(n,dtype=np.float32)+.5)/n)[:,None]",
+    "returns": {
+      "plaster": [
+        "BaseColor_sRGB",
+        "Height_encoded",
+        "Roughness",
+        "AO",
+        "Metallic",
+        "WearMask"
+      ],
+      "linen": [
+        "BaseColor_sRGB",
+        "Height_encoded",
+        "Roughness",
+        "AO",
+        "Metallic",
+        "WearMask",
+        "Opacity"
+      ]
+    },
+    "height": "Original export clamps h, applies gaussian_filter(h,.35,mode='wrap'); physical height=(h-.5)*spec['height_scale_m'].",
+    "color": "sRGB reflectance authoring; decode once before fitted native spectral controls. AO is separate.",
+    "opacity": "Linen includes inter-yarn openings; retain Opacity as coverage, not painted dark color."
+  },
+  "validation_file": "SMOKE_VALIDATION.json",
+  "spec_file": "MATERIAL_SPECS.json",
+  "import_setup": "Prepend this directory/source to sys.path in a clean Python process. Requires installed numpy, scipy and Pillow; preserve the source/ layout."
+}

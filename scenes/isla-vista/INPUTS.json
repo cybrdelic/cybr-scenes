@@ -1,0 +1,292 @@
+{
+  "schema": "cybr-iv-public-inputs/1",
+  "policy": "Raw SHA-256 exact match preferred. JSON fallback verifies the entire ordered features, every attribute, every coordinate and consumed wkid. Unconsumed ArcGIS fields/type schema and JSON formatting may differ. Any source-feature change fails. Live queries are not durable dated archives.",
+  "files": [
+    {
+      "path": "data/full-iv-20261011/buildings-000.json",
+      "url": "https://services1.arcgis.com/4TXrdeWh0RyCqPgB/ArcGIS/rest/services/Buildings2026/FeatureServer/0/query?where=1%3D1&outFields=%2A&outSR=4326&f=json&returnGeometry=true&orderByFields=OBJECTID&geometry=-119.87592940999984%2C34.40095941399245%2C-119.84687451802466%2C34.42503921872043&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&resultOffset=0&resultRecordCount=1000",
+      "bytes": 1057212,
+      "sha256": "5d83ee0fefbff966ad9a0fbf13e55e7cd7341c2bf974b2e6f6ca185aba5d66e9",
+      "retrieved_utc": "2026-10-11T07:42:45.929771+00:00",
+      "attribution": "UC Santa Barbara",
+      "license": "Unspecified in source service and ArcGIS item metadata; downloaded directly by the consumer, not redistributed here.",
+      "kind": "geographic",
+      "consumed_features_sha256": "fa29a33549564462dee59493c233692324c529e61868ce4cc0d35d267bad5707"
+    },
+    {
+      "path": "data/full-iv-20261011/bike-paths-000.json",
+      "url": "https://services1.arcgis.com/4TXrdeWh0RyCqPgB/ArcGIS/rest/services/ucsb_icm.gdb/FeatureServer/5/query?where=1%3D1&outFields=%2A&outSR=4326&f=json&returnGeometry=true&orderByFields=OBJECTID&geometry=-119.87592940999984%2C34.40095941399245%2C-119.84687451802466%2C34.42503921872043&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&resultOffset=0&resultRecordCount=1000",
+      "bytes": 147005,
+      "sha256": "3b1c4ccb7af65d872c5c5645dcbbc1f05986ce5ebc0a33bfcddda713d66bd824",
+      "retrieved_utc": "2026-10-11T07:42:47.307485+00:00",
+      "attribution": "UC Santa Barbara",
+      "license": "Unspecified in source service and ArcGIS item metadata; downloaded directly by the consumer, not redistributed here.",
+      "kind": "geographic",
+      "consumed_features_sha256": "e5cf404056317b229fb81f16aa3903e9aeb3ebf99b319997a3921507cec45539"
+    },
+    {
+      "path": "data/full-iv-20261011/trees-000.json",
+      "url": "https://services1.arcgis.com/4TXrdeWh0RyCqPgB/ArcGIS/rest/services/ucsb_icm.gdb/FeatureServer/14/query?where=1%3D1&outFields=%2A&outSR=4326&f=json&returnGeometry=true&orderByFields=OBJECTID&geometry=-119.87592940999984%2C34.40095941399245%2C-119.84687451802466%2C34.42503921872043&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&resultOffset=0&resultRecordCount=1000",
+      "bytes": 979641,
+      "sha256": "1411ef89b330d35724235be760044672fe2d7880f30a905392dfa3ec501deb0e",
+      "retrieved_utc": "2026-10-11T07:42:49.210501+00:00",
+      "attribution": "UC Santa Barbara",
+      "license": "Unspecified in source service and ArcGIS item metadata; downloaded directly by the consumer, not redistributed here.",
+      "kind": "geographic",
+      "consumed_features_sha256": "5e53cb5cab0e2c2746b3124b3c3f03eae128899da39612159d353bbb78bd7a92"
+    },
+    {
+      "path": "data/full-iv-20261011/trees-001.json",
+      "url": "https://services1.arcgis.com/4TXrdeWh0RyCqPgB/ArcGIS/rest/services/ucsb_icm.gdb/FeatureServer/14/query?where=1%3D1&outFields=%2A&outSR=4326&f=json&returnGeometry=true&orderByFields=OBJECTID&geometry=-119.87592940999984%2C34.40095941399245%2C-119.84687451802466%2C34.42503921872043&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&resultOffset=1000&resultRecordCount=1000",
+      "bytes": 988611,
+      "sha256": "b3b7cdd3ba106158b58d3fdbfee5d462db315436c6549bb171f3fff838fb80ac",
+      "retrieved_utc": "2026-10-11T07:42:49.817492+00:00",
+      "attribution": "UC Santa Barbara",
+      "license": "Unspecified in source service and ArcGIS item metadata; downloaded directly by the consumer, not redistributed here.",
+      "kind": "geographic",
+      "consumed_features_sha256": "25f5e0b62a715ec39dff2f3f24fadeb8415137c6b5dd9ffc263f7e2d8d3cea74"
+    },
+    {
+      "path": "data/full-iv-20261011/trees-002.json",
+      "url": "https://services1.arcgis.com/4TXrdeWh0RyCqPgB/ArcGIS/rest/services/ucsb_icm.gdb/FeatureServer/14/query?where=1%3D1&outFields=%2A&outSR=4326&f=json&returnGeometry=true&orderByFields=OBJECTID&geometry=-119.87592940999984%2C34.40095941399245%2C-119.84687451802466%2C34.42503921872043&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&resultOffset=2000&resultRecordCount=1000",
+      "bytes": 517109,
+      "sha256": "7507c87ce583beefcf389642630cbf8e3f64b7f6bf35bf688cbe766f5f37c342",
+      "retrieved_utc": "2026-10-11T07:42:50.209117+00:00",
+      "attribution": "UC Santa Barbara",
+      "license": "Unspecified in source service and ArcGIS item metadata; downloaded directly by the consumer, not redistributed here.",
+      "kind": "geographic",
+      "consumed_features_sha256": "be313dccb1d4b51df6c78af772e29c5074865f3e59c11707b2d9ae7b39fb97b9"
+    },
+    {
+      "path": "data/full-iv-20261011/footpaths-000.json",
+      "url": "https://services1.arcgis.com/4TXrdeWh0RyCqPgB/ArcGIS/rest/services/ucsb_icm.gdb/FeatureServer/18/query?where=1%3D1&outFields=%2A&outSR=4326&f=json&returnGeometry=true&orderByFields=OBJECTID&geometry=-119.87592940999984%2C34.40095941399245%2C-119.84687451802466%2C34.42503921872043&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&resultOffset=0&resultRecordCount=1000",
+      "bytes": 432825,
+      "sha256": "9ddc9ef5682c3f2dc3930d236f4ba9d59c66ffaec587c4a283d1b4963f542c8a",
+      "retrieved_utc": "2026-10-11T07:42:51.044323+00:00",
+      "attribution": "UC Santa Barbara",
+      "license": "Unspecified in source service and ArcGIS item metadata; downloaded directly by the consumer, not redistributed here.",
+      "kind": "geographic",
+      "consumed_features_sha256": "aabf787c57b73c5dec68cefcc61f6397886fc5455b9fcd70927f4476bb7c9272"
+    },
+    {
+      "path": "data/full-iv-20261011/driving-surfaces-000.json",
+      "url": "https://services1.arcgis.com/4TXrdeWh0RyCqPgB/ArcGIS/rest/services/ucsb_icm.gdb/FeatureServer/21/query?where=1%3D1&outFields=%2A&outSR=4326&f=json&returnGeometry=true&orderByFields=OBJECTID&geometry=-119.87592940999984%2C34.40095941399245%2C-119.84687451802466%2C34.42503921872043&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&resultOffset=0&resultRecordCount=1000",
+      "bytes": 431312,
+      "sha256": "26c347f293c1b035a65fc3bb67f37dfe5cf87947c863b1f59deb2a00e8912e83",
+      "retrieved_utc": "2026-10-11T07:42:52.521762+00:00",
+      "attribution": "UC Santa Barbara",
+      "license": "Unspecified in source service and ArcGIS item metadata; downloaded directly by the consumer, not redistributed here.",
+      "kind": "geographic",
+      "consumed_features_sha256": "4f687330772ecff79f309cb9a5508c8b4ba89f7514cdee883e222fbe0df385d2"
+    },
+    {
+      "path": "data/full-iv-20261011/lawns-000.json",
+      "url": "https://services1.arcgis.com/4TXrdeWh0RyCqPgB/ArcGIS/rest/services/ucsb_icm.gdb/FeatureServer/22/query?where=1%3D1&outFields=%2A&outSR=4326&f=json&returnGeometry=true&orderByFields=OBJECTID_1&geometry=-119.87592940999984%2C34.40095941399245%2C-119.84687451802466%2C34.42503921872043&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&resultOffset=0&resultRecordCount=1000",
+      "bytes": 269115,
+      "sha256": "d6fdfd68bf8242da0fdfeac8b2d0328eb810f3a59dde50c137d8a43be8aa866c",
+      "retrieved_utc": "2026-10-11T07:42:53.374592+00:00",
+      "attribution": "UC Santa Barbara",
+      "license": "Unspecified in source service and ArcGIS item metadata; downloaded directly by the consumer, not redistributed here.",
+      "kind": "geographic",
+      "consumed_features_sha256": "0fea15cd17800a80d49037a3bec2f6cebd6347633746fcdd01cea9cf4baad8be"
+    },
+    {
+      "path": "data/full-iv-20261011/water-000.json",
+      "url": "https://services1.arcgis.com/4TXrdeWh0RyCqPgB/ArcGIS/rest/services/ucsb_icm.gdb/FeatureServer/30/query?where=1%3D1&outFields=%2A&outSR=4326&f=json&returnGeometry=true&orderByFields=OBJECTID&geometry=-119.87592940999984%2C34.40095941399245%2C-119.84687451802466%2C34.42503921872043&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&resultOffset=0&resultRecordCount=1000",
+      "bytes": 158458,
+      "sha256": "0baaf7e7c08e8aaf2242a5de8ccd08fb07b68814cf054c2bb7c59365f1bccb17",
+      "retrieved_utc": "2026-10-11T07:42:55.118644+00:00",
+      "attribution": "UC Santa Barbara",
+      "license": "Unspecified in source service and ArcGIS item metadata; downloaded directly by the consumer, not redistributed here.",
+      "kind": "geographic",
+      "consumed_features_sha256": "e8243e9a8097055c55a1bc1f186572d033edae22d5169bd3be273fde871304e0"
+    },
+    {
+      "path": "data/full-iv-20261011/dem.tif",
+      "url": "https://elevation.nationalmap.gov/arcgis/rest/services/3DEPElevation/ImageServer/exportImage?f=image&bbox=235701.80699345336%2C3810363.448398269%2C238301.80699345336%2C3812963.448398269&bboxSR=32611&imageSR=32611&size=1025%2C1025&format=tiff&pixelType=F32&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&interpolation=RSP_BilinearInterpolation",
+      "bytes": 4785897,
+      "sha256": "cabd7ebbc4b59032c51cef320fc90fe7012534ca88a922151f622ccd694e92aa",
+      "retrieved_utc": "2026-10-11T07:44:12.707892+00:00",
+      "attribution": "USGS 3DEP",
+      "license": "US public domain",
+      "kind": "geographic"
+    },
+    {
+      "path": "data/lagoon-extension-20261011/dem.tif",
+      "url": "https://elevation.nationalmap.gov/arcgis/rest/services/3DEPElevation/ImageServer/exportImage?f=image&bbox=237799.56309101434%2C3810662.7654714393%2C238804.05089589237%2C3811814.375227537&bboxSR=32611&imageSR=32611&size=396%2C454&format=tiff&pixelType=F32&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&interpolation=RSP_BilinearInterpolation",
+      "bytes": 1049825,
+      "sha256": "7c3a100e193867e83ff57f14847ceda2b313cea8af84b126876f64cd11f3ea78",
+      "retrieved_utc": "2026-10-11T16:35:26.437255+00:00",
+      "attribution": "USGS 3DEP",
+      "license": "US public domain",
+      "kind": "geographic"
+    },
+    {
+      "path": "data/lagoon-extension-20261011/buildings-000.json",
+      "url": "https://services1.arcgis.com/4TXrdeWh0RyCqPgB/ArcGIS/rest/services/Buildings2026/FeatureServer/0/query?where=1%3D1&outFields=%2A&outSR=4326&f=json&returnGeometry=true&orderByFields=OBJECTID&geometry=-119.85242376326943%2C34.40418940680547%2C-119.84185908392834%2C34.41481640635762&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&resultOffset=0&resultRecordCount=2000",
+      "bytes": 307740,
+      "sha256": "9ca35e6915ffb29d9e31b662b3b095a8359d4c7a7dcc57cb0e9bb6f37d065dfe",
+      "retrieved_utc": "2026-10-11T16:35:30.355648+00:00",
+      "attribution": "UC Santa Barbara",
+      "license": "Unspecified in source service and ArcGIS item metadata; downloaded directly by the consumer, not redistributed here.",
+      "kind": "geographic",
+      "consumed_features_sha256": "a96ac2bb5294c75427b39d7a0c8f5ff73dbcc32db25a907ee8f6718f458f3fcf"
+    },
+    {
+      "path": "data/lagoon-extension-20261011/footpaths-000.json",
+      "url": "https://services1.arcgis.com/4TXrdeWh0RyCqPgB/ArcGIS/rest/services/ucsb_icm.gdb/FeatureServer/18/query?where=1%3D1&outFields=%2A&outSR=4326&f=json&returnGeometry=true&orderByFields=OBJECTID&geometry=-119.85242376326943%2C34.40418940680547%2C-119.84185908392834%2C34.41481640635762&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&resultOffset=0&resultRecordCount=2000",
+      "bytes": 431408,
+      "sha256": "178e3a671b37e802ddf2e707eba7c1492973aebc396dc5d5713d045c5dd20935",
+      "retrieved_utc": "2026-10-11T16:35:31.600432+00:00",
+      "attribution": "UC Santa Barbara",
+      "license": "Unspecified in source service and ArcGIS item metadata; downloaded directly by the consumer, not redistributed here.",
+      "kind": "geographic",
+      "consumed_features_sha256": "d790b73ba0493e07c7179d0c461b6fac5f064dbdcfefc6d4034d0cf02b50e2c1"
+    },
+    {
+      "path": "data/lagoon-extension-20261011/bike-paths-000.json",
+      "url": "https://services1.arcgis.com/4TXrdeWh0RyCqPgB/ArcGIS/rest/services/ucsb_icm.gdb/FeatureServer/5/query?where=1%3D1&outFields=%2A&outSR=4326&f=json&returnGeometry=true&orderByFields=OBJECTID&geometry=-119.85242376326943%2C34.40418940680547%2C-119.84185908392834%2C34.41481640635762&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&resultOffset=0&resultRecordCount=2000",
+      "bytes": 105043,
+      "sha256": "83e4f57dc3de16f6097cbcb1dedd63480208bbcc7b701540831f546e6a261fbe",
+      "retrieved_utc": "2026-10-11T16:35:32.017621+00:00",
+      "attribution": "UC Santa Barbara",
+      "license": "Unspecified in source service and ArcGIS item metadata; downloaded directly by the consumer, not redistributed here.",
+      "kind": "geographic",
+      "consumed_features_sha256": "852006c537cbd7e8662c1d9a1dc8f6d54814a77b6dedbd9572ed9900fc7ef244"
+    },
+    {
+      "path": "data/lagoon-extension-20261011/driving-surfaces-000.json",
+      "url": "https://services1.arcgis.com/4TXrdeWh0RyCqPgB/ArcGIS/rest/services/ucsb_icm.gdb/FeatureServer/21/query?where=1%3D1&outFields=%2A&outSR=4326&f=json&returnGeometry=true&orderByFields=OBJECTID&geometry=-119.85242376326943%2C34.40418940680547%2C-119.84185908392834%2C34.41481640635762&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&resultOffset=0&resultRecordCount=2000",
+      "bytes": 428480,
+      "sha256": "37d47acd8c0be0236b404f991a78d7cc6c36654e181f1fa99ad28eb299ebdd8e",
+      "retrieved_utc": "2026-10-11T16:35:32.816916+00:00",
+      "attribution": "UC Santa Barbara",
+      "license": "Unspecified in source service and ArcGIS item metadata; downloaded directly by the consumer, not redistributed here.",
+      "kind": "geographic",
+      "consumed_features_sha256": "c4bf580d7ce2790fa31ccce4a58940f7ee6abcd24629970a007e6bb6830389c8"
+    },
+    {
+      "path": "data/lagoon-extension-20261011/lawns-000.json",
+      "url": "https://services1.arcgis.com/4TXrdeWh0RyCqPgB/ArcGIS/rest/services/ucsb_icm.gdb/FeatureServer/22/query?where=1%3D1&outFields=%2A&outSR=4326&f=json&returnGeometry=true&orderByFields=OBJECTID_1&geometry=-119.85242376326943%2C34.40418940680547%2C-119.84185908392834%2C34.41481640635762&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&resultOffset=0&resultRecordCount=2000",
+      "bytes": 379465,
+      "sha256": "2ec0fea82f460e611d4610f021cd1b44e2571d98df0f95d0f57e4f27c46fc863",
+      "retrieved_utc": "2026-10-11T16:35:33.859441+00:00",
+      "attribution": "UC Santa Barbara",
+      "license": "Unspecified in source service and ArcGIS item metadata; downloaded directly by the consumer, not redistributed here.",
+      "kind": "geographic",
+      "consumed_features_sha256": "267cd96204b1b839ddcbd41ae3aa7160cff5fbe12ade62aeb81ead629b9f93f3"
+    },
+    {
+      "path": "data/lagoon-extension-20261011/trees-000.json",
+      "url": "https://services1.arcgis.com/4TXrdeWh0RyCqPgB/ArcGIS/rest/services/ucsb_icm.gdb/FeatureServer/14/query?where=1%3D1&outFields=%2A&outSR=4326&f=json&returnGeometry=true&orderByFields=OBJECTID&geometry=-119.85242376326943%2C34.40418940680547%2C-119.84185908392834%2C34.41481640635762&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&resultOffset=0&resultRecordCount=2000",
+      "bytes": 1933489,
+      "sha256": "8a86d1c71a4eccf676065c6c5dae84b580206584ae32624676778e0ea79cfb8a",
+      "retrieved_utc": "2026-10-11T16:35:35.172847+00:00",
+      "attribution": "UC Santa Barbara",
+      "license": "Unspecified in source service and ArcGIS item metadata; downloaded directly by the consumer, not redistributed here.",
+      "kind": "geographic",
+      "consumed_features_sha256": "a397f6d2e81be18cd5d5a6e3f69c250b3306e7e3ce0cf0695c8b6707da25deb7"
+    },
+    {
+      "path": "data/lagoon-extension-20261011/trees-001.json",
+      "url": "https://services1.arcgis.com/4TXrdeWh0RyCqPgB/ArcGIS/rest/services/ucsb_icm.gdb/FeatureServer/14/query?where=1%3D1&outFields=%2A&outSR=4326&f=json&returnGeometry=true&orderByFields=OBJECTID&geometry=-119.85242376326943%2C34.40418940680547%2C-119.84185908392834%2C34.41481640635762&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&resultOffset=2000&resultRecordCount=2000",
+      "bytes": 727712,
+      "sha256": "25694fe1d159262e0b14f9eeba61894c2f534ebefc810087d05d9be045e26e33",
+      "retrieved_utc": "2026-10-11T16:38:09.088279+00:00",
+      "attribution": "UC Santa Barbara",
+      "license": "Unspecified in source service and ArcGIS item metadata; downloaded directly by the consumer, not redistributed here.",
+      "kind": "geographic",
+      "consumed_features_sha256": "c255222bdf595d1c28833c66e4118df3d41e7258467c4cc6b421001010c45cbc"
+    },
+    {
+      "path": "original/cybr-material-finishes/source/generate_materials.py",
+      "url": "https://raw.githubusercontent.com/cybrdelic/cybr-material/12848c82f60bc58fa88640545868009b90298b32/material-workspace/shared/material-production/vendor/original/source/generate_materials.py",
+      "sha256": "85986fdde6a92c8026dd1e556d7a4a877a74fbff0be87782b5e2e4a12210cfa3",
+      "bytes": 23467,
+      "kind": "material",
+      "source_commit": "12848c82f60bc58fa88640545868009b90298b32",
+      "attribution": "Original CYBR MATERIAL procedural source"
+    },
+    {
+      "path": "original/cybr-material-finishes/source/finish_structures.py",
+      "url": "https://raw.githubusercontent.com/cybrdelic/cybr-material/12848c82f60bc58fa88640545868009b90298b32/material-workspace/shared/material-production/vendor/original/source/finish_structures.py",
+      "sha256": "3b613dabf120f936e01ab8d2c25658241b37c16a064d176a84077f80190455df",
+      "bytes": 4574,
+      "kind": "material",
+      "source_commit": "12848c82f60bc58fa88640545868009b90298b32",
+      "attribution": "Original CYBR MATERIAL procedural source"
+    },
+    {
+      "path": "original/cybr-material-finishes/source/physical_features.py",
+      "url": "https://raw.githubusercontent.com/cybrdelic/cybr-material/12848c82f60bc58fa88640545868009b90298b32/material-workspace/shared/material-production/vendor/original/source/physical_features.py",
+      "sha256": "36cde6435a8e42e329b8e93438a4c4cdabe66382345b7a6a6e886541f25c9a23",
+      "bytes": 5736,
+      "kind": "material",
+      "source_commit": "12848c82f60bc58fa88640545868009b90298b32",
+      "attribution": "Original CYBR MATERIAL procedural source"
+    },
+    {
+      "path": "original/cybr-material-finishes/source/surface_math.py",
+      "url": "https://raw.githubusercontent.com/cybrdelic/cybr-material/12848c82f60bc58fa88640545868009b90298b32/material-workspace/shared/material-production/vendor/original/source/surface_math.py",
+      "sha256": "831000ff69ffe6c32681859500750f7204cafab424ba4c6beada1ddb17a9492c",
+      "bytes": 3877,
+      "kind": "material",
+      "source_commit": "12848c82f60bc58fa88640545868009b90298b32",
+      "attribution": "Original CYBR MATERIAL procedural source"
+    },
+    {
+      "path": "original/cybr-material-finishes/source/wood_profiles.json",
+      "url": "https://raw.githubusercontent.com/cybrdelic/cybr-material/12848c82f60bc58fa88640545868009b90298b32/material-workspace/shared/material-production/vendor/original/source/wood_profiles.json",
+      "sha256": "e3d3c941fdfdad0e5a30322fe38d6de3e245c8b3b1eb7630b2a2ad815faa95bd",
+      "bytes": 1677,
+      "kind": "material",
+      "source_commit": "12848c82f60bc58fa88640545868009b90298b32",
+      "attribution": "Original CYBR MATERIAL procedural source"
+    },
+    {
+      "path": "original/cybr-material-finishes/source/wood_anatomy.py",
+      "url": "https://raw.githubusercontent.com/cybrdelic/cybr-material/12848c82f60bc58fa88640545868009b90298b32/material-workspace/shared/material-production/vendor/original/source/wood_anatomy.py",
+      "sha256": "30c69e999b2cbf8e11ce1bcdbf0e6efbb17443e710062ecaccacc2626e15a961",
+      "bytes": 9117,
+      "kind": "material",
+      "source_commit": "12848c82f60bc58fa88640545868009b90298b32",
+      "attribution": "Original CYBR MATERIAL procedural source"
+    },
+    {
+      "path": "original/cybr-material-concrete/mineral_construction_bounded.py",
+      "url": "https://raw.githubusercontent.com/cybrdelic/cybr-material/12848c82f60bc58fa88640545868009b90298b32/material-workspace/shared/material-production/vendor/aggregate/source/mineral_construction_bounded.py",
+      "sha256": "c73f2fbd1ef87ddea44f4a590068d57c6fa0a99b1eaedb4a57422424ed35c072",
+      "bytes": 14071,
+      "kind": "material",
+      "source_commit": "12848c82f60bc58fa88640545868009b90298b32",
+      "attribution": "Original CYBR MATERIAL procedural source"
+    },
+    {
+      "path": "original/cybr-material-concrete/surface_math.py",
+      "url": "https://raw.githubusercontent.com/cybrdelic/cybr-material/12848c82f60bc58fa88640545868009b90298b32/material-workspace/shared/material-production/vendor/aggregate/source/surface_math.py",
+      "sha256": "3c09a5ebc9b860abb9783045bed7674e3917087b0c0d21376fbfd8cda12cafc0",
+      "bytes": 3949,
+      "kind": "material",
+      "source_commit": "12848c82f60bc58fa88640545868009b90298b32",
+      "attribution": "Original CYBR MATERIAL procedural source"
+    },
+    {
+      "path": "original/cybr-material-concrete/grain_model.py",
+      "url": "https://raw.githubusercontent.com/cybrdelic/cybr-material/12848c82f60bc58fa88640545868009b90298b32/material-workspace/shared/material-production/vendor/aggregate/source/grain_model.py",
+      "sha256": "fb096a0e6996eec7a41765a9c88292850d7da338e971b2f1b2c6cda89138d931",
+      "bytes": 1586,
+      "kind": "material",
+      "source_commit": "12848c82f60bc58fa88640545868009b90298b32",
+      "attribution": "Original CYBR MATERIAL procedural source"
+    },
+    {
+      "path": "original/cybr-road-microbed/src/compacted_microbed.py",
+      "url": "https://raw.githubusercontent.com/cybrdelic/cybr-material/12848c82f60bc58fa88640545868009b90298b32/material-workspace/shared/material-production/vendor/victorville-r5d-20261009/src/compacted_microbed.py",
+      "sha256": "355576685bd6ef8492d0e4f2e5f7ab3963c58179a1335ec78ce924eecf378ec7",
+      "bytes": 1249,
+      "kind": "material",
+      "source_commit": "12848c82f60bc58fa88640545868009b90298b32",
+      "attribution": "Original CYBR MATERIAL compacted microbed; identical source, not a new recipe"
+    }
+  ]
+}

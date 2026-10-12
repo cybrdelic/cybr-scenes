@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "source_features": 5291,
+  "source_height_samples": [
+    4.460010586962938,
+    6.029941627948175
+  ],
+  "facade_fixture": {
+    "triangles": 100,
+    "degenerate_triangles": 0,
+    "nonfinite": 0,
+    "uv_degenerate_triangles": 0
+  },
+  "source_modules": "Public staged scene closure with separately installed scene_compat; no historical whole-iv vendor imports."
+}

@@ -1,0 +1,27 @@
+{
+  "BOTANY": {
+    "triangles": 15566602,
+    "meshlets": 729424,
+    "species_counts": {
+      "rhus": 179,
+      "sage": 2358,
+      "sunflower": 527
+    },
+    "leaf_area_m2": {
+      "rhus": 211.10573348235857,
+      "sage_fine_foliage_groups": 4599.311847472925,
+      "sunflower": 2076.808534558815,
+      "yellow_flowerheads": 23.589720000000067,
+      "sedge_and_understory": 517.2688669613959,
+      "dry_understory": 310.4258591822567,
+      "regional_habitat_leaf_groups": 8500.084959179774,
+      "mapped_tree_foliage": 48917.04589650026,
+      "palm_leaflets": 7373.831352159344
+    },
+    "season": "Authored mixed active/flowering restoration state informed by CCBER photograph, not capture date or current inventory."
+  },
+  "ARCHITECTURE": {
+    "triangles": 629267,
+    "meshlets": 20795
+  }
+}
