@@ -1,0 +1,26 @@
+"""Generate and serialize native spectral controls from measured water depth."""
+from pathlib import Path
+import sys,json,hashlib,struct,tempfile,numpy as np
+from iv_coastal_life import r,Bathymetry,state,water_height
+from iv_coastal_return import water_return,native_basis,ABSORPTION,BACKSCATTER_550,BACKSCATTER_EXPONENT,BOTTOM_CONTROLS,IOR
+from scipy.optimize import lsq_linear
+from cybr_light import Scene
+from cybr_light.runtime import publish
+out=r/'evidence/full-iv-coastal-return';out.mkdir(exist_ok=True);bathy=Bathymetry();w=np.arange(360.,831.,5.);depth=np.linspace(0,30,601);target,terms=water_return(depth,w);basis=native_basis(w)
+observer=np.loadtxt(r/'work/cybr-light/data/CIE_xyz_1931_2deg.csv',delimiter=',');weight=np.sqrt(np.maximum(1e-5,np.interp(w,observer[:,0],observer[:,1]+observer[:,2]+observer[:,3])));coeff=[]
+for row in target:
+ fit=lsq_linear(basis*weight[:,None],row*weight,bounds=(0,1),tol=1e-12);assert fit.success;coeff.append(fit.x)
+coeff=np.asarray(coeff);fitted=coeff@basis.T;error=np.sqrt(np.sum((fitted-target)**2*weight**2,axis=1)/np.sum(weight**2));relative=error/np.sqrt(np.sum(target**2*weight**2,axis=1)/np.sum(weight**2))
+zero,zero_terms=water_return([0],w);deep,deep_terms=water_return([1000],w);expected_deep=np.pi*deep_terms['deep_rrs_sr-1']/(IOR**2*(1-1.562*deep_terms['deep_rrs_sr-1']));assert np.allclose(deep[0],expected_deep,atol=1e-12)
+assert np.allclose(zero_terms['subsurface_rrs_sr-1'][0],zero_terms['substrate_spectrum']/np.pi,atol=1e-12)
+assert error.max()<.015 and relative.max()<.25
+np.savez_compressed(out/'water_return_lut.npz',depth_m=depth,wavelength_nm=w,effective_target_spectrum=target,native_coefficients=coeff,weighted_absolute_rms_error=error,weighted_relative_rms_error=relative)
+source=r/'evidence/full-iv-coastal-life/ocean_transport.clm';dtype=np.dtype([('indices','u1',(3,)),('material','<u4'),('object','<u4')]);coordinates=hashlib.sha256();unchanged=hashlib.sha256();depth_stats=[];coeff_min=np.full(3,np.inf);coeff_max=-coeff_min
+with source.open('rb') as f,tempfile.NamedTemporaryFile(prefix='cybr-water-return-',suffix='.clm',delete=False) as dst:
+ temporary=Path(dst.name);header=f.read(16);magic,total,packets=struct.unpack('<4sQI',header);assert magic==b'CLM1';dst.write(header)
+ for _ in range(packets):
+  head=f.read(4);nv,nt=struct.unpack('<HH',head);v=np.frombuffer(f.read(nv*44),'<f4').reshape(nv,11).copy();tri=np.frombuffer(f.read(nt*11),dtype).copy();unchanged.update(v[:,:8].tobytes());h=np.maximum(0,v[:,2].astype(float)-bathy.sample(v[:,:2]));assert h.max()<30;native=np.stack([np.interp(h,depth,coeff[:,i]) for i in range(3)],axis=1);v[:,8:11]=native;tri['material']=191;coordinates.update(v[:,:8].tobytes());dst.write(head);dst.write(v.tobytes());dst.write(tri.tobytes());depth_stats.extend(h.tolist());coeff_min=np.minimum(coeff_min,native.min(0));coeff_max=np.maximum(coeff_max,native.max(0))
+ assert not f.read(1)
+assert coordinates.hexdigest()==unchanged.hexdigest();publish(temporary,out/'water_return.clm');s=Scene();s.materials=191;s.material('plastic',(1,1,1),rough=state['native_roughness_parameter'],ior=IOR);s.save(out/'materials.cys')
+record={'passed':True,'triangles':total,'meshlets':packets,'positions_normals_uvs_unchanged_sha256':coordinates.hexdigest(),'mesh_sha256':hashlib.sha256((out/'water_return.clm').read_bytes()).hexdigest(),'material_offset':191,'material_count':1,'depth_percentiles_m':np.percentile(depth_stats,[0,1,10,50,90,99,100]).tolist(),'native_coefficient_bounds':[coeff_min.tolist(),coeff_max.tolist()],'maximum_observer_weighted_spectral_rms_error':float(error.max()),'maximum_observer_weighted_relative_spectral_rms_error':float(relative.max()),'depth_lut_step_m':.05,'zero_depth_bottom_limit_passed':True,'deep_water_limit_passed':True,'all_selected_spectral_effective_albedos_in_unit_interval':True,'authored_absorption_table_nm_m-1':ABSORPTION.tolist(),'authored_backscatter_550_m-1':BACKSCATTER_550,'authored_backscatter_power':BACKSCATTER_EXPONENT,'authored_bottom_native_coefficients':BOTTOM_CONTROLS.tolist(),'primary_reference':'https://doi.org/10.1364/AO.37.006329','accessible_reference':'https://misclab.umeoce.maine.edu/ftp/classes/OO2017/readings/Lee_HS_shallow_waters1_AO1998.pdf','source_model':'Lee et al.1998 equations16 and21, homogeneous-water nadir subsurface return. Authored optics; measured CoNED depth.','original_adapter':'Smooth shallow-depth bridge below0.5m to bottom/pi. Effective diffuse return includes n^-2 radiance divergence and the paper\u2019s1.562 internal-return factor; native surface applies its own two Fresnel transmissions. The result is fitted to the actual native three-control spectral basis, with explicit fitting error.','limits':'This is a qualified surface-return approximation, not a full water volume BSDF. Nadir empirical coefficients are extended as a Lambertian return to this oblique view; angular validity and optical calibration are not established. No local water-quality measurement, underwater parallax or object visibility, foam or fluid dynamics. Source paper\u2019s Hydrolight accuracy is not claimed for this adapter.'}
+(out/'WATER_RETURN_RECEIPT.json').write_text(json.dumps(record,indent=2)+'\n');print(json.dumps(record),flush=True)

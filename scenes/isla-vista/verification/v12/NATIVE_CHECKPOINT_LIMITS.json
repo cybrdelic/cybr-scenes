@@ -1,0 +1,17 @@
+{
+  "status": "Intermediate native visual checkpoint; not a completed realism claim.",
+  "remaining_visible_limits": [
+    "Broad pale paving and flat-looking bank matrix",
+    "Source-GIS asphalt slivers between closely adjacent path polygons remain",
+    "Dormitory mass and repeated shrubs still dominate portions of the composition"
+  ],
+  "render": "renders/lagoon-overlook-connected-bank_600_32.png",
+  "width": 600,
+  "height": 420,
+  "samples_per_pixel": 32,
+  "primitives": 17924599,
+  "invalid_path_samples": 0,
+  "rooted_source": "https://ccber.ucsb.edu/restoration-area-campus-lagoon",
+  "photo_reference": "https://ccber.ucsb.edu/sites/default/files/images/2023-12/SN3_postrest.JPG",
+  "rendering": "Original native CYBR LIGHT CPU transport; original procedural GEO/MATERIAL; no image generation or photographic textures."
+}

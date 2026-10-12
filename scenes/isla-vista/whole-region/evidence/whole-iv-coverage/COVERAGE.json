@@ -1,0 +1,41 @@
+{
+  "cdp_bounds_wgs84": [
+    -119.86980500009884,
+    34.40731099981008,
+    -119.85258100018348,
+    34.41740700014437
+  ],
+  "cdp_area_projected_m2": 1542906.5486758342,
+  "existing_sector_fraction_of_cdp_area": 0.7902381278557568,
+  "proposed_sector": {
+    "name": "isla-vista-west-campus",
+    "longitude": -119.8614,
+    "latitude": 34.413,
+    "extent": 2600,
+    "epsg": 32611,
+    "horizontal_crs": "EPSG:32611",
+    "input_axis_order": "longitude, latitude (always_xy=True)",
+    "local_origin_utm_m": [
+      237001.80699345336,
+      3811663.448398269
+    ],
+    "local_axes": "east, grid-north, up; metres",
+    "geo_axes": "east, grid-north, up; millimetres",
+    "gltf_axes": "east, up, minus-grid-north; metres",
+    "grid_convergence_degrees": -1.6180603640686249,
+    "vertical_policy": "Retain DEM datum; building heights are AGL offsets",
+    "utm_bounds": [
+      235701.80699345336,
+      3810363.448398269,
+      238301.80699345336,
+      3812963.448398269
+    ],
+    "wgs84_bounds": [
+      -119.87592940999984,
+      34.40095941399245,
+      -119.84687451802466,
+      34.42503921872043
+    ]
+  },
+  "proposed_sector_covers_cdp": true
+}

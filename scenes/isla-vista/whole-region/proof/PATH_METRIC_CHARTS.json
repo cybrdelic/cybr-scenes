@@ -1,0 +1,93 @@
+{
+  "scene": "evidence/whole-iv-recovered-views/sabado_frontages_600_32.cys",
+  "metric_material_ids": [
+    1,
+    9,
+    11,
+    15,
+    58,
+    60,
+    62,
+    64,
+    66,
+    173,
+    175,
+    177,
+    179,
+    186,
+    287,
+    289,
+    291,
+    293,
+    295
+  ],
+  "meshes": [
+    {
+      "mesh": "evidence/full-iv-roofs/sector.clm",
+      "metric_faces_tested": 392022,
+      "geometrically_degenerate_faces_ignored": 0
+    },
+    {
+      "mesh": "evidence/full-iv-house-component/house.clm",
+      "metric_faces_tested": 0,
+      "geometrically_degenerate_faces_ignored": 0
+    },
+    {
+      "mesh": "evidence/full-iv-botanical-dense/botanical.clm",
+      "metric_faces_tested": 0,
+      "geometrically_degenerate_faces_ignored": 0
+    },
+    {
+      "mesh": "evidence/full-iv-pardall/pardall.clm",
+      "metric_faces_tested": 4,
+      "geometrically_degenerate_faces_ignored": 0
+    },
+    {
+      "mesh": "evidence/full-iv-path-uv-rebased/contact.clm",
+      "metric_faces_tested": 2383628,
+      "geometrically_degenerate_faces_ignored": 70
+    },
+    {
+      "mesh": "evidence/full-iv-facades/facades.clm",
+      "metric_faces_tested": 634368,
+      "geometrically_degenerate_faces_ignored": 0
+    },
+    {
+      "mesh": "evidence/full-iv-del-playa-finish-v2/architecture.clm",
+      "metric_faces_tested": 1854,
+      "geometrically_degenerate_faces_ignored": 0
+    },
+    {
+      "mesh": "evidence/full-iv-sabado-frontages/architecture.clm",
+      "metric_faces_tested": 7700,
+      "geometrically_degenerate_faces_ignored": 0
+    },
+    {
+      "mesh": "evidence/full-iv-del-playa-walks/walks.clm",
+      "metric_faces_tested": 5556,
+      "geometrically_degenerate_faces_ignored": 0
+    },
+    {
+      "mesh": "evidence/full-iv-sabado-street-trees/vegetation.clm",
+      "metric_faces_tested": 0,
+      "geometrically_degenerate_faces_ignored": 0
+    }
+  ],
+  "failed_face_samples": [],
+  "passed": true,
+  "uv_adapter_receipt": {
+    "passed": true,
+    "source_sha256": "a9e5edeb2b216bdd2a2e8bf0a2d7ba6f45cefa8eeb2419db6239bf8456348fdb",
+    "output_sha256": "fb22fc6d72424984b352102775ac07cd67457ae0227dd3bb2330c02048461cca",
+    "triangles": 2383698,
+    "path_triangles_rebased": 1708237,
+    "vertical_edge_triangles_with_physical_arclength_height_chart": 414094,
+    "positions_normals_tints_materials_objects_and_order_sha256": "b719a0b70fba15cf8c869ce2a56489eb8d9b7ab40f3cc1bbc1cf95d92a45b294",
+    "all_non_uv_fields_exact": true,
+    "chart_metres_per_unit": 1.25,
+    "texture_period_metres": 0.32,
+    "periodic_rebase_uv_units": 0.256,
+    "maximum_float32_phase_error_uv": 2.3651125502510695e-07,
+    "qualification": "Original source geometry is unchanged. Path tops use serialized world XY; closed construction edges retain the authored cumulative quantized arclength and physical-height chart. Both receive integer texture-period translations before float32 conversion. Source object classification, not normal thresholds, selects the chart."
+  }
+}

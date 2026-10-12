@@ -1,0 +1,40 @@
+{
+  "renderer": "CYBR LIGHT 0.2",
+  "backend": "C++17 OpenMP CPU",
+  "image_generation_used": false,
+  "denoising_used": true,
+  "clamping_used": false,
+  "width": 480,
+  "height": 336,
+  "packets_per_pixel": 16,
+  "wavelengths_per_packet": 6,
+  "spectral_paths_per_pixel": 96,
+  "wavelength_range_nm": [
+    360,
+    830
+  ],
+  "integrator": "volpath",
+  "filter": "tent",
+  "sampler": "random-shift Halton, first 64 dimensions",
+  "max_depth": 8,
+  "rr_depth": 5,
+  "seed": 20261012,
+  "primitives": 8986056,
+  "meshlets": 394220,
+  "invalid_path_samples": 0,
+  "render_seconds": 36.927114117,
+  "denoiser": "three camera-footprint, textured-albedo/shading-normal/object/variance guided atrous display passes",
+  "engine_source_sha256": "3d18ea79f2a34a48b21d75aaf7515f123c6b752614a80c29eaec6431e0430a9f",
+  "purpose": "Native recovery gate of retained full-Isla-Vista residential, street and geographic assemblies",
+  "source_sha256": "f8888405491e222570ef3da495df9fa09b9d0e3dfdb86e0094a276d6002e9b86",
+  "rendering": "Actual installed CYBR LIGHT scene_compat CPU engine; no image generation.",
+  "image_sha256": "1eaa1d950cdfddee48b368da31c02ce409904861e6b7be29a2b2d71d33e04a57",
+  "status": "Recovered original scene coverage; not a new photorealism claim.",
+  "visible_limits": [
+    "Generic contextual buildings and estimated architecture",
+    "Coarse/grainy road appearance at this capture resolution",
+    "Plain or uneven-looking paving",
+    "Simple dark window and balcony-edge construction"
+  ],
+  "geographic_attribution": "\u00a9 OpenStreetMap contributors (ODbL 1.0); UCSB GIS. See THIRD_PARTY_NOTICES.md for all source-specific terms."
+}

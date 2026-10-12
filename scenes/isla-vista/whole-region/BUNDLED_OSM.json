@@ -1,0 +1,96 @@
+{
+  "files": [
+    {
+      "archive": "snapshots/osm/osm-0-0.osm.gz",
+      "path": "data/full-iv-20261011/osm-0-0.osm",
+      "sha256": "553221ebb1f94b0c38dd49fbe77473ea2cb5303f8bb4a167f6777c66301668ac",
+      "bytes": 276390,
+      "gzip_sha256": "9293c69d2d66f4abc9714d1675799b5493710c87e89c0b9ee10b3434205bf972",
+      "attribution": "\u00a9 OpenStreetMap contributors",
+      "license": "ODbL 1.0",
+      "original_url": "https://www.openstreetmap.org/api/0.6/map?bbox=-119.87592940999984%2C34.40095941399245%2C-119.86624444600811%2C34.408986015568445"
+    },
+    {
+      "archive": "snapshots/osm/osm-0-1.osm.gz",
+      "path": "data/full-iv-20261011/osm-0-1.osm",
+      "sha256": "d2cdd7a15dbf09cca7eda75ddbdf6b574a9c42b777919cbd73ba408c09195262",
+      "bytes": 3433484,
+      "gzip_sha256": "ee99ec5ab9c806318117812c1d3fc939782655dc479f4ab047123b0338ed9737",
+      "attribution": "\u00a9 OpenStreetMap contributors",
+      "license": "ODbL 1.0",
+      "original_url": "https://www.openstreetmap.org/api/0.6/map?bbox=-119.87592940999984%2C34.408986015568445%2C-119.86624444600811%2C34.41701261714444"
+    },
+    {
+      "archive": "snapshots/osm/osm-0-2.osm.gz",
+      "path": "data/full-iv-20261011/osm-0-2.osm",
+      "sha256": "da1a75eeffbb4c83104b1d0802ac1e34fbf16b04435075a375311f48a4fd9a5c",
+      "bytes": 5025531,
+      "gzip_sha256": "cc994300b58cab7121a9a0cf336e8bb8f90b0a0c3fa385377fef47f97492b706",
+      "attribution": "\u00a9 OpenStreetMap contributors",
+      "license": "ODbL 1.0",
+      "original_url": "https://www.openstreetmap.org/api/0.6/map?bbox=-119.87592940999984%2C34.41701261714444%2C-119.86624444600811%2C34.42503921872043"
+    },
+    {
+      "archive": "snapshots/osm/osm-1-0.osm.gz",
+      "path": "data/full-iv-20261011/osm-1-0.osm",
+      "sha256": "6290375422a56c3ce39f355fe0f15066b5549e381aa1ac4c5940ec73e2050c80",
+      "bytes": 166235,
+      "gzip_sha256": "324c2ff03d93ca1a646476764d13fb0f753a84e57873a556ba1ae0342ed5916c",
+      "attribution": "\u00a9 OpenStreetMap contributors",
+      "license": "ODbL 1.0",
+      "original_url": "https://www.openstreetmap.org/api/0.6/map?bbox=-119.86624444600811%2C34.40095941399245%2C-119.8565594820164%2C34.408986015568445"
+    },
+    {
+      "archive": "snapshots/osm/osm-1-1.osm.gz",
+      "path": "data/full-iv-20261011/osm-1-1.osm",
+      "sha256": "67fbf23cae7c794aebd9d5a63482798b7c7dffe0df11264b4c5708e568033d2e",
+      "bytes": 5284074,
+      "gzip_sha256": "938c18f8b204f50264c51f976a7e901e29b2d77d63b3e1df78ef3c707e48db6f",
+      "attribution": "\u00a9 OpenStreetMap contributors",
+      "license": "ODbL 1.0",
+      "original_url": "https://www.openstreetmap.org/api/0.6/map?bbox=-119.86624444600811%2C34.408986015568445%2C-119.8565594820164%2C34.41701261714444"
+    },
+    {
+      "archive": "snapshots/osm/osm-1-2.osm.gz",
+      "path": "data/full-iv-20261011/osm-1-2.osm",
+      "sha256": "a628d58356bc289dece20119efa4e553785c0086e4c8698ebf2da875f85808eb",
+      "bytes": 3794286,
+      "gzip_sha256": "dcf9f628b7d684a3a0ab7b241546aa09577582267c803ea50de6d244339e9ad5",
+      "attribution": "\u00a9 OpenStreetMap contributors",
+      "license": "ODbL 1.0",
+      "original_url": "https://www.openstreetmap.org/api/0.6/map?bbox=-119.86624444600811%2C34.41701261714444%2C-119.8565594820164%2C34.42503921872043"
+    },
+    {
+      "archive": "snapshots/osm/osm-2-0.osm.gz",
+      "path": "data/full-iv-20261011/osm-2-0.osm",
+      "sha256": "0f10fe2ee9814659e3411083ad8d857b95a6d1c072d72a267812773259dd1aea",
+      "bytes": 775270,
+      "gzip_sha256": "e1793aebac18621ead663e0f1c36d2670a81242250dd54abfbbfcdef9deb2dec",
+      "attribution": "\u00a9 OpenStreetMap contributors",
+      "license": "ODbL 1.0",
+      "original_url": "https://www.openstreetmap.org/api/0.6/map?bbox=-119.8565594820164%2C34.40095941399245%2C-119.84687451802466%2C34.408986015568445"
+    },
+    {
+      "archive": "snapshots/osm/osm-2-1.osm.gz",
+      "path": "data/full-iv-20261011/osm-2-1.osm",
+      "sha256": "5fb047d76181e36358868991bf622c9b02928f9917018545622238700929d786",
+      "bytes": 5172336,
+      "gzip_sha256": "e6f7d16947ae2143e8cc909830d3157e1e47f6a2ac2d981bfacb0ffdf6a9defb",
+      "attribution": "\u00a9 OpenStreetMap contributors",
+      "license": "ODbL 1.0",
+      "original_url": "https://www.openstreetmap.org/api/0.6/map?bbox=-119.8565594820164%2C34.408986015568445%2C-119.84687451802466%2C34.41701261714444"
+    },
+    {
+      "archive": "snapshots/osm/osm-2-2.osm.gz",
+      "path": "data/full-iv-20261011/osm-2-2.osm",
+      "sha256": "14cc111c6c795d63501ddada6b3d85eee54db8e7786241499f613149a0dbce25",
+      "bytes": 2049556,
+      "gzip_sha256": "ecb905b5f88210975ab3077ea679d66757f20e28c3f4b773f9ba37c482469e8c",
+      "attribution": "\u00a9 OpenStreetMap contributors",
+      "license": "ODbL 1.0",
+      "original_url": "https://www.openstreetmap.org/api/0.6/map?bbox=-119.8565594820164%2C34.41701261714444%2C-119.84687451802466%2C34.42503921872043"
+    }
+  ],
+  "copyright": "https://www.openstreetmap.org/copyright",
+  "license": "https://opendatacommons.org/licenses/odbl/1-0/"
+}

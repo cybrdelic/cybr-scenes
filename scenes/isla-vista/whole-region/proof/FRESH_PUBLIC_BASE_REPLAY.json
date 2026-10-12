@@ -1,0 +1,357 @@
+{
+  "passed": true,
+  "scope": "Fresh public-source stage 1 only, in an independent source directory without original scene/mesh caches. Third-party Python dependencies came from the preinstalled exact requirements versions; public GEO/MATERIAL files and GIS inputs were fetched and validated anonymously. This is not a fresh full 64-stage replay.",
+  "files": {
+    "sector.glb": {
+      "historical_recovered_sha256": "50cd9043f9cb26230679b07070423a4dc6984b262e3c5f69d46681cf822d5a00",
+      "fresh_public_sha256": "50cd9043f9cb26230679b07070423a4dc6984b262e3c5f69d46681cf822d5a00",
+      "byte_identical": true
+    },
+    "measured-terrain-state.npz": {
+      "historical_recovered_sha256": "35c9146c13a92db2675c6622bcf791c0195f754b4658c34fec9ab3f9b5d28729",
+      "fresh_public_sha256": "35c9146c13a92db2675c6622bcf791c0195f754b4658c34fec9ab3f9b5d28729",
+      "byte_identical": true
+    },
+    "normalized.geojson": {
+      "historical_recovered_sha256": "e4cabea0167a81604844f892b9d1950e503080a99e7daff184c6b1f05161f104",
+      "fresh_public_sha256": "e4cabea0167a81604844f892b9d1950e503080a99e7daff184c6b1f05161f104",
+      "byte_identical": true
+    },
+    "glb-part-layout.json": {
+      "historical_recovered_sha256": "04e0a96ab7be07ed3376a7a8ab76455f62d04461c7780c8b6321c9f1de39462f",
+      "fresh_public_sha256": "04e0a96ab7be07ed3376a7a8ab76455f62d04461c7780c8b6321c9f1de39462f",
+      "byte_identical": true
+    },
+    "TAGGED_ROOFS.json": {
+      "historical_recovered_sha256": "47c4a909e6cf7e5ea543d98ba15f4244177567db9d2b318d972604bae686e44a",
+      "fresh_public_sha256": "47c4a909e6cf7e5ea543d98ba15f4244177567db9d2b318d972604bae686e44a",
+      "byte_identical": true
+    }
+  },
+  "counts": {
+    "building": 2103,
+    "coastline": 4,
+    "hedge": 203,
+    "landcover": 1291,
+    "parking": 387,
+    "path": 3105,
+    "pavement": 2,
+    "recreation": 157,
+    "road": 3827,
+    "roof": 371,
+    "tree": 6498,
+    "vegetation": 2312,
+    "water": 10
+  },
+  "geometry": {
+    "part_count": 23913,
+    "triangles": 1632753,
+    "vertices": 1879858,
+    "terrain_height_max_error_m": 6.938893903907228e-18
+  },
+  "public_input_validation": {
+    "checked_utc": "2026-10-12T06:56:35Z",
+    "files": [
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "5d83ee0fefbff966ad9a0fbf13e55e7cd7341c2bf974b2e6f6ca185aba5d66e9",
+        "source": "local",
+        "path": "data/full-iv-20261011/buildings-000.json"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "3b1c4ccb7af65d872c5c5645dcbbc1f05986ce5ebc0a33bfcddda713d66bd824",
+        "source": "local",
+        "path": "data/full-iv-20261011/bike-paths-000.json"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "1411ef89b330d35724235be760044672fe2d7880f30a905392dfa3ec501deb0e",
+        "source": "local",
+        "path": "data/full-iv-20261011/trees-000.json"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "b3b7cdd3ba106158b58d3fdbfee5d462db315436c6549bb171f3fff838fb80ac",
+        "source": "local",
+        "path": "data/full-iv-20261011/trees-001.json"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "7507c87ce583beefcf389642630cbf8e3f64b7f6bf35bf688cbe766f5f37c342",
+        "source": "local",
+        "path": "data/full-iv-20261011/trees-002.json"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "9ddc9ef5682c3f2dc3930d236f4ba9d59c66ffaec587c4a283d1b4963f542c8a",
+        "source": "local",
+        "path": "data/full-iv-20261011/footpaths-000.json"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "26c347f293c1b035a65fc3bb67f37dfe5cf87947c863b1f59deb2a00e8912e83",
+        "source": "local",
+        "path": "data/full-iv-20261011/driving-surfaces-000.json"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "d6fdfd68bf8242da0fdfeac8b2d0328eb810f3a59dde50c137d8a43be8aa866c",
+        "source": "local",
+        "path": "data/full-iv-20261011/lawns-000.json"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "0baaf7e7c08e8aaf2242a5de8ccd08fb07b68814cf054c2bb7c59365f1bccb17",
+        "source": "local",
+        "path": "data/full-iv-20261011/water-000.json"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "cabd7ebbc4b59032c51cef320fc90fe7012534ca88a922151f622ccd694e92aa",
+        "source": "local",
+        "path": "data/full-iv-20261011/dem.tif"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "7c3a100e193867e83ff57f14847ceda2b313cea8af84b126876f64cd11f3ea78",
+        "source": "local",
+        "path": "data/lagoon-extension-20261011/dem.tif"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "9ca35e6915ffb29d9e31b662b3b095a8359d4c7a7dcc57cb0e9bb6f37d065dfe",
+        "source": "local",
+        "path": "data/lagoon-extension-20261011/buildings-000.json"
+      },
+      {
+        "match": "ordered_features_and_crs",
+        "raw_sha256": "3cf60d37b1cf1ca61da990141e2ca21a0326de643d17b491291a1434f193f212",
+        "consumed_features_sha256": "d790b73ba0493e07c7179d0c461b6fac5f064dbdcfefc6d4034d0cf02b50e2c1",
+        "metadata_limit": "Only unconsumed service schema or JSON formatting differs.",
+        "source": "local",
+        "path": "data/lagoon-extension-20261011/footpaths-000.json"
+      },
+      {
+        "match": "ordered_features_and_crs",
+        "raw_sha256": "729ee2bbf3160df3fcd3c29c110b8c8d2aa52f8c1a0a721ac9f56c8cf5c9b3ac",
+        "consumed_features_sha256": "852006c537cbd7e8662c1d9a1dc8f6d54814a77b6dedbd9572ed9900fc7ef244",
+        "metadata_limit": "Only unconsumed service schema or JSON formatting differs.",
+        "source": "local",
+        "path": "data/lagoon-extension-20261011/bike-paths-000.json"
+      },
+      {
+        "match": "ordered_features_and_crs",
+        "raw_sha256": "e222d76dd78de987c079a1ecbb4f171c319da3ee0eb6ab8a2044f6a672cc0242",
+        "consumed_features_sha256": "c4bf580d7ce2790fa31ccce4a58940f7ee6abcd24629970a007e6bb6830389c8",
+        "metadata_limit": "Only unconsumed service schema or JSON formatting differs.",
+        "source": "local",
+        "path": "data/lagoon-extension-20261011/driving-surfaces-000.json"
+      },
+      {
+        "match": "ordered_features_and_crs",
+        "raw_sha256": "c5e8c4d2b38ae02af310216920cbb36f8602b78e259759f97c540f90f878784f",
+        "consumed_features_sha256": "267cd96204b1b839ddcbd41ae3aa7160cff5fbe12ade62aeb81ead629b9f93f3",
+        "metadata_limit": "Only unconsumed service schema or JSON formatting differs.",
+        "source": "local",
+        "path": "data/lagoon-extension-20261011/lawns-000.json"
+      },
+      {
+        "match": "ordered_features_and_crs",
+        "raw_sha256": "7682fa5570c8c59d42cf24f52572d8b9f7e2adf76772e0992f691caa25d7f517",
+        "consumed_features_sha256": "a397f6d2e81be18cd5d5a6e3f69c250b3306e7e3ce0cf0695c8b6707da25deb7",
+        "metadata_limit": "Only unconsumed service schema or JSON formatting differs.",
+        "source": "local",
+        "path": "data/lagoon-extension-20261011/trees-000.json"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "25694fe1d159262e0b14f9eeba61894c2f534ebefc810087d05d9be045e26e33",
+        "source": "local",
+        "path": "data/lagoon-extension-20261011/trees-001.json"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "85986fdde6a92c8026dd1e556d7a4a877a74fbff0be87782b5e2e4a12210cfa3",
+        "source": "local",
+        "path": "original/cybr-material-finishes/source/generate_materials.py"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "3b613dabf120f936e01ab8d2c25658241b37c16a064d176a84077f80190455df",
+        "source": "local",
+        "path": "original/cybr-material-finishes/source/finish_structures.py"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "36cde6435a8e42e329b8e93438a4c4cdabe66382345b7a6a6e886541f25c9a23",
+        "source": "local",
+        "path": "original/cybr-material-finishes/source/physical_features.py"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "831000ff69ffe6c32681859500750f7204cafab424ba4c6beada1ddb17a9492c",
+        "source": "local",
+        "path": "original/cybr-material-finishes/source/surface_math.py"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "e3d3c941fdfdad0e5a30322fe38d6de3e245c8b3b1eb7630b2a2ad815faa95bd",
+        "source": "local",
+        "path": "original/cybr-material-finishes/source/wood_profiles.json"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "30c69e999b2cbf8e11ce1bcdbf0e6efbb17443e710062ecaccacc2626e15a961",
+        "source": "local",
+        "path": "original/cybr-material-finishes/source/wood_anatomy.py"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "c73f2fbd1ef87ddea44f4a590068d57c6fa0a99b1eaedb4a57422424ed35c072",
+        "source": "local",
+        "path": "original/cybr-material-concrete/mineral_construction_bounded.py"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "3c09a5ebc9b860abb9783045bed7674e3917087b0c0d21376fbfd8cda12cafc0",
+        "source": "local",
+        "path": "original/cybr-material-concrete/surface_math.py"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "fb096a0e6996eec7a41765a9c88292850d7da338e971b2f1b2c6cda89138d931",
+        "source": "local",
+        "path": "original/cybr-material-concrete/grain_model.py"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "355576685bd6ef8492d0e4f2e5f7ab3963c58179a1335ec78ce924eecf378ec7",
+        "source": "local",
+        "path": "original/cybr-road-microbed/src/compacted_microbed.py"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "0515cc5b09ef1b8cfd6e2b98d034168e7e4ba2218411abed3ec70fd65478e8b4",
+        "source": "local",
+        "path": "data/full-iv-20261011/parking-000.json"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "ff37cd95a37e85baf8199edbab035e1b4ef789f33d2bc3a95c28f5a0c49fdb64",
+        "source": "local",
+        "path": "data/full-iv-20261011/roofs-000.json"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "a9bcf736609c610ea6e31eceeff1bed16020bf3cda7a5c44ad3ef259ed49a308",
+        "source": "local",
+        "path": "data/full-iv-20261011/roads-000.json"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "6ced5d26a40225e82124a35b9696f0fab5e65899d3b0bc1a6b50e712695d1dfc",
+        "source": "local",
+        "path": "data/full-iv-20261011/hedges-000.json"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "2d967c2e1b5dfc4c0683b77f25c62a54fc42cf266f91c469a6eed81ae99e4120",
+        "source": "local",
+        "path": "data/full-iv-20261011/recreation-000.json"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "8d5d147c73c4376793f748548fe72a29d168b467ba6edd32d31375e2352bd833",
+        "source": "local",
+        "path": "whole-iv-vendor/mechanism_lab/__init__.py"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "75c52fdafd46ec533e77d42e8c4f02f292d6cc5215cc8a182f35ec41efce2af9",
+        "source": "local",
+        "path": "whole-iv-vendor/mechanism_lab/core.py"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "6d625ab570359799504b0f025b0803c1ddd75789cd85e66c1865d14fb5fa3301",
+        "source": "local",
+        "path": "whole-iv-vendor/mechanism_lab/exporters.py"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "bed94d5d0717f3c237df91195136e4a425bba960a07aeb4a43d671348168c2d4",
+        "source": "local",
+        "path": "whole-iv-vendor/cybr_terrain/__init__.py"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "4577fcdf4dbb3fd734895b3f4f6f80bfc5ba331b13b49c660a5278ca26ea8b48",
+        "source": "local",
+        "path": "whole-iv-vendor/cybr_terrain/model.py"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "e8edbfb784f697d03351ec28fed2c8a2b1cb9bbe638b9ea3a367b2fc2e108e1d",
+        "source": "local",
+        "path": "whole-iv-vendor/cybr_terrain/simulation.py"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "d7fe1d515d58c5d38b2234d82ad5eca50fe0dcd5c56547df970f9a494ce25ea8",
+        "source": "local",
+        "path": "whole-iv-vendor/cybr_terrain/rendering.py"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "36a881a9c9984c86545dadde8de0c31d8d8f2fa5a41954d76477ca6d36b529c6",
+        "source": "local",
+        "path": "whole-iv-vendor/cybr_terrain/geometry.py"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "4505b057988913668a5297cd224de6908592376ea735b10cacd85c3a37375177",
+        "source": "local",
+        "path": "whole-iv-vendor/cybr_terrain/materials.py"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "c4de92f64814189f5b2617ca0220cdf631f16b09a8cbdaab411c14b8d43badcb",
+        "source": "local",
+        "path": "original/cybr-material-asphalt/reference_construction.py"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "3c09a5ebc9b860abb9783045bed7674e3917087b0c0d21376fbfd8cda12cafc0",
+        "source": "local",
+        "path": "original/cybr-material-asphalt/surface_math.py"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "aafc89a1064b1bd8ed0deb39f1cfb021eebd0eb39c922218eb4384f4ca156500",
+        "source": "local",
+        "path": "original/cybr-material-grass/geometry.py"
+      },
+      {
+        "match": "raw_sha256",
+        "raw_sha256": "c32272178721c3427247f50fc690a93a9c746c1e54a5c6f79f7376b95d198a01",
+        "source": "local",
+        "path": "whole-iv-vendor/mechanism_lab/truth.py"
+      }
+    ],
+    "passed": true,
+    "warning": "Public live GIS URLs are mutable. Any feature/attribute/coordinate drift fails; no durable provider archive is claimed."
+  },
+  "stage_guard": {
+    "exit_code": 0,
+    "stop_reason": null,
+    "elapsed_seconds": 50.42,
+    "peak_sampled_aggregate_rss_mib": 1213.39,
+    "cap_mib": 4480.0,
+    "min_free_disk_gib": 9.133,
+    "disk_reserve_gib": 1,
+    "sample_seconds": 0.25,
+    "passed": true,
+    "scope": "Owned process tree; sampled user-space RSS guard, not kernel hard cap"
+  }
+}

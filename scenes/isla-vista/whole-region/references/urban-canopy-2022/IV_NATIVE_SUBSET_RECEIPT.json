@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "source_archive_sha256": "ea90a01589b2340ec752a60f68505be18cc40f1016f5132ae6ca181b2fd38628",
+  "source_archive_member": "CALFIRE_UrbanCanopy_SantaBarbaraCounty/Canopy_2022_0.TIF",
+  "native_crs": "EPSG:3310",
+  "native_pixel_size_m": 0.6,
+  "native_pixel_values_retained": true,
+  "resampling": false,
+  "window": [
+    121672,
+    127993,
+    4457,
+    4461
+  ],
+  "shape": [
+    4461,
+    4457
+  ],
+  "subset_sha256": "c59adfb35c8d500d8d7b600c41fd6ca4abebe1db562d24fd1d663f5827587d31",
+  "subset_bytes": 273416,
+  "values": {
+    "1": 1873630,
+    "255": 18009047
+  },
+  "classified_canopy_in_scene_tile_m2": 644414.0400000006,
+  "classified_canopy_in_iv_cdp_m2": 177813.00000000015,
+  "cdp_rasterized_area_m2": 1541504.5200000014,
+  "classification_year": 2022,
+  "metadata_release": "May 2025",
+  "scope": "Dated two-dimensional classification, not individual trees, tree heights, species, exact crowns, photographic texture or a replacement scan mesh.",
+  "background_limit": "The native raster contains 1 and NoData 255. Background alone does not distinguish non-canopy from an unassessed location. Source metadata limits mapping to the combined 2010/2020 Census urban areas; an urban-area coverage check remains separate.",
+  "accuracy_limit": "Provider describes accuracy assessment and manual review but the supplied metadata does not report a numerical local classification accuracy.",
+  "historical_subset_sha256": "c59adfb35c8d500d8d7b600c41fd6ca4abebe1db562d24fd1d663f5827587d31",
+  "raster_contract_exact": true
+}

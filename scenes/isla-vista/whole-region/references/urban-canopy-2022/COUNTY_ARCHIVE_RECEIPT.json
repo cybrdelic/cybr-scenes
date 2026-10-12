@@ -1,0 +1,121 @@
+{
+  "url": "https://rdipowerplatformfd-e5hhgqaahef7fbdr.a02.azurefd.net/urbanforestry/CALFIRE_UrbanCanopy_SantaBarbaraCounty.zip",
+  "bytes": 162071910,
+  "sha256": "ea90a01589b2340ec752a60f68505be18cc40f1016f5132ae6ca181b2fd38628",
+  "source_content_md5_verified": true,
+  "last_modified": "Thu, 08 May 2025 16:57:53 GMT",
+  "contents": [
+    {
+      "path": "CALFIRE_UrbanCanopy_SantaBarbaraCounty/",
+      "bytes": 0,
+      "compressed_bytes": 0
+    },
+    {
+      "path": "CALFIRE_UrbanCanopy_SantaBarbaraCounty/CanopyChange_0.tfw",
+      "bytes": 90,
+      "compressed_bytes": 49
+    },
+    {
+      "path": "CALFIRE_UrbanCanopy_SantaBarbaraCounty/CanopyChange_0.TIF",
+      "bytes": 428417863,
+      "compressed_bytes": 44741059
+    },
+    {
+      "path": "CALFIRE_UrbanCanopy_SantaBarbaraCounty/CanopyChange_0.TIF.aux.xml",
+      "bytes": 980,
+      "compressed_bytes": 379
+    },
+    {
+      "path": "CALFIRE_UrbanCanopy_SantaBarbaraCounty/CanopyChange_0.TIF.ovr",
+      "bytes": 43614856,
+      "compressed_bytes": 18194902
+    },
+    {
+      "path": "CALFIRE_UrbanCanopy_SantaBarbaraCounty/CanopyChange_0.TIF.vat.cpg",
+      "bytes": 5,
+      "compressed_bytes": 5
+    },
+    {
+      "path": "CALFIRE_UrbanCanopy_SantaBarbaraCounty/CanopyChange_0.TIF.vat.dbf",
+      "bytes": 188,
+      "compressed_bytes": 103
+    },
+    {
+      "path": "CALFIRE_UrbanCanopy_SantaBarbaraCounty/CanopyChange_0.TIF.xml",
+      "bytes": 15112,
+      "compressed_bytes": 4596
+    },
+    {
+      "path": "CALFIRE_UrbanCanopy_SantaBarbaraCounty/Canopy_2018_0.tfw",
+      "bytes": 90,
+      "compressed_bytes": 49
+    },
+    {
+      "path": "CALFIRE_UrbanCanopy_SantaBarbaraCounty/Canopy_2018_0.TIF",
+      "bytes": 420008413,
+      "compressed_bytes": 35995613
+    },
+    {
+      "path": "CALFIRE_UrbanCanopy_SantaBarbaraCounty/Canopy_2018_0.TIF.aux.xml",
+      "bytes": 916,
+      "compressed_bytes": 318
+    },
+    {
+      "path": "CALFIRE_UrbanCanopy_SantaBarbaraCounty/Canopy_2018_0.TIF.ovr",
+      "bytes": 38396843,
+      "compressed_bytes": 12941743
+    },
+    {
+      "path": "CALFIRE_UrbanCanopy_SantaBarbaraCounty/Canopy_2018_0.TIF.vat.cpg",
+      "bytes": 5,
+      "compressed_bytes": 5
+    },
+    {
+      "path": "CALFIRE_UrbanCanopy_SantaBarbaraCounty/Canopy_2018_0.TIF.vat.dbf",
+      "bytes": 128,
+      "compressed_bytes": 80
+    },
+    {
+      "path": "CALFIRE_UrbanCanopy_SantaBarbaraCounty/Canopy_2018_0.TIF.xml",
+      "bytes": 13233,
+      "compressed_bytes": 3985
+    },
+    {
+      "path": "CALFIRE_UrbanCanopy_SantaBarbaraCounty/Canopy_2022_0.TFw",
+      "bytes": 90,
+      "compressed_bytes": 49
+    },
+    {
+      "path": "CALFIRE_UrbanCanopy_SantaBarbaraCounty/Canopy_2022_0.TIF",
+      "bytes": 420900411,
+      "compressed_bytes": 36663349
+    },
+    {
+      "path": "CALFIRE_UrbanCanopy_SantaBarbaraCounty/Canopy_2022_0.TIF.aux.xml",
+      "bytes": 916,
+      "compressed_bytes": 319
+    },
+    {
+      "path": "CALFIRE_UrbanCanopy_SantaBarbaraCounty/Canopy_2022_0.TIF.ovr",
+      "bytes": 38953873,
+      "compressed_bytes": 13515957
+    },
+    {
+      "path": "CALFIRE_UrbanCanopy_SantaBarbaraCounty/Canopy_2022_0.TIF.vat.CPG",
+      "bytes": 5,
+      "compressed_bytes": 5
+    },
+    {
+      "path": "CALFIRE_UrbanCanopy_SantaBarbaraCounty/Canopy_2022_0.TIF.vat.dbf",
+      "bytes": 128,
+      "compressed_bytes": 80
+    },
+    {
+      "path": "CALFIRE_UrbanCanopy_SantaBarbaraCounty/Canopy_2022_0.TIF.xml",
+      "bytes": 13912,
+      "compressed_bytes": 4143
+    }
+  ],
+  "uncompressed_bytes": 1390338057,
+  "extracted": false
+}

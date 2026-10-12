@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "scope": "Additive public v12 build/check replay over the previously independently rebuilt byte-identical public v11b base; no duplicate native render.",
+  "files": {
+    "ground.clm": {
+      "original_sha256": "ed43f1188eaa1f2a20b1d2592371462ee532c3ed429032a547e721408dd38f24",
+      "public_replay_sha256": "ed43f1188eaa1f2a20b1d2592371462ee532c3ed429032a547e721408dd38f24",
+      "byte_identical": true
+    },
+    "understory.clm": {
+      "original_sha256": "ebdaf9cc2cbdd0603e06b8abcad3650af043ef0b89d72fe70283263dca5a6d28",
+      "public_replay_sha256": "ebdaf9cc2cbdd0603e06b8abcad3650af043ef0b89d72fe70283263dca5a6d28",
+      "byte_identical": true
+    },
+    "GEOMETRY_CONTRACTS.json": {
+      "original_sha256": "fb2c4d3ccbe6c813a24cbe2b2f6651eafb6fce175ae2d92ff4815f84b0a6896f",
+      "public_replay_sha256": "fb2c4d3ccbe6c813a24cbe2b2f6651eafb6fce175ae2d92ff4815f84b0a6896f",
+      "byte_identical": true
+    },
+    "UNDERSTORY.json": {
+      "original_sha256": "d09a8f38feee6784ba5e29da10f1d547809277c94c22c913f702d06db060b049",
+      "public_replay_sha256": "d09a8f38feee6784ba5e29da10f1d547809277c94c22c913f702d06db060b049",
+      "byte_identical": true
+    }
+  },
+  "guard": {
+    "exit_code": 0,
+    "stop_reason": null,
+    "elapsed_seconds": 58.46,
+    "peak_sampled_aggregate_rss_mib": 384.91,
+    "cap_mib": 4480.0,
+    "min_free_disk_gib": 8.773,
+    "disk_reserve_gib": 1,
+    "sample_seconds": 0.25,
+    "passed": true,
+    "scope": "Owned process tree; sampled user-space RSS guard, not kernel hard cap"
+  }
+}

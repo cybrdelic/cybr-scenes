@@ -1,0 +1,28 @@
+{
+  "09_lime_plaster": {
+    "id": "09_lime_plaster",
+    "name": "Lime Plaster / Troweled Skim",
+    "family": "Plaster",
+    "tile_m": 0.65,
+    "height_scale_m": 0.002,
+    "roughness": 0.76,
+    "ior": 1.48,
+    "metallic": 0,
+    "preview_diameter_m": 0.22,
+    "description": "Overlapping broad trowel passes and polished leading lips with restrained fine aggregate."
+  },
+  "10_natural_linen": {
+    "id": "10_natural_linen",
+    "name": "Natural Linen / Frayed",
+    "family": "Textile",
+    "tile_m": 0.085,
+    "height_scale_m": 0.00065,
+    "roughness": 0.8,
+    "ior": 1.46,
+    "metallic": 0,
+    "sheen": 0.32,
+    "sheen_roughness": 0.66,
+    "preview_diameter_m": 0.028,
+    "description": "Fine plain flax weave with 120 variable yarns per tile, continuous over-under bending, fibrils, attached slubs and real transparent inter-yarn openings."
+  }
+}
