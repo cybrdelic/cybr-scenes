@@ -1,0 +1,230 @@
+{
+  "passed": true,
+  "scope": "Original retained whole-region scene, new bounded authored Sabado profile and exact same 600x420/32 camera/material/daylight. Fresh public whole 64-stage rerun not performed for this patch.",
+  "source_inputs": {
+    "contact_sha256": "fb22fc6d72424984b352102775ac07cd67457ae0227dd3bb2330c02048461cca",
+    "terrain_npz_sha256": "35c9146c13a92db2675c6622bcf791c0195f754b4658c34fec9ab3f9b5d28729",
+    "normalized_geojson_sha256": "e4cabea0167a81604844f892b9d1950e503080a99e7daff184c6b1f05161f104",
+    "osm_sidewalk": "osm:way:592214516",
+    "osm_main_road": "osm:way:16262054",
+    "driveway_ids": [
+      "osm:way:598452638",
+      "osm:way:598452640",
+      "osm:way:598452641",
+      "osm:way:598452643",
+      "osm:way:598452660",
+      "osm:way:598452662",
+      "osm:way:598452663",
+      "osm:way:598452664",
+      "osm:way:598452665",
+      "osm:way:598452668",
+      "osm:way:627434847"
+    ],
+    "mapped_estimated_width_m": 1.8
+  },
+  "profile": {
+    "authored_estimates": {
+      "crossfall": 0.02,
+      "centerline_top_above_unchanged_source_ground_m": 0.14,
+      "driveway_top_offset_m": 0.018,
+      "driveway_transition_m": 1.2,
+      "longitudinal_blend_m": 10,
+      "x_interval_m": [
+        490,
+        665
+      ]
+    },
+    "changed_faces": 2046,
+    "changed_top_faces": 1512,
+    "changed_closed_edge_faces": 534,
+    "maximum_vertex_height_displacement_m": 0.09734630584716797,
+    "source_terrain_and_xy_footprints_unchanged": true
+  },
+  "edge_conformance": {
+    "source_sha256": "dbeb9d340df4860303afce607fdb4e6b45ffe5fe3035e73b11715e26e9f6fefa",
+    "output_sha256": "143b1350eb1d4358b07d762f0cf171d7edcc318e44eb84c37d6b6997dc96f0de",
+    "source_triangles": 2383698,
+    "output_triangles": 2384840,
+    "reconciled_original_segments": 290,
+    "nonedge_payload_order_canonical_sha256": "e32044dfb73055e2da2ddaeeeba6833d736b18cf53e1d08e190cca086fd4b377",
+    "immutable_cap_and_nonedge_faces": true,
+    "semantic_source_ids_preserved": true,
+    "source_terrain_untouched": true
+  },
+  "support": {
+    "changed_top_faces": 1512,
+    "sample_count": 68040,
+    "clearance_m": {
+      "min": 0.01799843693634884,
+      "median": 0.13934566268409476,
+      "p95": 0.18694338743063127,
+      "max": 0.23734715249389282
+    },
+    "passed": true
+  },
+  "cross_sections": [
+    {
+      "requested_x_m": 523.23,
+      "center_xy_m": [
+        523.2494769929109,
+        -291.8700065727164
+      ],
+      "ordinary": true,
+      "covered": true,
+      "before_full_width_crossfall": 0.10293159309743898,
+      "after_full_width_crossfall": 0.019867455355162676,
+      "after_local_crossfall": {
+        "min": 0.0196409080107429,
+        "median": 0.019999191831292513,
+        "p95": 0.02000027365514968,
+        "max": 0.020000273655149697
+      },
+      "passed": true
+    },
+    {
+      "requested_x_m": 550.0,
+      "center_xy_m": [
+        549.9938965259532,
+        -292.6972429190757
+      ],
+      "ordinary": true,
+      "covered": true,
+      "before_full_width_crossfall": 0.11606596152018449,
+      "after_full_width_crossfall": 0.020470890093053133,
+      "after_local_crossfall": {
+        "min": 0.012839548927594539,
+        "median": 0.02000004452744624,
+        "p95": 0.030305455312321435,
+        "max": 0.030306370420269964
+      },
+      "passed": true
+    },
+    {
+      "requested_x_m": 580.0,
+      "center_xy_m": [
+        579.9545780117879,
+        -293.7062249895469
+      ],
+      "ordinary": true,
+      "covered": true,
+      "before_full_width_crossfall": 0.0779906378170109,
+      "after_full_width_crossfall": 0.01880723049646913,
+      "after_local_crossfall": {
+        "min": 0.006469396356045822,
+        "median": 0.02000029522090328,
+        "p95": 0.03415225006199837,
+        "max": 0.03612218706098962
+      },
+      "passed": true
+    },
+    {
+      "requested_x_m": 630.0,
+      "center_xy_m": [
+        629.9480872918388,
+        -295.236823169512
+      ],
+      "ordinary": true,
+      "covered": true,
+      "before_full_width_crossfall": 0.019254787359916665,
+      "after_full_width_crossfall": 0.020004562820776783,
+      "after_local_crossfall": {
+        "min": 0.019482609007219747,
+        "median": 0.02000028793309739,
+        "p95": 0.02017938161046116,
+        "max": 0.020179381610461206
+      },
+      "passed": true
+    }
+  ],
+  "edge_closure": {
+    "source_segments": 290,
+    "refined_segments": 861,
+    "matched_samples": 14637,
+    "unmatched_samples": 0,
+    "absolute_gap_m": {
+      "min": 0.0,
+      "median": 1.0217592638639417e-07,
+      "p95": 3.789108607321622e-07,
+      "max": 1.557527701478989e-06
+    },
+    "worst": {
+      "gap_m": 1.557527701478989e-06,
+      "xyz_m": [
+        569.7484321594238,
+        -293.5193271636963,
+        13.0377739071846
+      ],
+      "source_triangle_indices": [
+        2336674,
+        2336675
+      ]
+    },
+    "tolerance_m": 0.002,
+    "passed": true
+  },
+  "refined_edge_geometry": {
+    "maximum_perimeter_rounding_drift_m": 3.0063144419949246e-05,
+    "maximum_bottom_line_interpolation_error_m": 4.731331362251012e-07,
+    "maximum_normal_component_error": 2.970399304302873e-08,
+    "degenerate_uv_faces": 0,
+    "passed": true
+  },
+  "all_adjacent_edges": {
+    "passed": true,
+    "target_sha256": "143b1350eb1d4358b07d762f0cf171d7edcc318e44eb84c37d6b6997dc96f0de",
+    "scope": "Every local path edge adjacent to any changed cap triangle, including unchanged endpoint pairs.",
+    "adjacent_edge_segments": 860,
+    "matched_samples": 14620,
+    "unmatched_samples": 0,
+    "absolute_gap_m": {
+      "min": 0.0,
+      "median": 1.0195438004956259e-07,
+      "p95": 3.789004951570973e-07,
+      "max": 1.557527701478989e-06
+    },
+    "worst": {
+      "gap_m": 1.557527701478989e-06,
+      "xyz_m": [
+        569.7484321594238,
+        -293.5193271636963,
+        13.0377739071846
+      ],
+      "edge_xy_endpoints_m": [
+        [
+          569.7479858398438,
+          -293.5332336425781
+        ],
+        [
+          569.755126953125,
+          -293.31072998046875
+        ]
+      ]
+    },
+    "tolerance_m": 0.002
+  },
+  "native_gate": {
+    "renderer": "CYBR LIGHT 0.2",
+    "backend": "C++17 OpenMP CPU",
+    "width": 600,
+    "height": 420,
+    "packets_per_pixel": 32,
+    "primitives": 9356861,
+    "render_seconds": 122.619046517,
+    "invalid_path_samples": 0,
+    "image_generation_used": false
+  },
+  "native_image_sha256": "b2eef7cf9ddfdfbcd4f14d8ac0d313ccf62f98f52527b1a94b683edebf115e94",
+  "guard": {
+    "passed": true,
+    "elapsed_seconds": 198.9,
+    "peak_sampled_aggregate_rss_mib": 2483.14,
+    "cap_mib": 4480.0,
+    "min_free_disk_gib": 6.34,
+    "disk_reserve_gib": 1,
+    "sample_seconds": 0.25,
+    "scope": "Owned process tree; sampled user-space RSS guard, not kernel hard cap"
+  },
+  "limits": "Geographic terrain and width are preserved; construction dimensions are authored. Approximately 2% near-full-width interior crossfall, not exact every-facet slope or accessibility qualification. Bounded sampled support/closure, not a formal continuum proof. Native visual change is modest; broad terrain bands, low-sample road grain and generic architecture remain. No material/lighting changes or image generation.",
+  "cross_section_measurement_span_m": 1.7,
+  "cross_section_field_qualification": "Legacy full_width field names refer to samples at +/-0.85 m across the estimated1.80m walk; these are near-full-width interior measurements, not the exact boundary-to-boundary span."
+}

@@ -147,3 +147,11 @@ are estimates. Native capture receipts sit beside each image.
 base build whose GLB, terrain state, normalized geography, part layout and
 tagged-roof outputs are byte-identical to the recovered source. This check
 does not claim a second fresh replay of every later stage.
+
+## Authored Sabado sidewalk profile
+
+A focused subsequent construction correction preserves the source terrain and
+mapped width while reducing the foreground walk crossfall and reconciling its
+closed edges. See [SABADO_PROFILE.md](SABADO_PROFILE.md) for the bounded source
+replay, numerical proof and explicit limits. It is separate from the original
+coverage-recovery views above.
