@@ -24,7 +24,8 @@ case "$action" in
   build) "$PY" tools/link_installed_runtime.py; "$PY" tools/recover_whole_iv_stages.py --start "${1:-1}" --end "${2:-64}" ;;
   repair-path-uv) mkdir -p evidence/input-guards; flock -w 1800 "$CYBR_HEAVY_LOCK" taskset -c 0,1 "$PY" tools/run_lagoon_stage.py --log evidence/input-guards/uv-rebase.log --receipt evidence/input-guards/uv-rebase.json --seconds 900 -- "$PY" tools/replay_retained_iv_script.py rebase_recovered_path_uv.py ;;
   facades-v2) "$PY" tools/replay_facades_v2.py "$@" ;;
+  hedges-v1) "$PY" tools/replay_mapped_hedges_v1.py "$@" ;;
   profile-sabado) "$PY" tools/replay_sabado_profile.py "$@" ;;
   frontage) view="${1:?Choose sabado or del-playa}"; mkdir -p evidence/input-guards; flock -w 1800 "$CYBR_HEAVY_LOCK" taskset -c 0,1 "$PY" tools/run_lagoon_stage.py --log "evidence/input-guards/$view.log" --receipt "evidence/input-guards/$view.json" --seconds 900 -- "$PY" tools/replay_retained_iv_script.py capture_recovered_frontages.py "$view" --width 600 --spp 32 --street-trees ;;
-  *) echo 'Usage: ./run.sh setup|fetch|verify|coastal|build [start end]|repair-path-uv|frontage sabado|frontage del-playa|profile-sabado build|profile-sabado render [--spp 32|128]|facades-v2 build|facades-v2 render [--spp 32|128]|facades-v2 close' >&2; exit 2 ;;
+  *) echo 'Usage: ./run.sh setup|fetch|verify|coastal|build [start end]|repair-path-uv|frontage sabado|frontage del-playa|profile-sabado build|profile-sabado render [--spp 32|128]|facades-v2 build|facades-v2 render [--spp 32|128]|facades-v2 close|hedges-v1 build|hedges-v1 render|hedges-v1 baseline' >&2; exit 2 ;;
 esac

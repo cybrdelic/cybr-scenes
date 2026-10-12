@@ -67,6 +67,7 @@ evidence/full-iv-*/
 evidence/input-guards/
 evidence/whole-iv-recovered-views/
 evidence/whole-iv-recovery-stages/
+evidence/mapped-hedges-v1/
 native-cache/
 work/cybr-light/data
 work/iv-component-runtime/
