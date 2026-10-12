@@ -1,0 +1,25 @@
+name: Validate Victorville DU5 source extension
+on:
+  pull_request:
+    paths: ['scenes/victorville-road/source/du5/**', 'tests/test_victorville_du5.py', '.github/workflows/victorville-du5.yml']
+  push:
+    branches: [master]
+    paths: ['scenes/victorville-road/source/du5/**', 'tests/test_victorville_du5.py', '.github/workflows/victorville-du5.yml']
+permissions:
+  contents: read
+jobs:
+  source-contracts:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            scenes/victorville-road/source/du5
+            tests/test_victorville_du5.py
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p test_victorville_du5.py
