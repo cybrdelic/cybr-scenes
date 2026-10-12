@@ -1,0 +1,540 @@
+{
+  "renderer": "Blender 4.3.2 Cycles CPU",
+  "samples": 4,
+  "actual_admitted_handler_AST_executed": true,
+  "old_vs_fixed_normal_RGB_exact": true,
+  "fixed_native_crops_vs_full_literal_RGB_exact": true,
+  "legacy_integer_API_RGB_exact": true,
+  "old_394_over_1334_failure_reproduced": true,
+  "images": {
+    "old_normal": {
+      "observed_size": [
+        64,
+        48
+      ],
+      "requested_size": [
+        64,
+        48
+      ],
+      "png_sha256": "3a2ddebbd9424e8e8747a6f954c2f6d7a19c45713e52d16077e0bf0d1d3ad65b",
+      "border": null
+    },
+    "fixed_normal": {
+      "observed_size": [
+        64,
+        48
+      ],
+      "requested_size": [
+        64,
+        48
+      ],
+      "png_sha256": "eda9b8462fbdfff5b2b60d727c763bbb1d926db6ba46bbaf687ed6eb40606973",
+      "border": null
+    },
+    "small_full": {
+      "observed_size": [
+        64,
+        48
+      ],
+      "requested_size": [
+        64,
+        48
+      ],
+      "png_sha256": "3a2ddebbd9424e8e8747a6f954c2f6d7a19c45713e52d16077e0bf0d1d3ad65b",
+      "border": null
+    },
+    "small_integer": {
+      "observed_size": [
+        33,
+        27
+      ],
+      "requested_size": [
+        33,
+        27
+      ],
+      "png_sha256": "69f103dfc8820facbb60d240dc7dad4923ae9e064ce49c9e87871c70f87f87dc",
+      "border": {
+        "native_border_version": 2,
+        "full_projection_resolution": [
+          64,
+          48
+        ],
+        "native_pixel_bounds_xy": [
+          8,
+          41,
+          7,
+          34
+        ],
+        "normalized_bounds": [
+          0.125,
+          0.640625,
+          0.1458333432674408,
+          0.7083333730697632
+        ],
+        "exact_edge_ratios": [
+          0.125,
+          0.640625,
+          0.14583333333333334,
+          0.7083333333333334
+        ],
+        "RNA_float32_pixel_bounds_xy": [
+          8,
+          41,
+          7,
+          34
+        ],
+        "output_resolution": [
+          33,
+          27
+        ],
+        "camera_geometry_material_scale_changed": false
+      }
+    },
+    "small_legacy": {
+      "observed_size": [
+        33,
+        27
+      ],
+      "requested_size": [
+        33,
+        27
+      ],
+      "png_sha256": "69f103dfc8820facbb60d240dc7dad4923ae9e064ce49c9e87871c70f87f87dc",
+      "border": {
+        "native_border_version": 2,
+        "full_projection_resolution": [
+          64,
+          48
+        ],
+        "native_pixel_bounds_xy": [
+          8,
+          41,
+          7,
+          34
+        ],
+        "normalized_bounds": [
+          0.125,
+          0.640625,
+          0.1458333432674408,
+          0.7083333730697632
+        ],
+        "exact_edge_ratios": [
+          0.125,
+          0.640625,
+          0.14583333333333334,
+          0.7083333333333334
+        ],
+        "RNA_float32_pixel_bounds_xy": [
+          8,
+          41,
+          7,
+          34
+        ],
+        "output_resolution": [
+          33,
+          27
+        ],
+        "camera_geometry_material_scale_changed": false
+      }
+    },
+    "near_edges_full": {
+      "observed_size": [
+        97,
+        89
+      ],
+      "requested_size": [
+        97,
+        89
+      ],
+      "png_sha256": "612af616e673a7ecbf4ae2915ac58c9ed916a842463ad074226c3262ff0c31f5",
+      "border": null
+    },
+    "near_edges_integer": {
+      "observed_size": [
+        92,
+        76
+      ],
+      "requested_size": [
+        92,
+        76
+      ],
+      "png_sha256": "d2b86986c2d2c7ba1e1327a21ae3c2c3281d576a23b024ef91eac5831567de3d",
+      "border": {
+        "native_border_version": 2,
+        "full_projection_resolution": [
+          97,
+          89
+        ],
+        "native_pixel_bounds_xy": [
+          1,
+          93,
+          7,
+          83
+        ],
+        "normalized_bounds": [
+          0.010309278964996338,
+          0.9587629437446594,
+          0.07865168899297714,
+          0.932584285736084
+        ],
+        "exact_edge_ratios": [
+          0.010309278350515464,
+          0.9587628865979382,
+          0.07865168539325842,
+          0.9325842696629213
+        ],
+        "RNA_float32_pixel_bounds_xy": [
+          1,
+          93,
+          7,
+          83
+        ],
+        "output_resolution": [
+          92,
+          76
+        ],
+        "camera_geometry_material_scale_changed": false
+      }
+    },
+    "near_edges_legacy": {
+      "observed_size": [
+        92,
+        76
+      ],
+      "requested_size": [
+        92,
+        76
+      ],
+      "png_sha256": "d2b86986c2d2c7ba1e1327a21ae3c2c3281d576a23b024ef91eac5831567de3d",
+      "border": {
+        "native_border_version": 2,
+        "full_projection_resolution": [
+          97,
+          89
+        ],
+        "native_pixel_bounds_xy": [
+          1,
+          93,
+          7,
+          83
+        ],
+        "normalized_bounds": [
+          0.010309278964996338,
+          0.9587629437446594,
+          0.07865168899297714,
+          0.932584285736084
+        ],
+        "exact_edge_ratios": [
+          0.010309278350515464,
+          0.9587628865979382,
+          0.07865168539325842,
+          0.9325842696629213
+        ],
+        "RNA_float32_pixel_bounds_xy": [
+          1,
+          93,
+          7,
+          83
+        ],
+        "output_resolution": [
+          92,
+          76
+        ],
+        "camera_geometry_material_scale_changed": false
+      }
+    },
+    "road_failure_full": {
+      "observed_size": [
+        2000,
+        1334
+      ],
+      "requested_size": [
+        2000,
+        1334
+      ],
+      "png_sha256": "e5bf3c47390a768f00caf26a49d34759775c8c864cec4c25b7f5b844f8508bd4",
+      "border": null
+    },
+    "road_failure_integer": {
+      "observed_size": [
+        500,
+        394
+      ],
+      "requested_size": [
+        500,
+        394
+      ],
+      "png_sha256": "4d9bb6ac0b7269392d97848363ce8ca365addd3ccc05c03fba21ebe2d816f167",
+      "border": {
+        "native_border_version": 2,
+        "full_projection_resolution": [
+          2000,
+          1334
+        ],
+        "native_pixel_bounds_xy": [
+          800,
+          1300,
+          0,
+          394
+        ],
+        "normalized_bounds": [
+          0.4000000059604645,
+          0.6500000357627869,
+          0.0,
+          0.29535233974456787
+        ],
+        "exact_edge_ratios": [
+          0.4,
+          0.65,
+          0.0,
+          0.29535232383808097
+        ],
+        "RNA_float32_pixel_bounds_xy": [
+          800,
+          1300,
+          0,
+          394
+        ],
+        "output_resolution": [
+          500,
+          394
+        ],
+        "camera_geometry_material_scale_changed": false
+      }
+    },
+    "road_failure_legacy": {
+      "observed_size": [
+        500,
+        394
+      ],
+      "requested_size": [
+        500,
+        394
+      ],
+      "png_sha256": "13d0d6f3e54b8e6a2c5cc0c56bb5bab9a1e61b93c816a74735175f454ab824eb",
+      "border": {
+        "native_border_version": 2,
+        "full_projection_resolution": [
+          2000,
+          1334
+        ],
+        "native_pixel_bounds_xy": [
+          800,
+          1300,
+          0,
+          394
+        ],
+        "normalized_bounds": [
+          0.4000000059604645,
+          0.6500000357627869,
+          0.0,
+          0.29535233974456787
+        ],
+        "exact_edge_ratios": [
+          0.4,
+          0.65,
+          0.0,
+          0.29535232383808097
+        ],
+        "RNA_float32_pixel_bounds_xy": [
+          800,
+          1300,
+          0,
+          394
+        ],
+        "output_resolution": [
+          500,
+          394
+        ],
+        "camera_geometry_material_scale_changed": false
+      }
+    },
+    "old_road_failure": {
+      "observed_size": [
+        500,
+        393
+      ],
+      "requested_size": [
+        500,
+        394
+      ],
+      "png_sha256": "e3057744c3d7629977e54206de747e0769e058c919d96119269e85029d13e1e4",
+      "border": {
+        "full_projection_resolution": [
+          2000,
+          1334
+        ],
+        "normalized_bounds": [
+          0.4,
+          0.65,
+          0.0,
+          0.29535232383808097
+        ],
+        "native_pixel_bounds_xy": [
+          800.0,
+          1300.0,
+          0.0,
+          394.0
+        ],
+        "output_resolution": [
+          500,
+          394
+        ],
+        "camera_geometry_material_scale_changed": false
+      }
+    },
+    "road_nonzero_integer": {
+      "observed_size": [
+        498,
+        392
+      ],
+      "requested_size": [
+        498,
+        392
+      ],
+      "png_sha256": "91ac7e5949240528cd8de5dbf7d6da8863854516dd8ba830490c7d45e6f7402e",
+      "border": {
+        "native_border_version": 2,
+        "full_projection_resolution": [
+          2000,
+          1334
+        ],
+        "native_pixel_bounds_xy": [
+          801,
+          1299,
+          1,
+          393
+        ],
+        "normalized_bounds": [
+          0.40050002932548523,
+          0.6495000123977661,
+          0.0007496252073906362,
+          0.29460272192955017
+        ],
+        "exact_edge_ratios": [
+          0.4005,
+          0.6495,
+          0.0007496251874062968,
+          0.2946026986506747
+        ],
+        "RNA_float32_pixel_bounds_xy": [
+          801,
+          1299,
+          1,
+          393
+        ],
+        "output_resolution": [
+          498,
+          392
+        ],
+        "camera_geometry_material_scale_changed": false
+      }
+    },
+    "road_nonzero_legacy": {
+      "observed_size": [
+        498,
+        392
+      ],
+      "requested_size": [
+        498,
+        392
+      ],
+      "png_sha256": "702dad34741a7a9c571ef21523bd0c94cdbdff176c012b3246c5ab3a1ec0a1ca",
+      "border": {
+        "native_border_version": 2,
+        "full_projection_resolution": [
+          2000,
+          1334
+        ],
+        "native_pixel_bounds_xy": [
+          801,
+          1299,
+          1,
+          393
+        ],
+        "normalized_bounds": [
+          0.40050002932548523,
+          0.6495000123977661,
+          0.0007496252073906362,
+          0.29460272192955017
+        ],
+        "exact_edge_ratios": [
+          0.4005,
+          0.6495,
+          0.0007496251874062968,
+          0.2946026986506747
+        ],
+        "RNA_float32_pixel_bounds_xy": [
+          801,
+          1299,
+          1,
+          393
+        ],
+        "output_resolution": [
+          498,
+          392
+        ],
+        "camera_geometry_material_scale_changed": false
+      }
+    }
+  },
+  "scope": "Actual native crop and float32 RNA regression; no scene appearance change or resampling.",
+  "guard": {
+    "command": [
+      "env",
+      "LD_PRELOAD=/lib/x86_64-linux-gnu/libjemalloc.so.2",
+      "MALLOC_CONF=narenas:2,dirty_decay_ms:0,muzzy_decay_ms:0,abort_conf:true",
+      "OMP_NUM_THREADS=2",
+      "OPENBLAS_NUM_THREADS=2",
+      "MKL_NUM_THREADS=2",
+      "NUMEXPR_NUM_THREADS=2",
+      "/usr/bin/blender",
+      "-b",
+      "-t",
+      "2",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "du_connected_interspaces/crop_pixel_fix/tests/render_victorville_pixel_border_fixture.py",
+      "--",
+      "public_v4_qualification_fixture/dr_recovered_whole/runtime/pipeline/render.py",
+      "du_connected_interspaces/crop_pixel_prepared/runtime/pipeline/render.py",
+      "du_connected_interspaces/crop_pixel_fixture"
+    ],
+    "exit_code": 0,
+    "stop_reason": null,
+    "elapsed_seconds": 13.823141257998941,
+    "sampled_process_tree_peak_MiB": 710.38671875,
+    "kernel_max_child_RSS_MiB": 725.16796875,
+    "cap_MiB": 4480.0,
+    "termination_scope": "Every owned descendant process group, including inner detached guard sessions",
+    "terminated_groups": [],
+    "passed": true
+  },
+  "source_normal_path_comparison": {
+    "render.py": {
+      "normal_source_outside_versioned_border_block_exact": true,
+      "normalized_non_border_sha256": "647a64b33960549e7c0a91879d351f7e8b32285ebcc38975e5dba47fd871dd5d"
+    },
+    "render_landform_candidate.py": {
+      "normal_source_outside_versioned_border_block_exact": true,
+      "normalized_non_border_sha256": "ff1ed54663ee53861b6de1ca2847e11ee5d4285dc3475f20844fb6d707994154"
+    }
+  },
+  "unit_tests": {
+    "count": 9,
+    "passed": true,
+    "coverage": "All edges at resolution48,64,89,97,1334,2000,65536; integer/legacy equivalence; rejection of malformed/conflicting jobs; explicit source capability admission."
+  },
+  "fresh_public_preparation": {
+    "DR_job_bytes_unchanged": true,
+    "DU5_normal_preparation_passed": true,
+    "published_DV3_legacy_crop_preparation_passed": true,
+    "source_snapshot_includes_native_border_helper": true,
+    "full_road_rerender": false
+  },
+  "source_hashes": {
+    "native_border.py": "4717d12f7043cc3a06616cc33c77ce0ef2d5a449020f163b98042efe55a30ebd",
+    "prepare_du5.py": "ff7881cca3ad7adb56fc493e9705d310f05549ea60657104cd6f501208016056"
+  }
+}

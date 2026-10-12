@@ -16,7 +16,7 @@ files; there is no copied hard-coded aggregate recipe here.
 ## Prepare and render
 
 First prepare the adjacent DR source using its README. Point the following at
-the CYBR MATERIAL checkout at commit `85af551411994757395d6a490d8ae649cb25412e` containing the pinned files. Use a fresh output path:
+the CYBR MATERIAL checkout containing the pinned files. Use a fresh output path:
 
     python3 prepare_du5.py --material-root /path/to/cybr-material --output-root /path/to/du5-output --view normal
 
@@ -46,3 +46,26 @@ not render and does not modify the accepted DR files.
   improvement. Use recorded evidence; do not infer visual acceptance from tests.
 - The experimental serialized DR cache failed its RGB control and is excluded.
   Always use the complete original DR assembly.
+
+## Native integer pixel borders
+
+For an exact camera crop, prefer job key `render_border_pixels` with four
+integer edges `[xmin, xmax, ymin, ymax]` in the full projection's bottom-left
+coordinate system. Upper edges are exclusive. For example, `[800, 1300, 0, 394]`
+at 2000 × 1334 must produce 500 × 394 native pixels. Camera geometry, projection,
+material scale and sample density are unchanged; no resizing is performed.
+
+The version 2 helper derives float32 normalized RNA values from these integer
+bounds, reads them back, and requires both float32 and double multiplication to
+resolve to the same integer edges. A normalized Python value can otherwise round
+just below an edge when stored by Blender, silently losing one row. Legacy
+`render_border` jobs remain supported only when their ratios align to integer
+edges; supplying both forms with conflicting bounds fails before rendering.
+
+The preparer replaces only the exact source-hash-admitted version 1 AST handler.
+Unknown or ambiguous renderer layouts fail. The helper is included in the
+runtime source snapshot. With neither border key, the normal render path does
+not invoke the helper. The tiny actual Cycles regression is
+`tests/render_victorville_pixel_border_fixture.py`; recorded results are in
+`PIXEL_BORDER_VALIDATION.json`. These checks qualify crop coordinates, not scene
+realism.
