@@ -1,0 +1,3 @@
+[submodule "engines/cybr-light"]
+	path = engines/cybr-light
+	url = https://github.com/cybrdelic/cybr-light.git

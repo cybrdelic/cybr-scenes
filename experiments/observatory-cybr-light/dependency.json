@@ -1,0 +1,12 @@
+{
+  "repository": "cybrdelic/cybr-light",
+  "commit": "1ad19a8fe77ae865a8cedd5123d291b1280ff1a0",
+  "base_commit": "38f29ee2f6559311513c1f570be7a36224194ce8",
+  "include_tree": "ac0e3d3e5d6648b69b88a59eae5192928fe35151",
+  "main_blob": "d6968884adf6274fa1c94cfb692c5df5d3e3641a",
+  "preserved_scenes_commit": "964619ccdadf4b159bba0467d207872cd304c56b",
+  "preserved_scene_tree": "632f7633d0780f593cd679f9a7c4c993c888d347",
+  "baseline_archive_sha256": "ebf85d46b54a510915cf48e15f14944cac33e81be3f7a9e9618f29a38f549a0a",
+  "baseline_mesh_sha256": "1cad20e08992074214b9006066139ac4217aa10f4773cf591f0315d5f64d8726",
+  "engine_changes": ["checked binary triangle input", "shared image-texture cache", "environment portal importance sampling and reciprocal MIS"]
+}
