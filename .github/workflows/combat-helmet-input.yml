@@ -1,0 +1,33 @@
+name: Combat helmet input
+on:
+  push:
+    branches: [feature/mythic-elemental-combat]
+    paths: [.github/workflows/combat-helmet-input.yml]
+permissions:
+  contents: read
+jobs:
+  asset:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Fetch declared glTF resources
+        shell: python
+        run: |
+          import pathlib,urllib.request,urllib.parse,json,hashlib
+          root=pathlib.Path('helmet');root.mkdir()
+          base='https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/SciFiHelmet/'
+          def fetch(rel):
+            url=urllib.parse.urljoin(base,rel)
+            if not url.startswith(base):raise ValueError('Escaping model directory')
+            with urllib.request.urlopen(url,timeout=50) as r:data=r.read()
+            path=root/rel;path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(data)
+            return data,dict(file=rel,url=url,bytes=len(data),sha256=hashlib.sha256(data).hexdigest())
+          raw,rec=fetch('glTF/SciFiHelmet.gltf');doc=json.loads(raw);records=[rec]
+          for rel in ['README.md','screenshot/screenshot.jpg']+['glTF/'+v['uri'] for v in doc.get('buffers',[])+doc.get('images',[]) if 'uri' in v and not v['uri'].startswith('data:')]:
+            raw,rec=fetch(rel);records.append(rec)
+          (root/'receipts.json').write_text(json.dumps(records,indent=2))
+      - uses: actions/upload-artifact@v4
+        with:
+          name: combat-cc0-helmet
+          path: helmet/
+          retention-days: 3

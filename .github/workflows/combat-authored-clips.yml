@@ -1,0 +1,57 @@
+name: Combat authored clips
+on:
+  push:
+    branches: [feature/mythic-elemental-combat]
+    paths: [.github/workflows/combat-authored-clips.yml]
+permissions:
+  contents: read
+jobs:
+  clips:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - run: python -m pip install playwright==1.57.0
+      - run: python -m playwright install --with-deps chromium
+      - name: Download free Standard archives only
+        shell: python
+        run: |
+          import pathlib,json,hashlib
+          from playwright.sync_api import sync_playwright
+          root=pathlib.Path('authored_clips');root.mkdir()
+          receipts=[]
+          with sync_playwright() as p:
+            browser=p.chromium.launch(headless=True,args=['--no-sandbox'])
+            context=browser.new_context(accept_downloads=True)
+            for slug in ['universal-animation-library','universal-animation-library-2']:
+              page=context.new_page()
+              try:
+                url='https://quaternius.itch.io/'+slug
+                page.goto(url,wait_until='domcontentloaded',timeout=60000)
+                (root/(slug+'_publisher.html')).write_text(page.content())
+                page.goto(url+'/purchase',wait_until='domcontentloaded',timeout=60000)
+                page.locator('.direct_download_btn').click(timeout=20000)
+                page.wait_for_selector('.download_btn',timeout=60000)
+                print(page.locator('body').inner_text()[:7000])
+                uploads=page.locator('.upload')
+                selected=None
+                for i in range(uploads.count()):
+                  item=uploads.nth(i)
+                  if '[Standard]' in item.inner_text():selected=item;break
+                if selected is None:raise RuntimeError('Free Standard upload not found; refusing other editions')
+                with page.expect_download(timeout=90000) as pending:
+                  selected.locator('.download_btn').click()
+                download=pending.value;dest=root/(slug+'_Standard.zip');download.save_as(dest)
+                data=dest.read_bytes()
+                if data[:2]!=b'PK' or len(data)>128*1024*1024:raise ValueError('Invalid bounded ZIP download')
+                receipts.append(dict(file=dest.name,publisher=url,edition='Standard',license='CC0',bytes=len(data),sha256=hashlib.sha256(data).hexdigest()))
+              except Exception as e:
+                print('ERROR',slug,str(e));(root/(slug+'_error.html')).write_text(page.content());receipts.append(dict(slug=slug,error=str(e)))
+              finally:page.close()
+            browser.close()
+          (root/'receipts.json').write_text(json.dumps(receipts,indent=2));print(json.dumps(receipts,indent=2))
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: combat-authored-cc0-clips
+          path: authored_clips/
+          retention-days: 3
