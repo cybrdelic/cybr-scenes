@@ -1,4 +1,6 @@
 #include "surface_detail.hpp"
+#include "native_film_output.hpp"
+#include <memory>
 // CYBR GEO / GPL-2.0-only
 // Native Drowned Geode extension. Reuses CYBR GEO's actual BVH and mesh
 // intersections. Photographed material maps are inputs, not backgrounds.
@@ -625,13 +627,41 @@ int main(int argc,char**argv){try{
     else if(o.view!="hero")throw std::runtime_error("Unknown camera view");
     V forward=unit(target-camera),right=unit(cross(forward,V(0,0,1))),up=cross(right,forward);
     float tanHalf=std::tan(hfov*PI/360.f),aspect=float(o.width)/o.height,focus=len(target-camera),cone=2*tanHalf/o.width;
-    size_t pixels=size_t(o.width)*o.height;std::vector<uint32_t> sampleCounts(pixels);
-    std::vector<Spec> film(pixels),reflectionFilm(pixels),volumeFilm(pixels);std::vector<Guide> guides(pixels),reflectionGuides(pixels),primaryGuides(pixels);std::atomic<int> rows{0};std::atomic<uint64_t> nonfinite{0};
+    // Only storage is tiled. Global pixel indices still select identical rays
+    // and RNG samples; every pixel retains its original accumulation order.
+    constexpr int tileRows=16;
+    size_t pixels=size_t(o.width)*o.height,tilePixels=size_t(o.width)*std::min(tileRows,o.height);
+    std::vector<uint32_t> sampleCounts(tilePixels);
+    std::vector<Spec> film(tilePixels),reflectionFilm(tilePixels),volumeFilm(tilePixels);
+    std::vector<Guide> guides(tilePixels),reflectionGuides(tilePixels),primaryGuides(tilePixels);
+    std::atomic<int> rows{0};std::atomic<uint64_t> nonfinite{0};
+    using cybr_film::BinaryRows;using cybr_film::RowOrder;
+    const std::string pfmHeader="PF\n"+std::to_string(o.width)+" "+std::to_string(o.height)+"\n-1.0\n";
+    const std::string ppmHeader="P6\n"+std::to_string(o.width)+" "+std::to_string(o.height)+"\n255\n";
+    uint32_t dim[2]={uint32_t(o.width),uint32_t(o.height)};
+    const std::string dimHeader(reinterpret_cast<const char*>(dim),sizeof(dim));
+    BinaryRows pf(o.out+".pfm",pfmHeader,size_t(o.width)*sizeof(V),o.height,RowOrder::bottom_up);
+    BinaryRows rf(o.out+"_reflection.pfm",pfmHeader,size_t(o.width)*sizeof(V),o.height,RowOrder::bottom_up);
+    BinaryRows vf(o.out+"_volume.pfm",pfmHeader,size_t(o.width)*sizeof(V),o.height,RowOrder::bottom_up);
+    BinaryRows ppm(o.out+".ppm",ppmHeader,size_t(o.width)*3,o.height);
+    BinaryRows gf(o.out+".guides",dimHeader,size_t(o.width)*sizeof(Guide),o.height);
+    BinaryRows rg(o.out+"_reflection.guides",dimHeader,size_t(o.width)*sizeof(Guide),o.height);
+    BinaryRows pg(o.out+"_primary.guides",dimHeader,size_t(o.width)*sizeof(Guide),o.height);
+    BinaryRows counts(o.out+".samples",dimHeader,size_t(o.width)*sizeof(uint32_t),o.height);
+    std::unique_ptr<BinaryRows> spectral;
+    if(o.bands){uint32_t header[]={0x36315053,uint32_t(o.width),uint32_t(o.height),NBANDS};
+        spectral=std::make_unique<BinaryRows>(o.out+".spectral",std::string(reinterpret_cast<const char*>(header),sizeof(header)),size_t(o.width)*sizeof(Spec),o.height);}
+    std::vector<V> rgbRow(o.width),reflectionRow(o.width),volumeRow(o.width);
+    std::vector<unsigned char> previewRow(size_t(o.width)*3);
+    Spec means;
     int strata=int(std::ceil(std::sqrt(float(o.spp))));
+    for(int tileY=0;tileY<o.height;tileY+=tileRows){
+    const int tileEnd=std::min(tileY+tileRows,o.height);
     #pragma omp parallel for schedule(dynamic,1)
-    for(int y=0;y<o.height;y++){
+    for(int y=tileY;y<tileEnd;y++){
         for(int x=0;x<o.width;x++){
             size_t index=size_t(y)*o.width+x;RNG rng(uint64_t(index)*0x9e3779b97f4a7c15ULL+o.seed);
+            const size_t stored=size_t(y-tileY)*o.width+x;
             int pixelSpp=o.spp;
             float cx=(2*(x+.5f)/o.width-1)*tanHalf,cy=(1-2*(y+.5f)/o.height)*tanHalf/aspect;
             Guide first=primaryGuideRay(Ray(camera,unit(forward+right*cx+up*cy)),cone,false);
@@ -640,7 +670,7 @@ int main(int argc,char**argv){try{
              else if((first.material==0||first.material==3)&&first.depth>7)pixelSpp=std::max(16,o.spp/2);
              else if(first.material==8||first.material==9)pixelSpp=std::max(128,o.spp*2);
             }
-            sampleCounts[index]=pixelSpp;Spec sum,reflectionSum,volumeSum;double lum2=0;
+            sampleCounts[stored]=pixelSpp;Spec sum,reflectionSum,volumeSum;double lum2=0;
             for(int s=0;s<pixelSpp;s++){
                 rng.beginSample(s,mix32(uint32_t(index)^uint32_t(o.seed)));float jx=rng.uniform(),jy=rng.uniform();
                 float px=(2*(x+jx)/o.width-1)*tanHalf,py=(1-2*(y+jy)/o.height)*tanHalf/aspect;
@@ -651,13 +681,13 @@ int main(int argc,char**argv){try{
                 if(!finite){nonfinite++;continue;}
                 sum+=value;double lum=xyz(value).y;lum2+=lum*lum;
             }
-            film[index]=sum*(1.f/pixelSpp);reflectionFilm[index]=reflectionSum*(1.f/pixelSpp);volumeFilm[index]=volumeSum*(1.f/pixelSpp);
+            film[stored]=sum*(1.f/pixelSpp);reflectionFilm[stored]=reflectionSum*(1.f/pixelSpp);volumeFilm[stored]=volumeSum*(1.f/pixelSpp);
             float px=(2*(x+.5f)/o.width-1)*tanHalf,py=(1-2*(y+.5f)/o.height)*tanHalf/aspect;
             Guide g=guideRay(Ray(camera,unit(forward+right*px+up*py)),cone);
-            double avg=xyz(film[index]).y;g.variance=std::max(0.,(lum2/pixelSpp-avg*avg)/std::max(1,pixelSpp-1));guides[index]=g;
+            double avg=xyz(film[stored]).y;g.variance=std::max(0.,(lum2/pixelSpp-avg*avg)/std::max(1,pixelSpp-1));guides[stored]=g;
             Ray centerRay(camera,unit(forward+right*px+up*py));
-            reflectionGuides[index]=primaryGuideRay(centerRay,cone,true);primaryGuides[index]=primaryGuideRay(centerRay,cone,false);
-            reflectionGuides[index].variance=g.variance;primaryGuides[index].variance=g.variance;
+            reflectionGuides[stored]=primaryGuideRay(centerRay,cone,true);primaryGuides[stored]=primaryGuideRay(centerRay,cone,false);
+            reflectionGuides[stored].variance=g.variance;primaryGuides[stored].variance=g.variance;
         }
         int done=++rows;
         if(done%std::max(1,o.height/20)==0){
@@ -666,19 +696,29 @@ int main(int argc,char**argv){try{
             std::cerr<<100*done/o.height<<"% "<<sec<<" s\n";
         }
     }
-    std::ofstream pf(o.out+".pfm",std::ios::binary);pf<<"PF\n"<<o.width<<" "<<o.height<<"\n-1.0\n";
-    for(int y=o.height-1;y>=0;y--)for(int x=0;x<o.width;x++){V rgb=toRGB(film[size_t(y)*o.width+x]);pf.write(reinterpret_cast<char*>(&rgb),sizeof(V));}
-    auto writeAOV=[&](const std::string &suffix,const std::vector<Spec>&buffer){std::ofstream out(o.out+suffix+".pfm",std::ios::binary);out<<"PF\n"<<o.width<<" "<<o.height<<"\n-1.0\n";
-     for(int y=o.height-1;y>=0;y--)for(int x=0;x<o.width;x++){V rgb=toRGB(buffer[size_t(y)*o.width+x]);out.write((char*)&rgb,sizeof(V));}};
-    writeAOV("_reflection",reflectionFilm);writeAOV("_volume",volumeFilm);
-    std::ofstream ppm(o.out+".ppm",std::ios::binary);ppm<<"P6\n"<<o.width<<" "<<o.height<<"\n255\n";
-    Spec means;
-    for(auto s:film){means+=s*(1.f/float(pixels));V v=tonemap(toRGB(s),o.exposure);for(int k=0;k<3;k++){unsigned char b=static_cast<unsigned char>(clamp(v[k])*255+.5f);ppm.write(reinterpret_cast<char*>(&b),1);}}
-    std::ofstream gf(o.out+".guides",std::ios::binary);uint32_t dim[2]={uint32_t(o.width),uint32_t(o.height)};gf.write(reinterpret_cast<char*>(dim),8);gf.write(reinterpret_cast<char*>(guides.data()),guides.size()*sizeof(Guide));
-    auto writeGuide=[&](const std::string&suffix,const std::vector<Guide>&g){std::ofstream f(o.out+suffix+".guides",std::ios::binary);f.write((char*)dim,8);f.write((char*)g.data(),g.size()*sizeof(Guide));};
-    writeGuide("_reflection",reflectionGuides);writeGuide("_primary",primaryGuides);
-    {std::ofstream f(o.out+".samples",std::ios::binary);f.write((char*)dim,8);f.write((char*)sampleCounts.data(),sampleCounts.size()*sizeof(uint32_t));}
-    if(o.bands){std::ofstream sp(o.out+".spectral",std::ios::binary);uint32_t header[]={0x36315053,uint32_t(o.width),uint32_t(o.height),NBANDS};sp.write(reinterpret_cast<char*>(header),16);sp.write(reinterpret_cast<char*>(film.data()),film.size()*sizeof(Spec));}
+    // Flush complete rows in original global pixel order. PFM alone reverses
+    // the on-disk row address; all guide, count and spectral records stay top-down.
+    for(int y=tileY;y<tileEnd;y++){
+        const size_t offset=size_t(y-tileY)*o.width;
+        for(int x=0;x<o.width;x++){
+            auto s=film[offset+x];means+=s*(1.f/float(pixels));
+            rgbRow[x]=toRGB(s);reflectionRow[x]=toRGB(reflectionFilm[offset+x]);volumeRow[x]=toRGB(volumeFilm[offset+x]);
+            V v=tonemap(toRGB(s),o.exposure);
+            for(int k=0;k<3;k++)previewRow[size_t(x)*3+k]=static_cast<unsigned char>(clamp(v[k])*255+.5f);
+        }
+        pf.write_row(y,rgbRow.data(),rgbRow.size()*sizeof(V));
+        rf.write_row(y,reflectionRow.data(),reflectionRow.size()*sizeof(V));
+        vf.write_row(y,volumeRow.data(),volumeRow.size()*sizeof(V));
+        ppm.write_row(y,previewRow.data(),previewRow.size());
+        gf.write_row(y,guides.data()+offset,size_t(o.width)*sizeof(Guide));
+        rg.write_row(y,reflectionGuides.data()+offset,size_t(o.width)*sizeof(Guide));
+        pg.write_row(y,primaryGuides.data()+offset,size_t(o.width)*sizeof(Guide));
+        counts.write_row(y,sampleCounts.data()+offset,size_t(o.width)*sizeof(uint32_t));
+        if(spectral)spectral->write_row(y,film.data()+offset,size_t(o.width)*sizeof(Spec));
+    }
+    }
+    pf.finish();rf.finish();vf.finish();ppm.finish();gf.finish();rg.finish();pg.finish();counts.finish();
+    if(spectral)spectral->finish();
     float sec=std::chrono::duration<float>(std::chrono::steady_clock::now()-started).count();
     std::ofstream meta(o.out+".json");meta<<std::setprecision(9)<<"{\n  \"renderer\": \"CYBR SCENES R2 / Drowned Geode: seepage mineral layers and weathered quartz\",\n  \"geometry_accelerator\": \"CYBR GEO native SAH BVH4 / AVX2 triangle packets\",\n  \"view\": \""<<o.view<<"\",\n  \"width\": "<<o.width<<", \"height\": "<<o.height<<", \"spp\": "<<o.spp<<",\n  \"max_depth\": "<<o.depth<<", \"seed\": "<<o.seed<<", \"threads\": "<<o.threads<<",\n  \"triangles\": "<<tris.size()<<", \"bvh_nodes\": "<<nodes.size()<<",\n  \"image_generation\": false,\n  \"spectral_bands\": 16, \"wavelength_range_nm\": [380,780],\n  \"spectral_method\": \"Jointly transported fixed midpoint wavelength quadrature, 25 nm bins\",\n  \"water_ior\": "<<WATER_IOR<<", \"dispersion\": "<<((splitting&&!clay)?"true":"false")<<",\n  \"steam\": "<<(useSteam?"true":"false")<<", \"steam_model\": \"Bounded homogeneous haze; analytic transmittance; forced first collision; full continuation\",\n  \"water_absorption_scale\": "<<waterStrength<<",\n  \"finite_difference_water_connection_step_radians\": 0.002,\n  \"nonfinite_path_samples\": "<<nonfinite.load()<<",\n  \"exposure\": "<<o.exposure<<",\n  \"film_white_rgb\": ["<<whiteRGB.x<<","<<whiteRGB.y<<","<<whiteRGB.z<<"],\n  \"seconds\": "<<sec<<",\n  \"band_means\": [";
     for(int k=0;k<NBANDS;k++)meta<<(k?",":"")<<means.v[k];meta<<"]\n}\n";

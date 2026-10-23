@@ -20,6 +20,14 @@ The unchanged original Geode generator completed with 3,655,632 triangles, 228 p
 
 The 1536 x 1024, 64-sample, depth-24 Geode render loaded every triangle and passed 5,000 BVH equivalence rays. A host-memory guard stopped it before a completed frame. The same-quality rerender awaits sufficient memory. No smaller geometry or substitute image is counted as complete.
 
+### Bounded film storage
+
+Geode now uses the shared `native_film_output.hpp` fixed-row writer. Its three 16-band films, three guide arrays and sample counts occupy 16 rows instead of the full image. At 1536 x 1024, those arrays decrease from 478,150,656 to 7,471,104 bytes; RGB conversion adds three small rows and one preview row. Geometry, textures, pixel seeds, sample counts, ray equations and per-pixel accumulation are unchanged. Band means retain their original global pixel order. PFM rows remain bottom-up; guides, counts and spectral records remain top-down.
+
+The Windows build, binary row-layout/error checks and Geode optical self-test pass. The preserved old binary and new binary rendered the complete original geometry at matching 480 x 320, 16-sample, depth-24 settings. All nine native outputs (including 16-band spectral data, three PFM radiance/AOVs, three guide arrays, counts and PPM) and five finished/unfiltered PNGs agree byte for byte. Metadata, including band means, agrees except elapsed seconds. Both renders report zero invalid path samples. See the [exact hashes and source binding](geode-row-storage-parity.json).
+
+Sampled peak working set decreased from 1,906,999,296 to 1,863,573,504 bytes at the comparison resolution. The full 1536 x 1024, 64-sample delivery remains pending; that larger image is not implied by this regression check. Original binaries and failed-attempt logs are retained. Geode is the first consumer of this output helper; other native renderers have not adopted it.
+
 All six original environment rerenders remain pending. Historical triangle counts are Sandstone 8,108,728; Basalt 11,644,696; Fernwater 20,400,257 input (180 near-degenerate triangles rejected by the historical loader); Hot Springs 23,690,858; Obsidian 6,210,833; Geode 3,655,632.
 
 ## Run the tests

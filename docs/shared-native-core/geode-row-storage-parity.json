@@ -1,0 +1,104 @@
+{
+  "purpose": "Output-storage regression on full original Drowned Geode geometry",
+  "baseline_source_commit": "9c367a412d0a15bdb3b4e48bdaeae917272128bd",
+  "modified_source_sha256": {
+    "environments/engines/geode/src/cathedral_v3.cpp": "28a30f6aa82d93714c9f6a665b709ec9d78ac2e54e452b527148059159102aa2",
+    "environments/shared/native_film_output.hpp": "d5282463efebdf3097e810bb354aa493e773dc6a1536f0bddcbd12b7be472596",
+    "environments/CMakeLists.txt": "fc4016fb653d4b22130a521ac6a3e3238fcd38864a2e798964bd6cacdb384c8a"
+  },
+  "mesh_sha256": "1957359bef66096f88a96639ea2763133a57ccba4b640e136197387889a686bf",
+  "width": 480,
+  "height": 320,
+  "spp": 16,
+  "triangles": 3655632,
+  "metadata_equal_except_seconds": true,
+  "files": {
+    "hero.pfm": {
+      "bytes": 1843216,
+      "before_sha256": "3b49855426e9d8a0d63e32f6e7e0b3048921820e56d4d12e1792fedd90b75045",
+      "after_sha256": "3b49855426e9d8a0d63e32f6e7e0b3048921820e56d4d12e1792fedd90b75045",
+      "bit_exact": true
+    },
+    "hero_reflection.pfm": {
+      "bytes": 1843216,
+      "before_sha256": "5e5b710e80daab5dc674e2835a2c45068d6bbbfd9280af5e469629c675a712d6",
+      "after_sha256": "5e5b710e80daab5dc674e2835a2c45068d6bbbfd9280af5e469629c675a712d6",
+      "bit_exact": true
+    },
+    "hero_volume.pfm": {
+      "bytes": 1843216,
+      "before_sha256": "be7eee28857cc1a9e4572a21a6679c799e9d94307407a0c96d5ffd17fcf6103b",
+      "after_sha256": "be7eee28857cc1a9e4572a21a6679c799e9d94307407a0c96d5ffd17fcf6103b",
+      "bit_exact": true
+    },
+    "hero.ppm": {
+      "bytes": 460815,
+      "before_sha256": "152205e6e0189b01c073a0d5fa028eef277578c5089effbb9a59be411c87dd47",
+      "after_sha256": "152205e6e0189b01c073a0d5fa028eef277578c5089effbb9a59be411c87dd47",
+      "bit_exact": true
+    },
+    "hero.guides": {
+      "bytes": 5529608,
+      "before_sha256": "dcb02dad48439dc910253a5cfa00768909186fce1315ad7498472d3321cb62a4",
+      "after_sha256": "dcb02dad48439dc910253a5cfa00768909186fce1315ad7498472d3321cb62a4",
+      "bit_exact": true
+    },
+    "hero_reflection.guides": {
+      "bytes": 5529608,
+      "before_sha256": "7428f76d3c6c454bfbd0c031fcce5fefe18b7130a836347f8a2baf5104886da8",
+      "after_sha256": "7428f76d3c6c454bfbd0c031fcce5fefe18b7130a836347f8a2baf5104886da8",
+      "bit_exact": true
+    },
+    "hero_primary.guides": {
+      "bytes": 5529608,
+      "before_sha256": "cc63ea9bd912386e544b7bffa3e532f779853486ff89767f35ee9e0ad3c0ea9a",
+      "after_sha256": "cc63ea9bd912386e544b7bffa3e532f779853486ff89767f35ee9e0ad3c0ea9a",
+      "bit_exact": true
+    },
+    "hero.samples": {
+      "bytes": 614408,
+      "before_sha256": "1f4b5b9dc0e34c7328d234a730651a76f910559e4859a00c470eab9480aef15e",
+      "after_sha256": "1f4b5b9dc0e34c7328d234a730651a76f910559e4859a00c470eab9480aef15e",
+      "bit_exact": true
+    },
+    "hero.spectral": {
+      "bytes": 9830416,
+      "before_sha256": "220fabd1a64d11b0e1aa4e481f0c9127c6dc45ea8fae7d0aca45f25c26ffc74d",
+      "after_sha256": "220fabd1a64d11b0e1aa4e481f0c9127c6dc45ea8fae7d0aca45f25c26ffc74d",
+      "bit_exact": true
+    },
+    "hero.png": {
+      "bytes": 237682,
+      "before_sha256": "45e7687376daf9334ef01eb41b2107a24e6fb5a1fd8501145e5ac400ec3b7b2b",
+      "after_sha256": "45e7687376daf9334ef01eb41b2107a24e6fb5a1fd8501145e5ac400ec3b7b2b",
+      "bit_exact": true
+    },
+    "hero_unfiltered.png": {
+      "bytes": 377176,
+      "before_sha256": "b24657ee9e76cd60da5fd0a7068e721015eac550c60a010943d1a285882a184d",
+      "after_sha256": "b24657ee9e76cd60da5fd0a7068e721015eac550c60a010943d1a285882a184d",
+      "bit_exact": true
+    },
+    "hero_reflection.png": {
+      "bytes": 36833,
+      "before_sha256": "2973430fbbdad3316fcaab803a5dc0202a3fe2ed7e69a69ab792713f17c1f463",
+      "after_sha256": "2973430fbbdad3316fcaab803a5dc0202a3fe2ed7e69a69ab792713f17c1f463",
+      "bit_exact": true
+    },
+    "hero_volume.png": {
+      "bytes": 48864,
+      "before_sha256": "328d410cd5a57eb98f46112e13b305846388fa3065b2b84a43939883704d0213",
+      "after_sha256": "328d410cd5a57eb98f46112e13b305846388fa3065b2b84a43939883704d0213",
+      "bit_exact": true
+    },
+    "hero_transmission_and_surfaces.png": {
+      "bytes": 244173,
+      "before_sha256": "642c63320368451a66cf57e2c855614a999477b2bf9a2ad0d3e011749404c2a5",
+      "after_sha256": "642c63320368451a66cf57e2c855614a999477b2bf9a2ad0d3e011749404c2a5",
+      "bit_exact": true
+    }
+  },
+  "all_bit_exact": true,
+  "before_peak_sampled_rss_bytes": 1906999296,
+  "after_peak_sampled_rss_bytes": 1863573504
+}
