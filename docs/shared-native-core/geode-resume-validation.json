@@ -1,0 +1,69 @@
+{
+  "source_commit": "cb872b542249056fe3687e37b20767220ab5dbed",
+  "platform": "Windows x64",
+  "compiler": "MSVC19.44.35215.0; C++17; /O2 /fp:precise /openmp:llvm /arch:AVX2; assertions enabled for tests",
+  "executable_sha256": "3697a466cd525dc217991a2e91e1c324ee0714581fc59224726babaee2d1d492",
+  "source_sha256": {
+    "environments/shared/native_checkpoint.hpp": "15b1b14fce3c9d78f168dbb2425abeca8ddf9d1253e4b256845449726ef348c1",
+    "environments/shared/native_film_output.hpp": "aa58a20fb8bcec8fd201262fcae319af491457c93c94734d2b78fa1c95b61d72",
+    "environments/engines/geode/src/cathedral_v3.cpp": "4e0f7a9b9969b4849fb3a6185560db43f4e07dcf7577a43f20d2eebb1e012c1d",
+    "environments/tests/test_native_checkpoint.cpp": "2cbdaaace6c54dadbb8b4fed96273754f3d8afcd7622d85365abb405651c3d1c",
+    "environments/tests/verify_geode_resume.py": "c0894c171cafc6aa0f8fa472ffd128da8c747c6d5931369e49da8f289e6c09bd",
+    "environments/CMakeLists.txt": "63cb7980fc427b64bbbb024805bbd0045d86460329b5ff419e34bd8ff5bc8f70"
+  },
+  "native_tests": {
+    "test_native_checkpoint": "PASS",
+    "test_native_film_output": "PASS",
+    "geode_optics": "PASS",
+    "total_seconds": 1.26
+  },
+  "hash_python_crosscheck_sizes": [
+    0,
+    55,
+    56,
+    63,
+    64,
+    65,
+    65535,
+    65536,
+    65537,
+    131073
+  ],
+  "hash_python_crosschecks": "all exact",
+  "fault_checks": [
+    "missing output row",
+    "duplicate boundary",
+    "changed source/config identity",
+    "changed mesh/texture/source file identities",
+    "corrupt/truncated receipt",
+    "corrupt/truncated top-down committed prefix",
+    "corrupt/truncated bottom-up committed tail",
+    "changed output header",
+    "receipt publication failure leaves previous boundary valid",
+    "missing committed boundary",
+    "corrupt latest checkpoint cannot roll back",
+    "uncommitted partial tail is recomputed",
+    "binary consumer state and non-tile-multiple height"
+  ],
+  "independent_source_review": "PASS after approved corrections; process interruption with single ownership, not power-loss durability",
+  "original_geometry_comparison": {
+    "status": "pending resumed phases; reference complete",
+    "triangles": 3655632,
+    "width": 480,
+    "height": 320,
+    "spp": 16,
+    "reference_exit": 0,
+    "reference_nonfinite_samples": 0,
+    "reference_seconds": 112.641,
+    "reference_peak_rss_bytes": 1862778880,
+    "reference_min_host_available_bytes": 833708032,
+    "next_phase": "not launched: available2990186496bytes below3221225472byte preflight"
+  },
+  "runtime_guards": {
+    "required_preflight_bytes": 3221225472,
+    "minimum_host_available_bytes": 805306368,
+    "maximum_process_rss_bytes": 2500000000
+  },
+  "full_resolution_delivery": "pending; no claim from lower-resolution regression",
+  "hosted_platform_tests": "not run; remote branch publication remains blocked"
+}
