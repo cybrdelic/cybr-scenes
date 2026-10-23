@@ -1,0 +1,3 @@
+# Python dependency of native source-resolution and process-guard verification.
+# Native compilation/CTest do not import the scene generation/JIT stack.
+psutil>=5.9,<8

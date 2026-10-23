@@ -1,4 +1,7 @@
 #include "surface_detail.hpp"
+#include "native_film_output.hpp"
+#include "native_checkpoint.hpp"
+#include <memory>
 // CYBR GEO / GPL-2.0-only
 // Native Drowned Geode extension. Reuses CYBR GEO's actual BVH and mesh
 // intersections. Photographed material maps are inputs, not backgrounds.
@@ -533,6 +536,7 @@ Spec tracePrimary(Ray ray,RNG &rng,int maxDepth,float cone) {
 struct Options{bool adaptive=false;
     std::string mesh,out,view="hero";int width=1600,height=1000,spp=128,depth=16,threads=5,seed=20260913;
     float exposure=1.0f;bool bands=true;float aperture=.00025f;
+    std::string checkpointDir,sourceRoot;bool resume=false;int stopAfterCheckpoint=0;
 };
 Options parse(int argc,char**argv){
     if(argc<3)throw std::runtime_error("usage: spectral_desert scene.meshbin output_stem [--w N --h N --spp N --view hero|detail]");
@@ -542,10 +546,17 @@ Options parse(int argc,char**argv){
         if(arg=="--w")o.width=std::stoi(get());else if(arg=="--h")o.height=std::stoi(get());else if(arg=="--spp")o.spp=std::stoi(get());
         else if(arg=="--depth")o.depth=std::stoi(get());else if(arg=="--threads")o.threads=std::stoi(get());else if(arg=="--seed")o.seed=std::stoi(get());
         else if(arg=="--view")o.view=get();else if(arg=="--exposure")o.exposure=std::stof(get());else if(arg=="--aperture")o.aperture=std::stof(get());
+        else if(arg=="--checkpoint-dir")o.checkpointDir=get();else if(arg=="--source-root")o.sourceRoot=get();
+        else if(arg=="--resume")o.resume=true;else if(arg=="--stop-after-checkpoint")o.stopAfterCheckpoint=std::stoi(get());
         else if(arg=="--no-steam")useSteam=false;else if(arg=="--no-water")useWater=false;else if(arg=="--water-absorption")waterStrength=std::stof(get());
         else if(arg=="--adaptive")o.adaptive=true;else if(arg=="--no-split")splitting=false;else if(arg=="--clay")clay=true;else if(arg=="--no-bands")o.bands=false;else throw std::runtime_error("Unknown argument "+arg);
     }
     if(o.width<1||o.height<1||o.spp<1||o.depth<1||o.threads<1||o.aperture<0||waterStrength<0)throw std::runtime_error("Invalid render setting");
+    if(!std::isfinite(o.aperture)||!std::isfinite(o.exposure)||!std::isfinite(waterStrength))throw std::runtime_error("Nonfinite render setting");
+    if(o.view!="hero"&&o.view!="detail"&&o.view!="reverse")throw std::runtime_error("Unknown camera view");
+    if((o.resume||o.stopAfterCheckpoint||!o.sourceRoot.empty())&&o.checkpointDir.empty())throw std::runtime_error("Checkpoint options require --checkpoint-dir");
+    if(!o.checkpointDir.empty()&&o.sourceRoot.empty())throw std::runtime_error("Checkpointing requires --source-root for native source validation");
+    if(o.stopAfterCheckpoint<0||o.stopAfterCheckpoint>o.height||(o.stopAfterCheckpoint!=o.height&&o.stopAfterCheckpoint%16))throw std::runtime_error("Stop row must be a complete checkpoint boundary");
     return o;
 }
 
@@ -558,6 +569,65 @@ V tonemap(V rgb,float exposure){
     return rgb;
 }
 struct Guide{V normal,albedo;float depth=0,variance=0,material=-1;};
+
+std::vector<cybr_film::RowLayout> filmLayouts(const Options& o){
+    using cybr_film::RowOrder;
+    const std::string pfm="PF\n"+std::to_string(o.width)+" "+std::to_string(o.height)+"\n-1.0\n";
+    const std::string ppm="P6\n"+std::to_string(o.width)+" "+std::to_string(o.height)+"\n255\n";
+    uint32_t dim[]={uint32_t(o.width),uint32_t(o.height)};
+    const std::string header(reinterpret_cast<const char*>(dim),sizeof(dim));
+    std::vector<cybr_film::RowLayout> layouts;
+    for(const auto* suffix:{".pfm","_reflection.pfm","_volume.pfm"})
+        layouts.push_back({o.out+suffix,pfm,size_t(o.width)*sizeof(V),size_t(o.height),RowOrder::bottom_up});
+    layouts.push_back({o.out+".ppm",ppm,size_t(o.width)*3,size_t(o.height)});
+    for(const auto* suffix:{".guides","_reflection.guides","_primary.guides"})
+        layouts.push_back({o.out+suffix,header,size_t(o.width)*sizeof(Guide),size_t(o.height)});
+    layouts.push_back({o.out+".samples",header,size_t(o.width)*sizeof(uint32_t),size_t(o.height)});
+    if(o.bands){uint32_t h[]={0x36315053,uint32_t(o.width),uint32_t(o.height),NBANDS};
+        layouts.push_back({o.out+".spectral",std::string(reinterpret_cast<const char*>(h),sizeof(h)),size_t(o.width)*sizeof(Spec),size_t(o.height)});}
+    return layouts;
+}
+
+std::string checkpointBinding(const Options& o,const char* executable){
+    namespace fs=std::filesystem;using namespace cybr_checkpoint;
+    std::string binding;put_bytes(binding,"CYBR-GEODE-ROW-RESUME-1");
+    // All numerical settings, including global flags, are bound. Operational
+    // stop/resume flags cannot change the rays or the output's byte layout.
+    for(int v:{o.width,o.height,o.spp,o.depth,o.threads,o.seed,NBANDS,int(sizeof(V)),int(sizeof(Guide)),int(sizeof(Spec))})put_u64(binding,uint64_t(v));
+    for(bool v:{o.adaptive,o.bands,useSteam,useWater,splitting,clay})put_u64(binding,v?1:0);
+    for(float v:{o.exposure,o.aperture,waterStrength})put_bytes(binding,std::string(reinterpret_cast<const char*>(&v),sizeof(v)));
+    put_bytes(binding,o.view);bind_file(binding,"native executable",fs::canonical(executable));
+    bind_file(binding,"mesh",o.mesh);
+    const char* atlas=std::getenv("CYBR_SURFACE_ATLAS");
+    if(!atlas||!*atlas)throw std::runtime_error("CYBR_SURFACE_ATLAS is required for checkpoint identity");
+    bind_file(binding,"surface atlas",atlas);
+    for(int i=0;i<5;i++)bind_file(binding,"texture "+std::to_string(i),fs::path(o.mesh).parent_path()/"textures"/(std::to_string(i)+".cvtex"));
+    // Include the complete local native/header closure, not caller-selected
+    // source filenames. This also binds build policy and the licensed hasher.
+    const auto root=fs::canonical(o.sourceRoot);
+    if(!fs::is_regular_file(root/"environments/engines/geode/src/cathedral_v3.cpp"))throw std::runtime_error("Invalid SCENES source root");
+    std::vector<fs::path> sources{root/"environments/CMakeLists.txt",root/"environments/engines/geode/build.sh"};
+    for(const auto* directory:{"environments/shared","environments/engines/geode/src"})
+        for(const auto& entry:fs::recursive_directory_iterator(root/directory)){
+            auto ext=entry.path().extension().string();
+            if(entry.is_regular_file()&&(ext==".h"||ext==".hpp"||ext==".cpp"))sources.push_back(entry.path());
+        }
+    std::sort(sources.begin(),sources.end());
+    for(const auto& source:sources)bind_file(binding,path_utf8_bytes(fs::relative(source,root)),source);
+    return binding;
+}
+
+std::string checkpointState(const Spec& means,uint64_t nonfinite,double seconds){
+    std::string bytes;cybr_checkpoint::put_bytes(bytes,std::string(reinterpret_cast<const char*>(means.v.data()),sizeof(float)*NBANDS));
+    cybr_checkpoint::put_u64(bytes,nonfinite);cybr_checkpoint::put_bytes(bytes,std::string(reinterpret_cast<const char*>(&seconds),sizeof(seconds)));return bytes;
+}
+void restoreCheckpointState(const std::string& bytes,Spec& means,uint64_t& nonfinite,double& seconds){
+    cybr_checkpoint::Reader r(bytes);const auto raw=r.bytes();nonfinite=r.u64();const auto elapsed=r.bytes();r.end();
+    if(raw.size()!=sizeof(float)*NBANDS||elapsed.size()!=sizeof(seconds))throw std::runtime_error("Invalid Geode checkpoint state");
+    std::memcpy(means.v.data(),raw.data(),raw.size());std::memcpy(&seconds,elapsed.data(),elapsed.size());
+    for(float v:means.v)if(!std::isfinite(v))throw std::runtime_error("Nonfinite checkpoint band mean");
+    if(!std::isfinite(seconds)||seconds<0)throw std::runtime_error("Invalid checkpoint elapsed time");
+}
 Guide guideRay(Ray ray,float cone){
     Guide g;float travelled=0;
     for(int k=0;k<5;k++){
@@ -592,7 +662,19 @@ int selftest(){
 }
 int main(int argc,char**argv){try{
     if(argc==2&&std::string(argv[1])=="--self-test")return selftest();
-    auto o=parse(argc,argv);cybr_detail::load_from_environment();initSpectra();omp_set_num_threads(o.threads);
+    auto o=parse(argc,argv);
+    const auto layouts=filmLayouts(o);constexpr int tileRows=16;
+    std::unique_ptr<cybr_checkpoint::RowCheckpoint> checkpoint;
+    std::string acceptedBinding;
+    Spec means;uint64_t previousNonfinite=0;double previousSeconds=0;int firstRow=0;
+    if(!o.checkpointDir.empty()){
+        if(!o.resume&&std::filesystem::exists(o.out+".json"))throw std::runtime_error("Refusing to overwrite existing render metadata");
+        acceptedBinding=checkpointBinding(o,argv[0]);
+        checkpoint=std::make_unique<cybr_checkpoint::RowCheckpoint>(o.checkpointDir,acceptedBinding,layouts,tileRows,o.resume);
+        if(o.resume){firstRow=int(checkpoint->state().next_row);restoreCheckpointState(checkpoint->state().consumer_bytes,means,previousNonfinite,previousSeconds);}
+        std::cerr<<"VALIDATED checkpoint identity; next row "<<firstRow<<"\n";
+    }
+    cybr_detail::load_from_environment();initSpectra();omp_set_num_threads(o.threads);
     auto started=std::chrono::steady_clock::now();
     std::ifstream input(o.mesh,std::ios::binary);if(!input)throw std::runtime_error("Cannot read CYBR GEO mesh "+o.mesh);
     char magic[4];input.read(magic,4);if(std::memcmp(magic,"CVR2",4))throw std::runtime_error("Not CVR2");uint32_t count;input.read(reinterpret_cast<char*>(&count),4);
@@ -607,7 +689,7 @@ int main(int argc,char**argv){try{
         if(dot(cross(t.e1,t.e2),cross(t.e1,t.e2))>1e-20f){tris.push_back(t);Attribute at;for(int j=0;j<3;j++){at.uv[j]={a[20+j*2],a[21+j*2]};at.col[j]=V(a[26+j*3],a[27+j*3],a[28+j*3]);}at.texture=int(a[35]);attributes.push_back(at);}
     }
     if(tris.empty())throw std::runtime_error("No geometry");
-    std::string root=o.mesh.substr(0,o.mesh.find_last_of("/\\"));textures.resize(5);for(int i=0;i<5;i++)textures[i].load(root+"/textures/"+std::to_string(i)+".cvtex");
+    const auto root=std::filesystem::path(o.mesh).parent_path();textures.resize(5);for(int i=0;i<5;i++)textures[i].load((root/"textures"/(std::to_string(i)+".cvtex")).string());
     order.resize(tris.size());std::iota(order.begin(),order.end(),0);nodes.reserve(tris.size()/2);build(0,int(order.size()));
     {std::vector<Tri> sorted;std::vector<Attribute> sortedAttributes;sorted.reserve(tris.size());sortedAttributes.reserve(tris.size());
      for(int idx:order){sorted.push_back(tris[idx]);sortedAttributes.push_back(attributes[idx]);}
@@ -625,13 +707,31 @@ int main(int argc,char**argv){try{
     else if(o.view!="hero")throw std::runtime_error("Unknown camera view");
     V forward=unit(target-camera),right=unit(cross(forward,V(0,0,1))),up=cross(right,forward);
     float tanHalf=std::tan(hfov*PI/360.f),aspect=float(o.width)/o.height,focus=len(target-camera),cone=2*tanHalf/o.width;
-    size_t pixels=size_t(o.width)*o.height;std::vector<uint32_t> sampleCounts(pixels);
-    std::vector<Spec> film(pixels),reflectionFilm(pixels),volumeFilm(pixels);std::vector<Guide> guides(pixels),reflectionGuides(pixels),primaryGuides(pixels);std::atomic<int> rows{0};std::atomic<uint64_t> nonfinite{0};
+    // Only storage is tiled. Global pixel indices still select identical rays
+    // and RNG samples; every pixel retains its original accumulation order.
+    size_t pixels=size_t(o.width)*o.height,tilePixels=size_t(o.width)*std::min(tileRows,o.height);
+    std::vector<uint32_t> sampleCounts(tilePixels);
+    std::vector<Spec> film(tilePixels),reflectionFilm(tilePixels),volumeFilm(tilePixels);
+    std::vector<Guide> guides(tilePixels),reflectionGuides(tilePixels),primaryGuides(tilePixels);
+    std::atomic<int> rows{firstRow};std::atomic<uint64_t> nonfinite{previousNonfinite};
+    using cybr_film::BinaryRows;
+    if(checkpoint&&checkpointBinding(o,argv[0])!=acceptedBinding)throw std::runtime_error("Checkpoint inputs/source changed while loading; outputs not opened");
+    std::vector<std::unique_ptr<BinaryRows>> ownedWriters;std::vector<BinaryRows*> writers;
+    for(const auto& layout:layouts){ownedWriters.push_back(std::make_unique<BinaryRows>(layout,o.resume,firstRow));writers.push_back(ownedWriters.back().get());}
+    auto& pf=*writers[0];auto& rf=*writers[1];auto& vf=*writers[2];auto& ppm=*writers[3];
+    auto& gf=*writers[4];auto& rg=*writers[5];auto& pg=*writers[6];auto& counts=*writers[7];
+    auto* spectral=o.bands?writers[8]:nullptr;
+    if(checkpoint&&!o.resume)checkpoint->commit(0,checkpointState(means,0,0),writers);
+    std::vector<V> rgbRow(o.width),reflectionRow(o.width),volumeRow(o.width);
+    std::vector<unsigned char> previewRow(size_t(o.width)*3);
     int strata=int(std::ceil(std::sqrt(float(o.spp))));
+    for(int tileY=firstRow;tileY<o.height;tileY+=tileRows){
+    const int tileEnd=std::min(tileY+tileRows,o.height);
     #pragma omp parallel for schedule(dynamic,1)
-    for(int y=0;y<o.height;y++){
+    for(int y=tileY;y<tileEnd;y++){
         for(int x=0;x<o.width;x++){
             size_t index=size_t(y)*o.width+x;RNG rng(uint64_t(index)*0x9e3779b97f4a7c15ULL+o.seed);
+            const size_t stored=size_t(y-tileY)*o.width+x;
             int pixelSpp=o.spp;
             float cx=(2*(x+.5f)/o.width-1)*tanHalf,cy=(1-2*(y+.5f)/o.height)*tanHalf/aspect;
             Guide first=primaryGuideRay(Ray(camera,unit(forward+right*cx+up*cy)),cone,false);
@@ -640,7 +740,7 @@ int main(int argc,char**argv){try{
              else if((first.material==0||first.material==3)&&first.depth>7)pixelSpp=std::max(16,o.spp/2);
              else if(first.material==8||first.material==9)pixelSpp=std::max(128,o.spp*2);
             }
-            sampleCounts[index]=pixelSpp;Spec sum,reflectionSum,volumeSum;double lum2=0;
+            sampleCounts[stored]=pixelSpp;Spec sum,reflectionSum,volumeSum;double lum2=0;
             for(int s=0;s<pixelSpp;s++){
                 rng.beginSample(s,mix32(uint32_t(index)^uint32_t(o.seed)));float jx=rng.uniform(),jy=rng.uniform();
                 float px=(2*(x+jx)/o.width-1)*tanHalf,py=(1-2*(y+jy)/o.height)*tanHalf/aspect;
@@ -651,13 +751,13 @@ int main(int argc,char**argv){try{
                 if(!finite){nonfinite++;continue;}
                 sum+=value;double lum=xyz(value).y;lum2+=lum*lum;
             }
-            film[index]=sum*(1.f/pixelSpp);reflectionFilm[index]=reflectionSum*(1.f/pixelSpp);volumeFilm[index]=volumeSum*(1.f/pixelSpp);
+            film[stored]=sum*(1.f/pixelSpp);reflectionFilm[stored]=reflectionSum*(1.f/pixelSpp);volumeFilm[stored]=volumeSum*(1.f/pixelSpp);
             float px=(2*(x+.5f)/o.width-1)*tanHalf,py=(1-2*(y+.5f)/o.height)*tanHalf/aspect;
             Guide g=guideRay(Ray(camera,unit(forward+right*px+up*py)),cone);
-            double avg=xyz(film[index]).y;g.variance=std::max(0.,(lum2/pixelSpp-avg*avg)/std::max(1,pixelSpp-1));guides[index]=g;
+            double avg=xyz(film[stored]).y;g.variance=std::max(0.,(lum2/pixelSpp-avg*avg)/std::max(1,pixelSpp-1));guides[stored]=g;
             Ray centerRay(camera,unit(forward+right*px+up*py));
-            reflectionGuides[index]=primaryGuideRay(centerRay,cone,true);primaryGuides[index]=primaryGuideRay(centerRay,cone,false);
-            reflectionGuides[index].variance=g.variance;primaryGuides[index].variance=g.variance;
+            reflectionGuides[stored]=primaryGuideRay(centerRay,cone,true);primaryGuides[stored]=primaryGuideRay(centerRay,cone,false);
+            reflectionGuides[stored].variance=g.variance;primaryGuides[stored].variance=g.variance;
         }
         int done=++rows;
         if(done%std::max(1,o.height/20)==0){
@@ -666,22 +766,40 @@ int main(int argc,char**argv){try{
             std::cerr<<100*done/o.height<<"% "<<sec<<" s\n";
         }
     }
-    std::ofstream pf(o.out+".pfm",std::ios::binary);pf<<"PF\n"<<o.width<<" "<<o.height<<"\n-1.0\n";
-    for(int y=o.height-1;y>=0;y--)for(int x=0;x<o.width;x++){V rgb=toRGB(film[size_t(y)*o.width+x]);pf.write(reinterpret_cast<char*>(&rgb),sizeof(V));}
-    auto writeAOV=[&](const std::string &suffix,const std::vector<Spec>&buffer){std::ofstream out(o.out+suffix+".pfm",std::ios::binary);out<<"PF\n"<<o.width<<" "<<o.height<<"\n-1.0\n";
-     for(int y=o.height-1;y>=0;y--)for(int x=0;x<o.width;x++){V rgb=toRGB(buffer[size_t(y)*o.width+x]);out.write((char*)&rgb,sizeof(V));}};
-    writeAOV("_reflection",reflectionFilm);writeAOV("_volume",volumeFilm);
-    std::ofstream ppm(o.out+".ppm",std::ios::binary);ppm<<"P6\n"<<o.width<<" "<<o.height<<"\n255\n";
-    Spec means;
-    for(auto s:film){means+=s*(1.f/float(pixels));V v=tonemap(toRGB(s),o.exposure);for(int k=0;k<3;k++){unsigned char b=static_cast<unsigned char>(clamp(v[k])*255+.5f);ppm.write(reinterpret_cast<char*>(&b),1);}}
-    std::ofstream gf(o.out+".guides",std::ios::binary);uint32_t dim[2]={uint32_t(o.width),uint32_t(o.height)};gf.write(reinterpret_cast<char*>(dim),8);gf.write(reinterpret_cast<char*>(guides.data()),guides.size()*sizeof(Guide));
-    auto writeGuide=[&](const std::string&suffix,const std::vector<Guide>&g){std::ofstream f(o.out+suffix+".guides",std::ios::binary);f.write((char*)dim,8);f.write((char*)g.data(),g.size()*sizeof(Guide));};
-    writeGuide("_reflection",reflectionGuides);writeGuide("_primary",primaryGuides);
-    {std::ofstream f(o.out+".samples",std::ios::binary);f.write((char*)dim,8);f.write((char*)sampleCounts.data(),sampleCounts.size()*sizeof(uint32_t));}
-    if(o.bands){std::ofstream sp(o.out+".spectral",std::ios::binary);uint32_t header[]={0x36315053,uint32_t(o.width),uint32_t(o.height),NBANDS};sp.write(reinterpret_cast<char*>(header),16);sp.write(reinterpret_cast<char*>(film.data()),film.size()*sizeof(Spec));}
-    float sec=std::chrono::duration<float>(std::chrono::steady_clock::now()-started).count();
+    // Flush complete rows in original global pixel order. PFM alone reverses
+    // the on-disk row address; all guide, count and spectral records stay top-down.
+    for(int y=tileY;y<tileEnd;y++){
+        const size_t offset=size_t(y-tileY)*o.width;
+        for(int x=0;x<o.width;x++){
+            auto s=film[offset+x];means+=s*(1.f/float(pixels));
+            rgbRow[x]=toRGB(s);reflectionRow[x]=toRGB(reflectionFilm[offset+x]);volumeRow[x]=toRGB(volumeFilm[offset+x]);
+            V v=tonemap(toRGB(s),o.exposure);
+            for(int k=0;k<3;k++)previewRow[size_t(x)*3+k]=static_cast<unsigned char>(clamp(v[k])*255+.5f);
+        }
+        pf.write_row(y,rgbRow.data(),rgbRow.size()*sizeof(V));
+        rf.write_row(y,reflectionRow.data(),reflectionRow.size()*sizeof(V));
+        vf.write_row(y,volumeRow.data(),volumeRow.size()*sizeof(V));
+        ppm.write_row(y,previewRow.data(),previewRow.size());
+        gf.write_row(y,guides.data()+offset,size_t(o.width)*sizeof(Guide));
+        rg.write_row(y,reflectionGuides.data()+offset,size_t(o.width)*sizeof(Guide));
+        pg.write_row(y,primaryGuides.data()+offset,size_t(o.width)*sizeof(Guide));
+        counts.write_row(y,sampleCounts.data()+offset,size_t(o.width)*sizeof(uint32_t));
+        if(spectral)spectral->write_row(y,film.data()+offset,size_t(o.width)*sizeof(Spec));
+    }
+    if(checkpoint){
+        double seconds=previousSeconds+std::chrono::duration<double>(std::chrono::steady_clock::now()-started).count();
+        checkpoint->commit(tileEnd,checkpointState(means,nonfinite.load(),seconds),writers);
+        std::cerr<<"CHECKPOINT committed rows "<<tileEnd<<"/"<<o.height<<"\n";
+        if(o.stopAfterCheckpoint==tileEnd){std::cerr<<"Stopped at requested committed row boundary; output incomplete\n";return 75;}
+    }
+    }
+    pf.finish();rf.finish();vf.finish();ppm.finish();gf.finish();rg.finish();pg.finish();counts.finish();
+    if(spectral)spectral->finish();
+    float sec=float(previousSeconds)+std::chrono::duration<float>(std::chrono::steady_clock::now()-started).count();
     std::ofstream meta(o.out+".json");meta<<std::setprecision(9)<<"{\n  \"renderer\": \"CYBR SCENES R2 / Drowned Geode: seepage mineral layers and weathered quartz\",\n  \"geometry_accelerator\": \"CYBR GEO native SAH BVH4 / AVX2 triangle packets\",\n  \"view\": \""<<o.view<<"\",\n  \"width\": "<<o.width<<", \"height\": "<<o.height<<", \"spp\": "<<o.spp<<",\n  \"max_depth\": "<<o.depth<<", \"seed\": "<<o.seed<<", \"threads\": "<<o.threads<<",\n  \"triangles\": "<<tris.size()<<", \"bvh_nodes\": "<<nodes.size()<<",\n  \"image_generation\": false,\n  \"spectral_bands\": 16, \"wavelength_range_nm\": [380,780],\n  \"spectral_method\": \"Jointly transported fixed midpoint wavelength quadrature, 25 nm bins\",\n  \"water_ior\": "<<WATER_IOR<<", \"dispersion\": "<<((splitting&&!clay)?"true":"false")<<",\n  \"steam\": "<<(useSteam?"true":"false")<<", \"steam_model\": \"Bounded homogeneous haze; analytic transmittance; forced first collision; full continuation\",\n  \"water_absorption_scale\": "<<waterStrength<<",\n  \"finite_difference_water_connection_step_radians\": 0.002,\n  \"nonfinite_path_samples\": "<<nonfinite.load()<<",\n  \"exposure\": "<<o.exposure<<",\n  \"film_white_rgb\": ["<<whiteRGB.x<<","<<whiteRGB.y<<","<<whiteRGB.z<<"],\n  \"seconds\": "<<sec<<",\n  \"band_means\": [";
     for(int k=0;k<NBANDS;k++)meta<<(k?",":"")<<means.v[k];meta<<"]\n}\n";
+    meta.flush();if(!meta)throw std::runtime_error("Cannot write final render metadata");
+    meta.close();if(!meta)throw std::runtime_error("Cannot close final render metadata");
     std::cerr<<"WROTE "<<o.out<<"; "<<sec<<" seconds; invalid paths "<<nonfinite<<"\n";
     return nonfinite?2:0;
 }catch(const std::exception&e){std::cerr<<"ERROR: "<<e.what()<<"\n";return 1;}}

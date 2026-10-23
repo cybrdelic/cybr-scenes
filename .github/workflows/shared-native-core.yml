@@ -1,0 +1,72 @@
+name: Shared native scene core
+on:
+  push:
+    paths: ['environments/**', 'requirements.txt', '.github/workflows/shared-native-core.yml']
+  pull_request:
+    paths: ['environments/**', 'requirements.txt', '.github/workflows/shared-native-core.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-15-intel]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 35
+    env:
+      OMP_NUM_THREADS: '2'
+      OPENBLAS_NUM_THREADS: '1'
+      # The archived Victorville source paths exceed Win32's legacy path limit.
+      # Apply only to Git processes in this job, including checkout itself.
+      GIT_CONFIG_COUNT: '1'
+      GIT_CONFIG_KEY_0: core.longpaths
+      GIT_CONFIG_VALUE_0: 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Python native-verification dependencies
+        run: python -m pip install -r environments/tests/requirements.txt
+      - name: MSVC developer environment
+        if: runner.os == 'Windows'
+        uses: ilammy/msvc-dev-cmd@v1
+      - name: MSVC OpenMP runtime
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $runtime = Get-ChildItem -LiteralPath "$env:VCToolsRedistDir\debug_nonredist\x64" -Filter '*OpenMP.LLVM' -Directory
+          if (-not $runtime) { throw 'MSVC OpenMP LLVM runtime directory is missing' }
+          $runtime.FullName | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+      - name: GCC with OpenMP on Intel macOS
+        if: runner.os == 'macOS'
+        shell: bash
+        run: |
+          brew list gcc >/dev/null 2>&1 || brew install gcc
+          compiler=$(find "$(brew --prefix gcc)/bin" -maxdepth 1 -name 'g++-[0-9]*' | sort -V | tail -n 1)
+          test -x "$compiler"
+          echo "CXX=$compiler" >> "$GITHUB_ENV"
+      - name: Configure actual native entrypoints and tests
+        run: cmake -S environments -B build/native -G Ninja -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=ON
+      - name: Build actual native entrypoints and tests
+        id: build
+        run: cmake --build build/native --parallel 2
+      - name: Native numerical and geometry contracts
+        run: ctest --test-dir build/native --output-on-failure --output-junit native-tests.xml
+      - name: Shared-source consumers and cache invalidation
+        if: always() && steps.build.outcome == 'success'
+        run: python -m unittest discover -s environments/tests -p test_native_sources.py -v
+      - name: Verification process ownership and resource guards
+        if: always() && steps.build.outcome == 'success'
+        run: python -m unittest discover -s environments/tests -p test_verification_guard.py -v
+      - name: Native execution evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-core-${{ matrix.os }}
+          path: |
+            build/native/native-tests.xml
+            build/native/Testing/Temporary/
+          retention-days: 14

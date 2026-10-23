@@ -2,6 +2,10 @@ cmake_minimum_required(VERSION 3.18)
 project(mechanism_pathtrace LANGUAGES CXX)
 find_package(OpenMP REQUIRED)
 
+# The geo/hot native implementations are owned by this enclosing SCENES tree.
+get_filename_component(CYBR_SCENES_SHARED "${CMAKE_CURRENT_LIST_DIR}/../../../../shared" ABSOLUTE)
+include_directories("${CYBR_SCENES_SHARED}")
+
 add_executable(mechanism_pathtrace pathtrace.cpp)
 target_compile_features(mechanism_pathtrace PRIVATE cxx_std_17)
 target_compile_options(mechanism_pathtrace PRIVATE $<$<CXX_COMPILER_ID:GNU,Clang>:-O3>)

@@ -19,6 +19,8 @@ import sys
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[1]
+sys.path.insert(0, str(REPO.parents[2]))
+from native_sources import shared_include_flags
 
 
 def main() -> None:
@@ -52,7 +54,7 @@ def main() -> None:
     for source, name in [('test_materials_v11.cpp', 'materials'),
                          ('test_steam_grid_v11.cpp', 'steam_grid')]:
         binary = out / f'check_{name}'
-        execute([compiler, '-std=c++17', '-O2', '-fopenmp',
+        execute([compiler, '-std=c++17', '-O2', '-fopenmp', *shared_include_flags(),
                  str(REPO / 'native' / source), '-o', str(binary)])
         # These tests accept the scalar grain and reconstructed microrelief
         # assets on their command line. The steam test ignores asset args.

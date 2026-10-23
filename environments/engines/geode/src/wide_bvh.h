@@ -1,3 +1,4 @@
+#include "compiler_bits.hpp"
 #pragma once
 #include <immintrin.h>
 // BVH4/AVX2 traversal built from the same deterministic native SAH hierarchy.
@@ -57,7 +58,7 @@ bool packetHit(const TrianglePacket&p,const Ray&r,Hit&h,bool any,bool opaqueOnly
  uint32_t bits=uint32_t(_mm256_movemask_ps(mask))&(opaqueOnly?p.opaque:p.valid);if(!bits)return false;
  if(any)return true;
  alignas(32) float tt[8],uu[8],vv[8];_mm256_store_ps(tt,t);_mm256_store_ps(uu,u);_mm256_store_ps(vv,v);
- while(bits){int lane=__builtin_ctz(bits);bits&=bits-1;if(tt[lane]<h.t){h.t=tt[lane];h.u=uu[lane];h.v=vv[lane];h.tri=order[p.first+lane];h.floor=false;h.light=-1;}}
+ while(bits){int lane=cybr_native::trailing_zero_bits(bits);bits&=bits-1;if(tt[lane]<h.t){h.t=tt[lane];h.u=uu[lane];h.v=vv[lane];h.tri=order[p.first+lane];h.floor=false;h.light=-1;}}
  return true;
 }
 bool wideHit(const Ray&r,Hit&h,bool any=false,bool opaqueOnly=false){

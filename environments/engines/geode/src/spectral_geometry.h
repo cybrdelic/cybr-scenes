@@ -1,3 +1,4 @@
+#include "compiler_bits.hpp"
 // CYBR GEO native BVH and triangle intersection, reused from native/pathtrace.cpp.
 // GPL-2.0-only. Original source SHA256: f1b3eb112b48137645c28c931be4162a76d21dc98ca02f5f99790b4e18183b38
 // The only geometric unit change is EPS: scene transport uses metres, not millimetres.
@@ -62,7 +63,7 @@ struct RNG{
  void beginSample(uint32_t index,uint32_t key){sampleIndex=index;pixelKey=key;dimension=0;qmc=true;state=(uint64_t(mix32(index^key))<<32)|mix32(index+key+1);state|=1;}
  float uniform(){
   if(qmc&&dimension<1024){uint32_t dim=dimension++,i=sampleIndex,v=mix32(pixelKey^mix32(dim+1837));
-   while(i){int b=__builtin_ctz(i);v^=SOBOL_DIRECTIONS[dim][b];i&=i-1;}
+   while(i){int b=cybr_native::trailing_zero_bits(i);v^=SOBOL_DIRECTIONS[dim][b];i&=i-1;}
    return ((v>>8)+.5f)*(1.f/16777216.f);
   }return ((next()>>8)+.5f)*(1.f/16777216.f);
  }

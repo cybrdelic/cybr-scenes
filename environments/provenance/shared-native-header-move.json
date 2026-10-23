@@ -1,0 +1,82 @@
+{
+  "base_commit": "050e75551a636574e718fef892455438130267c5",
+  "purpose": "Remove six exact active geo/hot duplicate implementations; preserve git source history and numerical policies.",
+  "headers": [
+    {
+      "shared_path": "environments/shared/cloud_volume_v9.h",
+      "original_paths": [
+        "environments/engines/geo/cybr-geo/native/cloud_volume_v9.h",
+        "environments/engines/hot/cybr-geo/native/cloud_volume_v9.h"
+      ],
+      "original_git_blob": "fc7b55313c1f9a9dbe0e82c09fdaf315dbff331e",
+      "sha256": "902a13e50bb3568b9d341c465da8120a6090904eb57ce9076d4926b3dfe0d41d",
+      "bytes": 5962,
+      "physical_lines": 106,
+      "implementation_bytes_changed": false
+    },
+    {
+      "shared_path": "environments/shared/granular_relief_v11.h",
+      "original_paths": [
+        "environments/engines/geo/cybr-geo/native/granular_relief_v11.h",
+        "environments/engines/hot/cybr-geo/native/granular_relief_v11.h"
+      ],
+      "original_git_blob": "bed0a39ef7fcb079b3481baace45d8ccde51e198",
+      "sha256": "fea473b22dd5f757ebdace0dd4ee11c9df81baabcca7f843e5b3e5c4f863cdff",
+      "bytes": 2254,
+      "physical_lines": 35,
+      "implementation_bytes_changed": false
+    },
+    {
+      "shared_path": "environments/shared/photographic_grain.h",
+      "original_paths": [
+        "environments/engines/geo/cybr-geo/native/photographic_grain.h",
+        "environments/engines/hot/cybr-geo/native/photographic_grain.h"
+      ],
+      "original_git_blob": "52ea983aaf7fb8b94f598f4a0b6487afb032b184",
+      "sha256": "028a4c1838b69bacba30b231304f951a33b3e0489b811e1aa52237533c16cb26",
+      "bytes": 2300,
+      "physical_lines": 34,
+      "implementation_bytes_changed": false
+    },
+    {
+      "shared_path": "environments/shared/single_scatter_sky.h",
+      "original_paths": [
+        "environments/engines/geo/cybr-geo/native/single_scatter_sky.h",
+        "environments/engines/hot/cybr-geo/native/single_scatter_sky.h"
+      ],
+      "original_git_blob": "a721b4e0cebfbc22c035787caadbff7b1c2dfccd",
+      "sha256": "fc5ed71d2256edd45eed9ceb6c54519808cbddce16d2df74bfb794c023f3f781",
+      "bytes": 3388,
+      "physical_lines": 74,
+      "implementation_bytes_changed": false
+    },
+    {
+      "shared_path": "environments/shared/spectral_geometry.h",
+      "original_paths": [
+        "environments/engines/geo/cybr-geo/native/spectral_geometry.h",
+        "environments/engines/hot/cybr-geo/native/spectral_geometry.h"
+      ],
+      "original_git_blob": "d8c9b636d5155b9bd7be682ba16d15dc962bb276",
+      "sha256": "9cd2391f75d4c645bd8aa0c5f66c98f99a6295c4a47483bdbc75e8d6a2a4a9a9",
+      "bytes": 6281,
+      "physical_lines": 140,
+      "implementation_bytes_changed": false
+    },
+    {
+      "shared_path": "environments/shared/steam_volume_v11.h",
+      "original_paths": [
+        "environments/engines/geo/cybr-geo/native/steam_volume_v11.h",
+        "environments/engines/hot/cybr-geo/native/steam_volume_v11.h"
+      ],
+      "original_git_blob": "89d6a0846ee99c22435a45fb2943d9bfe23866cc",
+      "sha256": "3bf883ab0f914c2bffcf9fb1ea7e80bee3966be32a423d72ae0e4556e6d9019e",
+      "bytes": 2057,
+      "physical_lines": 39,
+      "implementation_bytes_changed": false
+    }
+  ],
+  "copies_before": 12,
+  "copies_after": 6,
+  "duplicate_bytes_removed": 22242,
+  "duplicate_physical_lines_removed": 428
+}

@@ -1,6 +1,6 @@
 """Fresh V11 execution evidence. No numerical test certifies photographic realism."""
 from __future__ import annotations
-import argparse,hashlib,json,re
+import argparse,hashlib,json,re,sys
 from pathlib import Path
 import numpy as np
 import trimesh
@@ -10,6 +10,8 @@ from scene_inputs import fingerprint,current_scene_matches
 
 HERE=Path(__file__).resolve().parent
 REPO=HERE.parents[1]
+sys.path.insert(0, str(REPO.parents[2]))
+from native_sources import native_source
 NATIVE_SOURCES=['spectral_desert.cpp','spectral_geometry.h','single_scatter_sky.h','photographic_grain.h','broadband_ripples.h','landscape_materials_v11.h','granular_relief_v11.h','steam_volume_v11.h','exponential_haze_v10.h','cloud_volume_v9.h','specular_reflection_connection.h']
 def check_view(root:Path,name:str):
     stem=root/name
@@ -32,7 +34,7 @@ def check_view(root:Path,name:str):
     with stem.with_suffix('.samples').open('rb') as f:
         dimensions=np.fromfile(f,'<u4',2);counts=np.fromfile(f,'<u2')
     budget_ok=tuple(dimensions)==(w,h) and len(counts)==w*h and int(counts.sum(dtype=np.uint64))==meta['total_camera_samples']
-    source_hash=hashlib.sha256(b''.join((REPO/'native'/n).read_bytes() for n in NATIVE_SOURCES)).hexdigest()
+    source_hash=hashlib.sha256(b''.join(native_source(REPO/'native', n).read_bytes() for n in NATIVE_SOURCES)).hexdigest()
     source_ok=source_hash==receipt['source_hash']
     passed=finite and bool(np.isfinite(raw).all()) and maximum<1e-4 and budget_ok and source_ok and meta['nonfinite_path_samples']==0 and image['png_sha256']==sha(stem.with_suffix('.png'))
     return {'render':meta,'execution':receipt,'image':image,'spectral_reintegration':{'finite':finite,'max_normalized_error':maximum,'mean_absolute_error':summed/(h*w*3),'passed':maximum<1e-4 and finite},'sample_budget_consistent':budget_ok,'renderer_source_matches_receipt':source_ok,'passed':passed}

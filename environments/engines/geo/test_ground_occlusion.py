@@ -1,12 +1,14 @@
 """Self-contained certificate/interval regression, without the large forest mesh."""
 from pathlib import Path
-import json,subprocess,struct
+import json,subprocess,struct,sys
+sys.path.insert(0,str(Path(__file__).resolve().parents[2]))
+from native_sources import shared_include_flags
 import numpy as np
 
 def run(root:Path):
     native=root/'cybr-geo/native';out=root/'verification';out.mkdir(exist_ok=True)
     binary=out/'test_ground_occlusion_r4'
-    cmd=['g++','-std=c++17','-O3','-march=native','-fno-math-errno','-fno-trapping-math','-fopenmp',str(native/'test_ground_occlusion_r4.cpp'),'-o',str(binary)]
+    cmd=['g++','-std=c++17','-O3','-march=native','-fno-math-errno','-fno-trapping-math','-fopenmp',*shared_include_flags(),str(native/'test_ground_occlusion_r4.cpp'),'-o',str(binary)]
     subprocess.run(cmd,check=True)
     nx,ny=401,601;x=np.linspace(-20,20,nx);y=np.linspace(-10,50,ny);xx,yy=np.meshgrid(x,y)
     center=.8*np.sin(yy*.17)
