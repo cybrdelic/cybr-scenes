@@ -9,9 +9,15 @@
 #include <filesystem>
 #include <iomanip>
 #include <sstream>
+#include <string>
 
 namespace cybr_checkpoint {
 namespace fs = std::filesystem;
+
+inline std::string path_utf8_bytes(const fs::path& path) {
+    const auto utf8=path.generic_u8string();
+    return std::string(reinterpret_cast<const char*>(utf8.data()),utf8.size());
+}
 
 inline std::string sha256(const std::string& bytes) {
     return picosha2::hash256_hex_string(bytes);
@@ -76,7 +82,7 @@ inline std::string read_small(const fs::path& path) {
 
 inline std::string layout_identity(const cybr_film::RowLayout& layout) {
     std::string s;
-    put_bytes(s,fs::absolute(layout.path).lexically_normal().generic_u8string());
+    put_bytes(s,path_utf8_bytes(fs::absolute(layout.path).lexically_normal()));
     put_bytes(s,layout.header); put_u64(s,layout.row_bytes); put_u64(s,layout.height);
     put_u64(s,layout.order==cybr_film::RowOrder::bottom_up?1:0); return s;
 }

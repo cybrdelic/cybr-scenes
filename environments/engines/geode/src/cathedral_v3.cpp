@@ -613,7 +613,7 @@ std::string checkpointBinding(const Options& o,const char* executable){
             if(entry.is_regular_file()&&(ext==".h"||ext==".hpp"||ext==".cpp"))sources.push_back(entry.path());
         }
     std::sort(sources.begin(),sources.end());
-    for(const auto& source:sources)bind_file(binding,fs::relative(source,root).generic_u8string(),source);
+    for(const auto& source:sources)bind_file(binding,path_utf8_bytes(fs::relative(source,root)),source);
     return binding;
 }
 

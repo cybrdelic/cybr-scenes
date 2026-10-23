@@ -31,6 +31,7 @@ int main(int argc,char** argv) {
     assert(sha256("")=="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855");
     assert(sha256("abc")=="ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad");
     assert(sha256(std::string(1000000,'a'))=="cdc76e5c9914fb9281a1c7e284d73e67f1809a48a497200e046d39ccc7112cd0");
+    assert(cybr_checkpoint::path_utf8_bytes(fs::u8path("caf\xC3\xA9"))=="caf\xC3\xA9");
     std::string binary;for(int i=0;i<256;i++)binary.push_back(char(i));write(root/"binary",binary);
     assert(cybr_checkpoint::file_sha256(root/"binary")=="40aff2e9d2d8922e47afd4648e6967497158785fbd1da870e7110266bf944880");
     std::cout<<"PASS SHA-256 published vectors and binary file\n";
