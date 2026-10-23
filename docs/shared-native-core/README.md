@@ -30,6 +30,50 @@ Sampled peak working set decreased from 1,906,999,296 to 1,863,573,504 bytes at 
 
 All six original environment rerenders remain pending. Historical triangle counts are Sandstone 8,108,728; Basalt 11,644,696; Fernwater 20,400,257 input (180 near-degenerate triangles rejected by the historical loader); Hot Springs 23,690,858; Obsidian 6,210,833; Geode 3,655,632.
 
+### Exact row checkpoints (validation in progress)
+
+The shared `native_checkpoint.hpp` utility is consumed by Geode. It checkpoints
+only complete 16-row tiles (and the final shorter tile), after flushing all nine
+native outputs. An immutable receipt binds the executable, the native/header
+source closure and build policy, mesh, atlas, five texture packs, every render
+setting, output headers/layouts, and SHA-256 hashes of all committed byte ranges.
+PFM data is checked at its bottom-up tail; other data is checked at its top-down
+prefix. Band means are saved as raw float bytes, together with the nonfinite
+sample count and elapsed time. Resume retains global pixel seeds and accumulation
+order. It exposes no caller-supplied next-row option.
+
+The native executable checks the complete receipt chain and committed bytes
+before loading geometry or opening output writers. A corrupt latest receipt,
+missing committed boundary, changed input/config/source/binary, or truncated
+committed range is an error; it does not silently fall back to older state.
+Uncommitted tail bytes and abandoned `.pending-*` staging directories are never
+treated as completion. Those tail rows are calculated again from the last
+validated boundary. A new receipt is published by renaming an exclusively
+created staging directory to a new boundary name, never by replacing a receipt.
+This supports process interruption, not guaranteed power-loss durability;
+post-crash validation rejects any damaged committed bytes.
+
+Example, after generating the original inputs and compiling the native target:
+
+```text
+geode_r2 /absolute/scene.meshbin /absolute/new-run/hero --w 1536 --h 1024 --spp 64 --depth 24 --threads 4 --seed 735041 --exposure 1.4 --source-root /absolute/scenes-checkout --checkpoint-dir /absolute/new-run/checkpoints
+```
+
+Use an absolute executable path and set `CYBR_SURFACE_ATLAS` to the original
+atlas. The output parent must exist; the checkpoint directory and outputs must
+be new. Resume with the identical command plus `--resume`. The optional
+`--stop-after-checkpoint N` exits with code 75 at a complete boundary for
+interruption tests; it does not produce final metadata or certify completion.
+Only one process may own a render's output directory at a time. Continue to use
+the existing resource supervisor and unchanged memory limits.
+
+Old partial renders made before checkpoint support have no valid receipt or
+exact band-mean state and cannot be resumed. They remain incomplete. Hashing
+uses the unchanged, pinned MIT-licensed [PicoSHA2](../../environments/shared/third_party/picosha2/PROVENANCE.md)
+dependency; no new cryptographic algorithm or platform crypto library is added.
+Original-scene interrupted/resumed image parity and current-platform build
+results must be recorded before this path is used for final delivery.
+
 ## Run the tests
 
 Use a C++17 compiler with OpenMP and the repository Python dependencies. On Windows use an x64 Visual Studio developer terminal with its OpenMP LLVM runtime on the process PATH.

@@ -2,6 +2,7 @@
 // Fixed-row binary output shared by native scene renderers. No image math,
 // sampling, or transport policy belongs here; callers provide original bytes.
 #include <cstddef>
+#include <filesystem>
 #include <fstream>
 #include <limits>
 #include <stdexcept>
@@ -11,8 +12,14 @@
 namespace cybr_film {
 enum class RowOrder { top_down, bottom_up };
 
+struct RowLayout {
+    std::string path, header;
+    std::size_t row_bytes, height;
+    RowOrder order = RowOrder::top_down;
+};
+
 class BinaryRows {
-    std::ofstream stream_;
+    std::fstream stream_;
     std::size_t header_bytes_, row_bytes_, height_;
     RowOrder order_;
     std::vector<bool> written_;
@@ -20,7 +27,8 @@ class BinaryRows {
 public:
     BinaryRows(const std::string& path, const std::string& header,
                std::size_t row_bytes, std::size_t height,
-               RowOrder order = RowOrder::top_down)
+               RowOrder order = RowOrder::top_down,
+               bool resume = false, std::size_t committed_rows = 0)
         : header_bytes_(header.size()), row_bytes_(row_bytes), height_(height),
           order_(order), written_(height, false) {
         const auto maximum = static_cast<std::size_t>((std::numeric_limits<std::streamoff>::max)());
@@ -28,9 +36,30 @@ public:
             row_bytes > (maximum - header_bytes_) / height ||
             row_bytes > static_cast<std::size_t>((std::numeric_limits<std::streamsize>::max)()))
             throw std::invalid_argument("Invalid binary film dimensions");
-        stream_.open(path, std::ios::binary | std::ios::trunc);
-        stream_.write(header.data(), static_cast<std::streamsize>(header.size()));
+        if(committed_rows > height || (!resume && committed_rows))
+            throw std::invalid_argument("Invalid committed film rows");
+        stream_.open(path, std::ios::binary | std::ios::in | std::ios::out |
+                     (resume ? std::ios::openmode(0) : std::ios::trunc));
+        if(resume) {
+            std::string actual(header.size(), '\0');
+            stream_.read(actual.data(), static_cast<std::streamsize>(actual.size()));
+            if(!stream_ || actual != header) throw std::runtime_error("Resume film header mismatch");
+            for(std::size_t y=0;y<committed_rows;y++) written_[y]=true;
+        } else stream_.write(header.data(), static_cast<std::streamsize>(header.size()));
         if (!stream_) throw std::runtime_error("Cannot open binary film output: " + path);
+    }
+
+    explicit BinaryRows(const RowLayout& layout, bool resume=false, std::size_t rows=0)
+        : BinaryRows(layout.path,layout.header,layout.row_bytes,layout.height,layout.order,resume,rows) {}
+
+    // Checkpoint callers must validate the complete receipt before opening a
+    // writer in resume mode. The renderer exposes no naked next-row CLI option.
+    void flush_completed(std::size_t rows) {
+        if(finished_ || rows > height_) throw std::logic_error("Invalid film flush boundary");
+        for(std::size_t y=0;y<rows;y++)
+            if(!written_[y]) throw std::logic_error("Checkpoint would include a missing film row");
+        stream_.flush();
+        if(!stream_) throw std::runtime_error("Cannot flush binary film output");
     }
 
     void write_row(std::size_t y, const void* bytes, std::size_t size) {
