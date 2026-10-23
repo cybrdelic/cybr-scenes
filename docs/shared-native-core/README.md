@@ -6,7 +6,7 @@ The [move manifest](../../environments/provenance/shared-native-header-move.json
 
 ## Executed verification
 
-All four actual native entrypoints compile on Windows x64: geo, hot, Geode and Obsidian. Corrected source at `5de8c36eecfea90c736a8aa7627cd77468cdefd3` passes all 26 native numerical/geometry tests and four Python source-resolution/cache tests. See [test results](windows-native-tests.json). The compiler is MSVC 19.44.35215.0, with C++17, `/O2 /openmp:llvm /arch:AVX2 /fp:precise` and assertions enabled.
+All four actual native entrypoints compile on Windows x64: geo, hot, Geode and Obsidian. Current implementation at `7786190aa72cfcf21f3b248757a7598f5edd7759` passes all 28 native numerical/geometry/checkpoint tests, four Python source-resolution/cache tests and seven process-guard tests. See [current test results](windows-publication-tests.json) and the [earlier compiler-correction results](windows-native-tests.json). The compiler is MSVC 19.44.35215.0, with C++17, `/O2 /openmp:llvm /arch:AVX2 /fp:precise` and assertions enabled.
 
 The original baseline failed both historical desert regression checks. Three refraction functions now take immutable vector references to avoid reproduced MSVC optimized by-value argument corruption. Their equation bodies are unchanged. The tests use the actual V11 material cap of 0.91 with the existing 0.00001 allowance. The water residual limit remains 0.000201 metres; no optical threshold was relaxed.
 
@@ -28,9 +28,28 @@ The Windows build, binary row-layout/error checks and Geode optical self-test pa
 
 Sampled peak working set decreased from 1,906,999,296 to 1,863,573,504 bytes at the comparison resolution. The full 1536 x 1024, 64-sample delivery remains pending; that larger image is not implied by this regression check. Original binaries and failed-attempt logs are retained. Geode is the first consumer of this output helper; other native renderers have not adopted it.
 
+![Original Geode storage regression, complete geometry at 480 x 320 and 16 samples](geode-storage-regression.png)
+
+This is the actual bounded storage comparison at `e1c6b5b`, with all 3,655,632
+original triangles. It does not show a completed full-resolution rerender or
+verify the later interrupted/resumed image path.
+
 All six original environment rerenders remain pending. Historical triangle counts are Sandstone 8,108,728; Basalt 11,644,696; Fernwater 20,400,257 input (180 near-degenerate triangles rejected by the historical loader); Hot Springs 23,690,858; Obsidian 6,210,833; Geode 3,655,632.
 
-### Exact row checkpoints (validation in progress)
+### Exact row checkpoints (image parity pending)
+
+The Windows native checkpoint, row-output and Geode optics checks pass, as do
+ten streaming/padding hash comparisons against Python hashlib. Independent
+source review found no remaining blocker for the bounded image comparison.
+The 480 x 320 uninterrupted reference completed, but host memory prevented the
+next resumed phase from launching. See the [validation receipt](geode-resume-validation.json).
+
+The verification runner retains its original 3 GiB preflight, 805,306,368-byte
+host floor and 2,500,000,000-byte direct-process RSS cap. Explicit process-tree
+mode records PID plus creation time, sums owned descendants and cleans up only
+recorded identities. Seven small-process tests cover successful children,
+memory/timeout stops, early parent exit, supervisor errors, preflight refusal,
+and existing-receipt preservation. This supervisor is not a security sandbox.
 
 The shared `native_checkpoint.hpp` utility is consumed by Geode. It checkpoints
 only complete 16-row tiles (and the final shorter tile), after flushing all nine
@@ -83,6 +102,7 @@ cmake -S environments -B build/native -DCMAKE_BUILD_TYPE=Release
 cmake --build build/native --config Release --parallel 1
 ctest --test-dir build/native -C Release --output-on-failure
 python -m unittest discover -s environments/tests -p test_native_sources.py -v
+python -m unittest discover -s environments/tests -p test_verification_guard.py -v
 ```
 
 These tests exercise existing water/optics, spectral, material, acceleration, foliage and source-resolution contracts. They are not a completed six-scene image comparison or an engineering qualification.

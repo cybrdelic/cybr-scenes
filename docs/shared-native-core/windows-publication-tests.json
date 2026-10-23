@@ -1,0 +1,25 @@
+{
+  "tested_implementation_commit": "7786190aa72cfcf21f3b248757a7598f5edd7759",
+  "platform": "Windows x64",
+  "compiler": "MSVC 19.44.35215.0, C++17, /O2 /openmp:llvm /arch:AVX2 /fp:precise; test assertions enabled",
+  "build": {
+    "configuration": "Release with BUILD_TESTING=ON",
+    "parallel_jobs": 1,
+    "compile_link_steps": 58,
+    "native_entrypoints": ["geo_r2", "hot_r2", "geode_r2", "obsidian_r2"],
+    "exit_code": 0
+  },
+  "native_ctest": {"passed": 28, "failed": 0, "seconds": 100.93},
+  "python_source_resolution": {"passed": 4, "failed": 0, "seconds": 0.105},
+  "python_process_guard": {"passed": 7, "failed": 0, "seconds": 3.456},
+  "guard_source_sha256": "60030750dac00035326c4fbff10db5349c1fd618ea8f151e9053139215352b45",
+  "runtime_guards": {
+    "required_preflight_bytes": 3221225472,
+    "minimum_host_available_bytes": 805306368,
+    "maximum_process_rss_bytes": 2500000000
+  },
+  "real_original_geometry_storage_parity": "Previously passed at e1c6b5b: nine native outputs and five PNGs byte-exact; see geode-row-storage-parity.json",
+  "checkpoint_image_parity": "Incomplete: uninterrupted 480x320 reference completed; interrupted/resumed phases await resource headroom",
+  "full_resolution_original_rerenders": "Incomplete; no full-resolution completion claim",
+  "hosted_linux_macos_tests": "Not run at receipt creation; workflow prepared for publication"
+}

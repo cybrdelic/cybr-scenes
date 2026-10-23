@@ -1,9 +1,9 @@
 name: Shared native scene core
 on:
   push:
-    paths: ['environments/**', '.github/workflows/shared-native-core.yml']
+    paths: ['environments/**', 'requirements.txt', '.github/workflows/shared-native-core.yml']
   pull_request:
-    paths: ['environments/**', '.github/workflows/shared-native-core.yml']
+    paths: ['environments/**', 'requirements.txt', '.github/workflows/shared-native-core.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -24,7 +24,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Python scene dependencies
-        run: python -m pip install -r environments/requirements.txt
+        run: python -m pip install -r requirements.txt
       - name: MSVC developer environment
         if: runner.os == 'Windows'
         uses: ilammy/msvc-dev-cmd@v1
@@ -53,6 +53,9 @@ jobs:
       - name: Shared-source consumers and cache invalidation
         if: always() && steps.build.outcome == 'success'
         run: python -m unittest discover -s environments/tests -p test_native_sources.py -v
+      - name: Verification process ownership and resource guards
+        if: always() && steps.build.outcome == 'success'
+        run: python -m unittest discover -s environments/tests -p test_verification_guard.py -v
       - name: Native execution evidence
         if: always()
         uses: actions/upload-artifact@v4
