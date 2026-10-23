@@ -73,14 +73,26 @@ def _observe(owned, root, include_children):
 
 def _cleanup_owned(owned, root, include_children, grace=2):
     """Freeze observed owners before finding late children; signal identities only."""
+    def captured():
+        try:
+            return _observe(owned, root, include_children)
+        except Exception:
+            # A failed observation must not prevent cleanup of known identities.
+            result = []
+            for token in owned.values():
+                proc = _matching_process(token)
+                if proc is not None:
+                    result.append((token, proc, 0))
+            return result
+
     # Repeated discovery catches children spawned during the first observation.
     for _ in range(2):
-        for _, proc, _ in _observe(owned, root, include_children):
+        for _, proc, _ in captured():
             try:
                 proc.suspend()
             except psutil.NoSuchProcess:
                 pass
-    live = _observe(owned, root, include_children)
+    live = captured()
     processes = []
     for token, _, _ in reversed(live):
         proc = _matching_process(token)
@@ -95,12 +107,12 @@ def _cleanup_owned(owned, root, include_children, grace=2):
                 pass
     _, alive = psutil.wait_procs(processes, timeout=grace)
     for proc in alive:
-        token = owned.get((proc.pid, proc.create_time()))
-        if token is not None and _matching_process(token) is not None:
-            try:
+        try:
+            token = owned.get((proc.pid, proc.create_time()))
+            if token is not None and _matching_process(token) is not None:
                 proc.kill()
-            except psutil.NoSuchProcess:
-                pass
+        except psutil.NoSuchProcess:
+            pass
     psutil.wait_procs(alive, timeout=grace)
     return [token for token in owned.values() if _matching_process(token) is not None]
 

@@ -86,13 +86,10 @@ class VerificationGuardTests(unittest.TestCase):
 
     def test_supervisor_exception_cleans_owned_children(self):
         observe = guard._observe
-        raised = False
 
         def interrupted(owned, root, include_children):
-            nonlocal raised
             result = observe(owned, root, include_children)
-            if len(owned) >= 2 and not raised:
-                raised = True
+            if len(owned) >= 2:
                 raise RuntimeError('injected supervisor failure')
             return result
 
