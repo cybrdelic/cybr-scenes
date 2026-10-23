@@ -24,6 +24,8 @@ MSVC 19.44.35215.0, C++17, `/O2 /openmp:llvm /arch:AVX2 /fp:precise`, one render
 
 Four actual native entrypoints compile locally on Windows: geo, hot, Geode and Obsidian. Geode changes are limited to portable trailing-zero counting. Its geometry epsilon and transparent-material mask are unchanged. The existing Linux execution supervisor still uses `fcntl` and `/proc`; this CMake build does not establish portability of that supervisor or ARM acceleration.
 
+The `Shared native scene core` workflow runs actual builds, numerical/geometry tests and both diagnostic renders on Windows x64, Linux x64 and Intel macOS. Test failures remain failures, while rendering evidence is uploaded even when an independent numerical contract fails. Hosted results must be inspected before claiming support; this matrix does not cover ARM or the Linux-only execution supervisor.
+
 ## Baseline tests and limits
 
 The pre-extraction Windows component baseline passes 20 of 22 checks, plus four Python source-resolution/cache tests. Both historical `test_spectral_desert_v5` checks fail; the geo-side one includes the bundled desert renderer, not the active three-scene renderer. The legacy test caps color at 0.88001 while the actual material implementation permits 0.91. Its reported 17.4 mm residual is also under separate compiler diagnosis: same-input scalar/noinline evaluation is within 0.01 mm. No tolerance was weakened for this extraction. Correcting those contracts/compiler behavior is a separate change; do not infer overall renderer qualification from extraction parity.
