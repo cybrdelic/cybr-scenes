@@ -53,13 +53,6 @@ jobs:
       - name: Shared-source consumers and cache invalidation
         if: always() && steps.build.outcome == 'success'
         run: python -m unittest discover -s environments/tests -p test_native_sources.py -v
-      - name: Construct the authored diagnostic geometry
-        if: always() && steps.build.outcome == 'success'
-        id: geometry
-        run: python environments/examples/shared_core_scene.py --out outputs/shared-native-core/new-scene
-      - name: Execute both real native diagnostic renders
-        if: always() && steps.geometry.outcome == 'success'
-        run: python environments/tools/native_parity.py after --build build/native
       - name: Native execution evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -68,7 +61,4 @@ jobs:
           path: |
             build/native/native-tests.xml
             build/native/Testing/Temporary/
-            outputs/shared-native-core/after-capture.json
-            outputs/shared-native-core/after/
-            outputs/shared-native-core/new-scene/**/geometry.json
           retention-days: 14

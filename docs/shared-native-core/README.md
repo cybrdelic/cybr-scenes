@@ -1,48 +1,36 @@
-# Shared native headers: bounded extraction proof
+# Shared native scene headers
 
-The geo and hot renderers now compile six identical header implementations from `environments/shared`. Both previous engine-local copies were removed. The mathematical implementation bytes are unchanged; the move removes 428 duplicate physical lines (22,242 bytes). This is a duplication measure, not the whole-repository net line delta, which also includes build, test and proof additions.
+The geo and hot renderers now compile six identical implementations from `environments/shared`. Both engine-local copies were removed. The bodies remain byte-for-byte unchanged: six shared headers replace twelve active copies, removing 428 duplicate physical lines and 22,242 bytes. This is duplicate reduction, not the net repository line delta.
 
-```mermaid
-flowchart LR
-  G[geo spectral_scenes.cpp] --> S[environments/shared: six native headers]
-  H[hot spectral_desert.cpp] --> S
-  P[build scripts and receipt hashes] --> S
-```
+The [move manifest](../../environments/provenance/shared-native-header-move.json) records original Git blobs and SHA-256 hashes. Compiler dependencies confirm both actual entrypoints consume the shared files. Historical source overlays are retained. Geode/Observatory epsilon and opacity policies remain separate.
 
-The [move manifest](../../environments/provenance/shared-native-header-move.json) records original Git blobs and SHA-256 hashes. Compiler dependency output confirms both actual entrypoints consume the shared files. Historical `provenance/native-before` overlays remain historical inputs; Geode/Observatory epsilon and opacity policies remain separate.
+## Executed verification
 
-## Executed native comparison
+All four actual native entrypoints compile on Windows x64: geo, hot, Geode and Obsidian. Corrected source at `5de8c36eecfea90c736a8aa7627cd77468cdefd3` passes all 26 native numerical/geometry tests and four Python source-resolution/cache tests. See [test results](windows-native-tests.json). The compiler is MSVC 19.44.35215.0, with C++17, `/O2 /openmp:llvm /arch:AVX2 /fp:precise` and assertions enabled.
 
-| New diagnostic scene | Actual native output |
-| --- | --- |
-| GEO: authored ground/minerals/leaves plus existing coast-wave water enclosure, 33,572 triangles | ![GEO native diagnostic](geo-diagnostic.png) |
-| Hot: authored ground/minerals/leaves and native atmosphere, 22,468 triangles | ![Hot native diagnostic](hot-diagnostic.png) |
+The original baseline failed both historical desert regression checks. Three refraction functions now take immutable vector references to avoid reproduced MSVC optimized by-value argument corruption. Their equation bodies are unchanged. The tests use the actual V11 material cap of 0.91 with the existing 0.00001 allowance. The water residual limit remains 0.000201 metres; no optical threshold was relaxed.
 
-These are noisy **320 × 200, 16-sample diagnostic images**, not final-quality work or reproductions of the six existing environments. Both are real native renders, with no image generation. PNG encoding preserves the renderer PPM pixels.
+Extraction commit `b024110d210fa0e4e80789762bfac41a0c1cc9b8` was compared using 11 native buffers with exact byte agreement. The temporary synthetic fixture, generator, capture harness and previews were subsequently removed at the user's request. They are not active examples or proof that the six original environments were rerendered. Git history remains recoverable. That earlier image-parity result does not cover the later compiler correction.
 
-MSVC 19.44.35215.0, C++17, `/O2 /openmp:llvm /arch:AVX2 /fp:precise`, one render thread, fixed seed 20261023, depth 12, indirect clamp zero. Identical geometry, atlas, grain and relief hashes were used before and after extraction. All 11 output buffers match byte for byte: linear PFM, display PPM, sixteen-band spectral film, geometry guides, sample counts, plus GEO support data. Both renderers report zero nonfinite path samples. Metadata also matches after removing elapsed time. See [parity](parity.json), [before receipt](before-capture.json), and [after receipt](after-capture.json). Timing differences are not a performance claim.
+The `Shared native scene core` workflow builds the actual renderers and runs numerical/geometry tests on Windows x64, Linux x64 and Intel macOS. Hosted results are pending publication. Current native targets require x86-64/AVX2; ARM support is not established. The older execution supervisor still depends on Linux `fcntl` and `/proc`.
 
-Four actual native entrypoints compile locally on Windows: geo, hot, Geode and Obsidian. Geode changes are limited to portable trailing-zero counting. Its geometry epsilon and transparent-material mask are unchanged. The existing Linux execution supervisor still uses `fcntl` and `/proc`; this CMake build does not establish portability of that supervisor or ARM acceleration.
+## Original environments
 
-The `Shared native scene core` workflow runs actual builds, numerical/geometry tests and both diagnostic renders on Windows x64, Linux x64 and Intel macOS. Test failures remain failures, while rendering evidence is uploaded even when an independent numerical contract fails. Hosted results must be inspected before claiming support; this matrix does not cover ARM or the Linux-only execution supervisor.
+The unchanged original Geode generator completed with 3,655,632 triangles, 228 parts and all five original 2048-square texture packs. The existing R2 enhancement preserves water records, material IDs, UVs and primitive order. Generated mesh hashes differ from archived Linux receipts; exact historical geometry byte identity has not been established.
 
-## Baseline tests and limits
+The 1536 x 1024, 64-sample, depth-24 Geode render loaded every triangle and passed 5,000 BVH equivalence rays. A host-memory guard stopped it before a completed frame. The same-quality rerender awaits sufficient memory. No smaller geometry or substitute image is counted as complete.
 
-The pre-extraction Windows component baseline passes 20 of 22 checks, plus four Python source-resolution/cache tests. Both historical `test_spectral_desert_v5` checks fail; the geo-side one includes the bundled desert renderer, not the active three-scene renderer. The legacy test caps color at 0.88001 while the actual material implementation permits 0.91. Its reported 17.4 mm residual is also under separate compiler diagnosis: same-input scalar/noinline evaluation is within 0.01 mm. No tolerance was weakened for this extraction. Correcting those contracts/compiler behavior is a separate change; do not infer overall renderer qualification from extraction parity.
+All six original environment rerenders remain pending. Historical triangle counts are Sandstone 8,108,728; Basalt 11,644,696; Fernwater 20,400,257 input (180 near-degenerate triangles rejected by the historical loader); Hot Springs 23,690,858; Obsidian 6,210,833; Geode 3,655,632.
 
-The six original full environment rerenders remain pending. Their historical geometry counts are 8,108,728 (Sandstone), 11,644,696 (Basalt), 20,400,257 (Fernwater input; historical loader rejects 180 near-degenerate triangles), 23,690,858 (Hot Springs), 6,210,833 (Obsidian), and 3,655,632 (Geode). Existing source generators and retained inputs must be used without geometry reduction. These small diagnostic scenes do not satisfy that coverage.
+## Run the tests
 
-## Reproduce the bounded comparison
-
-Use a C++17 compiler with OpenMP and the repository Python dependencies. On Windows use an x64 Visual Studio developer terminal with its OpenMP LLVM runtime on the process PATH. The native targets currently require x86-64/AVX2; no ARM execution is claimed here.
+Use a C++17 compiler with OpenMP and the repository Python dependencies. On Windows use an x64 Visual Studio developer terminal with its OpenMP LLVM runtime on the process PATH.
 
 ```text
 cmake -S environments -B build/native -DCMAKE_BUILD_TYPE=Release
 cmake --build build/native --config Release --parallel 1
 ctest --test-dir build/native -C Release --output-on-failure
 python -m unittest discover -s environments/tests -p test_native_sources.py -v
-python environments/examples/shared_core_scene.py --out outputs/shared-native-core/new-scene
-python environments/tools/native_parity.py after --build build/native
 ```
 
-For a multi-configuration generator, pass the directory containing the executable (for example `build/native/Release`) to `--build`. Capture `before` using the pre-extraction portable baseline, retain its source/compiler/input receipt, then run `python environments/tools/native_parity.py compare`. Merely copying an after film into the before directory is not a valid comparison. This repository retains the original source reference and exact hashes; generated binaries and raw films stay outside Git.
+These tests exercise existing water/optics, spectral, material, acceleration, foliage and source-resolution contracts. They are not a completed six-scene image comparison or an engineering qualification.

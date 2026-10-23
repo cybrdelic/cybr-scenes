@@ -1,0 +1,199 @@
+{
+  "source_commit": "5de8c36eecfea90c736a8aa7627cd77468cdefd3",
+  "platform": "Windows x64",
+  "compiler": "MSVC19.44.35215.0 C++17 /O2 /openmp:llvm /arch:AVX2 /fp:precise; assertions enabled",
+  "native_tests": 26,
+  "passed": 26,
+  "failed": 0,
+  "elapsed_seconds": 124.76,
+  "python_source_resolution_tests": {
+    "total": 4,
+    "passed": 4
+  },
+  "water_residual_limit_m": 0.000201,
+  "material_implementation_cap": 0.91,
+  "material_test_allowance": 1e-05,
+  "test_results": [
+    {
+      "name": "geode_optics",
+      "seconds": 0.0766139,
+      "passed": true,
+      "measurements": {
+        "spectral_bands": 16,
+        "wavelength_range_nm": [
+          380,
+          780
+        ],
+        "fresnel_normal": 0.02047817037,
+        "fresnel_error": 0,
+        "beer_lambert_composition_error": 5.960464478e-08,
+        "snell_error": 1.788139343e-07,
+        "sampled_max_steam_density": 0.0027999999,
+        "steam_majorant": 0.008999999613,
+        "passed": true
+      }
+    },
+    {
+      "name": "geo_optics",
+      "seconds": 10.3252,
+      "passed": true
+    },
+    {
+      "name": "geo_test_cloud_volume_v9",
+      "seconds": 3.12192,
+      "passed": true
+    },
+    {
+      "name": "geo_test_reflectance_calibration_v9",
+      "seconds": 7.43239,
+      "passed": true
+    },
+    {
+      "name": "geo_test_photographic_grain",
+      "seconds": 0.0877034,
+      "passed": true
+    },
+    {
+      "name": "geo_test_spectral_desert_v5",
+      "seconds": 4.51985,
+      "passed": true,
+      "measurements": {
+        "test": "CYBR GEO v9 water-connection and material regression",
+        "tested_water_connections": 8000,
+        "accepted_water_connections": 8000,
+        "rejected_water_connections": 0,
+        "maximum_connection_residual_m": 1.000578322e-05,
+        "maximum_snell_direction_error": 0.0001177097802,
+        "rms_snell_direction_error": 5.620289139e-06,
+        "maximum_ripple_lut_height_error_m": 7.216339782e-06,
+        "maximum_ripple_lut_slope_error": 0.0003065383935,
+        "flat_interface_jacobian_maximum_relative_error": 0.0009956948925,
+        "material_samples_tested": 64000,
+        "reflectance_and_roughness_bounded": true,
+        "finite_results": true,
+        "photorealism_certified_by_test": false,
+        "passed": true
+      }
+    },
+    {
+      "name": "geo_test_broadband_ripples",
+      "seconds": 2.07744,
+      "passed": true
+    },
+    {
+      "name": "geo_test_water_medium",
+      "seconds": 0.0807093,
+      "passed": true
+    },
+    {
+      "name": "geo_test_water_microfacet",
+      "seconds": 0.210577,
+      "passed": true
+    },
+    {
+      "name": "geo_test_reflected_connection",
+      "seconds": 4.02258,
+      "passed": true
+    },
+    {
+      "name": "geo_test_legacy_water_connection",
+      "seconds": 12.2112,
+      "passed": true
+    },
+    {
+      "name": "hot_optics",
+      "seconds": 10.3641,
+      "passed": true
+    },
+    {
+      "name": "hot_test_cloud_volume_v9",
+      "seconds": 3.73711,
+      "passed": true
+    },
+    {
+      "name": "hot_test_reflectance_calibration_v9",
+      "seconds": 7.99653,
+      "passed": true
+    },
+    {
+      "name": "hot_test_photographic_grain",
+      "seconds": 0.0822634,
+      "passed": true
+    },
+    {
+      "name": "hot_test_spectral_desert_v5",
+      "seconds": 4.16522,
+      "passed": true,
+      "measurements": {
+        "test": "CYBR GEO v9 water-connection and material regression",
+        "tested_water_connections": 8000,
+        "accepted_water_connections": 8000,
+        "rejected_water_connections": 0,
+        "maximum_connection_residual_m": 1.000578322e-05,
+        "maximum_snell_direction_error": 0.0001177097802,
+        "rms_snell_direction_error": 5.620289139e-06,
+        "maximum_ripple_lut_height_error_m": 7.216339782e-06,
+        "maximum_ripple_lut_slope_error": 0.0003065383935,
+        "flat_interface_jacobian_maximum_relative_error": 0.0009956948925,
+        "material_samples_tested": 64000,
+        "reflectance_and_roughness_bounded": true,
+        "finite_results": true,
+        "photorealism_certified_by_test": false,
+        "passed": true
+      }
+    },
+    {
+      "name": "hot_test_broadband_ripples",
+      "seconds": 3.37433,
+      "passed": true
+    },
+    {
+      "name": "hot_test_water_medium",
+      "seconds": 0.112264,
+      "passed": true
+    },
+    {
+      "name": "hot_test_water_microfacet",
+      "seconds": 0.541559,
+      "passed": true
+    },
+    {
+      "name": "hot_test_reflected_connection",
+      "seconds": 5.64805,
+      "passed": true
+    },
+    {
+      "name": "hot_test_legacy_water_connection",
+      "seconds": 16.3922,
+      "passed": true
+    },
+    {
+      "name": "test_wave_parity",
+      "seconds": 5.37368,
+      "passed": true
+    },
+    {
+      "name": "test_recovery",
+      "seconds": 8.09608,
+      "passed": true
+    },
+    {
+      "name": "test_thin_leaf_r4",
+      "seconds": 0.461164,
+      "passed": true
+    },
+    {
+      "name": "test_three_scenes",
+      "seconds": 5.8555,
+      "passed": true
+    },
+    {
+      "name": "test_fernwater_r6",
+      "seconds": 6.84782,
+      "passed": true
+    }
+  ],
+  "junit_sha256": "343184c90936168bc67e586c37300a07aa8cae546a887b4e2e4537c2a547c951",
+  "full_original_rerenders_completed": 0,
+  "hosted_platform_results": "pending publication; not executed"
+}
