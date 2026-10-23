@@ -146,7 +146,7 @@ float fresnelD(float cosine,float ei,float et){
     float ct=std::sqrt(1-sin2),rs=(ei*cosine-et*ct)/(ei*cosine+et*ct),rp=(et*cosine-ei*ct)/(et*cosine+ei*ct);
     return .5f*(rs*rs+rp*rp);
 }
-V refractRay(V d,V n,float eta){
+V refractRay(const V& d,const V& n,float eta){
     float c=-dot(d,n),k=1-eta*eta*(1-c*c);if(k<0)return V(0);
     return unit(d*eta+n*(eta*c-std::sqrt(k)));
 }

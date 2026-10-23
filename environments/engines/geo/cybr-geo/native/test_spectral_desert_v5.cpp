@@ -23,7 +23,8 @@ int main(){
         for(int mat: {0,1,2,3,4,5,8,9}){
             V at((rng.uniform()-.5f)*15,(rng.uniform()-.5f)*15,rng.uniform()),normal=unit(V(rng.uniform()-.5f,rng.uniform()-.5f,1));
             auto m=shade(at,normal,mat,.001f);
-            for(int i=0;i<3;i++)bounded=bounded&&m.color[i]>=.002f&&m.color[i]<=.88001f;
+            // landscape_materials_v11.h clamps color to [.003f, .91f].
+            for(int i=0;i<3;i++)bounded=bounded&&m.color[i]>=.002f&&m.color[i]<=.91001f;
             bounded=bounded&&m.rough>=0&&m.rough<=1&&std::fabs(len(normal)-1)<1e-5;
         }
     }
