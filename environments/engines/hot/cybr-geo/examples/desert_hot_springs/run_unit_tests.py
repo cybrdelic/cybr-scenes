@@ -7,11 +7,14 @@ import argparse
 import json
 import hashlib
 from pathlib import Path
+import sys
 import shutil
 import subprocess
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[1]
+sys.path.insert(0, str(REPO.parents[2]))
+from native_sources import native_source, shared_include_flags
 
 
 def main() -> None:
@@ -38,6 +41,7 @@ def main() -> None:
     for name, report_name, parameters in tests:
         binary = out / name
         command = [compiler, '-std=c++17', '-O3', '-fopenmp',
+                   *shared_include_flags(),
                    str(REPO / 'native' / (name + '.cpp')), '-o', str(binary)]
         subprocess.run(command, check=True)
         result = subprocess.run([str(binary), *parameters], check=True,
@@ -51,7 +55,7 @@ def main() -> None:
     subprocess.run([__import__('sys').executable, str(HERE / 'test_shoreline_continuity.py'), '--out', str(out)], check=True)
     subprocess.run([__import__('sys').executable, str(HERE / 'test_connected_vegetation.py'), '--out', str(out)], check=True)
     summary = {'scope': 'Limited native component checks, not full light transport or photorealism',
-               'renderer_source_hash':hashlib.sha256(b''.join((REPO/'native'/n).read_bytes() for n in ('spectral_desert.cpp','spectral_geometry.h','single_scatter_sky.h','photographic_grain.h','broadband_ripples.h','scale_aware_landscape_v9.h','cloud_volume_v9.h','specular_reflection_connection.h'))).hexdigest(),
+               'renderer_source_hash':hashlib.sha256(b''.join(native_source(REPO/'native', n).read_bytes() for n in ('spectral_desert.cpp','spectral_geometry.h','single_scatter_sky.h','photographic_grain.h','broadband_ripples.h','scale_aware_landscape_v9.h','cloud_volume_v9.h','specular_reflection_connection.h'))).hexdigest(),
                'reports': reports, 'passed': True}
     (out / 'native_component_checks.json').write_text(json.dumps(summary, indent=2) + '\n')
     print(json.dumps(summary, indent=2))

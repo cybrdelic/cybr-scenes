@@ -4,6 +4,8 @@ from pathlib import Path
 import json, os, subprocess, sys
 import numpy as np
 ROOT=Path(__file__).resolve().parent
+sys.path.insert(0,str(ROOT.parents[1]))
+from native_sources import shared_include_flags
 TOOLS=ROOT/'cybr-geo/examples/three_scenes'
 NATIVE=ROOT/'cybr-geo/native'
 OUT=ROOT/'verification';OUT.mkdir(exist_ok=True)
@@ -14,7 +16,7 @@ binary,build=compile_renderer()
 reports={'scope':'Input activation, traversal parity, wave agreement, and named optical equations; not photorealism', 'source_sha256':build['source_sha256'],'components':{}}
 env=dict(os.environ,OPENBLAS_NUM_THREADS='1')
 for name in ['test_recovery','test_wave_parity','test_thin_leaf_r4','test_fernwater_r6']:
-    flags=['g++','-std=c++17','-O3','-march=native','-fopenmp',str(NATIVE/(name+'.cpp')),'-o',str(OUT/name)]
+    flags=['g++','-std=c++17','-O3','-march=native','-fopenmp',*shared_include_flags(),str(NATIVE/(name+'.cpp')),'-o',str(OUT/name)]
     subprocess.run(flags,check=True,env=env)
 asset=ROOT/'cybr-geo/examples/desert_hot_springs/assets'
 reports['components']['materials_and_traversal']=json.loads(subprocess.check_output([str(OUT/'test_recovery'),str(asset)],text=True,env=env))

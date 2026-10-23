@@ -18,6 +18,8 @@ from scene_inputs import fingerprint, current_scene_matches
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[1]
+sys.path.insert(0, str(REPO.parents[2]))
+from native_sources import native_source, shared_include_flags
 
 
 def call(command: list[str], log: Path) -> None:
@@ -85,10 +87,11 @@ def main() -> None:
             cmd.append('--no-glb')
         call(cmd, root / 'build.log')
         (root/'scene_inputs.json').write_text(json.dumps(fingerprint(args.scene_seed),indent=2)+'\n')
-    sources = [REPO / 'native' / name for name in ('spectral_desert.cpp', 'spectral_geometry.h', 'single_scatter_sky.h', 'photographic_grain.h', 'broadband_ripples.h', 'landscape_materials_v11.h', 'granular_relief_v11.h', 'steam_volume_v11.h', 'exponential_haze_v10.h', 'cloud_volume_v9.h', 'specular_reflection_connection.h')]
+    sources = [native_source(REPO / 'native', name) for name in ('spectral_desert.cpp', 'spectral_geometry.h', 'single_scatter_sky.h', 'photographic_grain.h', 'broadband_ripples.h', 'landscape_materials_v11.h', 'granular_relief_v11.h', 'steam_volume_v11.h', 'exponential_haze_v10.h', 'cloud_volume_v9.h', 'specular_reflection_connection.h')]
     source_hash = hashlib.sha256(b''.join(path.read_bytes() for path in sources)).hexdigest()
     binary = root / f'spectral_desert_{source_hash[:16]}'
     compile_command = [compiler, '-std=c++17', '-O3', '-march=native', '-fopenmp',
+                       *shared_include_flags(),
                        str(sources[0]), '-o', str(binary)]
     if not binary.is_file():
         call(compile_command, root / 'compile.log')

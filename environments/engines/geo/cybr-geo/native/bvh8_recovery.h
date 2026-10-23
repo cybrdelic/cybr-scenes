@@ -1,3 +1,4 @@
+#include "compiler_bits.hpp"
 // SPDX-License-Identifier: GPL-2.0-only
 // Eight-child layout of the original CYBR GEO binned SAH hierarchy.
 // Partitioning and triangle predicate remain unchanged.
@@ -45,7 +46,7 @@ inline bool meshHitWideR3(const Ray &r,Hit &h,bool any=false,bool opaqueOnly=fal
    if(t.hit(r,h.t,distance,u,v)){h.t=distance;h.u=u;h.v=v;h.tri=id;h.floor=false;h.light=-1;found=true;if(any)return true;}
   }}else{
    const auto &w=wideNodesR3[-work.ref-1];float entries[8];unsigned hits=boxesWideR3(w,r,h.t,entries);Work next[8];int nn=0;
-   while(hits){unsigned j=unsigned(__builtin_ctz(hits));hits&=hits-1;Work a{w.reference[j],w.count[j],entries[j]};int k=nn++;while(k>0&&next[k-1].entry<a.entry){next[k]=next[k-1];--k;}next[k]=a;}
+   while(hits){unsigned j=unsigned(cybr_native::trailing_zero_bits(hits));hits&=hits-1;Work a{w.reference[j],w.count[j],entries[j]};int k=nn++;while(k>0&&next[k-1].entry<a.entry){next[k]=next[k-1];--k;}next[k]=a;}
    if(sp+nn>=1024)throw std::runtime_error("CYBR wide BVH traversal stack overflow");for(int j=0;j<nn;++j)stack[sp++]=next[j];
   }
  }return found;

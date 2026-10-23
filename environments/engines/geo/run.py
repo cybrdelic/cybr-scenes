@@ -17,6 +17,8 @@ import time
 
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT / 'cybr-geo'
+sys.path.insert(0, str(REPO.parents[2]))
+from native_sources import native_source
 TOOLS = REPO / 'examples' / 'three_scenes'
 SCENES = ('canyon', 'coast', 'forest')
 
@@ -43,7 +45,8 @@ def required_files() -> list[Path]:
                 'examples/three_scenes/verify_outputs.py',
                 'examples/desert_hot_springs/assets/gravel_periodic.pgm',
                 'examples/desert_hot_springs/assets/granular_relief.bin']
-    return [REPO / name for name in relative]
+    return [native_source(REPO / 'native', Path(name).name)
+            if name.startswith('native/') else REPO / name for name in relative]
 
 
 def execute(command: list[str], log: Path) -> dict:
@@ -74,7 +77,7 @@ def main() -> None:
     args = parser.parse_args()
     if args.threads < 1:
         parser.error('--threads must be positive')
-    missing = [str(p.relative_to(ROOT)) for p in required_files() if not p.is_file()]
+    missing = [os.path.relpath(p, ROOT) for p in required_files() if not p.is_file()]
     if missing:
         raise RuntimeError('Incomplete package: ' + ', '.join(missing))
     sys.path.insert(0, str(TOOLS))

@@ -1,0 +1,141 @@
+[
+  {
+    "engine": "geo",
+    "returncode": 0,
+    "seconds": 49.01599999999962,
+    "executable_sha256": "021f48b86b1fded2bfb1296997c21d45b08c728cfa31d879358523c6d1dc4f8f",
+    "mesh_sha256": "d67cd6eed996d75a6e91c89abf42f571f8602c6202f86ec2dd9e87f0bd20c4f9",
+    "atlas_sha256": "0678c4adeaa1d853f982f4e5a3ff8a747d59984937426d4db57ccb418ac99045",
+    "grain_sha256": "1a25e996869d39d4963082b41a353fa227378e17efc844c3e639c16ec8b6f5b3",
+    "relief_sha256": "babbb2aa418d669003be4b6bac9f53a1da9d0f2533bcc3677c4f2f4b712e8c11",
+    "command": [
+      "outputs/shared-native-core/build-after/geo_r2.exe",
+      "outputs/shared-native-core/new-scene/geo/scene.meshbin",
+      "outputs/shared-native-core/after/geo/native",
+      "--w",
+      "320",
+      "--h",
+      "200",
+      "--spp",
+      "16",
+      "--water-spp",
+      "16",
+      "--depth",
+      "12",
+      "--threads",
+      "1",
+      "--seed",
+      "20261023",
+      "--indirect-clamp",
+      "0",
+      "--no-clouds",
+      "--sun",
+      "-0.8,0.4,0.28",
+      "--exposure",
+      "1.9",
+      "--grain",
+      "environments/engines/geo/cybr-geo/examples/desert_hot_springs/assets/gravel_periodic.pgm",
+      "--relief",
+      "environments/engines/geo/cybr-geo/examples/desert_hot_springs/assets/granular_relief.bin",
+      "--scene",
+      "coast",
+      "--camera",
+      "2.1,-5.65,1.52",
+      "--target",
+      "-0.15,3.15,0.15",
+      "--fov",
+      "72",
+      "--no-steam"
+    ],
+    "outputs": {
+      "native.pfm": {
+        "bytes": 768016,
+        "sha256": "02ff69b0f1649c57302da915250e2f49ea7169fa7d277acdef72ef414af9f8a5"
+      },
+      "native.ppm": {
+        "bytes": 192015,
+        "sha256": "581d064e049a6ece43202cbb998294c545d5b20de4946efaa632be591e11ca97"
+      },
+      "native.guides": {
+        "bytes": 2304008,
+        "sha256": "66e7336651f88258546568365f2d8bf10a9b8ada2eee01f0c8fed20515585fe0"
+      },
+      "native.spectral": {
+        "bytes": 4096016,
+        "sha256": "b6c9b3b0da5a3e136be13b106a3648d5b01081758f2ce7eef308f395251178fb"
+      },
+      "native.samples": {
+        "bytes": 128008,
+        "sha256": "80dfc4dc224f66a711af04ad61a6fc34e55a4322a981445a4653c60b6c2f3853"
+      },
+      "native.support": {
+        "bytes": 1024008,
+        "sha256": "e30cf603b9e10e27ff3a0203a8cf8ad476ec91e34dc2f79622f3508f03e7d92c"
+      }
+    }
+  },
+  {
+    "engine": "hot",
+    "returncode": 0,
+    "seconds": 51.125,
+    "executable_sha256": "d4bbd8cdd783a6d0648d4171f3978e349b9aa2e179a175d114731c2eadd7dff0",
+    "mesh_sha256": "fd6affcb3e21b190b50a26e9d0abf359b2aefc95d2d4f9ae1b4d21576bfa5220",
+    "atlas_sha256": "0678c4adeaa1d853f982f4e5a3ff8a747d59984937426d4db57ccb418ac99045",
+    "grain_sha256": "1a25e996869d39d4963082b41a353fa227378e17efc844c3e639c16ec8b6f5b3",
+    "relief_sha256": "babbb2aa418d669003be4b6bac9f53a1da9d0f2533bcc3677c4f2f4b712e8c11",
+    "command": [
+      "outputs/shared-native-core/build-after/hot_r2.exe",
+      "outputs/shared-native-core/new-scene/hot/scene.meshbin",
+      "outputs/shared-native-core/after/hot/native",
+      "--w",
+      "320",
+      "--h",
+      "200",
+      "--spp",
+      "16",
+      "--water-spp",
+      "16",
+      "--depth",
+      "12",
+      "--threads",
+      "1",
+      "--seed",
+      "20261023",
+      "--indirect-clamp",
+      "0",
+      "--no-clouds",
+      "--sun",
+      "-0.8,0.4,0.28",
+      "--exposure",
+      "1.9",
+      "--grain",
+      "environments/engines/hot/cybr-geo/examples/desert_hot_springs/assets/gravel_periodic.pgm",
+      "--relief",
+      "environments/engines/hot/cybr-geo/examples/desert_hot_springs/assets/granular_relief.bin",
+      "--view",
+      "hero"
+    ],
+    "outputs": {
+      "native.pfm": {
+        "bytes": 768016,
+        "sha256": "a10a867e5a11c103ceae1c0dbcd01ecf3ee70712cf22c96c248f3fc10c64bf07"
+      },
+      "native.ppm": {
+        "bytes": 192015,
+        "sha256": "3ed7dbab7782b4e4196a9ea428488db003025242a817706890913a1a83c1127d"
+      },
+      "native.guides": {
+        "bytes": 2304008,
+        "sha256": "5c5da203eca3f2edae523157b5d3bbe23820f175820fb4213fffb3f79fcab399"
+      },
+      "native.spectral": {
+        "bytes": 4096016,
+        "sha256": "2b1b984a48283077c106b320b7162d80eb35c420a98ed0567bd31a5376a1dca8"
+      },
+      "native.samples": {
+        "bytes": 128008,
+        "sha256": "80dfc4dc224f66a711af04ad61a6fc34e55a4322a981445a4653c60b6c2f3853"
+      }
+    }
+  }
+]

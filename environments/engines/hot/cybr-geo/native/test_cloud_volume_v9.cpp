@@ -35,11 +35,11 @@ int main(){
             if(sampleCloud(r,INF,rng)==INF)misses++;
             float tr=cloudTransmittance(r,INF,rng);sum+=tr;sum2+=tr*tr;
         }
-        double mean=sum/iterations,stderr=std::sqrt(std::max(0.,sum2/iterations-mean*mean)/iterations);
+        double mean=sum/iterations,standardError=std::sqrt(std::max(0.,sum2/iterations-mean*mean)/iterations);
         double survival=double(misses)/iterations,binomialSE=std::sqrt(truth*(1-truth)/iterations);
-        bool pass=std::fabs(mean-truth)<5*stderr+.0003&&std::fabs(survival-truth)<5*binomialSE+.0003;
+        bool pass=std::fabs(mean-truth)<5*standardError+.0003&&std::fabs(survival-truth)<5*binomialSE+.0003;
         ok=ok&&pass;
-        std::cout<<"    {\"index\": "<<index<<", \"reference_optical_depth\": "<<tau<<", \"reference_transmittance\": "<<truth<<", \"ratio_tracking_mean\": "<<mean<<", \"ratio_tracking_standard_error\": "<<stderr<<", \"delta_tracking_survival\": "<<survival<<", \"trials\": "<<iterations<<", \"passed\": "<<(pass?"true":"false")<<"}"<<(index<5?",":"")<<"\n";
+        std::cout<<"    {\"index\": "<<index<<", \"reference_optical_depth\": "<<tau<<", \"reference_transmittance\": "<<truth<<", \"ratio_tracking_mean\": "<<mean<<", \"ratio_tracking_standard_error\": "<<standardError<<", \"delta_tracking_survival\": "<<survival<<", \"trials\": "<<iterations<<", \"passed\": "<<(pass?"true":"false")<<"}"<<(index<5?",":"")<<"\n";
     }
     std::cout<<"  ],\n  \"passed\": "<<(ok?"true":"false")<<"\n}\n";
     return ok?0:1;

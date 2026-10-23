@@ -4,11 +4,13 @@ import argparse,hashlib,json,subprocess,sys,time,os,platform
 from pathlib import Path
 from build_scenes import sha
 HERE=Path(__file__).resolve().parent;REPO=HERE.parents[1]
+sys.path.insert(0, str(REPO.parents[2]))
+from native_sources import dependency_files, shared_include_flags
 
 def compile_renderer():
     """Rebuild native-CPU binaries when source, compiler, CPU, or file integrity changes."""
     binary=REPO.parent/'spectral_scenes';native=REPO/'native'
-    files=sorted([native/'spectral_scenes.cpp']+list(native.glob('*.h')))
+    files=dependency_files(native, 'spectral_scenes.cpp')
     digest=hashlib.sha256(b''.join(p.read_bytes() for p in files)).hexdigest();stamp=binary.with_suffix('.build.json')
     compiler=subprocess.check_output(['g++','--version'],text=True).splitlines()[0]
     flags=''
@@ -16,7 +18,7 @@ def compile_renderer():
     if cpuinfo.is_file():
         flags=next((line.split(':',1)[1].strip() for line in cpuinfo.read_text().splitlines()
                     if line.startswith(('flags','Features')) and ':' in line),'')
-    cxx_flags=['-std=c++17','-O3','-march=native','-fno-math-errno','-fno-trapping-math','-fopenmp']
+    cxx_flags=['-std=c++17','-O3','-march=native','-fno-math-errno','-fno-trapping-math','-fopenmp',*shared_include_flags()]
     host={'cxx_flags':cxx_flags,'system':platform.system(),'machine':platform.machine(),'compiler':compiler,'cpu_flags':flags}
     try: previous=json.loads(stamp.read_text())
     except (FileNotFoundError,json.JSONDecodeError): previous={}

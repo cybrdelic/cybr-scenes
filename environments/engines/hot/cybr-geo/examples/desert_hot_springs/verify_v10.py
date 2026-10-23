@@ -10,6 +10,8 @@ from scene_inputs import current_scene_matches
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[1]
+sys.path.insert(0, str(REPO.parents[2]))
+from native_sources import native_source
 
 def sha(path: Path) -> str:
     h=hashlib.sha256()
@@ -26,7 +28,7 @@ def main() -> None:
     geometry=json.loads((out/'geometry_verification.json').read_text())
     scene_manifest=json.loads((out/'scene_inputs.json').read_text())
     native_names=('spectral_desert.cpp','spectral_geometry.h','single_scatter_sky.h','photographic_grain.h','broadband_ripples.h','scale_aware_landscape_v10.h','exponential_haze_v10.h','cloud_volume_v9.h','specular_reflection_connection.h')
-    native_hash=hashlib.sha256(b''.join((REPO/'native'/n).read_bytes() for n in native_names)).hexdigest()
+    native_hash=hashlib.sha256(b''.join(native_source(REPO/'native', n).read_bytes() for n in native_names)).hexdigest()
     scene=json.loads((out/'scene/scene.json').read_text())
     waters=[]
     with np.load(out/'scene/meshes.npz') as data:
