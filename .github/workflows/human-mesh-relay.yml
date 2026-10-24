@@ -1,0 +1,21 @@
+name: Temporary CC0 human asset transfer
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/human-mesh-relay.yml'
+jobs:
+  asset:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Download source human and license
+        run: |
+          mkdir -p human_assets
+          curl -fLsS --retry 4 -o human_assets/human.glb https://raw.githubusercontent.com/UMRAM-Bilkent/supine-human-model/main/assets/human.glb
+          curl -fLsS --retry 4 -o human_assets/README-source.md https://raw.githubusercontent.com/UMRAM-Bilkent/supine-human-model/main/README.md
+          test "$(stat -c%s human_assets/human.glb)" -gt 100000
+          sha256sum human_assets/human.glb
+      - uses: actions/upload-artifact@v4
+        with:
+          name: human-cc0-rigged
+          path: human_assets/
+          retention-days: 1
