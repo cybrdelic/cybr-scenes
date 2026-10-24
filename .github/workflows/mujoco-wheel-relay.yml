@@ -1,0 +1,27 @@
+name: Offline MuJoCo wheel relay
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/mujoco-wheel-relay.yml"
+  workflow_dispatch:
+jobs:
+  wheels:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Download official wheel and all dependencies
+        run: |
+          python -m pip download --only-binary=:all: --dest wheelhouse "mujoco==3.3.7"
+          python -m pip install --no-index --find-links=wheelhouse "mujoco==3.3.7"
+          python -c "import mujoco; print('MuJoCo:', mujoco.__version__)"
+      - name: Package wheels
+        uses: actions/upload-artifact@v4
+        with:
+          name: mujoco-cp313-linux-wheels
+          path: wheelhouse/*.whl
+          if-no-files-found: error
+          retention-days: 1
