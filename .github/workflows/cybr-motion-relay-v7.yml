@@ -1,0 +1,34 @@
+name: Temporary motion-reference transfer
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/cybr-motion-relay-v7.yml"
+jobs:
+  motion:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - name: Download public research motion clips
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p motions
+          base="https://raw.githubusercontent.com/xbpeng/DeepMimic/master/data/motions"
+          for skill in walk jog run jump kick punch spinkick roll; do
+            curl --fail --location --silent --show-error --retry 3 "$base/humanoid3d_${skill}.txt" -o "motions/humanoid3d_${skill}.txt"
+            test -s "motions/humanoid3d_${skill}.txt"
+          done
+          curl -fLsS --retry 3 https://raw.githubusercontent.com/xbpeng/DeepMimic/master/LICENSE -o motions/DeepMimic_LICENSE.txt
+          python - <<'PY'
+          import json, pathlib
+          for p in pathlib.Path('motions').glob('humanoid3d_*.txt'):
+              x=json.loads(p.read_text())
+              print(p.name,len(x['Frames']),len(x['Frames'][0]))
+              assert len(x['Frames'])>5
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: deepmimic-motion-references-v7
+          path: motions/
+          retention-days: 1
