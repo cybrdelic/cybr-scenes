@@ -1,0 +1,29 @@
+name: CYBR V8 upstream SMPLSim PHC source transfer
+on:
+  pull_request:
+    paths:
+      - .github/workflows/v8-smpl-phc-relay.yml
+jobs:
+  collect:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - name: Fetch pinned upstreams without model checkpoints
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p vendor
+          git clone --depth 1 https://github.com/ZhengyiLuo/SMPLSim.git vendor/SMPLSim
+          git clone --depth 1 https://github.com/ZhengyiLuo/PHC_MJX.git vendor/PHC_MJX
+          git clone --depth 1 https://github.com/ZhengyiLuo/PHC.git vendor/PHC
+          for d in vendor/*; do (cd "$d" && git rev-parse HEAD) | tee "$d"/UPSTREAM_COMMIT.txt; rm -rf "$d"/.git; done
+          du -hs vendor/*
+          find vendor -type f -size +3M -print -delete
+          zip -qr /tmp/source.zip vendor
+          ls -lh /tmp/source.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cybr-v8-verified-upstream-sources
+          path: vendor/
+          retention-days: 1
