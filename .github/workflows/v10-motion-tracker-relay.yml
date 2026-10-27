@@ -1,0 +1,28 @@
+name: Temporary V10 open pretrained motion-tracker relay
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/v10-motion-tracker-relay.yml"
+jobs:
+  transfer:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - name: Download open full-body tracker and CPU runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p payload/tracker payload/wheels
+          curl -fLsS --retry 4 https://huggingface.co/cagataydev/protomotions-gtp-unitree-g1/resolve/main/unified_pipeline.onnx -o payload/tracker/unified_pipeline.onnx
+          curl -fLsS --retry 4 https://huggingface.co/cagataydev/protomotions-gtp-unitree-g1/resolve/main/unified_pipeline.yaml -o payload/tracker/unified_pipeline.yaml
+          test "$(stat -c%s payload/tracker/unified_pipeline.onnx)" -gt 20000000
+          python -m pip download --only-binary=:all: --dest payload/wheels --python-version 3.13 --implementation cp --abi cp313 --platform manylinux_2_27_x86_64 'onnxruntime==1.23.2'
+          git clone --depth 1 https://github.com/ZoreAnuj/Zero-Shot-Motion-Tracking.git payload/bridge_source
+          (cd payload/bridge_source && git rev-parse HEAD > UPSTREAM_COMMIT.txt && rm -rf .git)
+          du -hs payload/*
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v10-g1-full-body-tracker-cpu
+          path: payload/
+          retention-days: 1
