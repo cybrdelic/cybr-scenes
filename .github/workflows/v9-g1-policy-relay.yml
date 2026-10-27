@@ -13,11 +13,11 @@ jobs:
           set -euo pipefail
           git clone --depth 1 --filter=blob:none --sparse https://github.com/unitreerobotics/unitree_rl_gym.git upstream
           cd upstream
-          git sparse-checkout set deploy/pre_train/g1 deploy/deploy_mujoco resources/robots/g1_description LICENSE
+          git sparse-checkout set deploy/pre_train/g1 deploy/deploy_mujoco resources/robots/g1_description
           git rev-parse HEAD | tee PINNED_COMMIT.txt
           ls -lh deploy/pre_train/g1/motion.pt
           test "$(stat -c%s deploy/pre_train/g1/motion.pt)" -gt 20000
-          cp LICENSE UNITREE_LICENSE.txt
+          git show HEAD:LICENSE > UNITREE_LICENSE.txt
           cd ..
           mkdir -p artifact
           cp -a upstream/deploy upstream/resources artifact/
