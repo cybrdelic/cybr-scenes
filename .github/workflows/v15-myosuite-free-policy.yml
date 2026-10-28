@@ -1,0 +1,52 @@
+name: Temporary V15 pretrained human muscle controller evaluation
+on:
+  pull_request:
+    paths: [".github/workflows/v15-myosuite-free-policy.yml"]
+jobs:
+  evaluate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install CPU MyoSuite environment
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install --quiet torch --index-url https://download.pytorch.org/whl/cpu
+          git clone --depth 1 --branch v3.0.0 https://github.com/MyoHub/myosuite.git upstream
+          python -m pip install --quiet -e ./upstream
+          python -m pip install --quiet tyro rsl-rl-lib imageio-ffmpeg
+          python - <<'PY'
+          import mujoco, torch, myosuite
+          print("RUNTIME",mujoco.__version__,torch.__version__)
+          PY
+      - name: Run genuine pretrained muscle-driven walking policy on CPU
+        shell: bash
+        env:
+          MUJOCO_GL: egl
+          HF_HUB_DISABLE_XET: "1"
+        run: |
+          set -euo pipefail
+          mkdir -p output
+          cd upstream
+          python scripts/eval_mjlab_policy.py myoLegWalk-v0 --backend cpu --episodes 2 --video ../output/MyoSuite_real_muscle_walking.mp4 --width 640 --height 480 2>&1 | tee ../output/evaluation.log
+          cd ..
+          test -s output/MyoSuite_real_muscle_walking.mp4
+          python - <<'PY'
+          import cv2
+          cap=cv2.VideoCapture('output/MyoSuite_real_muscle_walking.mp4')
+          print('RENDER',cap.get(cv2.CAP_PROP_FRAME_COUNT),cap.get(cv2.CAP_PROP_FPS))
+          assert cap.get(cv2.CAP_PROP_FRAME_COUNT)>20
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v15-trained-anatomical-muscle-policy-eval
+          path: output/
+          if-no-files-found: warn
+          retention-days: 1
