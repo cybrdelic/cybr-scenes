@@ -1,0 +1,39 @@
+name: Temporary anatomically detailed MS-Human-700 relay
+on:
+  pull_request:
+    paths: [".github/workflows/ms-human-700-anatomy-relay.yml"]
+jobs:
+  anatomy:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - name: Fetch Apache-2.0 musculoskeletal model
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth 1 --filter=blob:none --sparse https://github.com/google-deepmind/mujoco_menagerie.git source
+          cd source
+          git sparse-checkout set ms_human_700
+          git rev-parse HEAD > ms_human_700/UPSTREAM_COMMIT.txt
+          test -f ms_human_700/scene.xml
+          test -f ms_human_700/LICENSE
+          test -d ms_human_700/assets
+          du -sh ms_human_700
+          cd ..
+          python3 -m pip install --quiet "mujoco==3.3.7"
+          python3 - <<'PY'
+          import mujoco
+          for name in ('scene.xml','scene_locomotion.xml','scene_manipulation.xml'):
+              path = 'source/ms_human_700/'+name
+              try:
+                  model = mujoco.MjModel.from_xml_path(path)
+                  print(name,'bodies',model.nbody,'joints',model.njnt,'actuators',model.nu,'tendons',model.ntendon)
+              except Exception as exc:
+                  print('Compilation warning:',name,type(exc).__name__,str(exc)[:400])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cybr-real-anatomy-ms-human-700
+          path: source/ms_human_700/
+          retention-days: 1
