@@ -41,12 +41,12 @@ jobs:
           import pathlib,re
           p=pathlib.Path('scripts/eval_mjlab_policy.py')
           s=p.read_text()
-          pat=re.compile(r'(?m)^(?P<indent> +)self\\._renderer\\.update_scene\\(')
+          pat=re.compile(r'(?m)^(?P<indent> +)self\._renderer\.update_scene\(')
           def repl(m):
               ind=m.group('indent')
-              return (ind+"if self._cam.type == mujoco.mjtCamera.mjCAMERA_FREE:\\n"+
-                      ind+"    world_com = self._data.subtree_com[1]\\n"+
-                      ind+"    self._cam.lookat[:] = [float(world_com[0]), float(world_com[1]), float(world_com[2]) + 0.08]\\n"+
+              return (ind+"if self._cam.type == mujoco.mjtCamera.mjCAMERA_FREE:\n"+
+                      ind+"    world_com = self._data.subtree_com[1]\n"+
+                      ind+"    self._cam.lookat[:] = [float(world_com[0]), float(world_com[1]), float(world_com[2]) + 0.08]\n"+
                       ind+"self._renderer.update_scene(")
           s,n=pat.subn(repl,s)
           print("camera tracking substitutions",n,flush=True)
