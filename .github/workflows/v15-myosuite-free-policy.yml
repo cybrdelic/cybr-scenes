@@ -37,7 +37,36 @@ jobs:
           set -euo pipefail
           mkdir -p output
           cd upstream
-          python scripts/eval_mjlab_policy.py myoLegWalk-v0 --backend cpu --episodes 2 --video ../output/MyoSuite_real_muscle_walking.mp4 --width 640 --height 480 2>&1 | tee ../output/evaluation.log
+          python - <<'PY'
+          import pathlib,re
+          p=pathlib.Path('scripts/eval_mjlab_policy.py')
+          s=p.read_text()
+          pat=re.compile(r'(?m)^(?P<indent> +)self\\._renderer\\.update_scene\\(')
+          def repl(m):
+              ind=m.group('indent')
+              return (ind+"if self._cam.type == mujoco.mjtCamera.mjCAMERA_FREE:\\n"+
+                      ind+"    world_com = self._data.subtree_com[1]\\n"+
+                      ind+"    self._cam.lookat[:] = [float(world_com[0]), float(world_com[1]), float(world_com[2]) + 0.08]\\n"+
+                      ind+"self._renderer.update_scene(")
+          s,n=pat.subn(repl,s)
+          print("camera tracking substitutions",n,flush=True)
+          assert n>0
+          p.write_text(s)
+          PY
+          python scripts/eval_mjlab_policy.py myoLegWalk-v0 --backend cpu --episodes 1 --video ../output/MyoSuite_real_muscle_walking.mp4 --width 640 --height 480 --distance 2.8 --azimuth 130 --elevation -10 2>&1 | tee ../output/evaluation.log
+          python - <<'PY'
+          from myosuite.utils.checkpoint_utils import find_checkpoint
+          from pathlib import Path
+          from shutil import copy2
+          import hashlib,json
+          p=Path(find_checkpoint('myoLegWalk-v0'))
+          target=Path('../output') / 'myoLegWalk_trained_model.pt'
+          copy2(p,target)
+          man=p.parent/'manifest.json'
+          if man.exists():copy2(man,Path('../output')/'checkpoint_manifest.json')
+          print('checkpoint_sha256',hashlib.sha256(target.read_bytes()).hexdigest())
+          PY
+          python scripts/eval_mjlab_policy.py myoLegWalk-v0 --backend cpu --episodes 5 --stochastic 2>&1 | tee ../output/stochastic_evaluation.log || true
           cd ..
           test -s output/MyoSuite_real_muscle_walking.mp4
           python - <<'PY'
@@ -49,7 +78,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: v15-trained-anatomical-muscle-policy-eval
+          name: v15-tracked-trained-anatomical-muscle-policy
           path: output/
           if-no-files-found: warn
           retention-days: 1
