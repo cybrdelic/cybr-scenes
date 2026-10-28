@@ -16,6 +16,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq libosmesa6 libosmesa6-dev libgl1-mesa-dri libgl1 libegl1
           python -m pip install --upgrade pip
           python -m pip install --quiet torch --index-url https://download.pytorch.org/whl/cpu
           git clone --depth 1 --branch v3.0.0 https://github.com/MyoHub/myosuite.git upstream
@@ -28,7 +30,8 @@ jobs:
       - name: Run genuine pretrained muscle-driven walking policy on CPU
         shell: bash
         env:
-          MUJOCO_GL: egl
+          MUJOCO_GL: osmesa
+          PYOPENGL_PLATFORM: osmesa
           HF_HUB_DISABLE_XET: "1"
         run: |
           set -euo pipefail
@@ -38,10 +41,10 @@ jobs:
           cd ..
           test -s output/MyoSuite_real_muscle_walking.mp4
           python - <<'PY'
-          import cv2
-          cap=cv2.VideoCapture('output/MyoSuite_real_muscle_walking.mp4')
-          print('RENDER',cap.get(cv2.CAP_PROP_FRAME_COUNT),cap.get(cv2.CAP_PROP_FPS))
-          assert cap.get(cv2.CAP_PROP_FRAME_COUNT)>20
+          import imageio.v2 as iio
+          frames=iio.mimread('output/MyoSuite_real_muscle_walking.mp4',memtest=False)
+          print('RENDER frames',len(frames))
+          assert len(frames)>20
           PY
       - uses: actions/upload-artifact@v4
         if: always()
