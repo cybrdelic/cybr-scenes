@@ -55,22 +55,54 @@ jobs:
           PYOPENGL_PLATFORM: osmesa
           HF_HUB_DISABLE_XET: "1"
         run: |
-          myosuite-musclemimic-setup-demo-cache --env_name MyoFullBody > result/demo_cache.log 2>&1 || true
+          python - <<'PY' > result/demo_cache.log 2>&1
+          from huggingface_hub import hf_hub_download
+          from pathlib import Path
+          from shutil import copyfile
+          root=Path.home()/'.musclemimic/caches/AMASS/MyoFullBody/gmr'
+          paths=['KIT/314/walking_medium09_poses.npz',
+                 'Transitions_mocap/mazen_c3d/punchboxing_kick_poses.npz',
+                 'Transitions_mocap/mazen_c3d/run_longjump_poses.npz']
+          for path in paths:
+              src=hf_hub_download(repo_id='amathislab/musclemimic-retargeted',repo_type='dataset',filename='MyoFullBody/gmr/'+path)
+              dst=root/path
+              dst.parent.mkdir(parents=True,exist_ok=True)
+              copyfile(src,dst)
+              print('CACHED',dst,dst.stat().st_size,flush=True)
+          import orbax.checkpoint
+          print('ORBAX_AVAILABLE',flush=True)
+          PY
           python - <<'PY' > result/fullbody_attempt.log 2>&1
-          import subprocess,os
-          cmd=['myosuite-musclemimic-fullbody-eval','--path','hf://amathislab/mm-10m-2','--motion_path','KIT/314/walking_medium09_poses','--use_mujoco','--record','--record_path','result/actual_fullbody_policy.mp4','--n_steps','400','--record_fps','30']
-          # Do not pass --onnx unless an actual matching ONNX checkpoint is present.
-          print('COMMAND',cmd,flush=True)
-          try:
-              p=subprocess.run(cmd,timeout=150,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
-              print(p.stdout[-16000:],flush=True)
-              print('RETURN_CODE',p.returncode,flush=True)
-          except Exception as ex:print('ERROR',type(ex).__name__,str(ex),flush=True)
+          import subprocess
+          from pathlib import Path
+          cases=[
+            ('walk','KIT/314/walking_medium09_poses',360),
+            ('boxing_kick','Transitions_mocap/mazen_c3d/punchboxing_kick_poses',360),
+            ('run_longjump','Transitions_mocap/mazen_c3d/run_longjump_poses',360),
+          ]
+          for label,motion,nsteps in cases:
+              video=f'result/fullbody_{label}_policy.mp4'
+              cmd=['myosuite-musclemimic-fullbody-eval','--path','hf://amathislab/mm-10m-2',
+                   '--motion_path',motion,'--use_mujoco','--record','--record_path',video,
+                   '--n_steps',str(nsteps),'--record_fps','24','--no_show_targets']
+              print('COMMAND',cmd,flush=True)
+              try:
+                  p=subprocess.run(cmd,timeout=180,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+                  output=p.stdout
+                  print(output[-12000:],flush=True)
+                  print('RETURN_CODE',label,p.returncode,flush=True)
+                  actual=('Using local policy runner' in output or 'Using ONNX policy runner' in output)
+                  replay=('Checkpoint inference is not wired' in output or 'Falling back to trajectory replay' in output)
+                  print('GENUINE_POLICY',label,actual and not replay,flush=True)
+                  if not (p.returncode==0 and actual and not replay and Path(video).exists()):
+                      Path(video).unlink(missing_ok=True)
+              except Exception as exc:
+                  print('ERROR',label,type(exc).__name__,str(exc),flush=True)
           PY
           cat result/fullbody_attempt.log
-          if test -s result/actual_fullbody_policy.mp4; then
-            ffprobe -hide_banner -loglevel error -show_entries format=duration -of default=nw=1 result/actual_fullbody_policy.mp4
-          fi
+          for f in result/fullbody_*_policy.mp4; do
+            test -s "$f" && ffprobe -hide_banner -loglevel error -show_entries format=duration -of default=nw=1 "$f" || true
+          done
       - uses: actions/upload-artifact@v4
         if: always()
         with:
