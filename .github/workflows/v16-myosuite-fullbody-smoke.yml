@@ -25,6 +25,7 @@ jobs:
         env:
           MUJOCO_GL: osmesa
           PYOPENGL_PLATFORM: osmesa
+          MYOSUITE_MUSCLEMIMIC_MODELS_VERSION: '1.0.5'
           HF_HUB_DISABLE_XET: "1"
         run: |
           set -euo pipefail
@@ -54,10 +55,11 @@ jobs:
           PYOPENGL_PLATFORM: osmesa
           HF_HUB_DISABLE_XET: "1"
         run: |
+          myosuite-musclemimic-setup-demo-cache --env_name MyoFullBody > result/demo_cache.log 2>&1 || true
           python - <<'PY' > result/fullbody_attempt.log 2>&1
           import subprocess,os
-          cmd=['myosuite-musclemimic-fullbody-eval','--path','hf://amathislab/mm-10m-2','--motion_path','KIT/314/walking_medium09_poses','--use_mujoco','--record','--record_path','result/actual_fullbody_policy.mp4','--n_steps','400','--record_fps','24']
-          cmd.extend(['--onnx','mm-10m-2.onnx'])
+          cmd=['myosuite-musclemimic-fullbody-eval','--path','hf://amathislab/mm-10m-2','--motion_path','KIT/314/walking_medium09_poses','--use_mujoco','--record','--record_path','result/actual_fullbody_policy.mp4','--n_steps','400','--record_fps','30']
+          # Do not pass --onnx unless an actual matching ONNX checkpoint is present.
           print('COMMAND',cmd,flush=True)
           try:
               p=subprocess.run(cmd,timeout=150,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
