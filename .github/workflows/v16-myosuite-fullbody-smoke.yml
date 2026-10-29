@@ -1,0 +1,77 @@
+name: V16 full-body anatomical controller evaluation — free CPU
+on:
+  pull_request:
+    paths: [".github/workflows/v16-myosuite-fullbody-smoke.yml"]
+jobs:
+  evaluate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install CPU anatomy stack
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq libosmesa6 libosmesa6-dev libegl1 ffmpeg
+          pip install -q torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -q "myosuite[musclemimic]==3.0.0" onnxruntime imageio imageio-ffmpeg tyro rsl-rl-lib
+          python -c "import myosuite,mujoco;print('VERSIONS',mujoco.__version__)"
+      - name: Inspect published full-body policy and compatible reference clips
+        shell: bash
+        env:
+          MUJOCO_GL: osmesa
+          PYOPENGL_PLATFORM: osmesa
+          HF_HUB_DISABLE_XET: "1"
+        run: |
+          set -euo pipefail
+          mkdir -p result
+          python - <<'PY' > result/inventory.log 2>&1
+          from huggingface_hub import HfApi, hf_hub_download
+          from myosuite.integrations.musclemimic.fullbody_model import compile_mimic_fullbody_mjmodel, default_mimic_fullbody_config
+          import mujoco, pathlib
+          model, *_=compile_mimic_fullbody_mjmodel(default_mimic_fullbody_config())
+          print('FULL_BODY',model.nbody,model.njnt,model.nu,model.ntendon,flush=True)
+          api=HfApi()
+          for repo in ['myohub/myosuite-3-baselines','amathislab/mm-10m-2','amathislab/musclemimic-retargeted']:
+              print('\nREPOSITORY',repo,flush=True)
+              try:
+                  files=api.list_repo_files(repo,repo_type='model' if 'retargeted' not in repo else 'dataset')
+                  print('COUNT',len(files),flush=True)
+                  for f in files:
+                      if 'fullbody' in f.lower() or 'medium06' in f.lower() or f.endswith('.onnx') or f.endswith('onnx.data'):
+                          print('FILE',f,flush=True)
+              except Exception as ex:print('UNAVAILABLE',type(ex).__name__,str(ex)[:400],flush=True)
+          PY
+          cat result/inventory.log
+      - name: Attempt genuine muscle-driven full-body rollout
+        shell: bash
+        env:
+          MUJOCO_GL: osmesa
+          PYOPENGL_PLATFORM: osmesa
+          HF_HUB_DISABLE_XET: "1"
+        run: |
+          python - <<'PY' > result/fullbody_attempt.log 2>&1
+          import subprocess,os
+          cmd=['myosuite-musclemimic-fullbody-eval','--path','hf://amathislab/mm-10m-2','--motion_path','KIT/314/walking_medium09_poses','--use_mujoco','--record','--record_path','result/actual_fullbody_policy.mp4','--n_steps','400','--record_fps','24']
+          cmd.extend(['--onnx','mm-10m-2.onnx'])
+          print('COMMAND',cmd,flush=True)
+          try:
+              p=subprocess.run(cmd,timeout=150,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+              print(p.stdout[-16000:],flush=True)
+              print('RETURN_CODE',p.returncode,flush=True)
+          except Exception as ex:print('ERROR',type(ex).__name__,str(ex),flush=True)
+          PY
+          cat result/fullbody_attempt.log
+          if test -s result/actual_fullbody_policy.mp4; then
+            ffprobe -hide_banner -loglevel error -show_entries format=duration -of default=nw=1 result/actual_fullbody_policy.mp4
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v16-fullbody-verified-results
+          path: result/
+          retention-days: 1
