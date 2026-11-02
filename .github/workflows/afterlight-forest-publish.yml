@@ -1,0 +1,123 @@
+name: Afterlight Forest Preview
+on:
+  push:
+    branches: ['afterlight/forest-v3']
+    paths: ['.github/workflows/afterlight-forest-publish.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      VERIFIED_RUN: '41491297976'
+      VERIFIED_SOURCE: 'ce9ea04565f6297d7ab0eef1d6463ec5285098fe'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Require the exact render-tested build
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for attempt in $(seq 1 65); do
+            gh api "repos/$GITHUB_REPOSITORY/actions/runs/$VERIFIED_RUN" > "$RUNNER_TEMP/afterlight-run.json"
+            status=$(jq -r .status "$RUNNER_TEMP/afterlight-run.json")
+            if [ "$status" = completed ]; then break; fi
+            sleep 15
+          done
+          test "$(jq -r .status "$RUNNER_TEMP/afterlight-run.json")" = completed
+          test "$(jq -r .conclusion "$RUNNER_TEMP/afterlight-run.json")" = success
+          test "$(jq -r .head_sha "$RUNNER_TEMP/afterlight-run.json")" = "$VERIFIED_SOURCE"
+      - uses: actions/download-artifact@v4
+        with:
+          name: afterlight-forest-v3
+          run-id: 41491297976
+          github-token: ${{ github.token }}
+          path: downloaded
+      - name: Package the verified application, original data, and actual renders
+        run: |
+          export RELEASE="$RUNNER_TEMP/afterlight-release"
+          mkdir -p "$RELEASE/forest/media" "$RELEASE/forest/verification"
+          python3 - <<'PY'
+          import json,pathlib,os,shutil
+          source=pathlib.Path('downloaded/afterlight-forest')
+          report=json.loads((source/'test-results/report.json').read_text())
+          assert report['passed'] and not report['errors']
+          assert report['diagnostics']['gaussians']==2142439
+          assert report['sequence']['frames']>=96
+          target=pathlib.Path(os.environ['RELEASE'])/'forest'
+          shutil.copytree(source/'dist',target,dirs_exist_ok=True)
+          for p in (source/'renders').glob('*.png'):shutil.copy2(p,target/'media'/p.name)
+          shutil.copy2(source/'renders/ATTRIBUTION.txt',target/'media/ATTRIBUTION.txt')
+          shutil.copy2(source/'test-results/report.json',target/'verification/report.json')
+          # The source download is a resolved source tree, not a build-time patch chain.
+          build=target/'source/tools/build.mjs'
+          text=build.read_text().replace("import './refine.mjs';", "if(!existsSync('public/data/259c0051')&&existsSync('../data/259c0051')){await fs.mkdir('public/data',{recursive:true});await fs.cp('../data/259c0051','public/data/259c0051',{recursive:true});}")
+          build.write_text(text)
+          (target/'source/tools/refine.mjs').unlink(missing_ok=True)
+          package=target/'source/package.json';pkg=json.loads(package.read_text());pkg['version']='3.1.0';package.write_text(json.dumps(pkg,indent=2))
+          for p in [target/'README.md',target/'source/README.md']:
+              p.write_text(p.read_text()+ '\n\n## v3.1 delivery\nThe preview is served from a separate GitHub build branch. The original ChatGPT-hosted Afterlight site has NOT been updated. The full forest is present; peripheral reconstruction smear remains in the source scan. Full-detail rendering caps display pixel ratio at 2 and the longest side at 4096; Ultra caps ratio at 2.5. These limits are explicit, not adaptive quality drops. For this resolved source tree, run npm install and npm run build from source/; the build copies the adjacent original data automatically.\n')
+          html=target/'index.html'
+          html.write_text(html.read_text().replace('<button id="retry" hidden>Retry loading</button>','<button id="retry" hidden>Retry loading</button><a id="filmFallback" href="./media/afterlight-understory.mp4">Watch the actual rendered walkthrough</a>'))
+          css=target/'style.css';css.write_text(css.read_text()+'\n#filmFallback{display:none;margin-top:18px;font-size:12px}.error-mode #filmFallback{display:block}\n')
+          (target/'source/index.html').write_text(html.read_text())
+          (target/'source/style.css').write_text(css.read_text())
+          pathlib.Path(os.environ['RELEASE'],'index.html').write_text('<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=forest/index.html"><title>Afterlight — Understory</title><a href="forest/index.html">Open Afterlight Understory</a>')
+          pathlib.Path(os.environ['RELEASE'],'.nojekyll').write_text('')
+          PY
+          if ! command -v ffmpeg >/dev/null; then sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg; fi
+          ffmpeg -hide_banner -loglevel error -y -framerate 12 -i downloaded/afterlight-forest/renders/frames/%05d.png -vf "drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf:text='AFTERLIGHT  /  UNDERSTORY   v3.1':fontsize=14:fontcolor=white:x=20:y=20:box=1:boxcolor=black@0.45:boxborderw=8,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf:text='Actual renderer output  |  Forest Scan by draftmode - CC BY 4.0':fontsize=10:fontcolor=white:x=20:y=h-27:box=1:boxcolor=black@0.45:boxborderw=5" -c:v libx264 -preset medium -crf 18 -pix_fmt yuv420p -movflags +faststart "$RELEASE/forest/media/afterlight-understory.mp4"
+      - name: Publish only the isolated preview branch
+        run: |
+          git config user.name 'Afterlight Build'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if git fetch origin afterlight-forest-web:refs/remotes/origin/afterlight-forest-web --depth=1; then
+            git switch -c afterlight-forest-web --track origin/afterlight-forest-web
+          else
+            git switch --orphan afterlight-forest-web
+          fi
+          rm -rf forest
+          cp -a "$RUNNER_TEMP/afterlight-release/forest" ./forest
+          cp "$RUNNER_TEMP/afterlight-release/index.html" ./index.html
+          touch .nojekyll
+          git add forest index.html .nojekyll
+          git diff --cached --quiet || git commit -m "Publish verified Afterlight Understory v3.1 from $VERIFIED_SOURCE"
+          git push origin HEAD:refs/heads/afterlight-forest-web
+          echo "WEB_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+      - name: Verify hosted entry point and runtime assets
+        run: |
+          python3 - <<'PY'
+          import os,json,urllib.request,pathlib,hashlib,time
+          base='https://rawcdn.githack.com/'+os.environ['GITHUB_REPOSITORY']+'/'+os.environ['WEB_SHA']+'/forest/'
+          files=['index.html','app.js','style.css','vendor/spark.js','vendor/three/three.module.js','vendor/addons/controls/TransformControls.js','vendor/addons/geometries/RoundedBoxGeometry.js','data/259c0051/capture.json','data/259c0051/navigation.json','data/259c0051/scene.sog','media/afterlight-understory.mp4']
+          results=[]
+          for name in files:
+              for attempt in range(3):
+                  try:
+                      response=urllib.request.urlopen(base+name,timeout=120)
+                      data=response.read()
+                      local=pathlib.Path(os.environ['RUNNER_TEMP'],'afterlight-release/forest',name).read_bytes()
+                      assert data==local, 'Hosted bytes differ: '+name
+                      mime=response.headers.get('content-type','')
+                      if name.endswith('.js'):assert 'javascript' in mime, mime
+                      if name.endswith('.html'):assert 'text/html' in mime, mime
+                      results.append({'path':name,'status':response.status,'bytes':len(data),'mime':mime,'sha256':hashlib.sha256(data).hexdigest()})
+                      break
+                  except urllib.error.HTTPError as e:
+                      if e.code not in [404,502,503,504] or attempt==2:raise
+                      time.sleep(4)
+          report={'version':'3.1.0','preview_url':base+'index.html','source_commit':os.environ['VERIFIED_SOURCE'],'web_commit':os.environ['WEB_SHA'],'render_run':os.environ['VERIFIED_RUN'],'verified_assets':results,'original_afterlight_site_updated':False,'hosting':'GitHub public build branch through rawcdn.githack.com; not ShipStatic','note':'The host may show a repository-confirmation page to browser visitors. HTTP payloads match the tested build. Original Afterlight publishing remains unavailable.'}
+          pathlib.Path(os.environ['RUNNER_TEMP'],'afterlight-release/DEPLOYMENT.json').write_text(json.dumps(report,indent=2))
+          print(json.dumps(report,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: afterlight-understory-release
+          path: ${{ runner.temp }}/afterlight-release/
+          retention-days: 14
+          compression-level: 6
