@@ -8,7 +8,7 @@ permissions:
   contents: read
 jobs:
   forest:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
@@ -22,7 +22,7 @@ jobs:
         run: |
           mkdir -p afterlight-capture/vendor afterlight-capture/source afterlight-forest/public/data
           cd afterlight-capture/vendor
-          npm pack @sparkjsdev/spark@2.4.0 three@0.180.0
+          npm pack --silent @sparkjsdev/spark@2.4.0 three@0.180.0
           cd ../..
           python3 - <<'PY'
           import urllib.request, urllib.parse, re, json, pathlib, zipfile, hashlib, concurrent.futures
@@ -41,7 +41,7 @@ jobs:
               (out/'capture.json').write_text(json.dumps(safe,indent=2))
               metaurl=settings['contentUrl']
               meta=json.loads(get(metaurl))
-              print('META',sid,json.dumps(meta)[:10000])
+              print('META',sid,'count',meta.get('count'))
               (out/'meta.json').write_text(json.dumps(meta))
               names=set()
               def visit(v):
@@ -63,7 +63,7 @@ jobs:
                   (out/'source-poster.webp').write_bytes(get(settings['posterUrl']))
               if settings.get('collisionUrl'):
                   try:
-                      b=get(settings['collisionUrl']);(out/'collision.json').write_bytes(b); print('COLLISION',sid,b[:3000])
+                      b=get(settings['collisionUrl']);(out/'collision.json').write_bytes(b)
                       cm=json.loads(b); cn=set()
                       def cv(v):
                           if isinstance(v,dict):
@@ -85,8 +85,8 @@ jobs:
         run: |
           cd afterlight-forest
           npm install --no-audit --no-fund
-          npx playwright install --with-deps chromium
           npm run build
+          npx playwright install --with-deps chromium
           npm run test:ci
       - uses: actions/upload-artifact@v4
         if: always()
