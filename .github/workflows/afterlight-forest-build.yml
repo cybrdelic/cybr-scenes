@@ -9,7 +9,7 @@ permissions:
 jobs:
   forest:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
         with:
@@ -17,35 +17,75 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Acquire published CC-BY forest metadata and pinned runtime
+      - name: Acquire public CC-BY forest captures
         shell: bash
         run: |
-          mkdir -p afterlight-capture/vendor afterlight-capture/source
+          mkdir -p afterlight-capture/vendor afterlight-capture/source afterlight-forest/public/data
           cd afterlight-capture/vendor
           npm pack @sparkjsdev/spark@2.4.0 three@0.180.0
           cd ../..
           python3 - <<'PY'
-          import urllib.request, re, json, pathlib, html
+          import urllib.request, urllib.parse, re, json, pathlib, zipfile, hashlib, concurrent.futures
           root=pathlib.Path('afterlight-capture/source')
-          urls={'page':'https://superspl.at/scene/259c0051','viewer':'https://superspl.at/s?id=259c0051'}
-          for key,url in urls.items():
-              req=urllib.request.Request(url,headers={'User-Agent':'Afterlight-Forest-Research/3.0'})
-              data=urllib.request.urlopen(req,timeout=60).read().decode('utf-8')
-              (root/(key+'.html')).write_text(data)
-              print('\nSOURCE',key,'bytes',len(data))
-              for match in re.finditer(r'(?:https?:)?//[^\s<>"\x27]+|(?:src|href)=["\x27]([^"\x27]+)',data):
-                  v=html.unescape(match.group(1) or match.group(0))
-                  if any(s in v for s in ['.js','.json','.sog','.ply','s3','cloudfront','assets','data.','settings']): print('LINK',v[:1500])
-              for word in ['assetUrl','asset_url','modelUrl','model_url','splatUrl','settings','meta.json','splatData','sog','dataUrl','data_url','download']:
-                  at=data.find(word)
-                  if at>=0: print('CONTEXT',word,data[max(0,at-250):at+1200])
-          (root/'provenance.json').write_text(json.dumps({'title':'Forest Scan','creator':'draftmode','source':urls['page'],'license':'CC-BY-4.0','license_url':'https://creativecommons.org/licenses/by/4.0/','scene_id':'259c0051'},indent=2))
+          def get(url):
+              return urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'Afterlight-Forest/3.0'}),timeout=120).read()
+          for sid,creator,title in [('259c0051','draftmode','Forest Scan'),('0c75de4a','alfred2010','Tree work along the nature trail')]:
+              out=pathlib.Path('afterlight-forest/public/data')/sid
+              out.mkdir(parents=True,exist_ok=True)
+              page=get('https://superspl.at/scene/'+sid).decode()
+              if 'CC BY 4.0' not in page: raise RuntimeError('Expected CC BY 4.0 license not on source page')
+              text=get('https://superspl.at/s?id='+sid).decode()
+              (root/(sid+'-viewer.html')).write_text(text)
+              settings=json.loads(re.search(r'<script[^>]*id="sse-bootstrap"[^>]*>(.*?)</script>',text,re.S).group(1))
+              safe={k:v for k,v in settings.items() if k!='telemetry'}
+              (out/'capture.json').write_text(json.dumps(safe,indent=2))
+              metaurl=settings['contentUrl']
+              meta=json.loads(get(metaurl))
+              print('META',sid,json.dumps(meta)[:10000])
+              (out/'meta.json').write_text(json.dumps(meta))
+              names=set()
+              def visit(v):
+                  if isinstance(v,dict):
+                      for x in v.values():visit(x)
+                  elif isinstance(v,list):
+                      for x in v:visit(x)
+                  elif isinstance(v,str) and re.search(r'\.(webp|bin|png)$',v):names.add(v)
+              visit(meta)
+              def download(name):
+                  b=get(urllib.parse.urljoin(metaurl,name)); dest=out/name
+                  dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(b)
+                  return {'path':name,'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()}
+              with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool: records=list(pool.map(download,sorted(names)))
+              with zipfile.ZipFile(out/'scene.sog','w',zipfile.ZIP_STORED) as z:
+                  z.write(out/'meta.json','meta.json')
+                  for name in sorted(names):z.write(out/name,name)
+              if settings.get('posterUrl'):
+                  (out/'source-poster.webp').write_bytes(get(settings['posterUrl']))
+              if settings.get('collisionUrl'):
+                  try:
+                      b=get(settings['collisionUrl']);(out/'collision.json').write_bytes(b); print('COLLISION',sid,b[:3000])
+                      cm=json.loads(b); cn=set()
+                      def cv(v):
+                          if isinstance(v,dict):
+                              for x in v.values():cv(x)
+                          elif isinstance(v,list):
+                              for x in v:cv(x)
+                          elif isinstance(v,str) and re.search(r'\.(bin|gz|voxel)$',v):cn.add(v)
+                      cv(cm)
+                      for name in cn:
+                          dst=out/pathlib.Path(name).name;dst.write_bytes(get(urllib.parse.urljoin(settings['collisionUrl'],name)))
+                  except Exception as e: print('COLLISION UNAVAILABLE',repr(e))
+              prov={'title':title,'creator':creator,'source':'https://superspl.at/scene/'+sid,'license':'CC-BY-4.0','license_url':'https://creativecommons.org/licenses/by/4.0/','changes':'Lossless repack of published SOG images into a ZIP container. Camera and mesh additions are application-level, not edits to capture.','files':records}
+              (out/'provenance.json').write_text(json.dumps(prov,indent=2))
+              print('CAPTURE COMPLETE',sid,(out/'scene.sog').stat().st_size)
+              for name in names:(out/name).unlink()
           PY
       - name: Build and render when implementation is present
         if: ${{ hashFiles('afterlight-forest/package.json') != '' }}
         run: |
           cd afterlight-forest
           npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
           npm run build
           npm run test:ci
       - uses: actions/upload-artifact@v4
@@ -54,6 +94,7 @@ jobs:
           name: afterlight-forest-v3
           path: |
             afterlight-capture/
+            afterlight-forest/public/
             afterlight-forest/dist/
             afterlight-forest/renders/
             afterlight-forest/test-results/
